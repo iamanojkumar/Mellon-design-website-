@@ -9,6 +9,18 @@ type FooterProps = {
   org: SiteContent["org"];
 };
 
+const SOCIAL_LINKS: {
+  key: keyof SiteContent["org"]["social"];
+  label: string;
+  icon: string;
+}[] = [
+  { key: "instagram", label: "Instagram", icon: "/brand/social/instagram.svg" },
+  { key: "linkedin", label: "LinkedIn", icon: "/brand/social/linkedin.svg" },
+  { key: "x", label: "X", icon: "/brand/social/x.svg" },
+  { key: "facebook", label: "Facebook", icon: "/brand/social/facebook.svg" },
+  { key: "youtube", label: "YouTube", icon: "/brand/social/youtube.svg" },
+];
+
 export function Footer({ locale, footer, org }: FooterProps) {
   const localePrefix = `/${locale}`;
   const year = new Date().getFullYear();
@@ -28,15 +40,18 @@ export function Footer({ locale, footer, org }: FooterProps) {
           </Link>
           <p className={styles.tagline}>{footer.tagline}</p>
           <div className={styles.social}>
-            <a href={org.social.instagram} target="_blank" rel="noreferrer">
-              Instagram
-            </a>
-            <a href={org.social.linkedin} target="_blank" rel="noreferrer">
-              LinkedIn
-            </a>
-            <a href={org.social.x} target="_blank" rel="noreferrer">
-              X
-            </a>
+            {SOCIAL_LINKS.map((item) => (
+              <a
+                key={item.key}
+                href={org.social[item.key]}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={item.label}
+                className={styles.socialLink}
+              >
+                <Image src={item.icon} alt="" width={20} height={20} aria-hidden="true" />
+              </a>
+            ))}
           </div>
         </div>
 

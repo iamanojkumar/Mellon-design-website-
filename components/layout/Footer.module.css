@@ -33,15 +33,18 @@
 .social {
   display: flex;
   gap: var(--space-md);
-  font-size: var(--fs-100);
 }
 
-.social a {
-  color: var(--color-fg-muted);
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.65;
+  transition: opacity var(--duration-fast) var(--ease-out);
 }
 
-.social a:hover {
-  color: var(--color-fg);
+.socialLink:hover {
+  opacity: 1;
 }
 
 .col {
