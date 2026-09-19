@@ -1,0 +1,12 @@
+{
+  "defaultLocale": "en-US",
+  "locales": [
+    {
+      "code": "en-US",
+      "language": "en",
+      "market": "US",
+      "label": "English (United States)",
+      "enabled": true
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: 0.9rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-200);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: transform var(--duration-fast) var(--ease-out),
+    background-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+.cta svg {
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+}
+
+.cta:hover svg {
+  transform: translateX(2px);
+}
+
+.primary {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border: 1px solid var(--color-ink);
+}
+
+.primary:hover {
+  background: var(--color-ink-soft);
+}
+
+.secondary {
+  background: transparent;
+  color: var(--color-ink);
+  border: 1px solid var(--color-border);
+}
+
+.secondary:hover {
+  border-color: var(--color-ink);
+}

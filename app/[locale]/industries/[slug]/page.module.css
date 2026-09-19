@@ -1,0 +1,118 @@
+.hero {
+  padding-block: var(--space-xl) var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.breadcrumb {
+  display: flex;
+  gap: var(--space-2xs);
+  font-size: var(--fs-100);
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-lg);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-fg);
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--fs-200);
+  font-weight: 600;
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-2xs);
+}
+
+.headline {
+  font-size: clamp(var(--fs-700), 5vw, var(--fs-800));
+  margin-bottom: var(--space-md);
+}
+
+.summary {
+  font-size: var(--fs-400);
+  color: var(--color-fg-muted);
+  max-width: 62ch;
+  margin-bottom: var(--space-lg);
+}
+
+.body {
+  padding-block: var(--space-2xl);
+}
+
+.bodyGrid {
+  display: grid;
+  gap: var(--space-2xl);
+  grid-template-columns: 1fr;
+}
+
+.blockHeading {
+  font-size: var(--fs-500);
+  margin-bottom: var(--space-md);
+}
+
+.deliverables {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.deliverables li {
+  padding-left: var(--space-md);
+  position: relative;
+  font-size: var(--fs-300);
+  color: var(--color-fg-muted);
+}
+
+.deliverables li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+}
+
+.relatedList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.relatedList a {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.6rem 1.1rem;
+  font-size: var(--fs-200);
+  display: inline-block;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.relatedList a:hover {
+  border-color: var(--color-ink);
+}
+
+.closing {
+  background: var(--color-paper-tint);
+  border-top: 1px solid var(--color-border);
+}
+
+.closingInner {
+  padding-block: var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  align-items: flex-start;
+}
+
+.closingHeadline {
+  font-size: clamp(var(--fs-600), 3.4vw, var(--fs-700));
+  max-width: 24ch;
+}
+
+@media (min-width: 800px) {
+  .bodyGrid {
+    grid-template-columns: 2fr 1fr;
+  }
+}

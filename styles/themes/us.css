@@ -1,0 +1,3 @@
+/* Market deltas only — base values live in styles/tokens.css. US is the reference market, so there are no overrides yet. */
+:root[data-market="US"] {
+}

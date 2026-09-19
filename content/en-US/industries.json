@@ -1,0 +1,210 @@
+[
+  {
+    "slug": "architecture-interior-design",
+    "name": "Architecture & Interior Design",
+    "tagline": "Digital presence as considered as the spaces you design.",
+    "summary": "Architecture and interior firms sell a feeling before a floor plan. We build portfolio sites and brand systems that let the work — and the light, material, and space in it — do the talking.",
+    "deliverables": [
+      "Portfolio and project showcase design",
+      "Photography-first layout systems",
+      "Studio branding and print collateral alignment",
+      "Webflow builds your team can update without a developer"
+    ],
+    "relatedServices": ["branding", "ui-ux-design", "end-to-end-design"]
+  },
+  {
+    "slug": "automotive",
+    "name": "Automotive",
+    "tagline": "Interfaces for the industry moving fastest from hardware to software.",
+    "summary": "From infotainment systems to owner apps and configurator tools, we design automotive digital products that meet the same fit-and-finish bar as the vehicles themselves.",
+    "deliverables": [
+      "In-vehicle and infotainment UI design",
+      "Owner and dealer mobile app design",
+      "Configurator and buying-flow experiences",
+      "Design systems shared across product lines"
+    ],
+    "relatedServices": ["product-design", "mobile-app-design", "design-systems"]
+  },
+  {
+    "slug": "civic-tech-design",
+    "name": "Civic Tech",
+    "tagline": "Public-sector software people can actually use without a manual.",
+    "summary": "Civic and government platforms carry a higher bar for clarity and accessibility. We design services that work for every resident, on every device, in plain language.",
+    "deliverables": [
+      "Accessibility-first UX (WCAG-aligned)",
+      "Plain-language service design",
+      "Multi-department design systems",
+      "Usability testing with real constituents"
+    ],
+    "relatedServices": ["ui-ux-design", "ux-audit", "design-systems"]
+  },
+  {
+    "slug": "consumer-electronics",
+    "name": "Consumer Electronics",
+    "tagline": "Brand and product experience that carries from the box to the app.",
+    "summary": "Hardware earns trust in seconds; the software has to keep it. We design the companion apps, setup flows, and brand systems that make electronics feel considered end to end.",
+    "deliverables": [
+      "Companion app and setup-flow design",
+      "Packaging-to-product brand continuity",
+      "E-commerce and product page design",
+      "Motion design for product launches"
+    ],
+    "relatedServices": ["mobile-app-design", "motion-interaction-design", "branding"]
+  },
+  {
+    "slug": "ecommerce",
+    "name": "E-Commerce",
+    "tagline": "Storefronts built to convert, not just to look good.",
+    "summary": "We design and build commerce experiences — from product discovery to checkout — on the platforms you run day to day, optimized around real conversion data, not trends.",
+    "deliverables": [
+      "Storefront and PDP design",
+      "Checkout and cart optimization",
+      "Webflow and WooCommerce builds",
+      "Conversion-focused UX audits"
+    ],
+    "relatedServices": ["ecommerce-design", "ux-audit", "branding"]
+  },
+  {
+    "slug": "education-edtech",
+    "name": "Education & EdTech",
+    "tagline": "Learning products designed for attention spans, not just curricula.",
+    "summary": "We design platforms for students, teachers, and administrators alike — interfaces that stay usable under real classroom conditions and scale from one school to a district.",
+    "deliverables": [
+      "Student and educator platform design",
+      "Course and content authoring UX",
+      "Admin and district-level dashboard design",
+      "Accessibility for K-12 and higher-ed standards"
+    ],
+    "relatedServices": ["product-design", "saas-design", "design-systems"]
+  },
+  {
+    "slug": "fashion-brand-design",
+    "name": "Fashion",
+    "tagline": "Brand systems with the editorial polish the category demands.",
+    "summary": "Fashion brands live and die by visual consistency across lookbooks, storefronts, and social. We build identity systems and commerce sites that hold that line at scale.",
+    "deliverables": [
+      "Brand identity and lookbook direction",
+      "E-commerce and campaign site design",
+      "Seasonal collateral systems",
+      "Social and content templating"
+    ],
+    "relatedServices": ["branding", "ecommerce-design", "ui-ux-design"]
+  },
+  {
+    "slug": "finance-fintech",
+    "name": "Finance & Fintech",
+    "tagline": "Trust, made legible, in interfaces that handle real money.",
+    "summary": "Fintech products have to be precise, compliant, and reassuring all at once. We design dashboards, onboarding, and transaction flows that make complex financial data feel controllable.",
+    "deliverables": [
+      "Onboarding and KYC flow design",
+      "Dashboard and transaction UX",
+      "Design systems built for compliance review",
+      "Security-conscious UX audits"
+    ],
+    "relatedServices": ["product-design", "saas-design", "ux-audit"]
+  },
+  {
+    "slug": "health-wellness-tech",
+    "name": "Health & Wellness Tech",
+    "tagline": "Care experiences that stay human at every touchpoint.",
+    "summary": "Whether it's a patient portal or a wellness app, we design for moments people are stressed, distracted, or vulnerable — clarity and reassurance are the whole job.",
+    "deliverables": [
+      "Patient and member portal design",
+      "Wellness and habit-tracking app design",
+      "HIPAA-aware UX patterns",
+      "Accessibility and readability audits"
+    ],
+    "relatedServices": ["mobile-app-design", "product-design", "end-to-end-design"]
+  },
+  {
+    "slug": "hospitality-design",
+    "name": "Hospitality",
+    "tagline": "Booking and guest experiences that match the property.",
+    "summary": "From boutique hotels to restaurant groups, we design digital experiences — booking flows, brand sites, guest apps — that reflect the level of hospitality guests expect in person.",
+    "deliverables": [
+      "Booking and reservation flow design",
+      "Property and brand website design",
+      "Guest-facing app experiences",
+      "Photography-led visual systems"
+    ],
+    "relatedServices": ["ui-ux-design", "branding", "ecommerce-design"]
+  },
+  {
+    "slug": "legal-branding",
+    "name": "Legal",
+    "tagline": "Authority and approachability, in the same identity system.",
+    "summary": "Legal brands need to signal credibility without feeling cold. We build identity and web systems for firms that want to be trusted and, still, contacted.",
+    "deliverables": [
+      "Firm identity and brand guidelines",
+      "Practice-area website architecture",
+      "Attorney bio and case-result templating",
+      "Lead-focused contact and intake design"
+    ],
+    "relatedServices": ["branding", "ui-ux-design", "end-to-end-design"]
+  },
+  {
+    "slug": "media-entertainment-gaming",
+    "name": "Media, Entertainment & Gaming",
+    "tagline": "Interfaces with personality, built to hold attention.",
+    "summary": "We design for audiences that expect polish and pace — streaming platforms, game UI, and entertainment brands where motion and detail carry as much weight as layout.",
+    "deliverables": [
+      "Platform and streaming UI design",
+      "In-game and HUD interface design",
+      "Motion-first brand systems",
+      "Cross-platform design consistency"
+    ],
+    "relatedServices": ["motion-interaction-design", "mobile-app-design", "branding"]
+  },
+  {
+    "slug": "nonprofit-branding",
+    "name": "Nonprofit",
+    "tagline": "Identity and digital systems built for mission, not margin.",
+    "summary": "We help nonprofits present with the same polish as any commercial brand — clear storytelling, accessible design, and donation flows that actually convert intent into support.",
+    "deliverables": [
+      "Mission-driven brand identity",
+      "Donation and campaign flow design",
+      "Accessible, low-maintenance website builds",
+      "Annual report and impact storytelling design"
+    ],
+    "relatedServices": ["branding", "ui-ux-design", "ecommerce-design"]
+  },
+  {
+    "slug": "real-estate-design",
+    "name": "Real Estate",
+    "tagline": "Listings and brand presence that sell the property, not just list it.",
+    "summary": "We design brokerage and developer sites that make listings feel premium — map-first browsing, fast-loading galleries, and lead flows that convert interest into showings.",
+    "deliverables": [
+      "Listing and property page design",
+      "Map and search-driven browsing UX",
+      "Brokerage and developer brand identity",
+      "Lead capture and inquiry flow design"
+    ],
+    "relatedServices": ["branding", "ui-ux-design", "ecommerce-design"]
+  },
+  {
+    "slug": "restaurant-branding",
+    "name": "Restaurant & Food Service",
+    "tagline": "Menus, brand, and ordering flows people actually want to use.",
+    "summary": "We build identity and digital ordering experiences for restaurant groups — from single-location brands to multi-unit chains — that feel as good as the food photographs.",
+    "deliverables": [
+      "Restaurant brand and menu identity",
+      "Online ordering and reservation UX",
+      "Multi-location site architecture",
+      "Photography-led marketing site design"
+    ],
+    "relatedServices": ["branding", "ecommerce-design", "ui-ux-design"]
+  },
+  {
+    "slug": "technology-saas",
+    "name": "Technology & SaaS",
+    "tagline": "Product design for software that has to keep earning renewal.",
+    "summary": "This is where the studio spends most of its time: dashboards, onboarding, and design systems for SaaS products that need to stay simple while doing more every release.",
+    "deliverables": [
+      "Product and dashboard UI design",
+      "Onboarding and activation design",
+      "Design systems for fast-moving roadmaps",
+      "UX audits ahead of major releases"
+    ],
+    "relatedServices": ["saas-design", "design-systems", "product-design", "ux-audit"]
+  }
+]

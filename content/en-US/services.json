@@ -1,0 +1,132 @@
+[
+  {
+    "slug": "branding",
+    "name": "Branding",
+    "tagline": "Identity systems built to hold up across every surface.",
+    "summary": "We build brand identities from the ground up — name, mark, color, type, voice — then codify them so every team that touches the brand after us stays on-model without asking.",
+    "deliverables": [
+      "Brand strategy, positioning, and naming",
+      "Logo, mark, and visual identity system",
+      "Typography, color, and imagery guidelines",
+      "Brand guidelines documentation for internal and agency use"
+    ],
+    "relatedIndustries": ["fashion-brand-design", "restaurant-branding", "real-estate-design", "nonprofit-branding"]
+  },
+  {
+    "slug": "design-systems",
+    "name": "Design Systems",
+    "tagline": "One source of truth for every component, token, and pattern.",
+    "summary": "We turn scattered UI decisions into a governed system — components, tokens, and documentation that let design and engineering ship consistently, fast, without re-litigating the same button.",
+    "deliverables": [
+      "Token architecture (color, type, spacing, motion)",
+      "Component libraries in Figma, mirrored in code",
+      "Usage documentation and contribution guidelines",
+      "Rollout and adoption support for existing teams"
+    ],
+    "relatedIndustries": ["technology-saas", "consumer-electronics", "finance-fintech", "education-edtech"]
+  },
+  {
+    "slug": "ecommerce-design",
+    "name": "E-Commerce Design",
+    "tagline": "Storefronts and product pages that convert without feeling like a funnel.",
+    "summary": "From catalog browsing to checkout, we design commerce experiences that reduce friction at every step — and we build them on the platforms you already run, Webflow and WooCommerce included.",
+    "deliverables": [
+      "Storefront UX audits and conversion redesign",
+      "Product listing, PDP, and checkout flow design",
+      "Webflow and WooCommerce implementation",
+      "Merchandising and promotional page templates"
+    ],
+    "relatedIndustries": ["fashion-brand-design", "consumer-electronics", "restaurant-branding"]
+  },
+  {
+    "slug": "end-to-end-design",
+    "name": "End-to-End Design",
+    "tagline": "From first sketch to shipped product, one team the whole way.",
+    "summary": "For teams that don't want to hand off between agencies, we run the full arc — strategy, brand, UX, UI, prototyping, and build — so nothing gets lost in translation between phases.",
+    "deliverables": [
+      "Discovery, strategy, and product definition",
+      "UX architecture through to final UI",
+      "Prototyping and usability validation",
+      "Handoff-free build in Webflow, Framer, or code"
+    ],
+    "relatedIndustries": ["technology-saas", "health-wellness-tech", "civic-tech-design"]
+  },
+  {
+    "slug": "mobile-app-design",
+    "name": "Mobile App Design",
+    "tagline": "Native-feeling apps designed for the platforms people actually use.",
+    "summary": "We design iOS and Android experiences that respect platform conventions while staying unmistakably on-brand, from onboarding through the screens people open every day.",
+    "deliverables": [
+      "Information architecture and user flows",
+      "iOS and Android UI design, platform-aware",
+      "Interaction and micro-animation specs",
+      "Design QA through engineering handoff"
+    ],
+    "relatedIndustries": ["health-wellness-tech", "consumer-electronics", "media-entertainment-gaming"]
+  },
+  {
+    "slug": "motion-interaction-design",
+    "name": "Motion & Interaction Design",
+    "tagline": "Movement that explains the interface instead of decorating it.",
+    "summary": "Every transition, hover state, and loading moment is a chance to make a product feel more considered. We design motion systems that clarify hierarchy and give interfaces a pulse.",
+    "deliverables": [
+      "Motion principles and timing/easing systems",
+      "Micro-interaction and transition design",
+      "Prototypes in Framer for stakeholder review",
+      "Engineering-ready specs (easing, duration, triggers)"
+    ],
+    "relatedIndustries": ["media-entertainment-gaming", "consumer-electronics", "technology-saas"]
+  },
+  {
+    "slug": "product-design",
+    "name": "Product Design",
+    "tagline": "Digital products designed around how people actually work.",
+    "summary": "We embed with product and engineering teams to design software that's simple where it should be simple and powerful where it needs to be — grounded in real user research, not guesswork.",
+    "deliverables": [
+      "User research and journey mapping",
+      "Information architecture and flow design",
+      "High-fidelity UI across web and app",
+      "Usability testing and iteration"
+    ],
+    "relatedIndustries": ["technology-saas", "finance-fintech", "civic-tech-design", "health-wellness-tech"]
+  },
+  {
+    "slug": "saas-design",
+    "name": "SaaS Design",
+    "tagline": "Interfaces for products that get more complex the longer they succeed.",
+    "summary": "SaaS products accumulate complexity fast. We design dashboards, settings, and workflows that stay legible at scale, and build the component systems that keep new features from eroding the whole.",
+    "deliverables": [
+      "Dashboard and data-dense UI design",
+      "Onboarding and activation flow design",
+      "Settings, permissions, and admin UX",
+      "Design system foundations for ongoing feature work"
+    ],
+    "relatedIndustries": ["technology-saas", "finance-fintech", "education-edtech"]
+  },
+  {
+    "slug": "ui-ux-design",
+    "name": "UI/UX Design",
+    "tagline": "The core craft — research, structure, and pixel-level execution.",
+    "summary": "This is the day-to-day of the studio: understanding users, structuring flows, and designing interfaces with the kind of typographic and visual care that separates a product from a prototype.",
+    "deliverables": [
+      "User research, personas, and journey mapping",
+      "Wireframing and information architecture",
+      "High-fidelity visual design",
+      "Interactive prototypes for testing and buy-in"
+    ],
+    "relatedIndustries": ["technology-saas", "real-estate-design", "hospitality-design", "legal-branding"]
+  },
+  {
+    "slug": "ux-audit",
+    "name": "UX Audit",
+    "tagline": "A clear-eyed read on what's costing you conversions and trust.",
+    "summary": "Before we redesign anything, we can tell you what's actually broken — a structured, heuristic-based review of your existing product with prioritized, actionable fixes, not just a list of opinions.",
+    "deliverables": [
+      "Heuristic evaluation against usability principles",
+      "Funnel and flow-specific friction analysis",
+      "Accessibility and performance spot-checks",
+      "Prioritized findings report with recommended fixes"
+    ],
+    "relatedIndustries": ["finance-fintech", "ecommerce", "technology-saas"]
+  }
+]

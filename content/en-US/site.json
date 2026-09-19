@@ -1,0 +1,117 @@
+{
+  "org": {
+    "name": "Mellon",
+    "legalName": "Mellon Design",
+    "shortDescription": "Mellon is a design agency that builds brand identities, digital products, and design systems for teams across architecture, automotive, technology, finance, and more.",
+    "email": "hello@mellon.design",
+    "social": {
+      "instagram": "https://instagram.com/mellon.design",
+      "linkedin": "https://linkedin.com/company/mellon-design",
+      "x": "https://x.com/mellon_design"
+    }
+  },
+  "nav": {
+    "primary": [
+      { "label": "Services", "href": "/services" },
+      { "label": "Industries", "href": "/industries" },
+      { "label": "About", "href": "/about" },
+      { "label": "Contact", "href": "/contact" }
+    ],
+    "cta": { "label": "Start a project", "href": "/contact" }
+  },
+  "footer": {
+    "tagline": "A design agency for teams who need brand, product, and interface design to work as one system.",
+    "columns": [
+      {
+        "heading": "Studio",
+        "links": [
+          { "label": "About", "href": "/about" },
+          { "label": "Services", "href": "/services" },
+          { "label": "Industries", "href": "/industries" },
+          { "label": "Contact", "href": "/contact" }
+        ]
+      }
+    ],
+    "legal": "All rights reserved."
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Mellon Design",
+      "headline": "Design that carries a brand from first impression to daily use.",
+      "subhead": "We build identity systems, digital products, and design systems for teams who need brand and product to move as one — across architecture, automotive, technology, finance, and a dozen industries besides.",
+      "primaryCta": { "label": "Start a project", "href": "/contact" },
+      "secondaryCta": { "label": "See our services", "href": "/services" }
+    },
+    "servicesIntro": {
+      "eyebrow": "What we do",
+      "headline": "Ten disciplines. One studio.",
+      "body": "From a first brand mark to a fully governed design system, Mellon covers the full range of design work a growing company needs — without the hand-offs between agencies."
+    },
+    "industriesIntro": {
+      "eyebrow": "Who we work with",
+      "headline": "Deep enough in each industry to skip the learning curve.",
+      "body": "We've designed for architecture firms and automotive teams, fintechs and restaurant groups. Each industry page below reflects what we've actually learned building for it."
+    },
+    "process": {
+      "eyebrow": "How we work",
+      "headline": "Design and development, under one roof.",
+      "body": "Mellon runs as two connected consulting practices — design and development — so the systems we design are the systems that ship, not a set of files thrown over a wall.",
+      "steps": [
+        {
+          "title": "Design",
+          "body": "Strategy, brand, UX, and UI — built in Figma and tested before a single line of code."
+        },
+        {
+          "title": "Development",
+          "body": "Implementation in Webflow, Framer, WordPress, or custom code, by a team that already knows the design intent."
+        }
+      ]
+    },
+    "closingCta": {
+      "headline": "Tell us what you're building.",
+      "body": "Every engagement starts with a conversation, not a proposal template. Tell us where things stand and we'll tell you honestly whether — and how — we can help.",
+      "cta": { "label": "Start a project", "href": "/contact" }
+    }
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About",
+      "headline": "A design studio built to run design and development as one practice.",
+      "subhead": "Mellon exists because brand, product, and engineering usually get designed in separate rooms — and it shows. We keep them in one room."
+    },
+    "sections": [
+      {
+        "heading": "Who we are",
+        "body": "Mellon is a design agency working across branding, product design, and design systems. We're a small, senior studio by design: every engagement is run by people who've done the specific kind of work you're hiring for, not handed to whoever's free."
+      },
+      {
+        "heading": "What we do",
+        "body": "Ten core disciplines — branding, design systems, e-commerce design, end-to-end design, mobile app design, motion and interaction design, product design, SaaS design, UI/UX design, and UX audits — delivered individually or combined into a single end-to-end engagement."
+      },
+      {
+        "heading": "How we work",
+        "body": "Every project runs through the same two practices: design and development. Design covers strategy, brand, UX, and UI. Development covers implementation, in Webflow, Framer, WordPress, or custom code — by people who were in the room for the design decisions, so nothing gets lost in a handoff."
+      },
+      {
+        "heading": "Who we work with",
+        "body": "Sixteen industries and counting: architecture and interior design, automotive, civic tech, consumer electronics, e-commerce, education, fashion, finance, health and wellness, hospitality, legal, media and entertainment, nonprofits, real estate, restaurants, and technology and SaaS. Each industry page reflects patterns we've seen working in that space specifically, not a generic template."
+      },
+      {
+        "heading": "Where we start",
+        "body": "With a conversation, not a proposal template. Tell us what you're building, and we'll tell you plainly whether we're the right studio for it."
+      }
+    ]
+  },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "headline": "Start a project.",
+      "subhead": "Tell us about what you're building and where things stand today. We reply to every inquiry personally, usually within one business day."
+    },
+    "form": {
+      "successMessage": "Thanks — your message is in. We'll reply within one business day.",
+      "submitLabel": "Send message"
+    },
+    "directEmailLabel": "Or write to us directly at"
+  }
+}
