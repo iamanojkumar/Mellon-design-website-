@@ -1,6 +1,6 @@
 # Mellon Website — Project Scope
 
-Status: planning / pre-build. This document is the source of truth for what the site is, how it's built, and what's still undecided. Update it as decisions are made — don't let the repo drift from this.
+Status: en-US build scaffolded (Home, Services x10, Industries x16, About, Contact — see repo). This document is the source of truth for what the site is, how it's built, and what's still undecided. Update it as decisions are made — don't let the repo drift from this.
 
 ## 1. What this is
 
@@ -22,7 +22,7 @@ No client project portfolio at launch.
 | Framework | Next.js (App Router) |
 | Hosting | Vercel |
 | Rendering | Fully static (`generateStaticParams` for every locale × route) |
-| Styling | CSS custom properties (design tokens) — Tailwind vs. plain CSS modules **pending decision** |
+| Styling | CSS custom properties (`styles/tokens.css`) + plain CSS Modules per component/route — **decided** |
 | Animation | Framer Motion (`motion`) — pending confirmation depending on preloader asset format |
 | Form handling | Next.js Server Actions, one shared component |
 | Validation | zod (shared client + server schema) |
@@ -70,12 +70,14 @@ No client project portfolio at launch.
 See discussion log / repeat on request — full annotated tree covers:
 `app/[locale]/...` routes, `middleware.ts`, `components/{cta,contact-form,layout,seo,ui,transitions,preloader}/`, `content/{locales.json,countries.json,<locale>/...}`, `lib/{seo,theme,locale,content,motion,env}.ts`, `styles/{tokens.css,themes/}`.
 
-## 9. Open decisions (blocking scaffolding until resolved)
+## 9. Open decisions
 
-- [ ] Launch locale list
-- [ ] Styling approach: Tailwind vs. CSS modules + tokens
-- [ ] Preloader asset (format + file) — user to provide
-- [ ] Animation library final confirmation (Framer Motion assumed, may change based on preloader asset)
+- [x] Styling approach — plain CSS Modules + `styles/tokens.css`
+- [x] en-US scaffolding — `app/[locale]/...` structure in place, only `en-US` enabled in `content/locales.json`; adding a locale is a content + config change, not a restructuring
+- [ ] Launch locale list beyond en-US
+- [ ] Preloader asset (format + file) — user to provide; motion/preloader wiring not yet implemented
+- [ ] Animation library final confirmation (Framer Motion is installed per the stack table but not yet used — no page transitions or preloader wired in this pass)
+- [ ] Contact form delivery integration (email/CRM) — validation and success/error states work end-to-end; `components/contact-form/actions.ts` currently only logs submissions server-side
 
 ## 10. Explicitly out of scope (for now)
 
