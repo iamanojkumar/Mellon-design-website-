@@ -22,9 +22,16 @@
   margin-right: auto;
 }
 
-.logo img {
+.logoFull {
+  display: none;
   height: 28px;
   width: auto;
+}
+
+.logoIcon {
+  display: block;
+  height: 32px;
+  width: 32px;
 }
 
 .nav {
@@ -140,6 +147,12 @@
     display: block;
   }
   .menuButton {
+    display: none;
+  }
+  .logoFull {
+    display: block;
+  }
+  .logoIcon {
     display: none;
   }
 }

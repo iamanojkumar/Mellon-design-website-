@@ -31,10 +31,19 @@ export function Header({ locale, nav, cta }: HeaderProps) {
       <div className={styles.bar}>
         <Link href={homeHref} className={styles.logo} aria-label="Mellon home">
           <Image
-            src="/brand/logo_color_lightbg.svg"
+            src="/brand/logo_color_lightbg.png"
             alt="Mellon"
             width={140}
             height={44}
+            className={styles.logoFull}
+            priority
+          />
+          <Image
+            src="/brand/icon_color_lightbg.png"
+            alt="Mellon"
+            width={32}
+            height={32}
+            className={styles.logoIcon}
             priority
           />
         </Link>
