@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Fraunces, Inter } from "next/font/google";
+import { DM_Mono, Roboto_Flex } from "next/font/google";
 import { notFound } from "next/navigation";
 import {
   enabledLocaleCodes,
@@ -11,16 +11,16 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import "@/styles/globals.css";
 
-const fraunces = Fraunces({
+const robotoFlex = Roboto_Flex({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["500", "600", "700"],
+  variable: "--font-body",
   display: "swap",
 });
 
-const inter = Inter({
+const dmMono = DM_Mono({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-mono",
+  weight: ["400", "500"],
   display: "swap",
 });
 
@@ -45,7 +45,7 @@ export default async function LocaleLayout({
 
   return (
     <html lang={localeConfig.language} data-market={localeConfig.market}>
-      <body className={`${fraunces.variable} ${inter.variable}`}>
+      <body className={`${robotoFlex.variable} ${dmMono.variable}`}>
         <a href="#main" className="visually-hidden">
           Skip to content
         </a>

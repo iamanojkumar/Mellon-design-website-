@@ -39,8 +39,9 @@
   --color-focus: var(--color-brand-cyan);
 
   /* Type */
-  --font-display: "Fraunces", "Iowan Old Style", "Georgia", serif;
-  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-display: Georgia, "Times New Roman", Times, serif;
+  --font-body: "Roboto Flex", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "DM Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
   --fs-100: 0.8125rem;
   --fs-200: 0.9375rem;

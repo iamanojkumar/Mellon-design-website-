@@ -33,16 +33,16 @@ export function Header({ locale, nav, cta }: HeaderProps) {
           <Image
             src="/brand/logo_color_lightbg.png"
             alt="Mellon"
-            width={140}
-            height={44}
+            width={252}
+            height={80}
             className={styles.logoFull}
             priority
           />
           <Image
             src="/brand/icon_color_lightbg.png"
             alt="Mellon"
-            width={32}
-            height={32}
+            width={80}
+            height={80}
             className={styles.logoIcon}
             priority
           />
