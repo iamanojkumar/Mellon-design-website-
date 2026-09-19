@@ -19,10 +19,11 @@ export function Footer({ locale, footer, org }: FooterProps) {
         <div className={styles.brandCol}>
           <Link href={localePrefix} aria-label="Mellon home">
             <Image
-              src="/brand/logo_color_darkbg.svg"
+              src="/brand/logo_var2_transparent.png"
               alt="Mellon"
-              width={130}
-              height={40}
+              width={112}
+              height={112}
+              className={styles.logo}
             />
           </Link>
           <p className={styles.tagline}>{footer.tagline}</p>
