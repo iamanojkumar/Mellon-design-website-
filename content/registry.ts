@@ -20,6 +20,16 @@ import privacyEnUS from "@/content/en-US/pages/privacy.json";
 
 import siteEnGB from "@/content/en-GB/site.json";
 
+import siteEsES from "@/content/es-ES/site.json";
+import servicesEsES from "@/content/es-ES/services.json";
+import industriesEsES from "@/content/es-ES/industries.json";
+import homeEsES from "@/content/es-ES/pages/home.json";
+import aboutEsES from "@/content/es-ES/pages/about.json";
+import servicesPageEsES from "@/content/es-ES/pages/services.json";
+import industriesPageEsES from "@/content/es-ES/pages/industries.json";
+import contactEsES from "@/content/es-ES/pages/contact.json";
+import privacyEsES from "@/content/es-ES/pages/privacy.json";
+
 import siteDeDE from "@/content/de-DE/site.json";
 import servicesDeDE from "@/content/de-DE/services.json";
 import industriesDeDE from "@/content/de-DE/industries.json";
@@ -76,6 +86,19 @@ export const contentRegistry: Record<string, LocaleContent> = {
       industries: industriesPageDeDE as unknown as PageDoc,
       contact: contactDeDE as unknown as PageDoc,
       privacy: privacyDeDE as unknown as PageDoc,
+    },
+  },
+  "es-ES": {
+    site: siteEsES,
+    services: servicesEsES,
+    industries: industriesEsES,
+    pages: {
+      home: homeEsES as unknown as PageDoc,
+      about: aboutEsES as unknown as PageDoc,
+      services: servicesPageEsES as unknown as PageDoc,
+      industries: industriesPageEsES as unknown as PageDoc,
+      contact: contactEsES as unknown as PageDoc,
+      privacy: privacyEsES as unknown as PageDoc,
     },
   },
 };

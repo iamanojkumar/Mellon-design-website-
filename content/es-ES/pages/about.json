@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Nosotros – Mellon",
+    "description": "Mellon existe porque marca, producto e ingeniería suelen diseñarse en salas distintas, y se nota. Nosotros los mantenemos en una sola."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Nosotros",
+      "headline": "Un estudio de diseño creado para llevar diseño y desarrollo como una sola práctica.",
+      "subhead": "Mellon existe porque marca, producto e ingeniería suelen diseñarse en salas distintas, y se nota. Nosotros los mantenemos en una sola."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Quiénes somos",
+          "body": "Mellon es una agencia de diseño que trabaja en branding, diseño de producto y sistemas de diseño. Somos un estudio pequeño y sénior por decisión propia: cada proyecto lo lleva gente que ya ha hecho el tipo de trabajo que nos encargas, no quien esté libre."
+        },
+        {
+          "heading": "Qué hacemos",
+          "body": "Diez disciplinas principales (branding, sistemas de diseño, diseño de e-commerce, diseño de extremo a extremo, diseño de apps móviles, diseño de movimiento e interacción, diseño de producto, diseño SaaS, diseño UI/UX y auditorías UX), ofrecidas por separado o combinadas en un único proyecto integral."
+        },
+        {
+          "heading": "Cómo trabajamos",
+          "body": "Todos los proyectos pasan por las mismas dos prácticas: diseño y desarrollo. El diseño abarca estrategia, marca, UX y UI. El desarrollo abarca la implementación en Webflow, Framer, WordPress o código a medida, a cargo de personas que estuvieron presentes en las decisiones de diseño, para que nada se pierda en el traspaso."
+        },
+        {
+          "heading": "Con quién trabajamos",
+          "body": "Dieciséis sectores y seguimos sumando: arquitectura e interiorismo, automoción, civic tech, electrónica de consumo, e-commerce, educación, moda, finanzas, salud y bienestar, hostelería, sector legal, medios, entretenimiento y videojuegos, organizaciones sin ánimo de lucro, inmobiliaria, restauración y tecnología y SaaS. Cada página de sector refleja patrones que hemos visto en ese ámbito concreto, no una plantilla genérica."
+        },
+        {
+          "heading": "Por dónde empezamos",
+          "body": "Con una conversación, no con una plantilla de propuesta. Cuéntanos qué estás creando y te diremos con claridad si somos el estudio adecuado."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Empecemos con una conversación.",
+      "cta": {
+        "label": "Empezar un proyecto",
+        "href": "/contact"
+      }
+    }
+  ]
+}

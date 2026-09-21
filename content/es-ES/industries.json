@@ -1,0 +1,275 @@
+[
+  {
+    "slug": "architecture-interior-design",
+    "name": "Arquitectura e interiorismo",
+    "tagline": "Una presencia digital tan cuidada como los espacios que diseñas.",
+    "summary": "Los estudios de arquitectura e interiorismo venden una sensación antes que un plano. Creamos sitios de portfolio y sistemas de marca que dejan que el trabajo, y la luz, el material y el espacio que contiene, hable por sí solo.",
+    "deliverables": [
+      "Diseño de portfolio y presentación de proyectos",
+      "Sistemas de maquetación centrados en la fotografía",
+      "Branding de estudio y alineación de material impreso",
+      "Sitios en Webflow que tu equipo puede actualizar sin desarrollador"
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "end-to-end-design"
+    ]
+  },
+  {
+    "slug": "automotive",
+    "name": "Automoción",
+    "tagline": "Interfaces para el sector que más rápido pasa del hardware al software.",
+    "summary": "De los sistemas de infoentretenimiento a las apps de propietarios y las herramientas de configuración, diseñamos productos digitales de automoción que cumplen el mismo nivel de ajuste y acabado que los propios vehículos.",
+    "deliverables": [
+      "Diseño de UI para vehículo e infoentretenimiento",
+      "Diseño de apps móviles para propietarios y concesionarios",
+      "Experiencias de configurador y de proceso de compra",
+      "Sistemas de diseño compartidos entre líneas de producto"
+    ],
+    "relatedServices": [
+      "product-design",
+      "mobile-app-design",
+      "design-systems"
+    ]
+  },
+  {
+    "slug": "civic-tech-design",
+    "name": "Civic tech",
+    "tagline": "Software del sector público que se usa sin necesitar un manual.",
+    "summary": "Las plataformas cívicas y gubernamentales exigen más claridad y accesibilidad. Diseñamos servicios que funcionan para todos los ciudadanos, en cualquier dispositivo y en lenguaje claro.",
+    "deliverables": [
+      "UX con accesibilidad ante todo (conforme a WCAG)",
+      "Diseño de servicios en lenguaje claro",
+      "Sistemas de diseño para varios departamentos",
+      "Pruebas de usabilidad con ciudadanos reales"
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "ux-audit",
+      "design-systems"
+    ]
+  },
+  {
+    "slug": "consumer-electronics",
+    "name": "Electrónica de consumo",
+    "tagline": "Marca y experiencia de producto que va de la caja a la app.",
+    "summary": "El hardware gana confianza en segundos y el software tiene que mantenerla. Diseñamos las apps complementarias, los flujos de configuración y los sistemas de marca que hacen que la electrónica se sienta cuidada de principio a fin.",
+    "deliverables": [
+      "Diseño de apps complementarias y flujos de configuración",
+      "Continuidad de marca del embalaje al producto",
+      "Diseño de e-commerce y fichas de producto",
+      "Diseño de movimiento para lanzamientos de producto"
+    ],
+    "relatedServices": [
+      "mobile-app-design",
+      "motion-interaction-design",
+      "branding"
+    ]
+  },
+  {
+    "slug": "ecommerce",
+    "name": "E-commerce",
+    "tagline": "Tiendas creadas para convertir, no solo para verse bien.",
+    "summary": "Diseñamos y construimos experiencias de comercio (del descubrimiento de producto al pago) en las plataformas que usas a diario, optimizadas con datos reales de conversión y no con modas.",
+    "deliverables": [
+      "Diseño de tienda y fichas de producto",
+      "Optimización de carrito y proceso de pago",
+      "Desarrollos en Webflow y WooCommerce",
+      "Auditorías UX orientadas a conversión"
+    ],
+    "relatedServices": [
+      "ecommerce-design",
+      "ux-audit",
+      "branding"
+    ]
+  },
+  {
+    "slug": "education-edtech",
+    "name": "Educación y EdTech",
+    "tagline": "Productos de aprendizaje diseñados para la atención, no solo para el temario.",
+    "summary": "Diseñamos plataformas para estudiantes, docentes y administradores: interfaces que siguen siendo usables en condiciones reales de aula y que escalan de un centro a todo un distrito.",
+    "deliverables": [
+      "Diseño de plataformas para estudiantes y educadores",
+      "UX de creación de cursos y contenidos",
+      "Diseño de paneles de administración y de distrito",
+      "Accesibilidad según los estándares de educación obligatoria y superior"
+    ],
+    "relatedServices": [
+      "product-design",
+      "saas-design",
+      "design-systems"
+    ]
+  },
+  {
+    "slug": "fashion-brand-design",
+    "name": "Moda",
+    "tagline": "Sistemas de marca con el acabado editorial que exige el sector.",
+    "summary": "Las marcas de moda viven de la coherencia visual entre lookbooks, tiendas y redes sociales. Creamos sistemas de identidad y sitios de comercio que mantienen esa línea a escala.",
+    "deliverables": [
+      "Identidad de marca y dirección de lookbook",
+      "Diseño de e-commerce y sitios de campaña",
+      "Sistemas de material de temporada",
+      "Plantillas para redes sociales y contenido"
+    ],
+    "relatedServices": [
+      "branding",
+      "ecommerce-design",
+      "ui-ux-design"
+    ]
+  },
+  {
+    "slug": "finance-fintech",
+    "name": "Finanzas y fintech",
+    "tagline": "Confianza hecha legible, en interfaces que manejan dinero real.",
+    "summary": "Los productos fintech deben ser precisos, cumplir la normativa y transmitir tranquilidad a la vez. Diseñamos paneles, onboarding y flujos de transacciones que hacen que los datos financieros complejos parezcan controlables.",
+    "deliverables": [
+      "Diseño de onboarding y flujos KYC",
+      "UX de paneles y transacciones",
+      "Sistemas de diseño preparados para revisiones de cumplimiento",
+      "Auditorías UX con enfoque en seguridad"
+    ],
+    "relatedServices": [
+      "product-design",
+      "saas-design",
+      "ux-audit"
+    ]
+  },
+  {
+    "slug": "health-wellness-tech",
+    "name": "Salud y bienestar",
+    "tagline": "Experiencias de cuidado que siguen siendo humanas en cada punto de contacto.",
+    "summary": "Ya sea un portal de pacientes o una app de bienestar, diseñamos para momentos en que las personas están estresadas, distraídas o vulnerables: claridad y tranquilidad son todo el trabajo.",
+    "deliverables": [
+      "Diseño de portales de pacientes y socios",
+      "Diseño de apps de bienestar y seguimiento de hábitos",
+      "Patrones UX respetuosos con la protección de datos de salud",
+      "Auditorías de accesibilidad y legibilidad"
+    ],
+    "relatedServices": [
+      "mobile-app-design",
+      "product-design",
+      "end-to-end-design"
+    ]
+  },
+  {
+    "slug": "hospitality-design",
+    "name": "Hostelería",
+    "tagline": "Experiencias de reserva y de huéspedes a la altura del establecimiento.",
+    "summary": "De hoteles boutique a grupos de restauración, diseñamos experiencias digitales (procesos de reserva, sitios de marca, apps para huéspedes) que reflejan el nivel de hospitalidad que los clientes esperan en persona.",
+    "deliverables": [
+      "Diseño de procesos de reserva",
+      "Diseño de sitios web de establecimiento y de marca",
+      "Experiencias de app para huéspedes",
+      "Sistemas visuales basados en la fotografía"
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "branding",
+      "ecommerce-design"
+    ]
+  },
+  {
+    "slug": "legal-branding",
+    "name": "Legal",
+    "tagline": "Autoridad y cercanía en un mismo sistema de identidad.",
+    "summary": "Las marcas del sector legal deben transmitir credibilidad sin resultar frías. Creamos sistemas de identidad y web para despachos que quieren inspirar confianza y, aun así, recibir consultas.",
+    "deliverables": [
+      "Identidad del despacho y guías de marca",
+      "Arquitectura web por áreas de práctica",
+      "Plantillas de perfiles de abogados y casos de éxito",
+      "Diseño de contacto y captación centrado en leads"
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "end-to-end-design"
+    ]
+  },
+  {
+    "slug": "media-entertainment-gaming",
+    "name": "Medios, entretenimiento y videojuegos",
+    "tagline": "Interfaces con personalidad, creadas para retener la atención.",
+    "summary": "Diseñamos para audiencias que esperan pulido y ritmo: plataformas de streaming, interfaces de juegos y marcas de entretenimiento donde el movimiento y el detalle pesan tanto como la maquetación.",
+    "deliverables": [
+      "Diseño de UI de plataformas y streaming",
+      "Diseño de interfaces dentro del juego y HUD",
+      "Sistemas de marca centrados en el movimiento",
+      "Coherencia de diseño entre plataformas"
+    ],
+    "relatedServices": [
+      "motion-interaction-design",
+      "mobile-app-design",
+      "branding"
+    ]
+  },
+  {
+    "slug": "nonprofit-branding",
+    "name": "Organizaciones sin ánimo de lucro",
+    "tagline": "Identidad y sistemas digitales creados para la misión, no para el margen.",
+    "summary": "Ayudamos a las organizaciones sin ánimo de lucro a presentarse con el mismo pulido que cualquier marca comercial: narrativa clara, diseño accesible y flujos de donación que convierten la intención en apoyo.",
+    "deliverables": [
+      "Identidad de marca centrada en la misión",
+      "Diseño de flujos de donación y campañas",
+      "Sitios web accesibles y de bajo mantenimiento",
+      "Diseño de memorias anuales y relatos de impacto"
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "ecommerce-design"
+    ]
+  },
+  {
+    "slug": "real-estate-design",
+    "name": "Inmobiliaria",
+    "tagline": "Anuncios y presencia de marca que venden la propiedad, no solo la listan.",
+    "summary": "Diseñamos sitios para inmobiliarias y promotoras que hacen que los anuncios se sientan premium: navegación con mapa, galerías de carga rápida y flujos de captación que convierten el interés en visitas.",
+    "deliverables": [
+      "Diseño de anuncios y fichas de propiedad",
+      "UX de navegación basada en mapa y búsqueda",
+      "Identidad de marca para inmobiliarias y promotoras",
+      "Diseño de captación de leads y flujos de consulta"
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "ecommerce-design"
+    ]
+  },
+  {
+    "slug": "restaurant-branding",
+    "name": "Restauración",
+    "tagline": "Cartas, marca y flujos de pedido que la gente quiere usar.",
+    "summary": "Creamos identidad y experiencias de pedido digital para grupos de restauración, de marcas de un solo local a cadenas con varios, que se sienten tan bien como las fotos de los platos.",
+    "deliverables": [
+      "Marca de restaurante e identidad de carta",
+      "UX de pedidos online y reservas",
+      "Arquitectura de sitio para varios locales",
+      "Diseño de sitios de marketing basados en la fotografía"
+    ],
+    "relatedServices": [
+      "branding",
+      "ecommerce-design",
+      "ui-ux-design"
+    ]
+  },
+  {
+    "slug": "technology-saas",
+    "name": "Tecnología y SaaS",
+    "tagline": "Diseño de producto para software que tiene que seguir ganándose la renovación.",
+    "summary": "Aquí es donde el estudio pasa más tiempo: paneles, onboarding y sistemas de diseño para productos SaaS que deben seguir siendo sencillos mientras hacen más en cada versión.",
+    "deliverables": [
+      "Diseño de UI de producto y paneles",
+      "Diseño de onboarding y activación",
+      "Sistemas de diseño para hojas de ruta rápidas",
+      "Auditorías UX antes de grandes lanzamientos"
+    ],
+    "relatedServices": [
+      "saas-design",
+      "design-systems",
+      "product-design",
+      "ux-audit"
+    ]
+  }
+]

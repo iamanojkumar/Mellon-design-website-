@@ -1,0 +1,131 @@
+{
+  "org": {
+    "shortDescription": "Mellon es una agencia de diseño que crea identidades de marca, productos digitales y sistemas de diseño para equipos de arquitectura, automoción, tecnología, finanzas y muchos otros sectores."
+  },
+  "nav": {
+    "primary": [
+      {
+        "label": "Servicios",
+        "href": "/services"
+      },
+      {
+        "label": "Sectores",
+        "href": "/industries"
+      },
+      {
+        "label": "Nosotros",
+        "href": "/about"
+      },
+      {
+        "label": "Contacto",
+        "href": "/contact"
+      }
+    ],
+    "cta": {
+      "label": "Empezar un proyecto",
+      "href": "/contact"
+    }
+  },
+  "footer": {
+    "tagline": "Una agencia de diseño para equipos que necesitan que marca, producto e interfaz funcionen como un solo sistema.",
+    "columns": [
+      {
+        "heading": "Estudio",
+        "links": [
+          {
+            "label": "Nosotros",
+            "href": "/about"
+          },
+          {
+            "label": "Servicios",
+            "href": "/services"
+          },
+          {
+            "label": "Sectores",
+            "href": "/industries"
+          },
+          {
+            "label": "Contacto",
+            "href": "/contact"
+          }
+        ]
+      }
+    ],
+    "legal": "Todos los derechos reservados.",
+    "legalLinks": [
+      {
+        "label": "Política de privacidad",
+        "href": "/privacy"
+      }
+    ],
+    "contactHeading": "Contacto",
+    "homeAria": "Inicio de Mellon"
+  },
+  "common": {
+    "startProject": "Empezar un proyecto",
+    "skipToContent": "Saltar al contenido",
+    "menu": "Menú",
+    "homeAria": "Inicio de Mellon",
+    "primaryNavAria": "Navegación principal",
+    "breadcrumbAria": "Ruta de navegación",
+    "home": "Inicio",
+    "learnMore": "Saber más →",
+    "languageSwitcher": {
+      "searchPlaceholder": "Buscar idioma",
+      "noResults": "No se encontraron idiomas",
+      "soon": "Próximamente"
+    }
+  },
+  "servicesPage": {
+    "label": "Servicios",
+    "detail": {
+      "included": "Qué incluye",
+      "usedIn": "Dónde lo hemos aplicado",
+      "readyHeadline": "¿Listo para hablar de {nameLower}?"
+    }
+  },
+  "industriesPage": {
+    "label": "Sectores",
+    "detail": {
+      "deliver": "Qué entregamos",
+      "relevantServices": "Servicios relacionados",
+      "buildingHeadline": "¿Estás creando algo en {nameLower}?"
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "headline": "No hemos encontrado esa página.",
+    "body": "Es posible que la página que buscas se haya movido o que nunca haya existido.",
+    "back": "Volver al inicio"
+  },
+  "errorPage": {
+    "eyebrow": "Error",
+    "headline": "Algo ha salido mal.",
+    "body": "Un error inesperado ha impedido que esta página se cargue. Puedes intentarlo de nuevo o volver al inicio.",
+    "retry": "Intentar de nuevo",
+    "home": "Volver al inicio"
+  },
+  "forms": {
+    "contact": {
+      "successMessage": "Gracias: tu mensaje ha llegado. Te responderemos en un día laborable.",
+      "submitLabel": "Enviar mensaje",
+      "labels": {
+        "name": "Nombre",
+        "email": "Correo electrónico",
+        "company": "Empresa (opcional)",
+        "budget": "Rango de presupuesto (opcional)",
+        "budgetPlaceholder": "p. ej. 15.000–40.000 €",
+        "message": "¿Qué estás creando?",
+        "sending": "Enviando…",
+        "genericError": "Algo ha salido mal. Inténtalo de nuevo.",
+        "privacyNote": "Al enviar este mensaje aceptas nuestra",
+        "privacyLink": "Política de privacidad"
+      },
+      "validation": {
+        "name": "Introduce tu nombre completo.",
+        "email": "Introduce un correo electrónico válido.",
+        "message": "Cuéntanos un poco más: al menos 20 caracteres."
+      }
+    }
+  }
+}

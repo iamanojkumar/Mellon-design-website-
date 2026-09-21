@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Política de privacidad – Mellon",
+    "description": "Esta política explica qué datos personales recoge Mellon Design a través de este sitio web, cómo los usamos y qué opciones tienes. La mantenemos breve porque recogemos muy pocos datos."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Legal",
+      "headline": "Política de privacidad",
+      "subhead": "Esta política explica qué datos personales recoge Mellon Design a través de este sitio web, cómo los usamos y qué opciones tienes. La mantenemos breve porque recogemos muy pocos datos.",
+      "updated": {
+        "label": "Última actualización",
+        "date": "2026-09-21"
+      }
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Quiénes somos",
+          "body": "Este sitio web está gestionado por Mellon Design («Mellon», «nosotros»). Si tienes alguna pregunta sobre esta política o sobre tus datos, escríbenos a {email}."
+        },
+        {
+          "heading": "Qué recogemos",
+          "body": "Solo lo que nos envías a través del formulario de contacto: tu nombre, tu correo electrónico, tu empresa y rango de presupuesto si decides compartirlos, y tu mensaje. Como la mayoría de los sitios web, nuestro proveedor de alojamiento también puede tratar datos técnicos, como la dirección IP y el tipo de navegador, en registros del servidor para prestar y proteger el servicio."
+        },
+        {
+          "heading": "Cómo los usamos",
+          "body": "Para leer y responder a tu consulta y mantener un registro de la conversación. Las consultas se guardan en una base de datos y recibimos un aviso por correo. No vendemos tus datos."
+        },
+        {
+          "heading": "Cookies",
+          "body": "Una pequeña cookie funcional, mellon_locale, recuerda el idioma que elegiste; dura hasta un año y no contiene datos personales. Además, te pedimos consentimiento antes de usar cookies de análisis o de marketing, y solo las activamos si aceptas. Tu elección se guarda en tu navegador (mellon_consent_v3). Para cambiarla, borra los datos de este sitio en tu navegador y el banner volverá a preguntarte."
+        },
+        {
+          "heading": "Con quién los compartimos",
+          "body": "Solo con proveedores que nos ayudan a operar el sitio: alojamiento (Vercel), almacenamiento de consultas (Supabase) y correo (Zoho), y solo en la medida necesaria para su trabajo. Las herramientas de análisis y marketing, si las permites, reciben los datos de navegación habituales que recogen. También podemos divulgar información si la ley lo exige."
+        },
+        {
+          "heading": "Cuánto tiempo los conservamos",
+          "body": "Durante el tiempo necesario para responderte y mantener registros comerciales razonables; después los eliminamos o anonimizamos."
+        },
+        {
+          "heading": "Tus derechos",
+          "body": "Según dónde vivas, puedes tener derecho a acceder, rectificar, suprimir o exportar tus datos personales, o a oponerte a su uso. Para ejercer cualquiera de estos derechos, escribe a {email} y te responderemos en un plazo razonable. Si resides en España, también puedes reclamar ante la Agencia Española de Protección de Datos."
+        },
+        {
+          "heading": "Cambios en esta política",
+          "body": "Si modificamos esta política, actualizaremos la fecha de arriba. Los cambios importantes se destacarán en esta página."
+        }
+      ]
+    }
+  ]
+}

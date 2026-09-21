@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Contacto – Mellon",
+    "description": "Cuéntanos qué estás creando y en qué punto estás hoy. Respondemos personalmente a cada consulta, normalmente en un día laborable."
+  },
+  "blocks": [
+    {
+      "type": "contact",
+      "eyebrow": "Contacto",
+      "headline": "Empieza un proyecto.",
+      "subhead": "Cuéntanos qué estás creando y en qué punto estás hoy. Respondemos personalmente a cada consulta, normalmente en un día laborable.",
+      "directEmailLabel": "O escríbenos directamente a"
+    }
+  ]
+}

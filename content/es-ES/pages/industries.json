@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Sectores – Mellon",
+    "description": "Dieciséis sectores para los que Mellon ha diseñado, de la arquitectura y la automoción a las fintech y la restauración, con patrones específicos para cada uno."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Sectores",
+      "headline": "Conocemos cada sector lo bastante como para saltarnos la curva de aprendizaje.",
+      "subhead": "Dieciséis sectores, cada uno con sus propias restricciones. Elige el tuyo y descubre los patrones y servicios en los que nos apoyamos."
+    },
+    {
+      "type": "industryCards",
+      "viewLink": "Ver sector →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "¿No ves tu sector?",
+      "body": "Las disciplinas se trasladan aunque el sector sea nuevo para nosotros. Cuéntanos qué estás creando.",
+      "cta": {
+        "label": "Empezar un proyecto",
+        "href": "/contact"
+      }
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "branding",
+    "name": "Branding",
+    "tagline": "Sistemas de identidad hechos para resistir en cualquier soporte.",
+    "summary": "Creamos identidades de marca desde cero (nombre, símbolo, color, tipografía, voz) y las codificamos para que cualquier equipo que trabaje con la marca después de nosotros se mantenga fiel a ella sin tener que preguntar.",
+    "deliverables": [
+      "Estrategia de marca, posicionamiento y naming",
+      "Logotipo, símbolo y sistema de identidad visual",
+      "Guías de tipografía, color e imagen",
+      "Documentación de guías de marca para uso interno y de agencias"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "restaurant-branding",
+      "real-estate-design",
+      "nonprofit-branding"
+    ]
+  },
+  {
+    "slug": "design-systems",
+    "name": "Sistemas de diseño",
+    "tagline": "Una única fuente de verdad para cada componente, token y patrón.",
+    "summary": "Convertimos decisiones de interfaz dispersas en un sistema gobernado (componentes, tokens y documentación) con el que diseño e ingeniería entregan de forma coherente y rápida, sin discutir otra vez por el mismo botón.",
+    "deliverables": [
+      "Arquitectura de tokens (color, tipografía, espaciado, movimiento)",
+      "Bibliotecas de componentes en Figma, replicadas en código",
+      "Documentación de uso y guías de contribución",
+      "Apoyo en el despliegue y la adopción para equipos existentes"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "consumer-electronics",
+      "finance-fintech",
+      "education-edtech"
+    ]
+  },
+  {
+    "slug": "ecommerce-design",
+    "name": "Diseño de e-commerce",
+    "tagline": "Tiendas y fichas de producto que convierten sin parecer un embudo.",
+    "summary": "Del catálogo al pago, diseñamos experiencias de compra que reducen la fricción en cada paso, y las construimos en las plataformas que ya usas, incluidas Webflow y WooCommerce.",
+    "deliverables": [
+      "Auditorías UX de tienda y rediseño orientado a conversión",
+      "Diseño de listados, fichas de producto y proceso de pago",
+      "Implementación en Webflow y WooCommerce",
+      "Plantillas de merchandising y páginas promocionales"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "consumer-electronics",
+      "restaurant-branding"
+    ]
+  },
+  {
+    "slug": "end-to-end-design",
+    "name": "Diseño de extremo a extremo",
+    "tagline": "Del primer boceto al producto lanzado, con un solo equipo de principio a fin.",
+    "summary": "Para equipos que no quieren traspasar el trabajo entre agencias, llevamos el ciclo completo (estrategia, marca, UX, UI, prototipado y desarrollo) para que nada se pierda entre fases.",
+    "deliverables": [
+      "Descubrimiento, estrategia y definición de producto",
+      "Arquitectura UX hasta la UI final",
+      "Prototipado y validación de usabilidad",
+      "Desarrollo sin traspasos en Webflow, Framer o código"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "health-wellness-tech",
+      "civic-tech-design"
+    ]
+  },
+  {
+    "slug": "mobile-app-design",
+    "name": "Diseño de apps móviles",
+    "tagline": "Apps con sensación nativa, diseñadas para las plataformas que la gente realmente usa.",
+    "summary": "Diseñamos experiencias iOS y Android que respetan las convenciones de cada plataforma sin perder el carácter de la marca, del onboarding a las pantallas que se abren cada día.",
+    "deliverables": [
+      "Arquitectura de la información y flujos de usuario",
+      "Diseño UI para iOS y Android adaptado a cada plataforma",
+      "Especificaciones de interacción y microanimaciones",
+      "QA de diseño hasta la entrega a ingeniería"
+    ],
+    "relatedIndustries": [
+      "health-wellness-tech",
+      "consumer-electronics",
+      "media-entertainment-gaming"
+    ]
+  },
+  {
+    "slug": "motion-interaction-design",
+    "name": "Diseño de movimiento e interacción",
+    "tagline": "Movimiento que explica la interfaz en lugar de decorarla.",
+    "summary": "Cada transición, estado hover y momento de carga es una oportunidad para que un producto se sienta más cuidado. Diseñamos sistemas de movimiento que aclaran la jerarquía y dan pulso a las interfaces.",
+    "deliverables": [
+      "Principios de movimiento y sistemas de tiempos y curvas",
+      "Diseño de microinteracciones y transiciones",
+      "Prototipos en Framer para revisión con stakeholders",
+      "Especificaciones listas para ingeniería (curvas, duración, disparadores)"
+    ],
+    "relatedIndustries": [
+      "media-entertainment-gaming",
+      "consumer-electronics",
+      "technology-saas"
+    ]
+  },
+  {
+    "slug": "product-design",
+    "name": "Diseño de producto",
+    "tagline": "Productos digitales diseñados en torno a cómo trabaja la gente de verdad.",
+    "summary": "Nos integramos con equipos de producto e ingeniería para diseñar software sencillo donde debe serlo y potente donde hace falta, basado en investigación real con usuarios y no en suposiciones.",
+    "deliverables": [
+      "Investigación con usuarios y mapas de recorrido",
+      "Arquitectura de la información y diseño de flujos",
+      "UI de alta fidelidad para web y app",
+      "Pruebas de usabilidad e iteración"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "finance-fintech",
+      "civic-tech-design",
+      "health-wellness-tech"
+    ]
+  },
+  {
+    "slug": "saas-design",
+    "name": "Diseño SaaS",
+    "tagline": "Interfaces para productos que se vuelven más complejos cuanto más éxito tienen.",
+    "summary": "Los productos SaaS acumulan complejidad rápido. Diseñamos paneles, ajustes y flujos que siguen siendo legibles a escala, y construimos los sistemas de componentes que evitan que las nuevas funciones erosionen el conjunto.",
+    "deliverables": [
+      "Diseño de paneles y de interfaces con muchos datos",
+      "Diseño de flujos de onboarding y activación",
+      "UX de ajustes, permisos y administración",
+      "Bases de un sistema de diseño para el trabajo continuo de funcionalidades"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "finance-fintech",
+      "education-edtech"
+    ]
+  },
+  {
+    "slug": "ui-ux-design",
+    "name": "Diseño UI/UX",
+    "tagline": "El oficio central: investigación, estructura y ejecución al píxel.",
+    "summary": "Este es el día a día del estudio: entender a los usuarios, estructurar flujos y diseñar interfaces con el cuidado tipográfico y visual que separa un producto de un prototipo.",
+    "deliverables": [
+      "Investigación con usuarios, personas y mapas de recorrido",
+      "Wireframes y arquitectura de la información",
+      "Diseño visual de alta fidelidad",
+      "Prototipos interactivos para pruebas y aprobación"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "real-estate-design",
+      "hospitality-design",
+      "legal-branding"
+    ]
+  },
+  {
+    "slug": "ux-audit",
+    "name": "Auditoría UX",
+    "tagline": "Una lectura sin rodeos de lo que te cuesta conversiones y confianza.",
+    "summary": "Antes de rediseñar nada, podemos decirte qué falla realmente: una revisión estructurada y heurística de tu producto actual, con correcciones priorizadas y accionables, no una simple lista de opiniones.",
+    "deliverables": [
+      "Evaluación heurística según principios de usabilidad",
+      "Análisis de fricción en embudos y flujos concretos",
+      "Revisiones puntuales de accesibilidad y rendimiento",
+      "Informe de hallazgos priorizado con correcciones recomendadas"
+    ],
+    "relatedIndustries": [
+      "finance-fintech",
+      "ecommerce",
+      "technology-saas"
+    ]
+  }
+]

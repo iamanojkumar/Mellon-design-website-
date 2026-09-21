@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Mellon: agencia de diseño de marca, producto y experiencia digital",
+    "description": "Mellon es una agencia de diseño que crea identidades de marca, productos digitales y sistemas de diseño para equipos de arquitectura, automoción, tecnología, finanzas y muchos otros sectores."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Mellon Design",
+      "headline": "Diseño que acompaña a una marca desde la primera impresión hasta el uso diario.",
+      "subhead": "Creamos sistemas de identidad, productos digitales y sistemas de diseño para equipos que necesitan que marca y producto avancen juntos: en arquitectura, automoción, tecnología, finanzas y una docena de sectores más.",
+      "primaryCta": {
+        "label": "Empezar un proyecto",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Ver nuestros servicios",
+        "href": "/services"
+      },
+      "image": {
+        "src": "/images/Mellon-hero-banner.webp",
+        "alt": "",
+        "width": 1320,
+        "height": 567
+      }
+    },
+    {
+      "type": "servicesGrid",
+      "eyebrow": "Qué hacemos",
+      "headline": "Diez disciplinas. Un solo estudio.",
+      "body": "Desde el primer logotipo hasta un sistema de diseño completamente gobernado, Mellon cubre todo el diseño que necesita una empresa en crecimiento, sin traspasos entre agencias."
+    },
+    {
+      "type": "industriesChips",
+      "eyebrow": "Con quién trabajamos",
+      "headline": "Conocemos cada sector lo bastante como para saltarnos la curva de aprendizaje.",
+      "body": "Hemos diseñado para estudios de arquitectura y equipos de automoción, fintechs y grupos de restauración. Cada página de sector refleja lo que realmente hemos aprendido trabajando en él."
+    },
+    {
+      "type": "process",
+      "eyebrow": "Cómo trabajamos",
+      "headline": "Diseño y desarrollo, bajo el mismo techo.",
+      "body": "Mellon funciona como dos prácticas de consultoría conectadas, diseño y desarrollo, para que los sistemas que diseñamos sean los que se lanzan, no un conjunto de archivos lanzados por encima del muro.",
+      "steps": [
+        {
+          "title": "Diseño",
+          "body": "Estrategia, marca, UX y UI, creados en Figma y probados antes de escribir una sola línea de código."
+        },
+        {
+          "title": "Desarrollo",
+          "body": "Implementación en Webflow, Framer, WordPress o código a medida, por un equipo que ya conoce la intención del diseño."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Cuéntanos qué estás creando.",
+      "body": "Cada proyecto empieza con una conversación, no con una plantilla de propuesta. Cuéntanos cómo estáis y te diremos con honestidad si podemos ayudarte y cómo.",
+      "cta": {
+        "label": "Empezar un proyecto",
+        "href": "/contact"
+      }
+    }
+  ]
+}
