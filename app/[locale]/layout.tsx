@@ -12,6 +12,9 @@ import { Footer } from "@/components/layout/Footer";
 import { SiteBodyStartTags, SiteHeadTags } from "@/components/seo/SiteHeadTags";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { CursorFx } from "@/components/motion/CursorFx";
+import { ScrollBlur } from "@/components/motion/ScrollBlur";
+import { ImageLiquify } from "@/components/motion/ImageLiquify";
+import { NavHoverVars } from "@/components/motion/NavHoverVars";
 import "@/styles/globals.css";
 
 const robotoFlex = Roboto_Flex({
@@ -62,6 +65,9 @@ export default async function LocaleLayout({
         <SiteBodyStartTags />
         <SmoothScroll />
         <CursorFx />
+        <ScrollBlur />
+        <ImageLiquify />
+        <NavHoverVars />
         {DebugPanel && <DebugPanel />}
         <a href="#main" className="visually-hidden">
           {site.common.skipToContent}

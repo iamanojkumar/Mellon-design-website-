@@ -51,6 +51,28 @@
   color: var(--color-fg);
 }
 
+.navLink {
+  transition: filter var(--duration-fast) var(--ease-out),
+    opacity var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+/* Hovering one link blurs and dims the others. Values come from --nav-hover-* (set by
+   NavHoverVars); the fallbacks are the shipped defaults. Only on real hover devices, and
+   only while a link (not just the gap between links) is hovered. */
+@media (hover: hover) and (pointer: fine) {
+  .nav:has(.navLink:hover) .navLink:not(:hover) {
+    filter: blur(var(--nav-hover-blur, 2.5px));
+    opacity: var(--nav-hover-dim, 0.5);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navLink {
+    transition: none;
+  }
+}
+
 .active {
   color: var(--color-fg);
 }

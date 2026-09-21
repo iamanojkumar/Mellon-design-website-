@@ -1,0 +1,10 @@
+/* Overlay that repaints disturbed images. Above page content but below the sticky header
+   (z-index 50), so an image scrolling under the header is never drawn over it. */
+.liquify {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 45;
+  pointer-events: none;
+}

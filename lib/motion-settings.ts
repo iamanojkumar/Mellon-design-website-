@@ -36,6 +36,16 @@ export type MotionSettings = {
   cursorFxBlend: string;
   /** Blur/warp the page content behind the trail, along the move direction. */
   cursorFxBackdrop: boolean;
+  /** Image layer master multiplier (scales its blur + warp). */
+  cursorFxImageIntensity: number;
+  /** Background layer master multiplier (scales its blur + warp). */
+  cursorFxBackdropIntensity: number;
+  /** Extra blur/warp applied only where the trail crosses an image. */
+  cursorFxImageFx: boolean;
+  /** Image layer: max blur (px) at full speed. */
+  cursorFxImageBlur: number;
+  /** Image layer: max warp (px) at full speed. */
+  cursorFxImageWarp: number;
   /** Max backdrop blur (px) at full speed. */
   cursorFxBackdropBlur: number;
   /** Max backdrop shift/distortion (px) at full speed. */
@@ -44,6 +54,42 @@ export type MotionSettings = {
   cursorFxDissolveSpread: number;
   /** When the cursor stops: fade per frame (lower = slower dissolve). */
   cursorFxIdleFade: number;
+  /** Scroll blur: progressive blur along the bottom edge + vertical motion blur on scroll. */
+  scrollBlurEnabled: boolean;
+  /** Bottom-edge blur (px) at full scroll speed. Zero at rest: it only shows while scrolling. */
+  scrollBlurBottom: number;
+  /** Height of the bottom blur band, in vh. */
+  scrollBlurHeight: number;
+  /** Vertical motion blur (px) in the bottom band at full scroll speed. */
+  scrollBlurMotion: number;
+  /** Fade-in time (ms) when scrolling starts. */
+  scrollBlurFadeIn: number;
+  /** Fade-out time (ms) after scrolling stops. */
+  scrollBlurFadeOut: number;
+  /** Hovering a nav link blurs/dims the other nav links. */
+  navHoverEnabled: boolean;
+  /** Image liquify: dragging the cursor across an image stirs it like liquid. */
+  liquifyEnabled: boolean;
+  /** How hard the cursor drags the image (1 = about six frames of cursor travel). */
+  liquifyStrength: number;
+  /** Size of the "finger", as a fraction of the viewport height. */
+  liquifyRadius: number;
+  /** Settle speed: per-frame decay. Higher = the liquid keeps moving for longer. */
+  liquifyRelax: number;
+  /** Viscosity: smoothing of the flow (0 = thin/watery, high = thick/syrupy). */
+  liquifyViscosity: number;
+  /** Swirl: sideways component that curls the flow around the cursor's path. */
+  liquifySwirl: number;
+  /** Flow: how much the disturbed liquid carries itself along as it settles. */
+  liquifyFlow: number;
+  /** Blur (px) applied to the non-hovered nav links. */
+  navHoverBlur: number;
+  /** Opacity of the non-hovered nav links (1 = no dimming). */
+  navHoverDim: number;
+  /** The hovered nav link runs a one-off text scramble. */
+  navScrambleEnabled: boolean;
+  /** Duration (ms) of that scramble. */
+  navScrambleMs: number;
 };
 
 export const BLEND_MODES = [
@@ -74,29 +120,60 @@ export type SliderDef = {
   step: number;
 };
 
-export const DEFAULT_SETTINGS: MotionSettings = {
+/** Saved as "preset_1": the look agreed on in the debugger. */
+const PRESET_1: MotionSettings = {
   scrollEnabled: true,
   scrollLerp: 0.03,
   scrollWheelMultiplier: 0.75,
   cursorFxEnabled: true,
   cursorFxIntensity: 0.13,
-  cursorFxRadius: 0.11,
+  cursorFxRadius: 0.06,
   cursorFxFade: 0.06,
   cursorFxSpread: 0.4,
   cursorFxEdge: 9.5,
   cursorFxSaturation: 0.76,
   cursorFxBlur: 4,
-  cursorFxOrganic: 1.5,
+  cursorFxOrganic: 0.65,
   cursorFxBlobs: 1,
   cursorFxLag: 0.95,
-  cursorFxRecoil: 60,
+  cursorFxRecoil: 20,
   cursorFxBlend: "normal",
   cursorFxBackdrop: true,
+  cursorFxImageIntensity: 1,
+  cursorFxBackdropIntensity: 1,
+  cursorFxImageFx: true,
+  cursorFxImageBlur: 10,
+  cursorFxImageWarp: 14,
   cursorFxBackdropBlur: 24,
   cursorFxBackdropWarp: 40,
   cursorFxDissolveSpread: 0.009,
   cursorFxIdleFade: 0.09,
+  scrollBlurEnabled: true,
+  scrollBlurBottom: 10,
+  scrollBlurHeight: 40,
+  scrollBlurMotion: 4,
+  scrollBlurFadeIn: 120,
+  scrollBlurFadeOut: 400,
+  navHoverEnabled: true,
+  liquifyEnabled: true,
+  liquifyStrength: 1,
+  liquifyRadius: 0.1,
+  liquifyRelax: 0.965,
+  liquifyViscosity: 0.25,
+  liquifySwirl: 0.35,
+  liquifyFlow: 0.5,
+  navHoverBlur: 2.5,
+  navHoverDim: 0.5,
+  navScrambleEnabled: true,
+  navScrambleMs: 500,
 };
+
+/** Named presets, selectable in the dev debugger. Add new ones here. */
+export const PRESETS: Record<string, MotionSettings> = {
+  preset_1: PRESET_1,
+};
+
+export const DEFAULT_SETTINGS: MotionSettings = PRESET_1;
 
 export const SCROLL_SLIDERS: SliderDef[] = [
   { key: "scrollLerp", label: "Smoothness (lerp, lower = smoother)", min: 0.02, max: 0.3, step: 0.01 },
@@ -114,14 +191,47 @@ export const CURSOR_FX_SLIDERS: SliderDef[] = [
   { key: "cursorFxOrganic", label: "Organic (blob wander)", min: 0, max: 2.5, step: 0.05 },
   { key: "cursorFxBlobs", label: "Blob count", min: 1, max: 12, step: 1 },
   { key: "cursorFxLag", label: "Head lag", min: 0, max: 0.95, step: 0.01 },
-  { key: "cursorFxBackdropBlur", label: "Backdrop blur (px)", min: 0, max: 24, step: 0.5 },
-  { key: "cursorFxBackdropWarp", label: "Backdrop warp (px)", min: 0, max: 40, step: 0.5 },
   { key: "cursorFxDissolveSpread", label: "Dissolve: spread on stop", min: 0, max: 0.04, step: 0.001 },
   { key: "cursorFxIdleFade", label: "Dissolve: fade on stop (lower = slower)", min: 0.01, max: 0.2, step: 0.005 },
   { key: "cursorFxRecoil", label: "Restart fade-in (ms)", min: 0, max: 800, step: 10 },
 ];
 
-const STORAGE_KEY = "mellon:motion-settings:v8";
+export const BACKDROP_FX_SLIDERS: SliderDef[] = [
+  { key: "cursorFxBackdropIntensity", label: "Intensity (master, scales blur + warp)", min: 0, max: 2.5, step: 0.05 },
+  { key: "cursorFxBackdropBlur", label: "Blur at full speed (px)", min: 0, max: 40, step: 0.5 },
+  { key: "cursorFxBackdropWarp", label: "Warp at full speed (px)", min: 0, max: 80, step: 0.5 },
+];
+
+export const IMAGE_FX_SLIDERS: SliderDef[] = [
+  { key: "cursorFxImageIntensity", label: "Intensity (master, scales blur + warp)", min: 0, max: 2.5, step: 0.05 },
+  { key: "cursorFxImageBlur", label: "Blur at full speed (px)", min: 0, max: 40, step: 0.5 },
+  { key: "cursorFxImageWarp", label: "Warp at full speed (px)", min: 0, max: 80, step: 0.5 },
+];
+
+export const LIQUIFY_SLIDERS: SliderDef[] = [
+  { key: "liquifyStrength", label: "Strength (how hard it drags)", min: 0, max: 3, step: 0.05 },
+  { key: "liquifyRadius", label: "Finger size (fraction of screen height)", min: 0.03, max: 0.3, step: 0.005 },
+  { key: "liquifyRelax", label: "Settle: higher = flows for longer", min: 0.9, max: 0.995, step: 0.001 },
+  { key: "liquifyViscosity", label: "Viscosity (0 watery, high syrupy)", min: 0, max: 0.9, step: 0.01 },
+  { key: "liquifySwirl", label: "Swirl", min: 0, max: 1.5, step: 0.05 },
+  { key: "liquifyFlow", label: "Flow (carries itself along)", min: 0, max: 1.5, step: 0.05 },
+];
+
+export const NAV_HOVER_SLIDERS: SliderDef[] = [
+  { key: "navHoverBlur", label: "Blur on other links (px)", min: 0, max: 10, step: 0.25 },
+  { key: "navHoverDim", label: "Opacity of other links", min: 0.1, max: 1, step: 0.05 },
+  { key: "navScrambleMs", label: "Scramble duration (ms)", min: 150, max: 1500, step: 25 },
+];
+
+export const SCROLL_BLUR_SLIDERS: SliderDef[] = [
+  { key: "scrollBlurBottom", label: "Bottom blur while scrolling (px)", min: 0, max: 30, step: 0.5 },
+  { key: "scrollBlurHeight", label: "Bottom blur height (vh)", min: 6, max: 80, step: 1 },
+  { key: "scrollBlurFadeIn", label: "Fade in when scrolling starts (ms)", min: 20, max: 800, step: 10 },
+  { key: "scrollBlurFadeOut", label: "Fade out when scrolling stops (ms)", min: 100, max: 2500, step: 50 },
+  { key: "scrollBlurMotion", label: "Motion blur on scroll (px)", min: 0, max: 16, step: 0.25 },
+];
+
+const STORAGE_KEY = "mellon:motion-settings:v10";
 
 let state: MotionSettings = DEFAULT_SETTINGS;
 let hydrated = false;

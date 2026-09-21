@@ -99,3 +99,38 @@
   border: 1px solid #ffffff33;
   font: inherit;
 }
+
+/* Accordion sections: folded by default. */
+.acc {
+  border-top: 1px solid #ffffff1f;
+  margin-top: 6px;
+}
+
+.accHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 9px 0 7px;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #49d4ff;
+  text-align: left;
+}
+
+.accIcon {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.15s ease;
+}
+
+.accIcon[data-open="true"] {
+  transform: rotate(45deg);
+}
+
+.accBody {
+  padding-bottom: 8px;
+}

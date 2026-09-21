@@ -67,6 +67,10 @@ void main() {
 export function CursorFx() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const backdropRef = useRef<HTMLDivElement>(null);
+  const imgBackdropRef = useRef<HTMLDivElement>(null);
+  const imgBlurRef = useRef<SVGFEGaussianBlurElement>(null);
+  const imgOffsetRef = useRef<SVGFEOffsetElement>(null);
+  const imgDispRef = useRef<SVGFEDisplacementMapElement>(null);
   const blurRef = useRef<SVGFEGaussianBlurElement>(null);
   const offsetRef = useRef<SVGFEOffsetElement>(null);
   const dispRef = useRef<SVGFEDisplacementMapElement>(null);
@@ -74,10 +78,15 @@ export function CursorFx() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const backdrop = backdropRef.current;
+    const imgBackdrop = imgBackdropRef.current;
+    const imgBlurEl = imgBlurRef.current;
+    const imgOffsetEl = imgOffsetRef.current;
+    const imgDispEl = imgDispRef.current;
     const blurEl = blurRef.current;
     const offsetEl = offsetRef.current;
     const dispEl = dispRef.current;
     if (!canvas || !backdrop || !blurEl || !offsetEl || !dispEl) return;
+    if (!imgBackdrop || !imgBlurEl || !imgOffsetEl || !imgDispEl) return;
     if (
       window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
       !window.matchMedia("(hover: hover) and (pointer: fine)").matches
@@ -126,13 +135,41 @@ export function CursorFx() {
     // Half-res alpha mask of the trail; the backdrop layer is only visible through it.
     const mask = document.createElement("canvas");
     const mctx = mask.getContext("2d", { willReadFrequently: true })!;
+    // Same size as the mask; holds the on-screen rectangles of images, so the backdrop
+    // effect can be limited to them (trail mask x image mask).
+    const imageMask = document.createElement("canvas");
+    const ictx = imageMask.getContext("2d")!;
+    // Trail mask composed with the image rectangles, for the image-only layer.
+    const maskImg = document.createElement("canvas");
+    const mimgCtx = maskImg.getContext("2d")!;
+
+    // Two independent backdrop layers, each with its own SVG filter and mask:
+    //  - background: the trail's shape over everything (text, backgrounds, images)
+    //  - image: the trail's shape intersected with on-screen images only
     // Anisotropic SVG backdrop filters are Chromium-only; others fall back to a plain blur.
-    const svgBackdrop = CSS.supports("backdrop-filter", "url(#cursor-fx-filter)");
-    const setBackdropFilter = (v: string) => {
-      backdrop.style.setProperty("backdrop-filter", v);
-      backdrop.style.setProperty("-webkit-backdrop-filter", v);
+    const makeLayer = (
+      el: HTMLDivElement,
+      blur: SVGFEGaussianBlurElement,
+      offset: SVGFEOffsetElement,
+      disp: SVGFEDisplacementMapElement,
+      filterId: string,
+    ) => {
+      const svg = CSS.supports("backdrop-filter", `url(#${filterId})`);
+      const set = (v: string) => {
+        el.style.setProperty("backdrop-filter", v);
+        el.style.setProperty("-webkit-backdrop-filter", v);
+      };
+      if (svg) set(`url(#${filterId})`);
+      return { el, blur, offset, disp, svg, set };
     };
-    if (svgBackdrop) setBackdropFilter("url(#cursor-fx-filter)");
+    const bgLayer = makeLayer(backdrop, blurEl, offsetEl, dispEl, "cursor-fx-filter");
+    const imgLayer = makeLayer(imgBackdrop, imgBlurEl, imgOffsetEl, imgDispEl, "cursor-fx-img-filter");
+    type Layer = typeof bgLayer;
+    const setMask = (el: HTMLElement, canvas: HTMLCanvasElement) => {
+      const url = `url(${canvas.toDataURL()})`;
+      el.style.setProperty("mask-image", url);
+      el.style.setProperty("-webkit-mask-image", url);
+    };
     let frame = 0;
     // Scratch copy of the field, used to spread/dissolve it once the cursor stops.
     const tmp = document.createElement("canvas");
@@ -192,29 +229,37 @@ export function CursorFx() {
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
     };
 
-    const updateBackdrop = () => {
-      if (!cfg.cursorFxEnabled || !cfg.cursorFxBackdrop) {
-        backdrop.style.visibility = "hidden";
-        return;
+    // Drive one layer's filter from the pointer's velocity: blur mostly along the travel
+    // axis, a small shift in the travel direction, and a turbulence warp.
+    const drive = (L: Layer, blurPx: number, warpPx: number, k: number, s: number, nx: number, ny: number, speed: number) => {
+      const sx = blurPx * k * s * (0.3 + 0.7 * nx);
+      const sy = blurPx * k * s * (0.3 + 0.7 * ny);
+      if (L.svg) {
+        L.blur.setAttribute("stdDeviation", `${sx.toFixed(2)} ${sy.toFixed(2)}`);
+        const push = s * warpPx * k * 0.6;
+        L.offset.setAttribute("dx", (speed > 1e-3 ? (vx / speed) * push : 0).toFixed(2));
+        L.offset.setAttribute("dy", (speed > 1e-3 ? (vy / speed) * push : 0).toFixed(2));
+        L.disp.setAttribute("scale", (s * warpPx * k).toFixed(2));
+      } else {
+        L.set(`blur(${Math.max(sx, sy).toFixed(2)}px)`);
       }
-      backdrop.style.visibility = "visible";
+    };
+
+    const updateBackdrop = () => {
+      const bgOn = cfg.cursorFxEnabled && cfg.cursorFxBackdrop;
+      const imgOn = cfg.cursorFxEnabled && cfg.cursorFxImageFx;
+      bgLayer.el.style.visibility = bgOn ? "visible" : "hidden";
+      imgLayer.el.style.visibility = imgOn ? "visible" : "hidden";
+      if (!bgOn && !imgOn) return;
+
       const speed = Math.hypot(vx, vy);
       const s = Math.min(speed / 6, 1);
       const nx = speed > 1e-3 ? Math.abs(vx) / speed : 0.5;
       const ny = speed > 1e-3 ? Math.abs(vy) / speed : 0.5;
-      // More blur along the axis of travel, a little across it.
-      const sx = cfg.cursorFxBackdropBlur * s * (0.3 + 0.7 * nx);
-      const sy = cfg.cursorFxBackdropBlur * s * (0.3 + 0.7 * ny);
-      if (svgBackdrop) {
-        blurEl.setAttribute("stdDeviation", `${sx.toFixed(2)} ${sy.toFixed(2)}`);
-        const push = s * cfg.cursorFxBackdropWarp * 0.6;
-        offsetEl.setAttribute("dx", (speed > 1e-3 ? (vx / speed) * push : 0).toFixed(2));
-        offsetEl.setAttribute("dy", (speed > 1e-3 ? (vy / speed) * push : 0).toFixed(2));
-        dispEl.setAttribute("scale", (s * cfg.cursorFxBackdropWarp).toFixed(2));
-      } else {
-        setBackdropFilter(`blur(${Math.max(sx, sy).toFixed(2)}px)`);
-      }
-      // Refresh the mask every other frame: it is the expensive part.
+      if (bgOn) drive(bgLayer, cfg.cursorFxBackdropBlur, cfg.cursorFxBackdropWarp, cfg.cursorFxBackdropIntensity, s, nx, ny, speed);
+      if (imgOn) drive(imgLayer, cfg.cursorFxImageBlur, cfg.cursorFxImageWarp, cfg.cursorFxImageIntensity, s, nx, ny, speed);
+
+      // Refresh the masks every other frame: it is the expensive part.
       if (frame++ % 2 === 0) {
         mctx.drawImage(field, 0, 0, mask.width, mask.height);
         const img = mctx.getImageData(0, 0, mask.width, mask.height);
@@ -225,9 +270,28 @@ export function CursorFx() {
           d[i + 3] = t * t * (3 - 2 * t) * 255;
         }
         mctx.putImageData(img, 0, 0);
-        const url = `url(${mask.toDataURL()})`;
-        backdrop.style.setProperty("mask-image", url);
-        backdrop.style.setProperty("-webkit-mask-image", url);
+        if (bgOn) setMask(bgLayer.el, mask);
+        if (imgOn) {
+          // Trail mask kept only where an image is on screen. Icons and logos under ~40px
+          // are skipped: this is for photos/artwork, not UI glyphs.
+          ictx.clearRect(0, 0, imageMask.width, imageMask.height);
+          ictx.fillStyle = "#000";
+          const rx = imageMask.width / window.innerWidth;
+          const ry = imageMask.height / window.innerHeight;
+          for (const el of document.querySelectorAll("img")) {
+            const r = el.getBoundingClientRect();
+            if (r.width < 40 || r.height < 40) continue;
+            if (r.bottom < 0 || r.top > window.innerHeight || r.right < 0 || r.left > window.innerWidth) continue;
+            ictx.fillRect(r.left * rx, r.top * ry, r.width * rx, r.height * ry);
+          }
+          mimgCtx.globalCompositeOperation = "source-over";
+          mimgCtx.clearRect(0, 0, maskImg.width, maskImg.height);
+          mimgCtx.drawImage(mask, 0, 0);
+          mimgCtx.globalCompositeOperation = "destination-in";
+          mimgCtx.drawImage(imageMask, 0, 0);
+          mimgCtx.globalCompositeOperation = "source-over";
+          setMask(imgLayer.el, maskImg);
+        }
       }
     };
 
@@ -239,7 +303,8 @@ export function CursorFx() {
       gl.uniform1f(uEdge, cfg.cursorFxEdge);
       gl.uniform1f(uSat, cfg.cursorFxSaturation);
       canvas.style.visibility = cfg.cursorFxEnabled ? "" : "hidden";
-      if (!cfg.cursorFxEnabled || !cfg.cursorFxBackdrop) backdrop.style.visibility = "hidden";
+      if (!cfg.cursorFxEnabled || !cfg.cursorFxBackdrop) bgLayer.el.style.visibility = "hidden";
+      if (!cfg.cursorFxEnabled || !cfg.cursorFxImageFx) imgLayer.el.style.visibility = "hidden";
       draw();
     };
     const unsubscribe = subscribeSettings(applyCfg);
@@ -258,6 +323,10 @@ export function CursorFx() {
       tmp.height = field.height;
       mask.width = Math.max(1, Math.round(field.width / 2));
       mask.height = Math.max(1, Math.round(field.height / 2));
+      imageMask.width = mask.width;
+      imageMask.height = mask.height;
+      maskImg.width = mask.width;
+      maskImg.height = mask.height;
       applyCfg();
     };
 
@@ -387,7 +456,8 @@ export function CursorFx() {
         raf = requestAnimationFrame(tick);
       } else {
         running = false;
-        backdrop.style.visibility = "hidden";
+        bgLayer.el.style.visibility = "hidden";
+        imgLayer.el.style.visibility = "hidden";
       }
     };
 
@@ -467,8 +537,29 @@ export function CursorFx() {
             yChannelSelector="G"
           />
         </filter>
+        <filter
+          id="cursor-fx-img-filter"
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          colorInterpolationFilters="sRGB"
+        >
+          <feGaussianBlur ref={imgBlurRef} in="SourceGraphic" stdDeviation="0 0" result="b" />
+          <feOffset ref={imgOffsetRef} in="b" dx="0" dy="0" result="o" />
+          <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="2" seed="7" result="n" />
+          <feDisplacementMap
+            ref={imgDispRef}
+            in="o"
+            in2="n"
+            scale="0"
+            xChannelSelector="R"
+            yChannelSelector="G"
+          />
+        </filter>
       </svg>
       <div ref={backdropRef} className={styles.backdrop} aria-hidden="true" />
+      <div ref={imgBackdropRef} className={styles.backdrop} aria-hidden="true" />
       <canvas ref={canvasRef} className={styles.fx} aria-hidden="true" />
     </>
   );

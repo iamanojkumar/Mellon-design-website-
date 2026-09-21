@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import type { SiteContent } from "@/lib/content";
 import { Cta } from "@/components/cta/Cta";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
+import { NavScrambleLink } from "@/components/layout/NavScrambleLink";
 import styles from "./Header.module.css";
 
 type NavItem = { label: string; href: string };
@@ -57,13 +58,13 @@ export function Header({ locale, nav, cta, common }: HeaderProps) {
             const isActive =
               pathname === href || pathname.startsWith(`${href}/`);
             return (
-              <Link
+              <NavScrambleLink
                 key={item.href}
                 href={href}
                 className={isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
               >
                 {item.label}
-              </Link>
+              </NavScrambleLink>
             );
           })}
         </nav>

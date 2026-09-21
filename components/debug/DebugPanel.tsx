@@ -3,7 +3,13 @@
 import { useEffect, useState, useSyncExternalStore } from "react";
 import {
   BLEND_MODES,
+  BACKDROP_FX_SLIDERS,
   CURSOR_FX_SLIDERS,
+  IMAGE_FX_SLIDERS,
+  LIQUIFY_SLIDERS,
+  NAV_HOVER_SLIDERS,
+  PRESETS,
+  SCROLL_BLUR_SLIDERS,
   SCROLL_SLIDERS,
   getServerSettings,
   getSettings,
@@ -16,6 +22,7 @@ import {
 import styles from "./DebugPanel.module.css";
 
 const OPEN_KEY = "mellon:debug-open";
+const SECTIONS_KEY = "mellon:debug-sections";
 
 function Slider({ def, value }: { def: SliderDef; value: number }) {
   return (
@@ -78,11 +85,86 @@ function BlendSelect({ value }: { value: string }) {
   );
 }
 
+function PresetSelect() {
+  return (
+    <label className={styles.row}>
+      <span className={styles.rowHead}>
+        <span>Load preset</span>
+      </span>
+      <select
+        className={styles.select}
+        value=""
+        onChange={(e) => {
+          const preset = PRESETS[e.target.value];
+          if (preset) setSettings(preset);
+        }}
+      >
+        <option value="">Choose…</option>
+        {Object.keys(PRESETS).map((name) => (
+          <option key={name} value={name}>
+            {name}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+}
+
+function Accordion({
+  title,
+  open,
+  onToggle,
+  children,
+}: {
+  title: string;
+  open: boolean;
+  onToggle: () => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <section className={styles.acc}>
+      <button
+        type="button"
+        className={styles.accHead}
+        aria-expanded={open}
+        onClick={onToggle}
+      >
+        <span>{title}</span>
+        <span aria-hidden="true" className={styles.accIcon} data-open={open}>
+          +
+        </span>
+      </button>
+      {open && <div className={styles.accBody}>{children}</div>}
+    </section>
+  );
+}
+
 /** Dev-only pane for live-tuning motion. Toggle with the button or Ctrl+Shift+D. */
 export function DebugPanel() {
   const s = useSyncExternalStore(subscribeSettings, getSettings, getServerSettings);
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [sections, setSections] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    try {
+      const raw = window.localStorage.getItem(SECTIONS_KEY);
+      if (raw) setSections(JSON.parse(raw));
+    } catch {
+      /* ignore */
+    }
+  }, []);
+
+  const toggleSection = (id: string) =>
+    setSections((prev) => {
+      const next = { ...prev, [id]: !prev[id] };
+      try {
+        window.localStorage.setItem(SECTIONS_KEY, JSON.stringify(next));
+      } catch {
+        /* ignore */
+      }
+      return next;
+    });
 
   useEffect(() => {
     try {
@@ -154,22 +236,59 @@ export function DebugPanel() {
       </header>
 
       <section>
-        <h3>Smooth scroll</h3>
+        <PresetSelect />
+      </section>
+
+      <Accordion title="Smooth scroll" open={!!sections.scroll} onToggle={() => toggleSection("scroll")}>
         <Toggle label="Enabled" k="scrollEnabled" value={s.scrollEnabled} />
         {SCROLL_SLIDERS.map((def) => (
           <Slider key={def.key} def={def} value={s[def.key] as number} />
         ))}
-      </section>
+      </Accordion>
 
-      <section>
-        <h3>Cursor trail (page-wide)</h3>
+      <Accordion title="Scroll blur (bottom + motion)" open={!!sections.scrollBlur} onToggle={() => toggleSection("scrollBlur")}>
+        <Toggle label="Enabled" k="scrollBlurEnabled" value={s.scrollBlurEnabled} />
+        {SCROLL_BLUR_SLIDERS.map((def) => (
+          <Slider key={def.key} def={def} value={s[def.key] as number} />
+        ))}
+      </Accordion>
+
+      <Accordion title="Cursor trail" open={!!sections.cursor} onToggle={() => toggleSection("cursor")}>
         <Toggle label="Enabled" k="cursorFxEnabled" value={s.cursorFxEnabled} />
         <BlendSelect value={s.cursorFxBlend} />
-        <Toggle label="Blur/warp content behind" k="cursorFxBackdrop" value={s.cursorFxBackdrop} />
         {CURSOR_FX_SLIDERS.map((def) => (
           <Slider key={def.key} def={def} value={s[def.key] as number} />
         ))}
-      </section>
+      </Accordion>
+
+      <Accordion title="Background blur & warp (cursor)" open={!!sections.bg} onToggle={() => toggleSection("bg")}>
+        <Toggle label="Enabled (all content under the trail)" k="cursorFxBackdrop" value={s.cursorFxBackdrop} />
+        {BACKDROP_FX_SLIDERS.map((def) => (
+          <Slider key={def.key} def={def} value={s[def.key] as number} />
+        ))}
+      </Accordion>
+
+      <Accordion title="Image distortion (cursor)" open={!!sections.image} onToggle={() => toggleSection("image")}>
+        <Toggle label="Enabled (images only, on top of the background layer)" k="cursorFxImageFx" value={s.cursorFxImageFx} />
+        {IMAGE_FX_SLIDERS.map((def) => (
+          <Slider key={def.key} def={def} value={s[def.key] as number} />
+        ))}
+      </Accordion>
+
+      <Accordion title="Image liquify (cursor)" open={!!sections.liquify} onToggle={() => toggleSection("liquify")}>
+        <Toggle label="Enabled (stir images like liquid)" k="liquifyEnabled" value={s.liquifyEnabled} />
+        {LIQUIFY_SLIDERS.map((def) => (
+          <Slider key={def.key} def={def} value={s[def.key] as number} />
+        ))}
+      </Accordion>
+
+      <Accordion title="Nav hover blur" open={!!sections.nav} onToggle={() => toggleSection("nav")}>
+        <Toggle label="Blur/dim the other links" k="navHoverEnabled" value={s.navHoverEnabled} />
+        <Toggle label="Scramble the hovered link once" k="navScrambleEnabled" value={s.navScrambleEnabled} />
+        {NAV_HOVER_SLIDERS.map((def) => (
+          <Slider key={def.key} def={def} value={s[def.key] as number} />
+        ))}
+      </Accordion>
 
       <footer className={styles.footer}>
         <button type="button" onClick={resetSettings}>
