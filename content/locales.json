@@ -6,7 +6,7 @@
     { "code": "en-AU", "language": "en", "market": "AU", "country": "Australia", "label": "English (Australia)", "fallback": "en-GB", "enabled": false },
     { "code": "en-CA", "language": "en", "market": "CA", "country": "Canada", "label": "English (Canada)", "fallback": "en-US", "enabled": false },
     { "code": "en-IN", "language": "en", "market": "IN", "country": "India", "label": "English (India)", "fallback": "en-GB", "enabled": false },
-    { "code": "de-DE", "language": "de", "market": "DE", "country": "Germany", "label": "Deutsch (Deutschland)", "fallback": "en-US", "enabled": false },
+    { "code": "de-DE", "language": "de", "market": "DE", "country": "Germany", "label": "Deutsch (Deutschland)", "fallback": "en-US", "enabled": true },
     { "code": "de-AT", "language": "de", "market": "AT", "country": "Austria", "label": "Deutsch (Österreich)", "fallback": "de-DE", "enabled": false },
     { "code": "de-CH", "language": "de", "market": "CH", "country": "Switzerland", "label": "Deutsch (Schweiz)", "fallback": "de-DE", "enabled": false },
     { "code": "es-ES", "language": "es", "market": "ES", "country": "Spain", "label": "Español (España)", "fallback": "en-US", "enabled": false },
@@ -15,9 +15,6 @@
     { "code": "fr-CA", "language": "fr", "market": "CA", "country": "Canada", "label": "Français (Canada)", "fallback": "fr-FR", "enabled": false },
     { "code": "nl-NL", "language": "nl", "market": "NL", "country": "Netherlands", "label": "Nederlands (Nederland)", "fallback": "en-US", "enabled": false },
     { "code": "zh-CN", "language": "zh", "market": "CN", "country": "China", "label": "简体中文 (中国)", "fallback": "en-US", "enabled": false },
-    { "code": "ja-JP", "language": "ja", "market": "JP", "country": "Japan", "label": "日本語 (日本)", "fallback": "en-US", "enabled": false },
-    { "code": "pt-BR", "language": "pt", "market": "BR", "country": "Brazil", "label": "Português (Brasil)", "fallback": "en-US", "enabled": false },
-    { "code": "hi-IN", "language": "hi", "market": "IN", "country": "India", "label": "हिन्दी (भारत)", "fallback": "en-US", "enabled": false },
-    { "code": "ar-AE", "language": "ar", "market": "AE", "country": "United Arab Emirates", "label": "العربية (الإمارات)", "fallback": "en-US", "enabled": false }
+    { "code": "ja-JP", "language": "ja", "market": "JP", "country": "Japan", "label": "日本語 (日本)", "fallback": "en-US", "enabled": false }
   ]
 }

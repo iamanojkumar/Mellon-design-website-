@@ -51,13 +51,13 @@ Ranked by where agencies get hired (cross-border buyers work in English; local-l
 
 | Tier | Locales | Notes |
 |---|---|---|
-| Live | `en-US`, `en-GB` | `en-GB` inherits from `en-US`, overrides currency |
+| Live | `en-US`, `en-GB`, `de-DE` | `en-GB` inherits from `en-US`, overrides currency; `de-DE` fully translated (formal "Sie") |
 | 1 — cheap English variants | `en-AU`, `en-CA`, `en-IN` | Spelling/currency only; entries exist (disabled). `en-AU`/`en-IN` inherit `en-GB` |
-| 2 — first translations | `de-DE` (+ `de-AT`, `de-CH` variants), `es-ES` (+ `es-MX`), `fr-FR` (+ `fr-CA`), `nl-NL` | DACH mid-market is the strongest; variants inherit their base language |
+| 2 — next translations | `es-ES` (+ `es-MX`), `fr-FR` (+ `fr-CA`), `nl-NL`; `de-AT` / `de-CH` variants inherit `de-DE` once enabled | Variants inherit their base language |
 | 3 — niche / high effort | `zh-CN` (Chinese companies going overseas; note GTM/Google services are blocked in mainland China and hosting speed needs review), `ja-JP` (domestic agencies dominate; needs a professional translation) | `zh-CN` stays a stated priority for the outbound-brands niche |
-| Later | `pt-BR`, `hi-IN`, `ar-AE` | Buyers mostly use English; `ar-AE` needs right-to-left layout site-wide |
+| Later (not in `locales.json` yet) | `pt-BR`, `hi-IN`, `ar-AE` | Buyers mostly use English; `ar-AE` needs right-to-left layout site-wide. Add entries only when work starts |
 
-Per locale before enabling: translated `site.json` + pages (+ services/industries), OG image if different, native-speaker review, privacy policy legal review for that market, consent-banner copy.
+The language switcher lists **enabled locales only** (no placeholders). Per locale before enabling: translated `site.json` + pages + services/industries, OG image if different, a copy read-through, privacy policy review for that market, consent-banner copy (`temp/consent-banner.html` `COPY` object). Germany additionally requires an **Impressum** (legal notice with company details) — not built yet.
 
 **Open decision:** which locales are live at launch. Full country/language reference data lives in `temp/countries_2026_with_languages.json` and `temp/language_codes.json` — used to inform this choice, not a commitment to support all of them immediately.
 

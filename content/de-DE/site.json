@@ -1,0 +1,131 @@
+{
+  "org": {
+    "shortDescription": "Mellon ist eine Designagentur für Markenidentitäten, digitale Produkte und Designsysteme – für Teams aus Architektur, Automobil, Technologie, Finanzwesen und vielen weiteren Branchen."
+  },
+  "nav": {
+    "primary": [
+      {
+        "label": "Leistungen",
+        "href": "/services"
+      },
+      {
+        "label": "Branchen",
+        "href": "/industries"
+      },
+      {
+        "label": "Über uns",
+        "href": "/about"
+      },
+      {
+        "label": "Kontakt",
+        "href": "/contact"
+      }
+    ],
+    "cta": {
+      "label": "Projekt starten",
+      "href": "/contact"
+    }
+  },
+  "footer": {
+    "tagline": "Eine Designagentur für Teams, die Marke, Produkt und Interface als ein System denken.",
+    "columns": [
+      {
+        "heading": "Studio",
+        "links": [
+          {
+            "label": "Über uns",
+            "href": "/about"
+          },
+          {
+            "label": "Leistungen",
+            "href": "/services"
+          },
+          {
+            "label": "Branchen",
+            "href": "/industries"
+          },
+          {
+            "label": "Kontakt",
+            "href": "/contact"
+          }
+        ]
+      }
+    ],
+    "legal": "Alle Rechte vorbehalten.",
+    "legalLinks": [
+      {
+        "label": "Datenschutzerklärung",
+        "href": "/privacy"
+      }
+    ],
+    "contactHeading": "Kontakt",
+    "homeAria": "Mellon Startseite"
+  },
+  "common": {
+    "startProject": "Projekt starten",
+    "skipToContent": "Zum Inhalt springen",
+    "menu": "Menü",
+    "homeAria": "Mellon Startseite",
+    "primaryNavAria": "Hauptnavigation",
+    "breadcrumbAria": "Brotkrumennavigation",
+    "home": "Startseite",
+    "learnMore": "Mehr erfahren →",
+    "languageSwitcher": {
+      "searchPlaceholder": "Sprache suchen",
+      "noResults": "Keine Sprachen gefunden",
+      "soon": "Bald"
+    }
+  },
+  "servicesPage": {
+    "label": "Leistungen",
+    "detail": {
+      "included": "Das ist enthalten",
+      "usedIn": "Wo wir das eingesetzt haben",
+      "readyHeadline": "Bereit, über {name} zu sprechen?"
+    }
+  },
+  "industriesPage": {
+    "label": "Branchen",
+    "detail": {
+      "deliver": "Das liefern wir",
+      "relevantServices": "Passende Leistungen",
+      "buildingHeadline": "Sie bauen etwas im Bereich {name}?"
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "headline": "Diese Seite haben wir nicht gefunden.",
+    "body": "Die gesuchte Seite wurde möglicherweise verschoben oder hat nie existiert.",
+    "back": "Zurück zur Startseite"
+  },
+  "errorPage": {
+    "eyebrow": "Fehler",
+    "headline": "Etwas ist schiefgelaufen.",
+    "body": "Ein unerwarteter Fehler hat das Laden dieser Seite verhindert. Sie können es erneut versuchen oder zur Startseite zurückkehren.",
+    "retry": "Erneut versuchen",
+    "home": "Zurück zur Startseite"
+  },
+  "forms": {
+    "contact": {
+      "successMessage": "Danke – Ihre Nachricht ist bei uns angekommen. Wir antworten innerhalb eines Werktags.",
+      "submitLabel": "Nachricht senden",
+      "labels": {
+        "name": "Name",
+        "email": "E-Mail",
+        "company": "Unternehmen (optional)",
+        "budget": "Budgetrahmen (optional)",
+        "budgetPlaceholder": "z. B. 15.000–40.000 €",
+        "message": "Was möchten Sie umsetzen?",
+        "sending": "Wird gesendet …",
+        "genericError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+        "privacyNote": "Mit dem Absenden stimmen Sie unserer",
+        "privacyLink": "Datenschutzerklärung"
+      },
+      "validation": {
+        "name": "Bitte geben Sie Ihren vollständigen Namen ein.",
+        "email": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+        "message": "Erzählen Sie uns bitte etwas mehr – mindestens 20 Zeichen."
+      }
+    }
+  }
+}

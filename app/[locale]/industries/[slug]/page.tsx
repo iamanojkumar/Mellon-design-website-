@@ -116,7 +116,7 @@ export default async function IndustryDetailPage({
       <section className={styles.closing}>
         <Container className={styles.closingInner}>
           <h2 className={styles.closingHeadline}>
-            {page.detail.buildingHeadline.replace("{nameLower}", industry.name.toLocaleLowerCase(locale))}
+            {page.detail.buildingHeadline.replace("{nameLower}", industry.name.toLocaleLowerCase(locale)).replace("{name}", industry.name)}
           </h2>
           <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="industry" />
         </Container>

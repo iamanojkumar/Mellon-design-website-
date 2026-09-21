@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Mellon – Designagentur für Marke, Produkt und digitale Erlebnisse",
+    "description": "Mellon ist eine Designagentur für Markenidentitäten, digitale Produkte und Designsysteme – für Teams aus Architektur, Automobil, Technologie, Finanzwesen und vielen weiteren Branchen."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Mellon Design",
+      "headline": "Design, das eine Marke vom ersten Eindruck bis in den Alltag trägt.",
+      "subhead": "Wir entwickeln Identitätssysteme, digitale Produkte und Designsysteme für Teams, bei denen Marke und Produkt als Einheit funktionieren müssen – von Architektur über Automobil und Technologie bis zum Finanzwesen und einem Dutzend weiterer Branchen.",
+      "primaryCta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Unsere Leistungen",
+        "href": "/services"
+      },
+      "image": {
+        "src": "/images/Mellon-hero-banner.webp",
+        "alt": "",
+        "width": 1320,
+        "height": 567
+      }
+    },
+    {
+      "type": "servicesGrid",
+      "eyebrow": "Was wir tun",
+      "headline": "Zehn Disziplinen. Ein Studio.",
+      "body": "Vom ersten Markenzeichen bis zum vollständig gepflegten Designsystem deckt Mellon das gesamte Spektrum an Designarbeit ab, das ein wachsendes Unternehmen braucht – ohne Übergaben zwischen Agenturen."
+    },
+    {
+      "type": "industriesChips",
+      "eyebrow": "Für wen wir arbeiten",
+      "headline": "So tief in jeder Branche, dass die Einarbeitung entfällt.",
+      "body": "Wir haben für Architekturbüros und Automobilteams, Fintechs und Gastronomiegruppen gearbeitet. Jede Branchenseite unten zeigt, was wir dabei tatsächlich gelernt haben."
+    },
+    {
+      "type": "process",
+      "eyebrow": "Wie wir arbeiten",
+      "headline": "Design und Entwicklung unter einem Dach.",
+      "body": "Mellon arbeitet als zwei eng verzahnte Beratungsbereiche – Design und Entwicklung –, damit die Systeme, die wir entwerfen, auch tatsächlich live gehen und nicht als Dateien über die Mauer geworfen werden.",
+      "steps": [
+        {
+          "title": "Design",
+          "body": "Strategie, Marke, UX und UI – in Figma entwickelt und getestet, bevor eine einzige Zeile Code entsteht."
+        },
+        {
+          "title": "Entwicklung",
+          "body": "Umsetzung in Webflow, Framer, WordPress oder individuellem Code – durch ein Team, das die Designabsicht bereits kennt."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Erzählen Sie uns, was Sie vorhaben.",
+      "body": "Jede Zusammenarbeit beginnt mit einem Gespräch, nicht mit einer Angebotsvorlage. Schildern Sie uns Ihre Ausgangslage, und wir sagen Ihnen ehrlich, ob und wie wir helfen können.",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

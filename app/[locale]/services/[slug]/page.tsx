@@ -117,7 +117,7 @@ export default async function ServiceDetailPage({
       <section className={styles.closing}>
         <Container className={styles.closingInner}>
           <h2 className={styles.closingHeadline}>
-            {page.detail.readyHeadline.replace("{nameLower}", service.name.toLocaleLowerCase(locale))}
+            {page.detail.readyHeadline.replace("{nameLower}", service.name.toLocaleLowerCase(locale)).replace("{name}", service.name)}
           </h2>
           <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="service" />
         </Container>

@@ -4,8 +4,11 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import "flag-icons/css/flag-icons.min.css";
-import { allLocales } from "@/lib/locale";
+import { allLocales, enabledLocales } from "@/lib/locale";
 import styles from "./LanguageSwitcher.module.css";
+
+// A search box only earns its space once the list gets long.
+const SEARCH_THRESHOLD = 6;
 
 type LanguageSwitcherProps = {
   locale: string;
@@ -24,19 +27,19 @@ export function LanguageSwitcher({ locale, className, copy }: LanguageSwitcherPr
   const rootRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
 
-  const current = allLocales.find((item) => item.code === locale) ?? allLocales[0];
+  const current = allLocales.find((item) => item.code === locale) ?? enabledLocales[0];
   const suffix = pathname.startsWith(`/${locale}`)
     ? pathname.slice(`/${locale}`.length)
     : "";
 
   const needle = query.trim().toLowerCase();
   const results = needle
-    ? allLocales.filter((item) =>
+    ? enabledLocales.filter((item) =>
         `${item.country} ${item.label} ${item.code} ${item.language} ${item.market}`
           .toLowerCase()
           .includes(needle),
       )
-    : allLocales;
+    : enabledLocales;
 
   useEffect(() => {
     setOpen(false);
@@ -88,15 +91,17 @@ export function LanguageSwitcher({ locale, className, copy }: LanguageSwitcherPr
 
       {open && (
         <div className={styles.menu}>
-          <input
-            ref={searchRef}
-            type="search"
-            className={styles.search}
-            placeholder={copy.searchPlaceholder}
-            aria-label={copy.searchPlaceholder}
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-          />
+          {enabledLocales.length > SEARCH_THRESHOLD && (
+            <input
+              ref={searchRef}
+              type="search"
+              className={styles.search}
+              placeholder={copy.searchPlaceholder}
+              aria-label={copy.searchPlaceholder}
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+            />
+          )}
           <ul className={styles.list} role="listbox">
             {results.length === 0 && <li className={styles.empty}>{copy.noResults}</li>}
             {results.map((item) => {

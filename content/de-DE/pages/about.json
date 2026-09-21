@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Über uns – Mellon",
+    "description": "Mellon gibt es, weil Marke, Produkt und Engineering meist in getrennten Räumen entworfen werden – und man sieht es. Wir halten sie in einem Raum."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Über uns",
+      "headline": "Ein Designstudio, das Design und Entwicklung als eine Disziplin führt.",
+      "subhead": "Mellon gibt es, weil Marke, Produkt und Engineering meist in getrennten Räumen entworfen werden – und man sieht es. Wir halten sie in einem Raum."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Wer wir sind",
+          "body": "Mellon ist eine Designagentur für Branding, Produktdesign und Designsysteme. Wir sind bewusst ein kleines, erfahrenes Studio: Jedes Projekt wird von Menschen geleitet, die genau die Art von Arbeit schon gemacht haben, für die Sie uns beauftragen – nicht von dem, der gerade Zeit hat."
+        },
+        {
+          "heading": "Was wir tun",
+          "body": "Zehn Kerndisziplinen – Branding, Designsysteme, E-Commerce-Design, End-to-End-Design, Mobile-App-Design, Motion- und Interaction-Design, Produktdesign, SaaS-Design, UI/UX-Design und UX-Audits – einzeln oder als durchgängiges Gesamtprojekt."
+        },
+        {
+          "heading": "Wie wir arbeiten",
+          "body": "Jedes Projekt durchläuft dieselben zwei Bereiche: Design und Entwicklung. Design umfasst Strategie, Marke, UX und UI. Entwicklung umfasst die Umsetzung in Webflow, Framer, WordPress oder individuellem Code – durch Menschen, die bei den Designentscheidungen dabei waren, damit bei der Übergabe nichts verloren geht."
+        },
+        {
+          "heading": "Für wen wir arbeiten",
+          "body": "Sechzehn Branchen und es werden mehr: Architektur und Innenarchitektur, Automobil, Civic Tech, Unterhaltungselektronik, E-Commerce, Bildung, Mode, Finanzen, Gesundheit und Wellness, Hospitality, Recht, Medien, Unterhaltung und Gaming, Non-Profit, Immobilien, Gastronomie sowie Technologie und SaaS. Jede Branchenseite zeigt Muster, die wir genau in diesem Umfeld erlebt haben – keine Standardvorlage."
+        },
+        {
+          "heading": "Wo wir anfangen",
+          "body": "Mit einem Gespräch, nicht mit einer Angebotsvorlage. Erzählen Sie uns, was Sie vorhaben, und wir sagen Ihnen offen, ob wir das richtige Studio dafür sind."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Beginnen wir mit einem Gespräch.",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Branchen – Mellon",
+    "description": "Sechzehn Branchen, für die Mellon gearbeitet hat – von Architektur und Automobil bis Fintech und Gastronomie – mit Mustern, die auf jede einzelne zugeschnitten sind."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Branchen",
+      "headline": "So tief in jeder Branche, dass die Einarbeitung entfällt.",
+      "subhead": "Sechzehn Branchen mit jeweils eigenen Rahmenbedingungen. Wählen Sie Ihre aus und sehen Sie, auf welche Muster und Leistungen wir dort setzen."
+    },
+    {
+      "type": "industryCards",
+      "viewLink": "Branche ansehen →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "Ihre Branche fehlt?",
+      "body": "Unsere Disziplinen lassen sich übertragen, auch wenn uns die Branche neu ist. Erzählen Sie uns, was Sie vorhaben.",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

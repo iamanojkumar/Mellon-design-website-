@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Leistungen – Mellon",
+    "description": "Branding, Designsysteme, Produktdesign und sieben weitere Disziplinen, mit denen Mellon eine Marke von der Idee bis zum fertigen Interface bringt."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Leistungen",
+      "headline": "Zehn Disziplinen, ein Studio, keine Übergaben.",
+      "subhead": "Jede Leistung unten kann einzeln laufen oder Teil eines durchgängigen Gesamtprojekts sein – in beiden Fällen mit demselben Team."
+    },
+    {
+      "type": "serviceCards",
+      "viewLink": "Leistung ansehen →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "Unsicher, welche Leistung passt?",
+      "body": "Erzählen Sie uns, was Sie vorhaben, und wir stellen die passende Mischung zusammen.",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

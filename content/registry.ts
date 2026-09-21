@@ -20,6 +20,16 @@ import privacyEnUS from "@/content/en-US/pages/privacy.json";
 
 import siteEnGB from "@/content/en-GB/site.json";
 
+import siteDeDE from "@/content/de-DE/site.json";
+import servicesDeDE from "@/content/de-DE/services.json";
+import industriesDeDE from "@/content/de-DE/industries.json";
+import homeDeDE from "@/content/de-DE/pages/home.json";
+import aboutDeDE from "@/content/de-DE/pages/about.json";
+import servicesPageDeDE from "@/content/de-DE/pages/services.json";
+import industriesPageDeDE from "@/content/de-DE/pages/industries.json";
+import contactDeDE from "@/content/de-DE/pages/contact.json";
+import privacyDeDE from "@/content/de-DE/pages/privacy.json";
+
 export type SiteContent = typeof siteEnUS;
 
 export type DeepPartial<T> = T extends readonly unknown[]
@@ -54,5 +64,18 @@ export const contentRegistry: Record<string, LocaleContent> = {
   // en-GB inherits everything from en-US and overrides only what differs.
   "en-GB": {
     site: siteEnGB,
+  },
+  "de-DE": {
+    site: siteDeDE,
+    services: servicesDeDE,
+    industries: industriesDeDE,
+    pages: {
+      home: homeDeDE as unknown as PageDoc,
+      about: aboutDeDE as unknown as PageDoc,
+      services: servicesPageDeDE as unknown as PageDoc,
+      industries: industriesPageDeDE as unknown as PageDoc,
+      contact: contactDeDE as unknown as PageDoc,
+      privacy: privacyDeDE as unknown as PageDoc,
+    },
   },
 };

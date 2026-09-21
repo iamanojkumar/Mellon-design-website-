@@ -27,15 +27,15 @@
         },
         {
           "heading": "How we use it",
-          "body": "To read and reply to your inquiry, and to keep a record of the conversation. We do not use your details for advertising, and we do not sell them."
+          "body": "To read and reply to your inquiry, and to keep a record of the conversation. Enquiries are stored in a database and we are notified by email. We do not sell your details."
         },
         {
           "heading": "Cookies",
-          "body": "We set a single functional cookie, mellon_locale, that remembers the language you chose so we can show you the right version of the site. It lasts up to one year and holds no personal information. We do not use advertising or tracking cookies."
+          "body": "A small functional cookie, mellon_locale, remembers the language you chose; it lasts up to one year and holds no personal information. Beyond that, we ask for your consent before using analytics or marketing cookies, and only enable them if you agree. Your choice is stored in your browser (mellon_consent_v3). To change it, clear this site's data in your browser and the banner will ask you again."
         },
         {
           "heading": "Who we share it with",
-          "body": "Only with service providers that help us run the site and handle email, and only as needed for them to do that work. We may also disclose information if the law requires it."
+          "body": "Only with service providers that help us run the site: hosting (Vercel), enquiry storage (Supabase) and email (Zoho), and only as needed for them to do that work. Analytics and marketing tools, if you allow them, receive the usual browsing data those tools collect. We may also disclose information if the law requires it."
         },
         {
           "heading": "How long we keep it",

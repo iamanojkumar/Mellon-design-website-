@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Datenschutzerklärung – Mellon",
+    "description": "Diese Erklärung beschreibt, welche personenbezogenen Daten Mellon Design über diese Website erhebt, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben. Wir halten sie kurz, weil wir sehr wenig erheben."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Rechtliches",
+      "headline": "Datenschutzerklärung",
+      "subhead": "Diese Erklärung beschreibt, welche personenbezogenen Daten Mellon Design über diese Website erhebt, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben. Wir halten sie kurz, weil wir sehr wenig erheben.",
+      "updated": {
+        "label": "Zuletzt aktualisiert",
+        "date": "2026-09-21"
+      }
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Wer wir sind",
+          "body": "Diese Website wird von Mellon Design („Mellon“, „wir“, „uns“) betrieben. Bei Fragen zu dieser Erklärung oder zu Ihren Daten schreiben Sie uns an {email}."
+        },
+        {
+          "heading": "Was wir erheben",
+          "body": "Nur das, was Sie uns über das Kontaktformular senden: Ihren Namen, Ihre E-Mail-Adresse, auf Wunsch Unternehmen und Budgetrahmen sowie Ihre Nachricht. Wie bei den meisten Websites kann außerdem unser Hosting-Anbieter technische Daten wie IP-Adresse und Browsertyp in Server-Logs verarbeiten, um die Website auszuliefern und abzusichern."
+        },
+        {
+          "heading": "Wie wir sie verwenden",
+          "body": "Um Ihre Anfrage zu lesen und zu beantworten und den Austausch zu dokumentieren. Anfragen werden in einer Datenbank gespeichert, und wir werden per E-Mail benachrichtigt. Wir verkaufen Ihre Daten nicht."
+        },
+        {
+          "heading": "Cookies",
+          "body": "Ein kleines funktionales Cookie, mellon_locale, merkt sich die von Ihnen gewählte Sprache; es hält bis zu einem Jahr und enthält keine personenbezogenen Daten. Darüber hinaus holen wir Ihre Einwilligung ein, bevor wir Analyse- oder Marketing-Cookies einsetzen, und aktivieren sie nur, wenn Sie zustimmen. Ihre Auswahl wird in Ihrem Browser gespeichert (mellon_consent_v3). Um sie zu ändern, löschen Sie die Daten dieser Website in Ihrem Browser – der Banner fragt dann erneut."
+        },
+        {
+          "heading": "An wen wir Daten weitergeben",
+          "body": "Nur an Dienstleister, die uns beim Betrieb der Website unterstützen: Hosting (Vercel), Speicherung von Anfragen (Supabase) und E-Mail (Zoho) – und nur, soweit sie dies für ihre Arbeit benötigen. Analyse- und Marketing-Tools erhalten, falls Sie zustimmen, die üblichen Nutzungsdaten, die diese Tools erfassen. Wir können Daten außerdem offenlegen, wenn das Gesetz es verlangt."
+        },
+        {
+          "heading": "Wie lange wir sie speichern",
+          "body": "So lange, wie es zur Beantwortung Ihrer Anfrage und für angemessene Geschäftsunterlagen erforderlich ist; danach löschen oder anonymisieren wir sie."
+        },
+        {
+          "heading": "Ihre Rechte",
+          "body": "Je nach Wohnort haben Sie das Recht auf Auskunft, Berichtigung, Löschung oder Übertragung Ihrer personenbezogenen Daten sowie auf Widerspruch gegen deren Verwendung. Um eines dieser Rechte auszuüben, schreiben Sie an {email}; wir antworten in angemessener Frist."
+        },
+        {
+          "heading": "Änderungen dieser Erklärung",
+          "body": "Wenn wir diese Erklärung ändern, aktualisieren wir das Datum oben. Wesentliche Änderungen heben wir auf dieser Seite hervor."
+        }
+      ]
+    }
+  ]
+}
