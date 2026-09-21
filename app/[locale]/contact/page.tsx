@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { getSiteContent } from "@/lib/content";
+import { getPage } from "@/lib/content";
 import { buildMetadata } from "@/lib/seo";
-import { Container } from "@/components/ui/Container";
-import { ContactForm } from "@/components/contact-form/ContactForm";
-import styles from "./page.module.css";
+import { BlockRenderer } from "@/components/blocks/BlockRenderer";
 
 export async function generateMetadata({
   params,
@@ -11,12 +9,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  const site = getSiteContent(locale);
+  const { meta } = getPage(locale, "contact");
   return buildMetadata({
     locale,
     path: "/contact",
-    title: `Contact — ${site.org.name}`,
-    description: site.contact.hero.subhead,
+    title: meta.title,
+    description: meta.description,
   });
 }
 
@@ -26,28 +24,7 @@ export default async function ContactPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const site = getSiteContent(locale);
+  const page = getPage(locale, "contact");
 
-  return (
-    <section className={styles.section}>
-      <Container className={styles.grid}>
-        <div className={styles.intro}>
-          <span className={styles.eyebrow}>{site.contact.hero.eyebrow}</span>
-          <h1 className={styles.headline}>{site.contact.hero.headline}</h1>
-          <p className={styles.subhead}>{site.contact.hero.subhead}</p>
-          <p className={styles.direct}>
-            {site.contact.directEmailLabel}{" "}
-            <a href={`mailto:${site.org.email}`}>{site.org.email}</a>
-          </p>
-        </div>
-
-        <div className={styles.formWrap}>
-          <ContactForm
-            successMessage={site.contact.form.successMessage}
-            submitLabel={site.contact.form.submitLabel}
-          />
-        </div>
-      </Container>
-    </section>
-  );
+  return <BlockRenderer blocks={page.blocks} locale={locale} />;
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { enabledLocales } from "@/lib/locale";
+import { defaultLocale, enabledLocales, getLocaleConfig } from "@/lib/locale";
 import { getSiteUrl } from "@/lib/env";
 
 type BuildMetadataArgs = {
@@ -10,14 +10,18 @@ type BuildMetadataArgs = {
   ogImage?: string;
 };
 
+// Shown whenever a page (or its locale) has no image of its own.
+export const DEFAULT_OG_IMAGE = "/brand/icon_color_lightbg.png";
+
 export function buildMetadata({
   locale,
   path,
   title,
   description,
-  ogImage = "/images/Mellon-hero-banner.webp",
+  ogImage,
 }: BuildMetadataArgs): Metadata {
   const siteUrl = getSiteUrl();
+  const image = ogImage ?? getLocaleConfig(locale)?.ogImage ?? DEFAULT_OG_IMAGE;
   const canonicalPath = `/${locale}${path}`;
   const canonical = `${siteUrl}${canonicalPath}`;
 
@@ -25,6 +29,7 @@ export function buildMetadata({
   for (const alt of enabledLocales) {
     languages[alt.code] = `${siteUrl}/${alt.code}${path}`;
   }
+  languages["x-default"] = `${siteUrl}/${defaultLocale}${path}`;
 
   return {
     metadataBase: new URL(siteUrl),
@@ -39,15 +44,18 @@ export function buildMetadata({
       description,
       url: canonical,
       siteName: "Mellon",
-      images: [{ url: ogImage }],
+      images: [{ url: image, width: 500, height: 500, alt: "Mellon" }],
       locale: locale.replace("-", "_"),
+      alternateLocale: enabledLocales
+        .filter((alt) => alt.code !== locale)
+        .map((alt) => alt.code.replace("-", "_")),
       type: "website",
     },
     twitter: {
-      card: "summary_large_image",
+      card: "summary",
       title,
       description,
-      images: [ogImage],
+      images: [image],
     },
   };
 }

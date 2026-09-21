@@ -9,6 +9,7 @@ import {
 import { getSiteContent } from "@/lib/content";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { SiteBodyStartTags, SiteHeadTags } from "@/components/seo/SiteHeadTags";
 import "@/styles/globals.css";
 
 const robotoFlex = Roboto_Flex({
@@ -45,11 +46,15 @@ export default async function LocaleLayout({
 
   return (
     <html lang={localeConfig.language} data-market={localeConfig.market}>
+      <head>
+        <SiteHeadTags />
+      </head>
       <body className={`${robotoFlex.variable} ${dmMono.variable}`}>
+        <SiteBodyStartTags />
         <a href="#main" className="visually-hidden">
-          Skip to content
+          {site.common.skipToContent}
         </a>
-        <Header locale={locale} nav={site.nav.primary} cta={site.nav.cta} />
+        <Header locale={locale} nav={site.nav.primary} cta={site.nav.cta} common={site.common} />
         <main id="main">{children}</main>
         <Footer locale={locale} footer={site.footer} org={site.org} />
       </body>

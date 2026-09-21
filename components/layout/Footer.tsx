@@ -29,7 +29,7 @@ export function Footer({ locale, footer, org }: FooterProps) {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brandCol}>
-          <Link href={localePrefix} aria-label="Mellon home">
+          <Link href={localePrefix} aria-label={footer.homeAria}>
             <Image
               src="/brand/logo_var2_transparent.png"
               alt="Mellon"
@@ -69,7 +69,7 @@ export function Footer({ locale, footer, org }: FooterProps) {
         ))}
 
         <div className={styles.col}>
-          <h3 className={styles.colHeading}>Contact</h3>
+          <h3 className={styles.colHeading}>{footer.contactHeading}</h3>
           <a href={`mailto:${org.email}`} className={styles.emailLink}>
             {org.email}
           </a>
@@ -80,6 +80,11 @@ export function Footer({ locale, footer, org }: FooterProps) {
         <span>
           &copy; {year} {org.legalName}. {footer.legal}
         </span>
+        {footer.legalLinks.map((link) => (
+          <Link key={link.href} href={`${localePrefix}${link.href}`}>
+            {link.label}
+          </Link>
+        ))}
       </div>
     </footer>
   );

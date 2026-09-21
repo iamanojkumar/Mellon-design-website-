@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Contact — Mellon",
+    "description": "Tell us about what you're building and where things stand today. We reply to every inquiry personally, usually within one business day."
+  },
+  "blocks": [
+    {
+      "type": "contact",
+      "eyebrow": "Contact",
+      "headline": "Start a project.",
+      "subhead": "Tell us about what you're building and where things stand today. We reply to every inquiry personally, usually within one business day.",
+      "directEmailLabel": "Or write to us directly at"
+    }
+  ]
+}

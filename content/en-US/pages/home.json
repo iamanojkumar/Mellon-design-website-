@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Mellon — Design agency for brand, product, and digital experience",
+    "description": "Mellon is a design agency that builds brand identities, digital products, and design systems for teams across architecture, automotive, technology, finance, and more."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Mellon Design",
+      "headline": "Design that carries a brand from first impression to daily use.",
+      "subhead": "We build identity systems, digital products, and design systems for teams who need brand and product to move as one — across architecture, automotive, technology, finance, and a dozen industries besides.",
+      "primaryCta": {
+        "label": "Start a project",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "See our services",
+        "href": "/services"
+      },
+      "image": {
+        "src": "/images/Mellon-hero-banner.webp",
+        "alt": "",
+        "width": 1320,
+        "height": 567
+      }
+    },
+    {
+      "type": "servicesGrid",
+      "eyebrow": "What we do",
+      "headline": "Ten disciplines. One studio.",
+      "body": "From a first brand mark to a fully governed design system, Mellon covers the full range of design work a growing company needs — without the hand-offs between agencies."
+    },
+    {
+      "type": "industriesChips",
+      "eyebrow": "Who we work with",
+      "headline": "Deep enough in each industry to skip the learning curve.",
+      "body": "We've designed for architecture firms and automotive teams, fintechs and restaurant groups. Each industry page below reflects what we've actually learned building for it."
+    },
+    {
+      "type": "process",
+      "eyebrow": "How we work",
+      "headline": "Design and development, under one roof.",
+      "body": "Mellon runs as two connected consulting practices — design and development — so the systems we design are the systems that ship, not a set of files thrown over a wall.",
+      "steps": [
+        {
+          "title": "Design",
+          "body": "Strategy, brand, UX, and UI — built in Figma and tested before a single line of code."
+        },
+        {
+          "title": "Development",
+          "body": "Implementation in Webflow, Framer, WordPress, or custom code, by a team that already knows the design intent."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Tell us what you're building.",
+      "body": "Every engagement starts with a conversation, not a proposal template. Tell us where things stand and we'll tell you honestly whether — and how — we can help.",
+      "cta": {
+        "label": "Start a project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

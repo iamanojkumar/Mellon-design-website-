@@ -52,6 +52,8 @@ export default async function IndustryDetailPage({
   if (!industry) notFound();
 
   const services = getServices(locale);
+  const site = getSiteContent(locale);
+  const page = site.industriesPage;
   const relatedServices = services.filter((service) =>
     industry.relatedServices.includes(service.slug),
   );
@@ -63,30 +65,30 @@ export default async function IndustryDetailPage({
     <>
       <JsonLd
         data={breadcrumbJsonLd(siteUrl, [
-          { name: "Home", path: localePrefix },
-          { name: "Industries", path: `${localePrefix}/industries` },
+          { name: site.common.home, path: localePrefix },
+          { name: page.label, path: `${localePrefix}/industries` },
           { name: industry.name, path: `${localePrefix}${path}` },
         ])}
       />
 
       <section className={styles.hero}>
         <Container>
-          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-            <Link href={`${localePrefix}/industries`}>Industries</Link>
+          <nav className={styles.breadcrumb} aria-label={site.common.breadcrumbAria}>
+            <Link href={`${localePrefix}/industries`}>{page.label}</Link>
             <span aria-hidden="true">/</span>
             <span>{industry.name}</span>
           </nav>
           <span className={styles.eyebrow}>{industry.tagline}</span>
           <h1 className={styles.headline}>{industry.name}</h1>
           <p className={styles.summary}>{industry.summary}</p>
-          <Cta label="Start a project" href={`${localePrefix}/contact`} context="industry" />
+          <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="industry" />
         </Container>
       </section>
 
       <section className={styles.body}>
         <Container className={styles.bodyGrid}>
           <div>
-            <h2 className={styles.blockHeading}>What we deliver</h2>
+            <h2 className={styles.blockHeading}>{page.detail.deliver}</h2>
             <ul className={styles.deliverables}>
               {industry.deliverables.map((item) => (
                 <li key={item}>{item}</li>
@@ -96,7 +98,7 @@ export default async function IndustryDetailPage({
 
           {relatedServices.length > 0 && (
             <div>
-              <h2 className={styles.blockHeading}>Relevant services</h2>
+              <h2 className={styles.blockHeading}>{page.detail.relevantServices}</h2>
               <ul className={styles.relatedList}>
                 {relatedServices.map((service) => (
                   <li key={service.slug}>
@@ -114,9 +116,9 @@ export default async function IndustryDetailPage({
       <section className={styles.closing}>
         <Container className={styles.closingInner}>
           <h2 className={styles.closingHeadline}>
-            Building something in {industry.name.toLowerCase()}?
+            {page.detail.buildingHeadline.replace("{nameLower}", industry.name.toLocaleLowerCase(locale))}
           </h2>
-          <Cta label="Start a project" href={`${localePrefix}/contact`} context="industry" />
+          <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="industry" />
         </Container>
       </section>
     </>

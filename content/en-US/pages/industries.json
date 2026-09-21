@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Industries — Mellon",
+    "description": "Sixteen industries Mellon has designed for, from architecture and automotive to fintech and restaurants — with patterns specific to each."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Industries",
+      "headline": "Deep enough in each industry to skip the learning curve.",
+      "subhead": "Sixteen verticals, each with its own constraints. Pick yours to see the patterns and services we lean on there."
+    },
+    {
+      "type": "industryCards",
+      "viewLink": "View industry →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "Don't see your industry?",
+      "body": "The disciplines transfer even when the vertical is new to us. Tell us what you're building.",
+      "cta": {
+        "label": "Start a project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

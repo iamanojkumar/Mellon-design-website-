@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getIndustries, getServices } from "@/lib/content";
-import { enabledLocales } from "@/lib/locale";
+import { defaultLocale, enabledLocales } from "@/lib/locale";
 import { getSiteUrl } from "@/lib/env";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,17 +9,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   for (const locale of enabledLocales) {
     const localePrefix = `/${locale.code}`;
-    const languages: Record<string, string> = {};
-    for (const alt of enabledLocales) {
-      languages[alt.code] = `${siteUrl}/${alt.code}`;
-    }
-
-    const staticPaths = ["", "/services", "/industries", "/about", "/contact"];
+    const staticPaths = ["", "/services", "/industries", "/about", "/contact", "/privacy"];
+    const alternatesFor = (path: string) => ({
+      languages: {
+        ...Object.fromEntries(
+          enabledLocales.map((alt) => [alt.code, `${siteUrl}/${alt.code}${path}`]),
+        ),
+        "x-default": `${siteUrl}/${defaultLocale}${path}`,
+      },
+    });
     for (const path of staticPaths) {
       entries.push({
         url: `${siteUrl}${localePrefix}${path}`,
         lastModified: new Date(),
-        alternates: { languages },
+        alternates: alternatesFor(path),
       });
     }
 
@@ -27,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${siteUrl}${localePrefix}/services/${service.slug}`,
         lastModified: new Date(),
+        alternates: alternatesFor(`/services/${service.slug}`),
       });
     }
 
@@ -34,6 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       entries.push({
         url: `${siteUrl}${localePrefix}/industries/${industry.slug}`,
         lastModified: new Date(),
+        alternates: alternatesFor(`/industries/${industry.slug}`),
       });
     }
   }

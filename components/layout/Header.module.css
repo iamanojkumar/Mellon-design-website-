@@ -2,8 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--color-paper) 92%, transparent);
-  backdrop-filter: blur(10px);
+  background: var(--color-paper);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -67,8 +66,10 @@
   background: var(--gradient-brand);
 }
 
-.ctaSlot {
+.actions {
   display: none;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
 .menuButton {
@@ -134,6 +135,10 @@
   font-size: var(--fs-500);
 }
 
+.mobileLangSlot {
+  align-self: flex-start;
+}
+
 .mobileCta {
   align-self: flex-start;
   margin-top: var(--space-xs);
@@ -143,8 +148,12 @@
   .nav {
     display: flex;
   }
-  .ctaSlot {
-    display: block;
+  .logo {
+    margin-right: 0;
+  }
+  .actions {
+    display: flex;
+    margin-left: auto;
   }
   .menuButton {
     display: none;
@@ -155,4 +164,9 @@
   .logoIcon {
     display: none;
   }
+}
+
+.ctaSlot a {
+  padding: 0.55rem 1.1rem;
+  font-size: var(--fs-100);
 }

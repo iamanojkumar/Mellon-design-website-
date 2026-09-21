@@ -79,3 +79,12 @@
     grid-template-columns: 1fr 1fr;
   }
 }
+
+.privacy {
+  font-size: var(--fs-100);
+  color: var(--color-fg-muted);
+}
+
+.privacy a {
+  text-decoration: underline;
+}

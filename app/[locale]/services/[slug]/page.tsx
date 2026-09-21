@@ -51,6 +51,8 @@ export default async function ServiceDetailPage({
   const service = getService(locale, slug);
   if (!service) notFound();
 
+  const site = getSiteContent(locale);
+  const page = site.servicesPage;
   const industries = getIndustries(locale);
   const relatedIndustries = industries.filter((industry) =>
     service.relatedIndustries.includes(industry.slug),
@@ -64,30 +66,30 @@ export default async function ServiceDetailPage({
       <JsonLd data={serviceJsonLd(siteUrl, service, `${localePrefix}${path}`)} />
       <JsonLd
         data={breadcrumbJsonLd(siteUrl, [
-          { name: "Home", path: localePrefix },
-          { name: "Services", path: `${localePrefix}/services` },
+          { name: site.common.home, path: localePrefix },
+          { name: page.label, path: `${localePrefix}/services` },
           { name: service.name, path: `${localePrefix}${path}` },
         ])}
       />
 
       <section className={styles.hero}>
         <Container>
-          <nav className={styles.breadcrumb} aria-label="Breadcrumb">
-            <Link href={`${localePrefix}/services`}>Services</Link>
+          <nav className={styles.breadcrumb} aria-label={site.common.breadcrumbAria}>
+            <Link href={`${localePrefix}/services`}>{page.label}</Link>
             <span aria-hidden="true">/</span>
             <span>{service.name}</span>
           </nav>
           <span className={styles.eyebrow}>{service.tagline}</span>
           <h1 className={styles.headline}>{service.name}</h1>
           <p className={styles.summary}>{service.summary}</p>
-          <Cta label="Start a project" href={`${localePrefix}/contact`} context="service" />
+          <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="service" />
         </Container>
       </section>
 
       <section className={styles.body}>
         <Container className={styles.bodyGrid}>
           <div>
-            <h2 className={styles.blockHeading}>What&apos;s included</h2>
+            <h2 className={styles.blockHeading}>{page.detail.included}</h2>
             <ul className={styles.deliverables}>
               {service.deliverables.map((item) => (
                 <li key={item}>{item}</li>
@@ -97,7 +99,7 @@ export default async function ServiceDetailPage({
 
           {relatedIndustries.length > 0 && (
             <div>
-              <h2 className={styles.blockHeading}>Where we&apos;ve used this</h2>
+              <h2 className={styles.blockHeading}>{page.detail.usedIn}</h2>
               <ul className={styles.relatedList}>
                 {relatedIndustries.map((industry) => (
                   <li key={industry.slug}>
@@ -115,9 +117,9 @@ export default async function ServiceDetailPage({
       <section className={styles.closing}>
         <Container className={styles.closingInner}>
           <h2 className={styles.closingHeadline}>
-            Ready to talk about {service.name.toLowerCase()}?
+            {page.detail.readyHeadline.replace("{nameLower}", service.name.toLocaleLowerCase(locale))}
           </h2>
-          <Cta label="Start a project" href={`${localePrefix}/contact`} context="service" />
+          <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="service" />
         </Container>
       </section>
     </>

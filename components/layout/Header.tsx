@@ -4,7 +4,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import type { SiteContent } from "@/lib/content";
 import { Cta } from "@/components/cta/Cta";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import styles from "./Header.module.css";
 
 type NavItem = { label: string; href: string };
@@ -13,9 +15,10 @@ type HeaderProps = {
   locale: string;
   nav: NavItem[];
   cta: NavItem;
+  common: SiteContent["common"];
 };
 
-export function Header({ locale, nav, cta }: HeaderProps) {
+export function Header({ locale, nav, cta, common }: HeaderProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -29,9 +32,9 @@ export function Header({ locale, nav, cta }: HeaderProps) {
   return (
     <header className={styles.header}>
       <div className={styles.bar}>
-        <Link href={homeHref} className={styles.logo} aria-label="Mellon home">
+        <Link href={homeHref} className={styles.logo} aria-label={common.homeAria}>
           <Image
-            src="/brand/logo_color_lightbg.png"
+            src="/brand/logo_color_light_transparentbg.png"
             alt="Mellon"
             width={252}
             height={80}
@@ -39,7 +42,7 @@ export function Header({ locale, nav, cta }: HeaderProps) {
             priority
           />
           <Image
-            src="/brand/icon_color_lightbg.png"
+            src="/brand/icon_color.png"
             alt="Mellon"
             width={80}
             height={80}
@@ -48,7 +51,7 @@ export function Header({ locale, nav, cta }: HeaderProps) {
           />
         </Link>
 
-        <nav className={styles.nav} aria-label="Primary">
+        <nav className={styles.nav} aria-label={common.primaryNavAria}>
           {nav.map((item) => {
             const href = `${localePrefix}${item.href}`;
             const isActive =
@@ -65,8 +68,13 @@ export function Header({ locale, nav, cta }: HeaderProps) {
           })}
         </nav>
 
-        <div className={styles.ctaSlot}>
-          <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" />
+        <div className={styles.actions}>
+          <div className={styles.langSlot}>
+            <LanguageSwitcher locale={locale} copy={common.languageSwitcher} />
+          </div>
+          <div className={styles.ctaSlot}>
+            <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" />
+          </div>
         </div>
 
         <button
@@ -77,7 +85,7 @@ export function Header({ locale, nav, cta }: HeaderProps) {
           onClick={() => setOpen((v) => !v)}
         >
           <span className={styles.menuIcon} data-open={open} />
-          <span className="visually-hidden">Menu</span>
+          <span className="visually-hidden">{common.menu}</span>
         </button>
       </div>
 
@@ -88,6 +96,9 @@ export function Header({ locale, nav, cta }: HeaderProps) {
               {item.label}
             </Link>
           ))}
+          <div className={styles.mobileLangSlot}>
+            <LanguageSwitcher locale={locale} copy={common.languageSwitcher} />
+          </div>
           <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" className={styles.mobileCta} />
         </div>
       )}

@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "About — Mellon",
+    "description": "Mellon exists because brand, product, and engineering usually get designed in separate rooms — and it shows. We keep them in one room."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "About",
+      "headline": "A design studio built to run design and development as one practice.",
+      "subhead": "Mellon exists because brand, product, and engineering usually get designed in separate rooms — and it shows. We keep them in one room."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Who we are",
+          "body": "Mellon is a design agency working across branding, product design, and design systems. We're a small, senior studio by design: every engagement is run by people who've done the specific kind of work you're hiring for, not handed to whoever's free."
+        },
+        {
+          "heading": "What we do",
+          "body": "Ten core disciplines — branding, design systems, e-commerce design, end-to-end design, mobile app design, motion and interaction design, product design, SaaS design, UI/UX design, and UX audits — delivered individually or combined into a single end-to-end engagement."
+        },
+        {
+          "heading": "How we work",
+          "body": "Every project runs through the same two practices: design and development. Design covers strategy, brand, UX, and UI. Development covers implementation, in Webflow, Framer, WordPress, or custom code — by people who were in the room for the design decisions, so nothing gets lost in a handoff."
+        },
+        {
+          "heading": "Who we work with",
+          "body": "Sixteen industries and counting: architecture and interior design, automotive, civic tech, consumer electronics, e-commerce, education, fashion, finance, health and wellness, hospitality, legal, media and entertainment, nonprofits, real estate, restaurants, and technology and SaaS. Each industry page reflects patterns we've seen working in that space specifically, not a generic template."
+        },
+        {
+          "heading": "Where we start",
+          "body": "With a conversation, not a proposal template. Tell us what you're building, and we'll tell you plainly whether we're the right studio for it."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Start with a conversation.",
+      "cta": {
+        "label": "Start a project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

@@ -1,26 +1,43 @@
 "use client";
 
 import { useActionState } from "react";
+import Link from "next/link";
 import { useFormStatus } from "react-dom";
 import { submitContactForm } from "@/components/contact-form/actions";
 import { initialContactFormState } from "@/components/contact-form/schema";
 import styles from "./ContactForm.module.css";
 
+export type ContactFormLabels = {
+  name: string;
+  email: string;
+  company: string;
+  budget: string;
+  budgetPlaceholder: string;
+  message: string;
+  sending: string;
+  genericError: string;
+  privacyNote: string;
+  privacyLink: string;
+};
+
 type ContactFormProps = {
   successMessage: string;
   submitLabel: string;
+  labels: ContactFormLabels;
+  privacyHref: string;
+  locale: string;
 };
 
-function SubmitButton({ label }: { label: string }) {
+function SubmitButton({ label, sending }: { label: string; sending: string }) {
   const { pending } = useFormStatus();
   return (
     <button type="submit" className={styles.submit} disabled={pending}>
-      {pending ? "Sending…" : label}
+      {pending ? sending : label}
     </button>
   );
 }
 
-export function ContactForm({ successMessage, submitLabel }: ContactFormProps) {
+export function ContactForm({ successMessage, submitLabel, labels, privacyHref, locale }: ContactFormProps) {
   const [state, formAction] = useActionState(
     submitContactForm,
     initialContactFormState,
@@ -38,14 +55,23 @@ export function ContactForm({ successMessage, submitLabel }: ContactFormProps) {
 
   return (
     <form action={formAction} className={styles.form} noValidate>
+      <input type="hidden" name="locale" value={locale} />
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+      />
       <div className={styles.row}>
         <label className={styles.field}>
-          <span>Name</span>
+          <span>{labels.name}</span>
           <input type="text" name="name" autoComplete="name" required />
           {errors.name && <em className={styles.error}>{errors.name}</em>}
         </label>
         <label className={styles.field}>
-          <span>Email</span>
+          <span>{labels.email}</span>
           <input type="email" name="email" autoComplete="email" required />
           {errors.email && <em className={styles.error}>{errors.email}</em>}
         </label>
@@ -53,26 +79,30 @@ export function ContactForm({ successMessage, submitLabel }: ContactFormProps) {
 
       <div className={styles.row}>
         <label className={styles.field}>
-          <span>Company (optional)</span>
+          <span>{labels.company}</span>
           <input type="text" name="company" autoComplete="organization" />
         </label>
         <label className={styles.field}>
-          <span>Budget range (optional)</span>
-          <input type="text" name="budget" placeholder="e.g. $15k–$40k" />
+          <span>{labels.budget}</span>
+          <input type="text" name="budget" placeholder={labels.budgetPlaceholder} />
         </label>
       </div>
 
       <label className={styles.field}>
-        <span>What are you building?</span>
+        <span>{labels.message}</span>
         <textarea name="message" rows={6} required />
         {errors.message && <em className={styles.error}>{errors.message}</em>}
       </label>
 
       {state.status === "error" && !Object.keys(errors).length && (
-        <p className={styles.error}>Something went wrong. Please try again.</p>
+        <p className={styles.error}>{labels.genericError}</p>
       )}
 
-      <SubmitButton label={submitLabel} />
+      <p className={styles.privacy}>
+        {labels.privacyNote} <Link href={privacyHref}>{labels.privacyLink}</Link>.
+      </p>
+
+      <SubmitButton label={submitLabel} sending={labels.sending} />
     </form>
   );
 }

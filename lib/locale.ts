@@ -4,6 +4,11 @@ export type LocaleConfig = {
   code: string;
   language: string;
   market: string;
+  country: string;
+  /** Optional locale-specific social preview image; falls back to the default. */
+  ogImage?: string;
+  /** Locale to inherit missing content from (defaults to defaultLocale). */
+  fallback?: string;
   label: string;
   enabled: boolean;
 };

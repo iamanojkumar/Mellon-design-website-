@@ -1,10 +1,10 @@
 :root {
   /* Brand core */
-  --color-ink: #00162a;
-  --color-ink-soft: #0c2740;
-  --color-paper: #ffffff;
-  --color-paper-tint: #f6f8fa;
-  --color-line: #e2e8ee;
+  --color-ink: #1a2b3c;
+  --color-ink-soft: #273b4f;
+  --color-paper: #f9f9f7;
+  --color-paper-tint: #f0f2f3;
+  --color-line: #dbe0e4;
   --color-muted: #55677a;
 
   /* Brand gradient (sourced from the M mark) */

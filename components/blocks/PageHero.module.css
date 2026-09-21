@@ -1,0 +1,35 @@
+.hero {
+  padding-block: var(--space-2xl) var(--space-xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: var(--fs-100);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: var(--space-sm);
+}
+
+.headline {
+  font-size: clamp(var(--fs-700), 5vw, var(--fs-800));
+  max-width: 20ch;
+  margin-bottom: var(--space-md);
+}
+
+.subhead {
+  font-size: var(--fs-400);
+  color: var(--color-fg-muted);
+  max-width: 60ch;
+}
+
+.updated {
+  font-size: var(--fs-200);
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-md);
+}

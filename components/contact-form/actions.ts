@@ -1,7 +1,11 @@
 "use server";
 
+import { getSiteContent } from "@/lib/content";
+import { notifyNewSubmission } from "@/lib/notify";
+import { saveContactSubmission } from "@/lib/submissions";
+import { defaultLocale, isEnabledLocale } from "@/lib/locale";
 import {
-  contactFormSchema,
+  createContactFormSchema,
   type ContactFormState,
 } from "@/components/contact-form/schema";
 
@@ -9,6 +13,16 @@ export async function submitContactForm(
   _prevState: ContactFormState,
   formData: FormData,
 ): Promise<ContactFormState> {
+  const submittedLocale = formData.get("locale")?.toString() ?? "";
+  const locale = isEnabledLocale(submittedLocale) ? submittedLocale : defaultLocale;
+  const contactFormSchema = createContactFormSchema(
+    getSiteContent(locale).forms.contact.validation,
+  );
+
+  // Honeypot: real visitors never see or fill this field; bots usually do.
+  // Pretend success so they get no signal, and store nothing.
+  if (formData.get("website")?.toString()) return { status: "success" };
+
   const raw = {
     name: formData.get("name")?.toString() ?? "",
     email: formData.get("email")?.toString() ?? "",
@@ -30,15 +44,20 @@ export async function submitContactForm(
     return { status: "error", fieldErrors };
   }
 
-  // Delivery integration (email/CRM) is intentionally not wired yet —
-  // this is where it plugs in once a provider is chosen. For now the
-  // validated submission is logged so nothing is silently dropped.
-  console.info("[contact-form] new submission", {
-    name: result.data.name,
-    email: result.data.email,
-    company: result.data.company,
-    budget: result.data.budget,
-  });
+  try {
+    await saveContactSubmission({ locale, ...result.data });
+  } catch (error) {
+    // A failed delivery must never look like a success to the visitor.
+    console.error("[contact-form] could not save submission", error);
+    return { status: "error", formError: "delivery_failed" };
+  }
+
+  // The enquiry is safely stored; the email is only a heads-up to the team.
+  try {
+    await notifyNewSubmission({ locale, ...result.data });
+  } catch (error) {
+    console.error("[contact-form] notification email failed", error);
+  }
 
   return { status: "success" };
 }

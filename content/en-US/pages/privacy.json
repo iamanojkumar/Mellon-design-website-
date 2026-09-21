@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Privacy Policy — Mellon",
+    "description": "This policy explains what personal information Mellon Design collects through this website, how we use it, and the choices you have. We keep it short because we collect very little."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Legal",
+      "headline": "Privacy Policy",
+      "subhead": "This policy explains what personal information Mellon Design collects through this website, how we use it, and the choices you have. We keep it short because we collect very little.",
+      "updated": {
+        "label": "Last updated",
+        "date": "2026-09-21"
+      }
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Who we are",
+          "body": "This website is operated by Mellon Design (\"Mellon\", \"we\", \"us\"). If you have any question about this policy or your data, write to us at {email}."
+        },
+        {
+          "heading": "What we collect",
+          "body": "Only what you send us through the contact form: your name, email address, your company and budget range if you choose to share them, and your message. Like most websites, our hosting provider may also process technical data such as IP address and browser type in server logs to deliver and secure the site."
+        },
+        {
+          "heading": "How we use it",
+          "body": "To read and reply to your inquiry, and to keep a record of the conversation. We do not use your details for advertising, and we do not sell them."
+        },
+        {
+          "heading": "Cookies",
+          "body": "We set a single functional cookie, mellon_locale, that remembers the language you chose so we can show you the right version of the site. It lasts up to one year and holds no personal information. We do not use advertising or tracking cookies."
+        },
+        {
+          "heading": "Who we share it with",
+          "body": "Only with service providers that help us run the site and handle email, and only as needed for them to do that work. We may also disclose information if the law requires it."
+        },
+        {
+          "heading": "How long we keep it",
+          "body": "For as long as needed to respond to you and to keep reasonable business records, after which we delete or anonymise it."
+        },
+        {
+          "heading": "Your rights",
+          "body": "Depending on where you live, you may have the right to access, correct, delete or export your personal information, or to object to how we use it. To exercise any of these, email {email} and we will respond within a reasonable time."
+        },
+        {
+          "heading": "Changes to this policy",
+          "body": "If we change this policy we will update the date above. Material changes will be highlighted on this page."
+        }
+      ]
+    }
+  ]
+}

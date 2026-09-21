@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Services — Mellon",
+    "description": "Branding, design systems, product design, and nine other disciplines Mellon uses to take a brand from idea to shipped interface."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Services",
+      "headline": "Ten disciplines, one studio, no hand-offs.",
+      "subhead": "Every service below can run alone or as part of a single end-to-end engagement — the same team either way."
+    },
+    {
+      "type": "serviceCards",
+      "viewLink": "View service →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "Not sure which service fits?",
+      "body": "Tell us what you're building and we'll scope the right mix.",
+      "cta": {
+        "label": "Start a project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

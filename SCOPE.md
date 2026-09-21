@@ -35,6 +35,8 @@ No client project portfolio at launch.
 - Content is locale-scoped (real translated copy per locale, not just config), with a fallback chain (e.g. `de-CH` → `de-DE` → `en-US`) so a locale can launch with partial translation coverage.
 - **Design/branding differs slightly per market/country** (not per language) — a market can override theme tokens (accent color, contact details) independently of which language is being displayed.
 
+**Priority — locale-aware sharing:** WhatsApp/social crawlers send no Accept-Language, so link previews follow the shared URL. Visitors are auto-redirected to `/{locale}/...`, so the URL they copy carries their locale. Each live locale must therefore ship its own translated title, description and (optionally) OG image via `ogImage` in `content/locales.json`. Default OG image is `/brand/icon_color_lightbg.png` when none is set. `zh-CN` is the first priority market: entry exists (disabled) — needs `content/zh-CN/*.json` (site, services, industries), then flip `enabled`. `x-default` hreflang and `og:locale:alternate` are already emitted.
+
 **Open decision:** which locales are live at launch. Full country/language reference data lives in `temp/countries_2026_with_languages.json` and `temp/language_codes.json` — used to inform this choice, not a commitment to support all of them immediately.
 
 ## 4. Design tokens & theming
@@ -74,7 +76,7 @@ See discussion log / repeat on request — full annotated tree covers:
 
 - [x] Styling approach — plain CSS Modules + `styles/tokens.css`
 - [x] en-US scaffolding — `app/[locale]/...` structure in place, only `en-US` enabled in `content/locales.json`; adding a locale is a content + config change, not a restructuring
-- [ ] Launch locale list beyond en-US
+- [ ] Launch locale list beyond en-US — **priority: zh-CN** (translated content + OG image outstanding)
 - [ ] Preloader asset (format + file) — user to provide; motion/preloader wiring not yet implemented
 - [ ] Animation library final confirmation (Framer Motion is installed per the stack table but not yet used — no page transitions or preloader wired in this pass)
 - [ ] Contact form delivery integration (email/CRM) — validation and success/error states work end-to-end; `components/contact-form/actions.ts` currently only logs submissions server-side

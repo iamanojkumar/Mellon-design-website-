@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { getSiteContent } from "@/lib/content";
+import { defaultLocale } from "@/lib/locale";
 import { Container } from "@/components/ui/Container";
 
 export default function LocaleNotFound() {
+  const { notFound } = getSiteContent(defaultLocale);
   return (
     <section style={{ padding: "6rem 0" }}>
       <Container>
@@ -19,13 +22,13 @@ export default function LocaleNotFound() {
             marginBottom: "0.75rem",
           }}
         >
-          404
+          {notFound.eyebrow}
         </span>
         <h1 style={{ fontSize: "clamp(2.75rem, 5vw, 3.5rem)", marginBottom: "1rem" }}>
-          We couldn&apos;t find that page.
+          {notFound.headline}
         </h1>
         <p style={{ color: "var(--color-fg-muted)", fontSize: "1.25rem", marginBottom: "2rem" }}>
-          The page you&apos;re looking for may have moved or never existed.
+          {notFound.body}
         </p>
         <Link
           href="/"
@@ -38,7 +41,7 @@ export default function LocaleNotFound() {
             fontWeight: 600,
           }}
         >
-          Back to home
+          {notFound.back}
         </Link>
       </Container>
     </section>
