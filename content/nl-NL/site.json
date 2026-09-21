@@ -1,6 +1,8 @@
 {
   "org": {
-    "shortDescription": "Mellon is een designbureau dat merkidentiteiten, digitale producten en designsystemen bouwt voor teams in architectuur, automotive, technologie, financiën en nog veel meer sectoren."
+    "shortDescription": "Mellon is een designbureau dat merkidentiteiten, digitale producten en designsystemen bouwt voor teams in architectuur, automotive, technologie, financiën en nog veel meer sectoren.",
+    "description": "Mellon Design is een UI/UX- en productdesignbureau gespecialiseerd in SaaS, web, mobiel, branding en digitale ervaringen.",
+    "slogan": "De ervaring opnieuw uitvinden voor een slimmere en verantwoorde toekomst."
   },
   "nav": {
     "primary": [

@@ -30,7 +30,7 @@ export default async function HomePage({
 
   return (
     <>
-      <JsonLd data={organizationJsonLd(getSiteUrl())} />
+      <JsonLd data={organizationJsonLd(getSiteUrl(), locale)} />
       <BlockRenderer blocks={page.blocks} locale={locale} />
     </>
   );

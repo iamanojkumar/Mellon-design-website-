@@ -1,0 +1,69 @@
+{
+  "alternateName": ["Mellon", "Mellon UI UX Design Agency", "Mellon Digital Design Studio"],
+  "foundingDate": "2023-01-01",
+  "telephone": "+91-9344139246",
+  "employees": { "min": 5, "max": 50 },
+  "priceRange": "$$$",
+  "knowsAbout": [
+    "UI UX Design",
+    "Product Design",
+    "SaaS Design",
+    "Web Design",
+    "Mobile App Design",
+    "Design Systems",
+    "Branding",
+    "UX Audit",
+    "Interaction Design"
+  ],
+  "moreProfiles": [
+    "https://github.com/mellondesign",
+    "https://www.behance.net/mellon_design",
+    "https://medium.com/@mellondesign",
+    "https://creativemarket.com/users/mellondesign",
+    "https://codepen.io/Mellon-design",
+    "https://www.reddit.com/r/Mellon_Design/",
+    "https://in.pinterest.com/mellondesignboard/",
+    "https://www.twitch.tv/mellondesign",
+    "https://patreon.com/Mellondesign"
+  ],
+  "address": {
+    "addressLocality": "Sathuvachari",
+    "addressRegion": "Tamil Nadu",
+    "postalCode": "632009",
+    "addressCountry": "IN"
+  },
+  "openingHours": {
+    "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  },
+  "contactPoints": [
+    { "contactType": "sales", "telephone": "+91-9944430438", "availableLanguage": ["English"] },
+    { "contactType": "customer support", "telephone": "+91-9944430438", "availableLanguage": ["English"] }
+  ],
+  "areaServed": [
+    { "type": "Country", "name": "India" },
+    { "type": "City", "name": "Bengaluru" },
+    { "type": "City", "name": "Mumbai" },
+    { "type": "City", "name": "Delhi" },
+    { "type": "City", "name": "Chennai" },
+    { "type": "Country", "name": "Sweden" },
+    { "type": "City", "name": "Stockholm" },
+    { "type": "Country", "name": "United Kingdom" },
+    { "type": "City", "name": "London" },
+    { "type": "AdministrativeArea", "name": "Greater Manchester" },
+    { "type": "AdministrativeArea", "name": "West Midlands" },
+    { "type": "AdministrativeArea", "name": "West Yorkshire" },
+    { "type": "Country", "name": "United States" },
+    { "type": "City", "name": "New York" },
+    { "type": "City", "name": "Los Angeles" },
+    { "type": "City", "name": "Chicago" },
+    { "type": "AdministrativeArea", "name": "Dallas-Fort Worth" },
+    { "type": "City", "name": "Houston" },
+    { "type": "Country", "name": "Canada" },
+    { "type": "City", "name": "Toronto" },
+    { "type": "City", "name": "Montreal" },
+    { "type": "City", "name": "Vancouver" },
+    { "type": "Place", "name": "Worldwide" }
+  ]
+}

@@ -1,6 +1,8 @@
 {
   "org": {
-    "shortDescription": "Mellon es una agencia de diseño que crea identidades de marca, productos digitales y sistemas de diseño para equipos de arquitectura, automoción, tecnología, finanzas y muchos otros sectores."
+    "shortDescription": "Mellon es una agencia de diseño que crea identidades de marca, productos digitales y sistemas de diseño para equipos de arquitectura, automoción, tecnología, finanzas y muchos otros sectores.",
+    "description": "Mellon Design es una agencia de diseño UI/UX y de producto especializada en SaaS, web, móvil, branding y experiencias digitales.",
+    "slogan": "Redefinir la experiencia para un futuro más inteligente y responsable."
   },
   "nav": {
     "primary": [

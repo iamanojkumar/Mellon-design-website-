@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { defaultLocale, enabledLocales, getLocaleConfig } from "@/lib/locale";
 import { getSiteUrl } from "@/lib/env";
+import { getServices, getSiteContent } from "@/lib/content";
+import organization from "@/content/organization.json";
 
 type BuildMetadataArgs = {
   locale: string;
@@ -60,17 +62,81 @@ export function buildMetadata({
   };
 }
 
-export function organizationJsonLd(siteUrl: string) {
+/**
+ * Organization + ProfessionalService structured data (home page of each
+ * locale). Facts live in content/organization.json (shared) and the org block
+ * of content/<locale>/site.json (localised description/slogan, social links).
+ * No street address or coordinates are published on purpose.
+ */
+export function organizationJsonLd(siteUrl: string, locale: string) {
+  const { org } = getSiteContent(locale);
+  const brandName = org.legalName.replace(/\s+Pvt Ltd$/i, "");
+  const home = `${siteUrl}/${locale}`;
+  const orgId = `${siteUrl}/#organization`;
+  const logo = `${siteUrl}/brand/logo_color_light_transparentbg.png`;
+  const image = `${siteUrl}${DEFAULT_OG_IMAGE}`;
+
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "Mellon",
-    url: siteUrl,
-    logo: `${siteUrl}/brand/icon_color.png`,
-    sameAs: [
-      "https://instagram.com/mellon.design",
-      "https://linkedin.com/company/mellon-design",
-      "https://x.com/mellon_design",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": orgId,
+        name: brandName,
+        alternateName: organization.alternateName,
+        legalName: org.legalName,
+        url: siteUrl,
+        logo: { "@type": "ImageObject", "@id": `${siteUrl}/#logo`, url: logo, contentUrl: logo },
+        image,
+        description: org.description,
+        email: org.email,
+        telephone: organization.telephone,
+        foundingDate: organization.foundingDate,
+        sameAs: [...Object.values(org.social), ...organization.moreProfiles],
+        knowsAbout: organization.knowsAbout,
+        areaServed: organization.areaServed.map((area) => ({ "@type": area.type, name: area.name })),
+        contactPoint: organization.contactPoints.map((point) => ({
+          "@type": "ContactPoint",
+          ...point,
+          email: org.email,
+        })),
+        numberOfEmployees: {
+          "@type": "QuantitativeValue",
+          minValue: organization.employees.min,
+          maxValue: organization.employees.max,
+        },
+        slogan: org.slogan,
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Design Services",
+          itemListElement: getServices(locale).map((service) => ({
+            "@type": "Offer",
+            itemOffered: { "@type": "Service", name: service.name, description: service.tagline },
+          })),
+        },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${siteUrl}/#localbusiness`,
+        name: brandName,
+        url: home,
+        image,
+        description: org.description,
+        telephone: organization.telephone,
+        priceRange: organization.priceRange,
+        address: { "@type": "PostalAddress", ...organization.address },
+        areaServed: { "@type": "Place", name: "Worldwide" },
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: organization.openingHours.days,
+            opens: organization.openingHours.opens,
+            closes: organization.openingHours.closes,
+          },
+        ],
+        parentOrganization: { "@id": orgId },
+        mainEntityOfPage: { "@id": home },
+      },
     ],
   };
 }

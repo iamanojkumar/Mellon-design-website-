@@ -1,16 +1,18 @@
 {
   "org": {
     "name": "Mellon",
-    "legalName": "Mellon Design",
+    "legalName": "Mellon Design Pvt Ltd",
     "shortDescription": "Mellon is a design agency that builds brand identities, digital products, and design systems for teams across architecture, automotive, technology, finance, and more.",
     "email": "team@mellon.design",
     "social": {
-      "instagram": "#",
-      "linkedin": "#",
-      "x": "#",
-      "facebook": "#",
-      "youtube": "#"
-    }
+      "instagram": "https://www.instagram.com/mellondesign_en/",
+      "linkedin": "https://www.linkedin.com/company/mellon-design",
+      "x": "https://twitter.com/mellon_design",
+      "facebook": "https://www.facebook.com/people/Mellon/61583128666937/",
+      "youtube": "https://www.youtube.com/@mellondesign"
+    },
+    "description": "Mellon Design is a UI/UX and product design agency specializing in SaaS, web, mobile, branding, and digital experiences.",
+    "slogan": "Redefining Experience for a Smarter and Responsible Future."
   },
   "nav": {
     "primary": [
