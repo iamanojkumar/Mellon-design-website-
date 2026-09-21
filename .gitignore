@@ -10,16 +10,23 @@
 
 # misc
 .DS_Store
-*.pem
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# local env files
-.env*.local
+# secrets — never commit (keep .env.example as the template)
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+service-account*.json
+*credentials*.json
+/supabase/.temp
+/supabase/.branches
 
 # vercel
 .vercel
@@ -29,4 +36,4 @@ yarn-error.log*
 next-env.d.ts
 
 # scratch/reference data, not part of the site
-/temp
+/temp/
