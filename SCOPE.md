@@ -35,7 +35,29 @@ No client project portfolio at launch.
 - Content is locale-scoped (real translated copy per locale, not just config), with a fallback chain (e.g. `de-CH` → `de-DE` → `en-US`) so a locale can launch with partial translation coverage.
 - **Design/branding differs slightly per market/country** (not per language) — a market can override theme tokens (accent color, contact details) independently of which language is being displayed.
 
-**Priority — locale-aware sharing:** WhatsApp/social crawlers send no Accept-Language, so link previews follow the shared URL. Visitors are auto-redirected to `/{locale}/...`, so the URL they copy carries their locale. Each live locale must therefore ship its own translated title, description and (optionally) OG image via `ogImage` in `content/locales.json`. Default OG image is `/brand/icon_color_lightbg.png` when none is set. `zh-CN` is the first priority market: entry exists (disabled) — needs `content/zh-CN/*.json` (site, services, industries), then flip `enabled`. `x-default` hreflang and `og:locale:alternate` are already emitted.
+**Priority — locale-aware sharing:** WhatsApp/social crawlers send no Accept-Language, so link previews follow the shared URL. Visitors are auto-redirected to `/{locale}/...`, so the URL they copy carries their locale. Each live locale must therefore ship its own translated title, description and (optionally) OG image via `ogImage` in `content/locales.json`. Default OG image is `/brand/icon_color_lightbg.png` when none is set. `x-default` hreflang and `og:locale:alternate` are already emitted.
+
+### Content model (built)
+
+- Pages are `{ meta, blocks[] }` (`lib/blocks.ts`, `content/<locale>/pages/*.json`), rendered by `components/blocks/BlockRenderer`. A locale controls layout by owning its own `blocks` list (order, which blocks appear, copy, images); otherwise it inherits the page whole from its fallback.
+- Global strings (`content/<locale>/site.json`) are deep-merged along the fallback chain, so a locale lists only what differs (e.g. `en-GB` overrides just the budget placeholder).
+- Fallback chain comes from `fallback` in `content/locales.json`, always ending at `en-US` (e.g. `de-CH` → `de-DE` → `en-US`).
+- **Add a locale:** create `content/<locale>/` files → import in `content/registry.ts` → set `"enabled": true`. Nothing else in code changes.
+- Copy stays in git-versioned JSON for now. A CMS can replace the source later behind `lib/content.ts` (single seam); Supabase is used for contact submissions only, not for copy.
+
+### Locale rollout plan
+
+Ranked by where agencies get hired (cross-border buyers work in English; local-language sites pay off with domestic mid-market buyers) — a hypothesis to check against real lead data.
+
+| Tier | Locales | Notes |
+|---|---|---|
+| Live | `en-US`, `en-GB` | `en-GB` inherits from `en-US`, overrides currency |
+| 1 — cheap English variants | `en-AU`, `en-CA`, `en-IN` | Spelling/currency only; entries exist (disabled). `en-AU`/`en-IN` inherit `en-GB` |
+| 2 — first translations | `de-DE` (+ `de-AT`, `de-CH` variants), `es-ES` (+ `es-MX`), `fr-FR` (+ `fr-CA`), `nl-NL` | DACH mid-market is the strongest; variants inherit their base language |
+| 3 — niche / high effort | `zh-CN` (Chinese companies going overseas; note GTM/Google services are blocked in mainland China and hosting speed needs review), `ja-JP` (domestic agencies dominate; needs a professional translation) | `zh-CN` stays a stated priority for the outbound-brands niche |
+| Later | `pt-BR`, `hi-IN`, `ar-AE` | Buyers mostly use English; `ar-AE` needs right-to-left layout site-wide |
+
+Per locale before enabling: translated `site.json` + pages (+ services/industries), OG image if different, native-speaker review, privacy policy legal review for that market, consent-banner copy.
 
 **Open decision:** which locales are live at launch. Full country/language reference data lives in `temp/countries_2026_with_languages.json` and `temp/language_codes.json` — used to inform this choice, not a commitment to support all of them immediately.
 
