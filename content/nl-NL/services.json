@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "branding",
+    "name": "Branding",
+    "tagline": "Identiteitssystemen die op elk oppervlak standhouden.",
+    "summary": "We bouwen merkidentiteiten van de grond af (naam, beeldmerk, kleur, lettertype, tone of voice) en leggen ze zo vast dat elk team dat na ons met het merk werkt, op koers blijft zonder te hoeven vragen.",
+    "deliverables": [
+      "Merkstrategie, positionering en naamgeving",
+      "Logo, beeldmerk en visueel identiteitssysteem",
+      "Richtlijnen voor typografie, kleur en beeldtaal",
+      "Merkrichtlijnen-documentatie voor intern gebruik en bureaus"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "restaurant-branding",
+      "real-estate-design",
+      "nonprofit-branding"
+    ]
+  },
+  {
+    "slug": "design-systems",
+    "name": "Designsystemen",
+    "tagline": "Eén bron van waarheid voor elk component, token en patroon.",
+    "summary": "We maken van verspreide UI-beslissingen een beheerd systeem (componenten, tokens en documentatie) waarmee design en engineering consistent en snel opleveren, zonder opnieuw over dezelfde knop te discussiëren.",
+    "deliverables": [
+      "Tokenarchitectuur (kleur, typografie, ruimte, beweging)",
+      "Componentbibliotheken in Figma, gespiegeld in code",
+      "Gebruiksdocumentatie en bijdragerichtlijnen",
+      "Uitrol en adoptiebegeleiding voor bestaande teams"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "consumer-electronics",
+      "finance-fintech",
+      "education-edtech"
+    ]
+  },
+  {
+    "slug": "ecommerce-design",
+    "name": "E-commercedesign",
+    "tagline": "Webshops en productpagina's die converteren zonder als een funnel aan te voelen.",
+    "summary": "Van catalogus bladeren tot afrekenen ontwerpen we winkelervaringen die bij elke stap wrijving verminderen, en we bouwen ze op de platforms die je al gebruikt, waaronder Webflow en WooCommerce.",
+    "deliverables": [
+      "UX-audits van webshops en conversiegerichte herontwerpen",
+      "Design van productoverzichten, productpagina's en checkout",
+      "Implementatie in Webflow en WooCommerce",
+      "Sjablonen voor merchandising en actiepagina's"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "consumer-electronics",
+      "restaurant-branding"
+    ]
+  },
+  {
+    "slug": "end-to-end-design",
+    "name": "End-to-end design",
+    "tagline": "Van eerste schets tot opgeleverd product, één team de hele weg.",
+    "summary": "Voor teams die niet willen overdragen tussen bureaus, voeren we de hele boog uit (strategie, merk, UX, UI, prototyping en bouw), zodat er tussen de fases niets verloren gaat.",
+    "deliverables": [
+      "Discovery, strategie en productdefinitie",
+      "UX-architectuur tot en met de definitieve UI",
+      "Prototyping en usabilityvalidatie",
+      "Bouw zonder overdracht in Webflow, Framer of code"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "health-wellness-tech",
+      "civic-tech-design"
+    ]
+  },
+  {
+    "slug": "mobile-app-design",
+    "name": "Mobile-appdesign",
+    "tagline": "Apps die native aanvoelen, ontworpen voor de platforms die mensen echt gebruiken.",
+    "summary": "We ontwerpen iOS- en Android-ervaringen die platformconventies respecteren en toch onmiskenbaar bij het merk passen, van onboarding tot de schermen die elke dag worden geopend.",
+    "deliverables": [
+      "Informatiearchitectuur en gebruikersflows",
+      "iOS- en Android-UI-design, platformbewust",
+      "Specificaties voor interacties en micro-animaties",
+      "Design-QA tot en met de overdracht aan engineering"
+    ],
+    "relatedIndustries": [
+      "health-wellness-tech",
+      "consumer-electronics",
+      "media-entertainment-gaming"
+    ]
+  },
+  {
+    "slug": "motion-interaction-design",
+    "name": "Motion- en interactiedesign",
+    "tagline": "Beweging die de interface uitlegt in plaats van versiert.",
+    "summary": "Elke overgang, hover-status en laadmoment is een kans om een product zorgvuldiger te laten voelen. We ontwerpen bewegingssystemen die hiërarchie verduidelijken en interfaces een hartslag geven.",
+    "deliverables": [
+      "Bewegingsprincipes en timing-/easingsystemen",
+      "Design van micro-interacties en overgangen",
+      "Prototypes in Framer voor beoordeling door stakeholders",
+      "Specificaties klaar voor engineering (easing, duur, triggers)"
+    ],
+    "relatedIndustries": [
+      "media-entertainment-gaming",
+      "consumer-electronics",
+      "technology-saas"
+    ]
+  },
+  {
+    "slug": "product-design",
+    "name": "Productdesign",
+    "tagline": "Digitale producten ontworpen rond hoe mensen echt werken.",
+    "summary": "We schuiven aan bij product- en engineeringteams om software te ontwerpen die simpel is waar het simpel moet zijn en krachtig waar het moet, gebaseerd op echt gebruikersonderzoek in plaats van giswerk.",
+    "deliverables": [
+      "Gebruikersonderzoek en journey mapping",
+      "Informatiearchitectuur en flowdesign",
+      "High-fidelity UI voor web en app",
+      "Usabilitytesten en iteratie"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "finance-fintech",
+      "civic-tech-design",
+      "health-wellness-tech"
+    ]
+  },
+  {
+    "slug": "saas-design",
+    "name": "SaaS-design",
+    "tagline": "Interfaces voor producten die complexer worden naarmate ze succesvoller zijn.",
+    "summary": "SaaS-producten stapelen snel complexiteit op. We ontwerpen dashboards, instellingen en workflows die op schaal leesbaar blijven, en bouwen de componentsystemen die voorkomen dat nieuwe functies het geheel uithollen.",
+    "deliverables": [
+      "Design van dashboards en data-intensieve UI",
+      "Design van onboarding- en activatieflows",
+      "UX voor instellingen, rechten en beheer",
+      "Designsysteemfundamenten voor doorlopend featurewerk"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "finance-fintech",
+      "education-edtech"
+    ]
+  },
+  {
+    "slug": "ui-ux-design",
+    "name": "UI/UX-design",
+    "tagline": "Het kernvak: onderzoek, structuur en uitvoering tot op de pixel.",
+    "summary": "Dit is het dagelijks werk van de studio: gebruikers begrijpen, flows structureren en interfaces ontwerpen met de typografische en visuele zorg die een product van een prototype onderscheidt.",
+    "deliverables": [
+      "Gebruikersonderzoek, persona's en journey mapping",
+      "Wireframing en informatiearchitectuur",
+      "High-fidelity visueel ontwerp",
+      "Interactieve prototypes voor testen en draagvlak"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "real-estate-design",
+      "hospitality-design",
+      "legal-branding"
+    ]
+  },
+  {
+    "slug": "ux-audit",
+    "name": "UX-audit",
+    "tagline": "Een nuchtere blik op wat je conversies en vertrouwen kost.",
+    "summary": "Voordat we iets herontwerpen, kunnen we je vertellen wat er echt stuk is: een gestructureerde, heuristische beoordeling van je bestaande product met geprioriteerde, uitvoerbare verbeteringen in plaats van een lijst meningen.",
+    "deliverables": [
+      "Heuristische evaluatie op basis van usabilityprincipes",
+      "Analyse van wrijving in funnels en specifieke flows",
+      "Steekproeven op toegankelijkheid en performance",
+      "Geprioriteerd bevindingenrapport met aanbevolen oplossingen"
+    ],
+    "relatedIndustries": [
+      "finance-fintech",
+      "ecommerce",
+      "technology-saas"
+    ]
+  }
+]

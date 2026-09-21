@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Contact – Mellon",
+    "description": "Vertel ons wat je bouwt en waar je nu staat. We reageren persoonlijk op elke aanvraag, meestal binnen één werkdag."
+  },
+  "blocks": [
+    {
+      "type": "contact",
+      "eyebrow": "Contact",
+      "headline": "Start een project.",
+      "subhead": "Vertel ons wat je bouwt en waar je nu staat. We reageren persoonlijk op elke aanvraag, meestal binnen één werkdag.",
+      "directEmailLabel": "Of mail ons direct op"
+    }
+  ]
+}

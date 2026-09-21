@@ -20,6 +20,16 @@ import privacyEnUS from "@/content/en-US/pages/privacy.json";
 
 import siteEnGB from "@/content/en-GB/site.json";
 
+import siteNlNL from "@/content/nl-NL/site.json";
+import servicesNlNL from "@/content/nl-NL/services.json";
+import industriesNlNL from "@/content/nl-NL/industries.json";
+import homeNlNL from "@/content/nl-NL/pages/home.json";
+import aboutNlNL from "@/content/nl-NL/pages/about.json";
+import servicesPageNlNL from "@/content/nl-NL/pages/services.json";
+import industriesPageNlNL from "@/content/nl-NL/pages/industries.json";
+import contactNlNL from "@/content/nl-NL/pages/contact.json";
+import privacyNlNL from "@/content/nl-NL/pages/privacy.json";
+
 import siteFrFR from "@/content/fr-FR/site.json";
 import servicesFrFR from "@/content/fr-FR/services.json";
 import industriesFrFR from "@/content/fr-FR/industries.json";
@@ -122,6 +132,19 @@ export const contentRegistry: Record<string, LocaleContent> = {
       industries: industriesPageFrFR as unknown as PageDoc,
       contact: contactFrFR as unknown as PageDoc,
       privacy: privacyFrFR as unknown as PageDoc,
+    },
+  },
+  "nl-NL": {
+    site: siteNlNL,
+    services: servicesNlNL,
+    industries: industriesNlNL,
+    pages: {
+      home: homeNlNL as unknown as PageDoc,
+      about: aboutNlNL as unknown as PageDoc,
+      services: servicesPageNlNL as unknown as PageDoc,
+      industries: industriesPageNlNL as unknown as PageDoc,
+      contact: contactNlNL as unknown as PageDoc,
+      privacy: privacyNlNL as unknown as PageDoc,
     },
   },
 };

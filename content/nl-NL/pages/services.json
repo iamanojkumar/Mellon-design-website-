@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Diensten – Mellon",
+    "description": "Branding, designsystemen, productdesign en zeven andere disciplines waarmee Mellon een merk van idee naar opgeleverde interface brengt."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Diensten",
+      "headline": "Tien disciplines, één studio, geen overdrachten.",
+      "subhead": "Elke dienst hieronder kan los draaien of deel uitmaken van één end-to-end traject, in beide gevallen met hetzelfde team."
+    },
+    {
+      "type": "serviceCards",
+      "viewLink": "Bekijk dienst →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "Niet zeker welke dienst past?",
+      "body": "Vertel ons wat je bouwt en we stellen de juiste mix samen.",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

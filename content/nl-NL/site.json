@@ -1,0 +1,131 @@
+{
+  "org": {
+    "shortDescription": "Mellon is een designbureau dat merkidentiteiten, digitale producten en designsystemen bouwt voor teams in architectuur, automotive, technologie, financiën en nog veel meer sectoren."
+  },
+  "nav": {
+    "primary": [
+      {
+        "label": "Diensten",
+        "href": "/services"
+      },
+      {
+        "label": "Sectoren",
+        "href": "/industries"
+      },
+      {
+        "label": "Over ons",
+        "href": "/about"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "cta": {
+      "label": "Start een project",
+      "href": "/contact"
+    }
+  },
+  "footer": {
+    "tagline": "Een designbureau voor teams die merk, product en interface als één systeem laten werken.",
+    "columns": [
+      {
+        "heading": "Studio",
+        "links": [
+          {
+            "label": "Over ons",
+            "href": "/about"
+          },
+          {
+            "label": "Diensten",
+            "href": "/services"
+          },
+          {
+            "label": "Sectoren",
+            "href": "/industries"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact"
+          }
+        ]
+      }
+    ],
+    "legal": "Alle rechten voorbehouden.",
+    "legalLinks": [
+      {
+        "label": "Privacybeleid",
+        "href": "/privacy"
+      }
+    ],
+    "contactHeading": "Contact",
+    "homeAria": "Mellon startpagina"
+  },
+  "common": {
+    "startProject": "Start een project",
+    "skipToContent": "Ga naar de inhoud",
+    "menu": "Menu",
+    "homeAria": "Mellon startpagina",
+    "primaryNavAria": "Hoofdnavigatie",
+    "breadcrumbAria": "Kruimelpad",
+    "home": "Home",
+    "learnMore": "Meer weten →",
+    "languageSwitcher": {
+      "searchPlaceholder": "Zoek een taal",
+      "noResults": "Geen talen gevonden",
+      "soon": "Binnenkort"
+    }
+  },
+  "servicesPage": {
+    "label": "Diensten",
+    "detail": {
+      "included": "Wat is inbegrepen",
+      "usedIn": "Waar we dit hebben toegepast",
+      "readyHeadline": "Klaar om te praten over {nameLower}?"
+    }
+  },
+  "industriesPage": {
+    "label": "Sectoren",
+    "detail": {
+      "deliver": "Wat we opleveren",
+      "relevantServices": "Relevante diensten",
+      "buildingHeadline": "Bouw je iets in {nameLower}?"
+    }
+  },
+  "notFound": {
+    "eyebrow": "404",
+    "headline": "We konden die pagina niet vinden.",
+    "body": "De pagina die je zoekt is mogelijk verplaatst of heeft nooit bestaan.",
+    "back": "Terug naar home"
+  },
+  "errorPage": {
+    "eyebrow": "Fout",
+    "headline": "Er is iets misgegaan.",
+    "body": "Een onverwachte fout verhinderde dat deze pagina laadde. Je kunt het opnieuw proberen of teruggaan naar de startpagina.",
+    "retry": "Opnieuw proberen",
+    "home": "Terug naar home"
+  },
+  "forms": {
+    "contact": {
+      "successMessage": "Bedankt, je bericht is binnen. We reageren binnen één werkdag.",
+      "submitLabel": "Bericht versturen",
+      "labels": {
+        "name": "Naam",
+        "email": "E-mail",
+        "company": "Bedrijf (optioneel)",
+        "budget": "Budgetrange (optioneel)",
+        "budgetPlaceholder": "bijv. €15.000–€40.000",
+        "message": "Wat ben je aan het bouwen?",
+        "sending": "Versturen…",
+        "genericError": "Er is iets misgegaan. Probeer het opnieuw.",
+        "privacyNote": "Door dit bericht te versturen ga je akkoord met ons",
+        "privacyLink": "Privacybeleid"
+      },
+      "validation": {
+        "name": "Vul je volledige naam in.",
+        "email": "Vul een geldig e-mailadres in.",
+        "message": "Vertel ons iets meer: minimaal 20 tekens."
+      }
+    }
+  }
+}

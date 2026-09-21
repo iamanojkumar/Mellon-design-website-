@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Mellon – Designbureau voor merk, product en digitale ervaring",
+    "description": "Mellon is een designbureau dat merkidentiteiten, digitale producten en designsystemen bouwt voor teams in architectuur, automotive, technologie, financiën en nog veel meer sectoren."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Mellon Design",
+      "headline": "Design dat een merk draagt van eerste indruk tot dagelijks gebruik.",
+      "subhead": "We bouwen identiteitssystemen, digitale producten en designsystemen voor teams die merk en product als één geheel willen laten bewegen: in architectuur, automotive, technologie, financiën en een dozijn andere sectoren.",
+      "primaryCta": {
+        "label": "Start een project",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Bekijk onze diensten",
+        "href": "/services"
+      },
+      "image": {
+        "src": "/images/Mellon-hero-banner.webp",
+        "alt": "",
+        "width": 1320,
+        "height": 567
+      }
+    },
+    {
+      "type": "servicesGrid",
+      "eyebrow": "Wat we doen",
+      "headline": "Tien disciplines. Eén studio.",
+      "body": "Van een eerste merkteken tot een volledig beheerd designsysteem: Mellon dekt al het designwerk dat een groeiend bedrijf nodig heeft, zonder overdrachten tussen bureaus."
+    },
+    {
+      "type": "industriesChips",
+      "eyebrow": "Voor wie we werken",
+      "headline": "Diep genoeg in elke sector om de leercurve over te slaan.",
+      "body": "We ontwierpen voor architectenbureaus en automotive-teams, fintechs en restaurantgroepen. Elke sectorpagina hieronder laat zien wat we er echt van hebben geleerd."
+    },
+    {
+      "type": "process",
+      "eyebrow": "Hoe we werken",
+      "headline": "Design en development onder één dak.",
+      "body": "Mellon werkt als twee verbonden adviespraktijken, design en development, zodat de systemen die we ontwerpen ook de systemen zijn die live gaan, en geen stapel bestanden die over de muur wordt gegooid.",
+      "steps": [
+        {
+          "title": "Design",
+          "body": "Strategie, merk, UX en UI, gemaakt in Figma en getest voordat er één regel code is geschreven."
+        },
+        {
+          "title": "Development",
+          "body": "Implementatie in Webflow, Framer, WordPress of maatwerkcode, door een team dat de designintentie al kent."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Vertel ons wat je aan het bouwen bent.",
+      "body": "Elke samenwerking begint met een gesprek, niet met een offertesjabloon. Vertel ons waar je staat en we zeggen eerlijk of, en hoe, we kunnen helpen.",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

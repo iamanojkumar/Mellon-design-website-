@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Sectoren – Mellon",
+    "description": "Zestien sectoren waarvoor Mellon heeft ontworpen, van architectuur en automotive tot fintech en horeca, met patronen die bij elke sector passen."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Sectoren",
+      "headline": "Diep genoeg in elke sector om de leercurve over te slaan.",
+      "subhead": "Zestien sectoren, elk met eigen randvoorwaarden. Kies de jouwe om de patronen en diensten te zien waar we daar op leunen."
+    },
+    {
+      "type": "industryCards",
+      "viewLink": "Bekijk sector →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "Zie je jouw sector niet?",
+      "body": "De disciplines zijn overdraagbaar, ook als de sector nieuw voor ons is. Vertel ons wat je bouwt.",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

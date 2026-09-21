@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "Over ons – Mellon",
+    "description": "Mellon bestaat omdat merk, product en engineering meestal in aparte ruimtes worden ontworpen, en dat zie je. Wij houden ze in één ruimte."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Over ons",
+      "headline": "Een designstudio die design en development als één praktijk runt.",
+      "subhead": "Mellon bestaat omdat merk, product en engineering meestal in aparte ruimtes worden ontworpen, en dat zie je. Wij houden ze in één ruimte."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Wie we zijn",
+          "body": "Mellon is een designbureau voor branding, productdesign en designsystemen. We zijn bewust een kleine, ervaren studio: elk project wordt gedraaid door mensen die precies het soort werk al hebben gedaan waarvoor je ons inhuurt, niet door wie toevallig tijd heeft."
+        },
+        {
+          "heading": "Wat we doen",
+          "body": "Tien kerndisciplines: branding, designsystemen, e-commercedesign, end-to-end design, mobile-appdesign, motion- en interactiedesign, productdesign, SaaS-design, UI/UX-design en UX-audits, los te boeken of gecombineerd in één end-to-end traject."
+        },
+        {
+          "heading": "Hoe we werken",
+          "body": "Elk project doorloopt dezelfde twee praktijken: design en development. Design omvat strategie, merk, UX en UI. Development omvat de implementatie in Webflow, Framer, WordPress of maatwerkcode, door mensen die bij de designbeslissingen aanwezig waren, zodat er bij de overdracht niets verloren gaat."
+        },
+        {
+          "heading": "Voor wie we werken",
+          "body": "Zestien sectoren en het worden er meer: architectuur en interieurontwerp, automotive, civic tech, consumentenelektronica, e-commerce, onderwijs, mode, financiën, gezondheid en welzijn, hospitality, juridisch, media, entertainment en gaming, non-profit, vastgoed, horeca, en technologie en SaaS. Elke sectorpagina laat patronen zien die we juist in die sector hebben gezien, geen generiek sjabloon."
+        },
+        {
+          "heading": "Waar we beginnen",
+          "body": "Met een gesprek, niet met een offertesjabloon. Vertel ons wat je bouwt en we zeggen je eerlijk of wij de juiste studio zijn."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Begin met een gesprek.",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

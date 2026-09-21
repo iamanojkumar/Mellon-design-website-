@@ -1,0 +1,275 @@
+[
+  {
+    "slug": "architecture-interior-design",
+    "name": "Architectuur en interieurontwerp",
+    "tagline": "Een digitale uitstraling die net zo doordacht is als de ruimtes die je ontwerpt.",
+    "summary": "Architecten- en interieurbureaus verkopen een gevoel voor ze een plattegrond laten zien. We bouwen portfoliosites en merksystemen waarin het werk, met het licht, het materiaal en de ruimte erin, zelf mag spreken.",
+    "deliverables": [
+      "Design van portfolio en projectpresentatie",
+      "Fotografiegedreven layoutsystemen",
+      "Studiobranding en afstemming van drukwerk",
+      "Webflow-sites die je team zonder developer kan bijwerken"
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "end-to-end-design"
+    ]
+  },
+  {
+    "slug": "automotive",
+    "name": "Automotive",
+    "tagline": "Interfaces voor de sector die het snelst van hardware naar software beweegt.",
+    "summary": "Van infotainmentsystemen tot eigenaarsapps en configurators: we ontwerpen digitale automotive-producten die dezelfde afwerking en precisie halen als de voertuigen zelf.",
+    "deliverables": [
+      "UI-design voor voertuig en infotainment",
+      "Design van apps voor eigenaren en dealers",
+      "Configurator- en aankoopervaringen",
+      "Designsystemen die over productlijnen worden gedeeld"
+    ],
+    "relatedServices": [
+      "product-design",
+      "mobile-app-design",
+      "design-systems"
+    ]
+  },
+  {
+    "slug": "civic-tech-design",
+    "name": "Civic tech",
+    "tagline": "Overheidssoftware die mensen zonder handleiding kunnen gebruiken.",
+    "summary": "Publieke en overheidsplatforms vragen om meer duidelijkheid en toegankelijkheid. We ontwerpen diensten die werken voor elke inwoner, op elk apparaat, in gewone taal.",
+    "deliverables": [
+      "Toegankelijkheid eerst (afgestemd op WCAG)",
+      "Dienstontwerp in begrijpelijke taal",
+      "Designsystemen voor meerdere afdelingen",
+      "Usabilitytesten met echte inwoners"
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "ux-audit",
+      "design-systems"
+    ]
+  },
+  {
+    "slug": "consumer-electronics",
+    "name": "Consumentenelektronica",
+    "tagline": "Merk- en productervaring die van de doos tot de app doorloopt.",
+    "summary": "Hardware wint vertrouwen in seconden; de software moet het vasthouden. We ontwerpen de begeleidende apps, installatieflows en merksystemen die elektronica van begin tot eind doordacht laten voelen.",
+    "deliverables": [
+      "Design van begeleidende apps en installatieflows",
+      "Merkcontinuïteit van verpakking tot product",
+      "Design van e-commerce en productpagina's",
+      "Motion design voor productlanceringen"
+    ],
+    "relatedServices": [
+      "mobile-app-design",
+      "motion-interaction-design",
+      "branding"
+    ]
+  },
+  {
+    "slug": "ecommerce",
+    "name": "E-commerce",
+    "tagline": "Webshops gebouwd om te converteren, niet alleen om er goed uit te zien.",
+    "summary": "We ontwerpen en bouwen winkelervaringen, van productontdekking tot afrekenen, op de platforms die je dagelijks gebruikt, geoptimaliseerd op echte conversiedata in plaats van trends.",
+    "deliverables": [
+      "Design van winkel en productpagina's",
+      "Optimalisatie van winkelwagen en checkout",
+      "Webflow- en WooCommerce-bouw",
+      "Conversiegerichte UX-audits"
+    ],
+    "relatedServices": [
+      "ecommerce-design",
+      "ux-audit",
+      "branding"
+    ]
+  },
+  {
+    "slug": "education-edtech",
+    "name": "Onderwijs en edtech",
+    "tagline": "Leerproducten ontworpen voor aandachtsspanne, niet alleen voor lesstof.",
+    "summary": "We ontwerpen platforms voor leerlingen, docenten en beheerders: interfaces die bruikbaar blijven onder echte klasomstandigheden en meeschalen van één school naar een heel schoolbestuur.",
+    "deliverables": [
+      "Platformdesign voor leerlingen en docenten",
+      "UX voor cursus- en contentcreatie",
+      "Design van beheer- en bestuursdashboards",
+      "Toegankelijkheid volgens standaarden voor funderend en hoger onderwijs"
+    ],
+    "relatedServices": [
+      "product-design",
+      "saas-design",
+      "design-systems"
+    ]
+  },
+  {
+    "slug": "fashion-brand-design",
+    "name": "Mode",
+    "tagline": "Merksystemen met de redactionele afwerking die de sector eist.",
+    "summary": "Modemerken leven van visuele consistentie over lookbooks, webshops en social media heen. We bouwen identiteitssystemen en webshops die die lijn op schaal vasthouden.",
+    "deliverables": [
+      "Merkidentiteit en lookbookregie",
+      "Design van webshops en campagnesites",
+      "Systemen voor seizoensgebonden materiaal",
+      "Sjablonen voor social en content"
+    ],
+    "relatedServices": [
+      "branding",
+      "ecommerce-design",
+      "ui-ux-design"
+    ]
+  },
+  {
+    "slug": "finance-fintech",
+    "name": "Financiën en fintech",
+    "tagline": "Vertrouwen leesbaar gemaakt, in interfaces die met echt geld werken.",
+    "summary": "Fintechproducten moeten tegelijk nauwkeurig, compliant en geruststellend zijn. We ontwerpen dashboards, onboarding en transactieflows die complexe financiële data beheersbaar laten voelen.",
+    "deliverables": [
+      "Design van onboarding- en KYC-flows",
+      "UX voor dashboards en transacties",
+      "Designsystemen gebouwd voor compliancebeoordeling",
+      "Beveiligingsbewuste UX-audits"
+    ],
+    "relatedServices": [
+      "product-design",
+      "saas-design",
+      "ux-audit"
+    ]
+  },
+  {
+    "slug": "health-wellness-tech",
+    "name": "Gezondheid en welzijn",
+    "tagline": "Zorgervaringen die op elk contactmoment menselijk blijven.",
+    "summary": "Of het nu een patiëntenportaal of een welzijnsapp is: we ontwerpen voor momenten waarop mensen gestrest, afgeleid of kwetsbaar zijn. Duidelijkheid en geruststelling zijn de hele opdracht.",
+    "deliverables": [
+      "Design van patiënten- en ledenportalen",
+      "Design van welzijns- en gewoontetrackingapps",
+      "UX-patronen die rekening houden met gezondheidsprivacy",
+      "Audits op toegankelijkheid en leesbaarheid"
+    ],
+    "relatedServices": [
+      "mobile-app-design",
+      "product-design",
+      "end-to-end-design"
+    ]
+  },
+  {
+    "slug": "hospitality-design",
+    "name": "Hospitality",
+    "tagline": "Boekings- en gastervaringen die bij het pand passen.",
+    "summary": "Van boetiekhotels tot restaurantgroepen ontwerpen we digitale ervaringen (boekingsflows, merksites, gastenapps) die het niveau van gastvrijheid weerspiegelen dat gasten ter plaatse verwachten.",
+    "deliverables": [
+      "Design van boekings- en reserveringsflows",
+      "Design van pand- en merkwebsites",
+      "App-ervaringen voor gasten",
+      "Fotografiegedreven visuele systemen"
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "branding",
+      "ecommerce-design"
+    ]
+  },
+  {
+    "slug": "legal-branding",
+    "name": "Juridisch",
+    "tagline": "Gezag en benaderbaarheid in hetzelfde identiteitssysteem.",
+    "summary": "Juridische merken moeten geloofwaardigheid uitstralen zonder kil te worden. We bouwen identiteits- en websystemen voor kantoren die vertrouwd willen worden en toch benaderd willen worden.",
+    "deliverables": [
+      "Kantooridentiteit en merkrichtlijnen",
+      "Website-architectuur per rechtsgebied",
+      "Sjablonen voor advocatenprofielen en behaalde resultaten",
+      "Leadgerichte contact- en intakedesign"
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "end-to-end-design"
+    ]
+  },
+  {
+    "slug": "media-entertainment-gaming",
+    "name": "Media, entertainment en gaming",
+    "tagline": "Interfaces met persoonlijkheid, gebouwd om aandacht vast te houden.",
+    "summary": "We ontwerpen voor doelgroepen die afwerking en tempo verwachten: streamingplatforms, game-UI en entertainmentmerken waar beweging en detail net zo zwaar wegen als layout.",
+    "deliverables": [
+      "Platform- en streaming-UI-design",
+      "Design van in-game- en HUD-interfaces",
+      "Merksystemen met beweging voorop",
+      "Consistent design over platforms heen"
+    ],
+    "relatedServices": [
+      "motion-interaction-design",
+      "mobile-app-design",
+      "branding"
+    ]
+  },
+  {
+    "slug": "nonprofit-branding",
+    "name": "Non-profit",
+    "tagline": "Identiteit en digitale systemen gebouwd voor de missie, niet voor de marge.",
+    "summary": "We helpen non-profitorganisaties zich net zo verzorgd te presenteren als elk commercieel merk: heldere storytelling, toegankelijk design en donatieflows die intentie echt omzetten in steun.",
+    "deliverables": [
+      "Missiegedreven merkidentiteit",
+      "Design van donatie- en campagneflows",
+      "Toegankelijke websites met weinig onderhoud",
+      "Design van jaarverslagen en impactverhalen"
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "ecommerce-design"
+    ]
+  },
+  {
+    "slug": "real-estate-design",
+    "name": "Vastgoed",
+    "tagline": "Aanbod en merkpresentie die het pand verkopen, niet alleen tonen.",
+    "summary": "We ontwerpen sites voor makelaars en ontwikkelaars waarop aanbod premium aanvoelt: kaartgestuurd zoeken, snelle galerijen en leadflows die interesse omzetten in bezichtigingen.",
+    "deliverables": [
+      "Design van aanbods- en objectpagina's",
+      "UX voor kaart- en zoekgestuurd bladeren",
+      "Merkidentiteit voor makelaars en ontwikkelaars",
+      "Design van leadcapture en aanvraagflows"
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "ecommerce-design"
+    ]
+  },
+  {
+    "slug": "restaurant-branding",
+    "name": "Horeca",
+    "tagline": "Menu's, merk en bestelflows die mensen echt willen gebruiken.",
+    "summary": "We bouwen identiteit en digitale bestelervaringen voor horecagroepen, van merken met één vestiging tot ketens met meerdere, die net zo lekker aanvoelen als de gerechten op de foto's.",
+    "deliverables": [
+      "Restaurantmerk en menu-identiteit",
+      "UX voor online bestellen en reserveren",
+      "Sitearchitectuur voor meerdere vestigingen",
+      "Design van fotografiegedreven marketingsites"
+    ],
+    "relatedServices": [
+      "branding",
+      "ecommerce-design",
+      "ui-ux-design"
+    ]
+  },
+  {
+    "slug": "technology-saas",
+    "name": "Technologie en SaaS",
+    "tagline": "Productdesign voor software die elke verlenging opnieuw moet verdienen.",
+    "summary": "Hier besteedt de studio de meeste tijd aan: dashboards, onboarding en designsystemen voor SaaS-producten die eenvoudig moeten blijven terwijl ze met elke release meer doen.",
+    "deliverables": [
+      "UI-design van product en dashboards",
+      "Design van onboarding en activatie",
+      "Designsystemen voor snelle roadmaps",
+      "UX-audits voor grote releases"
+    ],
+    "relatedServices": [
+      "saas-design",
+      "design-systems",
+      "product-design",
+      "ux-audit"
+    ]
+  }
+]

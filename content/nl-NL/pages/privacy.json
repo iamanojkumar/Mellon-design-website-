@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Privacybeleid – Mellon",
+    "description": "Dit beleid legt uit welke persoonsgegevens Mellon Design via deze website verzamelt, hoe we ze gebruiken en welke keuzes je hebt. We houden het kort, omdat we heel weinig verzamelen."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Juridisch",
+      "headline": "Privacybeleid",
+      "subhead": "Dit beleid legt uit welke persoonsgegevens Mellon Design via deze website verzamelt, hoe we ze gebruiken en welke keuzes je hebt. We houden het kort, omdat we heel weinig verzamelen.",
+      "updated": {
+        "label": "Laatst bijgewerkt",
+        "date": "2026-09-21"
+      }
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Wie we zijn",
+          "body": "Deze website wordt beheerd door Mellon Design (\"Mellon\", \"wij\", \"ons\"). Heb je vragen over dit beleid of over je gegevens, mail ons dan via {email}."
+        },
+        {
+          "heading": "Wat we verzamelen",
+          "body": "Alleen wat je ons via het contactformulier stuurt: je naam, e-mailadres, je bedrijf en budgetrange als je die wilt delen, en je bericht. Zoals de meeste websites kan onze hostingpartij daarnaast technische gegevens verwerken, zoals IP-adres en browsertype, in serverlogs om de site te leveren en te beveiligen."
+        },
+        {
+          "heading": "Hoe we ze gebruiken",
+          "body": "Om je aanvraag te lezen en te beantwoorden en het gesprek vast te leggen. Aanvragen worden in een database opgeslagen en we krijgen een e-mailmelding. We verkopen je gegevens niet."
+        },
+        {
+          "heading": "Cookies",
+          "body": "Eén klein functioneel cookie, mellon_locale, onthoudt de taal die je hebt gekozen; het blijft maximaal een jaar bewaard en bevat geen persoonsgegevens. Daarnaast vragen we je toestemming voordat we analytische of marketingcookies gebruiken, en we activeren ze alleen als je akkoord gaat. Je keuze wordt in je browser opgeslagen (mellon_consent_v3). Wil je die wijzigen, wis dan de gegevens van deze site in je browser; de banner vraagt het dan opnieuw."
+        },
+        {
+          "heading": "Met wie we ze delen",
+          "body": "Alleen met dienstverleners die ons helpen de site te laten draaien: hosting (Vercel), opslag van aanvragen (Supabase) en e-mail (Zoho), en alleen voor zover ze dat voor hun werk nodig hebben. Analyse- en marketingtools ontvangen, als je dat toestaat, de gebruikelijke surfgegevens die zij verzamelen. We kunnen gegevens ook openbaar maken als de wet dat vereist."
+        },
+        {
+          "heading": "Hoe lang we ze bewaren",
+          "body": "Zolang als nodig is om je te antwoorden en redelijke zakelijke administratie bij te houden; daarna verwijderen of anonimiseren we ze."
+        },
+        {
+          "heading": "Je rechten",
+          "body": "Afhankelijk van waar je woont, heb je mogelijk het recht om je persoonsgegevens in te zien, te corrigeren, te verwijderen of over te dragen, of bezwaar te maken tegen het gebruik ervan. Mail ons via {email} om een van deze rechten uit te oefenen; we reageren binnen een redelijke termijn. Woon je in Nederland, dan kun je ook een klacht indienen bij de Autoriteit Persoonsgegevens."
+        },
+        {
+          "heading": "Wijzigingen in dit beleid",
+          "body": "Als we dit beleid wijzigen, passen we de datum hierboven aan. Belangrijke wijzigingen lichten we op deze pagina uit."
+        }
+      ]
+    }
+  ]
+}
