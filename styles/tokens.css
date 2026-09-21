@@ -40,7 +40,9 @@
 
   /* Type */
   --font-display: Georgia, "Times New Roman", Times, serif;
-  --font-body: "Roboto Flex", "Helvetica Neue", Arial, sans-serif;
+  /* Display weight: 500 renders as Medium where the face has it, Regular otherwise (Georgia has no Medium). */
+  --fw-display: 500;
+  --font-body:"Roboto Flex", "Helvetica Neue", Arial, sans-serif;
   --font-mono: "DM Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 
   --fs-100: 0.8125rem;

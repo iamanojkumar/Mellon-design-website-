@@ -10,6 +10,8 @@ import { getSiteContent } from "@/lib/content";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { SiteBodyStartTags, SiteHeadTags } from "@/components/seo/SiteHeadTags";
+import { SmoothScroll } from "@/components/motion/SmoothScroll";
+import { CursorFx } from "@/components/motion/CursorFx";
 import "@/styles/globals.css";
 
 const robotoFlex = Roboto_Flex({
@@ -41,6 +43,13 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isEnabledLocale(locale)) notFound();
 
+  // Dev-only motion debugger. The condition is a compile-time constant, so in production
+  // the bundler drops the import() and none of the panel code is shipped.
+  const DebugPanel =
+    process.env.NODE_ENV === "development"
+      ? (await import("@/components/debug/DebugPanel")).DebugPanel
+      : null;
+
   const localeConfig = getLocaleConfig(locale)!;
   const site = getSiteContent(locale);
 
@@ -51,6 +60,9 @@ export default async function LocaleLayout({
       </head>
       <body className={`${robotoFlex.variable} ${dmMono.variable}`}>
         <SiteBodyStartTags />
+        <SmoothScroll />
+        <CursorFx />
+        {DebugPanel && <DebugPanel />}
         <a href="#main" className="visually-hidden">
           {site.common.skipToContent}
         </a>

@@ -1,0 +1,28 @@
+.fx {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 60;
+  pointer-events: none;
+}
+
+/* Sits under the trail canvas; masked to the trail shape from JS. */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 59;
+  pointer-events: none;
+  visibility: hidden;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+}
+
+.svgDefs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
