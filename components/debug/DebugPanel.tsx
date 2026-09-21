@@ -255,6 +255,7 @@ export function DebugPanel() {
 
       <Accordion title="Cursor trail" open={!!sections.cursor} onToggle={() => toggleSection("cursor")}>
         <Toggle label="Enabled" k="cursorFxEnabled" value={s.cursorFxEnabled} />
+        <Toggle label="Hide native cursor while moving" k="cursorHideNative" value={s.cursorHideNative} />
         <BlendSelect value={s.cursorFxBlend} />
         {CURSOR_FX_SLIDERS.map((def) => (
           <Slider key={def.key} def={def} value={s[def.key] as number} />

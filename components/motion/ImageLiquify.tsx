@@ -14,6 +14,8 @@ import styles from "./ImageLiquify.module.css";
  * A click-through overlay canvas then redraws each on-screen <img> through that field. It only
  * paints where the field is non-zero, so undisturbed images show the original <img> untouched.
  * Skipped for reduced-motion / touch / no WebGL2 float render targets.
+ *
+ * Opt out: put `data-no-fx` on an <img> (or any ancestor) and it is never touched. Used for logos.
  */
 
 // ---- field pass: fullscreen, y-up field coordinates ----
@@ -335,6 +337,7 @@ export function ImageLiquify() {
         // Photos/artwork only: icons and logos under ~40px are left alone.
         if (r.width < 40 || r.height < 40) continue;
         if (r.bottom < 0 || r.top > window.innerHeight || r.right < 0 || r.left > window.innerWidth) continue;
+        if (img.closest("[data-no-fx]")) continue; // opted out (logos)
         const cs = getComputedStyle(img);
         if (cs.visibility === "hidden" || parseFloat(cs.opacity) < 0.05) continue;
         const fit = fitFor(img, r.width, r.height);

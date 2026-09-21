@@ -10,6 +10,8 @@ export type MotionSettings = {
   scrollLerp: number;
   scrollWheelMultiplier: number;
   cursorFxEnabled: boolean;
+  /** Hide the native cursor while the trail is moving; it returns when the cursor stops. */
+  cursorHideNative: boolean;
   /** Overall opacity of the iridescent trail. */
   cursorFxIntensity: number;
   /** Brush radius as a fraction of the trail width. */
@@ -126,6 +128,7 @@ const PRESET_1: MotionSettings = {
   scrollLerp: 0.03,
   scrollWheelMultiplier: 0.75,
   cursorFxEnabled: true,
+  cursorHideNative: true,
   cursorFxIntensity: 0.13,
   cursorFxRadius: 0.06,
   cursorFxFade: 0.06,

@@ -142,6 +142,9 @@ export function CursorFx() {
     // Trail mask composed with the image rectangles, for the image-only layer.
     const maskImg = document.createElement("canvas");
     const mimgCtx = maskImg.getContext("2d")!;
+    // Background-layer mask with holes cut out for [data-no-fx] elements (logos).
+    const maskBg = document.createElement("canvas");
+    const mbgCtx = maskBg.getContext("2d")!;
 
     // Two independent backdrop layers, each with its own SVG filter and mask:
     //  - background: the trail's shape over everything (text, backgrounds, images)
@@ -179,6 +182,21 @@ export function CursorFx() {
     let raf = 0;
     let running = false;
     let lastMove = 0;
+    // Native cursor: hidden while the trail is moving, shown again this long after it stops.
+    // A little longer than IDLE_MS so slow movement (sparse events) never makes it blink.
+    const REVEAL_MS = 200;
+    const root = document.documentElement;
+    let revealTimer = 0;
+    const showNativeCursor = () => {
+      window.clearTimeout(revealTimer);
+      root.classList.remove("cursor-fx-moving");
+    };
+    const hideNativeCursor = () => {
+      if (!cfg.cursorFxEnabled || !cfg.cursorHideNative) return;
+      root.classList.add("cursor-fx-moving");
+      window.clearTimeout(revealTimer);
+      revealTimer = window.setTimeout(showNativeCursor, REVEAL_MS);
+    };
     // No move events for this long = the stroke has stopped (dissolve runs, next move restarts).
     const IDLE_MS = 90;
     // Only a real pause counts as a new stroke (snap + ease-in). Slight or slow movement
@@ -270,7 +288,33 @@ export function CursorFx() {
           d[i + 3] = t * t * (3 - 2 * t) * 255;
         }
         mctx.putImageData(img, 0, 0);
-        if (bgOn) setMask(bgLayer.el, mask);
+        if (bgOn) {
+          // Anything marked data-no-fx (logos) is cut out, so no cursor effect touches it.
+          const rx = maskBg.width / window.innerWidth;
+          const ry = maskBg.height / window.innerHeight;
+          const holes: DOMRect[] = [];
+          for (const el of document.querySelectorAll("[data-no-fx]")) {
+            const r = el.getBoundingClientRect();
+            if (r.width === 0 || r.height === 0) continue;
+            if (r.bottom < 0 || r.top > window.innerHeight || r.right < 0 || r.left > window.innerWidth) continue;
+            holes.push(r);
+          }
+          if (holes.length === 0) {
+            setMask(bgLayer.el, mask);
+          } else {
+            mbgCtx.globalCompositeOperation = "source-over";
+            mbgCtx.clearRect(0, 0, maskBg.width, maskBg.height);
+            mbgCtx.drawImage(mask, 0, 0);
+            mbgCtx.globalCompositeOperation = "destination-out";
+            mbgCtx.fillStyle = "#000";
+            const pad = 14; // ~1 mask pixel: the mask is low-res, so a smaller margin leaves partial edge pixels
+            for (const r of holes) {
+              mbgCtx.fillRect((r.left - pad) * rx, (r.top - pad) * ry, (r.width + pad * 2) * rx, (r.height + pad * 2) * ry);
+            }
+            mbgCtx.globalCompositeOperation = "source-over";
+            setMask(bgLayer.el, maskBg);
+          }
+        }
         if (imgOn) {
           // Trail mask kept only where an image is on screen. Icons and logos under ~40px
           // are skipped: this is for photos/artwork, not UI glyphs.
@@ -281,6 +325,7 @@ export function CursorFx() {
           for (const el of document.querySelectorAll("img")) {
             const r = el.getBoundingClientRect();
             if (r.width < 40 || r.height < 40) continue;
+            if (el.closest("[data-no-fx]")) continue; // opted out (logos)
             if (r.bottom < 0 || r.top > window.innerHeight || r.right < 0 || r.left > window.innerWidth) continue;
             ictx.fillRect(r.left * rx, r.top * ry, r.width * rx, r.height * ry);
           }
@@ -298,6 +343,7 @@ export function CursorFx() {
     const applyCfg = () => {
       cfg = getSettings();
       canvas.style.mixBlendMode = cfg.cursorFxBlend;
+      if (!cfg.cursorFxEnabled || !cfg.cursorHideNative) showNativeCursor();
       gl.uniform1f(uIntensity, cfg.cursorFxIntensity);
       gl.uniform1f(uSpread, cfg.cursorFxSpread);
       gl.uniform1f(uEdge, cfg.cursorFxEdge);
@@ -327,6 +373,8 @@ export function CursorFx() {
       imageMask.height = mask.height;
       maskImg.width = mask.width;
       maskImg.height = mask.height;
+      maskBg.width = mask.width;
+      maskBg.height = mask.height;
       applyCfg();
     };
 
@@ -372,7 +420,7 @@ export function CursorFx() {
 
       // Restart fade-in: wake climbs 0 -> 1 over the recoil time after a new stroke
       // begins. It scales opacity only; the brush size is never touched.
-      const dt = lastTickT ? Math.min(now - lastTickT, 50) : 16;
+      const dt = lastTickT ? Math.min(Math.max(now - lastTickT, 1), 50) : 16; // never <= 0: guards out-of-order timestamps
       lastTickT = now;
       wake = cfg.cursorFxRecoil > 0 ? Math.min(1, wake + dt / cfg.cursorFxRecoil) : 1;
       const ease = wake * wake * (3 - 2 * wake);
@@ -463,6 +511,7 @@ export function CursorFx() {
 
     const onMove = (e: PointerEvent) => {
       if (!cfg.cursorFxEnabled) return;
+      hideNativeCursor();
       const nowT = performance.now();
       tx = (e.clientX / window.innerWidth) * field.width;
       ty = (e.clientY / window.innerHeight) * field.height;
@@ -497,6 +546,7 @@ export function CursorFx() {
     };
     const onLeave = () => {
       hasHead = false;
+      showNativeCursor();
     };
 
     resize();
@@ -504,8 +554,17 @@ export function CursorFx() {
     window.addEventListener("pointermove", onMove, { passive: true });
     document.documentElement.addEventListener("pointerleave", onLeave);
 
+    // Dev-only hook so the trail can be stepped deterministically in tests.
+    if (process.env.NODE_ENV === "development") {
+      (window as unknown as { __cursorFx?: unknown }).__cursorFx = {
+        move: (x: number, y: number) => onMove({ clientX: x, clientY: y } as PointerEvent),
+        step: (t: number) => tick(t),
+      };
+    }
+
     return () => {
       cancelAnimationFrame(raf);
+      showNativeCursor();
       unsubscribe();
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);

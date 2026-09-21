@@ -36,6 +36,7 @@ export function Footer({ locale, footer, org }: FooterProps) {
               width={112}
               height={112}
               className={styles.logo}
+              data-no-fx
             />
           </Link>
           <p className={styles.tagline}>{footer.tagline}</p>

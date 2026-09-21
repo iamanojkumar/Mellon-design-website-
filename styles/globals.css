@@ -12,6 +12,25 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Hide the browser's page scrollbar everywhere; scrolling itself (wheel, keys, touch,
+   trackpad, Lenis) is unaffected. Each engine needs its own rule:
+   - Firefox and current Chromium: scrollbar-width
+   - Chrome/Edge/Safari (Blink + WebKit, incl. older versions): ::-webkit-scrollbar
+   - Legacy Edge/IE: -ms-overflow-style
+   Set on both <html> and <body> because the viewport scrollbar can come from either. */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
 /* Lenis owns smoothing while active; native smooth-scroll would fight it. */
 html.lenis {
   scroll-behavior: auto !important;
@@ -113,4 +132,42 @@ select {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* While the cursor trail is moving, the trail is the cursor: hide the native one. The class
+   is set by CursorFx and removed ~200ms after the pointer stops, which restores the normal
+   cursor (arrow, text I-beam over text, pointer over links and buttons).
+   Setting it on <html> only (cursor is inherited) means anything with its own cursor keeps it:
+   links and buttons stay a pointer, inputs stay an I-beam. */
+html.cursor-fx-moving {
+  cursor: none;
+}
+
+/* Clickable things that don't carry their own cursor rule still show a pointer. */
+html.cursor-fx-moving :is([role="button"], [role="link"], summary, select, label[for]) {
+  cursor: pointer;
+}
+
+/* Dev debugger stays usable: normal cursor, pointer on its buttons. */
+html.cursor-fx-moving [data-lenis-prevent] {
+  cursor: auto;
+}
+
+html.cursor-fx-moving button[data-lenis-prevent],
+html.cursor-fx-moving [data-lenis-prevent] :is(button, select, summary) {
+  cursor: pointer;
+}
+
+/* Text selection highlight. Both forms: ::selection is universal now, ::-moz-selection
+   covers older Firefox. */
+::selection {
+  background: var(--color-selection-bg);
+  color: var(--color-selection-fg);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: var(--color-selection-bg);
+  color: var(--color-selection-fg);
+  text-shadow: none;
 }

@@ -36,6 +36,10 @@
   --color-fg-muted: var(--color-muted);
   --color-border: var(--color-line);
   --color-accent: var(--color-brand-pink);
+  /* Text selection: a rose that leans red without being pure red. Dark ink text on it is
+     ~4.8:1 (white would be ~3.2:1), and stays legible on the dark sections too. */
+  --color-selection-bg: #ff5c7a;
+  --color-selection-fg: var(--color-ink);
   --color-focus: var(--color-brand-cyan);
 
   /* Type */

@@ -40,6 +40,7 @@ export function Header({ locale, nav, cta, common }: HeaderProps) {
             width={252}
             height={80}
             className={styles.logoFull}
+            data-no-fx
             priority
           />
           <Image
@@ -48,6 +49,7 @@ export function Header({ locale, nav, cta, common }: HeaderProps) {
             width={80}
             height={80}
             className={styles.logoIcon}
+            data-no-fx
             priority
           />
         </Link>

@@ -89,7 +89,7 @@ export function ScrollBlur() {
     };
 
     const tick = (now: number) => {
-      const dt = lastT ? Math.min(now - lastT, 50) : 16;
+      const dt = lastT ? Math.min(Math.max(now - lastT, 1), 50) : 16; // never <= 0: guards out-of-order timestamps
       lastT = now;
       const y = window.scrollY;
       const dy = Math.abs(y - lastY);
