@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Politique de confidentialité – Mellon",
+    "description": "Cette politique explique quelles données personnelles Mellon Design collecte via ce site, comment nous les utilisons et les choix dont vous disposez. Nous la gardons courte, car nous collectons très peu de données."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Mentions légales",
+      "headline": "Politique de confidentialité",
+      "subhead": "Cette politique explique quelles données personnelles Mellon Design collecte via ce site, comment nous les utilisons et les choix dont vous disposez. Nous la gardons courte, car nous collectons très peu de données.",
+      "updated": {
+        "label": "Dernière mise à jour",
+        "date": "2026-09-21"
+      }
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Qui nous sommes",
+          "body": "Ce site est exploité par Mellon Design (« Mellon », « nous »). Pour toute question sur cette politique ou sur vos données, écrivez-nous à {email}."
+        },
+        {
+          "heading": "Ce que nous collectons",
+          "body": "Uniquement ce que vous nous envoyez via le formulaire de contact : votre nom, votre adresse e-mail, votre entreprise et votre fourchette de budget si vous choisissez de les indiquer, et votre message. Comme la plupart des sites, notre hébergeur peut également traiter des données techniques, telles que l'adresse IP et le type de navigateur, dans des journaux serveur afin de fournir et de sécuriser le site."
+        },
+        {
+          "heading": "Comment nous les utilisons",
+          "body": "Pour lire et répondre à votre demande, et conserver une trace de l'échange. Les demandes sont enregistrées dans une base de données et nous sommes prévenus par e-mail. Nous ne vendons pas vos données."
+        },
+        {
+          "heading": "Cookies",
+          "body": "Un petit cookie fonctionnel, mellon_locale, mémorise la langue que vous avez choisie ; il dure jusqu'à un an et ne contient aucune donnée personnelle. Au-delà, nous demandons votre consentement avant d'utiliser des cookies d'analyse ou de marketing, et ne les activons que si vous acceptez. Votre choix est enregistré dans votre navigateur (mellon_consent_v3). Pour le modifier, effacez les données de ce site dans votre navigateur : la bannière vous posera de nouveau la question."
+        },
+        {
+          "heading": "Avec qui nous les partageons",
+          "body": "Uniquement avec les prestataires qui nous aident à faire fonctionner le site : hébergement (Vercel), stockage des demandes (Supabase) et messagerie (Zoho), et seulement dans la mesure nécessaire à leur mission. Les outils d'analyse et de marketing, si vous les autorisez, reçoivent les données de navigation habituelles qu'ils collectent. Nous pouvons également communiquer des informations si la loi l'exige."
+        },
+        {
+          "heading": "Combien de temps nous les conservons",
+          "body": "Aussi longtemps que nécessaire pour vous répondre et tenir des archives professionnelles raisonnables, puis nous les supprimons ou les anonymisons."
+        },
+        {
+          "heading": "Vos droits",
+          "body": "Selon votre lieu de résidence, vous pouvez avoir le droit d'accéder à vos données personnelles, de les rectifier, de les supprimer ou de les exporter, ou de vous opposer à leur utilisation. Pour exercer l'un de ces droits, écrivez à {email} et nous vous répondrons dans un délai raisonnable. Si vous résidez en France, vous pouvez également saisir la CNIL."
+        },
+        {
+          "heading": "Modifications de cette politique",
+          "body": "Si nous modifions cette politique, nous mettrons à jour la date ci-dessus. Les changements importants seront signalés sur cette page."
+        }
+      ]
+    }
+  ]
+}

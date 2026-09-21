@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "Mellon – Agence de design de marque, de produit et d'expérience numérique",
+    "description": "Mellon est une agence de design qui crée des identités de marque, des produits numériques et des design systems pour des équipes d'architecture, d'automobile, de technologie, de finance et bien d'autres secteurs."
+  },
+  "blocks": [
+    {
+      "type": "hero",
+      "eyebrow": "Mellon Design",
+      "headline": "Un design qui accompagne une marque de la première impression à l'usage quotidien.",
+      "subhead": "Nous créons des systèmes d'identité, des produits numériques et des design systems pour les équipes qui veulent que marque et produit avancent ensemble : architecture, automobile, technologie, finance et une douzaine d'autres secteurs.",
+      "primaryCta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      },
+      "secondaryCta": {
+        "label": "Découvrir nos services",
+        "href": "/services"
+      },
+      "image": {
+        "src": "/images/Mellon-hero-banner.webp",
+        "alt": "",
+        "width": 1320,
+        "height": 567
+      }
+    },
+    {
+      "type": "servicesGrid",
+      "eyebrow": "Ce que nous faisons",
+      "headline": "Dix disciplines. Un seul studio.",
+      "body": "De la première marque à un design system entièrement gouverné, Mellon couvre tout le design dont une entreprise en croissance a besoin, sans passages de relais entre agences."
+    },
+    {
+      "type": "industriesChips",
+      "eyebrow": "Avec qui nous travaillons",
+      "headline": "Assez à l'aise dans chaque secteur pour éviter la courbe d'apprentissage.",
+      "body": "Nous avons conçu pour des cabinets d'architecture et des équipes automobiles, des fintechs et des groupes de restauration. Chaque page de secteur ci-dessous reflète ce que nous y avons réellement appris."
+    },
+    {
+      "type": "process",
+      "eyebrow": "Notre façon de travailler",
+      "headline": "Le design et le développement, sous un même toit.",
+      "body": "Mellon fonctionne comme deux pratiques de conseil connectées, le design et le développement, pour que les systèmes que nous concevons soient ceux qui sont mis en ligne, et non un lot de fichiers jetés par-dessus le mur.",
+      "steps": [
+        {
+          "title": "Design",
+          "body": "Stratégie, marque, UX et UI, conçus dans Figma et testés avant la moindre ligne de code."
+        },
+        {
+          "title": "Développement",
+          "body": "Mise en œuvre dans Webflow, Framer, WordPress ou en code sur mesure, par une équipe qui connaît déjà l'intention du design."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Dites-nous ce que vous construisez.",
+      "body": "Chaque collaboration commence par une conversation, pas par un modèle de proposition. Décrivez-nous votre situation et nous vous dirons honnêtement si, et comment, nous pouvons vous aider.",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

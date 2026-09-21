@@ -1,0 +1,47 @@
+{
+  "meta": {
+    "title": "À propos – Mellon",
+    "description": "Mellon existe parce que la marque, le produit et l'ingénierie sont souvent conçus dans des pièces séparées, et cela se voit. Nous les gardons dans la même."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "À propos",
+      "headline": "Un studio de design conçu pour mener le design et le développement comme une seule pratique.",
+      "subhead": "Mellon existe parce que la marque, le produit et l'ingénierie sont souvent conçus dans des pièces séparées, et cela se voit. Nous les gardons dans la même."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Qui nous sommes",
+          "body": "Mellon est une agence de design spécialisée en branding, en design produit et en design systems. Nous sommes volontairement un petit studio senior : chaque mission est menée par des personnes qui ont déjà réalisé le type de travail pour lequel vous nous engagez, et non confiée à la première personne disponible."
+        },
+        {
+          "heading": "Ce que nous faisons",
+          "body": "Dix disciplines principales : branding, design systems, design e-commerce, design de bout en bout, design d'applications mobiles, design d'animation et d'interaction, design produit, design SaaS, design UI/UX et audits UX, proposées séparément ou réunies dans une seule mission de bout en bout."
+        },
+        {
+          "heading": "Notre façon de travailler",
+          "body": "Chaque projet passe par les deux mêmes pratiques : design et développement. Le design couvre la stratégie, la marque, l'UX et l'UI. Le développement couvre la mise en œuvre, dans Webflow, Framer, WordPress ou en code sur mesure, par des personnes qui étaient présentes lors des décisions de design, pour que rien ne se perde au passage de relais."
+        },
+        {
+          "heading": "Avec qui nous travaillons",
+          "body": "Seize secteurs, et ce n'est pas fini : architecture et design d'intérieur, automobile, civic tech, électronique grand public, e-commerce, éducation, mode, finance, santé et bien-être, hôtellerie, juridique, médias, divertissement et jeux vidéo, associations, immobilier, restauration, technologie et SaaS. Chaque page de secteur reflète des schémas que nous avons observés dans ce domaine précis, et non un modèle générique."
+        },
+        {
+          "heading": "Par où nous commençons",
+          "body": "Par une conversation, pas par un modèle de proposition. Dites-nous ce que vous construisez et nous vous dirons simplement si nous sommes le bon studio pour cela."
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Commençons par une conversation.",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

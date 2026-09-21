@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Secteurs – Mellon",
+    "description": "Seize secteurs pour lesquels Mellon a conçu, de l'architecture et de l'automobile à la fintech et à la restauration, avec des schémas propres à chacun."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Secteurs",
+      "headline": "Assez à l'aise dans chaque secteur pour éviter la courbe d'apprentissage.",
+      "subhead": "Seize secteurs, chacun avec ses propres contraintes. Choisissez le vôtre pour voir les schémas et les services sur lesquels nous nous appuyons."
+    },
+    {
+      "type": "industryCards",
+      "viewLink": "Voir le secteur →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "Votre secteur n'est pas listé ?",
+      "body": "Nos disciplines se transposent même lorsque le secteur est nouveau pour nous. Dites-nous ce que vous construisez.",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

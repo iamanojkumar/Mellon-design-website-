@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "title": "Services – Mellon",
+    "description": "Branding, design systems, design produit et sept autres disciplines que Mellon utilise pour mener une marque de l'idée à l'interface livrée."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Services",
+      "headline": "Dix disciplines, un studio, aucun passage de relais.",
+      "subhead": "Chaque service ci-dessous peut être mené seul ou intégré à une mission de bout en bout, avec la même équipe dans les deux cas."
+    },
+    {
+      "type": "serviceCards",
+      "viewLink": "Voir le service →"
+    },
+    {
+      "type": "closingCta",
+      "headline": "Vous ne savez pas quel service choisir ?",
+      "body": "Dites-nous ce que vous construisez et nous définirons la bonne combinaison.",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

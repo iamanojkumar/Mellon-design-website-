@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Contact – Mellon",
+    "description": "Dites-nous ce que vous construisez et où vous en êtes aujourd'hui. Nous répondons personnellement à chaque demande, généralement sous un jour ouvré."
+  },
+  "blocks": [
+    {
+      "type": "contact",
+      "eyebrow": "Contact",
+      "headline": "Démarrez un projet.",
+      "subhead": "Dites-nous ce que vous construisez et où vous en êtes aujourd'hui. Nous répondons personnellement à chaque demande, généralement sous un jour ouvré.",
+      "directEmailLabel": "Ou écrivez-nous directement à"
+    }
+  ]
+}

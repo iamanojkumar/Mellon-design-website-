@@ -1,0 +1,176 @@
+[
+  {
+    "slug": "branding",
+    "name": "Branding",
+    "tagline": "Des systèmes d'identité conçus pour tenir sur tous les supports.",
+    "summary": "Nous créons des identités de marque de A à Z (nom, symbole, couleur, typographie, ton), puis nous les codifions pour que chaque équipe qui touchera à la marque après nous reste fidèle à celle-ci sans avoir à demander.",
+    "deliverables": [
+      "Stratégie de marque, positionnement et naming",
+      "Logo, symbole et système d'identité visuelle",
+      "Chartes de typographie, de couleur et d'imagerie",
+      "Documentation de charte de marque à usage interne et pour les agences"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "restaurant-branding",
+      "real-estate-design",
+      "nonprofit-branding"
+    ]
+  },
+  {
+    "slug": "design-systems",
+    "name": "Design systems",
+    "tagline": "Une source unique de vérité pour chaque composant, jeton et motif.",
+    "summary": "Nous transformons des décisions d'interface éparses en un système gouverné (composants, jetons et documentation) qui permet au design et à l'ingénierie de livrer de façon cohérente et rapide, sans rediscuter du même bouton.",
+    "deliverables": [
+      "Architecture de jetons (couleur, typographie, espacement, animation)",
+      "Bibliothèques de composants dans Figma, reproduites dans le code",
+      "Documentation d'usage et règles de contribution",
+      "Accompagnement du déploiement et de l'adoption pour les équipes existantes"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "consumer-electronics",
+      "finance-fintech",
+      "education-edtech"
+    ]
+  },
+  {
+    "slug": "ecommerce-design",
+    "name": "Design e-commerce",
+    "tagline": "Des boutiques et des fiches produit qui convertissent sans ressembler à un tunnel.",
+    "summary": "De la navigation dans le catalogue au paiement, nous concevons des expériences d'achat qui réduisent les frictions à chaque étape, et nous les construisons sur les plateformes que vous utilisez déjà, dont Webflow et WooCommerce.",
+    "deliverables": [
+      "Audits UX de boutique et refonte orientée conversion",
+      "Design des listes de produits, fiches produit et parcours de paiement",
+      "Mise en œuvre dans Webflow et WooCommerce",
+      "Modèles de merchandising et de pages promotionnelles"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "consumer-electronics",
+      "restaurant-branding"
+    ]
+  },
+  {
+    "slug": "end-to-end-design",
+    "name": "Design de bout en bout",
+    "tagline": "De la première esquisse au produit livré, une seule équipe du début à la fin.",
+    "summary": "Pour les équipes qui ne veulent pas de passages de relais entre agences, nous menons tout le cycle (stratégie, marque, UX, UI, prototypage et développement) pour que rien ne se perde entre les phases.",
+    "deliverables": [
+      "Découverte, stratégie et définition du produit",
+      "Architecture UX jusqu'à l'UI finale",
+      "Prototypage et validation de l'utilisabilité",
+      "Réalisation sans passage de relais dans Webflow, Framer ou en code"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "health-wellness-tech",
+      "civic-tech-design"
+    ]
+  },
+  {
+    "slug": "mobile-app-design",
+    "name": "Design d'applications mobiles",
+    "tagline": "Des applications au ressenti natif, conçues pour les plateformes que les gens utilisent vraiment.",
+    "summary": "Nous concevons des expériences iOS et Android qui respectent les conventions de chaque plateforme tout en restant reconnaissablement à l'image de la marque, de l'onboarding aux écrans ouverts chaque jour.",
+    "deliverables": [
+      "Architecture de l'information et parcours utilisateurs",
+      "Design d'UI iOS et Android adapté à chaque plateforme",
+      "Spécifications d'interactions et de micro-animations",
+      "QA design jusqu'à la remise à l'ingénierie"
+    ],
+    "relatedIndustries": [
+      "health-wellness-tech",
+      "consumer-electronics",
+      "media-entertainment-gaming"
+    ]
+  },
+  {
+    "slug": "motion-interaction-design",
+    "name": "Design d'animation et d'interaction",
+    "tagline": "Un mouvement qui explique l'interface au lieu de la décorer.",
+    "summary": "Chaque transition, état de survol et moment de chargement est l'occasion de rendre un produit plus soigné. Nous concevons des systèmes d'animation qui clarifient la hiérarchie et donnent du pouls aux interfaces.",
+    "deliverables": [
+      "Principes d'animation et systèmes de durées et de courbes",
+      "Design de micro-interactions et de transitions",
+      "Prototypes dans Framer pour la validation par les parties prenantes",
+      "Spécifications prêtes pour l'ingénierie (courbes, durées, déclencheurs)"
+    ],
+    "relatedIndustries": [
+      "media-entertainment-gaming",
+      "consumer-electronics",
+      "technology-saas"
+    ]
+  },
+  {
+    "slug": "product-design",
+    "name": "Design produit",
+    "tagline": "Des produits numériques conçus autour de la façon dont les gens travaillent vraiment.",
+    "summary": "Nous nous intégrons aux équipes produit et ingénierie pour concevoir des logiciels simples là où ils doivent l'être et puissants là où il le faut, fondés sur une vraie recherche utilisateur plutôt que sur des suppositions.",
+    "deliverables": [
+      "Recherche utilisateur et cartographie de parcours",
+      "Architecture de l'information et design de parcours",
+      "UI haute fidélité pour le web et les applications",
+      "Tests d'utilisabilité et itérations"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "finance-fintech",
+      "civic-tech-design",
+      "health-wellness-tech"
+    ]
+  },
+  {
+    "slug": "saas-design",
+    "name": "Design SaaS",
+    "tagline": "Des interfaces pour des produits qui se complexifient à mesure qu'ils réussissent.",
+    "summary": "Les produits SaaS accumulent vite de la complexité. Nous concevons des tableaux de bord, des paramètres et des parcours qui restent lisibles à grande échelle, et nous bâtissons les systèmes de composants qui empêchent les nouvelles fonctionnalités d'éroder l'ensemble.",
+    "deliverables": [
+      "Design de tableaux de bord et d'interfaces riches en données",
+      "Design des parcours d'onboarding et d'activation",
+      "UX des paramètres, permissions et administration",
+      "Fondations d'un design system pour le travail continu sur les fonctionnalités"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "finance-fintech",
+      "education-edtech"
+    ]
+  },
+  {
+    "slug": "ui-ux-design",
+    "name": "Design UI/UX",
+    "tagline": "Le cœur du métier : recherche, structure et exécution au pixel près.",
+    "summary": "C'est le quotidien du studio : comprendre les utilisateurs, structurer les parcours et concevoir des interfaces avec le soin typographique et visuel qui distingue un produit d'un prototype.",
+    "deliverables": [
+      "Recherche utilisateur, personas et cartographie de parcours",
+      "Wireframes et architecture de l'information",
+      "Design visuel haute fidélité",
+      "Prototypes interactifs pour les tests et l'adhésion"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "real-estate-design",
+      "hospitality-design",
+      "legal-branding"
+    ]
+  },
+  {
+    "slug": "ux-audit",
+    "name": "Audit UX",
+    "tagline": "Un regard lucide sur ce qui vous coûte des conversions et de la confiance.",
+    "summary": "Avant de redessiner quoi que ce soit, nous pouvons vous dire ce qui ne fonctionne réellement pas : une revue structurée et heuristique de votre produit existant, avec des correctifs priorisés et actionnables, et pas seulement une liste d'opinions.",
+    "deliverables": [
+      "Évaluation heuristique selon les principes d'utilisabilité",
+      "Analyse des frictions propres aux tunnels et aux parcours",
+      "Contrôles ponctuels d'accessibilité et de performance",
+      "Rapport de constats priorisé avec correctifs recommandés"
+    ],
+    "relatedIndustries": [
+      "finance-fintech",
+      "ecommerce",
+      "technology-saas"
+    ]
+  }
+]

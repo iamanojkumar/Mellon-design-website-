@@ -51,9 +51,9 @@ Ranked by where agencies get hired (cross-border buyers work in English; local-l
 
 | Tier | Locales | Notes |
 |---|---|---|
-| Live | `en-US`, `en-GB`, `de-DE`, `es-ES` | `en-GB` inherits from `en-US`, overrides currency; `de-DE` fully translated (formal "Sie"); `es-ES` fully translated (informal "tú") |
+| Live | `en-US`, `en-GB`, `de-DE`, `es-ES`, `fr-FR` | `en-GB` inherits from `en-US`, overrides currency; `de-DE` fully translated (formal "Sie"); `es-ES` fully translated (informal "tú"); `fr-FR` fully translated (formal "vous") |
 | 1 — cheap English variants | `en-AU`, `en-CA`, `en-IN` | Spelling/currency only; entries exist (disabled). `en-AU`/`en-IN` inherit `en-GB` |
-| 2 — next translations | `fr-FR` (+ `fr-CA`), `nl-NL`; `de-AT` / `de-CH` (inherit `de-DE`) and `es-MX` (inherits `es-ES`) once enabled | Variants inherit their base language |
+| 2 — next translations | `nl-NL`; `fr-CA` (inherits `fr-FR`), `de-AT` / `de-CH` (inherit `de-DE`) and `es-MX` (inherits `es-ES`) once enabled | Variants inherit their base language |
 | 3 — niche / high effort | `zh-CN` (Chinese companies going overseas; note GTM/Google services are blocked in mainland China and hosting speed needs review), `ja-JP` (domestic agencies dominate; needs a professional translation) | `zh-CN` stays a stated priority for the outbound-brands niche |
 | Later (not in `locales.json` yet) | `pt-BR`, `hi-IN`, `ar-AE` | Buyers mostly use English; `ar-AE` needs right-to-left layout site-wide. Add entries only when work starts |
 
