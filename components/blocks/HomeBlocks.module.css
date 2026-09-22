@@ -1,24 +1,76 @@
 .hero {
   display: flex;
   flex-direction: column;
+  padding-top: var(--space-xl);
 }
 
 .heroImageWrap {
+  position: relative;
   width: 100%;
-  aspect-ratio: 1320 / 567;
-  overflow: hidden;
+  aspect-ratio: 5 / 3;
   background: var(--color-paper-tint);
+  margin-top: -40px;
+}
+
+/* Only reserved when there's more than one image: the offset stack peeks out
+   below the front image's box, so the section needs the extra room. */
+.heroImageWrapStacked {
+  --hero-stack-offset: var(--space-sm);
+  margin-bottom: calc(var(--hero-stack-offset) * 2);
+}
+
+/* Casts the shadow. Kept separate from the clipping box below: overflow:hidden
+   on the same element that draws a box-shadow would clip the shadow itself. */
+.heroStackImage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 24px 48px -16px rgba(26, 43, 60, 0.28),
+    0 8px 20px -8px rgba(26, 43, 60, 0.18);
+  transition: transform var(--duration-slow) var(--ease-out),
+    opacity var(--duration-slow) var(--ease-out),
+    width var(--duration-slow) var(--ease-out),
+    box-shadow var(--duration-slow) var(--ease-out);
+}
+
+/* Clips the image to the rounded corners. */
+.heroStackImageClip {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
 }
 
 .heroImage {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
-.heroContent {
-  padding-block: var(--space-xl) var(--space-2xl);
-  max-width: 780px;
+/* Full-width headline, then a copy-left / image-right row beneath it. */
+.heroRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: var(--space-xl);
+  padding-block: var(--space-lg) var(--space-2xl);
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.heroVisual {
+  width: 100%;
+}
+
+@media (min-width: 900px) {
+  .heroRow {
+    grid-template-columns: 3fr 2fr;
+  }
 }
 
 .eyebrow {
@@ -40,14 +92,12 @@
 
 .heroHeadline {
   font-size: clamp(var(--fs-700), 5vw, var(--fs-900));
-  margin-bottom: var(--space-md);
 }
 
 .heroSubhead {
   font-size: var(--fs-400);
   max-width: 56ch;
   color: var(--color-fg-muted);
-  margin-bottom: var(--space-lg);
 }
 
 .heroCtas {

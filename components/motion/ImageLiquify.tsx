@@ -99,6 +99,16 @@ uniform vec2 u_vp;
 uniform vec4 u_rect;
 uniform vec2 u_scale;
 uniform vec2 u_off;
+uniform float u_radius;
+
+// Signed distance to a rounded box centred at the origin (Inigo Quilez).
+// Used to clip the redrawn quad back to the real element's rounded corners:
+// without this, the WebGL patch is a plain rectangle and squares them off.
+float roundedBoxSDF(vec2 p, vec2 half_size, float r) {
+  vec2 q = abs(p) - half_size + r;
+  return length(max(q, 0.0)) + min(max(q.x, q.y), 0.0) - r;
+}
+
 void main() {
   vec2 f = vec2(v_px.x / u_vp.x, 1.0 - v_px.y / u_vp.y);
   vec2 d = texture(u_field, f).rg;
@@ -107,6 +117,12 @@ void main() {
   vec3 c = texture(u_image, u_off + local * u_scale).rgb;
   // Transparent where undisturbed, so the original <img> shows through.
   float a = smoothstep(0.4, 3.0, length(disp));
+  if (u_radius > 0.0) {
+    vec2 half_size = u_rect.zw * 0.5;
+    vec2 centered = v_px - u_rect.xy - half_size;
+    float dist = roundedBoxSDF(centered, half_size, min(u_radius, min(half_size.x, half_size.y)));
+    a *= 1.0 - smoothstep(-1.0, 1.0, dist);
+  }
   o = vec4(c * a, a);
 }`;
 
@@ -196,6 +212,7 @@ export function ImageLiquify() {
       rect: U(drawProg, "u_rect"),
       scale: U(drawProg, "u_scale"),
       off: U(drawProg, "u_off"),
+      radius: U(drawProg, "u_radius"),
     };
 
     // ---- ping-pong displacement field (RGBA16F) ----
@@ -268,6 +285,21 @@ export function ImageLiquify() {
       const sy = ra > ia ? ia / ra : 1;
       const [px, py] = parsePosition(cs.objectPosition);
       return [sx, sy, (1 - sx) * px, (1 - sy) * py];
+    };
+
+    // An <img> is rarely rounded itself — the common pattern is a wrapper with
+    // overflow:hidden + border-radius that clips it (e.g. next/image `fill`).
+    // Walk up a few ancestors for the nearest one that actually clips, so the
+    // redrawn WebGL patch is masked to match instead of squaring the corners.
+    const radiusFor = (img: HTMLImageElement): number => {
+      let el: Element | null = img;
+      for (let i = 0; i < 4 && el; i++, el = el.parentElement) {
+        const cs = getComputedStyle(el);
+        const clips = cs.overflow !== "visible" || cs.overflowX !== "visible" || cs.overflowY !== "visible";
+        const r = parseFloat(cs.borderTopLeftRadius);
+        if (clips && r > 0) return r;
+      }
+      return 0;
     };
 
     // ---- simulation state ----
@@ -349,6 +381,7 @@ export function ImageLiquify() {
         gl.uniform4f(d.rect, r.left, r.top, r.width, r.height);
         gl.uniform2f(d.scale, fit[0], fit[1]);
         gl.uniform2f(d.off, fit[2], fit[3]);
+        gl.uniform1f(d.radius, radiusFor(img));
         gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       }
       gl.activeTexture(gl.TEXTURE0);

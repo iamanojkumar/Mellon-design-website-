@@ -17,12 +17,26 @@
         "label": "See our services",
         "href": "/services"
       },
-      "image": {
-        "src": "/images/Mellon-hero-banner.webp",
-        "alt": "",
-        "width": 1320,
-        "height": 567
-      }
+      "images": [
+        {
+          "src": "/images/Mellon-hero-banner.webp",
+          "alt": "",
+          "width": 1320,
+          "height": 567
+        },
+        {
+          "src": "/images/flower-animation.png",
+          "alt": "",
+          "width": 1600,
+          "height": 1200
+        },
+        {
+          "src": "/images/pill-effect.png",
+          "alt": "",
+          "width": 1920,
+          "height": 1080
+        }
+      ]
     },
     {
       "type": "servicesGrid",

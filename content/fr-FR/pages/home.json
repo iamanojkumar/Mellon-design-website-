@@ -17,12 +17,14 @@
         "label": "Découvrir nos services",
         "href": "/services"
       },
-      "image": {
-        "src": "/images/Mellon-hero-banner.webp",
-        "alt": "",
-        "width": 1320,
-        "height": 567
-      }
+      "images": [
+        {
+          "src": "/images/Mellon-hero-banner.webp",
+          "alt": "",
+          "width": 1320,
+          "height": 567
+        }
+      ]
     },
     {
       "type": "servicesGrid",

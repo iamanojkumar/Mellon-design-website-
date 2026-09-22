@@ -16,7 +16,12 @@ export type Block =
       subhead: string;
       primaryCta: BlockCta;
       secondaryCta: BlockCta;
-      image: { src: string; alt: string; width: number; height: number };
+      /**
+       * Cycling image stack, front to back. With more than one image, the
+       * front slot rotates through them on a timer (HeroImageStack); images
+       * beyond the 3rd stay queued in rotation rather than shown at once.
+       */
+      images: { src: string; alt: string; width: number; height: number }[];
     }
   | { type: "servicesGrid"; eyebrow: string; headline: string; body: string }
   | { type: "industriesChips"; eyebrow: string; headline: string; body: string }
