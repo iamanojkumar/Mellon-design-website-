@@ -139,9 +139,35 @@
   border-left-color: var(--color-accent);
 }
 
+/* The dot sits outside the truncating title so a long name ellipsises around
+   it rather than clipping the status cue. */
+.itemHead {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.dot {
+  flex: none;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--status-draft);
+}
+
+.dot[data-status="published"] {
+  background: var(--status-published);
+}
+
+.dot[data-status="unpublished"] {
+  background: var(--status-unpublished);
+}
+
 .itemTitle {
   font-size: 12px;
   font-weight: 500;
+  min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -169,15 +195,19 @@
   font-size: 9px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  background: var(--color-border);
+  /* Same tokens as .dot, so the chip and the dot can never disagree. Full
+     strength text rather than .itemMeta's muted grey: the tint underneath
+     costs some contrast, and this is the label the colour is redundant with. */
+  color: var(--color-fg);
+  background: color-mix(in srgb, var(--status-draft) 26%, transparent);
 }
 
 .status[data-status="published"] {
-  background: color-mix(in srgb, var(--color-brand-cyan) 35%, transparent);
+  background: color-mix(in srgb, var(--status-published) 26%, transparent);
 }
 
 .status[data-status="unpublished"] {
-  background: color-mix(in srgb, var(--color-brand-amber) 40%, transparent);
+  background: color-mix(in srgb, var(--status-unpublished) 26%, transparent);
 }
 
 .taxonomy {

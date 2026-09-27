@@ -13,6 +13,19 @@
 :root {
   --admin-shadow-popover: 0 12px 32px rgba(0, 0, 0, 0.18);
   --admin-shadow-card: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+  /* Publish-state colours, used by both the sidebar dot and its text chip so
+     the two can never disagree about what "published" looks like. Cyan and
+     amber are the brand hues the status chips already used; the palette has no
+     green, and inventing one for this tool would put a colour on screen that
+     appears nowhere else in the product.
+
+     Taken 55% toward ink for light mode: the raw brand hues are pale enough on
+     paper (1.6-1.7:1) that a dot in them would read as grey. Mixed, they clear
+     3:1 against both the sidebar and its hover tint. */
+  --status-draft: var(--color-fg-muted);
+  --status-published: color-mix(in srgb, var(--color-brand-cyan) 55%, var(--color-ink));
+  --status-unpublished: color-mix(in srgb, var(--color-brand-amber) 55%, var(--color-ink));
 }
 
 /* Dark theme for the admin only.
@@ -52,6 +65,11 @@
   /* Pure #fc0000 sits too close to the background to read as text here. Same
      hue, lifted for legibility; feeds .a-error, .notice and .a-btn-danger. */
   --color-brand-red: #ff6b6b;
+
+  /* On dark the raw hues already carry 10-12:1, so they need no darkening —
+     mixing them toward ink here would only dull them. */
+  --status-published: var(--color-brand-cyan);
+  --status-unpublished: var(--color-brand-amber);
 
   --admin-shadow-popover: 0 12px 32px rgba(0, 0, 0, 0.55);
   /* The 1px spread ring does the work a drop shadow can't: the login card sits

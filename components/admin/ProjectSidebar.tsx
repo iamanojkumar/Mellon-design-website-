@@ -262,13 +262,23 @@ export function ProjectSidebar({
                         className={`${styles.item} ${project.id === currentId ? styles.active : ""}`}
                         onClick={() => onSelect(project.id)}
                       >
-                        <span className={styles.itemTitle}>
-                          {project.featured && (
-                            <span className={styles.star} title="Featured">
-                              ★
-                            </span>
-                          )}
-                          {project.title || "Untitled"}
+                        <span className={styles.itemHead}>
+                          {/* Scannable publish state. aria-hidden because the
+                              chip below already says it in words — the colour
+                              is a second cue, never the only one. */}
+                          <span
+                            className={styles.dot}
+                            data-status={project.status}
+                            aria-hidden="true"
+                          />
+                          <span className={styles.itemTitle}>
+                            {project.featured && (
+                              <span className={styles.star} title="Featured">
+                                ★
+                              </span>
+                            )}
+                            {project.title || "Untitled"}
+                          </span>
                         </span>
                         <span className={styles.itemMeta}>
                           <span className={styles.status} data-status={project.status}>
