@@ -183,6 +183,9 @@ export function AdminApp({
           onSaved={handleSaved}
           onDeleted={handleDeleted}
           onDuplicated={(project) => switchLocale(project.locale, project.id)}
+          // A move takes the project out of this locale, so follow it across
+          // rather than leaving the editor pointed at a row that is gone.
+          onMoved={(project) => switchLocale(project.locale, project.id)}
         />
 
         {dockOpen && (

@@ -6,6 +6,7 @@ import {
   createProject,
   updateProject,
   deleteProject,
+  moveProject,
   getProjectById,
   listProjects,
   slugify,
@@ -384,6 +385,54 @@ export async function duplicateProjectAction(
   } catch (error) {
     console.error("[admin] duplicate project failed", error);
     return { ok: false, error: "Could not create the duplicated project." };
+  }
+}
+
+/**
+ * Moves a project to another locale rather than copying it: the row keeps its
+ * id, body, blocks, SEO and publish history, and nothing is left behind in the
+ * old locale. Both locales are revalidated because the project leaves one
+ * listing and joins another.
+ *
+ * No translation happens here — a move is an editorial correction ("this
+ * belongs to the India market"), not a localisation step. Use duplicate when
+ * the same work should exist in two markets.
+ */
+export async function moveProjectAction(
+  sourceId: string,
+  targetLocale: string,
+): Promise<ActionResult<Project>> {
+  await requireAuthed();
+
+  if (!isEnabledLocale(targetLocale)) return { ok: false, error: "Unknown target locale." };
+
+  const source = await getProjectById(sourceId);
+  if (!source) return { ok: false, error: "Project not found." };
+  if (source.locale === targetLocale) {
+    return { ok: false, error: "That project is already in this locale." };
+  }
+
+  const fromLocale = source.locale;
+  try {
+    let moved: Project;
+    try {
+      moved = await moveProject(sourceId, targetLocale, source.slug);
+    } catch (error) {
+      // Slugs are unique per locale, so the target may already own this one.
+      // Suffixing keeps the move going rather than dead-ending the editor.
+      if (!(error instanceof DuplicateSlugError)) throw error;
+      moved = await moveProject(
+        sourceId,
+        targetLocale,
+        `${source.slug}-${targetLocale.toLowerCase()}`,
+      );
+    }
+    revalidateTag(`projects:${fromLocale}`);
+    revalidateTag(`projects:${targetLocale}`);
+    return { ok: true, data: moved };
+  } catch (error) {
+    console.error("[admin] move project failed", error);
+    return { ok: false, error: "Could not move the project." };
   }
 }
 

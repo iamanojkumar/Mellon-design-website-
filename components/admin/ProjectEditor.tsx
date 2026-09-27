@@ -10,6 +10,7 @@ import {
   saveProjectAction,
   deleteProjectAction,
   duplicateProjectAction,
+  moveProjectAction,
   createMediaUploadAction,
   convertMediaToAvifAction,
 } from "@/app/admin/actions";
@@ -30,6 +31,7 @@ export function ProjectEditor({
   onSaved,
   onDeleted,
   onDuplicated,
+  onMoved,
 }: {
   locale: string;
   project: Project | null;
@@ -42,6 +44,7 @@ export function ProjectEditor({
   onSaved: (project: Project) => void;
   onDeleted: (id: string) => void;
   onDuplicated: (project: Project) => void;
+  onMoved: (project: Project) => void;
 }) {
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -50,6 +53,10 @@ export function ProjectEditor({
   const [duplicateLocale, setDuplicateLocale] = useState(otherLocales[0]?.code ?? "");
   const [duplicating, setDuplicating] = useState(false);
   const [duplicateError, setDuplicateError] = useState<string | null>(null);
+  const [moveLocale, setMoveLocale] = useState(otherLocales[0]?.code ?? "");
+  const [moving, setMoving] = useState(false);
+  const [confirmingMove, setConfirmingMove] = useState(false);
+  const [moveError, setMoveError] = useState<string | null>(null);
   const [uploadingHero, setUploadingHero] = useState(false);
   const heroFileInputRef = useRef<HTMLInputElement>(null);
 
@@ -139,6 +146,26 @@ export function ProjectEditor({
       return;
     }
     onDuplicated(result.data);
+  };
+
+  // Two-step, like delete: a move empties this locale's copy rather than
+  // adding one, so it should not happen on a single mis-click.
+  const handleMove = async () => {
+    if (!project || !moveLocale) return;
+    if (!confirmingMove) {
+      setConfirmingMove(true);
+      return;
+    }
+    setMoving(true);
+    setMoveError(null);
+    const result = await moveProjectAction(project.id, moveLocale);
+    setMoving(false);
+    setConfirmingMove(false);
+    if (!result.ok) {
+      setMoveError(result.error);
+      return;
+    }
+    onMoved(result.data);
   };
 
   return (
@@ -356,6 +383,7 @@ export function ProjectEditor({
       </div>
 
       {project && otherLocales.length > 0 && (
+        <>
         <div className={styles.duplicate}>
           <span className="a-label">Duplicate to another locale (translated via DeepSeek)</span>
           <div className={styles.duplicateRow}>
@@ -385,6 +413,49 @@ export function ProjectEditor({
             </p>
           )}
         </div>
+
+        <div className={styles.duplicate}>
+          <span className="a-label">Move to another locale (no copy left behind)</span>
+          <div className={styles.duplicateRow}>
+            <select
+              className="a-input"
+              value={moveLocale}
+              onChange={(event) => {
+                setMoveLocale(event.target.value);
+                setConfirmingMove(false);
+              }}
+            >
+              {otherLocales.map((otherLocale) => (
+                <option key={otherLocale.code} value={otherLocale.code}>
+                  {otherLocale.label}
+                </option>
+              ))}
+            </select>
+            <button
+              type="button"
+              className={`a-btn ${confirmingMove ? "a-btn-danger" : ""}`}
+              onClick={handleMove}
+              disabled={moving || !moveLocale}
+            >
+              {moving ? "Moving…" : confirmingMove ? "Confirm move" : "Move"}
+            </button>
+            {confirmingMove && !moving && (
+              <button type="button" className="a-btn" onClick={() => setConfirmingMove(false)}>
+                Cancel
+              </button>
+            )}
+          </div>
+          <p className="a-hint">
+            Keeps the case study, blocks, SEO and publish state. It leaves this locale&apos;s list
+            and lands unfiled, since folders belong to one locale.
+          </p>
+          {moveError && (
+            <p className="a-error" role="alert">
+              {moveError}
+            </p>
+          )}
+        </div>
+        </>
       )}
     </div>
   );

@@ -347,6 +347,52 @@ export async function updateProject(id: string, input: ProjectInput): Promise<Pr
   return fromRow(rows[0]);
 }
 
+/**
+ * Moves a project to another locale, keeping the same row — so its id, body,
+ * blocks, SEO fields and publish history all survive. The counterpart to
+ * duplicate-and-translate, which leaves the original where it was.
+ *
+ * Two things cannot come along:
+ *  - `folder_id`, because folders belong to one locale (project_folders is
+ *    keyed by locale). A moved project lands unfiled rather than pointing at
+ *    a folder that is not in its new locale's sidebar.
+ *  - the slug, *if* the target locale already uses it. Slugs are unique per
+ *    locale, so a clash is a real 409; the caller resolves it by passing a
+ *    free slug rather than having one silently invented here.
+ *
+ * `previous_slugs` is deliberately untouched. The old URL lived under the old
+ * locale prefix, which no longer resolves to this project, and the slug-history
+ * lookup is already locale-scoped — so carrying it over would be meaningless
+ * at best and a wrong 301 at worst.
+ */
+export async function moveProject(
+  id: string,
+  targetLocale: string,
+  slug: string,
+): Promise<Project> {
+  const { url, key } = restConfig();
+  const response = await fetch(`${url}/rest/v1/projects?id=eq.${encodeURIComponent(id)}`, {
+    method: "PATCH",
+    headers: restHeaders(key, { Prefer: "return=representation" }),
+    body: JSON.stringify({
+      locale: targetLocale,
+      slug,
+      folder_id: null,
+      updated_at: new Date().toISOString(),
+    }),
+    cache: "no-store",
+  });
+  if (!response.ok) {
+    const text = await response.text();
+    if (response.status === 409 || /duplicate key/i.test(text)) {
+      throw new DuplicateSlugError(targetLocale, slug);
+    }
+    throw new Error(`Supabase move failed: ${response.status} ${text}`);
+  }
+  const rows = await response.json();
+  return fromRow(rows[0]);
+}
+
 export async function deleteProject(id: string): Promise<void> {
   const { url, key } = restConfig();
   const response = await fetch(`${url}/rest/v1/projects?id=eq.${encodeURIComponent(id)}`, {
