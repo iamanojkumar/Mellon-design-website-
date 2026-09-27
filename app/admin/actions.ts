@@ -25,7 +25,12 @@ import {
 } from "@/lib/folders";
 import { buildProjectJsonLd, type SeoSource } from "@/lib/project-seo";
 import { pruneBlocks, type ProjectBlock } from "@/lib/project-blocks";
-import { uploadProjectMedia } from "@/lib/upload-project-media";
+import {
+  createProjectMediaUpload,
+  convertProjectMediaToAvif,
+  type SignedMediaUpload,
+  type ConvertedMedia,
+} from "@/lib/upload-project-media";
 import { isTranslationConfigured, translateProjectFields } from "@/lib/translate";
 import { getLocaleConfig, isEnabledLocale } from "@/lib/locale";
 import { getSiteUrl } from "@/lib/env";
@@ -267,15 +272,39 @@ export async function deleteProjectAction(
   }
 }
 
-export async function uploadMediaAction(formData: FormData): Promise<ActionResult<string>> {
+/**
+ * Hands the browser a short-lived, path-scoped URL to PUT a file straight to
+ * Supabase Storage. The bytes never pass through this action — see
+ * lib/upload-project-media.ts for why (Vercel's 4.5MB function body cap).
+ */
+export async function createMediaUploadAction(meta: {
+  filename: string;
+  size: number;
+  type: string;
+}): Promise<ActionResult<SignedMediaUpload>> {
   await requireAuthed();
-  const file = formData.get("file");
-  if (!(file instanceof File)) return { ok: false, error: "No file provided." };
   try {
-    const url = await uploadProjectMedia(file);
-    return { ok: true, data: url };
+    return { ok: true, data: await createProjectMediaUpload(meta) };
   } catch (error) {
+    console.error("[admin] could not sign media upload", error);
     return { ok: false, error: error instanceof Error ? error.message : "Upload failed." };
+  }
+}
+
+/**
+ * Compresses a just-uploaded image to AVIF in place. Called after the browser's
+ * direct PUT, because the bytes have to reach Storage before the server can
+ * read them without tripping the function body limit.
+ */
+export async function convertMediaToAvifAction(
+  publicUrl: string,
+): Promise<ActionResult<ConvertedMedia>> {
+  await requireAuthed();
+  try {
+    return { ok: true, data: await convertProjectMediaToAvif(publicUrl) };
+  } catch (error) {
+    console.error("[admin] avif conversion rejected", error);
+    return { ok: false, error: error instanceof Error ? error.message : "Conversion failed." };
   }
 }
 

@@ -127,8 +127,13 @@ without a locale redirect) so an editor can add/edit/delete case studies without
 - **Storage**: a `projects` Supabase table (`supabase/migrations/20260927000000_projects.sql`,
   extended by `..._projects_v2.sql`) plus `project_folders`, read/written server-only via the
   service-role key (`lib/projects.ts`, `lib/folders.ts`), same pattern as `lib/submissions.ts` —
-  no client-side anon-key access. Hero/content images upload to a public `project-media` Storage
-  bucket through a server action (`lib/upload-project-media.ts`).
+  no client-side anon-key access. Hero/content media lands in a public `project-media` Storage
+  bucket, uploaded browser-direct: a server action mints a short-lived, path-scoped signed URL
+  (`lib/upload-project-media.ts`) and the browser PUTs the file to Supabase itself. The bytes
+  deliberately skip the server action — Vercel caps function request bodies at 4.5MB, so proxying
+  them broke every real photo or video upload in production. The service-role key still never
+  reaches the client; the 50MB cap and format allowlist are enforced on the bucket
+  (`..._project_media_limits.sql`) because a signed URL holder can send arbitrary bytes.
 - **Publish workflow**: every project is `draft`, `published` or `unpublished`; only `published`
   ever leaves the admin (`getPublishedProjects`). `published_at` is stamped by a database trigger
   the first time a row goes live, so the invariant holds for every write path (manual save, AI

@@ -10,7 +10,8 @@ import {
   saveProjectAction,
   deleteProjectAction,
   duplicateProjectAction,
-  uploadMediaAction,
+  createMediaUploadAction,
+  convertMediaToAvifAction,
 } from "@/app/admin/actions";
 import { RichContentEditor } from "./RichContentEditor";
 import { BlocksEditor } from "./BlocksEditor";
@@ -52,12 +53,40 @@ export function ProjectEditor({
   const [uploadingHero, setUploadingHero] = useState(false);
   const heroFileInputRef = useRef<HTMLInputElement>(null);
 
+  /**
+   * Three hops on purpose. A Server Action validates the file and signs a
+   * scoped upload URL, the bytes go browser -> Supabase Storage direct (sending
+   * them to the Server Action instead would cap uploads at Vercel's 4.5MB
+   * function body limit), then a second action re-encodes images to AVIF in
+   * place. Conversion failing is not an upload failure — it returns the
+   * original URL.
+   */
   const uploadFile = async (file: File): Promise<string> => {
-    const formData = new FormData();
-    formData.set("file", file);
-    const result = await uploadMediaAction(formData);
-    if (!result.ok) throw new Error(result.error);
-    return result.data;
+    const signed = await createMediaUploadAction({
+      filename: file.name,
+      size: file.size,
+      type: file.type,
+    });
+    if (!signed.ok) throw new Error(signed.error);
+
+    const { uploadUrl, publicUrl, contentType, convertible } = signed.data;
+    let response: Response;
+    try {
+      response = await fetch(uploadUrl, {
+        method: "PUT",
+        headers: { "Content-Type": contentType, "x-upsert": "false" },
+        body: file,
+      });
+    } catch {
+      throw new Error("Upload failed — check your connection and try again.");
+    }
+    if (!response.ok) {
+      throw new Error(`Upload failed (${response.status}). Please try again.`);
+    }
+
+    if (!convertible) return publicUrl;
+    const compressed = await convertMediaToAvifAction(publicUrl);
+    return compressed.ok ? compressed.data.publicUrl : publicUrl;
   };
 
   const handleHeroFile = async (file: File) => {
