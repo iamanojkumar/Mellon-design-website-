@@ -1,35 +1,32 @@
-/* Matches Cards.module.css: a hairline grid whose gaps are the border colour,
-   so the listing reads as one table of work rather than floating tiles. */
+/* Unlike Cards.module.css, the project cards carry no frame: no hairline grid,
+   no fill behind them. The imagery is the visual weight, so a border would
+   compete with it. That means real gaps between cards instead of the 1px ones
+   the hairline trick relies on, and the hover cue moves to the link text since
+   there is no longer a surface to tint. */
 .list {
   padding-block: var(--space-2xl);
 }
 
 .grid {
   display: grid;
-  gap: 1px;
-  background: var(--color-border);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  gap: var(--space-lg);
   grid-template-columns: 1fr;
 }
 
 .card {
-  background: var(--color-paper);
   display: flex;
   flex-direction: column;
-  transition: background-color var(--duration-fast) var(--ease-out);
 }
 
-.card:hover {
-  background: var(--color-paper-tint);
+.card:hover .link {
+  text-decoration: underline;
 }
 
 .thumb {
   display: block;
   aspect-ratio: 16 / 10;
   overflow: hidden;
-  background: var(--color-paper-tint);
+  border-radius: var(--radius-md);
 }
 
 .thumb img {
@@ -37,13 +34,20 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  /* ParallaxImage writes transform here each frame. The scale it applies is
+     derived from the drift, so the overflow always covers the travel and the
+     frame never shows an edge. */
+  will-change: transform;
+  transform-origin: center;
 }
 
+/* Only top padding now — with no card fill, side padding would push the text
+   in from the column edge and break alignment with everything else. */
 .body {
-  padding: var(--space-lg);
+  padding: var(--space-md) 0 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: var(--space-xs);
   flex: 1;
 }
 

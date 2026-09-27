@@ -15,6 +15,7 @@ import { getSiteUrl } from "@/lib/env";
 import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectBlocks } from "@/components/projects/ProjectBlocks";
+import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import styles from "./page.module.css";
 
 /**
@@ -27,8 +28,18 @@ import styles from "./page.module.css";
 export async function generateStaticParams() {
   const perLocale = await Promise.all(
     enabledLocaleCodes.map(async (locale) => {
-      const projects = await getPublishedProjects(locale);
-      return projects.map((project) => ({ locale, slug: project.slug }));
+      try {
+        const projects = await getPublishedProjects(locale);
+        return projects.map((project) => ({ locale, slug: project.slug }));
+      } catch (error) {
+        // Prerendering is an optimisation here, not the mechanism: dynamicParams
+        // is on, so anything not listed still renders on demand. Without this
+        // catch a Supabase blip during a build fails the whole deployment —
+        // which happened once while developing this. Losing the prerender is a
+        // far better outcome than losing the deploy.
+        console.error(`[projects] could not list ${locale} for prerender`, error);
+        return [];
+      }
     }),
   );
   return perLocale.flat();
@@ -123,17 +134,17 @@ export default async function ProjectDetailPage({
           {project.summary && <p className={styles.summary}>{project.summary}</p>}
 
           {project.heroImage && (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img
-              className={styles.hero}
-              src={project.heroImage}
-              alt={project.heroImageAlt ?? ""}
-              width={project.heroImageWidth ?? undefined}
-              height={project.heroImageHeight ?? undefined}
-              // The hero is the LCP element, so it must not be lazy.
-              fetchPriority="high"
-              decoding="async"
-            />
+            <div className={styles.heroFrame}>
+              <ParallaxImage
+                className={styles.hero}
+                src={project.heroImage}
+                alt={project.heroImageAlt ?? ""}
+                width={project.heroImageWidth ?? undefined}
+                height={project.heroImageHeight ?? undefined}
+                // The hero is the LCP element, so it must not be lazy.
+                priority
+              />
+            </div>
           )}
 
           {project.content && (

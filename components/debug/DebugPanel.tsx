@@ -10,6 +10,7 @@ import {
   NAV_HOVER_SLIDERS,
   PRESETS,
   SCROLL_BLUR_SLIDERS,
+  PARALLAX_SLIDERS,
   SCROLL_SLIDERS,
   getServerSettings,
   getSettings,
@@ -249,6 +250,13 @@ export function DebugPanel() {
       <Accordion title="Scroll blur (bottom + motion)" open={!!sections.scrollBlur} onToggle={() => toggleSection("scrollBlur")}>
         <Toggle label="Enabled" k="scrollBlurEnabled" value={s.scrollBlurEnabled} />
         {SCROLL_BLUR_SLIDERS.map((def) => (
+          <Slider key={def.key} def={def} value={s[def.key] as number} />
+        ))}
+      </Accordion>
+
+      <Accordion title="Image parallax (scroll)" open={!!sections.parallax} onToggle={() => toggleSection("parallax")}>
+        <Toggle label="Enabled" k="parallaxEnabled" value={s.parallaxEnabled} />
+        {PARALLAX_SLIDERS.map((def) => (
           <Slider key={def.key} def={def} value={s[def.key] as number} />
         ))}
       </Accordion>

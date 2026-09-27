@@ -23,12 +23,22 @@
   max-width: 62ch;
 }
 
+/* The frame clips; the image drifts inside it. The frame takes its height from
+   the image's untransformed layout box, so the parallax scale never changes
+   how much vertical space the hero occupies. */
+.heroFrame {
+  display: block;
+  margin-top: var(--space-xl);
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
 .hero {
   width: 100%;
   height: auto;
   display: block;
-  margin-top: var(--space-xl);
-  border-radius: var(--radius-md);
+  will-change: transform;
+  transform-origin: center;
 }
 
 /* The body is editor-authored HTML, so it is styled by element rather than by

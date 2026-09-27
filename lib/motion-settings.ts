@@ -92,6 +92,12 @@ export type MotionSettings = {
   navScrambleEnabled: boolean;
   /** Duration (ms) of that scramble. */
   navScrambleMs: number;
+  /** Scroll parallax on project imagery. */
+  parallaxEnabled: boolean;
+  /** Drift as a fraction of the image’s own height, across the full pass. */
+  parallaxStrength: number;
+  /** Easing on the drift: higher = lazier catch-up, 1 = locked to scroll. */
+  parallaxEase: number;
 };
 
 export const BLEND_MODES = [
@@ -169,6 +175,9 @@ const PRESET_1: MotionSettings = {
   navHoverDim: 0.5,
   navScrambleEnabled: true,
   navScrambleMs: 500,
+  parallaxEnabled: true,
+  parallaxStrength: 0.08,
+  parallaxEase: 0.12,
 };
 
 /** Named presets, selectable in the dev debugger. Add new ones here. */
@@ -226,6 +235,11 @@ export const NAV_HOVER_SLIDERS: SliderDef[] = [
   { key: "navScrambleMs", label: "Scramble duration (ms)", min: 150, max: 1500, step: 25 },
 ];
 
+export const PARALLAX_SLIDERS: SliderDef[] = [
+  { key: "parallaxStrength", label: "Drift (fraction of image height)", min: 0, max: 0.2, step: 0.005 },
+  { key: "parallaxEase", label: "Ease (lower = lazier)", min: 0.02, max: 1, step: 0.01 },
+];
+
 export const SCROLL_BLUR_SLIDERS: SliderDef[] = [
   { key: "scrollBlurBottom", label: "Bottom blur while scrolling (px)", min: 0, max: 30, step: 0.5 },
   { key: "scrollBlurHeight", label: "Bottom blur height (vh)", min: 6, max: 80, step: 1 },
@@ -234,7 +248,7 @@ export const SCROLL_BLUR_SLIDERS: SliderDef[] = [
   { key: "scrollBlurMotion", label: "Motion blur on scroll (px)", min: 0, max: 16, step: 0.25 },
 ];
 
-const STORAGE_KEY = "mellon:motion-settings:v10";
+const STORAGE_KEY = "mellon:motion-settings:v11";
 
 let state: MotionSettings = DEFAULT_SETTINGS;
 let hydrated = false;

@@ -205,6 +205,23 @@ function restHeaders(key: string, extra?: Record<string, string>) {
   };
 }
 
+/**
+ * Expiry on the public reads' Data Cache entries.
+ *
+ * Tags alone opt a fetch into the Data Cache with no expiry, and Vercel
+ * restores that cache between builds — so a build can prerender from a result
+ * captured before a publish, with no tag purge left to correct it. Reproduced
+ * twice locally: a warm build served the empty listing while rows existed,
+ * while generateStaticParams (which runs outside this cache) saw them and
+ * prerendered their detail pages.
+ *
+ * The admin's revalidateTag is still what makes a publish appear in seconds;
+ * this only bounds how long a stale build-time snapshot can survive.
+ * listProjects is deliberately left uncapped: it is admin-only, and every
+ * admin write revalidates its tag immediately.
+ */
+const PUBLIC_CACHE_SECONDS = 300;
+
 /** Thrown on a unique-constraint violation (duplicate locale+slug). */
 export class DuplicateSlugError extends Error {
   constructor(locale: string, slug: string) {
@@ -251,7 +268,7 @@ export async function getPublishedProjects(locale: string): Promise<Project[]> {
     `${url}/rest/v1/projects?locale=eq.${encodeURIComponent(locale)}&status=eq.published&order=created_at.desc`,
     {
       headers: restHeaders(key),
-      next: { tags: ["projects", `projects:${locale}`] },
+      next: { tags: ["projects", `projects:${locale}`], revalidate: PUBLIC_CACHE_SECONDS },
     },
   );
   if (!response.ok) {
@@ -277,7 +294,10 @@ export async function getProject(locale: string, slug: string): Promise<Project 
   const { url, key } = restConfig();
   const response = await fetch(
     `${url}/rest/v1/projects?locale=eq.${encodeURIComponent(locale)}&slug=eq.${encodeURIComponent(slug)}`,
-    { headers: restHeaders(key), next: { tags: [`projects:${locale}`] } },
+    {
+      headers: restHeaders(key),
+      next: { tags: [`projects:${locale}`], revalidate: PUBLIC_CACHE_SECONDS },
+    },
   );
   if (!response.ok) {
     throw new Error(`Supabase get failed: ${response.status} ${await response.text()}`);
@@ -300,7 +320,10 @@ export async function getProjectByPreviousSlug(
   const filter = `previous_slugs=cs.{"${encodeURIComponent(slug)}"}`;
   const response = await fetch(
     `${url}/rest/v1/projects?locale=eq.${encodeURIComponent(locale)}&${filter}`,
-    { headers: restHeaders(key), next: { tags: [`projects:${locale}`] } },
+    {
+      headers: restHeaders(key),
+      next: { tags: [`projects:${locale}`], revalidate: PUBLIC_CACHE_SECONDS },
+    },
   );
   if (!response.ok) {
     throw new Error(`Supabase slug-history lookup failed: ${response.status} ${await response.text()}`);
