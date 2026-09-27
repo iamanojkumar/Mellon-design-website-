@@ -139,6 +139,42 @@
     ]
   },
   {
+    "slug": "seo-content-strategy",
+    "name": "SEO & Contentstrategie",
+    "tagline": "Zo gebouwd dat je gevonden wordt: structuur, content en technische basis die scoort.",
+    "summary": "We ontwerpen en structureren sites zodat zoekmachines én lezers ze allebei begrijpen: informatiearchitectuur, on-page optimalisatie en een contentplan rond de termen waar jouw doelgroep écht op zoekt, geïntegreerd in hetzelfde systeem als de rest van je product.",
+    "deliverables": [
+      "Zoekwoorden- en concurrentieonderzoek",
+      "On-page SEO: metadata, schema en contentstructuur",
+      "Contentstrategie en redactiekalender",
+      "Technische SEO-audit (snelheid, crawlbaarheid, indexering)"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "ecommerce",
+      "real-estate-design",
+      "hospitality-design"
+    ]
+  },
+  {
+    "slug": "social-media-content-marketing",
+    "name": "Social Media & Contentmarketing",
+    "tagline": "Content die de scroll stopt, herkenbaar op elk formaat en elk kanaal.",
+    "summary": "We ontwerpen het visuele systeem achter je social media-aanwezigheid: templates, campagnecreaties en een contentritme dat op elk platform herkenbaar van jou blijft, zodat marketingcontent nooit als los toevoegsel op het merk aanvoelt.",
+    "deliverables": [
+      "Platformspecifieke contenttemplates en designsystemen",
+      "Campagne- en lanceringscreaties",
+      "Contentkalender en publicatiestrategie",
+      "Merkconsistente copy- en captionrichtlijnen"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "restaurant-branding",
+      "media-entertainment-gaming",
+      "consumer-electronics"
+    ]
+  },
+  {
     "slug": "ui-ux-design",
     "name": "UI/UX-design",
     "tagline": "Het kernvak: onderzoek, structuur en uitvoering tot op de pixel.",

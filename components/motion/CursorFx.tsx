@@ -271,7 +271,9 @@ export function CursorFx() {
       if (!bgOn && !imgOn) return;
 
       const speed = Math.hypot(vx, vy);
-      const s = Math.min(speed / 6, 1);
+      // Reaches full warp at a modest speed: glass should visibly refract during
+      // ordinary cursor movement, not only when the pointer is flung fast.
+      const s = Math.min(speed / 3.5, 1);
       const nx = speed > 1e-3 ? Math.abs(vx) / speed : 0.5;
       const ny = speed > 1e-3 ? Math.abs(vy) / speed : 0.5;
       if (bgOn) drive(bgLayer, cfg.cursorFxBackdropBlur, cfg.cursorFxBackdropWarp, cfg.cursorFxBackdropIntensity, s, nx, ny, speed);
@@ -586,7 +588,9 @@ export function CursorFx() {
         >
           <feGaussianBlur ref={blurRef} in="SourceGraphic" stdDeviation="0 0" result="b" />
           <feOffset ref={offsetRef} in="b" dx="0" dy="0" result="o" />
-          <feTurbulence type="fractalNoise" baseFrequency="0.006 0.009" numOctaves="2" seed="3" result="n" />
+          {/* Low frequency = a few broad, coherent waves (like wavy glass/water) rather
+              than fine noisy grain, which reads as heat-shimmer instead of a glass panel. */}
+          <feTurbulence type="fractalNoise" baseFrequency="0.0025 0.004" numOctaves="2" seed="3" result="n" />
           <feDisplacementMap
             ref={dispRef}
             in="o"
@@ -594,7 +598,10 @@ export function CursorFx() {
             scale="0"
             xChannelSelector="R"
             yChannelSelector="G"
+            result="disp"
           />
+          {/* Slight vividness lift so the warped content reads as glass, not just distortion. */}
+          <feColorMatrix in="disp" type="saturate" values="1.35" />
         </filter>
         <filter
           id="cursor-fx-img-filter"
@@ -606,7 +613,7 @@ export function CursorFx() {
         >
           <feGaussianBlur ref={imgBlurRef} in="SourceGraphic" stdDeviation="0 0" result="b" />
           <feOffset ref={imgOffsetRef} in="b" dx="0" dy="0" result="o" />
-          <feTurbulence type="fractalNoise" baseFrequency="0.011 0.016" numOctaves="2" seed="7" result="n" />
+          <feTurbulence type="fractalNoise" baseFrequency="0.004 0.007" numOctaves="2" seed="7" result="n" />
           <feDisplacementMap
             ref={imgDispRef}
             in="o"
@@ -614,7 +621,9 @@ export function CursorFx() {
             scale="0"
             xChannelSelector="R"
             yChannelSelector="G"
+            result="disp"
           />
+          <feColorMatrix in="disp" type="saturate" values="1.35" />
         </filter>
       </svg>
       <div ref={backdropRef} className={styles.backdrop} aria-hidden="true" />

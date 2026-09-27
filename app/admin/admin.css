@@ -1,0 +1,161 @@
+/* Minimal reset for the admin tool. Deliberately does not import
+   styles/globals.css — the admin is a utility, not a marketing page, so it
+   skips the motion system, cursor effects, and custom scrollbar hiding. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  font-size: var(--fs-300);
+  line-height: var(--lh-normal);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  line-height: var(--lh-tight);
+  margin: 0;
+  font-weight: var(--fw-display);
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Compact form primitives shared by every admin panel. Global rather than a
+   CSS module because all five panels render the same dense field markup —
+   duplicating it per module would be the same rules five times over.
+   The admin deliberately runs tighter than the marketing site's --space-*
+   scale: this is a dense tool on a wide screen, not a page to read. */
+.a-field {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+
+.a-field > label,
+.a-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+
+.a-input,
+.a-field input[type="text"],
+.a-field input[type="url"],
+.a-field textarea,
+.a-field select {
+  width: 100%;
+  padding: 5px 7px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-fg-inverted);
+  color: var(--color-fg);
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.a-field textarea {
+  resize: vertical;
+}
+
+.a-field input:focus-visible,
+.a-field textarea:focus-visible,
+.a-field select:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+.a-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.a-hint {
+  font-size: 11px;
+  color: var(--color-fg-muted);
+}
+
+.a-error {
+  font-size: 12px;
+  color: var(--color-brand-red);
+}
+
+.a-btn {
+  padding: 5px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-fg-inverted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.a-btn:hover:not(:disabled) {
+  border-color: var(--color-fg-muted);
+}
+
+.a-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.a-btn-primary {
+  background: var(--color-fg);
+  border-color: var(--color-fg);
+  color: var(--color-fg-inverted);
+  font-weight: 600;
+}
+
+.a-btn-danger {
+  color: var(--color-brand-red);
+  border-color: color-mix(in srgb, var(--color-brand-red) 45%, transparent);
+}
+
+.a-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}

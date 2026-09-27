@@ -7,13 +7,16 @@
   pointer-events: none;
 }
 
-/* Sits under the trail canvas; masked to the trail shape from JS. */
+/* Sits under the trail canvas; masked to the trail shape from JS. A faint white
+   tint on top of the blurred/warped content gives it a glass-panel sheen, the
+   same trick as a frosted-glass ("glassmorphism") surface. */
 .backdrop {
   position: fixed;
   inset: 0;
   z-index: 59;
   pointer-events: none;
   visibility: hidden;
+  background: rgba(255, 255, 255, 0.05);
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
   -webkit-mask-repeat: no-repeat;

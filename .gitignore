@@ -37,3 +37,6 @@ next-env.d.ts
 
 # scratch/reference data, not part of the site
 /temp/
+
+.vercel
+.env*

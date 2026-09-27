@@ -11,7 +11,7 @@
       "subhead": "Dit beleid legt uit welke persoonsgegevens Mellon Design via deze website verzamelt, hoe we ze gebruiken en welke keuzes je hebt. We houden het kort, omdat we heel weinig verzamelen.",
       "updated": {
         "label": "Laatst bijgewerkt",
-        "date": "2026-09-21"
+        "date": "2026-09-27"
       }
     },
     {
@@ -31,11 +31,11 @@
         },
         {
           "heading": "Cookies",
-          "body": "Eén klein functioneel cookie, mellon_locale, onthoudt de taal die je hebt gekozen; het blijft maximaal een jaar bewaard en bevat geen persoonsgegevens. Daarnaast vragen we je toestemming voordat we analytische of marketingcookies gebruiken, en we activeren ze alleen als je akkoord gaat. Je keuze wordt in je browser opgeslagen (mellon_consent_v3). Wil je die wijzigen, wis dan de gegevens van deze site in je browser; de banner vraagt het dan opnieuw."
+          "body": "Eén klein functioneel cookie, mellon_locale, onthoudt de taal die je hebt gekozen; het blijft maximaal een jaar bewaard en bevat geen persoonsgegevens. Daarbuiten vragen we eerst je toestemming. De banner biedt drie categorieën — analytisch, marketing en functioneel — en we activeren alleen wat je accepteert. Je keuze wordt in je browser opgeslagen als mellon_consent_v3; sluit je de banner zonder te kiezen, dan onthouden we alleen dát, en uitsluitend voor de huidige sessie (mellon_consent_dismissed). Je kunt je keuze altijd wijzigen via de link „Cookievoorkeuren\" onderaan elke pagina."
         },
         {
           "heading": "Met wie we ze delen",
-          "body": "Alleen met dienstverleners die ons helpen de site te laten draaien: hosting (Vercel), opslag van aanvragen (Supabase) en e-mail (Zoho), en alleen voor zover ze dat voor hun werk nodig hebben. Analyse- en marketingtools ontvangen, als je dat toestaat, de gebruikelijke surfgegevens die zij verzamelen. We kunnen gegevens ook openbaar maken als de wet dat vereist."
+          "body": "Alleen met dienstverleners die ons helpen de site te laten draaien: hosting (Vercel), opslag van aanvragen en hosting van afbeeldingen (Supabase) en e-mail (Zoho), en alleen voor zover ze dat voor hun werk nodig hebben. Analyse- en marketingtools ontvangen, als je dat toestaat, de gebruikelijke surfgegevens die zij verzamelen. We gebruiken ook een AI-aanbieder (DeepSeek) om de teksten van onze eigen pagina's en casestudy's te vertalen en op te stellen; die ontvangt nooit je aanvraag of andere persoonsgegevens. We kunnen gegevens ook openbaar maken als de wet dat vereist."
         },
         {
           "heading": "Hoe lang we ze bewaren",

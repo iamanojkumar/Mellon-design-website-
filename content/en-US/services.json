@@ -104,6 +104,32 @@
     "relatedIndustries": ["technology-saas", "finance-fintech", "education-edtech"]
   },
   {
+    "slug": "seo-content-strategy",
+    "name": "SEO & Content Strategy",
+    "tagline": "Built to be found — structure, content, and technical foundations that rank.",
+    "summary": "We design and structure sites so search engines and readers both make sense of them — information architecture, on-page optimization, and a content plan built around the terms your buyers actually search, integrated into the same system as the rest of your product.",
+    "deliverables": [
+      "Keyword and competitive landscape research",
+      "On-page SEO: metadata, schema, and content structure",
+      "Content strategy and editorial calendar",
+      "Technical SEO audit (site speed, crawlability, indexing)"
+    ],
+    "relatedIndustries": ["technology-saas", "ecommerce", "real-estate-design", "hospitality-design"]
+  },
+  {
+    "slug": "social-media-content-marketing",
+    "name": "Social Media & Content Marketing",
+    "tagline": "Scroll-stopping content, on-brand in every format and every feed.",
+    "summary": "We design the visual system behind your social presence — templates, campaign creative, and a content cadence that stays recognizably yours across platforms, so marketing content never feels bolted onto the brand after the fact.",
+    "deliverables": [
+      "Platform-specific content templates and design systems",
+      "Campaign and launch creative",
+      "Content calendar and posting cadence strategy",
+      "Brand-consistent copy and caption guidelines"
+    ],
+    "relatedIndustries": ["fashion-brand-design", "restaurant-branding", "media-entertainment-gaming", "consumer-electronics"]
+  },
+  {
     "slug": "ui-ux-design",
     "name": "UI/UX Design",
     "tagline": "The core craft — research, structure, and pixel-level execution.",

@@ -10,6 +10,14 @@ type BuildMetadataArgs = {
   title: string;
   description: string;
   ogImage?: string;
+  /** "article" for editorial pieces (case studies, posts); marketing pages stay "website". */
+  ogType?: "website" | "article";
+  /** Editorial pieces with a real hero earn the bigger card. */
+  twitterCard?: "summary" | "summary_large_image";
+  /** Live but kept out of search results. */
+  noindex?: boolean;
+  /** Overrides the derived canonical — e.g. a project's hand-set canonical URL. */
+  canonicalOverride?: string;
 };
 
 // Shown whenever a page (or its locale) has no image of its own.
@@ -21,11 +29,15 @@ export function buildMetadata({
   title,
   description,
   ogImage,
+  ogType = "website",
+  twitterCard = "summary",
+  noindex = false,
+  canonicalOverride,
 }: BuildMetadataArgs): Metadata {
   const siteUrl = getSiteUrl();
   const image = ogImage ?? getLocaleConfig(locale)?.ogImage ?? DEFAULT_OG_IMAGE;
   const canonicalPath = `/${locale}${path}`;
-  const canonical = `${siteUrl}${canonicalPath}`;
+  const canonical = canonicalOverride || `${siteUrl}${canonicalPath}`;
 
   const languages: Record<string, string> = {};
   for (const alt of enabledLocales) {
@@ -37,6 +49,7 @@ export function buildMetadata({
     metadataBase: new URL(siteUrl),
     title,
     description,
+    ...(noindex ? { robots: { index: false, follow: true } } : {}),
     alternates: {
       canonical,
       languages,
@@ -51,15 +64,23 @@ export function buildMetadata({
       alternateLocale: enabledLocales
         .filter((alt) => alt.code !== locale)
         .map((alt) => alt.code.replace("-", "_")),
-      type: "website",
+      type: ogType,
     },
     twitter: {
-      card: "summary",
+      card: twitterCard,
       title,
       description,
       images: [image],
     },
   };
+}
+
+/**
+ * Which Open Graph type a piece of structured data implies. Article and
+ * BlogPosting are editorial; CreativeWork covers everything else we publish.
+ */
+export function ogTypeForSchema(schemaType: string): "website" | "article" {
+  return schemaType === "Article" || schemaType === "BlogPosting" ? "article" : "website";
 }
 
 /**

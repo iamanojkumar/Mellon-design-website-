@@ -139,6 +139,42 @@
     ]
   },
   {
+    "slug": "seo-content-strategy",
+    "name": "SEO & Stratégie de Contenu",
+    "tagline": "Conçu pour être trouvé : structure, contenu et fondations techniques qui positionnent.",
+    "summary": "Nous concevons et structurons les sites pour que les moteurs de recherche et les lecteurs s'y retrouvent aussi bien les uns que les autres : architecture de l'information, optimisation on-page et un plan de contenu construit autour des termes que vos clients recherchent réellement, intégré au même système que le reste de votre produit.",
+    "deliverables": [
+      "Recherche de mots-clés et analyse concurrentielle",
+      "SEO on-page : métadonnées, schema et structure de contenu",
+      "Stratégie de contenu et calendrier éditorial",
+      "Audit technique SEO (vitesse, exploration, indexation)"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "ecommerce",
+      "real-estate-design",
+      "hospitality-design"
+    ]
+  },
+  {
+    "slug": "social-media-content-marketing",
+    "name": "Réseaux Sociaux & Marketing de Contenu",
+    "tagline": "Un contenu qui arrête le scroll, fidèle à la marque sur chaque format et chaque flux.",
+    "summary": "Nous concevons le système visuel de votre présence sur les réseaux sociaux : gabarits, créations de campagne et un rythme de publication qui reste reconnaissablement le vôtre sur chaque plateforme, pour que le contenu marketing ne semble jamais plaqué sur la marque après coup.",
+    "deliverables": [
+      "Gabarits de contenu et systèmes de design par plateforme",
+      "Créations de campagne et de lancement",
+      "Calendrier de contenu et stratégie de publication",
+      "Charte de ton et de légendes cohérente avec la marque"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "restaurant-branding",
+      "media-entertainment-gaming",
+      "consumer-electronics"
+    ]
+  },
+  {
     "slug": "ui-ux-design",
     "name": "Design UI/UX",
     "tagline": "Le cœur du métier : recherche, structure et exécution au pixel près.",

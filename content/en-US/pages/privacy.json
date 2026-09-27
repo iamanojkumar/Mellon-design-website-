@@ -11,7 +11,7 @@
       "subhead": "This policy explains what personal information Mellon Design collects through this website, how we use it, and the choices you have. We keep it short because we collect very little.",
       "updated": {
         "label": "Last updated",
-        "date": "2026-09-21"
+        "date": "2026-09-27"
       }
     },
     {
@@ -31,11 +31,11 @@
         },
         {
           "heading": "Cookies",
-          "body": "A small functional cookie, mellon_locale, remembers the language you chose; it lasts up to one year and holds no personal information. Beyond that, we ask for your consent before using analytics or marketing cookies, and only enable them if you agree. Your choice is stored in your browser (mellon_consent_v3). To change it, clear this site's data in your browser and the banner will ask you again."
+          "body": "A small functional cookie, mellon_locale, remembers the language you chose; it lasts up to one year and holds no personal information. Beyond that, we ask for your consent first. The banner offers three categories — analytics, marketing and functional — and we only enable the ones you accept. Your choice is stored in your browser as mellon_consent_v3; if you close the banner without deciding, we remember only that, for the current session (mellon_consent_dismissed). You can change your mind at any time with the Cookie preferences link at the bottom of any page."
         },
         {
           "heading": "Who we share it with",
-          "body": "Only with service providers that help us run the site: hosting (Vercel), enquiry storage (Supabase) and email (Zoho), and only as needed for them to do that work. Analytics and marketing tools, if you allow them, receive the usual browsing data those tools collect. We may also disclose information if the law requires it."
+          "body": "Only with service providers that help us run the site: hosting (Vercel), enquiry storage and image hosting (Supabase) and email (Zoho), and only as needed for them to do that work. Analytics and marketing tools, if you allow them, receive the usual browsing data those tools collect. We also use an AI provider (DeepSeek) to help translate and draft the text of our own pages and case studies; it never receives your enquiry or any other personal information. We may also disclose information if the law requires it."
         },
         {
           "heading": "How long we keep it",

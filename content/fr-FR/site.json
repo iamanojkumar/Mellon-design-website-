@@ -61,7 +61,8 @@
       }
     ],
     "contactHeading": "Contact",
-    "homeAria": "Accueil Mellon"
+    "homeAria": "Accueil Mellon",
+    "cookiePreferences": "Préférences de cookies"
   },
   "common": {
     "startProject": "Démarrer un projet",

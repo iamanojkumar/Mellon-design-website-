@@ -11,7 +11,7 @@
       "subhead": "Diese Erklärung beschreibt, welche personenbezogenen Daten Mellon Design über diese Website erhebt, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben. Wir halten sie kurz, weil wir sehr wenig erheben.",
       "updated": {
         "label": "Zuletzt aktualisiert",
-        "date": "2026-09-21"
+        "date": "2026-09-27"
       }
     },
     {
@@ -31,11 +31,11 @@
         },
         {
           "heading": "Cookies",
-          "body": "Ein kleines funktionales Cookie, mellon_locale, merkt sich die von Ihnen gewählte Sprache; es hält bis zu einem Jahr und enthält keine personenbezogenen Daten. Darüber hinaus holen wir Ihre Einwilligung ein, bevor wir Analyse- oder Marketing-Cookies einsetzen, und aktivieren sie nur, wenn Sie zustimmen. Ihre Auswahl wird in Ihrem Browser gespeichert (mellon_consent_v3). Um sie zu ändern, löschen Sie die Daten dieser Website in Ihrem Browser – der Banner fragt dann erneut."
+          "body": "Ein kleines funktionales Cookie, mellon_locale, merkt sich die von Ihnen gewählte Sprache; es hält bis zu einem Jahr und enthält keine personenbezogenen Daten. Darüber hinaus holen wir zuerst Ihre Einwilligung ein. Der Banner bietet drei Kategorien – Analyse, Marketing und Funktional – und wir aktivieren nur die, denen Sie zustimmen. Ihre Auswahl wird in Ihrem Browser als mellon_consent_v3 gespeichert; schließen Sie den Banner ohne Entscheidung, merken wir uns nur das, und zwar nur für die laufende Sitzung (mellon_consent_dismissed). Sie können Ihre Entscheidung jederzeit über den Link „Cookie-Einstellungen“ am Seitenende ändern."
         },
         {
           "heading": "An wen wir Daten weitergeben",
-          "body": "Nur an Dienstleister, die uns beim Betrieb der Website unterstützen: Hosting (Vercel), Speicherung von Anfragen (Supabase) und E-Mail (Zoho) – und nur, soweit sie dies für ihre Arbeit benötigen. Analyse- und Marketing-Tools erhalten, falls Sie zustimmen, die üblichen Nutzungsdaten, die diese Tools erfassen. Wir können Daten außerdem offenlegen, wenn das Gesetz es verlangt."
+          "body": "Nur an Dienstleister, die uns beim Betrieb der Website unterstützen: Hosting (Vercel), Speicherung von Anfragen und Bild-Hosting (Supabase) und E-Mail (Zoho) – und nur, soweit sie dies für ihre Arbeit benötigen. Analyse- und Marketing-Tools erhalten, falls Sie zustimmen, die üblichen Nutzungsdaten, die diese Tools erfassen. Außerdem nutzen wir einen KI-Anbieter (DeepSeek), um Texte unserer eigenen Seiten und Fallstudien zu übersetzen und zu entwerfen; er erhält niemals Ihre Anfrage oder andere personenbezogene Daten. Wir können Daten außerdem offenlegen, wenn das Gesetz es verlangt."
         },
         {
           "heading": "Wie lange wir sie speichern",

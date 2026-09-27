@@ -11,7 +11,7 @@
       "subhead": "Esta política explica qué datos personales recoge Mellon Design a través de este sitio web, cómo los usamos y qué opciones tienes. La mantenemos breve porque recogemos muy pocos datos.",
       "updated": {
         "label": "Última actualización",
-        "date": "2026-09-21"
+        "date": "2026-09-27"
       }
     },
     {
@@ -31,11 +31,11 @@
         },
         {
           "heading": "Cookies",
-          "body": "Una pequeña cookie funcional, mellon_locale, recuerda el idioma que elegiste; dura hasta un año y no contiene datos personales. Además, te pedimos consentimiento antes de usar cookies de análisis o de marketing, y solo las activamos si aceptas. Tu elección se guarda en tu navegador (mellon_consent_v3). Para cambiarla, borra los datos de este sitio en tu navegador y el banner volverá a preguntarte."
+          "body": "Una pequeña cookie funcional, mellon_locale, recuerda el idioma que elegiste; dura hasta un año y no contiene datos personales. Más allá de eso, primero te pedimos consentimiento. El banner ofrece tres categorías —analíticas, marketing y funcionales— y solo activamos las que aceptes. Tu elección se guarda en tu navegador como mellon_consent_v3; si cierras el banner sin decidir, solo recordamos eso, y únicamente durante la sesión actual (mellon_consent_dismissed). Puedes cambiar de opinión cuando quieras con el enlace «Preferencias de cookies» al final de cualquier página."
         },
         {
           "heading": "Con quién los compartimos",
-          "body": "Solo con proveedores que nos ayudan a operar el sitio: alojamiento (Vercel), almacenamiento de consultas (Supabase) y correo (Zoho), y solo en la medida necesaria para su trabajo. Las herramientas de análisis y marketing, si las permites, reciben los datos de navegación habituales que recogen. También podemos divulgar información si la ley lo exige."
+          "body": "Solo con proveedores que nos ayudan a operar el sitio: alojamiento (Vercel), almacenamiento de consultas y alojamiento de imágenes (Supabase) y correo (Zoho), y solo en la medida necesaria para su trabajo. Las herramientas de análisis y marketing, si las permites, reciben los datos de navegación habituales que recogen. También usamos un proveedor de IA (DeepSeek) para traducir y redactar el texto de nuestras propias páginas y casos de estudio; nunca recibe tu consulta ni ningún otro dato personal. También podemos divulgar información si la ley lo exige."
         },
         {
           "heading": "Cuánto tiempo los conservamos",

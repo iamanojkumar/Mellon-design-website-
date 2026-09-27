@@ -1,0 +1,15 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.warning {
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--color-brand-amber) 22%, transparent);
+  font-size: 11px;
+  line-height: 1.45;
+}

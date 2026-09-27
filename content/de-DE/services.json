@@ -139,6 +139,42 @@
     ]
   },
   {
+    "slug": "seo-content-strategy",
+    "name": "SEO & Content-Strategie",
+    "tagline": "So gebaut, dass man Sie findet – Struktur, Inhalte und technische Grundlagen, die ranken.",
+    "summary": "Wir gestalten und strukturieren Websites so, dass Suchmaschinen und Lesende sie gleichermaßen verstehen – Informationsarchitektur, On-Page-Optimierung und ein Content-Plan rund um die Begriffe, nach denen Ihre Kundschaft tatsächlich sucht, integriert in dasselbe System wie der Rest Ihres Produkts.",
+    "deliverables": [
+      "Keyword- und Wettbewerbsanalyse",
+      "On-Page-SEO: Metadaten, Schema und Content-Struktur",
+      "Content-Strategie und Redaktionsplan",
+      "Technisches SEO-Audit (Ladezeit, Crawlbarkeit, Indexierung)"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "ecommerce",
+      "real-estate-design",
+      "hospitality-design"
+    ]
+  },
+  {
+    "slug": "social-media-content-marketing",
+    "name": "Social Media & Content-Marketing",
+    "tagline": "Content, der zum Innehalten zwingt – markenkonform in jedem Format und jedem Feed.",
+    "summary": "Wir gestalten das visuelle System hinter Ihrer Social-Media-Präsenz – Vorlagen, Kampagnen-Creatives und einen Content-Rhythmus, der plattformübergreifend erkennbar Ihre Handschrift trägt, damit Marketing-Content nie wie nachträglich an die Marke angeklebt wirkt.",
+    "deliverables": [
+      "Plattformspezifische Content-Vorlagen und Designsysteme",
+      "Kampagnen- und Launch-Creatives",
+      "Content-Kalender und Posting-Rhythmus-Strategie",
+      "Markenkonforme Copy- und Caption-Richtlinien"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "restaurant-branding",
+      "media-entertainment-gaming",
+      "consumer-electronics"
+    ]
+  },
+  {
     "slug": "ui-ux-design",
     "name": "UI/UX-Design",
     "tagline": "Das Kernhandwerk – Recherche, Struktur und Umsetzung bis ins Pixel.",

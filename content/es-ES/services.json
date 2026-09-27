@@ -139,6 +139,42 @@
     ]
   },
   {
+    "slug": "seo-content-strategy",
+    "name": "SEO y Estrategia de Contenidos",
+    "tagline": "Diseñado para que te encuentren: estructura, contenido y bases técnicas que posicionan.",
+    "summary": "Diseñamos y estructuramos sitios para que los buscadores y las personas los entiendan por igual: arquitectura de la información, optimización on-page y un plan de contenidos centrado en los términos que tu público realmente busca, integrado en el mismo sistema que el resto de tu producto.",
+    "deliverables": [
+      "Investigación de palabras clave y del panorama competitivo",
+      "SEO on-page: metadatos, schema y estructura de contenidos",
+      "Estrategia de contenidos y calendario editorial",
+      "Auditoría técnica de SEO (velocidad, rastreo e indexación)"
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "ecommerce",
+      "real-estate-design",
+      "hospitality-design"
+    ]
+  },
+  {
+    "slug": "social-media-content-marketing",
+    "name": "Redes Sociales y Marketing de Contenidos",
+    "tagline": "Contenido que engancha, fiel a la marca en cada formato y cada red.",
+    "summary": "Diseñamos el sistema visual detrás de tu presencia en redes: plantillas, creatividades de campaña y un ritmo de contenidos reconociblemente tuyo en cada plataforma, para que el contenido de marketing nunca parezca añadido a la marca a última hora.",
+    "deliverables": [
+      "Plantillas y sistemas de diseño específicos para cada plataforma",
+      "Creatividades de campaña y lanzamiento",
+      "Calendario de contenidos y estrategia de publicación",
+      "Guías de copy y captions coherentes con la marca"
+    ],
+    "relatedIndustries": [
+      "fashion-brand-design",
+      "restaurant-branding",
+      "media-entertainment-gaming",
+      "consumer-electronics"
+    ]
+  },
+  {
     "slug": "ui-ux-design",
     "name": "Diseño UI/UX",
     "tagline": "El oficio central: investigación, estructura y ejecución al píxel.",

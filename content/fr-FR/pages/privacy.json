@@ -11,7 +11,7 @@
       "subhead": "Cette politique explique quelles données personnelles Mellon Design collecte via ce site, comment nous les utilisons et les choix dont vous disposez. Nous la gardons courte, car nous collectons très peu de données.",
       "updated": {
         "label": "Dernière mise à jour",
-        "date": "2026-09-21"
+        "date": "2026-09-27"
       }
     },
     {
@@ -31,11 +31,11 @@
         },
         {
           "heading": "Cookies",
-          "body": "Un petit cookie fonctionnel, mellon_locale, mémorise la langue que vous avez choisie ; il dure jusqu'à un an et ne contient aucune donnée personnelle. Au-delà, nous demandons votre consentement avant d'utiliser des cookies d'analyse ou de marketing, et ne les activons que si vous acceptez. Votre choix est enregistré dans votre navigateur (mellon_consent_v3). Pour le modifier, effacez les données de ce site dans votre navigateur : la bannière vous posera de nouveau la question."
+          "body": "Un petit cookie fonctionnel, mellon_locale, mémorise la langue que vous avez choisie ; il dure jusqu’à un an et ne contient aucune donnée personnelle. Au-delà, nous demandons d’abord votre consentement. La bannière propose trois catégories — analytiques, marketing et fonctionnels — et nous n’activons que celles que vous acceptez. Votre choix est enregistré dans votre navigateur sous mellon_consent_v3 ; si vous fermez la bannière sans choisir, nous ne retenons que cela, et uniquement pour la session en cours (mellon_consent_dismissed). Vous pouvez changer d’avis à tout moment via le lien « Préférences de cookies » en bas de chaque page."
         },
         {
           "heading": "Avec qui nous les partageons",
-          "body": "Uniquement avec les prestataires qui nous aident à faire fonctionner le site : hébergement (Vercel), stockage des demandes (Supabase) et messagerie (Zoho), et seulement dans la mesure nécessaire à leur mission. Les outils d'analyse et de marketing, si vous les autorisez, reçoivent les données de navigation habituelles qu'ils collectent. Nous pouvons également communiquer des informations si la loi l'exige."
+          "body": "Uniquement avec les prestataires qui nous aident à faire fonctionner le site : hébergement (Vercel), stockage des demandes et hébergement des images (Supabase) et messagerie (Zoho), et seulement dans la mesure nécessaire à leur mission. Les outils d’analyse et de marketing, si vous les autorisez, reçoivent les données de navigation habituelles qu’ils collectent. Nous utilisons également un fournisseur d’IA (DeepSeek) pour traduire et rédiger le texte de nos propres pages et études de cas ; il ne reçoit jamais votre demande ni aucune autre donnée personnelle. Nous pouvons également communiquer des informations si la loi l’exige."
         },
         {
           "heading": "Combien de temps nous les conservons",

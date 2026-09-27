@@ -1,0 +1,137 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--color-border);
+  flex: none;
+}
+
+.brand {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.topbarControls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.localeSwitcher {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+
+.localeSwitcher select {
+  padding: 4px 6px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 12px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--color-fg);
+  font-family: var(--font-body);
+}
+
+.paneToggle {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--color-fg-muted);
+  flex: none;
+}
+
+.paneToggle[aria-pressed="true"] {
+  color: var(--color-fg);
+}
+
+.notice {
+  flex: none;
+  padding: 5px 10px;
+  background: color-mix(in srgb, var(--color-brand-red) 12%, transparent);
+  color: var(--color-brand-red);
+  font-size: 12px;
+}
+
+/* Columns collapse by dropping out of the grid entirely, so the editor gets
+   the full width back rather than sitting beside an empty rail. */
+.body {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 248px minmax(0, 1fr) 380px;
+}
+
+.body[data-sidebar="closed"] {
+  grid-template-columns: minmax(0, 1fr) 380px;
+}
+
+.body[data-dock="closed"] {
+  grid-template-columns: 248px minmax(0, 1fr);
+}
+
+.body[data-sidebar="closed"][data-dock="closed"] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.body > * {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.dock {
+  border-left: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dockTabs {
+  flex: none;
+  display: flex;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dockTab {
+  flex: 1;
+  padding: 7px 4px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+  border-bottom: 2px solid transparent;
+}
+
+.dockTab[aria-selected="true"] {
+  color: var(--color-fg);
+  border-bottom-color: var(--color-accent);
+}
+
+.dockBody {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}

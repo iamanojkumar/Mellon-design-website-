@@ -97,6 +97,19 @@
   text-decoration: underline;
 }
 
+/* Reads as one of the legal links beside it, but has to be a button: it opens
+   the consent panel rather than navigating. */
+.consentButton {
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+.consentButton:hover {
+  color: var(--color-fg);
+  text-decoration: underline;
+}
+
 @media (min-width: 700px) {
   .top {
     grid-template-columns: 1.4fr repeat(2, 1fr);

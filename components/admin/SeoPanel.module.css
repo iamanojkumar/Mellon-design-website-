@@ -1,0 +1,58 @@
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.divider {
+  margin-top: 4px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+
+.counter {
+  float: right;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0;
+  color: var(--color-fg-muted);
+}
+
+.counter[data-over="true"] {
+  color: var(--color-brand-red);
+}
+
+.checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.checkbox input {
+  margin-top: 2px;
+  flex: none;
+}
+
+.preview {
+  margin: 0;
+  max-height: 200px;
+  overflow: auto;
+  padding: 7px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: var(--color-paper-tint);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  word-break: break-word;
+}

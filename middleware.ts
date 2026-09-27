@@ -17,10 +17,14 @@ export function middleware(request: NextRequest) {
   );
   if (pathnameHasLocale) return NextResponse.next();
 
-  // Skip static files and Next internals.
+  // Skip static files, Next internals, and the admin tool (not locale-routed —
+  // it has its own internal locale switcher for picking which locale's
+  // projects to edit).
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname === "/admin" ||
+    pathname.startsWith("/admin/") ||
     /\.[^/]+$/.test(pathname)
   ) {
     return NextResponse.next();

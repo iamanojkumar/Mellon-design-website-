@@ -86,6 +86,12 @@ export function Footer({ locale, footer, org }: FooterProps) {
             {link.label}
           </Link>
         ))}
+        {/* The consent banner (GTM tag, source in temp/consent-banner.html) binds
+            any data-open-consent element to reopen its preferences panel. Without
+            this, withdrawing consent would mean clearing site data by hand. */}
+        <button type="button" data-open-consent className={styles.consentButton}>
+          {footer.cookiePreferences}
+        </button>
       </div>
     </footer>
   );

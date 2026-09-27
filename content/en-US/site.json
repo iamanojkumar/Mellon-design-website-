@@ -71,7 +71,8 @@
       }
     ],
     "contactHeading": "Contact",
-    "homeAria": "Mellon home"
+    "homeAria": "Mellon home",
+    "cookiePreferences": "Cookie preferences"
   },
   "common": {
     "startProject": "Start a project",

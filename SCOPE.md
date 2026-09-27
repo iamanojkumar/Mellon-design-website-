@@ -13,7 +13,9 @@ A static, SEO-optimized, high-performance marketing website for Mellon. No produ
 - About / "how Mellon operates"
 - Contact
 
-No client project portfolio at launch.
+A "Projects" portfolio/case-study system is authored through a password-protected `/admin` tool
+(see §11) — it is not part of the static-JSON content model and does not get its own public pages
+yet (those are a later addition).
 
 ## 2. Stack
 
@@ -43,7 +45,7 @@ No client project portfolio at launch.
 - Global strings (`content/<locale>/site.json`) are deep-merged along the fallback chain, so a locale lists only what differs (e.g. `en-GB` overrides just the budget placeholder).
 - Fallback chain comes from `fallback` in `content/locales.json`, always ending at `en-US` (e.g. `de-CH` → `de-DE` → `en-US`).
 - **Add a locale:** create `content/<locale>/` files → import in `content/registry.ts` → set `"enabled": true`. Nothing else in code changes.
-- Copy stays in git-versioned JSON for now. A CMS can replace the source later behind `lib/content.ts` (single seam); Supabase is used for contact submissions only, not for copy.
+- Copy stays in git-versioned JSON for now. A CMS can replace the source later behind `lib/content.ts` (single seam); Supabase is used for contact submissions and, as of §11, for Projects — never for `site.json`/pages/services/industries copy.
 
 ### Locale rollout plan
 
@@ -105,7 +107,96 @@ See discussion log / repeat on request — full annotated tree covers:
 
 ## 10. Explicitly out of scope (for now)
 
-- Client project portfolio / case study pages
-- User accounts / auth
+- Public project/case-study pages (`/work` or similar) — the admin tool and data model exist
+  (§11); the public-facing pages that list/link them are a later addition.
+- User accounts / auth beyond the single-password `/admin` tool
 - E-commerce / payments
-- CMS integration (content is file-based JSON at launch)
+- CMS integration for site copy (content is file-based JSON at launch; Projects are the one
+  deliberate exception — see §11)
+
+## 11. Projects (portfolio/case studies) — admin-authored, Supabase-backed
+
+A deliberate, scoped exception to "static JSON only": editable through a password-protected
+`/admin` tool (outside the `[locale]` route tree — `middleware.ts` passes `/admin*` through
+without a locale redirect) so an editor can add/edit/delete case studies without a redeploy.
+
+- **Auth**: a single hardcoded password, held only in the `ADMIN_PASSWORD` Vercel env var and
+  compared server-side (`lib/admin-auth.ts`); a separate `ADMIN_SESSION_SECRET` signs the session
+  cookie. Neither value, nor `SUPABASE_SERVICE_ROLE_KEY` / `DEEPSEEK_API_KEY`, is ever sent to the
+  client — decoration-grade password, but properly concealed.
+- **Storage**: a `projects` Supabase table (`supabase/migrations/20260927000000_projects.sql`,
+  extended by `..._projects_v2.sql`) plus `project_folders`, read/written server-only via the
+  service-role key (`lib/projects.ts`, `lib/folders.ts`), same pattern as `lib/submissions.ts` —
+  no client-side anon-key access. Hero/content images upload to a public `project-media` Storage
+  bucket through a server action (`lib/upload-project-media.ts`).
+- **Publish workflow**: every project is `draft`, `published` or `unpublished`; only `published`
+  ever leaves the admin (`getPublishedProjects`). `published_at` is stamped by a database trigger
+  the first time a row goes live, so the invariant holds for every write path (manual save, AI
+  bulk create, duplicate-to-locale) and survives a later unpublish.
+- **Folders**: per-locale groups (`project_folders`), full CRUD from the sidebar. Deleting a
+  folder unfiles its projects (`on delete set null`) — it never deletes work. Folders are an
+  editorial filing system only: they are **not** part of the URL, so projects can be reorganised
+  without breaking links.
+- **Hero image**: stored with alt text and intrinsic width/height. The dimensions are read off the
+  image as it loads in the editor rather than typed, and feed both the public `<img>` (no layout
+  shift) and an `ImageObject` in the structured data.
+- **Slug history**: renaming a project pushes the old slug onto `previous_slugs` via a trigger, and
+  `getProjectByPreviousSlug` lets the future public route redirect rather than 404 — so a rename
+  never strands an indexed URL. Renaming a → b → a correctly drops `a` from the history.
+- **SEO fields**: meta title and meta description (separate from the on-page title/summary, since
+  a SERP title wants ~60 characters and a description ~160 — the panel counts against both),
+  focus keyword, canonical URL, Open Graph title/description/image, a `noindex` switch for work
+  that should stay live but out of the index, and a schema type — `CreativeWork` (default, the
+  honest type for a case study), `Article` or `BlogPosting`. Every override falls back through to
+  the on-page copy (`resolveSeo`), so an editor fills only what should differ.
+  `buildMetadata` takes `ogType`/`twitterCard`/`noindex`, and `ogTypeForSchema` maps the schema
+  type to `og:type` — editorial pieces get `article` + `summary_large_image` instead of the
+  marketing pages' `website` + `summary`. `lib/project-seo.ts` generates the JSON-LD
+  and references the same `#organization` node `lib/seo.ts` emits, so there is one organisation in
+  the graph. Per Google's Article guidance no properties are strictly required; the generated
+  graph covers the recommended set (headline, image, datePublished, dateModified, author,
+  publisher). The admin previews the generated graph live and can replace it wholesale with a
+  hand-written `json_ld_override`, which is validated as JSON before saving.
+- **Content blocks** (`lib/project-blocks.ts`, `blocks` JSONB): an ordered list of designed
+  sections sitting alongside the rich-text body — results/stats, testimonial, FAQ, image gallery,
+  video. Block choice was made against Google's *current* docs, not assumption:
+  - **Video** emits `VideoObject` — the only block here that still earns a rich result.
+  - **FAQ** emits `FAQPage`, but Google restricted FAQ rich results to gov/health sites in
+    Sept 2023 and **removed the feature entirely in May 2026**. Kept because other engines and
+    answer systems still parse it; it wins nothing in Google. The editor says so on the block.
+  - **Testimonial deliberately emits no `Review`/`AggregateRating`.** Google rules out star
+    snippets where "the entity that's being reviewed controls the reviews about itself", so
+    marking up our own client testimonials would be a guidelines risk with no upside.
+  - Stats and gallery are design-only; gallery alt text feeds image search.
+  Blocks contributing markup turn the JSON-LD into a `@graph`; with none, it stays a single node.
+- **Custom head/body**: raw HTML injected into the eventual public page. Deliberately unsanitised
+  — this is a single-operator tool behind a password, and the point is to paste tracking pixels
+  and widget embeds. The same trust model covers the rich editor's Embed block. Anything added
+  here runs on the public page, so it is only as safe as what the operator pastes.
+- **AI assistant**: DeepSeek (`lib/ai-provider.ts`, the same `DEEPSEEK_API_KEY` as translation)
+  via the AI SDK, streaming through `app/admin/api/chat/route.ts`. Its two tools —
+  `proposeProject` and `proposeBulkProjects` — are declared **without** an `execute`, so the model
+  can only ever propose: the call surfaces as a card in the chat panel and nothing reaches the
+  database until the operator clicks Apply or Create. Bulk output always lands as drafts. Chat
+  history is in-memory for the session only.
+- **Note on AI SDK version**: pinned to the `ai` v6 line (`ai@6`, `@ai-sdk/react@3`,
+  `@ai-sdk/openai-compatible@2`) because `ai@7` requires Node >= 22 and local dev runs Node 20.
+  Revisit when the toolchain moves to Node 22+.
+- **Publishing model**: Server Actions (`app/admin/actions.ts`) write via `lib/projects.ts` then
+  call `revalidateTag(\`projects:${locale}\`)`, so once public pages are built they can read
+  through cached, tagged `fetch` calls and get near-static performance with no-redeploy edits.
+- **Category / service**: every project has a `category` (a `content/<locale>/industries.json`
+  slug) and a `service` (a `content/<locale>/services.json` slug), chosen from dropdowns sourced
+  from `getIndustries`/`getServices` — reusing this site's existing taxonomy rather than a new one.
+- **Reusability**: the field vocabulary (`lib/project-fields.ts`), SEO builder, folder model and
+  assistant are written against plain field shapes rather than `Project` itself, so a later
+  content type (blog, resource) can reuse them. No second content type exists today — this is
+  shape discipline, not unused abstraction.
+- **Locale model — deliberately not the fallback/inheritance pattern used elsewhere**: each locale
+  owns its own independent set of project rows (`projects.locale`), with no merge and no
+  inheritance. The admin has a locale switcher to pick which locale's projects are being edited.
+  A **"duplicate to locale"** action copies a project into another locale, machine-translating
+  title/summary/content via the DeepSeek API (`lib/translate.ts`, `DEEPSEEK_API_KEY` — added by
+  the site owner, not yet provisioned). Any future public page that lists or links projects must
+  filter strictly by the visitor's locale and render its own "no projects yet" empty state when
+  that locale has none — there is no fallback to another locale's projects.
