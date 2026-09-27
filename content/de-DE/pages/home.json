@@ -27,6 +27,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Ausgewählte Arbeiten",
+      "headline": "Aktuelle Projekte.",
+      "body": "Einige der Projekte, die wir zuletzt umgesetzt haben.",
+      "viewLink": "Projekt ansehen →",
+      "viewAll": "Alle Projekte ansehen →",
+      "empty": "In diesem Markt sind noch keine Fallstudien veröffentlicht.",
+      "limit": 3
+    },
+    {
       "type": "servicesGrid",
       "eyebrow": "Was wir tun",
       "headline": "Zwölf Disziplinen. Ein Studio.",
@@ -53,16 +63,6 @@
           "body": "Umsetzung in Webflow, Framer, WordPress oder individuellem Code – durch ein Team, das die Designabsicht bereits kennt."
         }
       ]
-    },
-    {
-      "type": "projectsPreview",
-      "eyebrow": "Ausgewählte Arbeiten",
-      "headline": "Aktuelle Projekte.",
-      "body": "Einige der Projekte, die wir zuletzt umgesetzt haben.",
-      "viewLink": "Projekt ansehen →",
-      "viewAll": "Alle Projekte ansehen →",
-      "empty": "In diesem Markt sind noch keine Fallstudien veröffentlicht.",
-      "limit": 3
     },
     {
       "type": "closingCta",

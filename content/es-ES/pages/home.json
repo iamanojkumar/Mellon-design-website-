@@ -27,6 +27,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Trabajos seleccionados",
+      "headline": "Proyectos recientes.",
+      "body": "Algunos de los proyectos que hemos entregado más recientemente.",
+      "viewLink": "Ver proyecto →",
+      "viewAll": "Ver todos los proyectos →",
+      "empty": "Aún no hay casos publicados en este mercado.",
+      "limit": 3
+    },
+    {
       "type": "servicesGrid",
       "eyebrow": "Qué hacemos",
       "headline": "Doce disciplinas. Un solo estudio.",
@@ -53,16 +63,6 @@
           "body": "Implementación en Webflow, Framer, WordPress o código a medida, por un equipo que ya conoce la intención del diseño."
         }
       ]
-    },
-    {
-      "type": "projectsPreview",
-      "eyebrow": "Trabajos seleccionados",
-      "headline": "Proyectos recientes.",
-      "body": "Algunos de los proyectos que hemos entregado más recientemente.",
-      "viewLink": "Ver proyecto →",
-      "viewAll": "Ver todos los proyectos →",
-      "empty": "Aún no hay casos publicados en este mercado.",
-      "limit": 3
     },
     {
       "type": "closingCta",

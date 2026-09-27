@@ -39,6 +39,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Selected work",
+      "headline": "Recent projects.",
+      "body": "A few of the engagements we have shipped most recently.",
+      "viewLink": "View project →",
+      "viewAll": "View all projects →",
+      "empty": "No case studies published in this market yet.",
+      "limit": 3
+    },
+    {
       "type": "servicesGrid",
       "eyebrow": "What we do",
       "headline": "Twelve disciplines. One studio.",
@@ -65,16 +75,6 @@
           "body": "Implementation in Webflow, Framer, WordPress, or custom code, by a team that already knows the design intent."
         }
       ]
-    },
-    {
-      "type": "projectsPreview",
-      "eyebrow": "Selected work",
-      "headline": "Recent projects.",
-      "body": "A few of the engagements we have shipped most recently.",
-      "viewLink": "View project →",
-      "viewAll": "View all projects →",
-      "empty": "No case studies published in this market yet.",
-      "limit": 3
     },
     {
       "type": "closingCta",

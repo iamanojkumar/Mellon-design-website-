@@ -27,6 +27,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Travaux sélectionnés",
+      "headline": "Projets récents.",
+      "body": "Quelques-unes des missions que nous avons livrées le plus récemment.",
+      "viewLink": "Voir le projet →",
+      "viewAll": "Voir tous les projets →",
+      "empty": "Aucune étude de cas publiée sur ce marché pour le moment.",
+      "limit": 3
+    },
+    {
       "type": "servicesGrid",
       "eyebrow": "Ce que nous faisons",
       "headline": "Douze disciplines. Un seul studio.",
@@ -53,16 +63,6 @@
           "body": "Mise en œuvre dans Webflow, Framer, WordPress ou en code sur mesure, par une équipe qui connaît déjà l'intention du design."
         }
       ]
-    },
-    {
-      "type": "projectsPreview",
-      "eyebrow": "Travaux sélectionnés",
-      "headline": "Projets récents.",
-      "body": "Quelques-unes des missions que nous avons livrées le plus récemment.",
-      "viewLink": "Voir le projet →",
-      "viewAll": "Voir tous les projets →",
-      "empty": "Aucune étude de cas publiée sur ce marché pour le moment.",
-      "limit": 3
     },
     {
       "type": "closingCta",

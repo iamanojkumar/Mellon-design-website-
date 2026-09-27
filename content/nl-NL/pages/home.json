@@ -27,6 +27,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Geselecteerd werk",
+      "headline": "Recente projecten.",
+      "body": "Een paar van de trajecten die we het meest recent hebben opgeleverd.",
+      "viewLink": "Bekijk project →",
+      "viewAll": "Bekijk alle projecten →",
+      "empty": "Nog geen casestudy’s gepubliceerd in deze markt.",
+      "limit": 3
+    },
+    {
       "type": "servicesGrid",
       "eyebrow": "Wat we doen",
       "headline": "Twaalf disciplines. Eén studio.",
@@ -53,16 +63,6 @@
           "body": "Implementatie in Webflow, Framer, WordPress of maatwerkcode, door een team dat de designintentie al kent."
         }
       ]
-    },
-    {
-      "type": "projectsPreview",
-      "eyebrow": "Geselecteerd werk",
-      "headline": "Recente projecten.",
-      "body": "Een paar van de trajecten die we het meest recent hebben opgeleverd.",
-      "viewLink": "Bekijk project →",
-      "viewAll": "Bekijk alle projecten →",
-      "empty": "Nog geen casestudy’s gepubliceerd in deze markt.",
-      "limit": 3
     },
     {
       "type": "closingCta",
