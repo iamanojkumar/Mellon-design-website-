@@ -19,6 +19,7 @@ import contactEnUS from "@/content/en-US/pages/contact.json";
 import privacyEnUS from "@/content/en-US/pages/privacy.json";
 
 import siteEnGB from "@/content/en-GB/site.json";
+import siteEnIN from "@/content/en-IN/site.json";
 
 import siteNlNL from "@/content/nl-NL/site.json";
 import servicesNlNL from "@/content/nl-NL/services.json";
@@ -94,6 +95,11 @@ export const contentRegistry: Record<string, LocaleContent> = {
   // en-GB inherits everything from en-US and overrides only what differs.
   "en-GB": {
     site: siteEnGB,
+  },
+  // en-IN falls back through en-GB, so it inherits British spelling for free
+  // and only states what is genuinely Indian — the budget field's currency.
+  "en-IN": {
+    site: siteEnIN,
   },
   "de-DE": {
     site: siteDeDE,

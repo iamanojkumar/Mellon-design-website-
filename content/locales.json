@@ -5,7 +5,7 @@
     { "code": "en-GB", "language": "en", "market": "GB", "country": "United Kingdom", "label": "English (United Kingdom)", "fallback": "en-US", "enabled": true },
     { "code": "en-AU", "language": "en", "market": "AU", "country": "Australia", "label": "English (Australia)", "fallback": "en-GB", "enabled": false },
     { "code": "en-CA", "language": "en", "market": "CA", "country": "Canada", "label": "English (Canada)", "fallback": "en-US", "enabled": false },
-    { "code": "en-IN", "language": "en", "market": "IN", "country": "India", "label": "English (India)", "fallback": "en-GB", "enabled": false },
+    { "code": "en-IN", "language": "en", "market": "IN", "country": "India", "label": "English (India)", "fallback": "en-GB", "enabled": true },
     { "code": "de-DE", "language": "de", "market": "DE", "country": "Germany", "label": "Deutsch (Deutschland)", "fallback": "en-US", "enabled": true },
     { "code": "de-AT", "language": "de", "market": "AT", "country": "Austria", "label": "Deutsch (Österreich)", "fallback": "de-DE", "enabled": false },
     { "code": "de-CH", "language": "de", "market": "CH", "country": "Switzerland", "label": "Deutsch (Schweiz)", "fallback": "de-DE", "enabled": false },
