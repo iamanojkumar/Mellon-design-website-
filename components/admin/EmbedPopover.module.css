@@ -11,7 +11,7 @@
   background: var(--color-fg-inverted);
   border: 1px solid var(--color-border);
   border-radius: 6px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+  box-shadow: var(--admin-shadow-popover);
 }
 
 .header {

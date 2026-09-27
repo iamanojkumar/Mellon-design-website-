@@ -11,6 +11,7 @@ import { ProjectEditor } from "./ProjectEditor";
 import { SeoPanel } from "./SeoPanel";
 import { AdvancedPanel } from "./AdvancedPanel";
 import { AiChatPanel } from "./AiChatPanel";
+import { ThemeToggle } from "./ThemeToggle";
 import { blankForm, toForm, type ProjectFormState } from "./form-state";
 import styles from "./AdminApp.module.css";
 
@@ -132,6 +133,7 @@ export function AdminApp({
               ))}
             </select>
           </label>
+          <ThemeToggle />
           <form action={logoutAction}>
             <button type="submit" className="a-btn">
               Log out

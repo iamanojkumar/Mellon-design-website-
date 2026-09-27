@@ -7,6 +7,60 @@
   box-sizing: border-box;
 }
 
+/* Elevation. Tokenised because a shadow tuned for a light page is almost
+   invisible on a dark one, so the two themes need different values — the
+   popovers also carry a border, which is what actually separates them on dark. */
+:root {
+  --admin-shadow-popover: 0 12px 32px rgba(0, 0, 0, 0.18);
+  --admin-shadow-card: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+/* Dark theme for the admin only.
+   Lives here, not in styles/tokens.css, so it cannot reach the marketing site:
+   admin.css is imported by app/admin/layout.tsx alone, and that layout is the
+   only place data-theme is ever set. The public site themes by market instead.
+
+   Overrides only the semantic layer the admin actually consumes, per the
+   per-market convention in styles/themes/ — never a wholesale palette redeclare.
+   The resolved light/dark value is written to <html> before first paint by
+   lib/admin-theme.ts, so this stays a single block. */
+:root[data-theme="dark"] {
+  /* color-scheme flips the native UI the admin leaves alone on purpose:
+     scrollbars, select dropdowns and the file picker. Without it they stay
+     light and the dense panels look broken at the edges. */
+  color-scheme: dark;
+
+  /* Same blue-slate family as --color-ink, taken darker rather than to neutral
+     grey, so the admin still reads as the same product. */
+  --color-bg: #10161d;
+  --color-fg: #e7ecf1;
+  --color-fg-muted: #93a2b2;
+  --color-border: #2c3742;
+
+  /* Recessed/raised panels: sidebar rows, code blocks, the AI transcript. */
+  --color-paper-tint: #19212a;
+
+  /* Carries two roles in the admin, and both hold up inverted: the surface of
+     inputs, buttons and popovers, and the text colour on a --color-fg fill
+     (.a-btn-primary). Slightly lifted off --color-bg so fields read as fields. */
+  --color-fg-inverted: #161d25;
+
+  /* Only the login backdrop uses this, where it means "dramatic contrast" —
+     on dark that is deeper, not lighter, or the login card would invert. */
+  --color-bg-inverted: #080c11;
+
+  /* Pure #fc0000 sits too close to the background to read as text here. Same
+     hue, lifted for legibility; feeds .a-error, .notice and .a-btn-danger. */
+  --color-brand-red: #ff6b6b;
+
+  --admin-shadow-popover: 0 12px 32px rgba(0, 0, 0, 0.55);
+  /* The 1px spread ring does the work a drop shadow can't: the login card sits
+     on --color-bg-inverted, where a black shadow is invisible and the card/
+     backdrop pairing is only 1.15:1 on its own. Delivered as a shadow rather
+     than a border so light mode keeps its borderless card. */
+  --admin-shadow-card: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 0 1px #3a4653;
+}
+
 html,
 body {
   margin: 0;

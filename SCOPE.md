@@ -124,6 +124,13 @@ without a locale redirect) so an editor can add/edit/delete case studies without
   compared server-side (`lib/admin-auth.ts`); a separate `ADMIN_SESSION_SECRET` signs the session
   cookie. Neither value, nor `SUPABASE_SERVICE_ROLE_KEY` / `DEEPSEEK_API_KEY`, is ever sent to the
   client — decoration-grade password, but properly concealed.
+- **Appearance**: the admin is the one themeable surface — a System/Light/Dark control in its
+  topbar, stored per browser in `localStorage` (`lib/admin-theme.ts`, `components/admin/ThemeToggle.tsx`).
+  The marketing site is deliberately *not* themeable this way: its palette varies by market via
+  `data-market`, which is a brand decision, not a viewer preference. The dark palette overrides
+  only the semantic tokens the admin consumes and lives in `app/admin/admin.css`, so it cannot
+  reach the public site. A blocking inline script resolves the stored choice onto `<html>` before
+  first paint, because the preference lives in `localStorage` and cannot be server-rendered.
 - **Storage**: a `projects` Supabase table (`supabase/migrations/20260927000000_projects.sql`,
   extended by `..._projects_v2.sql`) plus `project_folders`, read/written server-only via the
   service-role key (`lib/projects.ts`, `lib/folders.ts`), same pattern as `lib/submissions.ts` —
