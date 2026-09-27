@@ -55,6 +55,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Geselecteerd werk",
+      "headline": "Recente projecten.",
+      "body": "Een paar van de trajecten die we het meest recent hebben opgeleverd.",
+      "viewLink": "Bekijk project →",
+      "viewAll": "Bekijk alle projecten →",
+      "empty": "Nog geen casestudy’s gepubliceerd in deze markt.",
+      "limit": 3
+    },
+    {
       "type": "closingCta",
       "headline": "Vertel ons wat je aan het bouwen bent.",
       "body": "Elke samenwerking begint met een gesprek, niet met een offertesjabloon. Vertel ons waar je staat en we zeggen eerlijk of, en hoe, we kunnen helpen.",

@@ -55,6 +55,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Ausgewählte Arbeiten",
+      "headline": "Aktuelle Projekte.",
+      "body": "Einige der Projekte, die wir zuletzt umgesetzt haben.",
+      "viewLink": "Projekt ansehen →",
+      "viewAll": "Alle Projekte ansehen →",
+      "empty": "In diesem Markt sind noch keine Fallstudien veröffentlicht.",
+      "limit": 3
+    },
+    {
       "type": "closingCta",
       "headline": "Erzählen Sie uns, was Sie vorhaben.",
       "body": "Jede Zusammenarbeit beginnt mit einem Gespräch, nicht mit einer Angebotsvorlage. Schildern Sie uns Ihre Ausgangslage, und wir sagen Ihnen ehrlich, ob und wie wir helfen können.",

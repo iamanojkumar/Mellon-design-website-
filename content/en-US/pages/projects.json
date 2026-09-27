@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Projects — Mellon",
+    "description": "Case studies from Mellon — branding, design systems and product work, shown with the thinking behind them."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Projects",
+      "headline": "Work, and the reasoning behind it.",
+      "subhead": "Selected case studies. Each one shows the problem, the decisions and what shipped."
+    },
+    {
+      "type": "projectCards",
+      "viewLink": "View project →",
+      "empty": "No case studies published in this market yet."
+    },
+    {
+      "type": "closingCta",
+      "headline": "Have a project like these?",
+      "body": "Tell us what you're building and we'll scope the right mix.",
+      "cta": {
+        "label": "Start a project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

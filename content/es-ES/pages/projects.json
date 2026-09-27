@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Proyectos — Mellon",
+    "description": "Casos prácticos de Mellon: branding, sistemas de diseño y producto, con el razonamiento detrás de cada decisión."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Proyectos",
+      "headline": "Trabajos y el razonamiento detrás.",
+      "subhead": "Casos seleccionados. Cada uno muestra el problema, las decisiones y lo que se entregó."
+    },
+    {
+      "type": "projectCards",
+      "viewLink": "Ver proyecto →",
+      "empty": "Aún no hay casos publicados en este mercado."
+    },
+    {
+      "type": "closingCta",
+      "headline": "¿Tienes un proyecto así?",
+      "body": "Cuéntanos qué estás construyendo y definimos la combinación adecuada.",
+      "cta": {
+        "label": "Iniciar un proyecto",
+        "href": "/contact"
+      }
+    }
+  ]
+}

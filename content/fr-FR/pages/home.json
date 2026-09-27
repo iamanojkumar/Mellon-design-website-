@@ -55,6 +55,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Travaux sélectionnés",
+      "headline": "Projets récents.",
+      "body": "Quelques-unes des missions que nous avons livrées le plus récemment.",
+      "viewLink": "Voir le projet →",
+      "viewAll": "Voir tous les projets →",
+      "empty": "Aucune étude de cas publiée sur ce marché pour le moment.",
+      "limit": 3
+    },
+    {
       "type": "closingCta",
       "headline": "Dites-nous ce que vous construisez.",
       "body": "Chaque collaboration commence par une conversation, pas par un modèle de proposition. Décrivez-nous votre situation et nous vous dirons honnêtement si, et comment, nous pouvons vous aider.",

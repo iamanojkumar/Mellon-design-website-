@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Projekte — Mellon",
+    "description": "Fallstudien von Mellon — Branding, Designsysteme und Produktarbeit, samt der Überlegungen dahinter."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Projekte",
+      "headline": "Arbeiten und die Überlegungen dahinter.",
+      "subhead": "Ausgewählte Fallstudien. Jede zeigt das Problem, die Entscheidungen und das Ergebnis."
+    },
+    {
+      "type": "projectCards",
+      "viewLink": "Projekt ansehen →",
+      "empty": "In diesem Markt sind noch keine Fallstudien veröffentlicht."
+    },
+    {
+      "type": "closingCta",
+      "headline": "Sie haben ein ähnliches Projekt?",
+      "body": "Erzählen Sie uns davon — wir stellen die passende Kombination zusammen.",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

@@ -43,6 +43,23 @@ export type Block =
   | { type: "textSections"; sections: { heading: string; body: string }[] }
   | { type: "serviceCards"; viewLink: string }
   | { type: "industryCards"; viewLink: string }
+  /**
+   * Case studies from Supabase rather than this JSON, so both project blocks
+   * carry their own `empty` copy: a locale with nothing published yet renders
+   * a written empty state instead of a blank gap. `projectCards` is the full
+   * listing; `projectsPreview` is the home-page teaser and takes a `limit`.
+   */
+  | { type: "projectCards"; viewLink: string; empty: string }
+  | {
+      type: "projectsPreview";
+      eyebrow: string;
+      headline: string;
+      body: string;
+      viewLink: string;
+      viewAll: string;
+      empty: string;
+      limit: number;
+    }
   | {
       type: "contact";
       eyebrow: string;
@@ -60,5 +77,6 @@ export type PageKey =
   | "about"
   | "services"
   | "industries"
+  | "projects"
   | "contact"
   | "privacy";

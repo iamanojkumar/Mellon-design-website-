@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Projets — Mellon",
+    "description": "Études de cas Mellon : branding, design systems et produit, avec le raisonnement derrière chaque décision."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Projets",
+      "headline": "Des réalisations, et le raisonnement derrière.",
+      "subhead": "Études de cas sélectionnées. Chacune montre le problème, les décisions et ce qui a été livré."
+    },
+    {
+      "type": "projectCards",
+      "viewLink": "Voir le projet →",
+      "empty": "Aucune étude de cas publiée sur ce marché pour le moment."
+    },
+    {
+      "type": "closingCta",
+      "headline": "Vous avez un projet similaire ?",
+      "body": "Dites-nous ce que vous construisez et nous définirons la bonne combinaison.",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

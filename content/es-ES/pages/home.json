@@ -55,6 +55,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Trabajos seleccionados",
+      "headline": "Proyectos recientes.",
+      "body": "Algunos de los proyectos que hemos entregado más recientemente.",
+      "viewLink": "Ver proyecto →",
+      "viewAll": "Ver todos los proyectos →",
+      "empty": "Aún no hay casos publicados en este mercado.",
+      "limit": 3
+    },
+    {
       "type": "closingCta",
       "headline": "Cuéntanos qué estás creando.",
       "body": "Cada proyecto empieza con una conversación, no con una plantilla de propuesta. Cuéntanos cómo estáis y te diremos con honestidad si podemos ayudarte y cómo.",

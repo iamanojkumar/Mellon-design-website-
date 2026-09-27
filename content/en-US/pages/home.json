@@ -67,6 +67,16 @@
       ]
     },
     {
+      "type": "projectsPreview",
+      "eyebrow": "Selected work",
+      "headline": "Recent projects.",
+      "body": "A few of the engagements we have shipped most recently.",
+      "viewLink": "View project →",
+      "viewAll": "View all projects →",
+      "empty": "No case studies published in this market yet.",
+      "limit": 3
+    },
+    {
       "type": "closingCta",
       "headline": "Tell us what you're building.",
       "body": "Every engagement starts with a conversation, not a proposal template. Tell us where things stand and we'll tell you honestly whether — and how — we can help.",

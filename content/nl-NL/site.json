@@ -15,6 +15,10 @@
         "href": "/industries"
       },
       {
+        "label": "Projecten",
+        "href": "/projects"
+      },
+      {
         "label": "Over ons",
         "href": "/about"
       },
@@ -94,6 +98,9 @@
       "relevantServices": "Relevante diensten",
       "buildingHeadline": "Bouw je iets in {nameLower}?"
     }
+  },
+  "projectsPage": {
+    "label": "Projecten"
   },
   "notFound": {
     "eyebrow": "404",

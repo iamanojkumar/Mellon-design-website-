@@ -53,8 +53,8 @@ Ranked by where agencies get hired (cross-border buyers work in English; local-l
 
 | Tier | Locales | Notes |
 |---|---|---|
-| Live | `en-US`, `en-GB`, `de-DE`, `es-ES`, `fr-FR`, `nl-NL` | `en-GB` inherits from `en-US`, overrides currency; `de-DE` fully translated (formal "Sie"); `es-ES` fully translated (informal "tú"); `fr-FR` fully translated (formal "vous"); `nl-NL` fully translated (informal "je") |
-| 1 — cheap English variants | `en-AU`, `en-CA`, `en-IN` | Spelling/currency only; entries exist (disabled). `en-AU`/`en-IN` inherit `en-GB` |
+| Live | `en-US`, `en-GB`, `en-IN`, `de-DE`, `es-ES`, `fr-FR`, `nl-NL` | `en-GB` inherits from `en-US`, overrides currency; `en-IN` inherits through `en-GB` (British spelling) and overrides only the budget currency (₹); `de-DE` fully translated (formal "Sie"); `es-ES` fully translated (informal "tú"); `fr-FR` fully translated (formal "vous"); `nl-NL` fully translated (informal "je") |
+| 1 — cheap English variants | `en-AU`, `en-CA` | Spelling/currency only; entries exist (disabled). `en-AU` inherits `en-GB` |
 | 2 — remaining variants (translations done) | `fr-CA` (inherits `fr-FR`), `de-AT` / `de-CH` (inherit `de-DE`) and `es-MX` (inherits `es-ES`) once enabled | Variants inherit their base language |
 | 3 — niche / high effort | `zh-CN` (Chinese companies going overseas; note GTM/Google services are blocked in mainland China and hosting speed needs review), `ja-JP` (domestic agencies dominate; needs a professional translation) | `zh-CN` stays a stated priority for the outbound-brands niche |
 | Later (not in `locales.json` yet) | `pt-BR`, `hi-IN`, `ar-AE` | Buyers mostly use English; `ar-AE` needs right-to-left layout site-wide. Add entries only when work starts |
@@ -107,8 +107,6 @@ See discussion log / repeat on request — full annotated tree covers:
 
 ## 10. Explicitly out of scope (for now)
 
-- Public project/case-study pages (`/work` or similar) — the admin tool and data model exist
-  (§11); the public-facing pages that list/link them are a later addition.
 - User accounts / auth beyond the single-password `/admin` tool
 - E-commerce / payments
 - CMS integration for site copy (content is file-based JSON at launch; Projects are the one
@@ -141,6 +139,22 @@ without a locale redirect) so an editor can add/edit/delete case studies without
   them broke every real photo or video upload in production. The service-role key still never
   reaches the client; the 50MB cap and format allowlist are enforced on the bucket
   (`..._project_media_limits.sql`) because a signed URL holder can send arbitrary bytes.
+- **Public pages**: `/{locale}/projects` lists the locale's published work and each entry links to
+  `/{locale}/projects/<slug>`, which renders the case study, its blocks and its per-project SEO
+  (`buildProjectJsonLd`, canonical/OG overrides, `noindex`). The home page carries a
+  `projectsPreview` teaser. Both project blocks ship their own empty copy, so a market with
+  nothing published reads as deliberate rather than broken. These are the only routes that keep
+  `dynamicParams` on: a project published from the admin must resolve without a redeploy.
+  Freshness comes from the admin's `revalidateTag("projects:<locale>")`; the routes and
+  `app/sitemap.ts` also carry `revalidate = 300` purely as a guard against Vercel restoring a
+  Data Cache entry captured before a publish, which a fresh deployment would otherwise prerender
+  from with no tag purge left to correct it.
+- **Moving between locales**: `moveProjectAction` changes a project's locale in place — same row,
+  same id, body, blocks, SEO and publish state, nothing left behind. Distinct from
+  duplicate-and-translate, which copies. The folder is cleared (folders belong to one locale) and
+  the slug is suffixed only if the target already uses it. `previous_slugs` is not carried over:
+  the old URL sat under the old locale prefix and the history lookup is locale-scoped, so keeping
+  it would at best mean nothing and at worst 301 the wrong way.
 - **Publish workflow**: every project is `draft`, `published` or `unpublished`; only `published`
   ever leaves the admin (`getPublishedProjects`). `published_at` is stamped by a database trigger
   the first time a row goes live, so the invariant holds for every write path (manual save, AI

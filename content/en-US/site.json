@@ -25,6 +25,10 @@
         "href": "/industries"
       },
       {
+        "label": "Projects",
+        "href": "/projects"
+      },
+      {
         "label": "About",
         "href": "/about"
       },
@@ -104,6 +108,9 @@
       "relevantServices": "Relevant services",
       "buildingHeadline": "Building something in {nameLower}?"
     }
+  },
+  "projectsPage": {
+    "label": "Projects"
   },
   "notFound": {
     "eyebrow": "404",

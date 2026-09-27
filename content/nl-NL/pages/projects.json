@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Projecten — Mellon",
+    "description": "Casestudy’s van Mellon — branding, designsystemen en productwerk, inclusief de afwegingen erachter."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Projecten",
+      "headline": "Werk, en de afwegingen erachter.",
+      "subhead": "Geselecteerde casestudy’s. Elke case toont het vraagstuk, de keuzes en wat er is opgeleverd."
+    },
+    {
+      "type": "projectCards",
+      "viewLink": "Bekijk project →",
+      "empty": "Nog geen casestudy’s gepubliceerd in deze markt."
+    },
+    {
+      "type": "closingCta",
+      "headline": "Heb je een vergelijkbaar project?",
+      "body": "Vertel ons wat je bouwt, dan stellen we de juiste mix samen.",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

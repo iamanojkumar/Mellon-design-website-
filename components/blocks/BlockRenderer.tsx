@@ -6,6 +6,8 @@ import { Hero } from "./Hero";
 import { IndustriesChips } from "./IndustriesChips";
 import { PageHero } from "./PageHero";
 import { Process } from "./Process";
+import { ProjectCards } from "./ProjectCards";
+import { ProjectsPreview } from "./ProjectsPreview";
 import { ServicesGrid } from "./ServicesGrid";
 import { TextSections } from "./TextSections";
 
@@ -33,6 +35,11 @@ export function BlockRenderer({ blocks, locale }: { blocks: Block[]; locale: str
           case "serviceCards":
           case "industryCards":
             return <Cards key={key} block={block} locale={locale} />;
+          // Async server components — they read projects from Supabase.
+          case "projectCards":
+            return <ProjectCards key={key} block={block} locale={locale} />;
+          case "projectsPreview":
+            return <ProjectsPreview key={key} block={block} locale={locale} />;
           case "contact":
             return <ContactSection key={key} block={block} locale={locale} />;
           default:

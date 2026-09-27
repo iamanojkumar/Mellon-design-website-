@@ -15,6 +15,7 @@ import homeEnUS from "@/content/en-US/pages/home.json";
 import aboutEnUS from "@/content/en-US/pages/about.json";
 import servicesPageEnUS from "@/content/en-US/pages/services.json";
 import industriesPageEnUS from "@/content/en-US/pages/industries.json";
+import projectsPageEnUS from "@/content/en-US/pages/projects.json";
 import contactEnUS from "@/content/en-US/pages/contact.json";
 import privacyEnUS from "@/content/en-US/pages/privacy.json";
 
@@ -28,6 +29,7 @@ import homeNlNL from "@/content/nl-NL/pages/home.json";
 import aboutNlNL from "@/content/nl-NL/pages/about.json";
 import servicesPageNlNL from "@/content/nl-NL/pages/services.json";
 import industriesPageNlNL from "@/content/nl-NL/pages/industries.json";
+import projectsPageNlNL from "@/content/nl-NL/pages/projects.json";
 import contactNlNL from "@/content/nl-NL/pages/contact.json";
 import privacyNlNL from "@/content/nl-NL/pages/privacy.json";
 
@@ -38,6 +40,7 @@ import homeFrFR from "@/content/fr-FR/pages/home.json";
 import aboutFrFR from "@/content/fr-FR/pages/about.json";
 import servicesPageFrFR from "@/content/fr-FR/pages/services.json";
 import industriesPageFrFR from "@/content/fr-FR/pages/industries.json";
+import projectsPageFrFR from "@/content/fr-FR/pages/projects.json";
 import contactFrFR from "@/content/fr-FR/pages/contact.json";
 import privacyFrFR from "@/content/fr-FR/pages/privacy.json";
 
@@ -48,6 +51,7 @@ import homeEsES from "@/content/es-ES/pages/home.json";
 import aboutEsES from "@/content/es-ES/pages/about.json";
 import servicesPageEsES from "@/content/es-ES/pages/services.json";
 import industriesPageEsES from "@/content/es-ES/pages/industries.json";
+import projectsPageEsES from "@/content/es-ES/pages/projects.json";
 import contactEsES from "@/content/es-ES/pages/contact.json";
 import privacyEsES from "@/content/es-ES/pages/privacy.json";
 
@@ -58,6 +62,7 @@ import homeDeDE from "@/content/de-DE/pages/home.json";
 import aboutDeDE from "@/content/de-DE/pages/about.json";
 import servicesPageDeDE from "@/content/de-DE/pages/services.json";
 import industriesPageDeDE from "@/content/de-DE/pages/industries.json";
+import projectsPageDeDE from "@/content/de-DE/pages/projects.json";
 import contactDeDE from "@/content/de-DE/pages/contact.json";
 import privacyDeDE from "@/content/de-DE/pages/privacy.json";
 
@@ -88,6 +93,7 @@ export const contentRegistry: Record<string, LocaleContent> = {
       about: aboutEnUS as unknown as PageDoc,
       services: servicesPageEnUS as unknown as PageDoc,
       industries: industriesPageEnUS as unknown as PageDoc,
+      projects: projectsPageEnUS as unknown as PageDoc,
       contact: contactEnUS as unknown as PageDoc,
       privacy: privacyEnUS as unknown as PageDoc,
     },
@@ -110,6 +116,7 @@ export const contentRegistry: Record<string, LocaleContent> = {
       about: aboutDeDE as unknown as PageDoc,
       services: servicesPageDeDE as unknown as PageDoc,
       industries: industriesPageDeDE as unknown as PageDoc,
+      projects: projectsPageDeDE as unknown as PageDoc,
       contact: contactDeDE as unknown as PageDoc,
       privacy: privacyDeDE as unknown as PageDoc,
     },
@@ -123,6 +130,7 @@ export const contentRegistry: Record<string, LocaleContent> = {
       about: aboutEsES as unknown as PageDoc,
       services: servicesPageEsES as unknown as PageDoc,
       industries: industriesPageEsES as unknown as PageDoc,
+      projects: projectsPageEsES as unknown as PageDoc,
       contact: contactEsES as unknown as PageDoc,
       privacy: privacyEsES as unknown as PageDoc,
     },
@@ -136,6 +144,7 @@ export const contentRegistry: Record<string, LocaleContent> = {
       about: aboutFrFR as unknown as PageDoc,
       services: servicesPageFrFR as unknown as PageDoc,
       industries: industriesPageFrFR as unknown as PageDoc,
+      projects: projectsPageFrFR as unknown as PageDoc,
       contact: contactFrFR as unknown as PageDoc,
       privacy: privacyFrFR as unknown as PageDoc,
     },
@@ -149,6 +158,7 @@ export const contentRegistry: Record<string, LocaleContent> = {
       about: aboutNlNL as unknown as PageDoc,
       services: servicesPageNlNL as unknown as PageDoc,
       industries: industriesPageNlNL as unknown as PageDoc,
+      projects: projectsPageNlNL as unknown as PageDoc,
       contact: contactNlNL as unknown as PageDoc,
       privacy: privacyNlNL as unknown as PageDoc,
     },
