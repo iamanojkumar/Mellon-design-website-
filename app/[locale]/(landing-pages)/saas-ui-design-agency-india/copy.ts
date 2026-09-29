@@ -11,6 +11,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
   "en-US": {
     serviceName: "SaaS user interface design",
     serviceType: "SaaS UI design agency",
+    areaServed: "United States",
     metaTitle: "SaaS UI design agency in India for US teams — Mellon",
     metaDescription:
       "Mellon is a design agency in India that designs SaaS user interfaces for US product teams: UX audit, roadmap, prototypes, and developer handoff. Get a quote.",

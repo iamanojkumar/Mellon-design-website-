@@ -16,6 +16,8 @@ export type ServiceLandingCopy = {
   /** schema.org Service name and type for this page's structured data. */
   serviceName: string;
   serviceType: string;
+  /** Country the page targets, for the Service's `areaServed`. */
+  areaServed: string;
   headline: string;
   summary: string;
   approach: {
@@ -77,7 +79,7 @@ export function ServiceLanding({
     description: text.metaDescription,
     url: `${siteUrl}/${locale}/${slug}`,
     provider: { "@id": `${siteUrl}/#organization` },
-    areaServed: { "@type": "Country", name: "United States" },
+    areaServed: { "@type": "Country", name: text.areaServed },
   };
 
   return (
