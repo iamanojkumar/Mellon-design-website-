@@ -37,6 +37,10 @@ registering, confirm all of these — if one fails, fix it or use `indexable: fa
 
 The same rule is in the repo `CLAUDE.md`, so Claude runs it whenever it creates one.
 
+## Service landing pages (shared design)
+
+Pages that follow the standard layout (hero, approach marquee, what you get, team fit, case studies, FAQ, quote form) don't copy `_template/`: they render `components/landing/ServiceLanding.tsx` with their own `copy.ts` (type `ServiceLandingCopy`). See `figma-design-system-agency-india/` and `saas-ui-design-agency-india/`. Colors and layout live in `ServiceLanding.module.css`, so a design change applies to all of them at once.
+
 ## Regions
 
 - **US only:** `locales: ["en-US"]`. `/en-GB/free-brand-audit` 404s.

@@ -5,42 +5,12 @@
  *
  * Written to docs/brand-voice.md. Target phrase: "Figma design system agency".
  */
-export type LandingCopy = {
-  metaTitle: string;
-  metaDescription: string;
-  headline: string;
-  summary: string;
-  approach: {
-    heading: string;
-    intro: string;
-    steps: { title: string; text: string }[];
-  };
-  included: {
-    heading: string;
-    intro: string;
-    items: { title: string; text: string }[];
-  };
-  partner: {
-    heading: string;
-    items: { title: string; text: string }[];
-  };
-  caseStudies: {
-    heading: string;
-    cta: string;
-    items: { name: string }[];
-  };
-  faq: {
-    heading: string;
-    items: { question: string; answer: string }[];
-  };
-  quote: {
-    heading: string;
-    text: string;
-  };
-};
+import type { ServiceLandingCopy } from "@/components/landing/ServiceLanding";
 
-export const copy: Record<string, LandingCopy> = {
+export const copy: Record<string, ServiceLandingCopy> = {
   "en-US": {
+    serviceName: "Figma design system design and development",
+    serviceType: "Design system agency",
     metaTitle: "Figma design system agency in India for US teams — Mellon",
     metaDescription:
       "Mellon is a design agency in India that builds Figma design systems for US product teams: audit, tokens, code-synced components, and handover. Get a quote.",

@@ -29,6 +29,7 @@ export type LandingPage = {
 export const landingPages: LandingPage[] = [
   // { slug: "free-brand-audit", locales: ["en-US"], indexable: true },
   { slug: "figma-design-system-agency-india", locales: ["en-US"], indexable: true },
+  { slug: "saas-ui-design-agency-india", locales: ["en-US"], indexable: true },
 ];
 
 /** First URL segments already owned by core routes; a landing page can't reuse them. */

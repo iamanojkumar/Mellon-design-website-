@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 import { ServiceLanding } from "@/components/landing/ServiceLanding";
 import { copy } from "./copy";
 
-const SLUG = "figma-design-system-agency-india";
+const SLUG = "saas-ui-design-agency-india";
 
 export function generateStaticParams() {
   return landingPageParams(SLUG);
