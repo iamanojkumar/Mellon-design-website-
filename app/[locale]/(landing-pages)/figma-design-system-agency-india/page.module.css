@@ -1,0 +1,237 @@
+.hero {
+  padding-block: var(--space-xl) var(--space-lg);
+  text-align: center;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  font-size: clamp(var(--fs-600), 5vw, var(--fs-800));
+  line-height: var(--lh-snug);
+  max-width: 20ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-md);
+}
+
+.summary {
+  font-size: var(--fs-300);
+  color: var(--color-fg-muted);
+  max-width: 62ch;
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--space-xl);
+}
+
+.mintBand {
+  background: #e3f6f1;
+}
+
+.lavenderBand {
+  background: #efeefd;
+}
+
+.greyBand {
+  background: var(--color-paper-tint);
+}
+
+.greyBand .partnerCard {
+  background: #fff;
+}
+
+.greenBand {
+  background: #dff3e6;
+}
+
+/* Lead-form button: same cyan-green as the header button. */
+.quoteGrid button[type="submit"] {
+  background: var(--color-teal);
+  border-color: var(--color-teal);
+  color: #fff;
+}
+
+.quoteGrid button[type="submit"]:hover:not(:disabled) {
+  background: var(--color-teal-strong);
+  border-color: var(--color-teal-strong);
+}
+
+.heading,
+.quoteHeading {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  font-size: var(--fs-600);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-xs);
+}
+
+.quoteHeading {
+  font-size: var(--fs-700);
+  margin-bottom: var(--space-sm);
+}
+
+.intro,
+.quoteText {
+  color: var(--color-fg-muted);
+  max-width: 52ch;
+  margin-bottom: var(--space-lg);
+}
+
+.quoteText {
+  margin-bottom: var(--space-md);
+}
+
+/* Approach marquee: two identical lists side by side; the track slides left by
+   exactly one list's width (50%) and loops, so the seam is invisible. */
+.marquee {
+  overflow: hidden;
+  margin-top: var(--space-lg);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee 45s linear infinite;
+}
+
+.marquee:hover .track,
+.marquee:focus-within .track {
+  animation-play-state: paused;
+}
+
+.steps {
+  display: flex;
+  gap: var(--space-sm);
+  padding-right: var(--space-sm);
+  list-style: none;
+  margin: 0;
+}
+
+.step {
+  flex: 0 0 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 15rem;
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: #fff;
+  font-size: var(--fs-300);
+}
+
+.stepTitle {
+  font-size: var(--fs-200);
+  font-weight: var(--fw-display);
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-2xs);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* No motion: stop the loop and let the first list scroll by hand; hide the duplicate. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+  }
+
+  .track {
+    animation: none;
+  }
+
+  .steps[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+.quoteGrid {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .quoteGrid {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.partnerGrid,
+.caseGrid {
+  display: grid;
+  gap: var(--space-sm);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.partnerGrid {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  margin-top: var(--space-lg);
+}
+
+.caseGrid {
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  margin-top: var(--space-lg);
+}
+
+.partnerCard {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: #f9fdee;
+  color: var(--color-fg-muted);
+}
+
+.caseCard {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  font-size: var(--fs-300);
+  color: var(--color-fg);
+  margin-bottom: var(--space-2xs);
+}
+
+.caseLink {
+  color: var(--color-fg-muted);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.caseLink:hover {
+  color: var(--color-fg);
+}
+
+.faq {
+  margin-top: var(--space-lg);
+}
+
+.faqItem {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faqItem[open] {
+  background: color-mix(in srgb, var(--color-brand-cyan) 8%, var(--color-bg));
+}
+
+.faqQuestion {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  font-size: var(--fs-300);
+}
+
+.faqAnswer {
+  margin-top: var(--space-xs);
+  color: var(--color-fg-muted);
+  max-width: 80ch;
+}

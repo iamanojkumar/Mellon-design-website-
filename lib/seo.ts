@@ -18,6 +18,11 @@ type BuildMetadataArgs = {
   noindex?: boolean;
   /** Overrides the derived canonical — e.g. a project's hand-set canonical URL. */
   canonicalOverride?: string;
+  /**
+   * Locales this page actually exists in. Limits the hreflang / og:locale
+   * alternates to those; omit for pages that exist in every enabled locale.
+   */
+  locales?: string[];
 };
 
 // Shown whenever a page (or its locale) has no image of its own.
@@ -33,17 +38,26 @@ export function buildMetadata({
   twitterCard = "summary",
   noindex = false,
   canonicalOverride,
+  locales,
 }: BuildMetadataArgs): Metadata {
   const siteUrl = getSiteUrl();
   const image = ogImage ?? getLocaleConfig(locale)?.ogImage ?? DEFAULT_OG_IMAGE;
   const canonicalPath = `/${locale}${path}`;
   const canonical = canonicalOverride || `${siteUrl}${canonicalPath}`;
 
+  const alternates = locales
+    ? enabledLocales.filter((alt) => locales.includes(alt.code))
+    : enabledLocales;
+
   const languages: Record<string, string> = {};
-  for (const alt of enabledLocales) {
+  for (const alt of alternates) {
     languages[alt.code] = `${siteUrl}/${alt.code}${path}`;
   }
-  languages["x-default"] = `${siteUrl}/${defaultLocale}${path}`;
+  // x-default must point at a page that exists; a market-only page with no
+  // default-locale version simply has none.
+  if (alternates.some((alt) => alt.code === defaultLocale)) {
+    languages["x-default"] = `${siteUrl}/${defaultLocale}${path}`;
+  }
 
   return {
     metadataBase: new URL(siteUrl),
@@ -61,7 +75,7 @@ export function buildMetadata({
       siteName: "Mellon",
       images: [{ url: image, width: 500, height: 500, alt: "Mellon" }],
       locale: locale.replace("-", "_"),
-      alternateLocale: enabledLocales
+      alternateLocale: alternates
         .filter((alt) => alt.code !== locale)
         .map((alt) => alt.code.replace("-", "_")),
       type: ogType,

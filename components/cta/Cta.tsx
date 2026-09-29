@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./Cta.module.css";
 
-type CtaContext = "home" | "service" | "industry" | "about" | "contact";
+type CtaContext = "home" | "service" | "industry" | "about" | "contact" | "landing";
 type CtaVariant = "primary" | "secondary";
 
 type CtaProps = {

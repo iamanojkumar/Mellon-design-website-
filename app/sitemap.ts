@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getIndustries, getServices } from "@/lib/content";
+import { getLandingPageLocales, landingPages } from "@/lib/landing-pages";
 import { getPublishedProjects } from "@/lib/projects";
 import { defaultLocale, enabledLocales } from "@/lib/locale";
 import { getSiteUrl } from "@/lib/env";
@@ -48,6 +49,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         url: `${siteUrl}${localePrefix}/industries/${industry.slug}`,
         lastModified: new Date(),
         alternates: alternatesFor(`/industries/${industry.slug}`),
+      });
+    }
+
+    // Landing pages exist only in the locales they list, so hreflang covers
+    // just those. Non-indexable ones stay out of the sitemap entirely.
+    for (const page of landingPages) {
+      const pageLocales = getLandingPageLocales(page);
+      if (!page.indexable || !pageLocales.includes(locale.code)) continue;
+      const path = `/${page.slug}`;
+      entries.push({
+        url: `${siteUrl}${localePrefix}${path}`,
+        lastModified: new Date(),
+        alternates: {
+          languages: {
+            ...Object.fromEntries(
+              pageLocales.map((code) => [code, `${siteUrl}/${code}${path}`]),
+            ),
+            ...(pageLocales.includes(defaultLocale)
+              ? { "x-default": `${siteUrl}/${defaultLocale}${path}` }
+              : {}),
+          },
+        },
       });
     }
 

@@ -6,12 +6,8 @@ import {
   getLocaleConfig,
   isEnabledLocale,
 } from "@/lib/locale";
-import { getSiteContent } from "@/lib/content";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { SiteBodyStartTags, SiteHeadTags } from "@/components/seo/SiteHeadTags";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
-import { CursorFx } from "@/components/motion/CursorFx";
 import { ScrollBlur } from "@/components/motion/ScrollBlur";
 import { ImageLiquify } from "@/components/motion/ImageLiquify";
 import { NavHoverVars } from "@/components/motion/NavHoverVars";
@@ -34,7 +30,17 @@ export function generateStaticParams() {
   return enabledLocaleCodes.map((locale) => ({ locale }));
 }
 
-export const dynamicParams = false;
+/**
+ * Left true (Next's default) so a nested route can still opt into on-demand
+ * rendering for its own dynamic segment — app/[locale]/projects/[slug]/page.tsx
+ * does this, since case studies publish from /admin and must resolve without a
+ * redeploy. Setting this to false here would silently force `fallback: false`
+ * for every dynamic segment anywhere under a locale, including that one,
+ * regardless of what it declares itself (confirmed via the prerender manifest:
+ * https://github.com/vercel/next.js/issues/87738). An invalid locale is still
+ * rejected below via isEnabledLocale/notFound(), so this doesn't loosen that.
+ */
+export const dynamicParams = true;
 
 export default async function LocaleLayout({
   children,
@@ -54,7 +60,6 @@ export default async function LocaleLayout({
       : null;
 
   const localeConfig = getLocaleConfig(locale)!;
-  const site = getSiteContent(locale);
 
   return (
     <html lang={localeConfig.language} data-market={localeConfig.market}>
@@ -64,17 +69,14 @@ export default async function LocaleLayout({
       <body className={`${robotoFlex.variable} ${dmMono.variable}`}>
         <SiteBodyStartTags />
         <SmoothScroll />
-        <CursorFx />
+        {/* CursorFx (WebGL cursor trail) is switched off site-wide; re-add <CursorFx /> to restore. */}
         <ScrollBlur />
         <ImageLiquify />
         <NavHoverVars />
         {DebugPanel && <DebugPanel />}
-        <a href="#main" className="visually-hidden">
-          {site.common.skipToContent}
-        </a>
-        <Header locale={locale} nav={site.nav.primary} cta={site.nav.cta} common={site.common} />
-        <main id="main">{children}</main>
-        <Footer locale={locale} footer={site.footer} org={site.org} />
+        {/* Header, footer and <main> live in the route-group layouts —
+            (site) for the marketing pages, (landing-pages) for landing pages. */}
+        {children}
       </body>
     </html>
   );

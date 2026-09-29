@@ -13,6 +13,9 @@
   --color-brand-cyan: #49d4ff;
   --color-brand-lime: #f3ff1c;
   --color-brand-amber: #f5ce16;
+  /* Cyan-green action color (landing-page CTAs); white text on it is ~7.8:1. */
+  --color-teal: #0b645c;
+  --color-teal-strong: #084f49;
   --gradient-brand: linear-gradient(
     135deg,
     var(--color-brand-red) 0%,

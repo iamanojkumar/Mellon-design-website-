@@ -1,0 +1,23 @@
+.hero {
+  padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.eyebrow {
+  display: block;
+  font-size: var(--fs-200);
+  font-weight: 600;
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-2xs);
+}
+
+.headline {
+  font-size: clamp(var(--fs-700), 5vw, var(--fs-800));
+  margin-bottom: var(--space-md);
+}
+
+.summary {
+  font-size: var(--fs-400);
+  color: var(--color-fg-muted);
+  max-width: 62ch;
+  margin-bottom: var(--space-lg);
+}
