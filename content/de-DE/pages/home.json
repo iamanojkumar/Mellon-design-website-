@@ -58,6 +58,7 @@
     },
     {
       "type": "closingCta",
+      "withForm": true,
       "headline": "Erzählen Sie uns, was Sie vorhaben.",
       "body": "Jede Zusammenarbeit beginnt mit einem Gespräch, nicht mit einer Angebotsvorlage. Schildern Sie uns Ihre Ausgangslage, und wir sagen Ihnen ehrlich, ob und wie wir helfen können.",
       "cta": {

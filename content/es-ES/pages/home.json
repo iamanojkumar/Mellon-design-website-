@@ -58,6 +58,7 @@
     },
     {
       "type": "closingCta",
+      "withForm": true,
       "headline": "Cuéntanos qué estás creando.",
       "body": "Cada proyecto empieza con una conversación, no con una plantilla de propuesta. Cuéntanos cómo estáis y te diremos con honestidad si podemos ayudarte y cómo.",
       "cta": {

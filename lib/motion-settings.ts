@@ -88,10 +88,6 @@ export type MotionSettings = {
   navHoverBlur: number;
   /** Opacity of the non-hovered nav links (1 = no dimming). */
   navHoverDim: number;
-  /** The hovered nav link runs a one-off text scramble. */
-  navScrambleEnabled: boolean;
-  /** Duration (ms) of that scramble. */
-  navScrambleMs: number;
   /** Scroll parallax on project imagery. */
   parallaxEnabled: boolean;
   /** Drift as a fraction of the image’s own height, across the full pass. */
@@ -131,8 +127,8 @@ export type SliderDef = {
 /** Saved as "preset_1": the look agreed on in the debugger. */
 const PRESET_1: MotionSettings = {
   scrollEnabled: true,
-  scrollLerp: 0.07,
-  scrollWheelMultiplier: 0.35,
+  scrollLerp: 0.03,
+  scrollWheelMultiplier: 0.9,
   cursorFxEnabled: true,
   cursorHideNative: true,
   cursorFxIntensity: 0.13,
@@ -173,8 +169,6 @@ const PRESET_1: MotionSettings = {
   liquifyFlow: 0.5,
   navHoverBlur: 2.5,
   navHoverDim: 0.5,
-  navScrambleEnabled: true,
-  navScrambleMs: 500,
   parallaxEnabled: true,
   parallaxStrength: 0.08,
   parallaxEase: 0.12,
@@ -232,7 +226,6 @@ export const LIQUIFY_SLIDERS: SliderDef[] = [
 export const NAV_HOVER_SLIDERS: SliderDef[] = [
   { key: "navHoverBlur", label: "Blur on other links (px)", min: 0, max: 10, step: 0.25 },
   { key: "navHoverDim", label: "Opacity of other links", min: 0.1, max: 1, step: 0.05 },
-  { key: "navScrambleMs", label: "Scramble duration (ms)", min: 150, max: 1500, step: 25 },
 ];
 
 export const PARALLAX_SLIDERS: SliderDef[] = [

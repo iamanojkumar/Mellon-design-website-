@@ -16,6 +16,10 @@ import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ProjectBlocks } from "@/components/projects/ProjectBlocks";
 import { ParallaxImage } from "@/components/motion/ParallaxImage";
+import { FadeIn } from "@/components/motion/HeroSequence";
+import { SwiftUpText } from "@/components/motion/SwiftUpText";
+import { revealOnLoadClass } from "@/components/motion/attachReveal";
+import { ParallaxRichText } from "@/components/projects/ParallaxRichText";
 import styles from "./page.module.css";
 
 /**
@@ -128,13 +132,21 @@ export default async function ProjectDetailPage({
             <div hidden dangerouslySetInnerHTML={{ __html: project.customHead }} />
           )}
           <p className={styles.meta}>
-            {project.category} · {project.service}
+            <FadeIn as="span" whenVisible>
+              {project.category} · {project.service}
+            </FadeIn>
           </p>
-          <h1 className={styles.title}>{project.title}</h1>
-          {project.summary && <p className={styles.summary}>{project.summary}</p>}
+          <h1 className={styles.title}>
+            <SwiftUpText text={project.title} whenVisible />
+          </h1>
+          {project.summary && (
+            <p className={styles.summary}>
+              <SwiftUpText text={project.summary} whenVisible lineDelay={0.12} delay={0.2} />
+            </p>
+          )}
 
           {project.heroImage && (
-            <div className={styles.heroFrame}>
+            <div className={`${styles.heroFrame} ${revealOnLoadClass}`}>
               <ParallaxImage
                 className={styles.hero}
                 src={project.heroImage}
@@ -151,10 +163,7 @@ export default async function ProjectDetailPage({
             // Authored in the admin's rich-text editor, which is behind a
             // password and writes its own markup — the same trust boundary as
             // the customHead/customBody fields below.
-            <div
-              className={styles.body}
-              dangerouslySetInnerHTML={{ __html: project.content }}
-            />
+            <ParallaxRichText className={styles.body} html={project.content} />
           )}
 
           <ProjectBlocks blocks={project.blocks} />

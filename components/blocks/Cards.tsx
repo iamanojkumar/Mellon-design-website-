@@ -1,8 +1,8 @@
-import Link from "next/link";
 import type { Block } from "@/lib/blocks";
 import { getIndustries, getServices } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { RevealGroup } from "@/components/motion/RevealGroup";
+import { CursorGlowLink } from "./CursorGlowLink";
 import styles from "./Cards.module.css";
 
 type CardsProps = {
@@ -19,11 +19,11 @@ export function Cards({ block, locale }: CardsProps) {
       <Container>
         <RevealGroup className={styles.grid}>
           {items.map((item) => (
-            <Link key={item.slug} href={`${base}/${item.slug}`} className={styles.card}>
+            <CursorGlowLink key={item.slug} href={`${base}/${item.slug}`} className={styles.card}>
               <h2 className={styles.cardTitle}>{item.name}</h2>
               <p className={styles.cardTagline}>{item.tagline}</p>
               <span className={styles.cardLink}>{block.viewLink}</span>
-            </Link>
+            </CursorGlowLink>
           ))}
         </RevealGroup>
       </Container>

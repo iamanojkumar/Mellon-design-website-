@@ -1,0 +1,52 @@
+/* Two identical copies of the label are stacked inside a clip. On hover the first
+   copy's letters slide up and out while the second copy's slide in from below,
+   each letter delayed by --i so the motion ripples left to right. */
+
+.slide {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* Room for descenders inside the clip without changing the layout height. */
+  padding-block: 0.12em;
+  margin-block: -0.12em;
+}
+
+.face {
+  display: block;
+  white-space: nowrap;
+}
+
+/* The second copy sits exactly over the first; its letters wait below the clip. */
+.face + .face {
+  position: absolute;
+  inset: 0.12em 0 auto 0;
+}
+
+.char {
+  display: inline-block;
+  transition: transform 0.45s cubic-bezier(0.76, 0, 0.24, 1);
+  transition-delay: calc(var(--i) * 18ms);
+}
+
+.face + .face .char {
+  transform: translateY(160%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover .face:first-child .char,
+  .link:focus-visible .face:first-child .char {
+    transform: translateY(-160%);
+  }
+
+  .link:hover .face + .face .char,
+  .link:focus-visible .face + .face .char {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .char {
+    transition: none;
+  }
+}

@@ -26,7 +26,7 @@ export type Block =
       body: string;
       steps: { title: string; body: string }[];
     }
-  | { type: "closingCta"; headline: string; body?: string; cta: BlockCta }
+  | { type: "closingCta"; headline: string; body?: string; cta: BlockCta; withForm?: boolean }
   | {
       type: "pageHero";
       eyebrow: string;

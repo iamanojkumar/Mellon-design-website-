@@ -293,7 +293,6 @@ export function DebugPanel() {
 
       <Accordion title="Nav hover blur" open={!!sections.nav} onToggle={() => toggleSection("nav")}>
         <Toggle label="Blur/dim the other links" k="navHoverEnabled" value={s.navHoverEnabled} />
-        <Toggle label="Scramble the hovered link once" k="navScrambleEnabled" value={s.navScrambleEnabled} />
         {NAV_HOVER_SLIDERS.map((def) => (
           <Slider key={def.key} def={def} value={s[def.key] as number} />
         ))}

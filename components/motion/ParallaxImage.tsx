@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { getSettings, subscribeSettings } from "@/lib/motion-settings";
+import { attachReveal } from "./attachReveal";
 
 /**
  * Scroll parallax for project imagery: the picture drifts slowly against the
@@ -79,6 +80,49 @@ function getObserver(): IntersectionObserver {
   return observer;
 }
 
+/**
+ * Registers an <img> for parallax inside `frame` (the clipping element) and
+ * returns a cleanup. Follows the debug-panel toggle and reduced-motion live.
+ * Exported so images this component didn't render — e.g. ones inside
+ * editor-authored HTML — can join the same shared loop.
+ */
+export function attachParallax(frame: HTMLElement, img: HTMLImageElement): () => void {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let entry: Entry | null = null;
+
+  const attach = () => {
+    if (entry || !getSettings().parallaxEnabled || reduced.matches) return;
+    entry = { frame, img, current: 0, target: 0 };
+    registry.set(frame, entry);
+    getObserver().observe(frame);
+  };
+
+  const detach = () => {
+    if (!entry) return;
+    getObserver().unobserve(frame);
+    active.delete(entry);
+    registry.delete(frame);
+    entry = null;
+    // Hand the image back exactly as it was, so a disabled effect leaves no
+    // residual transform behind.
+    img.style.transform = "";
+  };
+
+  const sync = () => {
+    if (getSettings().parallaxEnabled && !reduced.matches) attach();
+    else detach();
+  };
+
+  sync();
+  reduced.addEventListener("change", sync);
+  const unsubscribe = subscribeSettings(sync);
+  return () => {
+    reduced.removeEventListener("change", sync);
+    unsubscribe();
+    detach();
+  };
+}
+
 export function ParallaxImage({
   src,
   alt,
@@ -86,6 +130,7 @@ export function ParallaxImage({
   width,
   height,
   priority = false,
+  revealOnView = false,
 }: {
   src: string;
   alt: string;
@@ -95,6 +140,8 @@ export function ParallaxImage({
   height?: number;
   /** True for an LCP hero: loads eagerly at high priority instead of lazily. */
   priority?: boolean;
+  /** Also reveal the frame bottom-to-top when it scrolls into view. */
+  revealOnView?: boolean;
 }) {
   const ref = useRef<HTMLImageElement>(null);
 
@@ -102,42 +149,13 @@ export function ParallaxImage({
     const img = ref.current;
     const frame = img?.parentElement;
     if (!img || !frame) return;
-
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let entry: Entry | null = null;
-
-    const attach = () => {
-      if (entry || !getSettings().parallaxEnabled || reduced.matches) return;
-      entry = { frame, img, current: 0, target: 0 };
-      registry.set(frame, entry);
-      getObserver().observe(frame);
-    };
-
-    const detach = () => {
-      if (!entry) return;
-      getObserver().unobserve(frame);
-      active.delete(entry);
-      registry.delete(frame);
-      entry = null;
-      // Hand the image back exactly as it was, so a disabled effect leaves no
-      // residual transform behind.
-      img.style.transform = "";
-    };
-
-    const sync = () => {
-      if (getSettings().parallaxEnabled && !reduced.matches) attach();
-      else detach();
-    };
-
-    sync();
-    reduced.addEventListener("change", sync);
-    const unsubscribe = subscribeSettings(sync);
+    const detachParallax = attachParallax(frame, img);
+    const detachReveal = revealOnView ? attachReveal(frame, img) : undefined;
     return () => {
-      reduced.removeEventListener("change", sync);
-      unsubscribe();
-      detach();
+      detachParallax();
+      detachReveal?.();
     };
-  }, []);
+  }, [revealOnView]);
 
   return (
     // eslint-disable-next-line @next/next/no-img-element

@@ -58,6 +58,7 @@
     },
     {
       "type": "closingCta",
+      "withForm": true,
       "headline": "Dites-nous ce que vous construisez.",
       "body": "Chaque collaboration commence par une conversation, pas par un modèle de proposition. Décrivez-nous votre situation et nous vous dirons honnêtement si, et comment, nous pouvons vous aider.",
       "cta": {

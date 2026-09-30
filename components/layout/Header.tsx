@@ -2,19 +2,22 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { SiteContent } from "@/lib/content";
 import { AnimatedLogo } from "@/components/brand/AnimatedLogo";
 import { Cta } from "@/components/cta/Cta";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
-import { NavScrambleLink } from "@/components/layout/NavScrambleLink";
+import { NavSlideLink } from "@/components/layout/NavSlideLink";
 import styles from "./Header.module.css";
 
 /** Seconds before the header fades in on page load; nav and buttons share it (the logo wordmark uses the same). */
 const LOAD_DELAY = 0.4;
 
-type NavItem = { label: string; href: string };
+/** Scroll depth (px) before the header is allowed to hide. */
+const HIDE_AFTER = 80;
+
+type NavItem ={ label: string; href: string };
 
 type HeaderProps = {
   locale: string;
@@ -31,11 +34,42 @@ export function Header({ locale, nav, cta, common }: HeaderProps) {
     setOpen(false);
   }, [pathname]);
 
+  // Slide the header away while scrolling down, bring it back on any scroll up.
+  const [hidden, setHidden] = useState(false);
+  const openRef = useRef(open);
+  openRef.current = open;
+
+  useEffect(() => {
+    let lastY = window.scrollY;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const y = Math.max(window.scrollY, 0);
+      const delta = y - lastY;
+      if (Math.abs(delta) < 6) return; // ignore jitter
+      lastY = y;
+      if (y < HIDE_AFTER || openRef.current) setHidden(false);
+      else setHidden(delta > 0);
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const localePrefix = `/${locale}`;
   const homeHref = localePrefix;
 
   return (
-    <header className={styles.header}>
+    <header
+      className={styles.header}
+      data-hidden={hidden && !open}
+      onFocus={() => setHidden(false)}
+    >
       <div className={styles.bar}>
         <Link href={homeHref} className={styles.logo} aria-label={common.homeAria}>
           <AnimatedLogo />
@@ -48,12 +82,12 @@ export function Header({ locale, nav, cta, common }: HeaderProps) {
               pathname === href || pathname.startsWith(`${href}/`);
             return (
               <FadeIn key={item.href} as="span" whenVisible delay={LOAD_DELAY + index * 0.08}>
-                <NavScrambleLink
+                <NavSlideLink
                   href={href}
                   className={isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
                 >
                   {item.label}
-                </NavScrambleLink>
+                </NavSlideLink>
               </FadeIn>
             );
           })}

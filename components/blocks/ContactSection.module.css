@@ -26,6 +26,7 @@
 
 .subhead {
   font-size: var(--fs-400);
+  font-weight: 300;
   color: var(--color-fg-muted);
   max-width: 46ch;
   margin-bottom: var(--space-lg);

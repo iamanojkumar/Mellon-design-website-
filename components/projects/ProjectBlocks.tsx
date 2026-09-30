@@ -1,4 +1,5 @@
 import type { ProjectBlock } from "@/lib/project-blocks";
+import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import { RevealGroup } from "@/components/motion/RevealGroup";
 import styles from "./ProjectBlocks.module.css";
 
@@ -65,15 +66,15 @@ export function ProjectBlocks({ blocks }: { blocks: ProjectBlock[] }) {
                 {block.heading && <h2 className={styles.heading}>{block.heading}</h2>}
                 <div className={styles.gallery}>
                   {block.images.map((image, i) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      key={i}
-                      src={image.src}
-                      alt={image.alt}
-                      loading="lazy"
-                      decoding="async"
-                      className={styles.galleryImage}
-                    />
+                    // The frame clips the drifting image; ParallaxImage moves it.
+                    <div key={i} className={styles.galleryFrame}>
+                      <ParallaxImage
+                        src={image.src}
+                        alt={image.alt}
+                        revealOnView
+                        className={styles.galleryImage}
+                      />
+                    </div>
                   ))}
                 </div>
               </section>

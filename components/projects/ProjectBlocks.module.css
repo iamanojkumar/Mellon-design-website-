@@ -68,6 +68,10 @@
   padding: var(--space-sm) 0;
 }
 
+.faqItem:last-child {
+  border-bottom: 0;
+}
+
 .faqQuestion {
   cursor: pointer;
   font-weight: 600;
@@ -87,11 +91,18 @@
   grid-template-columns: 1fr;
 }
 
+.galleryFrame {
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+}
+
 .galleryImage {
   width: 100%;
   height: auto;
   display: block;
-  border-radius: var(--radius-sm);
+  /* ParallaxImage writes transform here each frame; the frame clips the overflow. */
+  will-change: transform;
+  transform-origin: center;
 }
 
 /* Video */

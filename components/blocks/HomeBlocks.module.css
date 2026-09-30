@@ -40,6 +40,7 @@
 
 .heroSubhead {
   font-size: var(--fs-400);
+  font-weight: 300;
   width: 100%;
   max-width: 58ch;
   color: var(--color-fg-muted);
@@ -91,16 +92,36 @@
 .grid {
   display: grid;
   gap: 0;
-  border-top: 1px solid var(--color-border);
-  border-left: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  overflow: hidden;
   grid-template-columns: 1fr;
+  position: relative;
+}
+
+/* Soft coloured glow that spills from the hovered card onto its neighbours
+   (--gx/--gy/--hue/--glow set on the grid by CursorGlowLink). */
+.grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: var(--glow, 0);
+  transition: opacity 0.3s var(--ease-out);
+  background: radial-gradient(
+    420px circle at var(--gx, 50%) var(--gy, 50%),
+    hsl(var(--hue, 320) 100% 82% / 0.1),
+    hsl(calc(var(--hue, 320) + 90) 100% 88% / 0.05) 45%,
+    transparent 75%
+  );
 }
 
 .card {
+  position: relative;
+  --mx: 50%;
+  --my: 50%;
+  --hue: 320;
   background: var(--color-paper);
-  box-shadow: inset -1px -1px 0 var(--color-border); /* right + bottom dividers */
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 1px var(--color-border);
   padding: var(--space-lg);
   display: flex;
   flex-direction: column;
@@ -108,8 +129,75 @@
   transition: background-color var(--duration-fast) var(--ease-out);
 }
 
+/* 3D tilt towards the cursor. --rx/--ry/--s are eased frame-by-frame by
+   CursorGlowLink, so no CSS transition here (it would fight the easing). */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .card {
+    transform: perspective(700px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
+      scale(var(--s, 1));
+  }
+
+  .card:hover {
+    z-index: 1;
+  }
+}
+
 .card:hover {
-  background: var(--color-paper-tint);
+  background:
+    radial-gradient(
+      320px circle at var(--mx, 50%) var(--my, 50%),
+      hsl(var(--hue) 100% 88% / 0.14),
+      hsl(calc(var(--hue) + 60) 100% 90% / 0.08) 40%,
+      hsl(calc(var(--hue) + 120) 100% 94% / 0.04) 70%,
+      transparent 100%
+    ),
+    #fafafb;
+}
+
+/* Pastel gradient border that follows the cursor. */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-out);
+  background:
+    radial-gradient(
+      220px circle at var(--mx) var(--my),
+      hsl(var(--hue) 90% 80%) 0%,
+      hsl(calc(var(--hue) + 60) 90% 82%) 30%,
+      hsl(calc(var(--hue) + 120) 90% 84%) 55%,
+      hsl(calc(var(--hue) + 180) 90% 86%) 75%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      hsl(var(--hue) 80% 90%),
+      hsl(calc(var(--hue) + 90) 80% 91%),
+      hsl(calc(var(--hue) + 180) 80% 91%),
+      hsl(calc(var(--hue) + 270) 80% 91%)
+    );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box exclude,
+    linear-gradient(#000 0 0);
+}
+
+@media (hover: hover) {
+  /* Neighbours' borders glow by proximity to the pointer (--near, 0..1). */
+  .card::before {
+    opacity: calc(var(--near, 0) * 0.6);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
 }
 
 .cardTitle {
@@ -126,6 +214,23 @@
   font-size: var(--fs-100);
   font-weight: 700;
   color: var(--color-fg);
+}
+
+/* Hover-capable devices: reveal "Learn more" on hover/focus. Touch keeps it visible. */
+@media (hover: hover) {
+  .card .cardLink {
+    opacity: 0;
+    transform: translateY(4px);
+    transition:
+      opacity var(--duration-fast) var(--ease-out),
+      transform var(--duration-fast) var(--ease-out);
+  }
+
+  .card:hover .cardLink,
+  .card:focus-visible .cardLink {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .industryList {
@@ -190,6 +295,22 @@
 .closingInner {
   padding-block: var(--space-2xl);
   max-width: 720px;
+}
+
+/* Closing section with the enquiry form: copy on the left, form on the right. */
+.closingSplit {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+  max-width: none;
+}
+
+@media (min-width: 900px) {
+  .closingSplit {
+    grid-template-columns: 1fr 1.1fr;
+    gap: var(--space-2xl);
+    align-items: start;
+  }
 }
 
 .closingHeadline {

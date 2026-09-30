@@ -1,10 +1,10 @@
-import Link from "next/link";
 import type { Block } from "@/lib/blocks";
 import { getServices, getSiteContent } from "@/lib/content";
 import { Container } from "@/components/ui/Container";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import { RevealGroup } from "@/components/motion/RevealGroup";
+import { CursorGlowLink } from "./CursorGlowLink";
 import styles from "./HomeBlocks.module.css";
 
 export function ServicesGrid({
@@ -31,11 +31,15 @@ export function ServicesGrid({
         </div>
         <RevealGroup className={styles.grid}>
           {getServices(locale).map((service) => (
-            <Link key={service.slug} href={`/${locale}/services/${service.slug}`} className={styles.card}>
+            <CursorGlowLink
+              key={service.slug}
+              href={`/${locale}/services/${service.slug}`}
+              className={styles.card}
+            >
               <h3 className={styles.cardTitle}>{service.name}</h3>
               <p className={styles.cardBody}>{service.tagline}</p>
               <span className={styles.cardLink}>{site.common.learnMore}</span>
-            </Link>
+            </CursorGlowLink>
           ))}
         </RevealGroup>
       </Container>
