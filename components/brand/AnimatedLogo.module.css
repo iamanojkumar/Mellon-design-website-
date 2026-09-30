@@ -1,0 +1,44 @@
+/* The icon clip is a square with empty space above and below the artwork
+   (the drawn icon is ~60% of the frame's height), so the square is pulled in
+   with negative margins to keep the header bar as tall as the artwork. */
+.root {
+  --logo-icon: 38px;
+  --logo-word: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Wordmark under the icon, both left-aligned. */
+.root.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.icon {
+  position: relative;
+  flex: none;
+  width: var(--logo-icon);
+  height: var(--logo-icon);
+  margin-block: calc(var(--logo-icon) * -0.2);
+}
+
+.media {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.wordmark {
+  display: block;
+  height: var(--logo-word);
+  width: auto;
+}
+
+@media (min-width: 900px) {
+  .root {
+    gap: 0.5rem;
+  }
+}

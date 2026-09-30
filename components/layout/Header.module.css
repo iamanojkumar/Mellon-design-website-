@@ -20,18 +20,6 @@
   margin-right: auto;
 }
 
-.logoFull {
-  display: none;
-  height: 40px;
-  width: auto;
-}
-
-.logoIcon {
-  display: block;
-  height: 40px;
-  width: 40px;
-}
-
 .nav {
   display: none;
   align-items: center;
@@ -76,21 +64,14 @@
   color: var(--color-fg);
 }
 
-.active::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -2px;
-  height: 2px;
-  border-radius: var(--radius-pill);
-  background: var(--gradient-brand);
-}
-
 .actions {
   display: none;
   align-items: center;
   gap: var(--space-sm);
+}
+
+.menuWrap {
+  display: flex;
 }
 
 .menuButton {
@@ -176,13 +157,7 @@
     display: flex;
     margin-left: auto;
   }
-  .menuButton {
-    display: none;
-  }
-  .logoFull {
-    display: block;
-  }
-  .logoIcon {
+  .menuWrap {
     display: none;
   }
 }

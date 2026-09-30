@@ -9,7 +9,21 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* Text smoothing, set on <html> so every element inherits it (form controls,
+     portals and overlays included).
+     - -webkit-font-smoothing: Safari and Chrome/Edge/Opera on macOS
+     - -moz-osx-font-smoothing: Firefox on macOS
+     - text-rendering / font-kerning: kerning and ligatures in all engines
+     Windows and Linux ignore the two smoothing properties and use the OS's own
+     text rendering (ClearType / FreeType); they cannot be overridden from CSS. */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-optical-sizing: auto;
 }
 
 /* Hide the browser's page scrollbar everywhere; scrolling itself (wheel, keys, touch,

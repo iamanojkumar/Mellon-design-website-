@@ -2,6 +2,9 @@ import Link from "next/link";
 import type { Block } from "@/lib/blocks";
 import { getPublishedProjects } from "@/lib/projects";
 import { Container } from "@/components/ui/Container";
+import { RevealGroup } from "@/components/motion/RevealGroup";
+import { FadeIn } from "@/components/motion/HeroSequence";
+import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import { ProjectCard } from "./ProjectCards";
 import home from "./HomeBlocks.module.css";
 import styles from "./ProjectCards.module.css";
@@ -28,15 +31,21 @@ export async function ProjectsPreview({
     <section className={home.section}>
       <Container>
         <div className={home.sectionHead}>
-          <span className={home.eyebrowDark}>{block.eyebrow}</span>
-          <h2 className={home.sectionHeadline}>{block.headline}</h2>
-          <p className={home.sectionBody}>{block.body}</p>
+          <FadeIn as="span" whenVisible className={home.eyebrowDark}>
+            {block.eyebrow}
+          </FadeIn>
+          <h2 className={home.sectionHeadline}>
+            <SwiftUpText text={block.headline} whenVisible />
+          </h2>
+          <p className={home.sectionBody}>
+            <SwiftUpText text={block.body} whenVisible lineDelay={0.12} delay={0.2} />
+          </p>
         </div>
 
         {projects.length === 0 ? (
           <p className={styles.empty}>{block.empty}</p>
         ) : (
-          <div className={styles.grid}>
+          <RevealGroup className={styles.grid}>
             {projects.map((project) => (
               <ProjectCard
                 key={project.id}
@@ -45,14 +54,16 @@ export async function ProjectsPreview({
                 viewLink={block.viewLink}
               />
             ))}
-          </div>
+          </RevealGroup>
         )}
 
         {/* Always offered, even with nothing published: the listing page
             carries its own empty state and the link keeps the nav honest. */}
-        <p className={styles.viewAll}>
-          <Link href={`/${locale}/projects`}>{block.viewAll}</Link>
-        </p>
+        <FadeIn whenVisible>
+          <p className={styles.viewAll}>
+            <Link href={`/${locale}/projects`}>{block.viewAll}</Link>
+          </p>
+        </FadeIn>
       </Container>
     </section>
   );

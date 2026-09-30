@@ -131,8 +131,8 @@ export type SliderDef = {
 /** Saved as "preset_1": the look agreed on in the debugger. */
 const PRESET_1: MotionSettings = {
   scrollEnabled: true,
-  scrollLerp: 0.03,
-  scrollWheelMultiplier: 0.75,
+  scrollLerp: 0.07,
+  scrollWheelMultiplier: 0.35,
   cursorFxEnabled: true,
   cursorHideNative: true,
   cursorFxIntensity: 0.13,

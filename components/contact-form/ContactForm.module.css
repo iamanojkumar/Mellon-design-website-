@@ -22,6 +22,8 @@
 
 .field input,
 .field textarea {
+  display: block;
+  width: 100%;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   padding: 0.75rem 0.9rem;
@@ -44,10 +46,14 @@
   font-size: var(--fs-100);
 }
 
-.submit {
+/* Wrapper for the button's fade-in; the button itself sizes to its label. */
+.submitWrap {
   align-self: flex-start;
-  background: var(--color-ink);
-  color: var(--color-paper);
+}
+
+.submit {
+  background: var(--color-teal);
+  color: #fff;
   padding: 0.9rem 1.75rem;
   border-radius: var(--radius-pill);
   font-weight: 600;
@@ -56,8 +62,8 @@
     opacity var(--duration-fast) var(--ease-out);
 }
 
-.submit:hover {
-  background: var(--color-ink-soft);
+.submit:hover:not(:disabled) {
+  background: var(--color-teal-strong);
 }
 
 .submit:disabled {

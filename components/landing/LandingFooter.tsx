@@ -1,4 +1,8 @@
 import Image from "next/image";
+import { AnimatedLogo } from "@/components/brand/AnimatedLogo";
+import { FadeIn } from "@/components/motion/HeroSequence";
+import { RevealGroup } from "@/components/motion/RevealGroup";
+import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import Link from "next/link";
 import type { SiteContent } from "@/lib/content";
 import styles from "./LandingChrome.module.css";
@@ -34,15 +38,8 @@ export function LandingFooter({ locale, footer, org }: LandingFooterProps) {
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
         <div className={styles.footerBrand}>
-          <Image
-            src="/brand/logo_var2_transparent.png"
-            alt="Mellon"
-            width={112}
-            height={112}
-            className={styles.footerLogo}
-            data-no-fx
-          />
-          <div className={styles.social}>
+          <AnimatedLogo iconSize={60} wordSize={16} playOnView vertical className={styles.footerLogo} />
+          <RevealGroup className={styles.social}>
             {SOCIAL_LINKS.map((item) => (
               <a
                 key={item.key}
@@ -55,23 +52,29 @@ export function LandingFooter({ locale, footer, org }: LandingFooterProps) {
                 <Image src={item.icon} alt="" width={20} height={20} aria-hidden="true" />
               </a>
             ))}
-          </div>
+          </RevealGroup>
         </div>
-        <p className={styles.tagline}>{footer.tagline}</p>
+        <p className={styles.tagline}>
+          <SwiftUpText text={footer.tagline} whenVisible delay={0.2} />
+        </p>
       </div>
 
       <div className={styles.footerBottom}>
-        <span>
-          &copy; {year} {org.legalName}. {footer.legal}
-        </span>
-        {footer.legalLinks.map((link) => (
-          <Link key={link.href} href={`/${locale}${link.href}`}>
-            {link.label}
-          </Link>
+        <FadeIn as="span" whenVisible>
+          <span>
+            &copy; {year} {org.legalName}. {footer.legal}
+          </span>
+        </FadeIn>
+        {footer.legalLinks.map((link, index) => (
+          <FadeIn key={link.href} as="span" whenVisible delay={0.1 + index * 0.08}>
+            <Link href={`/${locale}${link.href}`}>{link.label}</Link>
+          </FadeIn>
         ))}
-        <button type="button" data-open-consent className={styles.consentButton}>
-          {footer.cookiePreferences}
-        </button>
+        <FadeIn as="span" whenVisible delay={0.1 + footer.legalLinks.length * 0.08}>
+          <button type="button" data-open-consent className={styles.consentButton}>
+            {footer.cookiePreferences}
+          </button>
+        </FadeIn>
       </div>
     </footer>
   );

@@ -1,7 +1,8 @@
 import type { Block } from "@/lib/blocks";
 import { Container } from "@/components/ui/Container";
 import { Cta } from "@/components/cta/Cta";
-import { HeroImageStack } from "./HeroImageStack";
+import { HeroSequence, FadeIn } from "@/components/motion/HeroSequence";
+import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import styles from "./HomeBlocks.module.css";
 
 export function Hero({
@@ -14,20 +15,19 @@ export function Hero({
   const prefix = `/${locale}`;
   return (
     <section className={styles.hero}>
-      <Container>
-        <h1 className={styles.heroHeadline}>{block.headline}</h1>
-        <div className={styles.heroRow}>
-          <div className={styles.heroCopy}>
-            <p className={styles.heroSubhead}>{block.subhead}</p>
-            <div className={styles.heroCtas}>
-              <Cta label={block.primaryCta.label} href={`${prefix}${block.primaryCta.href}`} variant="primary" context="home" />
-              <Cta label={block.secondaryCta.label} href={`${prefix}${block.secondaryCta.href}`} variant="secondary" context="home" />
-            </div>
-          </div>
-          <div className={styles.heroVisual}>
-            <HeroImageStack images={block.images} />
-          </div>
-        </div>
+      <Container className={styles.heroInner}>
+        <HeroSequence>
+          <h1 className={styles.heroHeadline}>
+            <SwiftUpText text={block.headline} step={0} advanceOn="start" />
+          </h1>
+          <p className={styles.heroSubhead}>
+            <SwiftUpText text={block.subhead} step={0} lineDelay={0.12} />
+          </p>
+          <FadeIn step={1} className={styles.heroCtas}>
+            <Cta label={block.primaryCta.label} href={`${prefix}${block.primaryCta.href}`} variant="primary" context="home" />
+            <Cta label={block.secondaryCta.label} href={`${prefix}${block.secondaryCta.href}`} variant="secondary" context="home" />
+          </FadeIn>
+        </HeroSequence>
       </Container>
     </section>
   );

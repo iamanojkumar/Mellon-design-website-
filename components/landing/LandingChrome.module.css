@@ -6,22 +6,9 @@
   padding: var(--space-sm) var(--content-pad);
 }
 
-.logo {
-  height: 2.5rem;
-  width: auto;
-}
-
 .header .headerCta {
   padding: 0.55rem 1.1rem;
   font-size: var(--fs-100);
-  background: var(--color-teal);
-  border-color: var(--color-teal);
-  color: #fff;
-}
-
-.header .headerCta:hover {
-  background: var(--color-teal-strong);
-  border-color: var(--color-teal-strong);
 }
 
 .footer {
@@ -47,8 +34,6 @@
 
 /* Square artwork in a stretching flex column: pin both sides so it keeps its ratio. */
 .footerLogo {
-  width: 88px;
-  height: 88px;
   align-self: flex-start;
 }
 

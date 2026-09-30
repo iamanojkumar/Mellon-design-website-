@@ -44,18 +44,6 @@
   background: #dff3e6;
 }
 
-/* Lead-form button: same cyan-green as the header button. */
-.quoteGrid button[type="submit"] {
-  background: var(--color-teal);
-  border-color: var(--color-teal);
-  color: #fff;
-}
-
-.quoteGrid button[type="submit"]:hover:not(:disabled) {
-  background: var(--color-teal-strong);
-  border-color: var(--color-teal-strong);
-}
-
 .heading,
 .quoteHeading {
   font-family: var(--font-display);

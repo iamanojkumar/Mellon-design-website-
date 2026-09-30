@@ -1,5 +1,7 @@
 import type { Block } from "@/lib/blocks";
 import { Container } from "@/components/ui/Container";
+import { FadeIn } from "@/components/motion/HeroSequence";
+import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import styles from "./PageHero.module.css";
 
 export function PageHero({
@@ -15,14 +17,20 @@ export function PageHero({
   return (
     <section className={styles.hero}>
       <Container>
-        <span className={styles.eyebrow}>{block.eyebrow}</span>
-        <h1 className={styles.headline}>{block.headline}</h1>
+        <FadeIn as="span" whenVisible className={styles.eyebrow}>
+          {block.eyebrow}
+        </FadeIn>
+        <h1 className={styles.headline}>
+          <SwiftUpText text={block.headline} whenVisible />
+        </h1>
         {block.updated && (
           <p className={styles.updated}>
             {block.updated.label}: {updated}
           </p>
         )}
-        <p className={styles.subhead}>{block.subhead}</p>
+        <p className={styles.subhead}>
+          <SwiftUpText text={block.subhead} whenVisible lineDelay={0.12} delay={0.2} />
+        </p>
       </Container>
     </section>
   );

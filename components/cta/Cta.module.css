@@ -26,17 +26,18 @@
 }
 
 .primary {
-  background: var(--color-ink);
-  color: var(--color-paper);
-  border: 1px solid var(--color-ink);
+  background: var(--color-teal);
+  color: #fff;
+  border: 1px solid var(--color-teal);
 }
 
 .primary:hover {
-  background: var(--color-ink-soft);
+  background: var(--color-teal-strong);
+  border-color: var(--color-teal-strong);
 }
 
 .secondary {
-  background: transparent;
+  background: var(--color-paper-tint);
   color: var(--color-ink);
   border: 1px solid var(--color-border);
 }

@@ -51,6 +51,13 @@ One shared `ContactForm` component/validation schema used on every locale's cont
 
 `lib/motion-settings.ts` is a plain external store (no React context) holding live-tunable settings for every motion effect, so both React components and non-React code (e.g. WebGL render loops) can read current values without re-rendering. Effects: `SmoothScroll` (Lenis), `CursorFx` (WebGL iridescent cursor trail/liquid blob), `ScrollBlur` (progressive blur on scroll), `ImageLiquify` (drag-to-liquify on images), `NavHoverVars` (nav link hover state). All respect `prefers-reduced-motion`. `components/debug/DebugPanel.tsx` is a dev-only live tuner for these settings — it's dynamically imported in `app/[locale]/layout.tsx` behind a `NODE_ENV === "development"` check so the bundler drops it entirely from production bundles.
 
+**Entrance animations — required on every new page, section, block, and form.** Content animates in on load or when it scrolls into view. Use these building blocks, never one-off CSS animations, so timing and behavior stay identical site-wide:
+- **Headings and body text** → `<SwiftUpText text={…} whenVisible />` (`components/motion/SwiftUpText.tsx`): slides up line by line. Put it *inside* the `<h1>`/`<h2>`/`<p>`/label element, keeping the real element for semantics and SEO. Give body text following a heading `lineDelay={0.12} delay={0.2}`. Use `whenVisible` everywhere except a page-load sequence inside `HeroSequence` (`components/blocks/Hero.tsx`), where `step` orders the pieces.
+- **Buttons, tags/chips, eyebrow overlines, marquees, form controls, and other small standalone elements** → `<FadeIn whenVisible [as="span"] [delay={…}]>` (`components/motion/HeroSequence.tsx`). Stagger rows of tags/chips by ~0.04s each.
+- **Card groups, FAQ lists, and any repeated grid/list of items** → render the grid/list container as `<RevealGroup [as="ul"] className={…}>` (`components/motion/RevealGroup.tsx`): the first item rises in with a fade and the rest follow one by one. It keeps the container's layout, so pass the original className. Draw dividers between cards on the cards themselves (e.g. an inset `box-shadow`), not through a grid `gap` showing the grid background — an invisible card would otherwise leave a coloured hole.
+- **Header/chrome** (logo, nav links, header buttons) fade in on load at the shared `LOAD_DELAY` in `components/layout/Header.tsx`.
+- Don't animate the same element with two of these, and don't add them to admin UI. All of them already respect `prefers-reduced-motion` and show content as-is with scripting off — keep that true for anything new. Landing pages built on `ServiceLanding` inherit this; a page with its own layout (including copies of `_template/`) must apply it itself.
+
 ### Route groups and landing pages (`app/[locale]/(site)/`, `app/[locale]/(landing-pages)/`, `lib/landing-pages.ts`)
 
 `app/[locale]/layout.tsx` owns only `<html>`/`<body>`, fonts, head tags and the motion effects. Header/footer/`<main>` live one level down, in three route groups (which add nothing to the URL): `(site)` holds every marketing route and renders the site header/footer; `(landing-pages)` renders its own minimal header/footer (`components/landing/`); `(legal)` (currently just `privacy`) reuses that minimal chrome so the site and landing pages can link *to* a legal page but it links to nothing else. New marketing routes go in `(site)`; new legal pages go in `(legal)`.
@@ -67,6 +74,13 @@ Landing pages are lead-magnet / search-traffic pages at `/{locale}/{slug}`. **No
 5. **Real value:** the lead magnet is described concretely (what the visitor gets, format, what happens next) — no placeholder, lorem or generic filler copy.
 6. **Locales:** every locale in `locales` either has its own copy entry or is a deliberate fallback (same language, e.g. en-GB → en-US); never list a locale just to multiply pages.
 7. **Structure:** exactly one `<h1>`, a logical heading order, and a working CTA.
+
+**Demand rule — before creating a landing page, or adding a locale to an existing one, check that people search for it in that market, and warn the user if demand is low or unknown.** Translating a page is not free of SEO cost: a page nobody searches for is upkeep, a crawl-budget spend, and a possible near-duplicate of the page that does rank.
+1. Name the primary search phrase in the *target language and market* (research it there; don't translate the English phrase) plus its close variants.
+2. Get evidence, in this order: the user's Search Console / keyword-tool volumes for that phrase and market; else `WebSearch` proxies (do localized results exist for the phrase, who ranks, is there autocomplete/related-search support). You cannot see search volumes yourself — never invent numbers, and say so.
+3. Give a verdict before writing any copy: **Demand confirmed** (evidence of meaningful volume, roughly 50+ combined monthly searches for the primary phrase and close variants), **Low** (under that, or only a handful of results/queries), or **Unknown** (no evidence). For **Low** or **Unknown**, warn the user plainly, recommend not building it (or building it `indexable: false`, or waiting for Search Console data from the existing pages), and build only if they confirm after seeing the warning.
+4. Same-language locales (en-GB, en-IN) that would fall back to identical copy count as no new page: don't list them for a page unless they get their own copy for that market.
+5. Record the verdict and the evidence in a comment at the top of the page's `copy.ts`.
 
 ### Static generation pattern
 

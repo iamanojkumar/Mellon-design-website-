@@ -3,6 +3,7 @@ import type { Block } from "@/lib/blocks";
 import { getPublishedProjects } from "@/lib/projects";
 import { Container } from "@/components/ui/Container";
 import { ParallaxImage } from "@/components/motion/ParallaxImage";
+import { RevealGroup } from "@/components/motion/RevealGroup";
 import styles from "./ProjectCards.module.css";
 
 /**
@@ -28,7 +29,7 @@ export async function ProjectCards({
         {projects.length === 0 ? (
           <p className={styles.empty}>{block.empty}</p>
         ) : (
-          <div className={styles.grid}>
+          <RevealGroup className={styles.grid}>
             {projects.map((project) => (
               <ProjectCard
                 key={project.id}
@@ -37,7 +38,7 @@ export async function ProjectCards({
                 viewLink={block.viewLink}
               />
             ))}
-          </div>
+          </RevealGroup>
         )}
       </Container>
     </section>

@@ -1,6 +1,9 @@
 import { Container } from "@/components/ui/Container";
 import { ContactForm } from "@/components/contact-form/ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { RevealGroup } from "@/components/motion/RevealGroup";
+import { FadeIn } from "@/components/motion/HeroSequence";
+import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import { getSiteContent } from "@/lib/content";
 import { getSiteUrl } from "@/lib/env";
 import styles from "./ServiceLanding.module.css";
@@ -89,18 +92,27 @@ export function ServiceLanding({
 
       <section className={styles.hero}>
         <Container>
-          <h1 className={styles.headline}>{text.headline}</h1>
-          <p className={styles.summary}>{text.summary}</p>
+          <h1 className={styles.headline}>
+            <SwiftUpText text={text.headline} whenVisible />
+          </h1>
+          <p className={styles.summary}>
+            <SwiftUpText text={text.summary} whenVisible lineDelay={0.12} delay={0.2} />
+          </p>
         </Container>
       </section>
 
       <section className={`${styles.section} ${styles.mintBand}`}>
         <Container>
-          <h2 className={styles.heading}>{text.approach.heading}</h2>
-          <p className={styles.intro}>{text.approach.intro}</p>
+          <h2 className={styles.heading}>
+            <SwiftUpText text={text.approach.heading} whenVisible />
+          </h2>
+          <p className={styles.intro}>
+            <SwiftUpText text={text.approach.intro} whenVisible lineDelay={0.12} delay={0.2} />
+          </p>
         </Container>
         {/* Marquee: the list is rendered twice and the track slides by exactly one
             copy, so the loop is seamless. The duplicate is hidden from assistive tech. */}
+        <FadeIn whenVisible delay={0.3}>
         <div className={styles.marquee}>
           <div className={styles.track}>
             {[0, 1].map((copyIndex) => (
@@ -119,72 +131,89 @@ export function ServiceLanding({
             ))}
           </div>
         </div>
+        </FadeIn>
       </section>
 
       <section className={styles.section}>
         <Container>
-          <h2 className={styles.heading}>{text.included.heading}</h2>
-          <p className={styles.intro}>{text.included.intro}</p>
-          <ul className={styles.partnerGrid}>
+          <h2 className={styles.heading}>
+            <SwiftUpText text={text.included.heading} whenVisible />
+          </h2>
+          <p className={styles.intro}>
+            <SwiftUpText text={text.included.intro} whenVisible lineDelay={0.12} delay={0.2} />
+          </p>
+          <RevealGroup as="ul" className={styles.partnerGrid}>
             {text.included.items.map((item) => (
               <li key={item.title} className={styles.partnerCard}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p>{item.text}</p>
               </li>
             ))}
-          </ul>
+          </RevealGroup>
         </Container>
       </section>
 
       <section className={`${styles.section} ${styles.greyBand}`}>
         <Container>
-          <h2 className={styles.heading}>{text.partner.heading}</h2>
-          <ul className={styles.partnerGrid}>
+          <h2 className={styles.heading}>
+            <SwiftUpText text={text.partner.heading} whenVisible />
+          </h2>
+          <RevealGroup as="ul" className={styles.partnerGrid}>
             {text.partner.items.map((item) => (
               <li key={item.title} className={styles.partnerCard}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p>{item.text}</p>
               </li>
             ))}
-          </ul>
+          </RevealGroup>
         </Container>
       </section>
 
       <section className={`${styles.section} ${styles.lavenderBand}`}>
         <Container>
-          <h2 className={styles.heading}>{text.caseStudies.heading}</h2>
-          <ul className={styles.caseGrid}>
+          <h2 className={styles.heading}>
+            <SwiftUpText text={text.caseStudies.heading} whenVisible />
+          </h2>
+          <RevealGroup as="ul" className={styles.caseGrid}>
             {text.caseStudies.items.map((item) => (
               <li key={item.name} className={styles.caseCard}>
                 <h3 className={styles.cardTitle}>{item.name}</h3>
-                <a href="#quote" className={styles.caseLink}>
-                  {text.caseStudies.cta}
-                </a>
+                <FadeIn as="span" whenVisible>
+                  <a href="#quote" className={styles.caseLink}>
+                    {text.caseStudies.cta}
+                  </a>
+                </FadeIn>
               </li>
             ))}
-          </ul>
+          </RevealGroup>
         </Container>
       </section>
 
       <section className={styles.section}>
         <Container>
-          <h2 className={styles.heading}>{text.faq.heading}</h2>
-          <div className={styles.faq}>
+          <h2 className={styles.heading}>
+            <SwiftUpText text={text.faq.heading} whenVisible />
+          </h2>
+          <RevealGroup className={styles.faq}>
             {text.faq.items.map((item, i) => (
               <details key={item.question} className={styles.faqItem} open={i === 0}>
                 <summary className={styles.faqQuestion}>{item.question}</summary>
                 <p className={styles.faqAnswer}>{item.answer}</p>
               </details>
             ))}
-          </div>
+          </RevealGroup>
         </Container>
       </section>
 
       <section id="quote" className={`${styles.section} ${styles.greenBand}`}>
         <Container className={styles.quoteGrid}>
           <div>
-            <h2 className={styles.quoteHeading}>{text.quote.heading}</h2>
-            <p className={styles.quoteText}>{text.quote.text}</p>
+            <h2 className={styles.quoteHeading}>
+              <SwiftUpText text={text.quote.heading} whenVisible />
+            </h2>
+            <p className={styles.quoteText}>
+              <SwiftUpText text={text.quote.text} whenVisible lineDelay={0.12} delay={0.2} />
+            </p>
           </div>
           <div>
             <ContactForm

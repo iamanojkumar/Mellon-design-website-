@@ -16,15 +16,7 @@
       "secondaryCta": {
         "label": "Bekijk onze diensten",
         "href": "/services"
-      },
-      "images": [
-        {
-          "src": "/images/Mellon-hero-banner.webp",
-          "alt": "",
-          "width": 1320,
-          "height": 567
-        }
-      ]
+      }
     },
     {
       "type": "projectsPreview",

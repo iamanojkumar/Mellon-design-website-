@@ -1,14 +1,18 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { SiteContent } from "@/lib/content";
+import { AnimatedLogo } from "@/components/brand/AnimatedLogo";
 import { Cta } from "@/components/cta/Cta";
+import { FadeIn } from "@/components/motion/HeroSequence";
 import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { NavScrambleLink } from "@/components/layout/NavScrambleLink";
 import styles from "./Header.module.css";
+
+/** Seconds before the header fades in on page load; nav and buttons share it (the logo wordmark uses the same). */
+const LOAD_DELAY = 0.4;
 
 type NavItem = { label: string; href: string };
 
@@ -34,62 +38,48 @@ export function Header({ locale, nav, cta, common }: HeaderProps) {
     <header className={styles.header}>
       <div className={styles.bar}>
         <Link href={homeHref} className={styles.logo} aria-label={common.homeAria}>
-          <Image
-            src="/brand/logo_color_light_transparentbg.png"
-            alt="Mellon"
-            width={252}
-            height={80}
-            className={styles.logoFull}
-            data-no-fx
-            priority
-          />
-          <Image
-            src="/brand/icon_color.png"
-            alt="Mellon"
-            width={80}
-            height={80}
-            className={styles.logoIcon}
-            data-no-fx
-            priority
-          />
+          <AnimatedLogo />
         </Link>
 
         <nav className={styles.nav} aria-label={common.primaryNavAria}>
-          {nav.map((item) => {
+          {nav.map((item, index) => {
             const href = `${localePrefix}${item.href}`;
             const isActive =
               pathname === href || pathname.startsWith(`${href}/`);
             return (
-              <NavScrambleLink
-                key={item.href}
-                href={href}
-                className={isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
-              >
-                {item.label}
-              </NavScrambleLink>
+              <FadeIn key={item.href} as="span" whenVisible delay={LOAD_DELAY + index * 0.08}>
+                <NavScrambleLink
+                  href={href}
+                  className={isActive ? `${styles.navLink} ${styles.active}` : styles.navLink}
+                >
+                  {item.label}
+                </NavScrambleLink>
+              </FadeIn>
             );
           })}
         </nav>
 
-        <div className={styles.actions}>
+        <FadeIn whenVisible delay={LOAD_DELAY} className={styles.actions}>
           <div className={styles.langSlot}>
             <LanguageSwitcher locale={locale} copy={common.languageSwitcher} />
           </div>
           <div className={styles.ctaSlot}>
             <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" />
           </div>
-        </div>
+        </FadeIn>
 
-        <button
-          type="button"
-          className={styles.menuButton}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <span className={styles.menuIcon} data-open={open} />
-          <span className="visually-hidden">{common.menu}</span>
-        </button>
+        <FadeIn as="span" whenVisible delay={LOAD_DELAY} className={styles.menuWrap}>
+          <button
+            type="button"
+            className={styles.menuButton}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span className={styles.menuIcon} data-open={open} />
+            <span className="visually-hidden">{common.menu}</span>
+          </button>
+        </FadeIn>
       </div>
 
       {open && (

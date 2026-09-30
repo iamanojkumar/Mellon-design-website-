@@ -1,4 +1,8 @@
 import Image from "next/image";
+import { AnimatedLogo } from "@/components/brand/AnimatedLogo";
+import { FadeIn } from "@/components/motion/HeroSequence";
+import { RevealGroup } from "@/components/motion/RevealGroup";
+import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import Link from "next/link";
 import type { SiteContent } from "@/lib/content";
 import styles from "./Footer.module.css";
@@ -30,17 +34,12 @@ export function Footer({ locale, footer, org }: FooterProps) {
       <div className={styles.top}>
         <div className={styles.brandCol}>
           <Link href={localePrefix} aria-label={footer.homeAria}>
-            <Image
-              src="/brand/logo_var2_transparent.png"
-              alt="Mellon"
-              width={112}
-              height={112}
-              className={styles.logo}
-              data-no-fx
-            />
+            <AnimatedLogo iconSize={60} wordSize={16} playOnView vertical />
           </Link>
-          <p className={styles.tagline}>{footer.tagline}</p>
-          <div className={styles.social}>
+          <p className={styles.tagline}>
+            <SwiftUpText text={footer.tagline} whenVisible delay={0.2} />
+          </p>
+          <RevealGroup className={styles.social}>
             {SOCIAL_LINKS.map((item) => (
               <a
                 key={item.key}
@@ -53,45 +52,55 @@ export function Footer({ locale, footer, org }: FooterProps) {
                 <Image src={item.icon} alt="" width={20} height={20} aria-hidden="true" />
               </a>
             ))}
-          </div>
+          </RevealGroup>
         </div>
 
         {footer.columns.map((column) => (
           <div key={column.heading} className={styles.col}>
-            <h3 className={styles.colHeading}>{column.heading}</h3>
-            <ul>
+            <h3 className={styles.colHeading}>
+              <SwiftUpText text={column.heading} whenVisible />
+            </h3>
+            <RevealGroup as="ul">
               {column.links.map((link) => (
                 <li key={link.href}>
                   <Link href={`${localePrefix}${link.href}`}>{link.label}</Link>
                 </li>
               ))}
-            </ul>
+            </RevealGroup>
           </div>
         ))}
 
         <div className={styles.col}>
-          <h3 className={styles.colHeading}>{footer.contactHeading}</h3>
-          <a href={`mailto:${org.email}`} className={styles.emailLink}>
-            {org.email}
-          </a>
+          <h3 className={styles.colHeading}>
+            <SwiftUpText text={footer.contactHeading} whenVisible />
+          </h3>
+          <FadeIn whenVisible delay={0.2}>
+            <a href={`mailto:${org.email}`} className={styles.emailLink}>
+              {org.email}
+            </a>
+          </FadeIn>
         </div>
       </div>
 
       <div className={styles.bottom}>
-        <span>
-          &copy; {year} {org.legalName}. {footer.legal}
-        </span>
-        {footer.legalLinks.map((link) => (
-          <Link key={link.href} href={`${localePrefix}${link.href}`}>
-            {link.label}
-          </Link>
+        <FadeIn as="span" whenVisible>
+          <span>
+            &copy; {year} {org.legalName}. {footer.legal}
+          </span>
+        </FadeIn>
+        {footer.legalLinks.map((link, index) => (
+          <FadeIn key={link.href} as="span" whenVisible delay={0.1 + index * 0.08}>
+            <Link href={`${localePrefix}${link.href}`}>{link.label}</Link>
+          </FadeIn>
         ))}
         {/* The consent banner (GTM tag, source in temp/consent-banner.html) binds
             any data-open-consent element to reopen its preferences panel. Without
             this, withdrawing consent would mean clearing site data by hand. */}
-        <button type="button" data-open-consent className={styles.consentButton}>
-          {footer.cookiePreferences}
-        </button>
+        <FadeIn as="span" whenVisible delay={0.1 + footer.legalLinks.length * 0.08}>
+          <button type="button" data-open-consent className={styles.consentButton}>
+            {footer.cookiePreferences}
+          </button>
+        </FadeIn>
       </div>
     </footer>
   );

@@ -20,11 +20,6 @@
   max-width: 320px;
 }
 
-.logo {
-  height: 88px;
-  width: auto;
-}
-
 .tagline {
   color: var(--color-fg-muted);
   font-size: var(--fs-200);

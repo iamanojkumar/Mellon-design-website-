@@ -1,4 +1,5 @@
 import type { ProjectBlock } from "@/lib/project-blocks";
+import { RevealGroup } from "@/components/motion/RevealGroup";
 import styles from "./ProjectBlocks.module.css";
 
 /**
@@ -45,7 +46,7 @@ export function ProjectBlocks({ blocks }: { blocks: ProjectBlock[] }) {
             return (
               <section key={key} className={styles.block}>
                 {block.heading && <h2 className={styles.heading}>{block.heading}</h2>}
-                <div className={styles.faq}>
+                <RevealGroup className={styles.faq}>
                   {block.items.map((item, i) => (
                     // <details> keeps this usable with no JavaScript, and the
                     // answers stay in the DOM for crawlers either way.
@@ -54,7 +55,7 @@ export function ProjectBlocks({ blocks }: { blocks: ProjectBlock[] }) {
                       <p className={styles.faqAnswer}>{item.answer}</p>
                     </details>
                   ))}
-                </div>
+                </RevealGroup>
               </section>
             );
 

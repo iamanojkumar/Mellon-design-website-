@@ -22,6 +22,10 @@ add one to nav, the footer or any listing.
 4. Register it in `lib/landing-pages.ts`:
    `{ slug: "free-brand-audit", locales: ["en-US"], indexable: true }`
 
+## Demand check (required before a new page, or a new locale on a page)
+
+Before writing copy, confirm people search for the phrase **in that market and language**: Search Console or keyword-tool volumes, else SERP proxies. Roughly 50+ combined monthly searches for the primary phrase and its close variants = worth building. Under that, or no evidence, warn and don't build (or build `indexable: false`, or wait for data from the live pages). Note the verdict and evidence at the top of the page's `copy.ts`. Full rule in `CLAUDE.md`.
+
 ## Thin-content check (required for every new or edited page)
 
 Landing pages have no internal links, so they rank on their own content. Before

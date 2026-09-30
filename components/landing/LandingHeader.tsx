@@ -1,5 +1,6 @@
-import Image from "next/image";
+import { AnimatedLogo } from "@/components/brand/AnimatedLogo";
 import { Cta } from "@/components/cta/Cta";
+import { FadeIn } from "@/components/motion/HeroSequence";
 import styles from "./LandingChrome.module.css";
 
 type LandingHeaderProps = {
@@ -18,23 +19,17 @@ type LandingHeaderProps = {
 export function LandingHeader({ cta }: LandingHeaderProps) {
   return (
     <header className={styles.header}>
-      <Image
-        src="/brand/logo_color_light_transparentbg.png"
-        alt="Mellon"
-        width={252}
-        height={80}
-        className={styles.logo}
-        data-no-fx
-        priority
-      />
+      <AnimatedLogo />
       {cta ? (
-        <Cta
-          label={cta.label}
-          href={cta.href}
-          variant="primary"
-          context="landing"
-          className={styles.headerCta}
-        />
+        <FadeIn as="span" whenVisible delay={0.4}>
+          <Cta
+            label={cta.label}
+            href={cta.href}
+            variant="primary"
+            context="landing"
+            className={styles.headerCta}
+          />
+        </FadeIn>
       ) : null}
     </header>
   );
