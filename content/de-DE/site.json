@@ -71,6 +71,7 @@
   "common": {
     "startProject": "Projekt starten",
     "skipToContent": "Zum Inhalt springen",
+    "loading": "Wird geladen",
     "menu": "Menü",
     "homeAria": "Mellon Startseite",
     "primaryNavAria": "Hauptnavigation",

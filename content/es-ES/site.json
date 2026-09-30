@@ -71,6 +71,7 @@
   "common": {
     "startProject": "Empezar un proyecto",
     "skipToContent": "Saltar al contenido",
+    "loading": "Cargando",
     "menu": "Menú",
     "homeAria": "Inicio de Mellon",
     "primaryNavAria": "Navegación principal",

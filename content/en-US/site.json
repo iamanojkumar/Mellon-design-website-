@@ -81,6 +81,7 @@
   "common": {
     "startProject": "Start a project",
     "skipToContent": "Skip to content",
+    "loading": "Loading",
     "menu": "Menu",
     "homeAria": "Mellon home",
     "primaryNavAria": "Primary",

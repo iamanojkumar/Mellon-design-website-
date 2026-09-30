@@ -1,3 +1,4 @@
+import { isPageHeld, subscribePageHold } from "@/lib/page-transition";
 import styles from "./ImageReveal.module.css";
 
 /** Reveal styles (see ImageReveal.module.css). Each image gets a random one. */
@@ -44,6 +45,8 @@ export function attachReveal(frame: HTMLElement, img?: HTMLImageElement): () => 
 
   const check = () => {
     if (revealed) return;
+    // Wait out a page transition: the reveal would otherwise play behind the curtain.
+    if (isPageHeld()) return;
     const rect = frame.getBoundingClientRect();
     const vh = window.innerHeight;
 
@@ -65,6 +68,8 @@ export function attachReveal(frame: HTMLElement, img?: HTMLImageElement): () => 
   // this still runs when the tab isn't being rendered.
   const schedule = check;
 
+  const unsubscribeHold = subscribePageHold(() => schedule());
+
   const onLoaded = () => {
     loaded = true;
     schedule();
@@ -73,6 +78,7 @@ export function attachReveal(frame: HTMLElement, img?: HTMLImageElement): () => 
   const stop = () => {
     window.removeEventListener("scroll", schedule);
     window.removeEventListener("resize", schedule);
+    unsubscribeHold();
     img?.removeEventListener("load", onLoaded);
     img?.removeEventListener("error", onLoaded);
   };

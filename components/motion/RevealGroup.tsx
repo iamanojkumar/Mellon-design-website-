@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { ReactNode } from "react";
+import { usePageReady } from "@/lib/page-transition";
 import styles from "./RevealGroup.module.css";
 
 /**
@@ -25,6 +26,7 @@ export function RevealGroup({
 }) {
   const ref = useRef<HTMLElement>(null);
   const [inView, setInView] = useState(false);
+  const pageReady = usePageReady();
 
   useEffect(() => {
     const el = ref.current;
@@ -49,7 +51,7 @@ export function RevealGroup({
     <Tag
       ref={ref as never}
       className={[className, styles.group].filter(Boolean).join(" ")}
-      data-in={inView ? "" : undefined}
+      data-in={inView && pageReady ? "" : undefined}
     >
       {children}
     </Tag>

@@ -11,6 +11,8 @@ import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { ScrollBlur } from "@/components/motion/ScrollBlur";
 import { ImageLiquify } from "@/components/motion/ImageLiquify";
 import { NavHoverVars } from "@/components/motion/NavHoverVars";
+import { PageTransition } from "@/components/motion/PageTransition";
+import { getSiteContent } from "@/lib/content";
 import "@/styles/globals.css";
 
 const robotoFlex = Roboto_Flex({
@@ -73,6 +75,7 @@ export default async function LocaleLayout({
         <ScrollBlur />
         <ImageLiquify />
         <NavHoverVars />
+        <PageTransition loadingLabel={getSiteContent(locale).common.loading} />
         {DebugPanel && <DebugPanel />}
         {/* Header, footer and <main> live in the route-group layouts —
             (site) for the marketing pages, (landing-pages) for landing pages. */}

@@ -1,0 +1,66 @@
+.curtain {
+  --pt-cover: 650ms;
+  --pt-reveal: 850ms;
+  --pt-ease: cubic-bezier(0.76, 0, 0.24, 1);
+
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: var(--color-ink);
+  pointer-events: none;
+  visibility: hidden;
+  transform: translate3d(0, 100%, 0);
+}
+
+.curtain[data-phase="cover"] {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate3d(0, 0, 0);
+  transition: transform var(--pt-cover) var(--pt-ease);
+}
+
+.curtain[data-phase="reveal"] {
+  visibility: visible;
+  pointer-events: auto;
+  transform: translate3d(0, -100%, 0);
+  transition: transform var(--pt-reveal) var(--pt-ease);
+}
+
+/* Preloader safety nets: if scripting is off or never boots, don't leave the page covered. */
+.curtain[data-boot="true"] {
+  animation: pt-boot-fallback 0s 8s forwards;
+}
+
+@keyframes pt-boot-fallback {
+  to {
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+@media (scripting: none) {
+  .curtain {
+    display: none;
+  }
+}
+
+/* Loader: appears only when the new page is slow to arrive. */
+.loader {
+  display: grid;
+  justify-items: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.curtain[data-loading="true"][data-phase="cover"] .loader {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .curtain {
+    display: none;
+  }
+}

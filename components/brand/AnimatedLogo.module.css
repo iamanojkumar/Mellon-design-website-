@@ -24,6 +24,12 @@
   margin-block: calc(var(--logo-icon) * -0.2);
 }
 
+.loop {
+  display: block;
+  width: var(--logo-icon);
+  height: var(--logo-icon);
+}
+
 .media {
   display: block;
   width: 100%;

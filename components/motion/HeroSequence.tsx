@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import type { CSSProperties, ReactNode } from "react";
+import { usePageReady } from "@/lib/page-transition";
 import styles from "./HeroSequence.module.css";
 
 /**
@@ -71,7 +72,8 @@ export function FadeIn({
     return () => observer.disconnect();
   }, [whenVisible]);
 
-  const shown = stage >= step && visible;
+  const pageReady = usePageReady();
+  const shown = stage >= step && visible && pageReady;
   // The timed fallback only suits content that shows on load, not scroll-triggered.
   const state = shown ? styles.in : whenVisible ? styles.out : `${styles.out} ${styles.timed}`;
   return (

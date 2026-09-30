@@ -2,6 +2,7 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
+import { usePageReady } from "@/lib/page-transition";
 import { useSequence } from "./HeroSequence";
 import styles from "./SwiftUpText.module.css";
 
@@ -44,6 +45,7 @@ export function SwiftUpText({
   const readyRef = useRef(false);
   const [state, setState] = useState<State>({ lines: null, animate: true });
   const { stage, complete } = useSequence();
+  const pageReady = usePageReady();
   const [visible, setVisible] = useState(!whenVisible);
   const visibleRef = useRef(!whenVisible);
 
@@ -138,7 +140,7 @@ export function SwiftUpText({
             <span key={index} className={styles.clip}>
               <span
                 className={
-                  !animate ? styles.lineStatic : stage >= step && visible ? styles.line : styles.linePending
+                  !animate ? styles.lineStatic : stage >= step && visible && pageReady ? styles.line : styles.linePending
                 }
                 style={
                   animate ? ({ animationDelay: `${delay + index * lineDelay}s` } as CSSProperties) : undefined

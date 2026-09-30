@@ -163,3 +163,43 @@ export function AnimatedLogo({
     </span>
   );
 }
+
+const LOADER = "/brand/animated/mellon-loader";
+
+/**
+ * The loading animation on repeat, for the page-transition loader. Mounts the
+ * media only while `active`, so nothing is fetched or decoded when hidden.
+ * WebM (with alpha) where supported; Safari/iOS get an animated WebP that
+ * loops on its own; the still icon if playback fails.
+ */
+export function LogoIconLoop({ active, size = 96 }: { active: boolean; size?: number }) {
+  const [mode, setMode] = useState<Mode>("pending");
+
+  useEffect(() => {
+    if (active) setMode(pickMode());
+  }, [active]);
+
+  if (!active) return null;
+
+  return (
+    <span className={styles.loop} style={{ "--logo-icon": `${size}px` } as CSSProperties} aria-hidden="true">
+      {mode === "video" && (
+        <video
+          className={styles.media}
+          src={`${LOADER}.webm`}
+          autoPlay
+          loop
+          muted
+          playsInline
+          disablePictureInPicture
+          tabIndex={-1}
+          onError={() => setMode("static")}
+        />
+      )}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {mode === "webp" && <img className={styles.media} src={`${LOADER}.webp`} alt="" width={336} height={336} data-no-fx />}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {mode === "static" && <img className={styles.media} src={`${ICON}-final.png`} alt="" width={336} height={336} data-no-fx />}
+    </span>
+  );
+}
