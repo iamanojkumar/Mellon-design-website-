@@ -43,3 +43,5 @@ A small, senior studio talking plainly to a busy peer: confident, specific, a li
 - **Slogan:** `org.slogan` ("Redefining Experience for a Smarter and Responsible Future.") is the one line in buzzword register; nothing else on the site sounds like it. Not surfaced in the UI today.
 - **Meta title formats differ:** home is `Mellon — …`; every other page is `… — Mellon`.
 - **CTA labels:** "Start a project" everywhere except where the copy drifts to "Contact us" or "Get Your Quote" — use the standard label unless the context is a form.
+- **Unverified specifics on the SaaS UI landing page** (`saas-ui-design-agency-india/copy.ts`): "six to twelve weeks", "one to two weekly syncs", "RICE", "VS Code", and "reply within one business day". Confirm each is true before more pages reuse them. The dashboard page reuses only the response time and the Figma handoff.
+- **Landing-page CTA label:** the hero button now uses `nav.cta.label` ("Start a project") on landing pages, so the page matches the header button; the form heading still says "Get a quote."

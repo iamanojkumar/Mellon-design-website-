@@ -59,3 +59,10 @@ Pages that follow the standard layout (hero, approach marquee, what you get, tea
   pages that would only duplicate an indexable page.
 - Slugs can't reuse a core route (`services`, `about`, …); `lib/landing-pages.ts`
   throws at load if they do.
+
+## Optional fields on service landing pages
+
+- `caseStudies`: leave it out until there is real work; the section only renders when it has items.
+- `related`: link to the matching service page (`href` is a path without the locale, e.g. `/services/saas-design`). Landing pages still receive no links, but they may link out to their hub.
+- The hero ends with a button to `#quote`, using the site's localized CTA label (`nav.cta.label`).
+- Method and brief template: `docs/landing-page-method.md`.

@@ -89,7 +89,10 @@
     "detail": {
       "included": "Wat is inbegrepen",
       "usedIn": "Waar we dit hebben toegepast",
-      "readyHeadline": "Klaar om te praten over {nameLower}?"
+      "readyHeadline": "Klaar om te praten over {nameLower}?",
+      "processHeading": "Hoe we werken",
+      "faqHeading": "Veelgestelde vragen",
+      "relatedServices": "Gerelateerde diensten"
     }
   },
   "industriesPage": {

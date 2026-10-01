@@ -163,3 +163,12 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+.group + .group {
+  margin-top: var(--space-2xl);
+}
+
+.groupHeading {
+  font-size: var(--fs-500);
+  margin-bottom: var(--space-md);
+}

@@ -19,10 +19,16 @@
   color: var(--color-fg-muted);
   max-width: 62ch;
   margin-inline: auto;
+  margin-bottom: var(--space-md);
 }
 
 .section {
   padding-block: var(--space-xl);
+}
+
+.related {
+  color: var(--color-fg-muted);
+  margin: var(--space-lg) 0 0;
 }
 
 .mintBand {

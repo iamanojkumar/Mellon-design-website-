@@ -35,7 +35,7 @@ export type Block =
       updated?: { label: string; date: string };
     }
   | { type: "textSections"; sections: { heading: string; body: string }[] }
-  | { type: "serviceCards"; viewLink: string }
+  | { type: "serviceCards"; viewLink: string; categories?: { id: string; label: string }[] }
   | { type: "industryCards"; viewLink: string }
   /**
    * Case studies from Supabase rather than this JSON, so both project blocks

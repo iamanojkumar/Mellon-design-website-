@@ -1,18 +1,36 @@
 {
   "meta": {
     "title": "Services — Mellon",
-    "description": "Branding, design systems, product design, and nine other disciplines Mellon uses to take a brand from idea to shipped interface."
+    "description": "Branding, design systems, product design, and ten other disciplines Mellon uses to take a brand from idea to shipped interface."
   },
   "blocks": [
     {
       "type": "pageHero",
       "eyebrow": "Services",
-      "headline": "Twelve disciplines, one studio, no hand-offs.",
+      "headline": "Thirteen disciplines, one studio, no hand-offs.",
       "subhead": "Every service below can run alone or as part of a single end-to-end engagement — the same team either way."
     },
     {
       "type": "serviceCards",
-      "viewLink": "View service →"
+      "viewLink": "View service →",
+      "categories": [
+        {
+          "id": "brand",
+          "label": "Brand and end-to-end"
+        },
+        {
+          "id": "product-ux",
+          "label": "Product and UX"
+        },
+        {
+          "id": "web-commerce",
+          "label": "Web and commerce"
+        },
+        {
+          "id": "growth-content",
+          "label": "Growth and content"
+        }
+      ]
     },
     {
       "type": "closingCta",

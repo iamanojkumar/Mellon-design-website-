@@ -3,7 +3,7 @@
     "slug": "branding",
     "name": "Branding",
     "tagline": "Identitätssysteme, die auf jeder Fläche bestehen.",
-    "summary": "Wir entwickeln Markenidentitäten von Grund auf – Name, Zeichen, Farbe, Schrift, Tonalität – und halten sie so fest, dass jedes Team, das nach uns mit der Marke arbeitet, auf Linie bleibt, ohne nachfragen zu müssen.",
+    "summary": "Wir sind eine Branding-Agentur. Wir entwickeln Markenidentitäten von Grund auf – Name, Zeichen, Farbe, Schrift, Tonalität – und halten sie so fest, dass jedes Team, das nach uns mit der Marke arbeitet, auf Linie bleibt, ohne nachfragen zu müssen.",
     "deliverables": [
       "Markenstrategie, Positionierung und Naming",
       "Logo, Bildmarke und visuelles Identitätssystem",
@@ -15,13 +15,71 @@
       "restaurant-branding",
       "real-estate-design",
       "nonprofit-branding"
-    ]
+    ],
+    "headline": "Eine Branding-Agentur, die Identitätssysteme baut, nicht nur Logos.",
+    "metaTitle": "Branding-Agentur: Strategie und Identität – Mellon",
+    "metaDescription": "Mellon ist eine Branding-Agentur: Markenstrategie, Naming, Logo, visuelle Identität und Brand Guidelines für Ihr Team. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Analyse",
+        "text": "Wir lernen Ihr Unternehmen, Ihre Zielgruppe und Ihre Wettbewerber kennen und klären, was die Marke wem sagen soll."
+      },
+      {
+        "title": "Strategie",
+        "text": "Wir definieren Positionierung, Tonalität und die Idee, auf der die Identität aufbaut."
+      },
+      {
+        "title": "Identität",
+        "text": "Wir gestalten Name, Zeichen, Farbe, Schrift und Bildsprache und erproben sie in realen Anwendungen."
+      },
+      {
+        "title": "Guidelines",
+        "text": "Wir dokumentieren das System, damit Ihre Teams und andere Agenturen es ohne uns nutzen können."
+      },
+      {
+        "title": "Einführung",
+        "text": "Wir übertragen die Identität auf Ihre ersten Berührungspunkte, etwa Ihre Website und wichtige Materialien, und begleiten den Start."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Was macht eine Branding-Agentur?",
+        "answer": "Wir definieren, wer ein Unternehmen ist und wie es aussieht und klingt: Strategie, Name, Logo, Farbe, Schrift und die Guidelines, die alles konsistent halten."
+      },
+      {
+        "question": "Was ist der Unterschied zwischen Logo und Markenidentität?",
+        "answer": "Ein Logo ist ein einzelnes Zeichen. Eine Identität ist das ganze System darum: Farbe, Schrift, Bildsprache, Tonalität und die Regeln für ihre Anwendung."
+      },
+      {
+        "question": "Entwickeln Sie auch den Markennamen?",
+        "answer": "Ja. Naming ist Teil der Markenstrategie, wenn Sie es brauchen."
+      },
+      {
+        "question": "Können Sie ein bestehendes Unternehmen neu positionieren?",
+        "answer": "Ja. Wir beginnen damit, was die aktuelle Marke gut macht und wo sie Sie bremst, und entscheiden dann, was bleibt."
+      },
+      {
+        "question": "Was erhalten wir am Ende?",
+        "answer": "Das Identitätssystem und die Brand-Guidelines-Dokumentation, mit der Ihre Teams und andere Agenturen arbeiten können."
+      },
+      {
+        "question": "Wie berechnen Sie Branding?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufende Markenbetreuung ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "web-design",
+      "design-systems",
+      "ui-ux-design",
+      "social-media-content-marketing"
+    ],
+    "category": "brand"
   },
   {
     "slug": "design-systems",
     "name": "Designsysteme",
     "tagline": "Eine Quelle der Wahrheit für jede Komponente, jedes Token, jedes Muster.",
-    "summary": "Wir machen aus verstreuten UI-Entscheidungen ein gepflegtes System – Komponenten, Tokens und Dokumentation, mit denen Design und Entwicklung schnell und konsistent liefern, ohne über denselben Button immer wieder zu streiten.",
+    "summary": "Wir sind eine Designsystem-Agentur. Wir machen aus verstreuten UI-Entscheidungen ein verwaltetes System – Komponenten, Tokens und Dokumentation, mit denen Design und Entwicklung konsistent und schnell liefern, ohne denselben Button immer wieder neu zu verhandeln.",
     "deliverables": [
       "Token-Architektur (Farbe, Schrift, Abstände, Motion)",
       "Komponentenbibliotheken in Figma, gespiegelt im Code",
@@ -33,13 +91,71 @@
       "consumer-electronics",
       "finance-fintech",
       "education-edtech"
-    ]
+    ],
+    "headline": "Eine Designsystem-Agentur, damit Design und Entwicklung dieselben Bausteine nutzen.",
+    "metaTitle": "Designsystem-Agentur: Tokens und Komponenten – Mellon",
+    "metaDescription": "Mellon ist eine Designsystem-Agentur: Token-Architektur, Figma-Komponentenbibliotheken im Code gespiegelt, Dokumentation und Einführung. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Audit",
+        "text": "Wir erfassen Ihre bestehende UI und finden Dubletten, Inkonsistenzen und die Muster, auf die Ihr Team sich bereits stützt."
+      },
+      {
+        "title": "Grundlagen",
+        "text": "Wir definieren Tokens für Farbe, Schrift, Abstände und Bewegung, die Basis für alles Weitere."
+      },
+      {
+        "title": "Komponenten",
+        "text": "Wir gestalten die Komponentenbibliothek in Figma und spiegeln sie gemeinsam mit Ihren Entwicklern im Code."
+      },
+      {
+        "title": "Dokumentation",
+        "text": "Wir schreiben Nutzungsrichtlinien und Beitragsregeln, damit das System wachsen kann, ohne zu brechen."
+      },
+      {
+        "title": "Einführung",
+        "text": "Wir unterstützen Ihre Teams bei der Einführung und der Migration bestehender Screens."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Was ist ein Designsystem?",
+        "answer": "Eine gemeinsame Sammlung aus Design-Tokens, Komponenten und Nutzungsregeln, auf der Design und Entwicklung gleichermaßen aufbauen, damit Produkte beim Wachsen konsistent bleiben."
+      },
+      {
+        "question": "Wann braucht ein Team eines?",
+        "answer": "Wenn dieselbe Komponente immer wieder anders gebaut wird, die Übergabe Nacharbeit erzeugt oder neue Funktionen vom Rest des Produkts abweichen."
+      },
+      {
+        "question": "Bauen Sie die Komponenten auch im Code?",
+        "answer": "Wir gestalten die Bibliothek in Figma und spiegeln sie gemeinsam mit Ihren Entwicklern im Code, damit beide im Gleichschritt bleiben."
+      },
+      {
+        "question": "Können Sie von unserem bestehenden Produkt ausgehen?",
+        "answer": "Ja. Wir starten bei Ihrer aktuellen UI, behalten die Muster, die funktionieren, und führen den Rest zusammen."
+      },
+      {
+        "question": "Wie unterstützen Sie die Einführung?",
+        "answer": "Wir liefern Nutzungsdokumentation und Beitragsrichtlinien und begleiten die Einführung in Ihren Teams."
+      },
+      {
+        "question": "Wie berechnen Sie Designsysteme?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufende Arbeit ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "product-design",
+      "saas-design",
+      "ux-audit"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "ecommerce-design",
     "name": "E-Commerce-Design",
     "tagline": "Shops und Produktseiten, die konvertieren, ohne wie ein Trichter zu wirken.",
-    "summary": "Vom Stöbern im Katalog bis zum Checkout gestalten wir Shop-Erlebnisse, die an jedem Schritt Reibung abbauen – und wir setzen sie auf den Plattformen um, die Sie bereits nutzen, einschließlich Webflow und WooCommerce.",
+    "summary": "Wir sind eine E-Commerce-Design-Agentur. Vom Stöbern im Katalog bis zum Checkout gestalten wir Shop-Erlebnisse, die an jedem Schritt Reibung abbauen – und wir setzen sie auf den Plattformen um, die Sie bereits nutzen, einschließlich Webflow und WooCommerce.",
     "deliverables": [
       "UX-Audits und Conversion-Redesign für Shops",
       "Design von Produktlisten, Produktseiten und Checkout",
@@ -50,7 +166,65 @@
       "fashion-brand-design",
       "consumer-electronics",
       "restaurant-branding"
-    ]
+    ],
+    "headline": "Eine E-Commerce-Design-Agentur für Shops und Checkout-Abläufe.",
+    "metaTitle": "E-Commerce-Design-Agentur: Shops und Checkout – Mellon",
+    "metaDescription": "Mellon ist eine E-Commerce-Design-Agentur: Shop-UX, Produktseiten, Checkout-Design und Umsetzung in Webflow und WooCommerce. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Audit",
+        "text": "Wir prüfen Ihren Shop, Ihre Analytics und den Checkout und finden, wo Käufer zögern oder abspringen."
+      },
+      {
+        "title": "Struktur",
+        "text": "Wir planen Navigation, Kategorieseiten und Produktseiten danach, wie Menschen in Ihrem Sortiment einkaufen."
+      },
+      {
+        "title": "Design",
+        "text": "Wir gestalten Listenseiten, Produktseiten und den Checkout sowie Vorlagen für Aktionen."
+      },
+      {
+        "title": "Umsetzung",
+        "text": "Wir bauen in Webflow oder WooCommerce und testen den gesamten Kaufweg."
+      },
+      {
+        "title": "Launch",
+        "text": "Wir gehen live, prüfen dann, wie Käufer die neuen Abläufe nutzen, und verfeinern sie."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Auf welchen Plattformen arbeiten Sie?",
+        "answer": "Wir bauen in Webflow und WooCommerce. Nutzen Sie eine andere Plattform, gestalten wir das Erlebnis und arbeiten mit Ihren Entwicklern."
+      },
+      {
+        "question": "Können Sie unseren bestehenden Shop neu gestalten?",
+        "answer": "Ja. Wir prüfen, was vorhanden ist, behalten, was funktioniert, und gestalten die Seiten und Abläufe neu, bei denen Käufer scheitern."
+      },
+      {
+        "question": "Wie verbessern Sie die Conversion?",
+        "answer": "Wir finden heraus, wo Käufer abspringen, und gestalten diese Schritte neu, von der Produktseite bis zum Checkout."
+      },
+      {
+        "question": "Gestalten Sie auch den Checkout?",
+        "answer": "Ja. Der Checkout bekommt dieselbe Sorgfalt wie der Shop: weniger Felder, klare Fehlermeldungen und früh sichtbare Kosten."
+      },
+      {
+        "question": "Bauen Sie den Shop auch?",
+        "answer": "Ja, in Webflow und WooCommerce. Bei anderen Plattformen gestalten wir und arbeiten mit Ihren Entwicklern."
+      },
+      {
+        "question": "Wie berechnen Sie E-Commerce-Design?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufende Arbeit ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "web-design",
+      "ui-ux-design",
+      "ux-audit",
+      "branding"
+    ],
+    "category": "web-commerce"
   },
   {
     "slug": "end-to-end-design",
@@ -67,13 +241,66 @@
       "technology-saas",
       "health-wellness-tech",
       "civic-tech-design"
-    ]
+    ],
+    "metaTitle": "End-to-End-Design: von der Strategie zum Launch – Mellon",
+    "metaDescription": "Mellon verantwortet Design durchgängig: Strategie, Marke, UX, UI, Prototyping und Umsetzung in Webflow, Framer oder Code, mit einem Team. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Analyse",
+        "text": "Wir lernen Ihr Unternehmen, Ihre Nutzer und Ziele kennen und definieren, was wir bauen."
+      },
+      {
+        "title": "Strategie",
+        "text": "Wir legen die Marken- und Produktrichtung fest, der die übrige Arbeit folgt."
+      },
+      {
+        "title": "Design",
+        "text": "Wir gestalten Marke, UX-Architektur und finale UI als ein zusammenhängendes System."
+      },
+      {
+        "title": "Prototyp und Validierung",
+        "text": "Wir prototypen und testen mit Nutzern, bevor etwas gebaut wird."
+      },
+      {
+        "title": "Umsetzung und Launch",
+        "text": "Wir bauen in Webflow, Framer oder Code mit den Menschen, die es gestaltet haben, und gehen live."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Was umfasst End-to-End-Design?",
+        "answer": "Strategie, Marke, UX, UI, Prototyping und Umsetzung, durchgeführt von einem Team."
+      },
+      {
+        "question": "Warum ein Team für alle Phasen?",
+        "answer": "Zwischen den Phasen geht nichts verloren, und die Menschen, die die Designentscheidungen getroffen haben, sind bei der Umsetzung dabei."
+      },
+      {
+        "question": "Können wir mit nur einer Phase beginnen?",
+        "answer": "Ja. Jede Leistung ist einzeln buchbar, und Sie können später weitere hinzufügen."
+      },
+      {
+        "question": "Auf welchen Plattformen bauen Sie?",
+        "answer": "In Webflow, Framer oder mit individuellem Code, passend dazu, wie Ihr Team die Website oder das Produkt betreibt."
+      },
+      {
+        "question": "Wie berechnen Sie End-to-End-Design?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufende Arbeit ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "web-design",
+      "product-design"
+    ],
+    "category": "brand"
   },
   {
     "slug": "mobile-app-design",
     "name": "Mobile-App-Design",
     "tagline": "Apps, die sich nativ anfühlen – für die Plattformen, die Menschen wirklich nutzen.",
-    "summary": "Wir gestalten iOS- und Android-Erlebnisse, die Plattformkonventionen respektieren und dennoch unverkennbar zur Marke passen – vom Onboarding bis zu den Screens, die täglich geöffnet werden.",
+    "summary": "Wir sind eine Mobile-App-Design-Agentur. Wir gestalten iOS- und Android-Erlebnisse, die Plattformkonventionen respektieren und dennoch unverkennbar zur Marke passen – vom Onboarding bis zu den Screens, die täglich geöffnet werden.",
     "deliverables": [
       "Informationsarchitektur und User Flows",
       "iOS- und Android-UI-Design, plattformgerecht",
@@ -84,13 +311,71 @@
       "health-wellness-tech",
       "consumer-electronics",
       "media-entertainment-gaming"
-    ]
+    ],
+    "headline": "Eine Mobile-App-Design-Agentur für iOS und Android.",
+    "metaTitle": "Mobile-App-Design-Agentur: iOS und Android – Mellon",
+    "metaDescription": "Mellon ist eine Mobile-App-Design-Agentur: User Flows, iOS- und Android-UI, Interaktionsspezifikationen und Design-QA. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Analyse",
+        "text": "Wir klären, für wen die App ist, was diese Menschen darin tun und was sie für Ihr Unternehmen leisten muss."
+      },
+      {
+        "title": "Flows",
+        "text": "Wir bilden User Flows und Navigation ab, beginnend mit dem Onboarding und den täglich genutzten Screens."
+      },
+      {
+        "title": "Interface",
+        "text": "Wir gestalten iOS- und Android-Screens, die den Konventionen der jeweiligen Plattform und Ihrer Marke folgen."
+      },
+      {
+        "title": "Prototyp",
+        "text": "Wir bauen interaktive Prototypen und testen sie auf echten Geräten."
+      },
+      {
+        "title": "Übergabe",
+        "text": "Wir spezifizieren Interaktionen und Animationen, übergeben an Ihre Entwickler und prüfen die Umsetzung in der Design-QA."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Gestalten Sie für iOS und Android?",
+        "answer": "Ja. Wir gestalten nach den Konventionen jeder Plattform, sodass sich die App auf beiden nativ anfühlt und zu Ihrer Marke passt."
+      },
+      {
+        "question": "Bauen Sie die App auch?",
+        "answer": "Wir gestalten die App und übergeben an Ihre Entwickler, anschließend prüfen wir die Umsetzung in der Design-QA."
+      },
+      {
+        "question": "Können Sie eine bestehende App neu gestalten?",
+        "answer": "Ja. Wir finden heraus, wo Nutzer abspringen, gestalten diese Abläufe zuerst neu und behalten, was bereits funktioniert."
+      },
+      {
+        "question": "Gestalten Sie auch das Onboarding?",
+        "answer": "Ja. Das Onboarding gehört zu den ersten Flows, die wir gestalten, denn es entscheidet, ob Menschen die Screens erreichen, die sie täglich nutzen werden."
+      },
+      {
+        "question": "Was erhalten wir am Ende?",
+        "answer": "Hochauflösende Screens, einen interaktiven Prototyp, Spezifikationen für Interaktionen und Animationen und eine Komponentenbibliothek in Figma."
+      },
+      {
+        "question": "Wie berechnen Sie Mobile-App-Design?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufendes Design ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "product-design",
+      "motion-interaction-design",
+      "ux-audit"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "motion-interaction-design",
     "name": "Motion- und Interaction-Design",
     "tagline": "Bewegung, die das Interface erklärt, statt es zu dekorieren.",
-    "summary": "Jeder Übergang, jeder Hover-Zustand und jeder Ladeaugenblick ist eine Chance, ein Produkt durchdachter wirken zu lassen. Wir gestalten Motion-Systeme, die Hierarchie klären und Interfaces einen Puls geben.",
+    "summary": "Wir sind ein Motion- und Interaction-Design-Studio. Jeder Übergang, jeder Hover-Zustand und jeder Ladeaugenblick ist eine Chance, ein Produkt durchdachter wirken zu lassen. Wir gestalten Bewegungssysteme, die Hierarchie klären und Interfaces einen Puls geben.",
     "deliverables": [
       "Motion-Prinzipien sowie Timing- und Easing-Systeme",
       "Design von Mikrointeraktionen und Übergängen",
@@ -101,13 +386,71 @@
       "media-entertainment-gaming",
       "consumer-electronics",
       "technology-saas"
-    ]
+    ],
+    "headline": "Ein Motion- und Interaction-Design-Studio für Produktoberflächen.",
+    "metaTitle": "Motion- und Interaction-Design-Studio – Mellon",
+    "metaDescription": "Mellon ist ein Motion- und Interaction-Design-Studio: Timing- und Easing-Systeme, Mikrointeraktionen, Framer-Prototypen, Dev-Specs. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Prüfung",
+        "text": "Wir finden, wo Bewegung das Interface klärt und wo sie nur ablenken würde."
+      },
+      {
+        "title": "Prinzipien",
+        "text": "Wir legen Bewegungsprinzipien, Timing und Easing fest, die zu Ihrer Marke passen."
+      },
+      {
+        "title": "Design",
+        "text": "Wir gestalten Übergänge, Mikrointeraktionen und Ladeaugenblicke."
+      },
+      {
+        "title": "Prototyp",
+        "text": "Wir bauen Prototypen in Framer, damit Stakeholder die Bewegung erleben können."
+      },
+      {
+        "title": "Specs",
+        "text": "Wir übergeben der Entwicklung Specs für Easing, Dauer und Trigger."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Was ist Interaction Design?",
+        "answer": "Die Gestaltung dessen, wie ein Interface auf Menschen reagiert: Übergänge, Hover-Zustände, Rückmeldungen und Ladeaugenblicke."
+      },
+      {
+        "question": "Gestalten Sie auch für reduzierte Bewegung?",
+        "answer": "Ja. Wir berücksichtigen die Einstellung für reduzierte Bewegung, damit das Interface auch ohne Animation funktioniert."
+      },
+      {
+        "question": "Setzen Sie die Bewegung im Code um?",
+        "answer": "Wir prototypen in Framer und übergeben der Entwicklung Specs für Easing, Dauer und Trigger. Ihre Entwickler setzen nach diesen Specs um."
+      },
+      {
+        "question": "Produzieren Sie Erklärvideos?",
+        "answer": "Unsere Arbeit ist Bewegung in Produktoberflächen und Websites, keine Videoproduktion."
+      },
+      {
+        "question": "Können Sie Bewegung zu einem bestehenden Produkt hinzufügen?",
+        "answer": "Ja. Wir prüfen das Produkt, wählen aus, wo Bewegung hilft, und gestalten sie passend zum Bestehenden."
+      },
+      {
+        "question": "Wie berechnen Sie Motion- und Interaction-Design?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufende Arbeit ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "web-design",
+      "mobile-app-design",
+      "design-systems"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "product-design",
     "name": "Produktdesign",
     "tagline": "Digitale Produkte, gestaltet nach der Art, wie Menschen wirklich arbeiten.",
-    "summary": "Wir arbeiten eng mit Produkt- und Entwicklungsteams und gestalten Software, die einfach ist, wo sie einfach sein soll, und leistungsstark, wo es nötig ist – auf Basis echter Nutzerforschung statt Vermutungen.",
+    "summary": "Wir sind ein Produktdesign-Studio. Wir arbeiten eng mit Produkt- und Entwicklungsteams und gestalten Software, die einfach ist, wo sie einfach sein soll, und leistungsstark, wo es nötig ist – auf Basis echter Nutzerforschung statt Vermutungen.",
     "deliverables": [
       "Nutzerforschung und Journey-Mapping",
       "Informationsarchitektur und Flow-Design",
@@ -119,13 +462,71 @@
       "finance-fintech",
       "civic-tech-design",
       "health-wellness-tech"
-    ]
+    ],
+    "headline": "Ein Produktdesign-Studio, das im Team mitarbeitet.",
+    "metaTitle": "Produktdesign-Studio: von Forschung bis UI – Mellon",
+    "metaDescription": "Mellon ist ein Produktdesign-Studio: Nutzerforschung, Flows, UI für Web und App und Usability-Tests im Team. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Verstehen",
+        "text": "Wir lernen Produkt, Markt und Nutzer kennen und klären, welches Problem zuerst gelöst werden sollte."
+      },
+      {
+        "title": "Definieren",
+        "text": "Wir machen aus der Forschung ein klares Briefing: für wen es ist, welche Flows zentral sind und woran sich Erfolg misst."
+      },
+      {
+        "title": "Gestalten",
+        "text": "Wir gestalten Flows und Screens und arbeiten dabei offen mit Ihrem Produkt- und Entwicklungsteam."
+      },
+      {
+        "title": "Validieren",
+        "text": "Wir testen mit Nutzern und verfeinern anhand dessen, was wir sehen."
+      },
+      {
+        "title": "Ausliefern",
+        "text": "Wir bleiben bis zur Übergabe und Design-QA dabei, damit das Ausgelieferte dem Gestalteten entspricht."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Was macht ein Produktdesign-Studio?",
+        "answer": "Wir gestalten Softwareprodukte von Anfang bis Ende: Forschung, Flows, Interface und Tests, im Takt mit Ihrem Produkt- und Entwicklungsteam."
+      },
+      {
+        "question": "Wie unterscheidet sich Produktdesign von UI/UX-Design?",
+        "answer": "UI/UX-Design umfasst das Interface und seine Abläufe. Produktdesign beginnt früher, beim Problem und der Richtung des Produkts, und reicht bis zur ausgelieferten Software."
+      },
+      {
+        "question": "Können Sie in unserem Team mitarbeiten?",
+        "answer": "Ja. Wir arbeiten an der Seite Ihrer Product Manager und Entwickler, in Ihren Tools und Ihrem Planungsrhythmus."
+      },
+      {
+        "question": "Arbeiten Sie an neuen oder an bestehenden Produkten?",
+        "answer": "An beidem. Wir gestalten neue Produkte ab dem ersten Konzept und verbessern bestehende dort, wo Nutzer Schwierigkeiten haben."
+      },
+      {
+        "question": "Wie arbeiten Sie mit der Entwicklung zusammen?",
+        "answer": "Über gemeinsame Figma-Dateien, eine Komponentenbibliothek und Design-QA der Umsetzung."
+      },
+      {
+        "question": "Wie berechnen Sie Produktdesign?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, kontinuierliches Produktdesign ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "saas-design",
+      "mobile-app-design",
+      "design-systems"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "saas-design",
     "name": "SaaS-Design",
     "tagline": "Interfaces für Produkte, die mit ihrem Erfolg immer komplexer werden.",
-    "summary": "SaaS-Produkte sammeln schnell Komplexität an. Wir gestalten Dashboards, Einstellungen und Workflows, die auch im großen Maßstab lesbar bleiben, und bauen die Komponentensysteme, die verhindern, dass neue Funktionen das Ganze aushöhlen.",
+    "summary": "Wir sind eine SaaS-Design-Agentur. SaaS-Produkte sammeln schnell Komplexität an. Wir gestalten Dashboards, Einstellungen und Abläufe, die im großen Maßstab lesbar bleiben, und bauen die Komponentensysteme, die verhindern, dass neue Funktionen das Ganze aushöhlen.",
     "deliverables": [
       "Design von Dashboards und datenintensiven UIs",
       "Design von Onboarding- und Aktivierungs-Flows",
@@ -136,7 +537,65 @@
       "technology-saas",
       "finance-fintech",
       "education-edtech"
-    ]
+    ],
+    "headline": "Eine SaaS-Design-Agentur für Produkte, die immer komplexer werden.",
+    "metaTitle": "SaaS-Design-Agentur: Produkt-UI und Systeme – Mellon",
+    "metaDescription": "Mellon ist eine SaaS-Design-Agentur: Dashboards, Onboarding, Einstellungen und Berechtigungen sowie die Komponentensysteme dahinter. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Analyse",
+        "text": "Wir lernen Ihre Nutzer, die wichtigsten Abläufe Ihres Produkts und die Stellen kennen, an denen Komplexität die Nutzung bremst."
+      },
+      {
+        "title": "Prioritäten",
+        "text": "Wir ordnen Probleme nach ihrer Wirkung auf Aktivierung und Bindung und legen fest, was zuerst gestaltet wird."
+      },
+      {
+        "title": "Design",
+        "text": "Wir gestalten Dashboards, Onboarding, Einstellungen und Abläufe als Komponenten, die mitwachsen können."
+      },
+      {
+        "title": "Validierung",
+        "text": "Wir testen mit Nutzern und verfeinern anschließend."
+      },
+      {
+        "title": "Systematisierung",
+        "text": "Wir dokumentieren Komponenten und Regeln, damit neue Funktionen auch nach uns konsistent bleiben."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Was macht eine SaaS-Design-Agentur?",
+        "answer": "Wir gestalten die Oberfläche von Softwareprodukten: Dashboards, Onboarding, Einstellungen und Abläufe, dazu das Komponentensystem dahinter."
+      },
+      {
+        "question": "Gestalten Sie Dashboards und datenlastige Screens?",
+        "answer": "Ja. Dashboards, Tabellen und Berichtsansichten sind ein zentraler Teil unserer SaaS-Arbeit."
+      },
+      {
+        "question": "Können Sie unser bestehendes Produkt neu gestalten?",
+        "answer": "Ja. Wir prüfen, was vorhanden ist, finden heraus, wo Nutzer scheitern, und gestalten diese Bereiche zuerst neu."
+      },
+      {
+        "question": "Können Sie nur einen Teil des Produkts gestalten?",
+        "answer": "Ja. Wir können mit einem Bereich beginnen, etwa dem Onboarding oder dem Haupt-Dashboard, und von dort ausbauen."
+      },
+      {
+        "question": "Wie arbeiten Sie mit unseren Entwicklern zusammen?",
+        "answer": "Über gemeinsame Figma-Dateien und eine Komponentenbibliothek, mit Design-QA der Umsetzung."
+      },
+      {
+        "question": "Wie berechnen Sie SaaS-Design?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufende Arbeit ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "product-design",
+      "ui-ux-design",
+      "design-systems",
+      "ux-audit"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "seo-content-strategy",
@@ -154,7 +613,64 @@
       "ecommerce",
       "real-estate-design",
       "hospitality-design"
-    ]
+    ],
+    "metaTitle": "SEO und Content-Strategie – Mellon",
+    "metaDescription": "Mellon plant SEO und Content-Strategie: Keyword-Recherche, On-Page-Struktur, Contentplanung und technische Audits, in Ihre Website eingebaut. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Recherche",
+        "text": "Wir recherchieren, wonach Ihre Käufer suchen und welche Seiten dafür bereits ranken."
+      },
+      {
+        "title": "Struktur",
+        "text": "Wir planen Seitenstruktur und Seitenziele entlang dieser Begriffe."
+      },
+      {
+        "title": "On-Page",
+        "text": "Wir legen Metadaten, Schema und Inhaltsstruktur für jede Seite fest."
+      },
+      {
+        "title": "Plan",
+        "text": "Wir erstellen die Content-Strategie und einen Redaktionskalender."
+      },
+      {
+        "title": "Audit",
+        "text": "Wir prüfen Ladezeit, Crawlbarkeit und Indexierung und besprechen die Ergebnisse mit Ihnen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Bieten Sie SEO als eigenständige Leistung an?",
+        "answer": "Ja. SEO und Content-Strategie können eigenständig oder Teil eines Website-Projekts sein."
+      },
+      {
+        "question": "Was umfasst technisches SEO?",
+        "answer": "Ein technisches Audit von Ladezeit, Crawlbarkeit und Indexierung."
+      },
+      {
+        "question": "Schreiben Sie die Inhalte auch?",
+        "answer": "Wir legen die Strategie und den Redaktionskalender fest. Ob wir die Inhalte auch schreiben, klären wir bei der Projektdefinition."
+      },
+      {
+        "question": "Wie lange dauert es, bis SEO wirkt?",
+        "answer": "SEO baut sich schrittweise auf und hängt von Wettbewerb und Ausgangslage der Website ab, deshalb versprechen wir keine Termine oder Rankings."
+      },
+      {
+        "question": "Ist SEO Teil eines Website-Projekts?",
+        "answer": "Ja. Unsere Website-Projekte enthalten SEO-Grundlagen wie Struktur, Metadaten und Weiterleitungen."
+      },
+      {
+        "question": "Wie berechnen Sie SEO und Content-Strategie?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufende Arbeit ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "web-design",
+      "ux-audit",
+      "social-media-content-marketing",
+      "branding"
+    ],
+    "category": "growth-content"
   },
   {
     "slug": "social-media-content-marketing",
@@ -172,13 +688,66 @@
       "restaurant-branding",
       "media-entertainment-gaming",
       "consumer-electronics"
-    ]
+    ],
+    "metaTitle": "Design für Social Media und Content-Marketing – Mellon",
+    "metaDescription": "Mellon gestaltet das System hinter Ihrer Social-Präsenz: Templates, Kampagnen-Creative, Redaktionsplan und Richtlinien. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Prüfung",
+        "text": "Wir prüfen Ihre Marke und Ihre aktuelle Social-Präsenz."
+      },
+      {
+        "title": "System",
+        "text": "Wir gestalten Templates und ein visuelles System für jede Plattform."
+      },
+      {
+        "title": "Kampagnen",
+        "text": "Wir erstellen Kampagnen- und Launch-Creative."
+      },
+      {
+        "title": "Rhythmus",
+        "text": "Wir planen Redaktionskalender und Veröffentlichungsrhythmus."
+      },
+      {
+        "title": "Richtlinien",
+        "text": "Wir schreiben Text- und Caption-Richtlinien, damit die Tonalität konsistent bleibt."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Betreuen Sie unsere Social-Media-Konten?",
+        "answer": "Wir gestalten das visuelle System, das Kampagnen-Creative und den Contentplan. Das tägliche Veröffentlichen bleibt bei Ihrem Team, sofern wir nichts anderes vereinbaren."
+      },
+      {
+        "question": "Für welche Plattformen gestalten Sie?",
+        "answer": "Für jede Plattform, die Sie nutzen, mit passend dimensionierten und gestalteten Templates."
+      },
+      {
+        "question": "Schalten Sie bezahlte Anzeigen?",
+        "answer": "Unsere Arbeit ist das Creative und das Content-System, kein Mediaeinkauf."
+      },
+      {
+        "question": "Passt der Content zu unserer Marke?",
+        "answer": "Ja. Templates und Richtlinien entstehen aus Ihrer Markenidentität. Haben Sie noch keine, kann unser Branding sie zuerst entwickeln."
+      },
+      {
+        "question": "Wie berechnen Sie Social Media und Content-Marketing?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufende Arbeit ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "branding",
+      "seo-content-strategy",
+      "motion-interaction-design",
+      "web-design"
+    ],
+    "category": "growth-content"
   },
   {
     "slug": "ui-ux-design",
     "name": "UI/UX-Design",
     "tagline": "Das Kernhandwerk – Recherche, Struktur und Umsetzung bis ins Pixel.",
-    "summary": "Das ist der Alltag des Studios: Nutzer verstehen, Abläufe strukturieren und Interfaces mit jener typografischen und visuellen Sorgfalt gestalten, die ein Produkt von einem Prototyp unterscheidet.",
+    "summary": "Wir sind eine UI/UX-Design-Agentur: Wir verstehen Ihre Nutzer, strukturieren die Abläufe und gestalten Interfaces mit der typografischen und visuellen Sorgfalt, die ein Produkt von einem Prototyp unterscheidet.",
     "deliverables": [
       "Nutzerforschung, Personas und Journey-Mapping",
       "Wireframing und Informationsarchitektur",
@@ -190,13 +759,71 @@
       "real-estate-design",
       "hospitality-design",
       "legal-branding"
-    ]
+    ],
+    "headline": "Eine UI/UX-Design-Agentur für Teams, die digitale Produkte bauen.",
+    "metaTitle": "UI/UX-Design-Agentur – Mellon",
+    "metaDescription": "Mellon ist eine UI/UX-Design-Agentur: Nutzerforschung, Wireframes, Interface-Design und interaktive Prototypen. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Recherche",
+        "text": "Wir sprechen mit Ihren Nutzern und prüfen, wie das Produkt heute verwendet wird, damit Designentscheidungen auf Belegen beruhen."
+      },
+      {
+        "title": "Struktur",
+        "text": "Wir bilden User Flows und Informationsarchitektur ab und skizzieren Wireframes, um das Layout vor dem visuellen Design zu klären."
+      },
+      {
+        "title": "Interface-Design",
+        "text": "Wir gestalten hochauflösende Screens mit einem durchgängigen System aus Schrift, Farbe und Komponenten."
+      },
+      {
+        "title": "Prototyp und Test",
+        "text": "Wir bauen interaktive Prototypen, testen sie mit echten Nutzern und beheben, was die Tests zeigen."
+      },
+      {
+        "title": "Übergabe",
+        "text": "Wir übergeben der Entwicklung annotierte Designs und eine Komponentenbibliothek und prüfen anschließend die Umsetzung gegen das Design."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Was ist der Unterschied zwischen UI- und UX-Design?",
+        "answer": "UX-Design bestimmt, wie ein Produkt funktioniert: Abläufe, Struktur und Aufgaben. UI-Design bestimmt, wie es aussieht und reagiert: Layout, Schrift, Farbe und Komponenten. Wir machen beides, sodass ein Team das Ergebnis verantwortet."
+      },
+      {
+        "question": "Führen Sie Nutzerforschung durch?",
+        "answer": "Ja. Forschung gehört zum Prozess, von Nutzerinterviews bis zu Usability-Tests, und ihr Umfang richtet sich nach Ihrem Projekt."
+      },
+      {
+        "question": "Können Sie unser bestehendes Produkt neu gestalten?",
+        "answer": "Ja. Wir prüfen, was vorhanden ist, finden heraus, wo Nutzer scheitern, und gestalten diese Abläufe zuerst neu, damit Sie nicht von vorn beginnen müssen."
+      },
+      {
+        "question": "Was erhalten wir am Ende?",
+        "answer": "Annotierte, hochauflösende Designs, einen interaktiven Prototyp und eine Komponentenbibliothek in Figma, bereit für Ihre Entwickler."
+      },
+      {
+        "question": "Können Sie mit unserem Entwicklungsteam zusammenarbeiten?",
+        "answer": "Ja. Wir übergeben über gemeinsame Dateien und eine Komponentenbibliothek und prüfen die Umsetzung gegen das Design."
+      },
+      {
+        "question": "Wie berechnen Sie UI/UX-Design?",
+        "answer": "Klar umrissene Arbeit ist ein Festpreis, laufendes Design ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "ux-audit",
+      "product-design",
+      "design-systems",
+      "web-design"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "ux-audit",
     "name": "UX-Audit",
     "tagline": "Ein klarer Blick darauf, was Sie Conversions und Vertrauen kostet.",
-    "summary": "Bevor wir etwas neu gestalten, sagen wir Ihnen, was tatsächlich nicht funktioniert – eine strukturierte, heuristische Prüfung Ihres bestehenden Produkts mit priorisierten, umsetzbaren Empfehlungen statt bloßer Meinungen.",
+    "summary": "Wir bieten UX-Audits für Produkte, die vor einem Redesign Antworten brauchen. Wir sagen Ihnen, was tatsächlich nicht funktioniert – eine strukturierte, heuristikbasierte Prüfung Ihres bestehenden Produkts mit priorisierten, umsetzbaren Korrekturen statt einer Liste von Meinungen.",
     "deliverables": [
       "Heuristische Bewertung nach Usability-Prinzipien",
       "Analyse von Reibungspunkten in Funnel und Abläufen",
@@ -207,6 +834,142 @@
       "finance-fintech",
       "ecommerce",
       "technology-saas"
-    ]
+    ],
+    "headline": "UX-Audit-Leistungen, die zeigen, was Sie Conversions und Vertrauen kostet.",
+    "metaTitle": "UX-Audit: Ergebnisse, mit denen Sie arbeiten können – Mellon",
+    "metaDescription": "Mellons UX-Audit: heuristische Evaluation, Analyse von Reibung im Funnel, Accessibility-Checks und ein priorisierter Bericht mit Korrekturen. Angebot anfragen.",
+    "process": [
+      {
+        "title": "Umfang",
+        "text": "Wir klären, welche Abläufe, Nutzergruppen und Ziele das Audit abdeckt."
+      },
+      {
+        "title": "Prüfung",
+        "text": "Wir bewerten diese Abläufe anhand etablierter Usability-Heuristiken und prüfen Ihre Analytics, sofern verfügbar."
+      },
+      {
+        "title": "Checks",
+        "text": "Wir führen Stichproben zu Barrierefreiheit und Performance durch."
+      },
+      {
+        "title": "Priorisierung",
+        "text": "Wir ordnen jede Erkenntnis nach Wirkung und Aufwand."
+      },
+      {
+        "title": "Bericht",
+        "text": "Wir liefern einen priorisierten Bericht mit empfohlenen Korrekturen und gehen ihn mit Ihrem Team durch."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Was ist ein UX-Audit?",
+        "answer": "Eine strukturierte Prüfung eines bestehenden Produkts anhand von Usability-Prinzipien, die zeigt, wo Nutzer scheitern, und die Korrekturen priorisiert."
+      },
+      {
+        "question": "Was erhalten wir am Ende?",
+        "answer": "Einen priorisierten Ergebnisbericht mit empfohlenen Korrekturen."
+      },
+      {
+        "question": "Brauchen Sie Zugriff auf unsere Analytics?",
+        "answer": "Es hilft. Wir nutzen Analytics, wo Sie sie teilen können, und prüfen die Abläufe in jedem Fall direkt."
+      },
+      {
+        "question": "Beheben Sie die Probleme auch?",
+        "answer": "Auf Wunsch ja. Das Audit liefert Ihnen einen priorisierten Plan, und wir können die Korrekturen gestalten oder den Plan an Ihr Team übergeben."
+      },
+      {
+        "question": "Ist Barrierefreiheit enthalten?",
+        "answer": "Stichproben zu Barrierefreiheit und Performance sind enthalten. Ein vollständiges Accessibility-Audit ist ein eigener Umfang."
+      },
+      {
+        "question": "Wie berechnen Sie ein UX-Audit?",
+        "answer": "Ein UX-Audit ist ein Festpreis, abgestimmt auf die abgedeckten Abläufe. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "product-design",
+      "ecommerce-design",
+      "web-design"
+    ],
+    "category": "product-ux"
+  },
+  {
+    "slug": "web-design",
+    "name": "Webdesign",
+    "headline": "Eine Webdesign-Agentur, die Websites auch umsetzt.",
+    "tagline": "Websites, die dasselbe Team gestaltet und baut.",
+    "summary": "Wir gestalten Websites entlang dessen, was Ihre Besucher erreichen wollen, und setzen sie in Webflow, Framer, WordPress oder mit individuellem Code um – durch die Menschen, die die Designentscheidungen getroffen haben, damit zwischen Entwurf und Launch nichts verloren geht.",
+    "metaTitle": "Webdesign-Agentur: Design und Umsetzung – Mellon",
+    "metaDescription": "Mellon gestaltet und baut Websites in Webflow, Framer, WordPress oder mit Code: UX, UI, Seitenstruktur, SEO-Grundlagen. Angebot anfragen.",
+    "deliverables": [
+      "Seitenstruktur, Sitemap und Content-Planung",
+      "UX- und UI-Design für alle wichtigen Seiten und Templates",
+      "Responsive, wiederverwendbare Komponenten",
+      "Umsetzung in Webflow, Framer, WordPress oder mit individuellem Code",
+      "SEO-Grundlagen: saubere Struktur, Metadaten, Weiterleitungen und Ladezeit",
+      "Launch-Begleitung und Übergabedokumentation"
+    ],
+    "process": [
+      {
+        "title": "Analyse",
+        "text": "Wir klären, wer Ihre Website besucht, was diese Menschen erledigen wollen und was die Seite für Ihr Unternehmen leisten muss."
+      },
+      {
+        "title": "Struktur",
+        "text": "Wir leiten daraus Sitemap und Seitenstruktur ab und planen, welche Inhalte jede Seite braucht."
+      },
+      {
+        "title": "Design",
+        "text": "Wir gestalten die wichtigsten Seiten und Templates in Figma und verfeinern sie mit Ihrem Feedback."
+      },
+      {
+        "title": "Umsetzung",
+        "text": "Wir bauen in Webflow, Framer, WordPress oder mit individuellem Code – je nachdem, wie Ihr Team die Website pflegt."
+      },
+      {
+        "title": "Launch",
+        "text": "Wir testen auf allen Geräten, richten Weiterleitungen und Metadaten ein, gehen live und übergeben eine Dokumentation, mit der Ihr Team die Website betreibt."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Gestalten und bauen Sie die Website?",
+        "answer": "Ja. Dasselbe Team übernimmt beides, in Webflow, Framer, WordPress oder mit individuellem Code, damit zwischen Design und Umsetzung nichts verloren geht."
+      },
+      {
+        "question": "Welche Plattform sollen wir nutzen?",
+        "answer": "Das hängt davon ab, wer die Website pflegt und was sie leisten muss. Nach der Analyse empfehlen wir eine Plattform und erklären, warum."
+      },
+      {
+        "question": "Können Sie unsere bestehende Website neu gestalten?",
+        "answer": "Ja. Wir prüfen, was vorhanden ist, behalten, was funktioniert, und gestalten neu, was Ihre Besucher ausbremst – inklusive Weiterleitungen, damit alte URLs auf die richtigen neuen Seiten führen."
+      },
+      {
+        "question": "Ist die Website für Suchmaschinen optimiert?",
+        "answer": "Wir legen die Grundlagen: saubere Struktur, Metadaten, schnelle Seiten und Weiterleitungen. Laufende SEO ist ein eigener Service, SEO & Content-Strategie."
+      },
+      {
+        "question": "Wie lange dauert ein Website-Projekt?",
+        "answer": "Das hängt von der Zahl der Seiten und Templates ab und davon, wie schnell Feedback kommt. Einen Zeitplan nennen wir mit dem Angebot."
+      },
+      {
+        "question": "Was kostet eine Website?",
+        "answer": "Klar umrissene Websites sind ein Festpreis, laufende Anpassungen ein monatlicher Retainer. Wir klären das nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "ecommerce",
+      "real-estate-design",
+      "education-edtech"
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "ecommerce-design",
+      "branding",
+      "seo-content-strategy"
+    ],
+    "category": "web-commerce"
   }
 ]

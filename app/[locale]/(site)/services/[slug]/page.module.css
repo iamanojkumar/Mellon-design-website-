@@ -117,3 +117,69 @@
     grid-template-columns: 2fr 1fr;
   }
 }
+
+.tinted {
+  background: var(--color-paper-tint);
+  border-block: 1px solid var(--color-border);
+}
+
+.bodyCompact {
+  padding-block: 0 var(--space-2xl);
+}
+
+.steps {
+  display: grid;
+  gap: var(--space-sm);
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+
+.step {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--color-bg);
+  font-size: var(--fs-300);
+  color: var(--color-fg-muted);
+  counter-increment: step;
+}
+
+.stepTitle {
+  font-family: var(--font-body);
+  font-size: var(--fs-300);
+  font-weight: 600;
+  color: var(--color-fg);
+  margin-bottom: var(--space-2xs);
+}
+
+.stepTitle::before {
+  content: counter(step) ". ";
+  color: var(--color-fg-muted);
+}
+
+.faq {
+  max-width: 62rem;
+}
+
+.faqItem {
+  padding: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faqItem:last-child {
+  border-bottom: 0;
+}
+
+.faqQuestion {
+  cursor: pointer;
+  font-size: var(--fs-300);
+  font-weight: 600;
+}
+
+.faqAnswer {
+  margin-top: var(--space-xs);
+  color: var(--color-fg-muted);
+  max-width: 62ch;
+}

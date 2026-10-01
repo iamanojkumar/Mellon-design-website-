@@ -1,6 +1,6 @@
 # Mellon Website — Project Scope
 
-Status: en-US build scaffolded (Home, Services x10, Industries x16, About, Contact — see repo). This document is the source of truth for what the site is, how it's built, and what's still undecided. Update it as decisions are made — don't let the repo drift from this.
+Status: en-US build scaffolded (Home, Services x13, Industries x16, About, Contact — see repo). This document is the source of truth for what the site is, how it's built, and what's still undecided. Update it as decisions are made — don't let the repo drift from this.
 
 ## 1. What this is
 
@@ -226,3 +226,20 @@ without a locale redirect) so an editor can add/edit/delete case studies without
   the site owner, not yet provisioned). Any future public page that lists or links projects must
   filter strictly by the visitor's locale and render its own "no projects yet" empty state when
   that locale has none — there is no fallback to another locale's projects.
+
+## 12. Content architecture: hubs, spokes and landing pages (decided 2026-10-01)
+
+Goal order: **traffic → engagement → conversion.** Detail and keyword data live in `docs/services.md`, `docs/pricing.md` and `docs/keyword-research/`.
+
+| Page type | Linked from | Job |
+|---|---|---|
+| **Hub**: a service page (`/services/<slug>`) | Nav, footer, home | Ranks for the buying phrases ("web design company", "ui ux design agency") |
+| **Spoke**: a supporting guide (not built yet) | Its hub and sibling spokes only; never nav or footer | Topical depth for informational searches; authority flows to the hub |
+| **Landing page** (`(landing-pages)`) | Nothing | Narrow or campaign searches (city and service combinations, lead magnets) |
+
+- Spokes are *not* orphans: they link up to the hub and across to siblings, and the hub lists them. Authority only flows through links. Landing pages stay orphaned by rule.
+- Spokes will be a content type (`content/<locale>/topics/*.json`) that reuses the page blocks, so a new spoke is one JSON file. Hub "related guides" and sibling links are generated from each spoke's declared hub.
+- Spokes exist only in locales where demand exists; the Demand and thin-content rules apply to each.
+- Rollout is phased: core pages first, then a five-spoke pilot under UI/UX Design, then Search Console data (8–12 weeks) decides whether to scale.
+- Add **Web Design** as a core service; reclassify End-to-End Design as an engagement model; group services into four categories.
+- Pricing is internal and never advertised. The pricing analysis lives outside version control (this repo is public).

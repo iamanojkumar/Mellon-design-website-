@@ -67,6 +67,11 @@ export const copy: Record<string, ServiceLandingCopy> = {
         },
       ],
     },
+    related: {
+      text: "Want the full picture?",
+      label: "See our design systems service.",
+      href: "/services/design-systems",
+    },
     partner: {
       heading: "How we work with your team.",
       items: [

@@ -3,7 +3,7 @@
     "slug": "branding",
     "name": "Branding",
     "tagline": "Identiteitssystemen die op elk oppervlak standhouden.",
-    "summary": "We bouwen merkidentiteiten van de grond af (naam, beeldmerk, kleur, lettertype, tone of voice) en leggen ze zo vast dat elk team dat na ons met het merk werkt, op koers blijft zonder te hoeven vragen.",
+    "summary": "We zijn een brandingbureau. We bouwen merkidentiteiten van de grond af (naam, beeldmerk, kleur, lettertype, tone of voice) en leggen ze zo vast dat elk team dat na ons met het merk werkt, op koers blijft zonder te hoeven vragen.",
     "deliverables": [
       "Merkstrategie, positionering en naamgeving",
       "Logo, beeldmerk en visueel identiteitssysteem",
@@ -15,13 +15,71 @@
       "restaurant-branding",
       "real-estate-design",
       "nonprofit-branding"
-    ]
+    ],
+    "headline": "Een brandingbureau dat identiteitssystemen bouwt, niet alleen logo's.",
+    "metaTitle": "Brandingbureau: strategie en identiteit – Mellon",
+    "metaDescription": "Mellon is een brandingbureau: merkstrategie, naamgeving, logo, visuele identiteit en richtlijnen voor je team. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Ontdekken",
+        "text": "We leren je bedrijf, doelgroep en concurrenten kennen en spreken af wat het merk tegen wie moet zeggen."
+      },
+      {
+        "title": "Strategie",
+        "text": "We bepalen de positionering, de tone of voice en het idee waarop de identiteit rust."
+      },
+      {
+        "title": "Identiteit",
+        "text": "We ontwerpen de naam, het beeldmerk, de kleur, het lettertype en de beeldtaal en toetsen ze in echte toepassingen."
+      },
+      {
+        "title": "Richtlijnen",
+        "text": "We leggen het systeem vast, zodat je teams en andere bureaus het zonder ons kunnen gebruiken."
+      },
+      {
+        "title": "Uitrol",
+        "text": "We passen de identiteit toe op je eerste contactpunten, zoals je website en belangrijke materialen, en ondersteunen de lancering."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat doet een brandingbureau?",
+        "answer": "We bepalen wie een bedrijf is en hoe het eruitziet en klinkt: strategie, naam, logo, kleur, lettertype en de richtlijnen die alles consistent houden."
+      },
+      {
+        "question": "Wat is het verschil tussen een logo en een merkidentiteit?",
+        "answer": "Een logo is één beeldmerk. Een identiteit is het hele systeem eromheen: kleur, lettertype, beeldtaal, tone of voice en de regels om ze te gebruiken."
+      },
+      {
+        "question": "Bedenken jullie ook de merknaam?",
+        "answer": "Ja. Naamgeving hoort bij merkstrategie als je die nodig hebt."
+      },
+      {
+        "question": "Kunnen jullie een bestaand bedrijf rebranden?",
+        "answer": "Ja. We beginnen met wat het huidige merk goed doet en waar het je afremt, en bepalen daarna wat blijft."
+      },
+      {
+        "question": "Wat krijgen we aan het eind?",
+        "answer": "Het identiteitssysteem en de documentatie van de merkrichtlijnen waarmee je eigen teams en andere bureaus kunnen werken."
+      },
+      {
+        "question": "Hoe prijzen jullie branding?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopende merkondersteuning een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "web-design",
+      "design-systems",
+      "ui-ux-design",
+      "social-media-content-marketing"
+    ],
+    "category": "brand"
   },
   {
     "slug": "design-systems",
     "name": "Designsystemen",
     "tagline": "Eén bron van waarheid voor elk component, token en patroon.",
-    "summary": "We maken van verspreide UI-beslissingen een beheerd systeem (componenten, tokens en documentatie) waarmee design en engineering consistent en snel opleveren, zonder opnieuw over dezelfde knop te discussiëren.",
+    "summary": "We zijn een designsysteembureau. We maken van verspreide UI-keuzes een beheerd systeem (componenten, tokens en documentatie) waarmee design en engineering consistent en snel opleveren, zonder opnieuw over dezelfde knop te discussiëren.",
     "deliverables": [
       "Tokenarchitectuur (kleur, typografie, ruimte, beweging)",
       "Componentbibliotheken in Figma, gespiegeld in code",
@@ -33,13 +91,71 @@
       "consumer-electronics",
       "finance-fintech",
       "education-edtech"
-    ]
+    ],
+    "headline": "Een designsysteembureau waarbij design en engineering dezelfde bouwstenen gebruiken.",
+    "metaTitle": "Designsysteembureau: tokens en componenten – Mellon",
+    "metaDescription": "Mellon is een designsysteembureau: tokenarchitectuur, Figma-componentenbibliotheken gespiegeld in code, documentatie en uitrol. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Audit",
+        "text": "We inventariseren je bestaande UI om dubbelingen, inconsistenties en de patronen waar je team al op leunt te vinden."
+      },
+      {
+        "title": "Fundament",
+        "text": "We bepalen tokens voor kleur, lettertype, ruimte en beweging, de basis waarop de rest bouwt."
+      },
+      {
+        "title": "Componenten",
+        "text": "We ontwerpen de componentenbibliotheek in Figma en spiegelen die samen met je engineers in code."
+      },
+      {
+        "title": "Documentatie",
+        "text": "We schrijven gebruiksrichtlijnen en bijdrageregels, zodat het systeem kan groeien zonder te breken."
+      },
+      {
+        "title": "Uitrol",
+        "text": "We helpen je teams het systeem over te nemen en bestaande schermen te migreren."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat is een designsysteem?",
+        "answer": "Een gedeelde set designtokens, componenten en gebruiksregels waarop design en engineering allebei bouwen, zodat producten consistent blijven als ze groeien."
+      },
+      {
+        "question": "Wanneer heeft een team er een nodig?",
+        "answer": "Wanneer hetzelfde component steeds anders wordt gebouwd, de overdracht herwerk oplevert of nieuwe functies afwijken van de rest van het product."
+      },
+      {
+        "question": "Bouwen jullie de componenten ook in code?",
+        "answer": "We ontwerpen de bibliotheek in Figma en spiegelen die samen met je engineers in code, zodat beide gelijk blijven lopen."
+      },
+      {
+        "question": "Kunnen jullie uitgaan van ons bestaande product?",
+        "answer": "Ja. We starten bij je huidige UI, houden de patronen die werken en voegen de rest samen."
+      },
+      {
+        "question": "Hoe helpen jullie teams het over te nemen?",
+        "answer": "We leveren gebruiksdocumentatie en bijdrageregels en begeleiden de uitrol bij je teams."
+      },
+      {
+        "question": "Hoe prijzen jullie designsystemen?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend werk een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "product-design",
+      "saas-design",
+      "ux-audit"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "ecommerce-design",
     "name": "E-commercedesign",
     "tagline": "Webshops en productpagina's die converteren zonder als een funnel aan te voelen.",
-    "summary": "Van catalogus bladeren tot afrekenen ontwerpen we winkelervaringen die bij elke stap wrijving verminderen, en we bouwen ze op de platforms die je al gebruikt, waaronder Webflow en WooCommerce.",
+    "summary": "We zijn een e-commercedesignbureau. Van catalogus bladeren tot afrekenen ontwerpen we winkelervaringen die bij elke stap wrijving verminderen, en we bouwen ze op de platforms die je al gebruikt, waaronder Webflow en WooCommerce.",
     "deliverables": [
       "UX-audits van webshops en conversiegerichte herontwerpen",
       "Design van productoverzichten, productpagina's en checkout",
@@ -50,7 +166,65 @@
       "fashion-brand-design",
       "consumer-electronics",
       "restaurant-branding"
-    ]
+    ],
+    "headline": "Een e-commercedesignbureau voor webshops en afrekenflows.",
+    "metaTitle": "E-commercedesignbureau: webshops en checkout – Mellon",
+    "metaDescription": "Mellon is een e-commercedesignbureau: webshop-UX, productpagina's, checkoutdesign en bouw in Webflow en WooCommerce. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Audit",
+        "text": "We bekijken je webshop, analytics en checkout om te zien waar kopers twijfelen of afhaken."
+      },
+      {
+        "title": "Structuur",
+        "text": "We plannen navigatie, categoriepagina's en de opbouw van productpagina's rond hoe mensen in je assortiment winkelen."
+      },
+      {
+        "title": "Ontwerp",
+        "text": "We ontwerpen overzichtspagina's, productpagina's en de checkout, plus templates voor acties."
+      },
+      {
+        "title": "Bouwen",
+        "text": "We bouwen in Webflow of WooCommerce en testen het hele aankooptraject."
+      },
+      {
+        "title": "Lancering",
+        "text": "We gaan live en bekijken daarna hoe kopers de nieuwe flows gebruiken, om ze te verfijnen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Op welke platforms werken jullie?",
+        "answer": "We bouwen in Webflow en WooCommerce. Gebruik je een ander platform, dan ontwerpen we de ervaring en werken we samen met je ontwikkelaars."
+      },
+      {
+        "question": "Kunnen jullie onze bestaande webshop opnieuw ontwerpen?",
+        "answer": "Ja. We bekijken wat er is, houden vast wat werkt en ontwerpen de pagina's en flows opnieuw waar kopers vastlopen."
+      },
+      {
+        "question": "Hoe verbeteren jullie de conversie?",
+        "answer": "We zoeken uit waar kopers afhaken en ontwerpen die stappen opnieuw, van productpagina's tot checkout."
+      },
+      {
+        "question": "Ontwerpen jullie de checkout?",
+        "answer": "Ja. De checkout krijgt dezelfde zorg als de winkel: minder velden, duidelijke foutmeldingen en kosten die vroeg zichtbaar zijn."
+      },
+      {
+        "question": "Bouwen jullie de webshop ook?",
+        "answer": "Ja, in Webflow en WooCommerce. Bij andere platforms ontwerpen we en werken we samen met je ontwikkelaars."
+      },
+      {
+        "question": "Hoe prijzen jullie e-commercedesign?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend werk een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "web-design",
+      "ui-ux-design",
+      "ux-audit",
+      "branding"
+    ],
+    "category": "web-commerce"
   },
   {
     "slug": "end-to-end-design",
@@ -67,13 +241,66 @@
       "technology-saas",
       "health-wellness-tech",
       "civic-tech-design"
-    ]
+    ],
+    "metaTitle": "End-to-end design: van strategie tot lancering – Mellon",
+    "metaDescription": "Mellon doet design end-to-end: strategie, merk, UX, UI, prototyping en bouw in Webflow, Framer of code, met één team. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Ontdekken",
+        "text": "We leren je bedrijf, gebruikers en doelen kennen en bepalen wat we bouwen."
+      },
+      {
+        "title": "Strategie",
+        "text": "We leggen de merk- en productrichting vast waar de rest van het werk op volgt."
+      },
+      {
+        "title": "Ontwerp",
+        "text": "We ontwerpen het merk, de UX-architectuur en de definitieve UI als één samenhangend systeem."
+      },
+      {
+        "title": "Prototype en validatie",
+        "text": "We maken prototypes en testen met gebruikers voordat er iets wordt gebouwd."
+      },
+      {
+        "title": "Bouw en lancering",
+        "text": "We bouwen in Webflow, Framer of code met de mensen die het hebben ontworpen en gaan live."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat omvat end-to-end design?",
+        "answer": "Strategie, merk, UX, UI, prototyping en bouw, uitgevoerd door één team."
+      },
+      {
+        "question": "Waarom één team voor alle fasen?",
+        "answer": "Er gaat niets verloren tussen fasen, en de mensen die de designkeuzes maakten, zijn erbij tijdens de bouw."
+      },
+      {
+        "question": "Kunnen we met één fase beginnen?",
+        "answer": "Ja. Elke dienst is los te boeken en je kunt later andere toevoegen."
+      },
+      {
+        "question": "Op welke platforms bouwen jullie?",
+        "answer": "In Webflow, Framer of op maat geschreven code, afhankelijk van hoe jouw team de site of het product beheert."
+      },
+      {
+        "question": "Hoe prijzen jullie end-to-end design?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend werk een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "web-design",
+      "product-design"
+    ],
+    "category": "brand"
   },
   {
     "slug": "mobile-app-design",
     "name": "Mobile-appdesign",
     "tagline": "Apps die native aanvoelen, ontworpen voor de platforms die mensen echt gebruiken.",
-    "summary": "We ontwerpen iOS- en Android-ervaringen die platformconventies respecteren en toch onmiskenbaar bij het merk passen, van onboarding tot de schermen die elke dag worden geopend.",
+    "summary": "We zijn een mobile-appdesignbureau. We ontwerpen iOS- en Android-ervaringen die platformconventies respecteren en toch onmiskenbaar bij het merk passen, van onboarding tot de schermen die elke dag worden geopend.",
     "deliverables": [
       "Informatiearchitectuur en gebruikersflows",
       "iOS- en Android-UI-design, platformbewust",
@@ -84,13 +311,71 @@
       "health-wellness-tech",
       "consumer-electronics",
       "media-entertainment-gaming"
-    ]
+    ],
+    "headline": "Een mobile-appdesignbureau voor iOS en Android.",
+    "metaTitle": "Mobile-appdesignbureau: iOS en Android – Mellon",
+    "metaDescription": "Mellon is een mobile-appdesignbureau: flows, iOS- en Android-UI, interactiespecificaties en design-QA. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Ontdekken",
+        "text": "We brengen in kaart voor wie de app is, wat die mensen erin doen en wat de app voor jouw bedrijf moet opleveren."
+      },
+      {
+        "title": "Flows",
+        "text": "We brengen gebruikersflows en navigatie in kaart, te beginnen met onboarding en de schermen die dagelijks worden gebruikt."
+      },
+      {
+        "title": "Interface",
+        "text": "We ontwerpen iOS- en Android-schermen die de conventies van elk platform en jouw merk volgen."
+      },
+      {
+        "title": "Prototype",
+        "text": "We bouwen interactieve prototypes en testen ze op echte apparaten."
+      },
+      {
+        "title": "Overdracht",
+        "text": "We specificeren interacties en animaties, dragen over aan je engineers en controleren de bouw in de design-QA."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Ontwerpen jullie voor iOS en Android?",
+        "answer": "Ja. We ontwerpen volgens de conventies van elk platform, zodat de app op beide native aanvoelt en bij je merk blijft passen."
+      },
+      {
+        "question": "Bouwen jullie de app ook?",
+        "answer": "We ontwerpen de app en dragen over aan je engineers, daarna controleren we de bouw in de design-QA."
+      },
+      {
+        "question": "Kunnen jullie een bestaande app opnieuw ontwerpen?",
+        "answer": "Ja. We zoeken uit waar gebruikers afhaken, ontwerpen die flows eerst opnieuw en houden vast wat al werkt."
+      },
+      {
+        "question": "Ontwerpen jullie de onboarding?",
+        "answer": "Ja. Onboarding is een van de eerste flows die we ontwerpen, omdat die bepaalt of mensen de schermen bereiken die ze elke dag gaan gebruiken."
+      },
+      {
+        "question": "Wat krijgen we aan het eind?",
+        "answer": "High-fidelity schermen, een interactief prototype, specificaties voor interacties en animaties en een componentenbibliotheek in Figma."
+      },
+      {
+        "question": "Hoe prijzen jullie mobile-appdesign?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend design een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "product-design",
+      "motion-interaction-design",
+      "ux-audit"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "motion-interaction-design",
     "name": "Motion- en interactiedesign",
     "tagline": "Beweging die de interface uitlegt in plaats van versiert.",
-    "summary": "Elke overgang, hover-status en laadmoment is een kans om een product zorgvuldiger te laten voelen. We ontwerpen bewegingssystemen die hiërarchie verduidelijken en interfaces een hartslag geven.",
+    "summary": "We zijn een motion- en interactiedesignstudio. Elke overgang, hoverstatus en laadmoment is een kans om een product doordachter te laten voelen. We ontwerpen bewegingssystemen die hiërarchie verduidelijken en interfaces een hartslag geven.",
     "deliverables": [
       "Bewegingsprincipes en timing-/easingsystemen",
       "Design van micro-interacties en overgangen",
@@ -101,13 +386,71 @@
       "media-entertainment-gaming",
       "consumer-electronics",
       "technology-saas"
-    ]
+    ],
+    "headline": "Een motion- en interactiedesignstudio voor productinterfaces.",
+    "metaTitle": "Motion- en interactiedesignstudio – Mellon",
+    "metaDescription": "Mellon is een motion- en interactiedesignstudio: timing- en easingsystemen, micro-interacties, Framer-prototypes en specificaties. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Beoordeling",
+        "text": "We zoeken uit waar beweging de interface verduidelijkt en waar ze alleen zou afleiden."
+      },
+      {
+        "title": "Principes",
+        "text": "We bepalen de bewegingsprincipes, timing en easing die bij je merk passen."
+      },
+      {
+        "title": "Ontwerp",
+        "text": "We ontwerpen de overgangen, micro-interacties en laadmomenten."
+      },
+      {
+        "title": "Prototype",
+        "text": "We bouwen prototypes in Framer, zodat stakeholders de beweging kunnen voelen."
+      },
+      {
+        "title": "Specificaties",
+        "text": "We geven engineers specificaties voor easing, duur en triggers."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat is interactiedesign?",
+        "answer": "Het ontwerp van hoe een interface op mensen reageert: overgangen, hoverstatussen, feedback en laadmomenten."
+      },
+      {
+        "question": "Ontwerpen jullie ook voor verminderde beweging?",
+        "answer": "Ja. We houden rekening met de voorkeur voor verminderde beweging, zodat de interface ook zonder animatie werkt."
+      },
+      {
+        "question": "Implementeren jullie de beweging in code?",
+        "answer": "We maken prototypes in Framer en geven engineers specificaties voor easing, duur en triggers. Je engineers implementeren op basis daarvan."
+      },
+      {
+        "question": "Maken jullie uitlegvideo's?",
+        "answer": "Ons werk is beweging binnen productinterfaces en websites, geen videoproductie."
+      },
+      {
+        "question": "Kunnen jullie beweging toevoegen aan een bestaand product?",
+        "answer": "Ja. We bekijken het product, kiezen waar beweging helpt en ontwerpen die passend bij wat er al is."
+      },
+      {
+        "question": "Hoe prijzen jullie motion- en interactiedesign?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend werk een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "web-design",
+      "mobile-app-design",
+      "design-systems"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "product-design",
     "name": "Productdesign",
     "tagline": "Digitale producten ontworpen rond hoe mensen echt werken.",
-    "summary": "We schuiven aan bij product- en engineeringteams om software te ontwerpen die simpel is waar het simpel moet zijn en krachtig waar het moet, gebaseerd op echt gebruikersonderzoek in plaats van giswerk.",
+    "summary": "We zijn een productdesignstudio. We schuiven aan bij product- en engineeringteams om software te ontwerpen die simpel is waar het simpel moet zijn en krachtig waar het moet, gebaseerd op echt gebruikersonderzoek in plaats van giswerk.",
     "deliverables": [
       "Gebruikersonderzoek en journey mapping",
       "Informatiearchitectuur en flowdesign",
@@ -119,13 +462,71 @@
       "finance-fintech",
       "civic-tech-design",
       "health-wellness-tech"
-    ]
+    ],
+    "headline": "Een productdesignstudio die binnen je team werkt.",
+    "metaTitle": "Productdesignstudio: van onderzoek tot UI – Mellon",
+    "metaDescription": "Mellon is een productdesignstudio: gebruikersonderzoek, flows, UI voor web en app en usabilitytests. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Begrijpen",
+        "text": "We leren het product, de markt en je gebruikers kennen en spreken af welk probleem we eerst oplossen."
+      },
+      {
+        "title": "Bepalen",
+        "text": "We maken van het onderzoek een heldere briefing: voor wie het is, welke flows centraal staan en wat succes inhoudt."
+      },
+      {
+        "title": "Ontwerpen",
+        "text": "We ontwerpen de flows en schermen en werken daarbij open samen met je product- en engineeringteam."
+      },
+      {
+        "title": "Valideren",
+        "text": "We testen met gebruikers en verfijnen op basis van wat we zien."
+      },
+      {
+        "title": "Opleveren",
+        "text": "We blijven tot en met de overdracht en design-QA, zodat wat live gaat overeenkomt met wat is ontworpen."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat doet een productdesignstudio?",
+        "answer": "We ontwerpen softwareproducten van begin tot eind: onderzoek, flows, interface en tests, in de pas met je product- en engineeringteam."
+      },
+      {
+        "question": "Hoe verschilt productdesign van UI/UX-design?",
+        "answer": "UI/UX-design omvat de interface en de flows. Productdesign begint eerder, bij het probleem en de richting van het product, en loopt door tot de opgeleverde software."
+      },
+      {
+        "question": "Kunnen jullie bij ons team aanschuiven?",
+        "answer": "Ja. We werken naast je productmanagers en engineers, in jullie tools en planningsritme."
+      },
+      {
+        "question": "Werken jullie aan nieuwe of bestaande producten?",
+        "answer": "Aan beide. We ontwerpen nieuwe producten vanaf het eerste concept en verbeteren bestaande waar gebruikers moeite hebben."
+      },
+      {
+        "question": "Hoe werken jullie samen met engineering?",
+        "answer": "Via gedeelde Figma-bestanden, een componentenbibliotheek en design-QA op de bouw."
+      },
+      {
+        "question": "Hoe prijzen jullie productdesign?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend productdesign een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "saas-design",
+      "mobile-app-design",
+      "design-systems"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "saas-design",
     "name": "SaaS-design",
     "tagline": "Interfaces voor producten die complexer worden naarmate ze succesvoller zijn.",
-    "summary": "SaaS-producten stapelen snel complexiteit op. We ontwerpen dashboards, instellingen en workflows die op schaal leesbaar blijven, en bouwen de componentsystemen die voorkomen dat nieuwe functies het geheel uithollen.",
+    "summary": "We zijn een SaaS-designbureau. SaaS-producten stapelen snel complexiteit op. We ontwerpen dashboards, instellingen en workflows die op schaal leesbaar blijven, en bouwen de componentensystemen die voorkomen dat nieuwe functies het geheel uithollen.",
     "deliverables": [
       "Design van dashboards en data-intensieve UI",
       "Design van onboarding- en activatieflows",
@@ -136,7 +537,65 @@
       "technology-saas",
       "finance-fintech",
       "education-edtech"
-    ]
+    ],
+    "headline": "Een SaaS-designbureau voor producten die steeds complexer worden.",
+    "metaTitle": "SaaS-designbureau: product-UI en systemen – Mellon",
+    "metaDescription": "Mellon is een SaaS-designbureau: dashboards, onboarding, instellingen en rechten, en de componentensystemen erachter. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Ontdekken",
+        "text": "We leren je gebruikers, de belangrijkste workflows van je product en de plekken kennen waar complexiteit het gebruik remt."
+      },
+      {
+        "title": "Prioriteiten",
+        "text": "We rangschikken problemen op hun effect op activatie en retentie en spreken af wat we eerst ontwerpen."
+      },
+      {
+        "title": "Ontwerp",
+        "text": "We ontwerpen dashboards, onboarding, instellingen en workflows als componenten die kunnen meegroeien."
+      },
+      {
+        "title": "Valideren",
+        "text": "We testen met gebruikers en verfijnen daarna."
+      },
+      {
+        "title": "Systematiseren",
+        "text": "We documenteren de componenten en regels, zodat nieuwe functies ook na ons consistent blijven."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat doet een SaaS-designbureau?",
+        "answer": "We ontwerpen de interface van softwareproducten: dashboards, onboarding, instellingen en workflows, plus het componentensysteem erachter."
+      },
+      {
+        "question": "Ontwerpen jullie dashboards en dataintensieve schermen?",
+        "answer": "Ja. Dashboards, tabellen en rapportageweergaven zijn een kernonderdeel van ons SaaS-werk."
+      },
+      {
+        "question": "Kunnen jullie ons bestaande product opnieuw ontwerpen?",
+        "answer": "Ja. We bekijken wat er is, zoeken uit waar gebruikers vastlopen en ontwerpen die gebieden eerst opnieuw."
+      },
+      {
+        "question": "Kunnen jullie maar een deel van het product ontwerpen?",
+        "answer": "Ja. We kunnen beginnen met één gebied, zoals onboarding of het hoofddashboard, en van daaruit uitbreiden."
+      },
+      {
+        "question": "Hoe werken jullie samen met onze engineers?",
+        "answer": "Via gedeelde Figma-bestanden en een componentenbibliotheek, met design-QA op de bouw."
+      },
+      {
+        "question": "Hoe prijzen jullie SaaS-design?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend werk een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "product-design",
+      "ui-ux-design",
+      "design-systems",
+      "ux-audit"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "seo-content-strategy",
@@ -154,7 +613,64 @@
       "ecommerce",
       "real-estate-design",
       "hospitality-design"
-    ]
+    ],
+    "metaTitle": "SEO en contentstrategie – Mellon",
+    "metaDescription": "Mellon plant SEO en contentstrategie: zoekwoordenonderzoek, on-pagestructuur, contentplanning en technische audits, ingebouwd in je site. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Onderzoek",
+        "text": "We onderzoeken waarop je kopers zoeken en welke sites daar al op scoren."
+      },
+      {
+        "title": "Structuur",
+        "text": "We plannen de sitestructuur en de doelen per pagina rond die termen."
+      },
+      {
+        "title": "On-page",
+        "text": "We bepalen metadata, schema en contentstructuur voor elke pagina."
+      },
+      {
+        "title": "Plan",
+        "text": "We stellen de contentstrategie en een redactiekalender op."
+      },
+      {
+        "title": "Audit",
+        "text": "We controleren snelheid, crawlbaarheid en indexering en bespreken de resultaten met je."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Bieden jullie SEO als losse dienst aan?",
+        "answer": "Ja. SEO en contentstrategie kunnen los staan of deel zijn van een websiteproject."
+      },
+      {
+        "question": "Wat omvat technische SEO?",
+        "answer": "Een technische audit van snelheid, crawlbaarheid en indexering."
+      },
+      {
+        "question": "Schrijven jullie de content ook?",
+        "answer": "We stellen de strategie en de redactiekalender op. Of we de content ook schrijven, spreken we af bij het afbakenen van het werk."
+      },
+      {
+        "question": "Hoe lang duurt het voordat SEO resultaat geeft?",
+        "answer": "SEO bouwt geleidelijk op en hangt af van concurrentie en het beginpunt van de site, dus we beloven geen data of posities."
+      },
+      {
+        "question": "Is SEO onderdeel van een websitebouw?",
+        "answer": "Ja. Onze websiteprojecten bevatten SEO-basis zoals structuur, metadata en redirects."
+      },
+      {
+        "question": "Hoe prijzen jullie SEO en contentstrategie?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend werk een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "web-design",
+      "ux-audit",
+      "social-media-content-marketing",
+      "branding"
+    ],
+    "category": "growth-content"
   },
   {
     "slug": "social-media-content-marketing",
@@ -172,13 +688,66 @@
       "restaurant-branding",
       "media-entertainment-gaming",
       "consumer-electronics"
-    ]
+    ],
+    "metaTitle": "Design voor social media en contentmarketing – Mellon",
+    "metaDescription": "Mellon ontwerpt het systeem achter je socialmediapresentie: templates, campagnebeeld, contentkalender en merkrichtlijnen. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Beoordeling",
+        "text": "We bekijken je merk en je huidige socialmediapresentie."
+      },
+      {
+        "title": "Systeem",
+        "text": "We ontwerpen templates en een visueel systeem voor elk platform."
+      },
+      {
+        "title": "Campagnes",
+        "text": "We maken campagne- en lanceringsbeeld."
+      },
+      {
+        "title": "Ritme",
+        "text": "We plannen de contentkalender en het publicatieritme."
+      },
+      {
+        "title": "Richtlijnen",
+        "text": "We schrijven tekst- en bijschriftrichtlijnen, zodat de tone of voice consistent blijft."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Beheren jullie onze socialmedia-accounts?",
+        "answer": "We ontwerpen het visuele systeem, het campagnebeeld en het contentplan. Het dagelijks plaatsen blijft bij je team, tenzij we iets anders afspreken."
+      },
+      {
+        "question": "Voor welke platforms ontwerpen jullie?",
+        "answer": "Voor elk platform dat je gebruikt, met templates in het juiste formaat en de juiste stijl."
+      },
+      {
+        "question": "Draaien jullie betaalde advertenties?",
+        "answer": "Ons werk is het beeld en het contentsysteem, geen media-inkoop."
+      },
+      {
+        "question": "Past de content bij ons merk?",
+        "answer": "Ja. Templates en richtlijnen worden opgebouwd uit je merkidentiteit. Heb je die nog niet, dan kan onze brandingdienst die eerst maken."
+      },
+      {
+        "question": "Hoe prijzen jullie social media en contentmarketing?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend werk een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "branding",
+      "seo-content-strategy",
+      "motion-interaction-design",
+      "web-design"
+    ],
+    "category": "growth-content"
   },
   {
     "slug": "ui-ux-design",
     "name": "UI/UX-design",
     "tagline": "Het kernvak: onderzoek, structuur en uitvoering tot op de pixel.",
-    "summary": "Dit is het dagelijks werk van de studio: gebruikers begrijpen, flows structureren en interfaces ontwerpen met de typografische en visuele zorg die een product van een prototype onderscheidt.",
+    "summary": "We zijn een UI/UX-designbureau: we begrijpen je gebruikers, structureren de flows en ontwerpen interfaces met de typografische en visuele zorg die een product van een prototype onderscheidt.",
     "deliverables": [
       "Gebruikersonderzoek, persona's en journey mapping",
       "Wireframing en informatiearchitectuur",
@@ -190,13 +759,71 @@
       "real-estate-design",
       "hospitality-design",
       "legal-branding"
-    ]
+    ],
+    "headline": "Een UI/UX-designbureau voor teams die digitale producten bouwen.",
+    "metaTitle": "UI/UX-designbureau – Mellon",
+    "metaDescription": "Mellon is een UI/UX-designbureau: gebruikersonderzoek, wireframes, interfaceontwerp en interactieve prototypes. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Onderzoek",
+        "text": "We praten met je gebruikers en bekijken hoe het product nu wordt gebruikt, zodat designkeuzes op bewijs beginnen."
+      },
+      {
+        "title": "Structuur",
+        "text": "We brengen flows en informatiearchitectuur in kaart en schetsen wireframes om de opzet vast te leggen vóór het visuele ontwerp."
+      },
+      {
+        "title": "Interfaceontwerp",
+        "text": "We ontwerpen high-fidelity schermen met één consistent systeem van lettertype, kleur en componenten."
+      },
+      {
+        "title": "Prototype en test",
+        "text": "We bouwen interactieve prototypes, testen ze met echte gebruikers en verhelpen wat de tests laten zien."
+      },
+      {
+        "title": "Overdracht",
+        "text": "We dragen geannoteerde ontwerpen en een componentenbibliotheek over aan engineering en controleren daarna de bouw tegen het ontwerp."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat is het verschil tussen UI- en UX-design?",
+        "answer": "UX-design bepaalt hoe een product werkt: de flows, de structuur en de taken. UI-design bepaalt hoe het eruitziet en reageert: opzet, lettertype, kleur en componenten. Wij doen beide, dus één team is verantwoordelijk voor het resultaat."
+      },
+      {
+        "question": "Doen jullie gebruikersonderzoek?",
+        "answer": "Ja. Onderzoek hoort bij het proces, van gebruikersinterviews tot usabilitytests, en de diepgang past bij jouw project."
+      },
+      {
+        "question": "Kunnen jullie ons bestaande product opnieuw ontwerpen?",
+        "answer": "Ja. We bekijken wat er is, zoeken uit waar gebruikers vastlopen en ontwerpen die flows eerst opnieuw, zodat je niet helemaal opnieuw hoeft te beginnen."
+      },
+      {
+        "question": "Wat krijgen we aan het eind?",
+        "answer": "Geannoteerde high-fidelity ontwerpen, een interactief prototype en een componentenbibliotheek in Figma, klaar voor je engineers."
+      },
+      {
+        "question": "Kunnen jullie met ons engineeringteam samenwerken?",
+        "answer": "Ja. We dragen over via gedeelde bestanden en een componentenbibliotheek en controleren de bouw tegen het ontwerp."
+      },
+      {
+        "question": "Hoe prijzen jullie UI/UX-design?",
+        "answer": "Duidelijk afgebakend werk is een vaste projectprijs en doorlopend design een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "ux-audit",
+      "product-design",
+      "design-systems",
+      "web-design"
+    ],
+    "category": "product-ux"
   },
   {
     "slug": "ux-audit",
     "name": "UX-audit",
     "tagline": "Een nuchtere blik op wat je conversies en vertrouwen kost.",
-    "summary": "Voordat we iets herontwerpen, kunnen we je vertellen wat er echt stuk is: een gestructureerde, heuristische beoordeling van je bestaande product met geprioriteerde, uitvoerbare verbeteringen in plaats van een lijst meningen.",
+    "summary": "We doen UX-audits voor producten die antwoorden nodig hebben voor een herontwerp. We vertellen je wat er echt niet werkt: een gestructureerde, op heuristieken gebaseerde beoordeling van je bestaande product met geprioriteerde, uitvoerbare verbeteringen, geen lijst met meningen.",
     "deliverables": [
       "Heuristische evaluatie op basis van usabilityprincipes",
       "Analyse van wrijving in funnels en specifieke flows",
@@ -207,6 +834,142 @@
       "finance-fintech",
       "ecommerce",
       "technology-saas"
-    ]
+    ],
+    "headline": "UX-audits die laten zien wat je conversies en vertrouwen kost.",
+    "metaTitle": "UX-audit: bevindingen waar je mee aan de slag kunt – Mellon",
+    "metaDescription": "De UX-audit van Mellon: heuristische evaluatie, frictie in de funnel, toegankelijkheidscontroles en een geprioriteerd rapport. Vraag een offerte aan.",
+    "process": [
+      {
+        "title": "Afbakening",
+        "text": "We spreken af welke flows, gebruikersgroepen en doelen de audit dekt."
+      },
+      {
+        "title": "Beoordeling",
+        "text": "We beoordelen die flows aan de hand van gangbare usabilityheuristieken en bekijken je analytics waar beschikbaar."
+      },
+      {
+        "title": "Controles",
+        "text": "We doen steekproeven op toegankelijkheid en prestaties."
+      },
+      {
+        "title": "Prioriteren",
+        "text": "We rangschikken elke bevinding op impact en inspanning."
+      },
+      {
+        "title": "Rapport",
+        "text": "We leveren een geprioriteerd rapport met aanbevolen verbeteringen en lopen het met je team door."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Wat is een UX-audit?",
+        "answer": "Een gestructureerde beoordeling van een bestaand product aan de hand van usabilityprincipes, die laat zien waar gebruikers vastlopen en de verbeteringen prioriteert."
+      },
+      {
+        "question": "Wat krijgen we aan het eind?",
+        "answer": "Een geprioriteerd rapport met bevindingen en aanbevolen verbeteringen."
+      },
+      {
+        "question": "Hebben jullie toegang tot onze analytics nodig?",
+        "answer": "Het helpt. We gebruiken analytics waar je ze kunt delen en bekijken de flows hoe dan ook rechtstreeks."
+      },
+      {
+        "question": "Voeren jullie de verbeteringen ook door?",
+        "answer": "Dat kan. De audit geeft je een geprioriteerd plan, en we kunnen de verbeteringen ontwerpen of het plan aan je team overdragen."
+      },
+      {
+        "question": "Is toegankelijkheid inbegrepen?",
+        "answer": "Steekproeven op toegankelijkheid en prestaties zijn inbegrepen. Een volledige toegankelijkheidsaudit is een apart pakket."
+      },
+      {
+        "question": "Hoe prijzen jullie een UX-audit?",
+        "answer": "Een UX-audit is een vaste projectprijs, afgestemd op de flows die hij dekt. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "product-design",
+      "ecommerce-design",
+      "web-design"
+    ],
+    "category": "product-ux"
+  },
+  {
+    "slug": "web-design",
+    "name": "Webdesign",
+    "headline": "Een webdesignbureau dat de site ook bouwt.",
+    "tagline": "Websites die hetzelfde team ontwerpt en bouwt.",
+    "summary": "We ontwerpen websites rond wat je bezoekers komen doen en bouwen ze in Webflow, Framer, WordPress of op maat geschreven code, met de mensen die de designkeuzes maakten, zodat er tussen ontwerp en livegang niets verloren gaat.",
+    "metaTitle": "Webdesignbureau: ontwerp en bouw – Mellon",
+    "metaDescription": "Mellon ontwerpt en bouwt websites in Webflow, Framer, WordPress of code: UX, UI, paginastructuur, SEO-basis. Vraag een offerte aan.",
+    "deliverables": [
+      "Sitestructuur, sitemap en contentplanning",
+      "UX- en UI-design voor alle belangrijke pagina's en templates",
+      "Responsive, herbruikbare componenten",
+      "Bouw in Webflow, Framer, WordPress of op maat geschreven code",
+      "SEO-basis: nette structuur, metadata, redirects en snelheid",
+      "Ondersteuning bij de lancering en overdrachtsdocumentatie"
+    ],
+    "process": [
+      {
+        "title": "Ontdekken",
+        "text": "We brengen in kaart wie de site bezoekt, wat die mensen willen doen en wat de site voor jouw bedrijf moet opleveren."
+      },
+      {
+        "title": "Structuur",
+        "text": "Daaruit leiden we de sitemap en paginastructuur af en plannen we welke content elke pagina nodig heeft."
+      },
+      {
+        "title": "Ontwerp",
+        "text": "We ontwerpen de belangrijkste pagina's en templates in Figma en verfijnen ze met jouw feedback."
+      },
+      {
+        "title": "Bouwen",
+        "text": "We bouwen in Webflow, Framer, WordPress of op maat geschreven code, afhankelijk van hoe jouw team de site beheert."
+      },
+      {
+        "title": "Lancering",
+        "text": "We testen op alle apparaten, richten redirects en metadata in, gaan live en leveren documentatie op waarmee jouw team de site beheert."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Ontwerpen en bouwen jullie de website?",
+        "answer": "Ja. Hetzelfde team doet beide, in Webflow, Framer, WordPress of op maat geschreven code, zodat er tussen ontwerp en bouw niets verloren gaat."
+      },
+      {
+        "question": "Welk platform moeten we gebruiken?",
+        "answer": "Dat hangt af van wie de site beheert en wat hij moet kunnen. Na de ontdekfase adviseren we een platform en leggen we uit waarom."
+      },
+      {
+        "question": "Kunnen jullie onze bestaande website opnieuw ontwerpen?",
+        "answer": "Ja. We bekijken wat er is, houden vast wat werkt en ontwerpen opnieuw wat je bezoekers hindert, inclusief redirects zodat oude URL's naar de juiste nieuwe pagina's leiden."
+      },
+      {
+        "question": "Is de website geoptimaliseerd voor zoekmachines?",
+        "answer": "We leggen de basis: nette structuur, metadata, snelle pagina's en redirects. Doorlopende SEO is een aparte dienst, SEO & contentstrategie."
+      },
+      {
+        "question": "Hoe lang duurt een websiteproject?",
+        "answer": "Dat hangt af van het aantal pagina's en templates en van hoe snel feedback binnenkomt. Een planning geven we mee met de offerte."
+      },
+      {
+        "question": "Wat kost een website?",
+        "answer": "Een duidelijk afgebakende site is een vaste projectprijs en doorlopend werk een maandelijkse retainer. We stemmen dat met je af na een kort gesprek."
+      }
+    ],
+    "relatedIndustries": [
+      "technology-saas",
+      "ecommerce",
+      "real-estate-design",
+      "education-edtech"
+    ],
+    "relatedServices": [
+      "ui-ux-design",
+      "ecommerce-design",
+      "branding",
+      "seo-content-strategy"
+    ],
+    "category": "web-commerce"
   }
 ]

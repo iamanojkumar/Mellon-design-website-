@@ -81,7 +81,8 @@
     "relatedServices": [
       "ecommerce-design",
       "ux-audit",
-      "branding"
+      "branding",
+      "web-design"
     ]
   },
   {
@@ -98,7 +99,8 @@
     "relatedServices": [
       "product-design",
       "saas-design",
-      "design-systems"
+      "design-systems",
+      "web-design"
     ]
   },
   {
@@ -234,7 +236,8 @@
     "relatedServices": [
       "branding",
       "ui-ux-design",
-      "ecommerce-design"
+      "ecommerce-design",
+      "web-design"
     ]
   },
   {
@@ -269,7 +272,8 @@
       "saas-design",
       "design-systems",
       "product-design",
-      "ux-audit"
+      "ux-audit",
+      "web-design"
     ]
   }
 ]

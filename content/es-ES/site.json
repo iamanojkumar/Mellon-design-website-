@@ -89,7 +89,10 @@
     "detail": {
       "included": "Qué incluye",
       "usedIn": "Dónde lo hemos aplicado",
-      "readyHeadline": "¿Listo para hablar de {nameLower}?"
+      "readyHeadline": "¿Listo para hablar de {nameLower}?",
+      "processHeading": "Cómo trabajamos",
+      "faqHeading": "Preguntas frecuentes",
+      "relatedServices": "Servicios relacionados"
     }
   },
   "industriesPage": {

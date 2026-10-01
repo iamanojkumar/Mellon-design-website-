@@ -10,7 +10,11 @@
       "Studio branding and print collateral alignment",
       "Webflow builds your team can update without a developer"
     ],
-    "relatedServices": ["branding", "ui-ux-design", "end-to-end-design"]
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "end-to-end-design"
+    ]
   },
   {
     "slug": "automotive",
@@ -23,7 +27,11 @@
       "Configurator and buying-flow experiences",
       "Design systems shared across product lines"
     ],
-    "relatedServices": ["product-design", "mobile-app-design", "design-systems"]
+    "relatedServices": [
+      "product-design",
+      "mobile-app-design",
+      "design-systems"
+    ]
   },
   {
     "slug": "civic-tech-design",
@@ -36,7 +44,11 @@
       "Multi-department design systems",
       "Usability testing with real constituents"
     ],
-    "relatedServices": ["ui-ux-design", "ux-audit", "design-systems"]
+    "relatedServices": [
+      "ui-ux-design",
+      "ux-audit",
+      "design-systems"
+    ]
   },
   {
     "slug": "consumer-electronics",
@@ -49,7 +61,11 @@
       "E-commerce and product page design",
       "Motion design for product launches"
     ],
-    "relatedServices": ["mobile-app-design", "motion-interaction-design", "branding"]
+    "relatedServices": [
+      "mobile-app-design",
+      "motion-interaction-design",
+      "branding"
+    ]
   },
   {
     "slug": "ecommerce",
@@ -62,7 +78,12 @@
       "Webflow and WooCommerce builds",
       "Conversion-focused UX audits"
     ],
-    "relatedServices": ["ecommerce-design", "ux-audit", "branding"]
+    "relatedServices": [
+      "ecommerce-design",
+      "ux-audit",
+      "branding",
+      "web-design"
+    ]
   },
   {
     "slug": "education-edtech",
@@ -75,7 +96,12 @@
       "Admin and district-level dashboard design",
       "Accessibility for K-12 and higher-ed standards"
     ],
-    "relatedServices": ["product-design", "saas-design", "design-systems"]
+    "relatedServices": [
+      "product-design",
+      "saas-design",
+      "design-systems",
+      "web-design"
+    ]
   },
   {
     "slug": "fashion-brand-design",
@@ -88,7 +114,11 @@
       "Seasonal collateral systems",
       "Social and content templating"
     ],
-    "relatedServices": ["branding", "ecommerce-design", "ui-ux-design"]
+    "relatedServices": [
+      "branding",
+      "ecommerce-design",
+      "ui-ux-design"
+    ]
   },
   {
     "slug": "finance-fintech",
@@ -101,7 +131,11 @@
       "Design systems built for compliance review",
       "Security-conscious UX audits"
     ],
-    "relatedServices": ["product-design", "saas-design", "ux-audit"]
+    "relatedServices": [
+      "product-design",
+      "saas-design",
+      "ux-audit"
+    ]
   },
   {
     "slug": "health-wellness-tech",
@@ -114,7 +148,11 @@
       "HIPAA-aware UX patterns",
       "Accessibility and readability audits"
     ],
-    "relatedServices": ["mobile-app-design", "product-design", "end-to-end-design"]
+    "relatedServices": [
+      "mobile-app-design",
+      "product-design",
+      "end-to-end-design"
+    ]
   },
   {
     "slug": "hospitality-design",
@@ -127,7 +165,11 @@
       "Guest-facing app experiences",
       "Photography-led visual systems"
     ],
-    "relatedServices": ["ui-ux-design", "branding", "ecommerce-design"]
+    "relatedServices": [
+      "ui-ux-design",
+      "branding",
+      "ecommerce-design"
+    ]
   },
   {
     "slug": "legal-branding",
@@ -140,7 +182,11 @@
       "Attorney bio and case-result templating",
       "Lead-focused contact and intake design"
     ],
-    "relatedServices": ["branding", "ui-ux-design", "end-to-end-design"]
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "end-to-end-design"
+    ]
   },
   {
     "slug": "media-entertainment-gaming",
@@ -153,7 +199,11 @@
       "Motion-first brand systems",
       "Cross-platform design consistency"
     ],
-    "relatedServices": ["motion-interaction-design", "mobile-app-design", "branding"]
+    "relatedServices": [
+      "motion-interaction-design",
+      "mobile-app-design",
+      "branding"
+    ]
   },
   {
     "slug": "nonprofit-branding",
@@ -166,7 +216,11 @@
       "Accessible, low-maintenance website builds",
       "Annual report and impact storytelling design"
     ],
-    "relatedServices": ["branding", "ui-ux-design", "ecommerce-design"]
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "ecommerce-design"
+    ]
   },
   {
     "slug": "real-estate-design",
@@ -179,7 +233,12 @@
       "Brokerage and developer brand identity",
       "Lead capture and inquiry flow design"
     ],
-    "relatedServices": ["branding", "ui-ux-design", "ecommerce-design"]
+    "relatedServices": [
+      "branding",
+      "ui-ux-design",
+      "ecommerce-design",
+      "web-design"
+    ]
   },
   {
     "slug": "restaurant-branding",
@@ -192,7 +251,11 @@
       "Multi-location site architecture",
       "Photography-led marketing site design"
     ],
-    "relatedServices": ["branding", "ecommerce-design", "ui-ux-design"]
+    "relatedServices": [
+      "branding",
+      "ecommerce-design",
+      "ui-ux-design"
+    ]
   },
   {
     "slug": "technology-saas",
@@ -205,6 +268,12 @@
       "Design systems for fast-moving roadmaps",
       "UX audits ahead of major releases"
     ],
-    "relatedServices": ["saas-design", "design-systems", "product-design", "ux-audit"]
+    "relatedServices": [
+      "saas-design",
+      "design-systems",
+      "product-design",
+      "ux-audit",
+      "web-design"
+    ]
   }
 ]

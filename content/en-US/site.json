@@ -99,7 +99,10 @@
     "detail": {
       "included": "What's included",
       "usedIn": "Where we've used this",
-      "readyHeadline": "Ready to talk about {nameLower}?"
+      "readyHeadline": "Ready to talk about {nameLower}?",
+      "processHeading": "How we work",
+      "faqHeading": "Frequently asked questions",
+      "relatedServices": "Related services"
     }
   },
   "industriesPage": {

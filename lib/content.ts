@@ -11,6 +11,18 @@ export type Service = {
   summary: string;
   deliverables: string[];
   relatedIndustries: string[];
+  /** Groups the service on the services index; matches an id in the services page's `categories`. */
+  category?: string;
+  /** Optional H1 when the page should lead with the search phrase instead of the bare name. */
+  headline?: string;
+  /** Optional overrides for the page title and meta description (default: name and summary). */
+  metaTitle?: string;
+  metaDescription?: string;
+  /** Optional sections; each renders only when present. */
+  process?: { title: string; text: string }[];
+  faqs?: { question: string; answer: string }[];
+  /** Slugs of other services to link to (keeps related services connected). */
+  relatedServices?: string[];
 };
 
 export type Industry = {

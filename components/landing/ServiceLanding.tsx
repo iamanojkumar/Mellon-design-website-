@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { Cta } from "@/components/cta/Cta";
 import { ContactForm } from "@/components/contact-form/ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { RevealGroup } from "@/components/motion/RevealGroup";
@@ -37,10 +39,21 @@ export type ServiceLandingCopy = {
     heading: string;
     items: { title: string; text: string }[];
   };
-  caseStudies: {
+  /** Omit (or leave `items` empty) until there is real work to show; the section then doesn't render. */
+  caseStudies?: {
     heading: string;
     cta: string;
     items: { name: string }[];
+  };
+  /**
+   * Optional link to the matching service page (the hub). Gives readers a way
+   * to learn more and tells search engines which service this page belongs to.
+   * `href` is a path without the locale, e.g. "/services/saas-design".
+   */
+  related?: {
+    text: string;
+    label: string;
+    href: string;
   };
   faq: {
     heading: string;
@@ -61,7 +74,11 @@ export function ServiceLanding({
   locale: string;
   slug: string;
 }) {
-  const form = getSiteContent(locale).forms.contact;
+  const site = getSiteContent(locale);
+  const form = site.forms.contact;
+  const ctaLabel = site.nav.cta.label;
+  const caseStudies = text.caseStudies;
+  const caseItems = caseStudies?.items ?? [];
   const siteUrl = getSiteUrl();
 
   const faqJsonLd = {
@@ -98,6 +115,9 @@ export function ServiceLanding({
           <p className={styles.summary}>
             <SwiftUpText text={text.summary} whenVisible lineDelay={0.12} delay={0.2} />
           </p>
+          <FadeIn as="span" whenVisible delay={0.5}>
+            <Cta label={ctaLabel} href="#quote" variant="primary" context="landing" />
+          </FadeIn>
         </Container>
       </section>
 
@@ -150,6 +170,16 @@ export function ServiceLanding({
               </li>
             ))}
           </RevealGroup>
+          {text.related ? (
+            <FadeIn whenVisible>
+              <p className={styles.related}>
+                {text.related.text}{" "}
+                <Link href={`/${locale}${text.related.href}`} className={styles.caseLink}>
+                  {text.related.label}
+                </Link>
+              </p>
+            </FadeIn>
+          ) : null}
         </Container>
       </section>
 
@@ -169,18 +199,19 @@ export function ServiceLanding({
         </Container>
       </section>
 
+      {caseStudies && caseItems.length > 0 ? (
       <section className={`${styles.section} ${styles.lavenderBand}`}>
         <Container>
           <h2 className={styles.heading}>
-            <SwiftUpText text={text.caseStudies.heading} whenVisible />
+            <SwiftUpText text={caseStudies.heading} whenVisible />
           </h2>
           <RevealGroup as="ul" className={styles.caseGrid}>
-            {text.caseStudies.items.map((item) => (
+            {caseItems.map((item) => (
               <li key={item.name} className={styles.caseCard}>
                 <h3 className={styles.cardTitle}>{item.name}</h3>
                 <FadeIn as="span" whenVisible>
                   <a href="#quote" className={styles.caseLink}>
-                    {text.caseStudies.cta}
+                    {caseStudies.cta}
                   </a>
                 </FadeIn>
               </li>
@@ -188,6 +219,7 @@ export function ServiceLanding({
           </RevealGroup>
         </Container>
       </section>
+      ) : null}
 
       <section className={styles.section}>
         <Container>

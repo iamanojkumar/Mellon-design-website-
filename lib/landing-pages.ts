@@ -30,6 +30,12 @@ export const landingPages: LandingPage[] = [
   // { slug: "free-brand-audit", locales: ["en-US"], indexable: true },
   { slug: "figma-design-system-agency-india", locales: ["en-US"], indexable: true },
   { slug: "saas-ui-design-agency-india", locales: ["en-US"], indexable: true },
+  // Demand for the agency phrase is low/unknown (see its copy.ts); owner chose to index it anyway.
+  { slug: "saas-dashboard-design-agency-india", locales: ["en-US"], indexable: true },
+  // Bangalore pages: en-IN only, one per service (different intents, not city swaps of one page).
+  { slug: "web-design-company-bangalore", locales: ["en-IN"], indexable: true },
+  { slug: "branding-agency-bangalore", locales: ["en-IN"], indexable: true },
+  { slug: "ui-ux-design-company-bangalore", locales: ["en-IN"], indexable: true },
   // French counterpart of the Figma design system page, with a French slug for the French market.
   { slug: "agence-design-system-figma-inde", locales: ["fr-FR"], indexable: true },
 ];

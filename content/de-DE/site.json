@@ -89,7 +89,10 @@
     "detail": {
       "included": "Das ist enthalten",
       "usedIn": "Wo wir das eingesetzt haben",
-      "readyHeadline": "Bereit, über {name} zu sprechen?"
+      "readyHeadline": "Bereit, über {name} zu sprechen?",
+      "processHeading": "So arbeiten wir",
+      "faqHeading": "Häufige Fragen",
+      "relatedServices": "Verwandte Leistungen"
     }
   },
   "industriesPage": {
