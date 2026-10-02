@@ -5,13 +5,12 @@ import type { Project } from "@/lib/projects";
 import type { Folder } from "@/lib/folders";
 import type { Industry, Service } from "@/lib/content";
 import { enabledLocales } from "@/lib/locale";
-import { loadLocaleDataAction, logoutAction } from "@/app/admin/actions";
+import { loadLocaleDataAction } from "@/app/admin/actions";
 import { ProjectSidebar } from "./ProjectSidebar";
 import { ProjectEditor } from "./ProjectEditor";
 import { SeoPanel } from "./SeoPanel";
 import { AdvancedPanel } from "./AdvancedPanel";
 import { AiChatPanel } from "./AiChatPanel";
-import { ThemeToggle } from "./ThemeToggle";
 import { blankForm, toForm, type ProjectFormState } from "./form-state";
 import styles from "./AdminApp.module.css";
 
@@ -117,7 +116,6 @@ export function AdminApp({
         >
           {sidebarOpen ? "◧" : "▢"}
         </button>
-        <div className={styles.brand}>Mellon Admin</div>
         <div className={styles.topbarControls}>
           <label className={styles.localeSwitcher}>
             <span>Locale</span>
@@ -133,12 +131,6 @@ export function AdminApp({
               ))}
             </select>
           </label>
-          <ThemeToggle />
-          <form action={logoutAction}>
-            <button type="submit" className="a-btn">
-              Log out
-            </button>
-          </form>
           <button
             type="button"
             className={styles.paneToggle}
