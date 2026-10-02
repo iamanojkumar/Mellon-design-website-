@@ -18,16 +18,16 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceType: "Branding agency",
     areaServed: "India",
     metaTitle: "Branding agency in Bangalore — Mellon",
-    metaDescription: "Mellon is a branding agency for Bangalore businesses: brand strategy, naming, logo and visual identity, and guidelines your team can use. Get a quote.",
+    metaDescription: "Mellon is a branding agency for Bangalore businesses: brand strategy, logo and visual identity, a brand manual, and a corporate presentation. Get a quote.",
     headline: "A branding agency for Bangalore businesses.",
-    summary: "Mellon builds brand identities for Bangalore businesses, from strategy and name to logo, colour, and guidelines, so every touchpoint looks and sounds like one company.",
+    summary: "Mellon builds brand identities for Bangalore businesses, from strategy to logo, colour, and a brand manual, so every touchpoint looks and sounds like one company.",
     approach: {
       heading: "How we build a brand.",
       intro: "We start with who you are and who you're talking to, then design the identity to carry that everywhere it appears.",
       steps: [
                 { title: "Listen", text: "We learn your business, customers, and competitors, and agree what the brand has to say." },
                 { title: "Position", text: "We define your positioning, your voice, and the idea behind the identity." },
-                { title: "Create", text: "We design the name if you need one, then the logo, colour, typography, and imagery." },
+                { title: "Create", text: "We design the logo, colour, typography, and imagery." },
                 { title: "Test", text: "We try the identity on real applications, such as your website and social posts, before it's final." },
                 { title: "Document", text: "We write guidelines so your team and other agencies can use the brand without us." },
       ],
@@ -37,9 +37,9 @@ export const copy: Record<string, ServiceLandingCopy> = {
       intro: "A project can include:",
       items: [
                 { title: "Brand strategy and positioning", text: "What the brand stands for, who it's for, and how it differs from the alternatives." },
-                { title: "Naming", text: "A name for the business or product, when you need one." },
+                { title: "Corporate presentation", text: "A deck in your brand, built from the identity, for pitches and clients." },
                 { title: "Logo and visual identity", text: "The mark, colour, typography, and imagery, designed as one system." },
-                { title: "Brand guidelines", text: "Documentation your team and other agencies can work from." },
+                { title: "Brand manual", text: "Documentation your team and other agencies can work from." },
       ],
     },
     related: {
@@ -61,9 +61,9 @@ export const copy: Record<string, ServiceLandingCopy> = {
       items: [
                 { question: "Are you based in Bangalore?", answer: "Mellon is a design agency based in India. We work with Bangalore teams over video calls and shared files." },
                 { question: "What's the difference between a logo and a brand identity?", answer: "A logo is one mark. An identity is the full system around it: colour, type, imagery, voice, and the rules for using them." },
-                { question: "Do you name the brand as well?", answer: "Yes. Naming is part of brand strategy when you need it." },
+                { question: "Do you make brand manuals and corporate presentations?", answer: "Yes. The brand manual documents the identity so any team can apply it. The corporate presentation puts the brand to work in a deck you can use for pitches, investors, or clients." },
                 { question: "Can you rebrand an existing business?", answer: "Yes. We start with what the current brand does well and where it holds you back, then decide what to keep." },
-                { question: "What do we receive at the end?", answer: "The identity system and brand guidelines your own team and other agencies can work from." },
+                { question: "What do we receive at the end?", answer: "The identity system and brand manual your own team and other agencies can work from." },
                 { question: "How do you price branding?", answer: "A clearly scoped project is a fixed fee, and ongoing brand support is a monthly retainer. We scope it with you after a short call." },
       ],
     },

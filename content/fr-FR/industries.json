@@ -57,7 +57,7 @@
     "summary": "Le matériel gagne la confiance en quelques secondes ; le logiciel doit la conserver. Nous concevons les applications compagnons, les parcours de configuration et les systèmes de marque qui rendent l'électronique cohérente de bout en bout.",
     "deliverables": [
       "Design d'applications compagnons et de parcours de configuration",
-      "Continuité de marque de l'emballage au produit",
+      "Continuité de marque du produit à l'application et au site",
       "Design e-commerce et de pages produit",
       "Design d'animation pour les lancements de produits"
     ],
@@ -82,7 +82,8 @@
       "ecommerce-design",
       "ux-audit",
       "branding",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -117,7 +118,8 @@
     "relatedServices": [
       "branding",
       "ecommerce-design",
-      "ui-ux-design"
+      "ui-ux-design",
+      "paid-advertising"
     ]
   },
   {
@@ -237,7 +239,8 @@
       "branding",
       "ui-ux-design",
       "ecommerce-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -273,7 +276,8 @@
       "design-systems",
       "product-design",
       "ux-audit",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   }
 ]

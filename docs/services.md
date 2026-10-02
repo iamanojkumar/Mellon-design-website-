@@ -2,7 +2,7 @@
 
 Living document. It is the single place that says what Mellon sells, which page serves each service, what people search for, and what it costs. Update it when a service is added, merged or dropped, or when new keyword research lands. `SCOPE.md` stays the source of truth for the site itself; this file is the source of truth for the offer.
 
-Last updated 2026-10-01. Companion files: `docs/brand-voice.md`. Pricing and the raw keyword data are kept out of version control (local only).
+Last updated 2026-10-02. Companion files: `docs/brand-voice.md`. Pricing and the raw keyword data are kept out of version control (local only).
 
 ## How to read the demand numbers
 
@@ -12,7 +12,7 @@ Last updated 2026-10-01. Companion files: `docs/brand-voice.md`. Pricing and the
 
 ## Service structure
 
-Thirteen services as of 2026-10-01 (Web Design added), in four categories. The categories are the recommended organisation; `services.json` is still a flat list.
+Fourteen services as of 2026-10-02 (Paid Advertising added after Web Design), in four categories. The categories are the recommended organisation; `services.json` is still a flat list.
 
 | Category | Service | Slug | Page type | Primary search phrase (monthly searches) | Verdict |
 |---|---|---|---|---|---|
@@ -28,6 +28,7 @@ Thirteen services as of 2026-10-01 (Web Design added), in four categories. The c
 | | End-to-End Design | `end-to-end-design` | Core service page | No search demand | **Reclassify** as an engagement model, not a service. Keep the page for people who land on it from the nav, but don't target keywords with it. |
 | **Growth and content** | SEO and Content Strategy | `seo-content-strategy` | Core service page | "search engine optimizer services" 27,100; "seo search optimization" 90,500 (informational) | Keep as adjacent. Heavy competition (marketing agencies), only one competitor in the data ranks. Don't expand. |
 | | Social Media and Content Marketing | `social-media-content-marketing` | Core service page | "social media agency" 2,900; "social media agency marketing" 6,600 | Adjacent, off-core. Keep as is; don't build landing pages. |
+| | **Paid Advertising (new)** | `paid-advertising` | **New core service page** | "google ads agency" 50,000 and "ppc agency" 50,000 (global, banded); "advertising agencies in dubai", "advertising agencies toronto" 5,000; "google ads agency australia" and "google ads agency singapore" 500 | **Built 2026-10-02**, all five content languages, category Growth and content. Strategy, management and creative with copy, on Google Ads (incl. YouTube and website banners) and Meta. Batch 2 volumes are bands that overstate; no distinct YouTube-ads or Meta-ads phrases appear. |
 | | Motion and Interaction Design | `motion-interaction-design` | Core service page | "interaction design" 1,900; "motion in graphic design" 3,600 (informational); "motion design agency" 40 | Keep, small. Differentiator more than a traffic source. |
 
 ### Decisions taken (change them freely)
@@ -104,6 +105,7 @@ Everything below was written by me, not supplied by Mellon, and must be checked 
 | Process and timeline sections | To be written per page | Your real process and durations. I won't publish durations or step counts without them. |
 | FAQ answers | To be written per page | I'll draft from the questions people search; you confirm each answer. |
 | Testimonials, client names, results, case studies | Nowhere yet | **None invented.** Sections stay empty until you supply real ones, with permission to name the client. |
+| Paid Advertising page (steps, FAQ answers) and the four new-market landing pages (steps, expectations, FAQ answers) | `content/*/services.json`, `app/[locale]/(landing-pages)/*/copy.ts` | **Drafted by me, 2026-10-02.** Confirm each. Assumed: that creative covers YouTube video as well as static and banner ads; that Mellon is based in India and works over video calls and shared files; that ad spend is separate from the management fee. Prices on the landing pages are derived from `docs/pricing.md` (search summaries only); the Arabic-and-English point on the Dubai page makes no promise. |
 | Years in business, team size, client count | Nowhere yet | Not stated anywhere; don't add without facts. |
 
 ## Content architecture (decided 2026-10-01)
@@ -112,6 +114,7 @@ Service pages are **hubs**. Supporting guides (**spokes**) link up to their hub 
 
 ## Change log
 
+- 2026-10-02: owner confirmed what Mellon sells and does not sell. **Not offered: packaging design, brand naming** (removed from the Branding service in all locales, the Bangalore branding landing page, and the packaging mention on Consumer Electronics). **Offered: Google Ads and Meta ads (strategy, management, creative with copy), brand manuals, corporate presentations.** Built Paid Advertising as the fourteenth service; added brand manual and corporate presentation to Branding. Enabled en-AU and en-CA and added en-AE, en-SG and en-IE (English, content inherited). Four landing pages for the new markets: branding in Dubai (en-AE), web design in Toronto (en-CA), branding in Singapore (en-SG), branding in Australia (en-AU). Paid advertising pricing and branding/web prices for the new markets are in `docs/pricing.md`.
 - 2026-10-01: document created from the keyword research. Added Web Design as a proposed service; proposed reclassifying End-to-End Design; proposed four categories.
 - 2026-10-01: recorded the hub, spoke and landing-page architecture. Pricing rule clarified: internal only, never advertised. Started the SaaS dashboard landing page (see `docs/landing-page-method.md`).
 - 2026-10-01: built the Web Design service (en-US, de-DE, es-ES, fr-FR, nl-NL; en-GB and en-IN inherit). Service pages gained optional process, FAQ (with FAQ markup), related-services sections and motion. Dashboard landing page set to indexable.

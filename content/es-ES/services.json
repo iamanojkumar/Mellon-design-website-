@@ -3,12 +3,13 @@
     "slug": "branding",
     "name": "Branding",
     "tagline": "Sistemas de identidad hechos para resistir en cualquier soporte.",
-    "summary": "Somos una agencia de branding. Creamos identidades de marca desde cero (nombre, símbolo, color, tipografía, voz) y las codificamos para que cualquier equipo que trabaje con la marca después de nosotros se mantenga fiel a ella sin tener que preguntar.",
+    "summary": "Somos una agencia de branding. Creamos identidades de marca desde cero (símbolo, color, tipografía, voz) y las recogemos en un manual de marca para que cualquier equipo que trabaje con la marca después de nosotros se mantenga fiel a ella sin tener que preguntar.",
     "deliverables": [
-      "Estrategia de marca, posicionamiento y naming",
+      "Estrategia de marca y posicionamiento",
       "Logotipo, símbolo y sistema de identidad visual",
       "Guías de tipografía, color e imagen",
-      "Documentación de guías de marca para uso interno y de agencias"
+      "Manual de marca para uso interno y de agencias",
+      "Presentación corporativa con tu marca, construida a partir de la identidad"
     ],
     "relatedIndustries": [
       "fashion-brand-design",
@@ -18,7 +19,7 @@
     ],
     "headline": "Una agencia de branding que construye sistemas de identidad, no solo logotipos.",
     "metaTitle": "Agencia de branding: estrategia e identidad – Mellon",
-    "metaDescription": "Mellon es una agencia de branding: estrategia de marca, naming, logotipo, identidad visual y guías para tu equipo. Pide presupuesto.",
+    "metaDescription": "Mellon es una agencia de branding: estrategia de marca, logotipo, identidad visual, manual de marca y presentación corporativa para tu equipo. Pide presupuesto.",
     "process": [
       {
         "title": "Descubrimiento",
@@ -30,29 +31,29 @@
       },
       {
         "title": "Identidad",
-        "text": "Diseñamos el nombre, el símbolo, el color, la tipografía y la imagen, y los probamos en aplicaciones reales."
+        "text": "Diseñamos el símbolo, el color, la tipografía y la imagen, y los probamos en aplicaciones reales."
       },
       {
         "title": "Guías",
-        "text": "Documentamos el sistema para que tus equipos y otras agencias puedan usarlo sin nosotros."
+        "text": "Escribimos el manual de marca para que tus equipos y otras agencias puedan usar el sistema sin nosotros."
       },
       {
         "title": "Implantación",
-        "text": "Aplicamos la identidad a tus primeros puntos de contacto, como tu web y los materiales clave, y acompañamos el lanzamiento."
+        "text": "Aplicamos la identidad a tus primeros puntos de contacto, como tu web y tu presentación corporativa, y acompañamos el lanzamiento."
       }
     ],
     "faqs": [
       {
         "question": "¿Qué hace una agencia de branding?",
-        "answer": "Definimos quién es un negocio y cómo se ve y suena: estrategia, nombre, logotipo, color, tipografía y las guías que lo mantienen coherente."
+        "answer": "Definimos quién es un negocio y cómo se ve y suena: estrategia, logotipo, color, tipografía y el manual de marca que lo mantiene coherente."
       },
       {
         "question": "¿Qué diferencia hay entre un logotipo y una identidad de marca?",
         "answer": "Un logotipo es un único símbolo. Una identidad es todo el sistema que lo rodea: color, tipografía, imagen, voz y las reglas para usarlos."
       },
       {
-        "question": "¿También creáis el nombre de la marca?",
-        "answer": "Sí. El naming forma parte de la estrategia de marca cuando lo necesitas."
+        "question": "¿Hacéis manuales de marca y presentaciones corporativas?",
+        "answer": "Sí. El manual de marca documenta la identidad para que cualquier equipo pueda aplicarla. La presentación corporativa pone la marca a trabajar en una presentación que puedes usar con clientes, inversores o en propuestas."
       },
       {
         "question": "¿Podéis rehacer la marca de un negocio existente?",
@@ -60,7 +61,7 @@
       },
       {
         "question": "¿Qué recibimos al final?",
-        "answer": "El sistema de identidad y la documentación de guías de marca con la que pueden trabajar tus equipos y otras agencias."
+        "answer": "El sistema de identidad y el manual de marca con el que pueden trabajar tus equipos y otras agencias, y una presentación corporativa si la has pedido."
       },
       {
         "question": "¿Cómo cobráis el branding?",
@@ -71,7 +72,8 @@
       "web-design",
       "design-systems",
       "ui-ux-design",
-      "social-media-content-marketing"
+      "social-media-content-marketing",
+      "paid-advertising"
     ],
     "category": "brand"
   },
@@ -668,7 +670,8 @@
       "web-design",
       "ux-audit",
       "social-media-content-marketing",
-      "branding"
+      "branding",
+      "paid-advertising"
     ],
     "category": "growth-content"
   },
@@ -739,7 +742,8 @@
       "branding",
       "seo-content-strategy",
       "motion-interaction-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ],
     "category": "growth-content"
   },
@@ -968,8 +972,87 @@
       "ui-ux-design",
       "ecommerce-design",
       "branding",
-      "seo-content-strategy"
+      "seo-content-strategy",
+      "paid-advertising"
     ],
     "category": "web-commerce"
+  },
+  {
+    "slug": "paid-advertising",
+    "name": "Publicidad de pago",
+    "headline": "Publicidad de pago en Google y Meta, gestionada por el equipo que crea los anuncios.",
+    "tagline": "Estrategia, gestión y creatividad para anuncios en Google y Meta.",
+    "summary": "Planificamos tu publicidad de pago, la gestionamos en Google Ads y Meta, y creamos nosotros la creatividad y los textos, para que los anuncios, la página de destino y tu marca digan lo mismo.",
+    "metaTitle": "Agencia de publicidad de pago: Google y Meta – Mellon",
+    "metaDescription": "Mellon planifica, gestiona y crea anuncios en Google Ads (YouTube y banners web) y Meta: estrategia, campañas, creatividad y textos. Pide presupuesto.",
+    "deliverables": [
+      "Estrategia publicitaria: objetivos, audiencias, canales y reparto del presupuesto",
+      "Campañas de Google Ads, incluidos YouTube y banners en sitios web",
+      "Anuncios en Meta, en Facebook e Instagram",
+      "Creatividad y textos pensados para cada ubicación",
+      "Seguimiento de conversiones e informes que se entienden",
+      "Gestión y optimización continuas"
+    ],
+    "process": [
+      {
+        "title": "Estrategia",
+        "text": "Acordamos el objetivo, la audiencia y qué sería un buen resultado, y luego elegimos los canales y repartimos el presupuesto."
+      },
+      {
+        "title": "Configuración",
+        "text": "Configuramos las cuentas, el seguimiento de conversiones y la estructura de campañas para poder medir resultados desde el primer día."
+      },
+      {
+        "title": "Creatividad",
+        "text": "Diseñamos los anuncios y escribimos los textos de cada ubicación, con tu marca."
+      },
+      {
+        "title": "Lanzamiento",
+        "text": "Lanzamos con un conjunto acotado de anuncios, para tener algo de lo que aprender antes de aumentar la inversión."
+      },
+      {
+        "title": "Optimización",
+        "text": "Revisamos los resultados, quitamos lo que no funciona, ampliamos lo que sí y te informamos con un lenguaje claro."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "¿En qué plataformas gestionáis anuncios?",
+        "answer": "En Google Ads, que incluye búsqueda, YouTube y banners en sitios web, y en Meta, con anuncios en Facebook e Instagram."
+      },
+      {
+        "question": "¿Creáis los anuncios además de gestionarlos?",
+        "answer": "Sí. Diseñamos la creatividad y escribimos los textos, para que los anuncios, la página de destino y tu marca se vean y suenen como una sola empresa."
+      },
+      {
+        "question": "¿Necesitamos una página de destino?",
+        "answer": "Los anuncios funcionan mejor cuando llevan a una página pensada para ellos. Si todavía no la tienes, podemos diseñarla y construirla dentro del servicio de diseño web."
+      },
+      {
+        "question": "¿Cómo informáis de los resultados?",
+        "answer": "Primero configuramos el seguimiento de conversiones y después te contamos, con un lenguaje claro, cuánto han costado los anuncios y qué han conseguido."
+      },
+      {
+        "question": "¿Cuándo veremos resultados?",
+        "answer": "Depende de la plataforma, del presupuesto y de cuánto haya que probar. Al definir el alcance te diremos qué esperar."
+      },
+      {
+        "question": "¿Cuánto cuesta?",
+        "answer": "La gestión es una cuota mensual ajustada a las plataformas, al número de campañas y a cuánta creatividad necesites. La inversión publicitaria es aparte y la decides tú. Definimos la cuota contigo tras una llamada breve."
+      }
+    ],
+    "relatedIndustries": [
+      "ecommerce",
+      "technology-saas",
+      "real-estate-design",
+      "fashion-brand-design"
+    ],
+    "relatedServices": [
+      "social-media-content-marketing",
+      "seo-content-strategy",
+      "web-design",
+      "branding"
+    ],
+    "category": "growth-content"
   }
 ]

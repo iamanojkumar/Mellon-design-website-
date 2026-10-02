@@ -53,11 +53,11 @@
   {
     "slug": "consumer-electronics",
     "name": "Consumer Electronics",
-    "tagline": "Brand and product experience that carries from the box to the app.",
+    "tagline": "Brand and product experience that carries from the device to the app.",
     "summary": "Hardware earns trust in seconds; the software has to keep it. We design the companion apps, setup flows, and brand systems that make electronics feel considered end to end.",
     "deliverables": [
       "Companion app and setup-flow design",
-      "Packaging-to-product brand continuity",
+      "Brand continuity from the product to the app and website",
       "E-commerce and product page design",
       "Motion design for product launches"
     ],
@@ -82,7 +82,8 @@
       "ecommerce-design",
       "ux-audit",
       "branding",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -117,7 +118,8 @@
     "relatedServices": [
       "branding",
       "ecommerce-design",
-      "ui-ux-design"
+      "ui-ux-design",
+      "paid-advertising"
     ]
   },
   {
@@ -237,7 +239,8 @@
       "branding",
       "ui-ux-design",
       "ecommerce-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -273,7 +276,8 @@
       "design-systems",
       "product-design",
       "ux-audit",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   }
 ]

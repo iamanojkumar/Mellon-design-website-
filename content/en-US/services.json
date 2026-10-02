@@ -3,12 +3,13 @@
     "slug": "branding",
     "name": "Branding",
     "tagline": "Identity systems built to hold up across every surface.",
-    "summary": "We're a branding agency. We build brand identities from the ground up — name, mark, color, type, voice — then codify them so every team that touches the brand after us stays on-model without asking.",
+    "summary": "We're a branding agency. We build brand identities from the ground up — mark, color, type, voice — then codify them in a brand manual so every team that touches the brand after us stays on-model without asking.",
     "deliverables": [
-      "Brand strategy, positioning, and naming",
+      "Brand strategy and positioning",
       "Logo, mark, and visual identity system",
       "Typography, color, and imagery guidelines",
-      "Brand guidelines documentation for internal and agency use"
+      "Brand manual for internal and agency use",
+      "Corporate presentation in your brand, built from the identity"
     ],
     "relatedIndustries": [
       "fashion-brand-design",
@@ -18,7 +19,7 @@
     ],
     "headline": "A branding agency that builds identity systems, not just logos.",
     "metaTitle": "Branding agency: strategy and identity — Mellon",
-    "metaDescription": "Mellon is a branding agency: brand strategy, naming, logo and visual identity, and brand guidelines your team can use without us. Get a quote.",
+    "metaDescription": "Mellon is a branding agency: brand strategy, logo and visual identity, a brand manual, and a corporate presentation your team can use without us. Get a quote.",
     "process": [
       {
         "title": "Discovery",
@@ -30,29 +31,29 @@
       },
       {
         "title": "Identity",
-        "text": "We design the name, mark, color, type, and imagery, and test them in real applications."
+        "text": "We design the mark, color, type, and imagery, and test them in real applications."
       },
       {
         "title": "Guidelines",
-        "text": "We document the system so your teams and other agencies can use it without us."
+        "text": "We write the brand manual so your teams and other agencies can use the system without us."
       },
       {
         "title": "Rollout",
-        "text": "We apply the identity to your first touchpoints, such as your website and key materials, and support the launch."
+        "text": "We apply the identity to your first touchpoints, such as your website and corporate presentation, and support the launch."
       }
     ],
     "faqs": [
       {
         "question": "What does a branding agency do?",
-        "answer": "We define who a business is and how it looks and sounds: strategy, name, logo, color, type, and the guidelines that keep it consistent."
+        "answer": "We define who a business is and how it looks and sounds: strategy, logo, color, type, and the brand manual that keeps it consistent."
       },
       {
         "question": "What's the difference between a logo and a brand identity?",
         "answer": "A logo is one mark. An identity is the full system around it: color, type, imagery, voice, and the rules for using them."
       },
       {
-        "question": "Do you also name the brand?",
-        "answer": "Yes. Naming is part of brand strategy when you need it."
+        "question": "Do you make brand manuals and corporate presentations?",
+        "answer": "Yes. The brand manual documents the identity so any team can apply it. The corporate presentation puts the brand to work in a deck you can use for pitches, investors, or clients."
       },
       {
         "question": "Can you rebrand an existing business?",
@@ -60,7 +61,7 @@
       },
       {
         "question": "What do we receive at the end?",
-        "answer": "The identity system and brand guidelines documentation your own teams and other agencies can work from."
+        "answer": "The identity system and the brand manual your own teams and other agencies can work from, plus a corporate presentation if you asked for one."
       },
       {
         "question": "How do you price branding?",
@@ -71,7 +72,8 @@
       "web-design",
       "design-systems",
       "ui-ux-design",
-      "social-media-content-marketing"
+      "social-media-content-marketing",
+      "paid-advertising"
     ],
     "category": "brand"
   },
@@ -668,7 +670,8 @@
       "web-design",
       "ux-audit",
       "social-media-content-marketing",
-      "branding"
+      "branding",
+      "paid-advertising"
     ],
     "category": "growth-content"
   },
@@ -739,7 +742,8 @@
       "branding",
       "seo-content-strategy",
       "motion-interaction-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ],
     "category": "growth-content"
   },
@@ -968,8 +972,87 @@
       "ui-ux-design",
       "ecommerce-design",
       "branding",
-      "seo-content-strategy"
+      "seo-content-strategy",
+      "paid-advertising"
     ],
     "category": "web-commerce"
+  },
+  {
+    "slug": "paid-advertising",
+    "name": "Paid Advertising",
+    "headline": "Paid advertising on Google and Meta, run by the team that makes the ads.",
+    "tagline": "Strategy, management, and creative for Google and Meta ads.",
+    "summary": "We plan your paid advertising, run it on Google Ads and Meta, and make the creative and copy ourselves, so the ads, the landing page, and your brand all say the same thing.",
+    "metaTitle": "Paid advertising agency: Google and Meta ads — Mellon",
+    "metaDescription": "Mellon plans, runs, and creates Google Ads (including YouTube and website banners) and Meta ads: strategy, campaign management, creative, and copy. Get a quote.",
+    "deliverables": [
+      "Advertising strategy: goals, audiences, channels, and budget split",
+      "Google Ads campaigns, including YouTube and website banner ads",
+      "Meta ads on Facebook and Instagram",
+      "Ad creative and copy written for each placement",
+      "Conversion tracking and reporting you can read",
+      "Ongoing management and optimization"
+    ],
+    "process": [
+      {
+        "title": "Strategy",
+        "text": "We agree the goal, the audience, and what a good result looks like, then choose the channels and split the budget."
+      },
+      {
+        "title": "Setup",
+        "text": "We set up the accounts, conversion tracking, and campaign structure so results can be measured from day one."
+      },
+      {
+        "title": "Creative",
+        "text": "We design the ads and write the copy for each placement, in your brand."
+      },
+      {
+        "title": "Launch",
+        "text": "We launch with a focused set of ads, so there is something to learn from before spend scales up."
+      },
+      {
+        "title": "Optimize",
+        "text": "We review results, cut what isn't working, expand what is, and report in plain language."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Which platforms do you run ads on?",
+        "answer": "Google Ads, which covers search, YouTube, and website banner ads, and Meta ads on Facebook and Instagram."
+      },
+      {
+        "question": "Do you make the ads as well as run them?",
+        "answer": "Yes. We design the creative and write the copy, so the ads, the landing page, and your brand look and sound like one company."
+      },
+      {
+        "question": "Do we need a landing page?",
+        "answer": "Ads work best when they lead somewhere built for them. If you don't have a page yet, we can design and build it as part of web design."
+      },
+      {
+        "question": "How do you report results?",
+        "answer": "We set up conversion tracking first, then report what the ads cost and what they produced, in plain language."
+      },
+      {
+        "question": "How long before we see results?",
+        "answer": "It depends on the platform, the budget, and how much there is to test. We'll tell you what to expect when we scope the work."
+      },
+      {
+        "question": "How much does it cost?",
+        "answer": "Management is a monthly fee scoped to the platforms, the number of campaigns, and how much creative you need. The ad budget itself is separate and set by you. We scope the fee with you after a short call."
+      }
+    ],
+    "relatedIndustries": [
+      "ecommerce",
+      "technology-saas",
+      "real-estate-design",
+      "fashion-brand-design"
+    ],
+    "relatedServices": [
+      "social-media-content-marketing",
+      "seo-content-strategy",
+      "web-design",
+      "branding"
+    ],
+    "category": "growth-content"
   }
 ]

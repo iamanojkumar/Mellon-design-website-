@@ -3,12 +3,13 @@
     "slug": "branding",
     "name": "Branding",
     "tagline": "Identitätssysteme, die auf jeder Fläche bestehen.",
-    "summary": "Wir sind eine Branding-Agentur. Wir entwickeln Markenidentitäten von Grund auf – Name, Zeichen, Farbe, Schrift, Tonalität – und halten sie so fest, dass jedes Team, das nach uns mit der Marke arbeitet, auf Linie bleibt, ohne nachfragen zu müssen.",
+    "summary": "Wir sind eine Branding-Agentur. Wir entwickeln Markenidentitäten von Grund auf – Zeichen, Farbe, Schrift, Tonalität – und halten sie in einem Brand Manual fest, damit jedes Team, das nach uns mit der Marke arbeitet, auf Linie bleibt, ohne nachfragen zu müssen.",
     "deliverables": [
-      "Markenstrategie, Positionierung und Naming",
+      "Markenstrategie und Positionierung",
       "Logo, Bildmarke und visuelles Identitätssystem",
       "Richtlinien für Typografie, Farbe und Bildsprache",
-      "Brand-Guidelines-Dokumentation für internen und Agenturgebrauch"
+      "Brand Manual für internen und Agenturgebrauch",
+      "Unternehmenspräsentation in Ihrer Marke, aufgebaut auf der Identität"
     ],
     "relatedIndustries": [
       "fashion-brand-design",
@@ -18,7 +19,7 @@
     ],
     "headline": "Eine Branding-Agentur, die Identitätssysteme baut, nicht nur Logos.",
     "metaTitle": "Branding-Agentur: Strategie und Identität – Mellon",
-    "metaDescription": "Mellon ist eine Branding-Agentur: Markenstrategie, Naming, Logo, visuelle Identität und Brand Guidelines für Ihr Team. Angebot anfragen.",
+    "metaDescription": "Mellon ist eine Branding-Agentur: Markenstrategie, Logo, visuelle Identität, Brand Manual und Unternehmenspräsentation für Ihr Team. Angebot anfragen.",
     "process": [
       {
         "title": "Analyse",
@@ -30,29 +31,29 @@
       },
       {
         "title": "Identität",
-        "text": "Wir gestalten Name, Zeichen, Farbe, Schrift und Bildsprache und erproben sie in realen Anwendungen."
+        "text": "Wir gestalten Zeichen, Farbe, Schrift und Bildsprache und erproben sie in realen Anwendungen."
       },
       {
         "title": "Guidelines",
-        "text": "Wir dokumentieren das System, damit Ihre Teams und andere Agenturen es ohne uns nutzen können."
+        "text": "Wir schreiben das Brand Manual, damit Ihre Teams und andere Agenturen das System ohne uns nutzen können."
       },
       {
         "title": "Einführung",
-        "text": "Wir übertragen die Identität auf Ihre ersten Berührungspunkte, etwa Ihre Website und wichtige Materialien, und begleiten den Start."
+        "text": "Wir übertragen die Identität auf Ihre ersten Berührungspunkte, etwa Ihre Website und Ihre Unternehmenspräsentation, und begleiten den Start."
       }
     ],
     "faqs": [
       {
         "question": "Was macht eine Branding-Agentur?",
-        "answer": "Wir definieren, wer ein Unternehmen ist und wie es aussieht und klingt: Strategie, Name, Logo, Farbe, Schrift und die Guidelines, die alles konsistent halten."
+        "answer": "Wir definieren, wer ein Unternehmen ist und wie es aussieht und klingt: Strategie, Logo, Farbe, Schrift und das Brand Manual, das alles konsistent hält."
       },
       {
         "question": "Was ist der Unterschied zwischen Logo und Markenidentität?",
         "answer": "Ein Logo ist ein einzelnes Zeichen. Eine Identität ist das ganze System darum: Farbe, Schrift, Bildsprache, Tonalität und die Regeln für ihre Anwendung."
       },
       {
-        "question": "Entwickeln Sie auch den Markennamen?",
-        "answer": "Ja. Naming ist Teil der Markenstrategie, wenn Sie es brauchen."
+        "question": "Erstellen Sie Brand Manuals und Unternehmenspräsentationen?",
+        "answer": "Ja. Das Brand Manual dokumentiert die Identität, damit jedes Team sie anwenden kann. Die Unternehmenspräsentation setzt die Marke in einem Foliensatz ein, den Sie für Pitches, Investoren oder Kunden nutzen können."
       },
       {
         "question": "Können Sie ein bestehendes Unternehmen neu positionieren?",
@@ -60,7 +61,7 @@
       },
       {
         "question": "Was erhalten wir am Ende?",
-        "answer": "Das Identitätssystem und die Brand-Guidelines-Dokumentation, mit der Ihre Teams und andere Agenturen arbeiten können."
+        "answer": "Das Identitätssystem und das Brand Manual, mit dem Ihre Teams und andere Agenturen arbeiten können, auf Wunsch dazu eine Unternehmenspräsentation."
       },
       {
         "question": "Wie berechnen Sie Branding?",
@@ -71,7 +72,8 @@
       "web-design",
       "design-systems",
       "ui-ux-design",
-      "social-media-content-marketing"
+      "social-media-content-marketing",
+      "paid-advertising"
     ],
     "category": "brand"
   },
@@ -668,7 +670,8 @@
       "web-design",
       "ux-audit",
       "social-media-content-marketing",
-      "branding"
+      "branding",
+      "paid-advertising"
     ],
     "category": "growth-content"
   },
@@ -739,7 +742,8 @@
       "branding",
       "seo-content-strategy",
       "motion-interaction-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ],
     "category": "growth-content"
   },
@@ -968,8 +972,87 @@
       "ui-ux-design",
       "ecommerce-design",
       "branding",
-      "seo-content-strategy"
+      "seo-content-strategy",
+      "paid-advertising"
     ],
     "category": "web-commerce"
+  },
+  {
+    "slug": "paid-advertising",
+    "name": "Paid Advertising",
+    "headline": "Bezahlte Werbung auf Google und Meta, betreut von dem Team, das die Anzeigen auch gestaltet.",
+    "tagline": "Strategie, Betreuung und Kreation für Google- und Meta-Anzeigen.",
+    "summary": "Wir planen Ihre bezahlte Werbung, schalten sie über Google Ads und Meta und erstellen Kreation und Texte selbst, damit Anzeigen, Landingpage und Marke dasselbe sagen.",
+    "metaTitle": "Paid-Advertising-Agentur: Google- und Meta-Ads – Mellon",
+    "metaDescription": "Mellon plant, betreut und gestaltet Google Ads (auch YouTube, Website-Banner) und Meta-Anzeigen: Strategie, Kampagnen, Kreation, Text. Angebot anfragen.",
+    "deliverables": [
+      "Werbestrategie: Ziele, Zielgruppen, Kanäle und Budgetverteilung",
+      "Google-Ads-Kampagnen, einschließlich YouTube und Website-Bannern",
+      "Meta-Anzeigen auf Facebook und Instagram",
+      "Anzeigengestaltung und Texte für jede Platzierung",
+      "Conversion-Tracking und verständliches Reporting",
+      "Laufende Betreuung und Optimierung"
+    ],
+    "process": [
+      {
+        "title": "Strategie",
+        "text": "Wir legen Ziel, Zielgruppe und ein gutes Ergebnis fest, wählen dann die Kanäle und verteilen das Budget."
+      },
+      {
+        "title": "Einrichtung",
+        "text": "Wir richten Konten, Conversion-Tracking und Kampagnenstruktur ein, damit Ergebnisse vom ersten Tag an messbar sind."
+      },
+      {
+        "title": "Kreation",
+        "text": "Wir gestalten die Anzeigen und schreiben die Texte für jede Platzierung, passend zu Ihrer Marke."
+      },
+      {
+        "title": "Start",
+        "text": "Wir starten mit einem überschaubaren Set an Anzeigen, damit es etwas zu lernen gibt, bevor das Budget wächst."
+      },
+      {
+        "title": "Optimierung",
+        "text": "Wir werten die Ergebnisse aus, streichen, was nicht funktioniert, bauen aus, was funktioniert, und berichten in klarer Sprache."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Auf welchen Plattformen schalten Sie Anzeigen?",
+        "answer": "Auf Google Ads, das Suche, YouTube und Website-Banner umfasst, und mit Meta-Anzeigen auf Facebook und Instagram."
+      },
+      {
+        "question": "Erstellen Sie die Anzeigen auch oder betreuen Sie nur die Kampagnen?",
+        "answer": "Beides. Wir gestalten die Anzeigen und schreiben die Texte, damit Anzeigen, Landingpage und Marke wie ein Unternehmen aussehen und klingen."
+      },
+      {
+        "question": "Brauchen wir eine Landingpage?",
+        "answer": "Anzeigen wirken am besten, wenn sie auf eine dafür gebaute Seite führen. Wenn Sie noch keine haben, gestalten und bauen wir sie im Rahmen von Webdesign."
+      },
+      {
+        "question": "Wie berichten Sie über Ergebnisse?",
+        "answer": "Wir richten zuerst das Conversion-Tracking ein und berichten dann in klarer Sprache, was die Anzeigen gekostet und was sie gebracht haben."
+      },
+      {
+        "question": "Wann sehen wir Ergebnisse?",
+        "answer": "Das hängt von Plattform, Budget und davon ab, wie viel es zu testen gibt. Wir sagen Ihnen bei der Planung, womit Sie rechnen können."
+      },
+      {
+        "question": "Was kostet es?",
+        "answer": "Die Betreuung ist eine monatliche Gebühr, abgestimmt auf Plattformen, Anzahl der Kampagnen und den Umfang der Kreation. Das Werbebudget selbst ist getrennt und legen Sie fest. Wir klären die Gebühr nach einem kurzen Gespräch mit Ihnen."
+      }
+    ],
+    "relatedIndustries": [
+      "ecommerce",
+      "technology-saas",
+      "real-estate-design",
+      "fashion-brand-design"
+    ],
+    "relatedServices": [
+      "social-media-content-marketing",
+      "seo-content-strategy",
+      "web-design",
+      "branding"
+    ],
+    "category": "growth-content"
   }
 ]

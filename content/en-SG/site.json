@@ -1,0 +1,9 @@
+{
+  "forms": {
+    "contact": {
+      "labels": {
+        "budgetPlaceholder": "e.g. S$20k–S$55k"
+      }
+    }
+  }
+}

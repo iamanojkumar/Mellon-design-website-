@@ -53,11 +53,11 @@
   {
     "slug": "consumer-electronics",
     "name": "Consumentenelektronica",
-    "tagline": "Merk- en productervaring die van de doos tot de app doorloopt.",
+    "tagline": "Merk- en productervaring die van het apparaat tot de app doorloopt.",
     "summary": "Hardware wint vertrouwen in seconden; de software moet het vasthouden. We ontwerpen de begeleidende apps, installatieflows en merksystemen die elektronica van begin tot eind doordacht laten voelen.",
     "deliverables": [
       "Design van begeleidende apps en installatieflows",
-      "Merkcontinuïteit van verpakking tot product",
+      "Merkcontinuïteit van product tot app en website",
       "Design van e-commerce en productpagina's",
       "Motion design voor productlanceringen"
     ],
@@ -82,7 +82,8 @@
       "ecommerce-design",
       "ux-audit",
       "branding",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -117,7 +118,8 @@
     "relatedServices": [
       "branding",
       "ecommerce-design",
-      "ui-ux-design"
+      "ui-ux-design",
+      "paid-advertising"
     ]
   },
   {
@@ -237,7 +239,8 @@
       "branding",
       "ui-ux-design",
       "ecommerce-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -273,7 +276,8 @@
       "design-systems",
       "product-design",
       "ux-audit",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   }
 ]

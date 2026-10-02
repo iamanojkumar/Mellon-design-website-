@@ -38,6 +38,11 @@ export const landingPages: LandingPage[] = [
   { slug: "ui-ux-design-company-bangalore", locales: ["en-IN"], indexable: true },
   // French counterpart of the Figma design system page, with a French slug for the French market.
   { slug: "agence-design-system-figma-inde", locales: ["fr-FR"], indexable: true },
+  // Expansion markets (2026-10-02), English only, one page per market. Demand is indicative (banded volumes), see each copy.ts.
+  { slug: "branding-agency-dubai", locales: ["en-AE"], indexable: true },
+  { slug: "web-design-company-toronto", locales: ["en-CA"], indexable: true },
+  { slug: "branding-agency-singapore", locales: ["en-SG"], indexable: true },
+  { slug: "branding-agency-australia", locales: ["en-AU"], indexable: true },
 ];
 
 /** First URL segments already owned by core routes; a landing page can't reuse them. */

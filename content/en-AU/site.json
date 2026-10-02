@@ -1,0 +1,9 @@
+{
+  "forms": {
+    "contact": {
+      "labels": {
+        "budgetPlaceholder": "e.g. A$20k–A$60k"
+      }
+    }
+  }
+}

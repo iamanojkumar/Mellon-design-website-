@@ -3,12 +3,13 @@
     "slug": "branding",
     "name": "Branding",
     "tagline": "Identiteitssystemen die op elk oppervlak standhouden.",
-    "summary": "We zijn een brandingbureau. We bouwen merkidentiteiten van de grond af (naam, beeldmerk, kleur, lettertype, tone of voice) en leggen ze zo vast dat elk team dat na ons met het merk werkt, op koers blijft zonder te hoeven vragen.",
+    "summary": "We zijn een brandingbureau. We bouwen merkidentiteiten van de grond af (beeldmerk, kleur, lettertype, tone of voice) en leggen ze vast in een merkhandboek, zodat elk team dat na ons met het merk werkt, op koers blijft zonder te hoeven vragen.",
     "deliverables": [
-      "Merkstrategie, positionering en naamgeving",
+      "Merkstrategie en positionering",
       "Logo, beeldmerk en visueel identiteitssysteem",
       "Richtlijnen voor typografie, kleur en beeldtaal",
-      "Merkrichtlijnen-documentatie voor intern gebruik en bureaus"
+      "Merkhandboek voor intern gebruik en bureaus",
+      "Bedrijfspresentatie in jouw merk, opgebouwd uit de identiteit"
     ],
     "relatedIndustries": [
       "fashion-brand-design",
@@ -18,7 +19,7 @@
     ],
     "headline": "Een brandingbureau dat identiteitssystemen bouwt, niet alleen logo's.",
     "metaTitle": "Brandingbureau: strategie en identiteit – Mellon",
-    "metaDescription": "Mellon is een brandingbureau: merkstrategie, naamgeving, logo, visuele identiteit en richtlijnen voor je team. Vraag een offerte aan.",
+    "metaDescription": "Mellon is een brandingbureau: merkstrategie, logo, visuele identiteit, merkhandboek en bedrijfspresentatie voor je team. Vraag een offerte aan.",
     "process": [
       {
         "title": "Ontdekken",
@@ -30,29 +31,29 @@
       },
       {
         "title": "Identiteit",
-        "text": "We ontwerpen de naam, het beeldmerk, de kleur, het lettertype en de beeldtaal en toetsen ze in echte toepassingen."
+        "text": "We ontwerpen het beeldmerk, de kleur, het lettertype en de beeldtaal en toetsen ze in echte toepassingen."
       },
       {
         "title": "Richtlijnen",
-        "text": "We leggen het systeem vast, zodat je teams en andere bureaus het zonder ons kunnen gebruiken."
+        "text": "We schrijven het merkhandboek, zodat je teams en andere bureaus het systeem zonder ons kunnen gebruiken."
       },
       {
         "title": "Uitrol",
-        "text": "We passen de identiteit toe op je eerste contactpunten, zoals je website en belangrijke materialen, en ondersteunen de lancering."
+        "text": "We passen de identiteit toe op je eerste contactpunten, zoals je website en bedrijfspresentatie, en ondersteunen de lancering."
       }
     ],
     "faqs": [
       {
         "question": "Wat doet een brandingbureau?",
-        "answer": "We bepalen wie een bedrijf is en hoe het eruitziet en klinkt: strategie, naam, logo, kleur, lettertype en de richtlijnen die alles consistent houden."
+        "answer": "We bepalen wie een bedrijf is en hoe het eruitziet en klinkt: strategie, logo, kleur, lettertype en het merkhandboek dat alles consistent houdt."
       },
       {
         "question": "Wat is het verschil tussen een logo en een merkidentiteit?",
         "answer": "Een logo is één beeldmerk. Een identiteit is het hele systeem eromheen: kleur, lettertype, beeldtaal, tone of voice en de regels om ze te gebruiken."
       },
       {
-        "question": "Bedenken jullie ook de merknaam?",
-        "answer": "Ja. Naamgeving hoort bij merkstrategie als je die nodig hebt."
+        "question": "Maken jullie merkhandboeken en bedrijfspresentaties?",
+        "answer": "Ja. Het merkhandboek legt de identiteit vast, zodat elk team haar kan toepassen. De bedrijfspresentatie zet het merk aan het werk in een deck dat je kunt gebruiken voor pitches, investeerders of klanten."
       },
       {
         "question": "Kunnen jullie een bestaand bedrijf rebranden?",
@@ -60,7 +61,7 @@
       },
       {
         "question": "Wat krijgen we aan het eind?",
-        "answer": "Het identiteitssysteem en de documentatie van de merkrichtlijnen waarmee je eigen teams en andere bureaus kunnen werken."
+        "answer": "Het identiteitssysteem en het merkhandboek waarmee je eigen teams en andere bureaus kunnen werken, en op verzoek een bedrijfspresentatie."
       },
       {
         "question": "Hoe prijzen jullie branding?",
@@ -71,7 +72,8 @@
       "web-design",
       "design-systems",
       "ui-ux-design",
-      "social-media-content-marketing"
+      "social-media-content-marketing",
+      "paid-advertising"
     ],
     "category": "brand"
   },
@@ -668,7 +670,8 @@
       "web-design",
       "ux-audit",
       "social-media-content-marketing",
-      "branding"
+      "branding",
+      "paid-advertising"
     ],
     "category": "growth-content"
   },
@@ -739,7 +742,8 @@
       "branding",
       "seo-content-strategy",
       "motion-interaction-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ],
     "category": "growth-content"
   },
@@ -968,8 +972,87 @@
       "ui-ux-design",
       "ecommerce-design",
       "branding",
-      "seo-content-strategy"
+      "seo-content-strategy",
+      "paid-advertising"
     ],
     "category": "web-commerce"
+  },
+  {
+    "slug": "paid-advertising",
+    "name": "Betaald adverteren",
+    "headline": "Betaald adverteren op Google en Meta, gedaan door het team dat de advertenties maakt.",
+    "tagline": "Strategie, beheer en creatie voor Google- en Meta-advertenties.",
+    "summary": "We plannen je betaalde advertenties, draaien ze op Google Ads en Meta en maken de creatie en teksten zelf, zodat advertenties, landingspagina en merk hetzelfde vertellen.",
+    "metaTitle": "Bureau voor betaald adverteren: Google en Meta – Mellon",
+    "metaDescription": "Mellon plant, beheert en maakt Google Ads (incl. YouTube, websitebanners) en Meta-advertenties: strategie, campagnes, creatie. Vraag een offerte aan.",
+    "deliverables": [
+      "Advertentiestrategie: doelen, doelgroepen, kanalen en budgetverdeling",
+      "Google Ads-campagnes, inclusief YouTube en bannerplekken op websites",
+      "Meta-advertenties op Facebook en Instagram",
+      "Advertentiecreatie en teksten voor elke plaatsing",
+      "Conversietracking en rapportage die je kunt lezen",
+      "Doorlopend beheer en optimalisatie"
+    ],
+    "process": [
+      {
+        "title": "Strategie",
+        "text": "We spreken doel, doelgroep en een goed resultaat af, kiezen dan de kanalen en verdelen het budget."
+      },
+      {
+        "title": "Inrichting",
+        "text": "We richten de accounts, conversietracking en campagnestructuur in, zodat resultaten vanaf dag één meetbaar zijn."
+      },
+      {
+        "title": "Creatie",
+        "text": "We ontwerpen de advertenties en schrijven de teksten voor elke plaatsing, in jouw merk."
+      },
+      {
+        "title": "Lancering",
+        "text": "We starten met een overzichtelijke set advertenties, zodat er iets te leren valt voordat het budget stijgt."
+      },
+      {
+        "title": "Optimalisatie",
+        "text": "We bekijken de resultaten, schrappen wat niet werkt, breiden uit wat wel werkt en rapporteren in gewone taal."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Op welke platformen adverteren jullie?",
+        "answer": "Op Google Ads, dat zoeken, YouTube en bannerplekken op websites omvat, en op Meta met advertenties op Facebook en Instagram."
+      },
+      {
+        "question": "Maken jullie de advertenties ook of beheren jullie alleen?",
+        "answer": "Allebei. We ontwerpen de creatie en schrijven de teksten, zodat advertenties, landingspagina en merk als één bedrijf overkomen."
+      },
+      {
+        "question": "Hebben we een landingspagina nodig?",
+        "answer": "Advertenties werken het best als ze naar een daarvoor gemaakte pagina leiden. Heb je die nog niet, dan ontwerpen en bouwen we hem als onderdeel van webdesign."
+      },
+      {
+        "question": "Hoe rapporteren jullie resultaten?",
+        "answer": "We richten eerst conversietracking in en vertellen daarna in gewone taal wat de advertenties hebben gekost en wat ze hebben opgeleverd."
+      },
+      {
+        "question": "Wanneer zien we resultaat?",
+        "answer": "Dat hangt af van het platform, het budget en hoeveel er te testen valt. Bij het afbakenen vertellen we wat je kunt verwachten."
+      },
+      {
+        "question": "Wat kost het?",
+        "answer": "Beheer is een maandelijks bedrag, afgestemd op de platformen, het aantal campagnes en hoeveel creatie je nodig hebt. Het advertentiebudget zelf staat daar los van en bepaal jij. We stemmen het bedrag met je af na een kort gesprek."
+      }
+    ],
+    "relatedIndustries": [
+      "ecommerce",
+      "technology-saas",
+      "real-estate-design",
+      "fashion-brand-design"
+    ],
+    "relatedServices": [
+      "social-media-content-marketing",
+      "seo-content-strategy",
+      "web-design",
+      "branding"
+    ],
+    "category": "growth-content"
   }
 ]

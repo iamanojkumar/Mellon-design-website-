@@ -21,6 +21,11 @@ import privacyEnUS from "@/content/en-US/pages/privacy.json";
 
 import siteEnGB from "@/content/en-GB/site.json";
 import siteEnIN from "@/content/en-IN/site.json";
+import siteEnAU from "@/content/en-AU/site.json";
+import siteEnCA from "@/content/en-CA/site.json";
+import siteEnAE from "@/content/en-AE/site.json";
+import siteEnSG from "@/content/en-SG/site.json";
+import siteEnIE from "@/content/en-IE/site.json";
 
 import siteNlNL from "@/content/nl-NL/site.json";
 import servicesNlNL from "@/content/nl-NL/services.json";
@@ -106,6 +111,23 @@ export const contentRegistry: Record<string, LocaleContent> = {
   // and only states what is genuinely Indian — the budget field's currency.
   "en-IN": {
     site: siteEnIN,
+  },
+  // Other English markets: copy is inherited, only the budget currency is stated.
+  // en-CA inherits en-US; the rest go through en-GB (see content/locales.json).
+  "en-AU": {
+    site: siteEnAU,
+  },
+  "en-CA": {
+    site: siteEnCA,
+  },
+  "en-AE": {
+    site: siteEnAE,
+  },
+  "en-SG": {
+    site: siteEnSG,
+  },
+  "en-IE": {
+    site: siteEnIE,
   },
   "de-DE": {
     site: siteDeDE,

@@ -53,8 +53,7 @@ Ranked by where agencies get hired (cross-border buyers work in English; local-l
 
 | Tier | Locales | Notes |
 |---|---|---|
-| Live | `en-US`, `en-GB`, `en-IN`, `de-DE`, `es-ES`, `fr-FR`, `nl-NL` | `en-GB` inherits from `en-US`, overrides currency; `en-IN` inherits through `en-GB` (British spelling) and overrides only the budget currency (₹); `de-DE` fully translated (formal "Sie"); `es-ES` fully translated (informal "tú"); `fr-FR` fully translated (formal "vous"); `nl-NL` fully translated (informal "je") |
-| 1 — cheap English variants | `en-AU`, `en-CA` | Spelling/currency only; entries exist (disabled). `en-AU` inherits `en-GB` |
+| Live | `en-US`, `en-GB`, `en-IN`, `en-AU`, `en-CA`, `en-AE`, `en-SG`, `en-IE`, `de-DE`, `es-ES`, `fr-FR`, `nl-NL` | `en-GB` inherits from `en-US`, overrides currency; `en-IN` inherits through `en-GB` (British spelling) and overrides only the budget currency (₹); `en-AU`, `en-AE`, `en-SG` and `en-IE` do the same (enabled 2026-10-02), and `en-CA` inherits `en-US`; `de-DE` fully translated (formal "Sie"); `es-ES` fully translated (informal "tú"); `fr-FR` fully translated (formal "vous"); `nl-NL` fully translated (informal "je") |
 | 2 — remaining variants (translations done) | `fr-CA` (inherits `fr-FR`), `de-AT` / `de-CH` (inherit `de-DE`) and `es-MX` (inherits `es-ES`) once enabled | Variants inherit their base language |
 | 3 — niche / high effort | `zh-CN` (Chinese companies going overseas; note GTM/Google services are blocked in mainland China and hosting speed needs review), `ja-JP` (domestic agencies dominate; needs a professional translation) | `zh-CN` stays a stated priority for the outbound-brands niche |
 | Later (not in `locales.json` yet) | `pt-BR`, `hi-IN`, `ar-AE` | Buyers mostly use English; `ar-AE` needs right-to-left layout site-wide. Add entries only when work starts |

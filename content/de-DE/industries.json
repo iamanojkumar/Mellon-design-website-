@@ -53,11 +53,11 @@
   {
     "slug": "consumer-electronics",
     "name": "Unterhaltungselektronik",
-    "tagline": "Marken- und Produkterlebnis von der Verpackung bis zur App.",
+    "tagline": "Marken- und Produkterlebnis vom Gerät bis zur App.",
     "summary": "Hardware gewinnt Vertrauen in Sekunden; die Software muss es halten. Wir gestalten Companion-Apps, Einrichtungsabläufe und Markensysteme, die Elektronik von Anfang bis Ende durchdacht wirken lassen.",
     "deliverables": [
       "Design von Companion-Apps und Einrichtungsabläufen",
-      "Markenkontinuität von der Verpackung zum Produkt",
+      "Markenkontinuität vom Produkt über die App bis zur Website",
       "Design von E-Commerce- und Produktseiten",
       "Motion-Design für Produkteinführungen"
     ],
@@ -82,7 +82,8 @@
       "ecommerce-design",
       "ux-audit",
       "branding",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -117,7 +118,8 @@
     "relatedServices": [
       "branding",
       "ecommerce-design",
-      "ui-ux-design"
+      "ui-ux-design",
+      "paid-advertising"
     ]
   },
   {
@@ -237,7 +239,8 @@
       "branding",
       "ui-ux-design",
       "ecommerce-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -273,7 +276,8 @@
       "design-systems",
       "product-design",
       "ux-audit",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   }
 ]

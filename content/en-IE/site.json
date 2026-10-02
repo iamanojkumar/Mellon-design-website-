@@ -1,0 +1,9 @@
+{
+  "forms": {
+    "contact": {
+      "labels": {
+        "budgetPlaceholder": "e.g. €14k–€36k"
+      }
+    }
+  }
+}

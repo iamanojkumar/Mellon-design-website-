@@ -1,0 +1,9 @@
+{
+  "forms": {
+    "contact": {
+      "labels": {
+        "budgetPlaceholder": "e.g. AED 55k–150k"
+      }
+    }
+  }
+}

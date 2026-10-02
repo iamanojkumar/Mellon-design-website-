@@ -53,11 +53,11 @@
   {
     "slug": "consumer-electronics",
     "name": "Electrónica de consumo",
-    "tagline": "Marca y experiencia de producto que va de la caja a la app.",
+    "tagline": "Marca y experiencia de producto que va del dispositivo a la app.",
     "summary": "El hardware gana confianza en segundos y el software tiene que mantenerla. Diseñamos las apps complementarias, los flujos de configuración y los sistemas de marca que hacen que la electrónica se sienta cuidada de principio a fin.",
     "deliverables": [
       "Diseño de apps complementarias y flujos de configuración",
-      "Continuidad de marca del embalaje al producto",
+      "Continuidad de marca del producto a la app y la web",
       "Diseño de e-commerce y fichas de producto",
       "Diseño de movimiento para lanzamientos de producto"
     ],
@@ -82,7 +82,8 @@
       "ecommerce-design",
       "ux-audit",
       "branding",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -117,7 +118,8 @@
     "relatedServices": [
       "branding",
       "ecommerce-design",
-      "ui-ux-design"
+      "ui-ux-design",
+      "paid-advertising"
     ]
   },
   {
@@ -237,7 +239,8 @@
       "branding",
       "ui-ux-design",
       "ecommerce-design",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   },
   {
@@ -273,7 +276,8 @@
       "design-systems",
       "product-design",
       "ux-audit",
-      "web-design"
+      "web-design",
+      "paid-advertising"
     ]
   }
 ]

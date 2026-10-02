@@ -1,0 +1,9 @@
+{
+  "forms": {
+    "contact": {
+      "labels": {
+        "budgetPlaceholder": "e.g. C$20k–C$55k"
+      }
+    }
+  }
+}
