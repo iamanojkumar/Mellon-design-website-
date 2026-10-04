@@ -1,6 +1,7 @@
 [
   {
     "slug": "architecture-interior-design",
+    "category": "built-environment",
     "name": "Architektur & Innenarchitektur",
     "tagline": "Ein digitaler Auftritt, so durchdacht wie die Räume, die Sie gestalten.",
     "summary": "Architektur- und Innenarchitekturbüros verkaufen ein Gefühl, bevor sie einen Grundriss zeigen. Wir bauen Portfolio-Websites und Markensysteme, die die Arbeit – und das Licht, das Material und den Raum darin – für sich sprechen lassen.",
@@ -18,6 +19,7 @@
   },
   {
     "slug": "automotive",
+    "category": "tech",
     "name": "Automobil",
     "tagline": "Interfaces für die Branche mit dem schnellsten Wandel von Hardware zu Software.",
     "summary": "Von Infotainment-Systemen über Fahrer-Apps bis zu Konfiguratoren gestalten wir digitale Automobilprodukte, die denselben Anspruch an Passgenauigkeit und Finish erfüllen wie die Fahrzeuge selbst.",
@@ -35,6 +37,7 @@
   },
   {
     "slug": "civic-tech-design",
+    "category": "public-professional",
     "name": "Civic Tech",
     "tagline": "Software für den öffentlichen Sektor, die man ohne Handbuch bedienen kann.",
     "summary": "Bürger- und Verwaltungsplattformen verlangen ein höheres Maß an Klarheit und Barrierefreiheit. Wir gestalten Services, die für alle Bürgerinnen und Bürger auf jedem Gerät in verständlicher Sprache funktionieren.",
@@ -52,6 +55,7 @@
   },
   {
     "slug": "consumer-electronics",
+    "category": "tech",
     "name": "Unterhaltungselektronik",
     "tagline": "Marken- und Produkterlebnis vom Gerät bis zur App.",
     "summary": "Hardware gewinnt Vertrauen in Sekunden; die Software muss es halten. Wir gestalten Companion-Apps, Einrichtungsabläufe und Markensysteme, die Elektronik von Anfang bis Ende durchdacht wirken lassen.",
@@ -69,6 +73,7 @@
   },
   {
     "slug": "ecommerce",
+    "category": "retail-hospitality",
     "name": "E-Commerce",
     "tagline": "Shops, die konvertieren – und nicht nur gut aussehen.",
     "summary": "Wir gestalten und bauen Commerce-Erlebnisse – von der Produktentdeckung bis zum Checkout – auf den Plattformen, die Sie täglich nutzen, optimiert an echten Conversion-Daten statt an Trends.",
@@ -88,6 +93,7 @@
   },
   {
     "slug": "education-edtech",
+    "category": "public-professional",
     "name": "Bildung & EdTech",
     "tagline": "Lernprodukte, gestaltet für Aufmerksamkeitsspannen, nicht nur für Lehrpläne.",
     "summary": "Wir gestalten Plattformen für Lernende, Lehrkräfte und Verwaltungen – Interfaces, die unter realen Unterrichtsbedingungen nutzbar bleiben und von einer Schule auf einen ganzen Schulträger skalieren.",
@@ -106,6 +112,7 @@
   },
   {
     "slug": "fashion-brand-design",
+    "category": "retail-hospitality",
     "name": "Mode",
     "tagline": "Markensysteme mit dem redaktionellen Feinschliff, den die Branche verlangt.",
     "summary": "Modemarken leben von visueller Konsistenz über Lookbooks, Shops und Social Media hinweg. Wir bauen Identitätssysteme und Commerce-Websites, die diese Linie im großen Maßstab halten.",
@@ -124,6 +131,7 @@
   },
   {
     "slug": "finance-fintech",
+    "category": "tech",
     "name": "Finanzen & Fintech",
     "tagline": "Vertrauen, lesbar gemacht – in Interfaces, die mit echtem Geld umgehen.",
     "summary": "Fintech-Produkte müssen präzise, regelkonform und zugleich beruhigend sein. Wir gestalten Dashboards, Onboarding und Transaktionsabläufe, die komplexe Finanzdaten beherrschbar wirken lassen.",
@@ -141,6 +149,7 @@
   },
   {
     "slug": "health-wellness-tech",
+    "category": "public-professional",
     "name": "Gesundheit & Wellness",
     "tagline": "Versorgungserlebnisse, die an jedem Berührungspunkt menschlich bleiben.",
     "summary": "Ob Patientenportal oder Wellness-App: Wir gestalten für Momente, in denen Menschen gestresst, abgelenkt oder verletzlich sind – Klarheit und Verlässlichkeit sind die ganze Aufgabe.",
@@ -158,6 +167,7 @@
   },
   {
     "slug": "hospitality-design",
+    "category": "retail-hospitality",
     "name": "Hospitality",
     "tagline": "Buchungs- und Gästeerlebnisse, die zum Haus passen.",
     "summary": "Vom Boutique-Hotel bis zur Restaurantgruppe gestalten wir digitale Erlebnisse – Buchungsstrecken, Markenauftritte, Gäste-Apps –, die das Niveau an Gastfreundschaft widerspiegeln, das Gäste vor Ort erwarten.",
@@ -175,6 +185,7 @@
   },
   {
     "slug": "legal-branding",
+    "category": "public-professional",
     "name": "Recht",
     "tagline": "Autorität und Nahbarkeit in einem Identitätssystem.",
     "summary": "Marken im Rechtsbereich müssen Glaubwürdigkeit ausstrahlen, ohne kühl zu wirken. Wir bauen Identitäts- und Websysteme für Kanzleien, denen man vertrauen – und die man trotzdem ansprechen möchte.",
@@ -192,6 +203,7 @@
   },
   {
     "slug": "media-entertainment-gaming",
+    "category": "tech",
     "name": "Medien, Unterhaltung & Gaming",
     "tagline": "Interfaces mit Persönlichkeit, gemacht, um Aufmerksamkeit zu halten.",
     "summary": "Wir gestalten für Zielgruppen, die Politur und Tempo erwarten – Streaming-Plattformen, Spiele-UI und Unterhaltungsmarken, bei denen Motion und Detail so viel Gewicht haben wie das Layout.",
@@ -209,6 +221,7 @@
   },
   {
     "slug": "nonprofit-branding",
+    "category": "public-professional",
     "name": "Non-Profit",
     "tagline": "Identität und digitale Systeme, gebaut für die Mission, nicht für die Marge.",
     "summary": "Wir helfen Non-Profit-Organisationen, so professionell aufzutreten wie jede kommerzielle Marke – mit klarem Storytelling, barrierefreiem Design und Spendenabläufen, die Absicht tatsächlich in Unterstützung verwandeln.",
@@ -226,6 +239,7 @@
   },
   {
     "slug": "real-estate-design",
+    "category": "built-environment",
     "name": "Immobilien",
     "tagline": "Exposés und Markenauftritt, die die Immobilie verkaufen, nicht nur auflisten.",
     "summary": "Wir gestalten Websites für Makler und Projektentwickler, die Angebote hochwertig wirken lassen – kartenbasiertes Stöbern, schnell ladende Galerien und Lead-Strecken, die Interesse in Besichtigungen verwandeln.",
@@ -245,6 +259,7 @@
   },
   {
     "slug": "restaurant-branding",
+    "category": "retail-hospitality",
     "name": "Gastronomie",
     "tagline": "Speisekarten, Marke und Bestellabläufe, die Gäste gerne nutzen.",
     "summary": "Wir bauen Identität und digitale Bestellerlebnisse für Gastronomiegruppen – vom Einzelstandort bis zur Kette –, die sich so gut anfühlen wie die Speisen auf den Fotos.",
@@ -262,6 +277,7 @@
   },
   {
     "slug": "technology-saas",
+    "category": "tech",
     "name": "Technologie & SaaS",
     "tagline": "Produktdesign für Software, die sich jede Verlängerung neu verdienen muss.",
     "summary": "Hier verbringt das Studio die meiste Zeit: Dashboards, Onboarding und Designsysteme für SaaS-Produkte, die einfach bleiben müssen, während sie mit jedem Release mehr können.",

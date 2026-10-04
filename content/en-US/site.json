@@ -103,6 +103,26 @@
       "processHeading": "How we work",
       "faqHeading": "Frequently asked questions",
       "relatedServices": "Related services"
+    },
+    "pricing": {
+      "heading": "What it costs",
+      "intro": "Three ways to scope it, with a fixed price agreed before we start. Here is how each compares with what agencies typically quote.",
+      "mellon": "Mellon",
+      "upTo": "Up to {price}",
+      "market": "Typical agency",
+      "timeline": "Typical timeline",
+      "feature": "What you get",
+      "yes": "Included",
+      "extra": "Extra cost",
+      "no": "Not included",
+      "note": "Prices are in {currency}, before tax, and show the usual range for each scope. Agency figures are typical ranges from published 2026 pricing guides. Your quote depends on screens, pages and complexity.",
+      "cta": "Get a fixed quote",
+      "engagementsHeading": "Prefer to pay by the hour or the month?",
+      "perHour": "per hour",
+      "perMonth": "per month",
+      "from": "From",
+      "onRequest": "Quoted after a short call",
+      "request": "Request this"
     }
   },
   "industriesPage": {

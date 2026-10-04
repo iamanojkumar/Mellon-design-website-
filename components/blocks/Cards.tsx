@@ -16,13 +16,13 @@ export function Cards({ block, locale }: CardsProps) {
   const items = isServices ? getServices(locale) : getIndustries(locale);
   const base = `/${locale}/${isServices ? "services" : "industries"}`;
 
-  // Services can be grouped under category headings when the page defines them.
-  const categories = block.type === "serviceCards" ? block.categories : undefined;
+  // Services and industries can be grouped under category headings when the page defines them.
+  const categories = block.categories;
   const groups = categories
     ? categories
         .map((category) => ({
           label: category.label,
-          items: getServices(locale).filter((service) => service.category === category.id),
+          items: items.filter((item) => item.category === category.id),
         }))
         .filter((group) => group.items.length > 0)
     : null;

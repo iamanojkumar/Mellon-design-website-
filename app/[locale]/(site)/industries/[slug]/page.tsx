@@ -12,7 +12,9 @@ import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/env";
 import { Container } from "@/components/ui/Container";
 import { Cta } from "@/components/cta/Cta";
+import { ContactForm } from "@/components/contact-form/ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import styles from "./page.module.css";
 
 export function generateStaticParams() {
@@ -54,6 +56,7 @@ export default async function IndustryDetailPage({
   const services = getServices(locale);
   const site = getSiteContent(locale);
   const page = site.industriesPage;
+  const form = site.forms.contact;
   const relatedServices = services.filter((service) =>
     industry.relatedServices.includes(service.slug),
   );
@@ -81,7 +84,7 @@ export default async function IndustryDetailPage({
           <span className={styles.eyebrow}>{industry.tagline}</span>
           <h1 className={styles.headline}>{industry.name}</h1>
           <p className={styles.summary}>{industry.summary}</p>
-          <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="industry" />
+          <Cta label={site.common.startProject} href="#quote" context="industry" />
         </Container>
       </section>
 
@@ -113,12 +116,23 @@ export default async function IndustryDetailPage({
         </Container>
       </section>
 
-      <section className={styles.closing}>
+      <section id="quote" className={styles.closing}>
         <Container className={styles.closingInner}>
           <h2 className={styles.closingHeadline}>
-            {page.detail.buildingHeadline.replace("{nameLower}", industry.name.toLocaleLowerCase(locale)).replace("{name}", industry.name)}
+            <SwiftUpText
+              text={page.detail.buildingHeadline.replace("{nameLower}", industry.name.toLocaleLowerCase(locale)).replace("{name}", industry.name)}
+              whenVisible
+            />
           </h2>
-          <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="industry" />
+          <div className={styles.closingForm}>
+            <ContactForm
+              successMessage={form.successMessage}
+              submitLabel={form.submitLabel}
+              labels={form.labels}
+              privacyHref={`${localePrefix}/privacy`}
+              locale={locale}
+            />
+          </div>
         </Container>
       </section>
     </>

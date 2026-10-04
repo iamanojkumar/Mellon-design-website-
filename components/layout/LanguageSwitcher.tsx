@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import "flag-icons/css/flag-icons.min.css";
@@ -102,7 +101,8 @@ export function LanguageSwitcher({ locale, className, copy }: LanguageSwitcherPr
               onChange={(event) => setQuery(event.target.value)}
             />
           )}
-          <ul className={styles.list} role="listbox">
+          {/* data-lenis-prevent: let the list scroll natively instead of the page (smooth scroll). */}
+          <ul className={styles.list} role="listbox" data-lenis-prevent>
             {results.length === 0 && <li className={styles.empty}>{copy.noResults}</li>}
             {results.map((item) => {
               const isActive = item.code === locale;
@@ -116,14 +116,18 @@ export function LanguageSwitcher({ locale, className, copy }: LanguageSwitcherPr
               return (
                 <li key={item.code}>
                   {item.enabled ? (
-                    <Link
+                    // A locale change swaps <html lang>, fonts and market theme, so load the new
+                    // locale as a fresh document (no curtain, no in-place remount of the whole tree).
+                    // eslint-disable-next-line @next/next/no-html-link-for-pages
+                    <a
                       href={`/${item.code}${suffix}`}
                       role="option"
                       aria-selected={isActive}
+                      data-no-transition
                       className={isActive ? `${styles.option} ${styles.optionActive}` : styles.option}
                     >
                       {content}
-                    </Link>
+                    </a>
                   ) : (
                     <span
                       role="option"

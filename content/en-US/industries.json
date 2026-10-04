@@ -1,6 +1,7 @@
 [
   {
     "slug": "architecture-interior-design",
+    "category": "built-environment",
     "name": "Architecture & Interior Design",
     "tagline": "Digital presence as considered as the spaces you design.",
     "summary": "Architecture and interior firms sell a feeling before a floor plan. We build portfolio sites and brand systems that let the work — and the light, material, and space in it — do the talking.",
@@ -18,6 +19,7 @@
   },
   {
     "slug": "automotive",
+    "category": "tech",
     "name": "Automotive",
     "tagline": "Interfaces for the industry moving fastest from hardware to software.",
     "summary": "From infotainment systems to owner apps and configurator tools, we design automotive digital products that meet the same fit-and-finish bar as the vehicles themselves.",
@@ -35,6 +37,7 @@
   },
   {
     "slug": "civic-tech-design",
+    "category": "public-professional",
     "name": "Civic Tech",
     "tagline": "Public-sector software people can actually use without a manual.",
     "summary": "Civic and government platforms carry a higher bar for clarity and accessibility. We design services that work for every resident, on every device, in plain language.",
@@ -52,6 +55,7 @@
   },
   {
     "slug": "consumer-electronics",
+    "category": "tech",
     "name": "Consumer Electronics",
     "tagline": "Brand and product experience that carries from the device to the app.",
     "summary": "Hardware earns trust in seconds; the software has to keep it. We design the companion apps, setup flows, and brand systems that make electronics feel considered end to end.",
@@ -69,6 +73,7 @@
   },
   {
     "slug": "ecommerce",
+    "category": "retail-hospitality",
     "name": "E-Commerce",
     "tagline": "Storefronts built to convert, not just to look good.",
     "summary": "We design and build commerce experiences — from product discovery to checkout — on the platforms you run day to day, optimized around real conversion data, not trends.",
@@ -88,6 +93,7 @@
   },
   {
     "slug": "education-edtech",
+    "category": "public-professional",
     "name": "Education & EdTech",
     "tagline": "Learning products designed for attention spans, not just curricula.",
     "summary": "We design platforms for students, teachers, and administrators alike — interfaces that stay usable under real classroom conditions and scale from one school to a district.",
@@ -106,6 +112,7 @@
   },
   {
     "slug": "fashion-brand-design",
+    "category": "retail-hospitality",
     "name": "Fashion",
     "tagline": "Brand systems with the editorial polish the category demands.",
     "summary": "Fashion brands live and die by visual consistency across lookbooks, storefronts, and social. We build identity systems and commerce sites that hold that line at scale.",
@@ -124,6 +131,7 @@
   },
   {
     "slug": "finance-fintech",
+    "category": "tech",
     "name": "Finance & Fintech",
     "tagline": "Trust, made legible, in interfaces that handle real money.",
     "summary": "Fintech products have to be precise, compliant, and reassuring all at once. We design dashboards, onboarding, and transaction flows that make complex financial data feel controllable.",
@@ -141,6 +149,7 @@
   },
   {
     "slug": "health-wellness-tech",
+    "category": "public-professional",
     "name": "Health & Wellness Tech",
     "tagline": "Care experiences that stay human at every touchpoint.",
     "summary": "Whether it's a patient portal or a wellness app, we design for moments people are stressed, distracted, or vulnerable — clarity and reassurance are the whole job.",
@@ -158,6 +167,7 @@
   },
   {
     "slug": "hospitality-design",
+    "category": "retail-hospitality",
     "name": "Hospitality",
     "tagline": "Booking and guest experiences that match the property.",
     "summary": "From boutique hotels to restaurant groups, we design digital experiences — booking flows, brand sites, guest apps — that reflect the level of hospitality guests expect in person.",
@@ -175,6 +185,7 @@
   },
   {
     "slug": "legal-branding",
+    "category": "public-professional",
     "name": "Legal",
     "tagline": "Authority and approachability, in the same identity system.",
     "summary": "Legal brands need to signal credibility without feeling cold. We build identity and web systems for firms that want to be trusted and, still, contacted.",
@@ -192,6 +203,7 @@
   },
   {
     "slug": "media-entertainment-gaming",
+    "category": "tech",
     "name": "Media, Entertainment & Gaming",
     "tagline": "Interfaces with personality, built to hold attention.",
     "summary": "We design for audiences that expect polish and pace — streaming platforms, game UI, and entertainment brands where motion and detail carry as much weight as layout.",
@@ -209,6 +221,7 @@
   },
   {
     "slug": "nonprofit-branding",
+    "category": "public-professional",
     "name": "Nonprofit",
     "tagline": "Identity and digital systems built for mission, not margin.",
     "summary": "We help nonprofits present with the same polish as any commercial brand — clear storytelling, accessible design, and donation flows that actually convert intent into support.",
@@ -226,6 +239,7 @@
   },
   {
     "slug": "real-estate-design",
+    "category": "built-environment",
     "name": "Real Estate",
     "tagline": "Listings and brand presence that sell the property, not just list it.",
     "summary": "We design brokerage and developer sites that make listings feel premium — map-first browsing, fast-loading galleries, and lead flows that convert interest into showings.",
@@ -245,6 +259,7 @@
   },
   {
     "slug": "restaurant-branding",
+    "category": "retail-hospitality",
     "name": "Restaurant & Food Service",
     "tagline": "Menus, brand, and ordering flows people actually want to use.",
     "summary": "We build identity and digital ordering experiences for restaurant groups — from single-location brands to multi-unit chains — that feel as good as the food photographs.",
@@ -262,6 +277,7 @@
   },
   {
     "slug": "technology-saas",
+    "category": "tech",
     "name": "Technology & SaaS",
     "tagline": "Product design for software that has to keep earning renewal.",
     "summary": "This is where the studio spends most of its time: dashboards, onboarding, and design systems for SaaS products that need to stay simple while doing more every release.",

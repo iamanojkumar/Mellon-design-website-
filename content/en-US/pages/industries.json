@@ -12,7 +12,25 @@
     },
     {
       "type": "industryCards",
-      "viewLink": "View industry →"
+      "viewLink": "View industry →",
+      "categories": [
+        {
+          "id": "tech",
+          "label": "Technology and digital products"
+        },
+        {
+          "id": "retail-hospitality",
+          "label": "Retail, fashion and hospitality"
+        },
+        {
+          "id": "built-environment",
+          "label": "Property and built environment"
+        },
+        {
+          "id": "public-professional",
+          "label": "Public sector, health and professional services"
+        }
+      ]
     },
     {
       "type": "closingCta",

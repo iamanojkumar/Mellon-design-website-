@@ -1,0 +1,5135 @@
+{
+  "_status": "DRAFT. Agency price ranges ('market') come from public 2026 pricing guides (see docs/pricing.md and the research notes). Mellon prices are the owner's pricing rule applied to those ranges. EVERYTHING ELSE here is invented for review: plan names, blurbs, timelines, feature lists, and what other agencies include. Replace with real facts before publishing. Ranges marked derived in docs/pricing.md (CA, SG, IE, AE mid-tiers for UI/UX) are interpolations, not quotes. Hourly and retainer cards (engagements): The hourly rate is INR 3,600, converted at the rates in docs/pricing.md; agency hourly ranges are derived from the hourly bands and retainer sources there, not quotes. The includes lists (30-minute billing, weekly report, roll-over hours, same designers) are invented. The retainer price is deliberately not in this file: the card shows 'quoted after a short call'. Retainer figures live only in docs/pricing.md. Plans for the other twelve services (branding, design systems, e-commerce, end-to-end, mobile app, motion, product, SaaS, UX audit, SEO, social, paid advertising): US agency ranges from public 2026 pricing guides; other locales use local figures where a source gave them and otherwise the US numbers times a rough local factor (GB 1, IN 20, AE 3, AU 1.2, CA 1.3, SG 1, IE 0.95), so treat those as estimates. Mellon is the market range times 0.9, rounded. All feature rows, names, timelines and 'what others include' are invented.",
+  "currencies": {
+    "en-US": "USD",
+    "en-GB": "GBP",
+    "en-IN": "INR",
+    "en-AE": "AED",
+    "en-AU": "AUD",
+    "en-CA": "CAD",
+    "en-SG": "SGD",
+    "en-IE": "EUR"
+  },
+  "services": {
+    "ui-ux-design": {
+      "plans": [
+        {
+          "id": "focused",
+          "name": "Focused",
+          "blurb": "One flow, one feature or a landing page.",
+          "timeline": "2–3 weeks",
+          "features": [
+            {
+              "label": "User flow and wireframes",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "High-fidelity UI in Figma",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Clickable prototype",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Developer-ready handoff",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Revision rounds",
+              "mellon": "Two",
+              "market": "One"
+            },
+            {
+              "label": "30 days of design support after handoff",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                7250,
+                13500
+              ],
+              "market": [
+                8000,
+                15000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                5500,
+                13500
+              ],
+              "market": [
+                6000,
+                15000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                36000,
+                135000
+              ],
+              "market": [
+                40000,
+                150000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                5500,
+                18000
+              ],
+              "market": [
+                6000,
+                20000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                7250,
+                22500
+              ],
+              "market": [
+                8000,
+                25000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                9000,
+                18000
+              ],
+              "market": [
+                10000,
+                20000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                7250,
+                13500
+              ],
+              "market": [
+                8000,
+                15000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                6250,
+                13500
+              ],
+              "market": [
+                7000,
+                15000
+              ]
+            }
+          }
+        },
+        {
+          "id": "product",
+          "name": "Product",
+          "blurb": "An MVP or app, around 15–25 screens.",
+          "timeline": "5–8 weeks",
+          "features": [
+            {
+              "label": "User research and interviews",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Information architecture and flows",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Full UI kit and components",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Interactive prototype",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Usability test with five users",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Design review of the built product",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Weekly calls with the lead designer",
+              "mellon": "yes",
+              "market": "Fortnightly, via a project manager"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                13500,
+                31500
+              ],
+              "market": [
+                15000,
+                35000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                270000,
+                900000
+              ],
+              "market": [
+                300000,
+                1000000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                36000,
+                99000
+              ],
+              "market": [
+                40000,
+                110000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                13500,
+                40500
+              ],
+              "market": [
+                15000,
+                45000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                18000,
+                43000
+              ],
+              "market": [
+                20000,
+                48000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                13500,
+                31500
+              ],
+              "market": [
+                15000,
+                35000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                13500,
+                34000
+              ],
+              "market": [
+                15000,
+                38000
+              ]
+            }
+          }
+        },
+        {
+          "id": "platform",
+          "name": "Platform",
+          "blurb": "A multi-flow SaaS or multi-platform product, with a design system.",
+          "timeline": "3–5 months",
+          "features": [
+            {
+              "label": "Research and stakeholder workshops",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Design system, 100+ components",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Web, tablet and mobile layouts",
+              "mellon": "yes",
+              "market": "Priced per platform"
+            },
+            {
+              "label": "Accessibility review (WCAG 2.2 AA)",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Motion and interaction specs",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "Documentation and team training",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "60 days of support after launch",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                36000,
+                110000
+              ],
+              "market": [
+                40000,
+                120000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                36000,
+                90000
+              ],
+              "market": [
+                40000,
+                100000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                720000,
+                2250000
+              ],
+              "market": [
+                800000,
+                2500000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                99000,
+                225000
+              ],
+              "market": [
+                110000,
+                250000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                27000,
+                81000
+              ],
+              "market": [
+                30000,
+                90000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                49500,
+                150000
+              ],
+              "market": [
+                55000,
+                165000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                31500,
+                72000
+              ],
+              "market": [
+                35000,
+                80000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                36000,
+                90000
+              ],
+              "market": [
+                40000,
+                100000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "web-design": {
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "blurb": "A basic design: up to eight pages, one language.",
+          "timeline": "3–4 weeks",
+          "features": [
+            {
+              "label": "Custom design, not a template",
+              "mellon": "yes",
+              "market": "Template-based"
+            },
+            {
+              "label": "Responsive layouts",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "CMS you can edit yourself",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "On-page SEO setup",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Analytics and cookie consent",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Copywriting",
+              "mellon": "Light edit",
+              "market": "extra"
+            },
+            {
+              "label": "30 days of fixes after launch",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                1000
+              ],
+              "market": [
+                5000,
+                10000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                750
+              ],
+              "market": [
+                3000,
+                8000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                90000
+              ],
+              "market": [
+                50000,
+                150000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                3750
+              ],
+              "market": [
+                8000,
+                15000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                1550
+              ],
+              "market": [
+                2500,
+                8000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                1400
+              ],
+              "market": [
+                3000,
+                7500
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                1300
+              ],
+              "market": [
+                2000,
+                5000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                900
+              ],
+              "market": [
+                2000,
+                5000
+              ]
+            }
+          }
+        },
+        {
+          "id": "business",
+          "name": "Business",
+          "blurb": "A professional design: 10–20 pages on a CMS your team runs.",
+          "timeline": "6–10 weeks",
+          "features": [
+            {
+              "label": "Sitemap and content strategy",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Custom design system for the site",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "CMS build (Webflow, Framer or WordPress)",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Technical SEO and redirect mapping",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Core Web Vitals tuning",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Accessibility checks",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Team training session",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "60 days of support after launch",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                1000,
+                3400
+              ],
+              "market": [
+                10000,
+                25000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                750,
+                2550
+              ],
+              "market": [
+                10000,
+                25000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                90000,
+                300000
+              ],
+              "market": [
+                150000,
+                400000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                3750,
+                12500
+              ],
+              "market": [
+                15000,
+                45000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                1550,
+                5150
+              ],
+              "market": [
+                8000,
+                25000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                1400,
+                4700
+              ],
+              "market": [
+                7500,
+                20000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                1300,
+                4400
+              ],
+              "market": [
+                5000,
+                13000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                900,
+                2950
+              ],
+              "market": [
+                5000,
+                16000
+              ]
+            }
+          }
+        },
+        {
+          "id": "advanced",
+          "name": "Advanced",
+          "blurb": "A premium design: e-commerce, multilingual sites or custom integrations.",
+          "timeline": "3–6 months",
+          "features": [
+            {
+              "label": "Catalogue and page architecture",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Checkout and payment integration",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Multilingual setup with hreflang",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "CRM or ERP integrations",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Conversion testing on key pages",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Motion and interaction design",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "Three months of ongoing care",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                1800,
+                6800
+              ],
+              "market": [
+                25000,
+                60000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                1350,
+                5150
+              ],
+              "market": [
+                25000,
+                60000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                160000,
+                600000
+              ],
+              "market": [
+                400000,
+                1200000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                6650,
+                25000
+              ],
+              "market": [
+                45000,
+                110000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                2750,
+                10500
+              ],
+              "market": [
+                25000,
+                100000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                2500,
+                9400
+              ],
+              "market": [
+                20000,
+                60000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                2350,
+                8800
+              ],
+              "market": [
+                13000,
+                40000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                1550,
+                5900
+              ],
+              "market": [
+                16000,
+                40000
+              ]
+            }
+          }
+        }
+      ],
+      "intro": "The price band sets how the design looks and feels: Starter is a basic design, Business a professional one, Advanced a premium one. Each is a fixed price agreed before we start, shown next to what agencies typically quote."
+    },
+    "branding": {
+      "plans": [
+        {
+          "id": "essentials",
+          "name": "Essentials",
+          "blurb": "Logo, colours and type for a new business.",
+          "timeline": "2–3 weeks",
+          "features": [
+            {
+              "label": "Logo and variations",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Colour palette and typefaces",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "One-page style sheet",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Short brand guidelines",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Social profile kit",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Revision rounds",
+              "mellon": "Three",
+              "market": "Two"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                4500,
+                11000
+              ],
+              "market": [
+                5000,
+                12000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                4500,
+                9000
+              ],
+              "market": [
+                5000,
+                10000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                90000,
+                270000
+              ],
+              "market": [
+                100000,
+                300000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                4500,
+                13500
+              ],
+              "market": [
+                5000,
+                15000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                5400,
+                9000
+              ],
+              "market": [
+                6000,
+                10000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                5850,
+                14500
+              ],
+              "market": [
+                6500,
+                16000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                4500,
+                9000
+              ],
+              "market": [
+                5000,
+                10000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                4300,
+                9900
+              ],
+              "market": [
+                4750,
+                11000
+              ]
+            }
+          }
+        },
+        {
+          "id": "identity",
+          "name": "Identity",
+          "blurb": "A full visual identity with a brand manual.",
+          "timeline": "4–6 weeks",
+          "features": [
+            {
+              "label": "Brand workshop",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Logo system for every use",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Brand manual, 30+ pages",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Stationery and templates",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Presentation template",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Source files in every format",
+              "mellon": "yes",
+              "market": "yes"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                11000,
+                27000
+              ],
+              "market": [
+                12000,
+                30000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                9000,
+                22500
+              ],
+              "market": [
+                10000,
+                25000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                270000,
+                720000
+              ],
+              "market": [
+                300000,
+                800000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                9000,
+                18000
+              ],
+              "market": [
+                10000,
+                20000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                14500,
+                35000
+              ],
+              "market": [
+                16000,
+                39000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                9000,
+                22500
+              ],
+              "market": [
+                10000,
+                25000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                9900,
+                26000
+              ],
+              "market": [
+                11000,
+                29000
+              ]
+            }
+          }
+        },
+        {
+          "id": "brand",
+          "name": "Brand",
+          "blurb": "Strategy, identity and launch for a company repositioning.",
+          "timeline": "8–12 weeks",
+          "features": [
+            {
+              "label": "Market and competitor research",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Positioning and messaging",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Visual identity system",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Brand manual and asset library",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Launch applications: web, social, print",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Team workshop on using the brand",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "60 days of support after launch",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                27000,
+                63000
+              ],
+              "market": [
+                30000,
+                70000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                22500,
+                54000
+              ],
+              "market": [
+                25000,
+                60000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                720000,
+                2250000
+              ],
+              "market": [
+                800000,
+                2500000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                36000,
+                160000
+              ],
+              "market": [
+                40000,
+                180000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                18000,
+                45000
+              ],
+              "market": [
+                20000,
+                50000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                35000,
+                82000
+              ],
+              "market": [
+                39000,
+                91000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                22500,
+                54000
+              ],
+              "market": [
+                25000,
+                60000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                26000,
+                60500
+              ],
+              "market": [
+                29000,
+                67000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "design-systems": {
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "blurb": "Foundations and 30–50 components in Figma.",
+          "timeline": "3–5 weeks",
+          "features": [
+            {
+              "label": "Colour, type and spacing foundations",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "30–50 components",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Light and dark themes",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Usage documentation",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Accessibility checks",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Developer handoff notes",
+              "mellon": "yes",
+              "market": "yes"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                4500,
+                9000
+              ],
+              "market": [
+                5000,
+                10000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                4500,
+                9000
+              ],
+              "market": [
+                5000,
+                10000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                90000,
+                180000
+              ],
+              "market": [
+                100000,
+                200000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                13500,
+                27000
+              ],
+              "market": [
+                15000,
+                30000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                5400,
+                11000
+              ],
+              "market": [
+                6000,
+                12000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                5850,
+                11500
+              ],
+              "market": [
+                6500,
+                13000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                4500,
+                9000
+              ],
+              "market": [
+                5000,
+                10000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                4300,
+                8550
+              ],
+              "market": [
+                4750,
+                9500
+              ]
+            }
+          }
+        },
+        {
+          "id": "growth",
+          "name": "Growth",
+          "blurb": "60–100 components with design tokens.",
+          "timeline": "6–10 weeks",
+          "features": [
+            {
+              "label": "Design tokens ready for code",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "60–100 components with states",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Documentation site",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Contribution guidelines",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "Onboarding for your team",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "60 days of support",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                9000,
+                22500
+              ],
+              "market": [
+                10000,
+                25000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                9000,
+                22500
+              ],
+              "market": [
+                10000,
+                25000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                180000,
+                450000
+              ],
+              "market": [
+                200000,
+                500000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                27000,
+                67500
+              ],
+              "market": [
+                30000,
+                75000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                11000,
+                27000
+              ],
+              "market": [
+                12000,
+                30000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                11500,
+                29500
+              ],
+              "market": [
+                13000,
+                33000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                9000,
+                22500
+              ],
+              "market": [
+                10000,
+                25000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                8550,
+                21500
+              ],
+              "market": [
+                9500,
+                24000
+              ]
+            }
+          }
+        },
+        {
+          "id": "enterprise",
+          "name": "Enterprise",
+          "blurb": "100+ components, a coded library and governance.",
+          "timeline": "3–6 months",
+          "features": [
+            {
+              "label": "Coded component library",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Multi-brand theming",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Governance and release process",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Accessibility audit (WCAG 2.2 AA)",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Versioned documentation site",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Training for design and engineering",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "90 days of support",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                22500,
+                54000
+              ],
+              "market": [
+                25000,
+                60000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                22500,
+                54000
+              ],
+              "market": [
+                25000,
+                60000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                450000,
+                1080000
+              ],
+              "market": [
+                500000,
+                1200000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                67500,
+                160000
+              ],
+              "market": [
+                75000,
+                180000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                27000,
+                65000
+              ],
+              "market": [
+                30000,
+                72000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                29500,
+                70000
+              ],
+              "market": [
+                33000,
+                78000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                22500,
+                54000
+              ],
+              "market": [
+                25000,
+                60000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                21500,
+                51500
+              ],
+              "market": [
+                24000,
+                57000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ecommerce-design": {
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "blurb": "A custom-designed store with up to 50 products.",
+          "timeline": "3–5 weeks",
+          "features": [
+            {
+              "label": "Custom home, collection and product pages",
+              "mellon": "yes",
+              "market": "Template-based"
+            },
+            {
+              "label": "Mobile-first checkout design",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Payment gateway setup",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Product page SEO setup",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Order and cart email templates",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "30 days of support after launch",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                4500,
+                11000
+              ],
+              "market": [
+                5000,
+                12000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                4500,
+                9000
+              ],
+              "market": [
+                5000,
+                10000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                45000,
+                135000
+              ],
+              "market": [
+                50000,
+                150000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                13500,
+                27000
+              ],
+              "market": [
+                15000,
+                30000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                5400,
+                12500
+              ],
+              "market": [
+                6000,
+                14000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                9000,
+                16000
+              ],
+              "market": [
+                10000,
+                18000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                2700,
+                5400
+              ],
+              "market": [
+                3000,
+                6000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                2250,
+                6300
+              ],
+              "market": [
+                2500,
+                7000
+              ]
+            }
+          }
+        },
+        {
+          "id": "custom",
+          "name": "Custom",
+          "blurb": "Conversion-led design with up to 500 products.",
+          "timeline": "6–10 weeks",
+          "features": [
+            {
+              "label": "Conversion-led page design",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Custom product page layouts",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Filtering and search design",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Analytics and tracking setup",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Speed tuning",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Team training",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "60 days of support",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                11000,
+                27000
+              ],
+              "market": [
+                12000,
+                30000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                9000,
+                18000
+              ],
+              "market": [
+                10000,
+                20000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                135000,
+                360000
+              ],
+              "market": [
+                150000,
+                400000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                27000,
+                54000
+              ],
+              "market": [
+                30000,
+                60000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                12500,
+                32500
+              ],
+              "market": [
+                14000,
+                36000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                16000,
+                31500
+              ],
+              "market": [
+                18000,
+                35000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                7200,
+                18000
+              ],
+              "market": [
+                8000,
+                20000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                6300,
+                13500
+              ],
+              "market": [
+                7000,
+                15000
+              ]
+            }
+          }
+        },
+        {
+          "id": "advanced",
+          "name": "Advanced",
+          "blurb": "Large catalogues, integrations and several currencies.",
+          "timeline": "3–6 months",
+          "features": [
+            {
+              "label": "Architecture for 1,000+ products",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Inventory, ERP and CRM integrations",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Multi-currency and multi-language",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Subscriptions and bundles",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "A/B testing plan for key pages",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Motion and interaction design",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "Three months of ongoing care",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                27000,
+                63000
+              ],
+              "market": [
+                30000,
+                70000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                18000,
+                36000
+              ],
+              "market": [
+                20000,
+                40000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                360000,
+                1080000
+              ],
+              "market": [
+                400000,
+                1200000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                54000,
+                99000
+              ],
+              "market": [
+                60000,
+                110000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                32500,
+                75500
+              ],
+              "market": [
+                36000,
+                84000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                31500,
+                54000
+              ],
+              "market": [
+                35000,
+                60000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                22500,
+                45000
+              ],
+              "market": [
+                25000,
+                50000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                13500,
+                27000
+              ],
+              "market": [
+                15000,
+                30000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "end-to-end-design": {
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "blurb": "A brand identity and a small website, designed together.",
+          "timeline": "6–8 weeks",
+          "features": [
+            {
+              "label": "Brand identity and short manual",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Website, up to eight pages",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "One lead designer from start to finish",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "Social and presentation templates",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Launch checklist",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                7200,
+                13500
+              ],
+              "market": [
+                8000,
+                15000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                7200,
+                13500
+              ],
+              "market": [
+                8000,
+                15000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                145000,
+                270000
+              ],
+              "market": [
+                160000,
+                300000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                21500,
+                40500
+              ],
+              "market": [
+                24000,
+                45000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                8550,
+                16000
+              ],
+              "market": [
+                9500,
+                18000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                9000,
+                18000
+              ],
+              "market": [
+                10000,
+                20000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                7200,
+                13500
+              ],
+              "market": [
+                8000,
+                15000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                6750,
+                12500
+              ],
+              "market": [
+                7500,
+                14000
+              ]
+            }
+          }
+        },
+        {
+          "id": "professional",
+          "name": "Professional",
+          "blurb": "Brand, a 15–25 page website and marketing templates.",
+          "timeline": "10–14 weeks",
+          "features": [
+            {
+              "label": "Brand strategy and messaging",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Brand manual",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Website, 15–25 pages",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Marketing templates",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "SEO setup",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "60 days of support",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                13500,
+                22500
+              ],
+              "market": [
+                15000,
+                25000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                13500,
+                22500
+              ],
+              "market": [
+                15000,
+                25000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                270000,
+                450000
+              ],
+              "market": [
+                300000,
+                500000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                40500,
+                67500
+              ],
+              "market": [
+                45000,
+                75000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                16000,
+                27000
+              ],
+              "market": [
+                18000,
+                30000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                18000,
+                29500
+              ],
+              "market": [
+                20000,
+                33000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                13500,
+                22500
+              ],
+              "market": [
+                15000,
+                25000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                12500,
+                21500
+              ],
+              "market": [
+                14000,
+                24000
+              ]
+            }
+          }
+        },
+        {
+          "id": "premium",
+          "name": "Premium",
+          "blurb": "Brand, website and product interface as one system.",
+          "timeline": "4–6 months",
+          "features": [
+            {
+              "label": "Research and positioning",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Full identity and brand manual",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Website with motion design",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Product UI kit and design system",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Launch campaign assets",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "90 days of support",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                22500,
+                45000
+              ],
+              "market": [
+                25000,
+                50000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                22500,
+                45000
+              ],
+              "market": [
+                25000,
+                50000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                450000,
+                900000
+              ],
+              "market": [
+                500000,
+                1000000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                67500,
+                135000
+              ],
+              "market": [
+                75000,
+                150000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                27000,
+                54000
+              ],
+              "market": [
+                30000,
+                60000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                29500,
+                58500
+              ],
+              "market": [
+                33000,
+                65000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                22500,
+                45000
+              ],
+              "market": [
+                25000,
+                50000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                21500,
+                43000
+              ],
+              "market": [
+                24000,
+                48000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "mobile-app-design": {
+      "plans": [
+        {
+          "id": "focused",
+          "name": "Focused",
+          "blurb": "Up to 15 screens on one platform.",
+          "timeline": "3–5 weeks",
+          "features": [
+            {
+              "label": "User flows and wireframes",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "High-fidelity screens in Figma",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Clickable prototype",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Developer-ready handoff",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Revision rounds",
+              "mellon": "Two",
+              "market": "One"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                5400,
+                13500
+              ],
+              "market": [
+                6000,
+                15000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                5400,
+                13500
+              ],
+              "market": [
+                6000,
+                15000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                135000,
+                270000
+              ],
+              "market": [
+                150000,
+                300000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                16000,
+                40500
+              ],
+              "market": [
+                18000,
+                45000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                6550,
+                16000
+              ],
+              "market": [
+                7250,
+                18000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                7000,
+                18000
+              ],
+              "market": [
+                7750,
+                20000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                5400,
+                13500
+              ],
+              "market": [
+                6000,
+                15000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                5200,
+                12500
+              ],
+              "market": [
+                5750,
+                14000
+              ]
+            }
+          }
+        },
+        {
+          "id": "mvp",
+          "name": "MVP",
+          "blurb": "15–25 screens for iOS and Android.",
+          "timeline": "6–10 weeks",
+          "features": [
+            {
+              "label": "User research and interviews",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Platform-native patterns for iOS and Android",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Interactive prototype",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Usability test with five users",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "App store asset design",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Weekly calls with the lead designer",
+              "mellon": "yes",
+              "market": "Fortnightly, via a project manager"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                270000,
+                900000
+              ],
+              "market": [
+                300000,
+                1000000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                40500,
+                110000
+              ],
+              "market": [
+                45000,
+                120000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                16000,
+                43000
+              ],
+              "market": [
+                18000,
+                48000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                18000,
+                47000
+              ],
+              "market": [
+                20000,
+                52000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                12500,
+                34000
+              ],
+              "market": [
+                14000,
+                38000
+              ]
+            }
+          }
+        },
+        {
+          "id": "product",
+          "name": "Full product",
+          "blurb": "30+ screens, several user roles and a design system.",
+          "timeline": "3–5 months",
+          "features": [
+            {
+              "label": "Research and stakeholder workshops",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Design system, 100+ components",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Accessibility review",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Motion and gesture specs",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "Developer support during the build",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "60 days of support after launch",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                36000,
+                81000
+              ],
+              "market": [
+                40000,
+                90000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                36000,
+                81000
+              ],
+              "market": [
+                40000,
+                90000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                900000,
+                2700000
+              ],
+              "market": [
+                1000000,
+                3000000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                110000,
+                245000
+              ],
+              "market": [
+                120000,
+                270000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                43000,
+                99000
+              ],
+              "market": [
+                48000,
+                110000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                47000,
+                105000
+              ],
+              "market": [
+                52000,
+                115000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                36000,
+                81000
+              ],
+              "market": [
+                40000,
+                90000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                34000,
+                77500
+              ],
+              "market": [
+                38000,
+                86000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "motion-interaction-design": {
+      "plans": [
+        {
+          "id": "micro",
+          "name": "Micro",
+          "blurb": "A pack of interface animations.",
+          "timeline": "1–2 weeks",
+          "features": [
+            {
+              "label": "Up to 10 UI animations",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Delivered as Lottie or video",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Easing and timing guide",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Developer handoff specs",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                1800,
+                4500
+              ],
+              "market": [
+                2000,
+                5000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                1800,
+                4500
+              ],
+              "market": [
+                2000,
+                5000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                36000,
+                90000
+              ],
+              "market": [
+                40000,
+                100000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                5400,
+                13500
+              ],
+              "market": [
+                6000,
+                15000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                2250,
+                5400
+              ],
+              "market": [
+                2500,
+                6000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                2250,
+                5850
+              ],
+              "market": [
+                2500,
+                6500
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                1800,
+                4500
+              ],
+              "market": [
+                2000,
+                5000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                1800,
+                4300
+              ],
+              "market": [
+                2000,
+                4750
+              ]
+            }
+          }
+        },
+        {
+          "id": "explainer",
+          "name": "Explainer",
+          "blurb": "A 60-second 2D animated video.",
+          "timeline": "4–6 weeks",
+          "features": [
+            {
+              "label": "Script and storyboard",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Custom illustration",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Voice-over and sound design",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Two revision rounds",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Cut-downs for social",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                4500,
+                13500
+              ],
+              "market": [
+                5000,
+                15000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                4500,
+                13500
+              ],
+              "market": [
+                5000,
+                15000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                90000,
+                270000
+              ],
+              "market": [
+                100000,
+                300000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                13500,
+                40500
+              ],
+              "market": [
+                15000,
+                45000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                5400,
+                16000
+              ],
+              "market": [
+                6000,
+                18000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                5850,
+                18000
+              ],
+              "market": [
+                6500,
+                20000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                4500,
+                13500
+              ],
+              "market": [
+                5000,
+                15000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                4300,
+                12500
+              ],
+              "market": [
+                4750,
+                14000
+              ]
+            }
+          }
+        },
+        {
+          "id": "system",
+          "name": "Motion system",
+          "blurb": "A brand motion language plus a set of videos.",
+          "timeline": "8–12 weeks",
+          "features": [
+            {
+              "label": "Motion principles and guidelines",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Animated logo and transitions",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Three to five videos",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Reusable templates for your team",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "Interaction specs for product",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                270000,
+                720000
+              ],
+              "market": [
+                300000,
+                800000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                40500,
+                110000
+              ],
+              "market": [
+                45000,
+                120000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                16000,
+                43000
+              ],
+              "market": [
+                18000,
+                48000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                18000,
+                47000
+              ],
+              "market": [
+                20000,
+                52000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                12500,
+                34000
+              ],
+              "market": [
+                14000,
+                38000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "product-design": {
+      "plans": [
+        {
+          "id": "sprint",
+          "name": "Sprint",
+          "blurb": "Five days to test one idea.",
+          "timeline": "1 week",
+          "features": [
+            {
+              "label": "Problem framing workshop",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Rapid prototype",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Test with five users",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Findings and next-step plan",
+              "mellon": "yes",
+              "market": "yes"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                4500,
+                13500
+              ],
+              "market": [
+                5000,
+                15000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                4500,
+                13500
+              ],
+              "market": [
+                5000,
+                15000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                90000,
+                270000
+              ],
+              "market": [
+                100000,
+                300000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                13500,
+                40500
+              ],
+              "market": [
+                15000,
+                45000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                5400,
+                16000
+              ],
+              "market": [
+                6000,
+                18000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                5850,
+                18000
+              ],
+              "market": [
+                6500,
+                20000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                4500,
+                13500
+              ],
+              "market": [
+                5000,
+                15000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                4300,
+                12500
+              ],
+              "market": [
+                4750,
+                14000
+              ]
+            }
+          }
+        },
+        {
+          "id": "mvp",
+          "name": "MVP",
+          "blurb": "A first release, around 15–25 screens.",
+          "timeline": "5–8 weeks",
+          "features": [
+            {
+              "label": "Research and discovery",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Flows and information architecture",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "High-fidelity UI",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Interactive prototype",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Developer handoff",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Weekly calls with the lead designer",
+              "mellon": "yes",
+              "market": "Fortnightly, via a project manager"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                13500,
+                31500
+              ],
+              "market": [
+                15000,
+                35000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                13500,
+                31500
+              ],
+              "market": [
+                15000,
+                35000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                270000,
+                900000
+              ],
+              "market": [
+                300000,
+                1000000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                40500,
+                94500
+              ],
+              "market": [
+                45000,
+                105000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                16000,
+                38000
+              ],
+              "market": [
+                18000,
+                42000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                18000,
+                41500
+              ],
+              "market": [
+                20000,
+                46000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                13500,
+                31500
+              ],
+              "market": [
+                15000,
+                35000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                12500,
+                29500
+              ],
+              "market": [
+                14000,
+                33000
+              ]
+            }
+          }
+        },
+        {
+          "id": "platform",
+          "name": "Platform",
+          "blurb": "A multi-product platform with a design system.",
+          "timeline": "3–6 months",
+          "features": [
+            {
+              "label": "Research and product strategy",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Design system",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Web and mobile layouts",
+              "mellon": "yes",
+              "market": "Priced per platform"
+            },
+            {
+              "label": "Usability testing rounds",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Accessibility review",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "60 days of support",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                31500,
+                110000
+              ],
+              "market": [
+                35000,
+                120000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                31500,
+                110000
+              ],
+              "market": [
+                35000,
+                120000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                720000,
+                2250000
+              ],
+              "market": [
+                800000,
+                2500000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                94500,
+                325000
+              ],
+              "market": [
+                105000,
+                360000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                38000,
+                130000
+              ],
+              "market": [
+                42000,
+                145000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                41500,
+                140000
+              ],
+              "market": [
+                46000,
+                155000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                31500,
+                110000
+              ],
+              "market": [
+                35000,
+                120000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                29500,
+                105000
+              ],
+              "market": [
+                33000,
+                115000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "saas-design": {
+      "plans": [
+        {
+          "id": "mvp",
+          "name": "MVP",
+          "blurb": "Core flows for a first release.",
+          "timeline": "4–6 weeks",
+          "features": [
+            {
+              "label": "Core user flows",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Dashboard and onboarding design",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Clickable prototype",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Component library",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Developer handoff",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                5400,
+                18000
+              ],
+              "market": [
+                6000,
+                20000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                5400,
+                18000
+              ],
+              "market": [
+                6000,
+                20000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                270000,
+                720000
+              ],
+              "market": [
+                300000,
+                800000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                16000,
+                54000
+              ],
+              "market": [
+                18000,
+                60000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                6550,
+                21500
+              ],
+              "market": [
+                7250,
+                24000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                7000,
+                23500
+              ],
+              "market": [
+                7750,
+                26000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                5400,
+                18000
+              ],
+              "market": [
+                6000,
+                20000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                5200,
+                17000
+              ],
+              "market": [
+                5750,
+                19000
+              ]
+            }
+          }
+        },
+        {
+          "id": "full",
+          "name": "Full product",
+          "blurb": "Dashboards, user roles and a design system.",
+          "timeline": "3–5 months",
+          "features": [
+            {
+              "label": "Research and user interviews",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Multi-role flows",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Design system",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Data-heavy dashboard design",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Usability testing",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "60 days of support",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                18000,
+                72000
+              ],
+              "market": [
+                20000,
+                80000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                18000,
+                72000
+              ],
+              "market": [
+                20000,
+                80000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                720000,
+                2250000
+              ],
+              "market": [
+                800000,
+                2500000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                54000,
+                215000
+              ],
+              "market": [
+                60000,
+                240000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                21500,
+                86500
+              ],
+              "market": [
+                24000,
+                96000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                23500,
+                94500
+              ],
+              "market": [
+                26000,
+                105000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                18000,
+                72000
+              ],
+              "market": [
+                20000,
+                80000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                17000,
+                68500
+              ],
+              "market": [
+                19000,
+                76000
+              ]
+            }
+          }
+        },
+        {
+          "id": "enterprise",
+          "name": "Enterprise",
+          "blurb": "Complex products with research, testing and governance.",
+          "timeline": "5–9 months",
+          "features": [
+            {
+              "label": "Stakeholder workshops",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Accessibility audit (WCAG 2.2 AA)",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Multi-product design system",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Design governance and training",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Ongoing design support",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                72000,
+                180000
+              ],
+              "market": [
+                80000,
+                200000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                72000,
+                180000
+              ],
+              "market": [
+                80000,
+                200000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                2250000,
+                5400000
+              ],
+              "market": [
+                2500000,
+                6000000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                215000,
+                540000
+              ],
+              "market": [
+                240000,
+                600000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                86500,
+                215000
+              ],
+              "market": [
+                96000,
+                240000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                94500,
+                235000
+              ],
+              "market": [
+                105000,
+                260000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                72000,
+                180000
+              ],
+              "market": [
+                80000,
+                200000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                68500,
+                170000
+              ],
+              "market": [
+                76000,
+                190000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "ux-audit": {
+      "plans": [
+        {
+          "id": "flow",
+          "name": "Flow audit",
+          "blurb": "One user journey, reviewed end to end.",
+          "timeline": "3–7 days",
+          "features": [
+            {
+              "label": "Heuristic review",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Prioritised issue list",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Annotated screenshots",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Walkthrough call",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                2700,
+                5400
+              ],
+              "market": [
+                3000,
+                6000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                2700,
+                5400
+              ],
+              "market": [
+                3000,
+                6000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                54000,
+                135000
+              ],
+              "market": [
+                60000,
+                150000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                8100,
+                16000
+              ],
+              "market": [
+                9000,
+                18000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                3150,
+                6550
+              ],
+              "market": [
+                3500,
+                7250
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                3600,
+                7000
+              ],
+              "market": [
+                4000,
+                7750
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                2700,
+                5400
+              ],
+              "market": [
+                3000,
+                6000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                2500,
+                5200
+              ],
+              "market": [
+                2750,
+                5750
+              ]
+            }
+          }
+        },
+        {
+          "id": "product",
+          "name": "Product audit",
+          "blurb": "The whole product, with testing and accessibility.",
+          "timeline": "2–4 weeks",
+          "features": [
+            {
+              "label": "Heuristic review of all key flows",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Session recording analysis",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Moderated usability tests",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Accessibility review",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Improvement roadmap",
+              "mellon": "yes",
+              "market": "yes"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                7200,
+                16000
+              ],
+              "market": [
+                8000,
+                18000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                7200,
+                16000
+              ],
+              "market": [
+                8000,
+                18000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                135000,
+                225000
+              ],
+              "market": [
+                150000,
+                250000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                21500,
+                48500
+              ],
+              "market": [
+                24000,
+                54000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                8550,
+                20000
+              ],
+              "market": [
+                9500,
+                22000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                9000,
+                20500
+              ],
+              "market": [
+                10000,
+                23000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                7200,
+                16000
+              ],
+              "market": [
+                8000,
+                18000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                6750,
+                15500
+              ],
+              "market": [
+                7500,
+                17000
+              ]
+            }
+          }
+        },
+        {
+          "id": "enterprise",
+          "name": "Enterprise audit",
+          "blurb": "Several products or teams, with a fix plan.",
+          "timeline": "4–8 weeks",
+          "features": [
+            {
+              "label": "Stakeholder interviews",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Cross-product consistency review",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Analytics review",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Prioritised roadmap with effort sizing",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Readout workshop for leadership",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                16000,
+                36000
+              ],
+              "market": [
+                18000,
+                40000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                16000,
+                36000
+              ],
+              "market": [
+                18000,
+                40000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                270000,
+                720000
+              ],
+              "market": [
+                300000,
+                800000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                48500,
+                110000
+              ],
+              "market": [
+                54000,
+                120000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                20000,
+                43000
+              ],
+              "market": [
+                22000,
+                48000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                20500,
+                47000
+              ],
+              "market": [
+                23000,
+                52000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                16000,
+                36000
+              ],
+              "market": [
+                18000,
+                40000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                15500,
+                34000
+              ],
+              "market": [
+                17000,
+                38000
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "seo-content-strategy": {
+      "unit": "month",
+      "engagements": false,
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "blurb": "Foundations for a local or small business.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "Keyword research",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "On-page work on 5–10 pages",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Monthly report",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Two blog posts a month",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                1350,
+                3150
+              ],
+              "market": [
+                1500,
+                3500
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                900,
+                1350
+              ],
+              "market": [
+                1000,
+                1500
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                22500,
+                54000
+              ],
+              "market": [
+                25000,
+                60000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                4050,
+                9900
+              ],
+              "market": [
+                4500,
+                11000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                1600,
+                3850
+              ],
+              "market": [
+                1750,
+                4250
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                1800,
+                4050
+              ],
+              "market": [
+                2000,
+                4500
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                1350,
+                3150
+              ],
+              "market": [
+                1500,
+                3500
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                1350,
+                2950
+              ],
+              "market": [
+                1500,
+                3250
+              ]
+            }
+          }
+        },
+        {
+          "id": "growth",
+          "name": "Growth",
+          "blurb": "Content and technical work for a growing site.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "Technical audit",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Four to six articles a month",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Content strategy and calendar",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Basic link building",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Keyword tracking dashboard",
+              "mellon": "yes",
+              "market": "yes"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                3150,
+                6300
+              ],
+              "market": [
+                3500,
+                7000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                1350,
+                3150
+              ],
+              "market": [
+                1500,
+                3500
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                54000,
+                110000
+              ],
+              "market": [
+                60000,
+                120000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                9900,
+                19000
+              ],
+              "market": [
+                11000,
+                21000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                3850,
+                7650
+              ],
+              "market": [
+                4250,
+                8500
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                4050,
+                8100
+              ],
+              "market": [
+                4500,
+                9000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                3150,
+                6300
+              ],
+              "market": [
+                3500,
+                7000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                2950,
+                6100
+              ],
+              "market": [
+                3250,
+                6750
+              ]
+            }
+          }
+        },
+        {
+          "id": "authority",
+          "name": "Authority",
+          "blurb": "A full programme for competitive markets.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "Topic cluster strategy",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Eight or more articles a month",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Active link earning",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Conversion tracking",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Monthly strategy call",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                6300,
+                13500
+              ],
+              "market": [
+                7000,
+                15000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                3150,
+                7200
+              ],
+              "market": [
+                3500,
+                8000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                135000,
+                270000
+              ],
+              "market": [
+                150000,
+                300000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                19000,
+                40500
+              ],
+              "market": [
+                21000,
+                45000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                7650,
+                16000
+              ],
+              "market": [
+                8500,
+                18000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                8100,
+                18000
+              ],
+              "market": [
+                9000,
+                20000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                6300,
+                13500
+              ],
+              "market": [
+                7000,
+                15000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                6100,
+                12500
+              ],
+              "market": [
+                6750,
+                14000
+              ]
+            }
+          }
+        }
+      ],
+      "intro": "Three monthly packages, with a fixed monthly fee agreed before we start, shown next to what agencies typically quote."
+    },
+    "social-media-content-marketing": {
+      "unit": "month",
+      "engagements": false,
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "blurb": "One or two platforms for a small business.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "Eight to twelve posts a month",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Content calendar",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Light community replies",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Monthly report",
+              "mellon": "yes",
+              "market": "yes"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                450,
+                1350
+              ],
+              "market": [
+                500,
+                1500
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                450,
+                1350
+              ],
+              "market": [
+                500,
+                1500
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                13500,
+                36000
+              ],
+              "market": [
+                15000,
+                40000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                1350,
+                4050
+              ],
+              "market": [
+                1500,
+                4500
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                540,
+                1600
+              ],
+              "market": [
+                600,
+                1750
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                590,
+                1800
+              ],
+              "market": [
+                650,
+                2000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                450,
+                1350
+              ],
+              "market": [
+                500,
+                1500
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                450,
+                1350
+              ],
+              "market": [
+                500,
+                1500
+              ]
+            }
+          }
+        },
+        {
+          "id": "growth",
+          "name": "Growth",
+          "blurb": "Two or three platforms with more content.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "15–25 posts a month",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Short-form video",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Community management",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Deeper analytics",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Basic paid boosting",
+              "mellon": "yes",
+              "market": "extra"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                1350,
+                3150
+              ],
+              "market": [
+                1500,
+                3500
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                1350,
+                3150
+              ],
+              "market": [
+                1500,
+                3500
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                36000,
+                81000
+              ],
+              "market": [
+                40000,
+                90000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                4050,
+                9900
+              ],
+              "market": [
+                4500,
+                11000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                1600,
+                3850
+              ],
+              "market": [
+                1750,
+                4250
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                1800,
+                4050
+              ],
+              "market": [
+                2000,
+                4500
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                1350,
+                3150
+              ],
+              "market": [
+                1500,
+                3500
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                1350,
+                2950
+              ],
+              "market": [
+                1500,
+                3250
+              ]
+            }
+          }
+        },
+        {
+          "id": "premium",
+          "name": "Premium",
+          "blurb": "Daily presence with strategy and production.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "Daily posting across platforms",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Content strategy and campaigns",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Video and graphic production",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Paid social management",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Monthly strategy call",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                3150,
+                6750
+              ],
+              "market": [
+                3500,
+                7500
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                3150,
+                6750
+              ],
+              "market": [
+                3500,
+                7500
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                81000,
+                160000
+              ],
+              "market": [
+                90000,
+                180000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                9900,
+                20500
+              ],
+              "market": [
+                11000,
+                23000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                3850,
+                8100
+              ],
+              "market": [
+                4250,
+                9000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                4050,
+                8800
+              ],
+              "market": [
+                4500,
+                9750
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                3150,
+                6750
+              ],
+              "market": [
+                3500,
+                7500
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                2950,
+                6550
+              ],
+              "market": [
+                3250,
+                7250
+              ]
+            }
+          }
+        }
+      ],
+      "intro": "Three monthly packages, with a fixed monthly fee agreed before we start, shown next to what agencies typically quote."
+    },
+    "paid-advertising": {
+      "unit": "month",
+      "engagements": false,
+      "plans": [
+        {
+          "id": "starter",
+          "name": "Starter",
+          "blurb": "One platform, one or two campaigns.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "Account and campaign setup",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Management on Google or Meta",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Ad copy and creatives",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Monthly report",
+              "mellon": "yes",
+              "market": "yes"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                680,
+                1800
+              ],
+              "market": [
+                750,
+                2000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                450,
+                900
+              ],
+              "market": [
+                500,
+                1000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                18000,
+                54000
+              ],
+              "market": [
+                20000,
+                60000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                2700,
+                5400
+              ],
+              "market": [
+                3000,
+                6000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                720,
+                1800
+              ],
+              "market": [
+                800,
+                2000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                360,
+                1350
+              ],
+              "market": [
+                400,
+                1500
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                540,
+                1100
+              ],
+              "market": [
+                600,
+                1200
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                630,
+                1800
+              ],
+              "market": [
+                700,
+                2000
+              ]
+            }
+          }
+        },
+        {
+          "id": "growth",
+          "name": "Growth",
+          "blurb": "Google and Meta together, with creatives and copy.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "Google Ads and Meta management",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Ad creatives and copy",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "YouTube and banner ads",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Conversion tracking setup",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Fortnightly optimisation",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                1800,
+                5400
+              ],
+              "market": [
+                2000,
+                6000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                900,
+                2250
+              ],
+              "market": [
+                1000,
+                2500
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                54000,
+                135000
+              ],
+              "market": [
+                60000,
+                150000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                5400,
+                11000
+              ],
+              "market": [
+                6000,
+                12000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                1800,
+                4500
+              ],
+              "market": [
+                2000,
+                5000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                1350,
+                2700
+              ],
+              "market": [
+                1500,
+                3000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                1100,
+                2700
+              ],
+              "market": [
+                1200,
+                3000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                1800,
+                5200
+              ],
+              "market": [
+                2000,
+                5750
+              ]
+            }
+          }
+        },
+        {
+          "id": "scale",
+          "name": "Scale",
+          "blurb": "Multi-channel campaigns with full creative production.",
+          "timeline": "Month to month",
+          "features": [
+            {
+              "label": "Strategy across all channels",
+              "mellon": "yes",
+              "market": "yes"
+            },
+            {
+              "label": "Creative production: static and video",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Landing page recommendations",
+              "mellon": "yes",
+              "market": "extra"
+            },
+            {
+              "label": "Weekly optimisation",
+              "mellon": "yes",
+              "market": "no"
+            },
+            {
+              "label": "Monthly strategy call",
+              "mellon": "yes",
+              "market": "no"
+            }
+          ],
+          "prices": {
+            "en-US": {
+              "mellon": [
+                5400,
+                11000
+              ],
+              "market": [
+                6000,
+                12000
+              ]
+            },
+            "en-GB": {
+              "mellon": [
+                2250,
+                5400
+              ],
+              "market": [
+                2500,
+                6000
+              ]
+            },
+            "en-IN": {
+              "mellon": [
+                135000,
+                270000
+              ],
+              "market": [
+                150000,
+                300000
+              ]
+            },
+            "en-AE": {
+              "mellon": [
+                11000,
+                22500
+              ],
+              "market": [
+                12000,
+                25000
+              ]
+            },
+            "en-AU": {
+              "mellon": [
+                4500,
+                13500
+              ],
+              "market": [
+                5000,
+                15000
+              ]
+            },
+            "en-CA": {
+              "mellon": [
+                2700,
+                7200
+              ],
+              "market": [
+                3000,
+                8000
+              ]
+            },
+            "en-SG": {
+              "mellon": [
+                2700,
+                7200
+              ],
+              "market": [
+                3000,
+                8000
+              ]
+            },
+            "en-IE": {
+              "mellon": [
+                5200,
+                9900
+              ],
+              "market": [
+                5750,
+                11000
+              ]
+            }
+          }
+        }
+      ],
+      "intro": "Three monthly packages, with a fixed monthly fee agreed before we start, shown next to what agencies typically quote."
+    }
+  },
+  "engagements": [
+    {
+      "id": "hourly",
+      "name": "By the hour",
+      "blurb": "Small jobs, fixes and work you cannot scope yet. Pay only for the hours used.",
+      "unit": "hour",
+      "from": false,
+      "includes": [
+        "Senior designer, no juniors",
+        "Billed in 30-minute steps",
+        "Hours report every week",
+        "Move to a fixed price if the scope settles"
+      ],
+      "prices": {
+        "en-US": {
+          "mellon": [
+            40
+          ],
+          "market": [
+            100,
+            150
+          ]
+        },
+        "en-GB": {
+          "mellon": [
+            30
+          ],
+          "market": [
+            75,
+            150
+          ]
+        },
+        "en-IN": {
+          "mellon": [
+            3600
+          ],
+          "market": [
+            3000,
+            5000
+          ]
+        },
+        "en-AE": {
+          "mellon": [
+            150
+          ],
+          "market": [
+            600,
+            1800
+          ]
+        },
+        "en-AU": {
+          "mellon": [
+            60
+          ],
+          "market": [
+            150,
+            220
+          ]
+        },
+        "en-CA": {
+          "mellon": [
+            55
+          ],
+          "market": [
+            100,
+            185
+          ]
+        },
+        "en-SG": {
+          "mellon": [
+            55
+          ],
+          "market": [
+            50,
+            100
+          ]
+        },
+        "en-IE": {
+          "mellon": [
+            35
+          ],
+          "market": [
+            80,
+            150
+          ]
+        }
+      }
+    },
+    {
+      "id": "retainer",
+      "name": "Monthly retainer",
+      "blurb": "Ongoing design work with hours reserved for you every month.",
+      "unit": "month",
+      "from": true,
+      "includes": [
+        "40 hours reserved every month",
+        "Weekly check-in call",
+        "Priority turnaround on requests",
+        "Unused hours roll over for one month"
+      ]
+    }
+  ]
+}

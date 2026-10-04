@@ -12,7 +12,10 @@ import { breadcrumbJsonLd, buildMetadata, serviceJsonLd } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/env";
 import { Container } from "@/components/ui/Container";
 import { Cta } from "@/components/cta/Cta";
+import { ContactForm } from "@/components/contact-form/ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { ServicePricing } from "@/components/pricing/ServicePricing";
+import { getEngagements, getServicePricing } from "@/lib/pricing";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { RevealGroup } from "@/components/motion/RevealGroup";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
@@ -56,6 +59,7 @@ export default async function ServiceDetailPage({
 
   const site = getSiteContent(locale);
   const page = site.servicesPage;
+  const form = site.forms.contact;
   const industries = getIndustries(locale);
   const relatedIndustries = industries.filter((industry) =>
     service.relatedIndustries.includes(industry.slug),
@@ -66,6 +70,7 @@ export default async function ServiceDetailPage({
   const localePrefix = `/${locale}`;
   const siteUrl = getSiteUrl();
   const path = `/services/${slug}`;
+  const pricing = getServicePricing(locale, slug);
   const closing = page.detail.readyHeadline
     .replace("{nameLower}", service.name.toLocaleLowerCase(locale))
     .replace("{name}", service.name);
@@ -111,7 +116,7 @@ export default async function ServiceDetailPage({
             <SwiftUpText text={service.summary} whenVisible lineDelay={0.12} delay={0.2} />
           </p>
           <FadeIn whenVisible delay={0.4}>
-            <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="service" />
+            <Cta label={site.common.startProject} href="#quote" context="service" />
           </FadeIn>
         </Container>
       </section>
@@ -166,6 +171,13 @@ export default async function ServiceDetailPage({
         </section>
       )}
 
+      {pricing && (
+        <ServicePricing
+          pricing={pricing}
+          engagements={pricing.showEngagements ? getEngagements(locale) : []}
+          labels={page.pricing} ctaHref="#quote" />
+      )}
+
       {service.faqs && service.faqs.length > 0 && (
         <section className={styles.body}>
           <Container>
@@ -201,14 +213,20 @@ export default async function ServiceDetailPage({
         </section>
       )}
 
-      <section className={styles.closing}>
+      <section id="quote" className={styles.closing}>
         <Container className={styles.closingInner}>
           <h2 className={styles.closingHeadline}>
             <SwiftUpText text={closing} whenVisible />
           </h2>
-          <FadeIn whenVisible delay={0.2}>
-            <Cta label={site.common.startProject} href={`${localePrefix}/contact`} context="service" />
-          </FadeIn>
+          <div className={styles.closingForm}>
+            <ContactForm
+              successMessage={form.successMessage}
+              submitLabel={form.submitLabel}
+              labels={form.labels}
+              privacyHref={`${localePrefix}/privacy`}
+              locale={locale}
+            />
+          </div>
         </Container>
       </section>
     </>

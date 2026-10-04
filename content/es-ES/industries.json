@@ -1,6 +1,7 @@
 [
   {
     "slug": "architecture-interior-design",
+    "category": "built-environment",
     "name": "Arquitectura e interiorismo",
     "tagline": "Una presencia digital tan cuidada como los espacios que diseñas.",
     "summary": "Los estudios de arquitectura e interiorismo venden una sensación antes que un plano. Creamos sitios de portfolio y sistemas de marca que dejan que el trabajo, y la luz, el material y el espacio que contiene, hable por sí solo.",
@@ -18,6 +19,7 @@
   },
   {
     "slug": "automotive",
+    "category": "tech",
     "name": "Automoción",
     "tagline": "Interfaces para el sector que más rápido pasa del hardware al software.",
     "summary": "De los sistemas de infoentretenimiento a las apps de propietarios y las herramientas de configuración, diseñamos productos digitales de automoción que cumplen el mismo nivel de ajuste y acabado que los propios vehículos.",
@@ -35,6 +37,7 @@
   },
   {
     "slug": "civic-tech-design",
+    "category": "public-professional",
     "name": "Civic tech",
     "tagline": "Software del sector público que se usa sin necesitar un manual.",
     "summary": "Las plataformas cívicas y gubernamentales exigen más claridad y accesibilidad. Diseñamos servicios que funcionan para todos los ciudadanos, en cualquier dispositivo y en lenguaje claro.",
@@ -52,6 +55,7 @@
   },
   {
     "slug": "consumer-electronics",
+    "category": "tech",
     "name": "Electrónica de consumo",
     "tagline": "Marca y experiencia de producto que va del dispositivo a la app.",
     "summary": "El hardware gana confianza en segundos y el software tiene que mantenerla. Diseñamos las apps complementarias, los flujos de configuración y los sistemas de marca que hacen que la electrónica se sienta cuidada de principio a fin.",
@@ -69,6 +73,7 @@
   },
   {
     "slug": "ecommerce",
+    "category": "retail-hospitality",
     "name": "E-commerce",
     "tagline": "Tiendas creadas para convertir, no solo para verse bien.",
     "summary": "Diseñamos y construimos experiencias de comercio (del descubrimiento de producto al pago) en las plataformas que usas a diario, optimizadas con datos reales de conversión y no con modas.",
@@ -88,6 +93,7 @@
   },
   {
     "slug": "education-edtech",
+    "category": "public-professional",
     "name": "Educación y EdTech",
     "tagline": "Productos de aprendizaje diseñados para la atención, no solo para el temario.",
     "summary": "Diseñamos plataformas para estudiantes, docentes y administradores: interfaces que siguen siendo usables en condiciones reales de aula y que escalan de un centro a todo un distrito.",
@@ -106,6 +112,7 @@
   },
   {
     "slug": "fashion-brand-design",
+    "category": "retail-hospitality",
     "name": "Moda",
     "tagline": "Sistemas de marca con el acabado editorial que exige el sector.",
     "summary": "Las marcas de moda viven de la coherencia visual entre lookbooks, tiendas y redes sociales. Creamos sistemas de identidad y sitios de comercio que mantienen esa línea a escala.",
@@ -124,6 +131,7 @@
   },
   {
     "slug": "finance-fintech",
+    "category": "tech",
     "name": "Finanzas y fintech",
     "tagline": "Confianza hecha legible, en interfaces que manejan dinero real.",
     "summary": "Los productos fintech deben ser precisos, cumplir la normativa y transmitir tranquilidad a la vez. Diseñamos paneles, onboarding y flujos de transacciones que hacen que los datos financieros complejos parezcan controlables.",
@@ -141,6 +149,7 @@
   },
   {
     "slug": "health-wellness-tech",
+    "category": "public-professional",
     "name": "Salud y bienestar",
     "tagline": "Experiencias de cuidado que siguen siendo humanas en cada punto de contacto.",
     "summary": "Ya sea un portal de pacientes o una app de bienestar, diseñamos para momentos en que las personas están estresadas, distraídas o vulnerables: claridad y tranquilidad son todo el trabajo.",
@@ -158,6 +167,7 @@
   },
   {
     "slug": "hospitality-design",
+    "category": "retail-hospitality",
     "name": "Hostelería",
     "tagline": "Experiencias de reserva y de huéspedes a la altura del establecimiento.",
     "summary": "De hoteles boutique a grupos de restauración, diseñamos experiencias digitales (procesos de reserva, sitios de marca, apps para huéspedes) que reflejan el nivel de hospitalidad que los clientes esperan en persona.",
@@ -175,6 +185,7 @@
   },
   {
     "slug": "legal-branding",
+    "category": "public-professional",
     "name": "Legal",
     "tagline": "Autoridad y cercanía en un mismo sistema de identidad.",
     "summary": "Las marcas del sector legal deben transmitir credibilidad sin resultar frías. Creamos sistemas de identidad y web para despachos que quieren inspirar confianza y, aun así, recibir consultas.",
@@ -192,6 +203,7 @@
   },
   {
     "slug": "media-entertainment-gaming",
+    "category": "tech",
     "name": "Medios, entretenimiento y videojuegos",
     "tagline": "Interfaces con personalidad, creadas para retener la atención.",
     "summary": "Diseñamos para audiencias que esperan pulido y ritmo: plataformas de streaming, interfaces de juegos y marcas de entretenimiento donde el movimiento y el detalle pesan tanto como la maquetación.",
@@ -209,6 +221,7 @@
   },
   {
     "slug": "nonprofit-branding",
+    "category": "public-professional",
     "name": "Organizaciones sin ánimo de lucro",
     "tagline": "Identidad y sistemas digitales creados para la misión, no para el margen.",
     "summary": "Ayudamos a las organizaciones sin ánimo de lucro a presentarse con el mismo pulido que cualquier marca comercial: narrativa clara, diseño accesible y flujos de donación que convierten la intención en apoyo.",
@@ -226,6 +239,7 @@
   },
   {
     "slug": "real-estate-design",
+    "category": "built-environment",
     "name": "Inmobiliaria",
     "tagline": "Anuncios y presencia de marca que venden la propiedad, no solo la listan.",
     "summary": "Diseñamos sitios para inmobiliarias y promotoras que hacen que los anuncios se sientan premium: navegación con mapa, galerías de carga rápida y flujos de captación que convierten el interés en visitas.",
@@ -245,6 +259,7 @@
   },
   {
     "slug": "restaurant-branding",
+    "category": "retail-hospitality",
     "name": "Restauración",
     "tagline": "Cartas, marca y flujos de pedido que la gente quiere usar.",
     "summary": "Creamos identidad y experiencias de pedido digital para grupos de restauración, de marcas de un solo local a cadenas con varios, que se sienten tan bien como las fotos de los platos.",
@@ -262,6 +277,7 @@
   },
   {
     "slug": "technology-saas",
+    "category": "tech",
     "name": "Tecnología y SaaS",
     "tagline": "Diseño de producto para software que tiene que seguir ganándose la renovación.",
     "summary": "Aquí es donde el estudio pasa más tiempo: paneles, onboarding y sistemas de diseño para productos SaaS que deben seguir siendo sencillos mientras hacen más en cada versión.",

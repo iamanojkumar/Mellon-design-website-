@@ -12,7 +12,25 @@
     },
     {
       "type": "industryCards",
-      "viewLink": "Branche ansehen →"
+      "viewLink": "Branche ansehen →",
+      "categories": [
+        {
+          "id": "tech",
+          "label": "Technologie und digitale Produkte"
+        },
+        {
+          "id": "retail-hospitality",
+          "label": "Handel, Mode und Gastronomie"
+        },
+        {
+          "id": "built-environment",
+          "label": "Immobilien und gebaute Umwelt"
+        },
+        {
+          "id": "public-professional",
+          "label": "Öffentlicher Sektor, Gesundheit und Dienstleistungen"
+        }
+      ]
     },
     {
       "type": "closingCta",

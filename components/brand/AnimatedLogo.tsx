@@ -100,6 +100,10 @@ export function AnimatedLogo({
   return (
     <span
       ref={rootRef}
+      // Hovering the logo replays the animation once; ignored while one is already playing.
+      onMouseEnter={() => {
+        if (mode === "static" && run > 0) setRun((r) => r + 1);
+      }}
       className={[styles.root, vertical && styles.vertical, className].filter(Boolean).join(" ")}
       style={
         {

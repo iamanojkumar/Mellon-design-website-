@@ -9,6 +9,7 @@ import styles from "./AdminNav.module.css";
 const ITEMS = [
   { href: "/admin", label: "Projects" },
   { href: "/admin/indexing", label: "Indexing" },
+  { href: "/admin/landing-pages", label: "Landing page" },
 ];
 
 export function AdminNav() {

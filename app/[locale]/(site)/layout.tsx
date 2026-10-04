@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { getSiteContent } from "@/lib/content";
 import { Header } from "@/components/layout/Header";
+import { getMegaMenus } from "@/lib/mega-menu";
 import { Footer } from "@/components/layout/Footer";
 
 /**
@@ -23,7 +24,7 @@ export default async function SiteLayout({
       <a href="#main" className="visually-hidden">
         {site.common.skipToContent}
       </a>
-      <Header locale={locale} nav={site.nav.primary} cta={site.nav.cta} common={site.common} />
+      <Header locale={locale} nav={site.nav.primary} cta={site.nav.cta} common={site.common} mega={getMegaMenus(locale)} />
       <main id="main">{children}</main>
       <Footer locale={locale} footer={site.footer} org={site.org} />
     </>

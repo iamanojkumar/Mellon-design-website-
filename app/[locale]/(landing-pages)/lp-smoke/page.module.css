@@ -21,3 +21,11 @@
   max-width: 62ch;
   margin-bottom: var(--space-lg);
 }
+
+.quote {
+  padding-block: var(--space-xl) var(--space-2xl);
+}
+
+.quote > * {
+  max-width: 40rem;
+}

@@ -32,6 +32,8 @@ export type Industry = {
   summary: string;
   deliverables: string[];
   relatedServices: string[];
+  /** Groups the industry on the industries index; matches an id in the industries page's `categories`. */
+  category?: string;
 };
 
 /**

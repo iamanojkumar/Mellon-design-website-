@@ -9,6 +9,8 @@ import {
 import { buildMetadata } from "@/lib/seo";
 import { Container } from "@/components/ui/Container";
 import { Cta } from "@/components/cta/Cta";
+import { ContactForm } from "@/components/contact-form/ContactForm";
+import { getSiteContent } from "@/lib/content";
 import { copy } from "./copy";
 import styles from "./page.module.css";
 
@@ -51,15 +53,29 @@ export default async function LandingPage({
   const { locale } = await params;
   if (!getLandingPage(SLUG)) notFound();
   const text = resolveLandingCopy(copy, locale);
+  const form = getSiteContent(locale).forms.contact;
 
   return (
-    <section id="quote" className={styles.hero}>
+    <>
+    <section className={styles.hero}>
       <Container>
         <span className={styles.eyebrow}>{text.eyebrow}</span>
         <h1 className={styles.headline}>{text.headline}</h1>
         <p className={styles.summary}>{text.summary}</p>
-        <Cta label={text.cta} href={`/${locale}/contact`} context="landing" />
+        <Cta label={text.cta} href="#quote" context="landing" />
       </Container>
     </section>
+    <section id="quote" className={styles.quote}>
+      <Container>
+        <ContactForm
+          successMessage={form.successMessage}
+          submitLabel={form.submitLabel}
+          labels={form.labels}
+          privacyHref={`/${locale}/privacy`}
+          locale={locale}
+        />
+      </Container>
+    </section>
+    </>
   );
 }

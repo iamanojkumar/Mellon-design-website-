@@ -12,7 +12,25 @@
     },
     {
       "type": "industryCards",
-      "viewLink": "Bekijk sector →"
+      "viewLink": "Bekijk sector →",
+      "categories": [
+        {
+          "id": "tech",
+          "label": "Technologie en digitale producten"
+        },
+        {
+          "id": "retail-hospitality",
+          "label": "Retail, mode en horeca"
+        },
+        {
+          "id": "built-environment",
+          "label": "Vastgoed en gebouwde omgeving"
+        },
+        {
+          "id": "public-professional",
+          "label": "Publieke sector, gezondheid en professionele diensten"
+        }
+      ]
     },
     {
       "type": "closingCta",

@@ -36,7 +36,7 @@ export type Block =
     }
   | { type: "textSections"; sections: { heading: string; body: string }[] }
   | { type: "serviceCards"; viewLink: string; categories?: { id: string; label: string }[] }
-  | { type: "industryCards"; viewLink: string }
+  | { type: "industryCards"; viewLink: string; categories?: { id: string; label: string }[] }
   /**
    * Case studies from Supabase rather than this JSON, so both project blocks
    * carry their own `empty` copy: a locale with nothing published yet renders

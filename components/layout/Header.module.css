@@ -178,3 +178,137 @@
   padding: 0.55rem 1.1rem;
   font-size: var(--fs-100);
 }
+
+/* Mega-menu (desktop): the panel hangs from the header bar and spans its width. */
+.megaItem {
+  display: inline-block;
+}
+
+.megaPanel {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-paper);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: 0 18px 40px rgb(0 0 0 / 0.08);
+  visibility: hidden;
+  /* A closed (or closing) panel must never catch the pointer, or hovering where it
+     used to be would reopen it. */
+  pointer-events: none;
+  /* Opening: the panel wipes down from the header edge (the negative bottom inset
+     leaves room for the shadow), then its columns rise in one after another. */
+  clip-path: inset(0 0 100% 0);
+  /* Never taller than the viewport below the header; scrolls inside on short screens. */
+  max-height: calc(100vh - 4.5rem);
+  max-height: calc(100dvh - 4.5rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transition: clip-path 0.4s var(--ease-out), visibility 0s linear 0.4s;
+}
+
+.megaPanel[data-open="true"] {
+  visibility: visible;
+  pointer-events: auto;
+  clip-path: inset(0 0 -48px 0);
+  transition-delay: 0s;
+}
+
+.megaInner > div {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.megaPanel[data-open="true"] .megaInner > div {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.4s var(--ease-out), transform 0.4s var(--ease-out);
+  transition-delay: calc(0.12s + var(--i, 0) * 0.06s);
+}
+
+.megaInner > div:nth-child(2) { --i: 1; }
+.megaInner > div:nth-child(3) { --i: 2; }
+.megaInner > div:nth-child(4) { --i: 3; }
+
+@media (prefers-reduced-motion: reduce) {
+  .megaPanel,
+  .megaInner > div {
+    transition: none !important;
+  }
+}
+
+.megaInner {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding: var(--space-xl) var(--content-pad);
+  display: grid;
+  gap: var(--space-xl) var(--space-2xl);
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+/* Four equal columns on desktop; a long category takes two and lays its links out in two. */
+@media (min-width: 900px) {
+  .megaInner {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .megaWide {
+    grid-column: span 2;
+  }
+  .megaWide .megaList {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.megaLabel {
+  font-size: var(--fs-100);
+  font-weight: 600;
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.megaList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--space-md);
+}
+
+.megaSub {
+  display: block;
+  margin-top: var(--space-2xs);
+  font-size: var(--fs-100);
+  line-height: 1.35;
+  color: var(--color-fg-muted);
+}
+
+.megaLink {
+  display: block;
+  padding-block: var(--space-2xs);
+  font-size: var(--fs-200);
+  font-weight: 500;
+  color: var(--color-fg);
+}
+
+.megaLink:hover,
+.megaLink:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.mobileGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.mobileGroup > summary {
+  cursor: pointer;
+}
+
+.mobileSubLink {
+  font-size: var(--fs-300);
+  color: var(--color-fg);
+}

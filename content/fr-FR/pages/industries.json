@@ -12,7 +12,25 @@
     },
     {
       "type": "industryCards",
-      "viewLink": "Voir le secteur →"
+      "viewLink": "Voir le secteur →",
+      "categories": [
+        {
+          "id": "tech",
+          "label": "Technologie et produits numériques"
+        },
+        {
+          "id": "retail-hospitality",
+          "label": "Commerce, mode et hôtellerie-restauration"
+        },
+        {
+          "id": "built-environment",
+          "label": "Immobilier et cadre bâti"
+        },
+        {
+          "id": "public-professional",
+          "label": "Secteur public, santé et services professionnels"
+        }
+      ]
     },
     {
       "type": "closingCta",
