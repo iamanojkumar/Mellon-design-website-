@@ -8,8 +8,10 @@ import {
   getSiteContent,
 } from "@/lib/content";
 import { enabledLocaleCodes } from "@/lib/locale";
+import { isCompanyPagePublished } from "@/lib/company-pages";
 import { breadcrumbJsonLd, buildMetadata, serviceJsonLd } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/env";
+import { RelatedProjects } from "@/components/projects/RelatedProjects";
 import { Container } from "@/components/ui/Container";
 import { Cta } from "@/components/cta/Cta";
 import { ContactForm } from "@/components/contact-form/ContactForm";
@@ -45,6 +47,8 @@ export async function generateMetadata({
     path: `/services/${slug}`,
     title: service.metaTitle ?? `${service.name} — ${site.org.name}`,
     description: service.metaDescription ?? service.summary,
+    // Other languages keep their own service lists, so only link the locales that have this one.
+    locales: enabledLocaleCodes.filter((code) => getServices(code).some((item) => item.slug === slug)),
   });
 }
 
@@ -71,6 +75,8 @@ export default async function ServiceDetailPage({
   const siteUrl = getSiteUrl();
   const path = `/services/${slug}`;
   const pricing = getServicePricing(locale, slug);
+  // Hidden until there are projects to show; flip to bring the block back.
+  const showUsedIn = false;
   const closing = page.detail.readyHeadline
     .replace("{nameLower}", service.name.toLocaleLowerCase(locale))
     .replace("{name}", service.name);
@@ -132,9 +138,27 @@ export default async function ServiceDetailPage({
                 <li key={item}>{item}</li>
               ))}
             </RevealGroup>
+            {isCompanyPagePublished(locale, "ai") && (
+              <p className={styles.aiLink}>
+                <Link href={`${localePrefix}/about/ai`}>{page.detail.aiLink}</Link>
+              </p>
+            )}
           </div>
 
-          {relatedIndustries.length > 0 && (
+          {service.exclusions && service.exclusions.length > 0 && (
+            <div>
+              <h2 className={styles.blockHeading}>
+                <SwiftUpText text={page.detail.notIncluded} whenVisible />
+              </h2>
+              <RevealGroup as="ul" className={styles.exclusions}>
+                {service.exclusions.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </RevealGroup>
+            </div>
+          )}
+
+          {showUsedIn && relatedIndustries.length > 0 && (
             <div>
               <h2 className={styles.blockHeading}>
                 <SwiftUpText text={page.detail.usedIn} whenVisible />
@@ -152,6 +176,8 @@ export default async function ServiceDetailPage({
           )}
         </Container>
       </section>
+
+      <RelatedProjects locale={locale} service={service.slug} />
 
       {service.process && service.process.length > 0 && (
         <section className={`${styles.body} ${styles.tinted}`}>

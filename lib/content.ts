@@ -10,6 +10,8 @@ export type Service = {
   tagline: string;
   summary: string;
   deliverables: string[];
+  /** What is out of scope; the "What we don't do" block renders only when present. */
+  exclusions?: string[];
   relatedIndustries: string[];
   /** Groups the service on the services index; matches an id in the services page's `categories`. */
   category?: string;

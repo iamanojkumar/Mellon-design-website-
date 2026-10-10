@@ -75,6 +75,38 @@
   background: var(--gradient-brand);
 }
 
+.aiLink {
+  margin-top: var(--space-md);
+  font-size: var(--fs-200);
+}
+
+.aiLink a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.exclusions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.exclusions li {
+  padding-left: var(--space-md);
+  position: relative;
+  font-size: var(--fs-300);
+  color: var(--color-fg-muted);
+}
+
+.exclusions li::before {
+  content: "¹5";
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-size: 0.7em;
+  color: var(--color-fg-muted);
+}
+
 .relatedList {
   display: flex;
   flex-wrap: wrap;

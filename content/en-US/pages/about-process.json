@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "title": "How a Mellon project runs, from first call to handover — Mellon",
+    "description": "How a Mellon project runs: discovery, structure, design, build and launch, with the same team on design and development and a fixed price agreed before work starts."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "About",
+      "headline": "How a project runs, from first call to handover.",
+      "subhead": "Our process in plain terms: what happens at each stage, what you do, and what you get."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "It starts with a conversation.",
+          "body": "Tell us what you're building and we'll tell you plainly whether we're the right studio for it. If we are, we scope the work with you and agree a fixed price before we start."
+        },
+        {
+          "heading": "Discovery.",
+          "body": "We learn who your users are, what they need to do, and what the work has to achieve for your business. [Confirm: what you ask the client to provide at this stage, and how long it usually takes.]"
+        },
+        {
+          "heading": "Structure.",
+          "body": "We map the structure around those tasks: the sitemap and pages for a website, the flows and screens for a product. We plan the content each part needs."
+        },
+        {
+          "heading": "Design.",
+          "body": "We design the key pages, screens and templates in Figma, then refine them with your feedback. [Confirm: how many feedback rounds are included and how feedback is collected.]"
+        },
+        {
+          "heading": "Build.",
+          "body": "The same team that designed it builds it, in Webflow, Framer, WordPress, or custom code, chosen to fit how your team will edit it. Nothing gets lost between design and build."
+        },
+        {
+          "heading": "Launch and handover.",
+          "body": "We test across devices, set up redirects and metadata, launch, and hand over documentation so your team can run it. [Confirm: the support period after launch for each service.]"
+        },
+        {
+          "heading": "Changes along the way.",
+          "body": "Things change mid-project. [Confirm: how a change request is raised, how it is quoted, and how it affects the timeline and milestones.]"
+        },
+        {
+          "heading": "Who you work with.",
+          "body": "[Confirm: who your main contact is, how often you meet, and how you share progress, for example weekly calls or a shared board.]"
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Start with a conversation.",
+      "cta": {
+        "label": "Start a project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

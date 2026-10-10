@@ -14,6 +14,8 @@ import { breadcrumbJsonLd, buildMetadata, ogTypeForSchema } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/env";
 import { Container } from "@/components/ui/Container";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { HeroTint } from "@/components/ui/HeroTint";
+import { normalizeHeroBg } from "@/lib/hero-tint";
 import { ProjectBlocks } from "@/components/projects/ProjectBlocks";
 import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import { FadeIn } from "@/components/motion/HeroSequence";
@@ -121,7 +123,11 @@ export default async function ProjectDetailPage({
         ])}
       />
 
+      <HeroTint color={project.heroBg} />
       <article className={styles.article}>
+        {/* The tinted band: overline, heading, subtext and image. The header
+            above reads the same --page-tint, so the colour is continuous. */}
+        <div className={styles.heroBand} data-hero-band="" data-tinted={normalizeHeroBg(project.heroBg) ? "" : undefined}>
         <Container>
           {/* customHead renders here rather than in <head>: App Router builds
               the head from generateMetadata, and arbitrary markup cannot be
@@ -158,7 +164,10 @@ export default async function ProjectDetailPage({
               />
             </div>
           )}
+        </Container>
+        </div>
 
+        <Container>
           {project.content && (
             // Authored in the admin's rich-text editor, which is behind a
             // password and writes its own markup — the same trust boundary as

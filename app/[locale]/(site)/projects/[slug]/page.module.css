@@ -1,6 +1,17 @@
 .article {
-  padding-block: var(--space-2xl);
+  padding-bottom: var(--space-2xl);
 }
+/* Hero band: holds the overline, heading, subtext and image. Transparent
+   unless the page sets --page-tint; the header shares the same variable. */
+.heroBand {
+  padding-top: var(--space-2xl);
+  background: var(--page-tint, transparent);
+}
+
+.heroBand[data-tinted] {
+  padding-bottom: var(--space-xl);
+}
+
 
 /* Overline: same style as the eyebrow on every other page (PageHero). */
 .meta {

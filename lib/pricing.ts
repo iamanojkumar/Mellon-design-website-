@@ -20,11 +20,15 @@ export type PricingPlan = {
   name: string;
   blurb: string;
   timeline: string;
+  /** Key into the pricing `badges` labels; shows a highlight tag on the plan. */
+  badge?: string;
   features: PricingFeature[];
   mellon: string;
   /** True when only the top of Mellon's band is shown (the minimum is kept internal). */
   mellonUpTo: boolean;
   market: string;
+  /** Same for the typical-agency band. */
+  marketUpTo: boolean;
 };
 
 export type ServicePricing = {
@@ -37,7 +41,9 @@ export type ServicePricing = {
   plans: PricingPlan[];
 };
 
-type RawPlan = Omit<PricingPlan, "mellon" | "mellonUpTo" | "market"> & {
+type RawPlan = Omit<PricingPlan, "mellon" | "mellonUpTo" | "market" | "marketUpTo"> & {
+  /** Conceal the bottom of both price bands; only the top is shown ("Up to ..."). */
+  hideLow?: boolean;
   prices: Record<string, { mellon: number[]; market: number[] }>;
 };
 
@@ -58,14 +64,15 @@ export function getServicePricing(locale: string, slug: string): ServicePricing 
   const plans = services[slug]?.plans;
   if (!currency || !plans) return null;
   const resolved: PricingPlan[] = [];
-  for (const { prices, ...plan } of plans) {
+  for (const { prices, hideLow, ...plan } of plans) {
     const price = prices[locale];
     if (!price) return null;
     resolved.push({
       ...plan,
-      mellon: formatRange(locale, currency, price.mellon),
-      mellonUpTo: price.mellon.length === 1,
-      market: formatRange(locale, currency, price.market),
+      mellon: formatRange(locale, currency, hideLow ? price.mellon.slice(-1) : price.mellon),
+      mellonUpTo: price.mellon.length === 1 || !!hideLow,
+      market: formatRange(locale, currency, hideLow ? price.market.slice(-1) : price.market),
+      marketUpTo: !!hideLow,
     });
   }
   const { intro, unit, engagements: showEngagements } = services[slug];
@@ -77,6 +84,7 @@ export type Engagement = {
   name: string;
   blurb: string;
   unit: "hour" | "month";
+  badge?: string;
   includes: string[];
   /** "From" pricing (a base fee) rather than a flat rate. */
   from: boolean;

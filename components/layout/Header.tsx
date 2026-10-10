@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import type { SiteContent } from "@/lib/content";
 import { AnimatedLogo } from "@/components/brand/AnimatedLogo";
 import { Cta } from "@/components/cta/Cta";
@@ -25,6 +25,15 @@ const MEGA_CLOSE_DELAY = 150;
 const WIDE_GROUP_MIN = 5;
 
 type NavItem ={ label: string; href: string };
+
+/** Right-pointing chevron; rotated in CSS where it points back. */
+function Chevron({ className }: { className?: string }) {
+  return (
+    <svg className={className} width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <path d="M6 3.5L10.5 8L6 12.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 type HeaderProps = {
   locale: string;
@@ -62,6 +71,79 @@ export function Header({ locale, nav, cta, common, mega = {} }: HeaderProps) {
     cancelClose();
     setMegaOpen(null);
   }, [pathname]);
+
+  // Mobile menu: a full-screen sheet. `panel` is the nav href whose submenu is showing
+  // (null = the top level); a submenu slides in over the top level, Back slides it out.
+  const [panel, setPanel] = useState<string | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+  const barRef = useRef<HTMLDivElement>(null);
+  const sheetRef = useRef<HTMLDivElement>(null);
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  const closeMenu = (restoreFocus = false) => {
+    setOpen(false);
+    if (restoreFocus) menuButtonRef.current?.focus();
+  };
+
+  useEffect(() => {
+    if (!open) setPanel(null);
+    // React 18 has no `inert` prop; a closed sheet must be out of the tab order and the
+    // accessibility tree even while its closing animation plays.
+    sheetRef.current?.toggleAttribute("inert", !open);
+    if (!open) return;
+
+    // The sheet starts below the bar, whatever height the bar has.
+    const setBarHeight = () => {
+      if (barRef.current) {
+        headerRef.current?.style.setProperty("--bar-h", `${barRef.current.offsetHeight}px`);
+      }
+    };
+    setBarHeight();
+
+    const html = document.documentElement;
+    const prevOverflow = html.style.overflow;
+    html.style.overflow = "hidden";
+
+    const desktop = window.matchMedia("(min-width: 900px)");
+    const onDesktop = () => {
+      if (desktop.matches) setOpen(false);
+    };
+    desktop.addEventListener("change", onDesktop);
+    window.addEventListener("resize", setBarHeight);
+    return () => {
+      html.style.overflow = prevOverflow;
+      desktop.removeEventListener("change", onDesktop);
+      window.removeEventListener("resize", setBarHeight);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      // An open language list closes itself first.
+      if (sheetRef.current?.querySelector('[aria-haspopup][aria-expanded="true"]')) return;
+      // A submenu steps back first; the top level closes the menu.
+      if (panel) setPanel(null);
+      else closeMenu(true);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open, panel]);
+
+  // Move focus with the panels so keyboard and screen-reader users land where they look:
+  // into a submenu on its Back button, and out of it on the item that opened it.
+  const prevPanel = useRef<string | null>(null);
+  useEffect(() => {
+    const from = prevPanel.current;
+    prevPanel.current = panel;
+    const sheet = sheetRef.current;
+    if (!open || !sheet || from === panel) return;
+    const target = panel
+      ? sheet.querySelector<HTMLElement>(`[data-panel="${panel}"] [data-back]`)
+      : sheet.querySelector<HTMLElement>(`[data-opens="${from}"]`);
+    target?.focus({ preventScroll: true });
+  }, [panel, open]);
 
   useEffect(() => {
     if (!megaOpen) return;
@@ -104,11 +186,14 @@ export function Header({ locale, nav, cta, common, mega = {} }: HeaderProps) {
 
   return (
     <header
+      ref={headerRef}
       className={styles.header}
       data-hidden={hidden && !open}
+      data-mega={megaOpen ? "" : undefined}
+      data-menu-open={open || undefined}
       onFocus={() => setHidden(false)}
     >
-      <div className={styles.bar}>
+      <div ref={barRef} className={styles.bar}>
         <Link href={homeHref} className={styles.logo} aria-label={common.homeAria}>
           <AnimatedLogo />
         </Link>
@@ -174,7 +259,7 @@ export function Header({ locale, nav, cta, common, mega = {} }: HeaderProps) {
 
         <FadeIn whenVisible delay={LOAD_DELAY} className={styles.actions}>
           <div className={styles.langSlot}>
-            <LanguageSwitcher locale={locale} copy={common.languageSwitcher} />
+            <LanguageSwitcher locale={locale} variant="compact" copy={common.languageSwitcher} />
           </div>
           <div className={styles.ctaSlot}>
             <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" />
@@ -183,6 +268,7 @@ export function Header({ locale, nav, cta, common, mega = {} }: HeaderProps) {
 
         <FadeIn as="span" whenVisible delay={LOAD_DELAY} className={styles.menuWrap}>
           <button
+            ref={menuButtonRef}
             type="button"
             className={styles.menuButton}
             aria-expanded={open}
@@ -190,36 +276,93 @@ export function Header({ locale, nav, cta, common, mega = {} }: HeaderProps) {
             onClick={() => setOpen((v) => !v)}
           >
             <span className={styles.menuIcon} data-open={open} />
-            <span className="visually-hidden">{common.menu}</span>
+            <span className="visually-hidden">{open ? common.menuClose : common.menu}</span>
           </button>
         </FadeIn>
       </div>
 
-      {open && (
-        <div className={styles.mobileNav} id="mobile-nav">
+      <div
+        ref={sheetRef}
+        className={styles.sheet}
+        id="mobile-nav"
+        data-open={open}
+        data-sub={panel ? "" : undefined}
+        data-lenis-prevent
+      >
+        <div className={styles.sheetPanels}>
+          <nav className={styles.sheetPanel} data-panel="root" aria-label={common.primaryNavAria}>
+            <ul className={styles.sheetList}>
+              {nav.map((item, index) => {
+                const href = `${localePrefix}${item.href}`;
+                const isActive = pathname === href || pathname.startsWith(`${href}/`);
+                const rowStyle = { "--i": index } as CSSProperties;
+                return (
+                  <li key={item.href} className={styles.sheetItem} style={rowStyle}>
+                    {mega[item.href] ? (
+                      <button
+                        type="button"
+                        className={styles.sheetLink}
+                        data-active={isActive || undefined}
+                        data-opens={item.href}
+                        aria-expanded={panel === item.href}
+                        onClick={() => setPanel(item.href)}
+                      >
+                        <span>{item.label}</span>
+                        <Chevron className={styles.sheetChevron} />
+                      </button>
+                    ) : (
+                      <Link
+                        href={href}
+                        className={styles.sheetLink}
+                        data-active={isActive || undefined}
+                        aria-current={pathname === href ? "page" : undefined}
+                        onClick={() => closeMenu()}
+                      >
+                        <span>{item.label}</span>
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
           {nav.map((item) => {
             const groups = mega[item.href];
+            if (!groups) return null;
             const href = `${localePrefix}${item.href}`;
-            if (!groups) {
-              return (
-                <Link key={item.href} href={href} className={styles.mobileLink}>
-                  {item.label}
-                </Link>
-              );
-            }
+            const isCurrent = panel === item.href;
             return (
-              <details key={item.href} className={styles.mobileGroup}>
-                <summary className={styles.mobileLink}>{item.label}</summary>
-                <Link href={href} className={styles.mobileSubLink}>
-                  {item.label}
-                </Link>
+              <div
+                key={item.href}
+                className={`${styles.sheetPanel} ${styles.sheetSub}`}
+                data-panel={item.href}
+                data-current={isCurrent}
+              >
+                <button type="button" className={styles.sheetBack} data-back onClick={() => setPanel(null)}>
+                  <Chevron className={styles.sheetBackIcon} />
+                  {common.menuBack}
+                </button>
+                <div className={styles.sheetSubHead}>
+                  <p className={styles.sheetSubTitle}>{item.label}</p>
+                  <Link href={href} className={styles.sheetViewAll} onClick={() => closeMenu()}>
+                    {common.menuViewAll}
+                    <Chevron />
+                  </Link>
+                </div>
                 {groups.map((group) => (
-                  <div key={group.label}>
-                    <p className={styles.megaLabel}>{group.label}</p>
-                    <ul className={styles.megaList}>
+                  <div key={group.label} className={styles.sheetGroup}>
+                    {/* Not a heading: the header sits above the page's <h1>. */}
+                    <p className={styles.sheetGroupLabel}>{group.label}</p>
+                    <ul className={styles.sheetSubList}>
                       {group.items.map((entry) => (
                         <li key={entry.href}>
-                          <Link href={entry.href} className={styles.mobileSubLink}>
+                          <Link
+                            href={entry.href}
+                            className={styles.sheetSubLink}
+                            aria-current={pathname === entry.href ? "page" : undefined}
+                            onClick={() => closeMenu()}
+                          >
                             {entry.name}
                           </Link>
                         </li>
@@ -227,15 +370,21 @@ export function Header({ locale, nav, cta, common, mega = {} }: HeaderProps) {
                     </ul>
                   </div>
                 ))}
-              </details>
+              </div>
             );
           })}
-          <div className={styles.mobileLangSlot}>
-            <LanguageSwitcher locale={locale} copy={common.languageSwitcher} />
-          </div>
-          <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" className={styles.mobileCta} />
         </div>
-      )}
+
+        {/* Close on the CTA too: on the contact page itself the route doesn't change. */}
+        <div
+          className={styles.sheetFooter}
+          onClick={(event) => {
+            if ((event.target as Element).closest("a[data-cta-context]")) closeMenu();
+          }}
+        >
+          <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" className={styles.sheetCta} />
+        </div>
+      </div>
     </header>
   );
 }

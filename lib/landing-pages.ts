@@ -24,30 +24,33 @@ export type LandingPage = {
    * lead magnets that shouldn't be findable except through the campaign.
    */
   indexable: boolean;
+  /** Service slug whose projects the page's "related work" section ranks first. */
+  service?: string;
 };
 
 export const landingPages: LandingPage[] = [
   // { slug: "free-brand-audit", locales: ["en-US"], indexable: true },
-  { slug: "figma-design-system-agency-india", locales: ["en-US"], indexable: true },
-  { slug: "saas-ui-design-agency-india", locales: ["en-US"], indexable: true },
+  { slug: "figma-design-system-agency-india", service: "design-systems", locales: ["en-US"], indexable: true },
+  { slug: "saas-ui-design-agency-india", service: "saas-design", locales: ["en-US"], indexable: true },
   // Demand for the agency phrase is low/unknown (see its copy.ts); owner chose to index it anyway.
-  { slug: "saas-dashboard-design-agency-india", locales: ["en-US"], indexable: true },
+  { slug: "saas-dashboard-design-agency-india", service: "saas-design", locales: ["en-US"], indexable: true },
   // Bangalore pages: en-IN only, one per service (different intents, not city swaps of one page).
-  { slug: "web-design-company-bangalore", locales: ["en-IN"], indexable: true },
-  { slug: "branding-agency-bangalore", locales: ["en-IN"], indexable: true },
-  { slug: "ui-ux-design-company-bangalore", locales: ["en-IN"], indexable: true },
+  { slug: "web-design-company-bangalore", service: "web-design", locales: ["en-IN"], indexable: true },
+  { slug: "branding-agency-bangalore", service: "branding", locales: ["en-IN"], indexable: true },
+  { slug: "ui-ux-design-company-bangalore", service: "ui-ux-design", locales: ["en-IN"], indexable: true },
   // French counterpart of the Figma design system page, with a French slug for the French market.
-  { slug: "agence-design-system-figma-inde", locales: ["fr-FR"], indexable: true },
+  { slug: "agence-design-system-figma-inde", service: "design-systems", locales: ["fr-FR"], indexable: true },
   // Expansion markets (2026-10-02), English only, one page per market. Demand is indicative (banded volumes), see each copy.ts.
-  { slug: "branding-agency-dubai", locales: ["en-AE"], indexable: true },
-  { slug: "web-design-company-toronto", locales: ["en-CA"], indexable: true },
-  { slug: "branding-agency-singapore", locales: ["en-SG"], indexable: true },
-  { slug: "branding-agency-australia", locales: ["en-AU"], indexable: true },
+  { slug: "branding-agency-dubai", service: "branding", locales: ["en-AE"], indexable: true },
+  { slug: "web-design-company-toronto", service: "web-design", locales: ["en-CA"], indexable: true },
+  { slug: "branding-agency-singapore", service: "branding", locales: ["en-SG"], indexable: true },
+  { slug: "branding-agency-australia", service: "branding", locales: ["en-AU"], indexable: true },
 ];
 
 /** First URL segments already owned by core routes; a landing page can't reuse them. */
-const RESERVED_SLUGS = new Set([
+export const RESERVED_SLUGS = new Set([
   "about",
+  "blog",
   "contact",
   "industries",
   "privacy",

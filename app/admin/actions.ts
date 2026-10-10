@@ -35,6 +35,7 @@ import {
 import { isTranslationConfigured, translateProjectFields } from "@/lib/translate";
 import { getLocaleConfig, isEnabledLocale } from "@/lib/locale";
 import { getSiteUrl } from "@/lib/env";
+import { normalizeHeroBg } from "@/lib/hero-tint";
 import { isAdminAuthed, clearAdminSession } from "@/lib/admin-auth";
 import { getIndustries, getServices, type Industry, type Service } from "@/lib/content";
 
@@ -161,6 +162,7 @@ export type ProjectFormInput = {
   heroImageAlt: string;
   heroImageWidth: number | null;
   heroImageHeight: number | null;
+  heroBg: string;
   content: string;
   blocks: ProjectBlock[];
   featured: boolean;
@@ -193,6 +195,7 @@ function toProjectInput(input: ProjectFormInput): ProjectInput {
     heroImageAlt: input.heroImageAlt.trim() || null,
     heroImageWidth: input.heroImageWidth,
     heroImageHeight: input.heroImageHeight,
+    heroBg: normalizeHeroBg(input.heroBg),
     content: input.content,
     // Half-filled rows never reach the page or the markup.
     blocks: pruneBlocks(input.blocks),
@@ -355,6 +358,7 @@ export async function duplicateProjectAction(
       // re-written per locale rather than carried over in the source language.
       heroImageWidth: source.heroImageWidth,
       heroImageHeight: source.heroImageHeight,
+      heroBg: source.heroBg,
       heroImageAlt: null,
       featured: source.featured,
       // Blocks carry untranslated prose; kept so structure survives the copy,

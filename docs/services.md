@@ -2,7 +2,7 @@
 
 Living document. It is the single place that says what Mellon sells, which page serves each service, what people search for, and what it costs. Update it when a service is added, merged or dropped, or when new keyword research lands. `SCOPE.md` stays the source of truth for the site itself; this file is the source of truth for the offer.
 
-Last updated 2026-10-02. Companion files: `docs/brand-voice.md`. Pricing and the raw keyword data are kept out of version control (local only).
+Last updated 2026-10-10. Companion files: `docs/brand-voice.md`. Pricing and the raw keyword data are kept out of version control (local only).
 
 ## How to read the demand numbers
 
@@ -12,11 +12,12 @@ Last updated 2026-10-02. Companion files: `docs/brand-voice.md`. Pricing and the
 
 ## Service structure
 
-Fourteen services as of 2026-10-02 (Paid Advertising added after Web Design), in four categories. The categories are the recommended organisation; `services.json` is still a flat list.
+Fifteen services as of 2026-10-10 (Graphic Design added after Paid Advertising), in four categories. The categories are the recommended organisation; `services.json` is still a flat list.
 
 | Category | Service | Slug | Page type | Primary search phrase (monthly searches) | Verdict |
 |---|---|---|---|---|---|
 | **Brand** | Branding | `branding` | Core service page | "branding agency" 2,900; "logo design firms" 12,100; "bangalore branding agency" 1,300 | Keep. Strong, but head term "logo design" (135,000) is logo-seekers, not buyers. |
+| | **Graphic Design (new)** | `graphic-design` | **New core service page** | Not keyword-researched: the owner asked for it directly (2026-10-10), overriding decision 5 below for this service only | **Built 2026-10-10** in en-US, inherited by the other English locales; the German, Spanish, French and Dutch lists are separate and do not have it yet. Scope: marketing and ad creative (Google, YouTube, Meta), social graphics, collateral, presentations, brand manual layouts, infographics. Category Brand. No pricing section yet. The deliverables, exclusions, five process steps and six FAQ answers are drafted, not Mellon's own wording: confirm them. |
 | **Product and UX** | UI/UX Design | `ui-ux-design` | Core service page | "ui ux design agency" 880; "ui ux design company" 480; "ui ux design agency india" 320; "ui ux companies in bangalore" 720 | Keep. Largest agency-intent cluster in the data. |
 | | Product Design | `product-design` | Core service page | "product design studio" 110; "product design agency" 70; "product design" 12,100 (informational) | Keep, but small. Consider folding SaaS and Mobile App into it as sections if they stay thin. |
 | | Mobile App Design | `mobile-app-design` | Core service page | "mobile app design companies" 9,900; "app design agency" 50; "mobile app ui ux design" 90 | Keep. One phrase carries the volume; verify before investing. |
@@ -37,7 +38,7 @@ Fourteen services as of 2026-10-02 (Paid Advertising added after Web Design), in
 2. **Don't remove any service yet.** Several are tiny in search terms, but they describe what Mellon sells and rank as supporting pages. Revisit after the next keyword batch and Search Console data.
 3. **Reclassify End-to-End Design** as an engagement model.
 4. **Group the nav and services index by category.** Four categories keep thirteen items scannable.
-5. **Don't chase generic marketing, graphic design, PR, advertising or web development keywords.** They're in `docs/keyword-research/parked_services.csv`.
+5. **Don't chase generic marketing, PR, advertising or web development keywords.** (Graphic design was in this list; the owner added it as a service on 2026-10-10, so it is built as a core page, but still don't build landing pages or chase the head term "graphic design" without the demand rule's evidence.) They're in `docs/keyword-research/parked_services.csv`.
 
 ## What each service page needs
 

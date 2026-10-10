@@ -26,7 +26,7 @@ export default async function SiteLayout({
       </a>
       <Header locale={locale} nav={site.nav.primary} cta={site.nav.cta} common={site.common} mega={getMegaMenus(locale)} />
       <main id="main">{children}</main>
-      <Footer locale={locale} footer={site.footer} org={site.org} />
+      <Footer locale={locale} footer={site.footer} org={site.org} languageSwitcher={site.common.languageSwitcher} />
     </>
   );
 }

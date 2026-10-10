@@ -19,10 +19,6 @@
         "href": "/projects"
       },
       {
-        "label": "Over ons",
-        "href": "/about"
-      },
-      {
         "label": "Contact",
         "href": "/contact"
       }
@@ -51,6 +47,10 @@
             "href": "/industries"
           },
           {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
             "label": "Contact",
             "href": "/contact"
           }
@@ -64,7 +64,7 @@
         "href": "/privacy"
       }
     ],
-    "contactHeading": "Contact",
+    "policiesHeading": "Beleid",
     "homeAria": "Mellon startpagina",
     "cookiePreferences": "Cookievoorkeuren"
   },
@@ -73,6 +73,9 @@
     "skipToContent": "Ga naar de inhoud",
     "loading": "Laden",
     "menu": "Menu",
+    "menuClose": "Menu sluiten",
+    "menuBack": "Terug",
+    "menuViewAll": "Alles bekijken",
     "homeAria": "Mellon startpagina",
     "primaryNavAria": "Hoofdnavigatie",
     "breadcrumbAria": "Kruimelpad",
@@ -105,6 +108,13 @@
   },
   "projectsPage": {
     "label": "Projecten"
+  },
+  "relatedProjects": {
+    "eyebrow": "Geselecteerd werk",
+    "headline": "Verwant werk.",
+    "body": "Recente projecten, de meest relevante eerst.",
+    "viewLink": "Bekijk project →",
+    "viewAll": "Bekijk alle projecten →"
   },
   "notFound": {
     "eyebrow": "404",

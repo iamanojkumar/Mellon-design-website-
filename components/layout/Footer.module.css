@@ -105,8 +105,26 @@
   text-decoration: underline;
 }
 
+/* In the policies column it reads like the links above it. */
+.col .consentButton {
+  font-size: var(--fs-200);
+  color: var(--color-fg);
+  text-align: left;
+  text-decoration: none;
+}
+
+.col .consentButton:hover {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
 @media (min-width: 700px) {
   .top {
     grid-template-columns: 1.4fr repeat(2, 1fr);
   }
+}
+
+/* Pushed to the end of the legal row. */
+.lang {
+  margin-left: auto;
 }

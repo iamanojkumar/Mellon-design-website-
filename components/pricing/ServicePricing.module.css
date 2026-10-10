@@ -38,7 +38,9 @@
 @media (min-width: 900px) {
   .plan {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-    gap: var(--space-xl);
+    grid-template-rows: auto 1fr;
+    column-gap: var(--space-xl);
+    row-gap: 0;
     padding: var(--space-lg);
     align-items: start;
   }
@@ -49,7 +51,12 @@
 
   .compare {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: 1 / span 2;
+  }
+
+  .planRequest {
+    grid-column: 1;
+    grid-row: 2;
   }
 }
 
@@ -105,6 +112,7 @@
 
 .compare {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   font-size: var(--fs-200);
 }
@@ -126,6 +134,10 @@
 .compare tbody th {
   font-weight: 400;
   color: var(--color-fg);
+}
+
+.compare th:not(:first-child) {
+  width: 26%;
 }
 
 .compare th:first-child {
@@ -166,7 +178,7 @@
 }
 
 .note {
-  max-width: 72ch;
+  max-width: 110ch;
   margin-bottom: var(--space-md);
   font-size: var(--fs-100);
   color: var(--color-fg-muted);
@@ -215,6 +227,7 @@
 }
 
 .includes {
+  margin-bottom: var(--space-sm);
   display: flex;
   flex-direction: column;
   gap: var(--space-2xs);
@@ -259,4 +272,29 @@
   font-family: var(--font-display);
   font-weight: var(--fw-display);
   font-size: var(--fs-400);
+}
+
+.featured {
+  position: relative;
+  box-shadow: inset 0 0 0 2px var(--color-fg);
+}
+
+.badge {
+  justify-self: start;
+  align-self: flex-start;
+  width: fit-content;
+  padding: 0.25em 0.75em;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: var(--fs-100, 0.75rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+.planRequest {
+  justify-self: start;
+  margin-top: var(--space-sm);
 }

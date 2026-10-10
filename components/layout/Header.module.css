@@ -2,8 +2,17 @@
   position: sticky;
   top: 0;
   z-index: 50;
+  /* A page with a tinted hero sets --header-tint (components/ui/HeroTint.tsx)
+     so the colour runs behind the navigation, but only while the header is
+     over the hero; it reverts to paper once the hero has scrolled away. */
+  background: var(--header-tint, var(--color-paper));
+  transition: transform 0.35s var(--ease-out), background-color 0.2s linear;
+}
+
+/* While a mega-menu is open the bar matches the panel hanging from it, even on
+   a page whose hero is tinted. */
+.header[data-mega] {
   background: var(--color-paper);
-  transition: transform 0.35s var(--ease-out);
 }
 
 .header[data-hidden="true"] {
@@ -22,7 +31,8 @@
   padding: var(--space-sm) var(--content-pad);
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  /* Tight on mobile, where only the logo, language and menu button share the bar. */
+  gap: var(--space-xs);
 }
 
 .logo {
@@ -34,7 +44,7 @@
 .nav {
   display: none;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-md);
   margin-top: 8px;
 }
 
@@ -76,10 +86,16 @@
   color: var(--color-fg);
 }
 
+/* On mobile the language code stays in the bar beside the menu button, as on
+   desktop; the CTA moves into the menu sheet. */
 .actions {
-  display: none;
+  display: flex;
   align-items: center;
   gap: var(--space-sm);
+}
+
+.ctaSlot {
+  display: none;
 }
 
 .menuWrap {
@@ -90,77 +106,79 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
+  margin-right: -10px;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.menuIcon,
-.menuIcon::before,
-.menuIcon::after {
-  display: block;
-  width: 20px;
-  height: 2px;
-  background: var(--color-ink);
-  transition: transform var(--duration-fast) var(--ease-out),
-    opacity var(--duration-fast) var(--ease-out);
-}
-
+/* Two lines, the lower one shorter and right-aligned. It stretches to full
+   width on hover, and both lines cross into an X when the menu opens. */
 .menuIcon {
   position: relative;
+  display: block;
+  width: 24px;
+  height: 10px;
 }
 
 .menuIcon::before,
 .menuIcon::after {
   content: "";
   position: absolute;
-  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-ink);
+  transition: transform 0.35s var(--ease-out), width 0.35s var(--ease-out),
+    top 0.35s var(--ease-out);
 }
 
 .menuIcon::before {
-  top: -6px;
+  top: 0;
+  width: 100%;
 }
 
 .menuIcon::after {
-  top: 6px;
+  top: 8px;
+  width: 14px;
 }
 
-.menuIcon[data-open="true"] {
-  background: transparent;
+@media (hover: hover) {
+  .menuButton:hover .menuIcon::after {
+    width: 100%;
+  }
+}
+
+.menuIcon[data-open="true"]::before,
+.menuIcon[data-open="true"]::after {
+  top: 4px;
+  width: 100%;
 }
 
 .menuIcon[data-open="true"]::before {
-  transform: translateY(6px) rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .menuIcon[data-open="true"]::after {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
-.mobileNav {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
-  padding: var(--space-md) var(--content-pad) var(--space-lg);
-  border-top: 1px solid var(--color-border);
-}
-
-.mobileLink {
-  font-family: var(--font-display);
-  font-size: var(--fs-500);
-}
-
-.mobileLangSlot {
-  align-self: flex-start;
-}
-
-.mobileCta {
-  align-self: flex-start;
-  margin-top: var(--space-xs);
+@media (prefers-reduced-motion: reduce) {
+  .menuIcon::before,
+  .menuIcon::after {
+    transition: none;
+  }
 }
 
 @media (min-width: 900px) {
+  .bar {
+    gap: var(--space-lg);
+  }
   .nav {
     display: flex;
+  }
+  .ctaSlot {
+    display: block;
   }
   .logo {
     margin-right: 0;
@@ -238,6 +256,27 @@
   }
 }
 
+/* PageTransition (components/motion/PageTransition.tsx) swallows link clicks at the
+   document level and sets data-page-transition on <html>, so the panel never hears
+   about the click and would sit open, then wipe shut over the changing page. While a
+   transition runs, hide the panel at once with no animation, and put the bar back to
+   its normal colour. */
+:global(html[data-page-transition]) .megaPanel {
+  transition: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  clip-path: inset(0 0 100% 0) !important;
+}
+
+:global(html[data-page-transition]) .megaInner > div {
+  transition: none !important;
+  opacity: 0 !important;
+}
+
+:global(html[data-page-transition]) .header[data-mega] {
+  background: var(--header-tint, var(--color-paper));
+}
+
 .megaInner {
   max-width: var(--content-max);
   margin-inline: auto;
@@ -298,17 +337,274 @@
   text-underline-offset: 3px;
 }
 
-.mobileGroup {
+/* ------------------------------------------------------------------
+   Mobile menu: a full-screen sheet under the bar. The top level lists the
+   nav in large type; an item with a mega-menu opens a submenu that slides
+   in from the right, with Back to return. The CTA stays pinned at the
+   bottom, in thumb reach; the language code lives in the bar.
+   ------------------------------------------------------------------ */
+
+/* While the menu is open the bar sits on the sheet, even on a tinted hero. */
+.header[data-menu-open] {
+  background: var(--color-paper);
+}
+
+.sheet {
+  /* z-index -1 inside the header's stacking context: above the page, below
+     the bar's logo and close button. */
+  position: fixed;
+  inset: 0;
+  z-index: -1;
   display: flex;
   flex-direction: column;
+  padding-top: var(--bar-h, 4.5rem);
+  background: var(--color-paper);
+  visibility: hidden;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 0.5s var(--ease-out), visibility 0s linear 0.5s;
+}
+
+.sheet[data-open="true"] {
+  visibility: visible;
+  clip-path: inset(0);
+  transition-delay: 0s;
+}
+
+@media (min-width: 900px) {
+  .sheet {
+    display: none;
+  }
+}
+
+.sheetPanels {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  border-top: 1px solid var(--color-border);
+}
+
+.sheetPanel {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--space-sm) var(--content-pad) var(--space-lg);
+  background: var(--color-paper);
+  transition: transform 0.45s var(--ease-out), opacity 0.3s var(--ease-out),
+    visibility 0s linear 0s;
+}
+
+/* The top level eases left and fades as a submenu covers it. Hidden panels
+   are visibility: hidden, so they drop out of the tab order. */
+.sheet[data-sub] .sheetPanel[data-panel="root"] {
+  transform: translateX(-24%);
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s, 0s, 0.45s;
+}
+
+.sheetSub {
+  transform: translateX(100%);
+  visibility: hidden;
+  transition-delay: 0s, 0s, 0.45s;
+}
+
+.sheetSub[data-current="true"] {
+  transform: none;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+/* Top level */
+.sheetList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sheetItem {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sheetLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   gap: var(--space-sm);
-}
-
-.mobileGroup > summary {
-  cursor: pointer;
-}
-
-.mobileSubLink {
-  font-size: var(--fs-300);
+  width: 100%;
+  min-height: 3.75rem;
+  padding: var(--space-xs) 0;
+  font-family: var(--font-display);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-display);
+  line-height: var(--lh-tight);
   color: var(--color-fg);
+  text-align: left;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity var(--duration-fast) var(--ease-out);
+}
+
+.sheetLink:active {
+  opacity: 0.55;
+}
+
+/* The page you're on: a small brand-pink dot after its name. */
+.sheetLink[data-active] > span::after,
+.sheetSubLink[aria-current="page"]::after {
+  content: "";
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-left: 0.5rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  vertical-align: middle;
+}
+
+.sheetChevron {
+  flex: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--color-fg-muted);
+}
+
+/* Submenu */
+.sheetBack {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-height: 2.75rem;
+  margin-left: -0.25rem;
+  padding-right: 0.5rem;
+  font-size: var(--fs-200);
+  font-weight: 500;
+  color: var(--color-fg-muted);
+}
+
+.sheetBackIcon {
+  transform: rotate(180deg);
+}
+
+.sheetSubHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sheetSubTitle {
+  font-family: var(--font-display);
+  font-size: var(--fs-500);
+  font-weight: var(--fw-display);
+  line-height: var(--lh-tight);
+}
+
+.sheetViewAll {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.125rem;
+  min-height: 2.75rem;
+  padding: 0 0.875rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-100);
+  font-weight: 600;
+  white-space: nowrap;
+  color: var(--color-fg);
+}
+
+.sheetGroup + .sheetGroup {
+  margin-top: var(--space-lg);
+}
+
+.sheetGroupLabel {
+  margin-bottom: var(--space-2xs);
+  font-size: var(--fs-100);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-fg-muted);
+}
+
+.sheetSubList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sheetSubLink {
+  display: block;
+  padding-block: 0.65rem;
+  font-size: var(--fs-300);
+  line-height: var(--lh-snug);
+  color: var(--color-fg);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sheetSubLink:active {
+  opacity: 0.55;
+}
+
+.sheetSubLink[aria-current="page"] {
+  font-weight: 600;
+}
+
+/* Pinned footer: the CTA, full width in thumb reach. */
+.sheetFooter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) var(--content-pad)
+    calc(var(--space-sm) + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--color-border);
+  background: var(--color-paper);
+}
+
+.sheetCta {
+  flex: 1;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+/* Entrance: rows, the submenu's contents and the footer rise in one after
+   another once the sheet has started to open. */
+.sheetItem,
+.sheetFooter {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.sheet[data-open="true"] .sheetItem,
+.sheet[data-open="true"] .sheetFooter {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+  transition-delay: calc(0.12s + var(--i, 0) * 0.05s);
+}
+
+.sheet[data-open="true"] .sheetFooter {
+  transition-delay: 0.3s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sheet,
+  .sheetPanel,
+  .sheetItem,
+  .sheetFooter {
+    transition: none !important;
+  }
+  .sheet[data-sub] .sheetPanel[data-panel="root"] {
+    transform: none;
+  }
+}
+
+/* A page transition covers the screen; shut the sheet at once underneath it
+   instead of animating it closed over the new page. */
+:global(html[data-page-transition]) .sheet:not([data-open="true"]) {
+  transition: none;
 }

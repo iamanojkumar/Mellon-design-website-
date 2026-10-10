@@ -5,6 +5,7 @@ import { ContactSection } from "./ContactSection";
 import { Hero } from "./Hero";
 import { IndustriesChips } from "./IndustriesChips";
 import { PageHero } from "./PageHero";
+import { PageLinks } from "./PageLinks";
 import { Process } from "./Process";
 import { ProjectCards } from "./ProjectCards";
 import { ProjectsPreview } from "./ProjectsPreview";
@@ -32,6 +33,8 @@ export function BlockRenderer({ blocks, locale }: { blocks: Block[]; locale: str
             return <PageHero key={key} block={block} locale={locale} />;
           case "textSections":
             return <TextSections key={key} block={block} locale={locale} />;
+          case "pageLinks":
+            return <PageLinks key={key} block={block} locale={locale} />;
           case "serviceCards":
           case "industryCards":
             return <Cards key={key} block={block} locale={locale} />;

@@ -5,7 +5,6 @@ import type {
   ServicePricing as Pricing,
 } from "@/lib/pricing";
 import { Container } from "@/components/ui/Container";
-import { Cta } from "@/components/cta/Cta";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { RevealGroup } from "@/components/motion/RevealGroup";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
@@ -33,6 +32,11 @@ function Mark({ value, labels }: { value: FeatureValue; labels: Labels }) {
     );
   }
   return <span className={styles.text}>{value}</span>;
+}
+
+function Badge({ id, labels }: { id?: string; labels: Labels }) {
+  const text = id ? labels.badges?.[id as keyof Labels["badges"]] : undefined;
+  return text ? <span className={styles.badge}>{text}</span> : null;
 }
 
 export function ServicePricing({
@@ -63,9 +67,13 @@ export function ServicePricing({
 
         <RevealGroup as="ul" className={styles.plans}>
           {pricing.plans.map((plan) => (
-            <li key={plan.id} className={styles.plan}>
+            <li
+              key={plan.id}
+              className={`${styles.plan} ${plan.badge ? styles.featured : ""}`}
+            >
               <div className={styles.summary}>
                 <h3 className={styles.planName}>{plan.name}</h3>
+                <Badge id={plan.badge} labels={labels} />
                 <p className={styles.blurb}>{plan.blurb}</p>
 
                 <dl className={styles.prices}>
@@ -83,7 +91,9 @@ export function ServicePricing({
                   <div className={styles.marketPrice}>
                     <dt>{labels.market}</dt>
                     <dd>
-                      {plan.market}
+                      {plan.marketUpTo
+                        ? labels.upTo.replace("{price}", plan.market)
+                        : plan.market}
                       {pricing.unit && (
                         <span className={styles.unit}> {labels.perMonth}</span>
                       )}
@@ -120,6 +130,13 @@ export function ServicePricing({
                   ))}
                 </tbody>
               </table>
+
+              <a
+                className={`${styles.request} ${styles.planRequest}`}
+                href={ctaHref}
+              >
+                {labels.request}
+              </a>
             </li>
           ))}
         </RevealGroup>
@@ -134,8 +151,12 @@ export function ServicePricing({
                 const unit =
                   item.unit === "hour" ? labels.perHour : labels.perMonth;
                 return (
-                  <li key={item.id} className={styles.engagement}>
+                  <li
+                    key={item.id}
+                    className={`${styles.engagement} ${item.badge ? styles.featured : ""}`}
+                  >
                     <h4 className={styles.planName}>{item.name}</h4>
+                    <Badge id={item.badge} labels={labels} />
                     <p className={styles.blurb}>{item.blurb}</p>
                     {item.mellon && item.market ? (
                       <dl className={styles.prices}>
@@ -181,9 +202,6 @@ export function ServicePricing({
           <p className={styles.note}>
             {labels.note.replace("{currency}", pricing.currency)}
           </p>
-        </FadeIn>
-        <FadeIn whenVisible delay={0.1}>
-          <Cta label={labels.cta} href={ctaHref} context="service" />
         </FadeIn>
       </Container>
     </section>

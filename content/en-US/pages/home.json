@@ -31,8 +31,22 @@
     {
       "type": "servicesGrid",
       "eyebrow": "What we do",
-      "headline": "Fourteen disciplines. One studio.",
-      "body": "From a first brand mark to a fully governed design system, Mellon covers the full range of design work a growing company needs — without the hand-offs between agencies."
+      "headline": "Fifteen disciplines. One studio.",
+      "body": "From a first brand mark to a fully governed design system, Mellon covers the full range of design work a growing company needs — without the hand-offs between agencies.",
+      "categories": [
+        {
+          "id": "brand",
+          "label": "Brand and end-to-end"
+        },
+        {
+          "id": "product-ux",
+          "label": "Product and UX"
+        },
+        {
+          "id": "growth-content",
+          "label": "Growth and content"
+        }
+      ]
     },
     {
       "type": "industriesChips",

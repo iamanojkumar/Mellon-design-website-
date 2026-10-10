@@ -19,7 +19,7 @@
         },
         {
           "heading": "What we do",
-          "body": "Fourteen core disciplines — branding, design systems, e-commerce design, end-to-end design, mobile app design, motion and interaction design, paid advertising, product design, SaaS design, SEO and content strategy, social media and content marketing, UI/UX design, UX audits, and web design — delivered individually or combined into a single end-to-end engagement."
+          "body": "Fifteen core disciplines — branding, design systems, e-commerce design, end-to-end design, graphic design, mobile app design, motion and interaction design, paid advertising, product design, SaaS design, SEO and content strategy, social media and content marketing, UI/UX design, UX audits, and web design — delivered individually or combined into a single end-to-end engagement."
         },
         {
           "heading": "How we work",
@@ -32,6 +32,27 @@
         {
           "heading": "Where we start",
           "body": "With a conversation, not a proposal template. Tell us what you're building, and we'll tell you plainly whether we're the right studio for it."
+        }
+      ]
+    },
+    {
+      "type": "pageLinks",
+      "heading": "More about how we work.",
+      "links": [
+        {
+          "slug": "ai",
+          "title": "How we use AI",
+          "body": "Where we use AI tools, where we don't, and who is accountable for the result."
+        },
+        {
+          "slug": "process",
+          "title": "How a project runs",
+          "body": "From first conversation to handover, and what you can expect at each stage."
+        },
+        {
+          "slug": "security",
+          "title": "Security and confidentiality",
+          "body": "How we handle your files, access and confidential material."
         }
       ]
     },

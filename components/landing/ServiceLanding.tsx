@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { RelatedProjects } from "@/components/projects/RelatedProjects";
+import { getLandingPage } from "@/lib/landing-pages";
 import { Container } from "@/components/ui/Container";
 import { Cta } from "@/components/cta/Cta";
 import { ContactForm } from "@/components/contact-form/ContactForm";
@@ -69,10 +71,13 @@ export function ServiceLanding({
   text,
   locale,
   slug,
+  service,
 }: {
   text: ServiceLandingCopy;
   locale: string;
   slug: string;
+  /** Service slug for the related-work ranking; defaults to the code registry's entry for `slug`. */
+  service?: string;
 }) {
   const site = getSiteContent(locale);
   const form = site.forms.contact;
@@ -236,6 +241,8 @@ export function ServiceLanding({
           </RevealGroup>
         </Container>
       </section>
+
+      <RelatedProjects locale={locale} service={service ?? getLandingPage(slug)?.service} showViewAll={false} />
 
       <section id="quote" className={`${styles.section} ${styles.greenBand}`}>
         <Container className={styles.quoteGrid}>

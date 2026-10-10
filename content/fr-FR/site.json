@@ -19,10 +19,6 @@
         "href": "/projects"
       },
       {
-        "label": "À propos",
-        "href": "/about"
-      },
-      {
         "label": "Contact",
         "href": "/contact"
       }
@@ -51,6 +47,10 @@
             "href": "/industries"
           },
           {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
             "label": "Contact",
             "href": "/contact"
           }
@@ -64,7 +64,7 @@
         "href": "/privacy"
       }
     ],
-    "contactHeading": "Contact",
+    "policiesHeading": "Mentions et politiques",
     "homeAria": "Accueil Mellon",
     "cookiePreferences": "Préférences de cookies"
   },
@@ -73,6 +73,9 @@
     "skipToContent": "Aller au contenu",
     "loading": "Chargement",
     "menu": "Menu",
+    "menuClose": "Fermer le menu",
+    "menuBack": "Retour",
+    "menuViewAll": "Tout voir",
     "homeAria": "Accueil Mellon",
     "primaryNavAria": "Navigation principale",
     "breadcrumbAria": "Fil d'Ariane",
@@ -105,6 +108,13 @@
   },
   "projectsPage": {
     "label": "Projets"
+  },
+  "relatedProjects": {
+    "eyebrow": "Réalisations",
+    "headline": "Projets similaires.",
+    "body": "Nos projets récents, les plus proches en premier.",
+    "viewLink": "Voir le projet →",
+    "viewAll": "Voir tous les projets →"
   },
   "notFound": {
     "eyebrow": "404",

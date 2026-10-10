@@ -21,6 +21,8 @@ export type ProjectFormState = {
   /** Detected from the image itself; "" until one loads. */
   heroImageWidth: number | null;
   heroImageHeight: number | null;
+  /** #rrggbb, or "" for transparent. */
+  heroBg: string;
   content: string;
   blocks: ProjectBlock[];
   featured: boolean;
@@ -50,6 +52,7 @@ export const blankForm: ProjectFormState = {
   heroImageAlt: "",
   heroImageWidth: null,
   heroImageHeight: null,
+  heroBg: "",
   content: "",
   blocks: [],
   featured: false,
@@ -81,6 +84,7 @@ export function toForm(project: Project | null): ProjectFormState {
     heroImageAlt: project.heroImageAlt ?? "",
     heroImageWidth: project.heroImageWidth,
     heroImageHeight: project.heroImageHeight,
+    heroBg: project.heroBg ?? "",
     content: project.content,
     blocks: project.blocks,
     featured: project.featured,

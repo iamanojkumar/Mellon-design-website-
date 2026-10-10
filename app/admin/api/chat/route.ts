@@ -1,7 +1,6 @@
 import { streamText, tool, convertToModelMessages, stepCountIs, type UIMessage } from "ai";
 import { z } from "zod";
-import { deepseekChat, isAssistantConfigured } from "@/lib/ai-provider";
-import { isAdminAuthed } from "@/lib/admin-auth";
+import { clip, deepseekChat, gate, readBrandVoice } from "@/lib/admin-ai";
 import { getIndustries, getServices } from "@/lib/content";
 import { isEnabledLocale, defaultLocale } from "@/lib/locale";
 import { SCHEMA_TYPES, PROJECT_STATUSES } from "@/lib/project-fields";
@@ -37,17 +36,16 @@ const projectFields = z.object({
 });
 
 export async function POST(request: Request) {
-  if (!(await isAdminAuthed())) {
-    return new Response("Unauthorized", { status: 401 });
-  }
-  if (!isAssistantConfigured()) {
-    return new Response("Set DEEPSEEK_API_KEY to enable the assistant.", { status: 501 });
-  }
+  const blocked = await gate();
+  if (blocked) return blocked;
 
   const {
     messages,
     locale: requestedLocale,
-  }: { messages: UIMessage[]; locale?: string } = await request.json();
+    current = {},
+  }: { messages: UIMessage[]; locale?: string; current?: Record<string, unknown> } =
+    await request.json();
+  const voice = await readBrandVoice();
 
   const locale = requestedLocale && isEnabledLocale(requestedLocale) ? requestedLocale : defaultLocale;
   const categories = getIndustries(locale).map((i) => `${i.slug} (${i.name})`).join(", ");
@@ -61,13 +59,20 @@ export async function POST(request: Request) {
     system: [
       "You are the editorial assistant inside Mellon's admin tool. Mellon is a design agency;",
       `you are helping write portfolio case studies for the ${locale} locale — always write copy in that locale's language.`,
-      "Use the proposeProject tool when the editor wants one project written, filled in or improved.",
+      "Use the proposeProject tool when the editor wants one project written, filled in or improved: it fills the editor draft directly, and nothing is saved until the editor clicks Save.",
+      "If keyword data is attached, use the file's volumes only as evidence and never invent numbers. Never invent client names, results or dates; write [Confirm: what is needed] where a fact is missing.",
       "Use the proposeBulkProjects tool when they ask for several projects at once.",
-      "Never claim you saved anything: your proposals only appear in the editor once the user applies them.",
+      "Never claim you saved anything: nothing is saved until the editor clicks Save (bulk creation needs the editor to confirm).",
       `Valid category slugs: ${categories}.`,
       `Valid service slugs: ${services}.`,
       "Only ever use slugs from those lists. Body content must be simple HTML: h2, h3, p, ul/li, strong, em.",
-    ].join(" "),
+      "",
+      "## Brand voice",
+      clip(voice, 9000),
+      "",
+      "## The project open in the editor right now",
+      clip(current, 9000),
+    ].join("\n"),
     messages: await convertToModelMessages(messages),
     tools: {
       proposeProject: tool({

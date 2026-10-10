@@ -1,0 +1,55 @@
+{
+  "meta": {
+    "title": "Security and confidentiality at Mellon — Mellon",
+    "description": "How Mellon handles client files, access and confidential material, and what happens to your data when a project ends."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "About",
+      "headline": "Security and confidentiality.",
+      "subhead": "How we handle your files, who can see them, and what happens when the project ends."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Confidentiality.",
+          "body": "[Confirm: whether you sign NDAs before work starts, and whether you will sign the client's own NDA.]"
+        },
+        {
+          "heading": "How we handle your files.",
+          "body": "[Confirm: where project files are stored and shared, for example which tools, and how they are protected.]"
+        },
+        {
+          "heading": "Who has access.",
+          "body": "[Confirm: who at Mellon can see client material, and whether any contractors or third parties ever can.]"
+        },
+        {
+          "heading": "Accounts and credentials.",
+          "body": "[Confirm: how you ask for and store access to client platforms such as hosting, ad accounts or a CMS, and how access is removed at the end.]"
+        },
+        {
+          "heading": "Personal data.",
+          "body": "What we do with the details you send us through our contact form is covered in our privacy policy."
+        },
+        {
+          "heading": "When a project ends.",
+          "body": "[Confirm: what you hand back, how long you keep project files, and how you delete them on request.]"
+        },
+        {
+          "heading": "Reporting a concern.",
+          "body": "If you think something is wrong, write to us at {email}. [Confirm: how quickly you respond to a security concern.]"
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Questions about your data?",
+      "cta": {
+        "label": "Start a project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

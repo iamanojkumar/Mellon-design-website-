@@ -17,7 +17,14 @@ export type Block =
       primaryCta: BlockCta;
       secondaryCta: BlockCta;
     }
-  | { type: "servicesGrid"; eyebrow: string; headline: string; body: string }
+  | {
+      type: "servicesGrid";
+      eyebrow: string;
+      headline: string;
+      body: string;
+      /** Same ids and labels as the services page; groups the cards under headings when present. */
+      categories?: { id: string; label: string }[];
+    }
   | { type: "industriesChips"; eyebrow: string; headline: string; body: string }
   | {
       type: "process";
@@ -35,6 +42,8 @@ export type Block =
       updated?: { label: string; date: string };
     }
   | { type: "textSections"; sections: { heading: string; body: string }[] }
+  /** Cards linking to company pages (lib/company-pages.ts); only published ones render. */
+  | { type: "pageLinks"; heading: string; links: { slug: string; title: string; body: string }[] }
   | { type: "serviceCards"; viewLink: string; categories?: { id: string; label: string }[] }
   | { type: "industryCards"; viewLink: string; categories?: { id: string; label: string }[] }
   /**
@@ -73,4 +82,7 @@ export type PageKey =
   | "industries"
   | "projects"
   | "contact"
-  | "privacy";
+  | "privacy"
+  | "about-ai"
+  | "about-process"
+  | "about-security";

@@ -16,6 +16,7 @@ import {
 } from "@/app/admin/actions";
 import { RichContentEditor } from "./RichContentEditor";
 import { BlocksEditor } from "./BlocksEditor";
+import { HeroBgPicker } from "./HeroBgPicker";
 import type { ProjectFormState } from "./form-state";
 import styles from "./ProjectEditor.module.css";
 
@@ -363,6 +364,8 @@ export function ProjectEditor({
           />
         </div>
       )}
+
+      <HeroBgPicker value={form.heroBg} onChange={(heroBg) => onChange({ heroBg })} />
 
       <div className="a-field">
         <span className="a-label">Content</span>

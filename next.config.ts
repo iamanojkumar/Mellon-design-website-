@@ -2,6 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
+  // The admin assistants read these documents at request time (lib/admin-ai.ts).
+  outputFileTracingIncludes: {
+    "/admin/api/*": ["./docs/brand-voice.md", "./docs/landing-rules.md"],
+  },
   experimental: {
     globalNotFound: true,
   },

@@ -18,6 +18,9 @@ import industriesPageEnUS from "@/content/en-US/pages/industries.json";
 import projectsPageEnUS from "@/content/en-US/pages/projects.json";
 import contactEnUS from "@/content/en-US/pages/contact.json";
 import privacyEnUS from "@/content/en-US/pages/privacy.json";
+import aboutAiEnUS from "@/content/en-US/pages/about-ai.json";
+import aboutProcessEnUS from "@/content/en-US/pages/about-process.json";
+import aboutSecurityEnUS from "@/content/en-US/pages/about-security.json";
 
 import siteEnGB from "@/content/en-GB/site.json";
 import siteEnIN from "@/content/en-IN/site.json";
@@ -101,6 +104,9 @@ export const contentRegistry: Record<string, LocaleContent> = {
       projects: projectsPageEnUS as unknown as PageDoc,
       contact: contactEnUS as unknown as PageDoc,
       privacy: privacyEnUS as unknown as PageDoc,
+      "about-ai": aboutAiEnUS as unknown as PageDoc,
+      "about-process": aboutProcessEnUS as unknown as PageDoc,
+      "about-security": aboutSecurityEnUS as unknown as PageDoc,
     },
   },
   // en-GB inherits everything from en-US and overrides only what differs.

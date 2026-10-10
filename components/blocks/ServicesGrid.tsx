@@ -15,6 +15,15 @@ export function ServicesGrid({
   locale: string;
 }) {
   const site = getSiteContent(locale);
+  const services = getServices(locale);
+  const groups = block.categories
+    ? block.categories
+        .map((category) => ({
+          label: category.label,
+          items: services.filter((service) => service.category === category.id),
+        }))
+        .filter((group) => group.items.length > 0)
+    : [{ label: "", items: services }];
   return (
     <section className={`${styles.section} ${styles.mintBand}`}>
       <Container>
@@ -29,19 +38,28 @@ export function ServicesGrid({
             <SwiftUpText text={block.body} whenVisible lineDelay={0.12} delay={0.2} />
           </p>
         </div>
-        <RevealGroup className={styles.grid}>
-          {getServices(locale).map((service) => (
-            <CursorGlowLink
-              key={service.slug}
-              href={`/${locale}/services/${service.slug}`}
-              className={styles.card}
-            >
-              <h3 className={styles.cardTitle}>{service.name}</h3>
-              <p className={styles.cardBody}>{service.tagline}</p>
-              <span className={styles.cardLink}>{site.common.learnMore}</span>
-            </CursorGlowLink>
-          ))}
-        </RevealGroup>
+        {groups.map((group) => (
+          <div key={group.label} className={styles.group}>
+            {group.label && (
+              <h3 className={styles.groupHeading}>
+                <SwiftUpText text={group.label} whenVisible />
+              </h3>
+            )}
+            <RevealGroup className={styles.grid}>
+              {group.items.map((service) => (
+                <CursorGlowLink
+                  key={service.slug}
+                  href={`/${locale}/services/${service.slug}`}
+                  className={styles.card}
+                >
+                  <h4 className={styles.cardTitle}>{service.name}</h4>
+                  <p className={styles.cardBody}>{service.tagline}</p>
+                  <span className={styles.cardLink}>{site.common.learnMore}</span>
+                </CursorGlowLink>
+              ))}
+            </RevealGroup>
+          </div>
+        ))}
       </Container>
     </section>
   );

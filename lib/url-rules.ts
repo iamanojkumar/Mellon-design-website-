@@ -25,6 +25,7 @@ const LIVE_SEGMENTS = new Set([
   "services",
   "industries",
   "projects",
+  "blog",
   "privacy",
   "admin",
   "api",

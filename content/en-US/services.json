@@ -11,6 +11,12 @@
       "Brand manual for internal and agency use",
       "Corporate presentation in your brand, built from the identity"
     ],
+    "exclusions": [
+      "Packaging design",
+      "Brand naming",
+      "Print production and merchandise",
+      "Trademark registration and legal checks"
+    ],
     "relatedIndustries": [
       "fashion-brand-design",
       "restaurant-branding",
@@ -73,7 +79,94 @@
       "design-systems",
       "ui-ux-design",
       "social-media-content-marketing",
-      "paid-advertising"
+      "paid-advertising",
+      "graphic-design"
+    ],
+    "category": "brand"
+  },
+  {
+    "slug": "graphic-design",
+    "name": "Graphic Design",
+    "headline": "A graphic design agency for work that has to look like one brand.",
+    "tagline": "Marketing, ad, and presentation graphics built on your brand.",
+    "summary": "We design the graphics a growing company needs week after week: campaign and ad creative, social graphics, sales collateral, presentations, and brand manual layouts. Everything is built on your brand and handed over as editable files your team can reuse.",
+    "metaTitle": "Graphic design agency: brand and marketing graphics — Mellon",
+    "metaDescription": "Mellon designs marketing graphics, ad creative, presentations, and brand manual layouts as editable files your team can reuse. Get a quote.",
+    "deliverables": [
+      "Campaign and ad creative sized for Google, YouTube, and Meta",
+      "Social media graphics and reusable templates",
+      "Brochures, one-pagers, and sales collateral",
+      "Presentation and pitch deck design",
+      "Brand manual and guidelines layout",
+      "Infographics and data visuals",
+      "Print-ready and screen-ready exports, with editable source files"
+    ],
+    "exclusions": [
+      "Logo and brand identity design (that is our Branding service)",
+      "Website and product interface design",
+      "Photography, video production, and commissioned illustration",
+      "Printing and media buying costs"
+    ],
+    "process": [
+      {
+        "title": "Brief",
+        "text": "We learn what each piece has to do, who it is for, and where it will run, and collect your brand assets."
+      },
+      {
+        "title": "Direction",
+        "text": "We agree a visual direction and layout approach before designing the full set, so feedback comes early."
+      },
+      {
+        "title": "Design",
+        "text": "We design the pieces in your brand's colors, type, and style, and share them for review."
+      },
+      {
+        "title": "Refine",
+        "text": "We fold in your feedback and check each piece at the sizes and formats it will actually be used in."
+      },
+      {
+        "title": "Deliver",
+        "text": "We hand over final exports and editable source files, so your team can update the work without starting over."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "What graphic design work do you take on?",
+        "answer": "Marketing and ad creative, social graphics, brochures and sales collateral, presentations, brand manual layouts, and infographics. If you are unsure whether something fits, ask us."
+      },
+      {
+        "question": "Do you work from our existing brand?",
+        "answer": "Yes. We work from your brand guidelines and assets. If you do not have a brand yet, we build it first through our branding service."
+      },
+      {
+        "question": "Will we get editable files?",
+        "answer": "Yes. You receive final exports and editable source files, so your team can update the work without starting over."
+      },
+      {
+        "question": "Can you design our ads?",
+        "answer": "Yes. We design the creative for Google, YouTube, and Meta campaigns. Setting up and running the campaigns is our paid advertising service."
+      },
+      {
+        "question": "How many revision rounds are included?",
+        "answer": "We agree the number of revision rounds when we scope the work, so there are no surprises."
+      },
+      {
+        "question": "How much does graphic design cost?",
+        "answer": "A defined set of assets is a fixed project fee, and ongoing design is a monthly retainer. We scope it with you after a short call."
+      }
+    ],
+    "relatedIndustries": [
+      "ecommerce",
+      "fashion-brand-design",
+      "technology-saas",
+      "media-entertainment-gaming"
+    ],
+    "relatedServices": [
+      "branding",
+      "paid-advertising",
+      "social-media-content-marketing",
+      "motion-interaction-design",
+      "web-design"
     ],
     "category": "brand"
   },
@@ -87,6 +180,11 @@
       "Component libraries in Figma, mirrored in code",
       "Usage documentation and contribution guidelines",
       "Rollout and adoption support for existing teams"
+    ],
+    "exclusions": [
+      "Building your product features",
+      "Brand identity creation",
+      "Maintenance after rollout, unless on a retainer"
     ],
     "relatedIndustries": [
       "technology-saas",
@@ -164,6 +262,12 @@
       "Webflow and WooCommerce implementation",
       "Merchandising and promotional page templates"
     ],
+    "exclusions": [
+      "Product photography and catalog entry",
+      "Payment gateway and shipping set-up contracts",
+      "Store hosting and platform fees",
+      "Marketing and ad campaigns"
+    ],
     "relatedIndustries": [
       "fashion-brand-design",
       "consumer-electronics",
@@ -239,6 +343,12 @@
       "Prototyping and usability validation",
       "Handoff-free build in Webflow, Framer, or code"
     ],
+    "exclusions": [
+      "Hosting, domains and third-party licences",
+      "Paid advertising and marketing campaigns",
+      "Native mobile app development",
+      "Photography and video production"
+    ],
     "relatedIndustries": [
       "technology-saas",
       "health-wellness-tech",
@@ -308,6 +418,11 @@
       "iOS and Android UI design, platform-aware",
       "Interaction and micro-animation specs",
       "Design QA through engineering handoff"
+    ],
+    "exclusions": [
+      "App engineering and coding",
+      "Backend and API development",
+      "App store accounts, fees and publishing"
     ],
     "relatedIndustries": [
       "health-wellness-tech",
@@ -384,6 +499,12 @@
       "Prototypes in Framer for stakeholder review",
       "Engineering-ready specs (easing, duration, triggers)"
     ],
+    "exclusions": [
+      "Video production and filming",
+      "3D, VFX and game animation",
+      "Coding the animations in your product",
+      "Sound design and music licensing"
+    ],
     "relatedIndustries": [
       "media-entertainment-gaming",
       "consumer-electronics",
@@ -458,6 +579,12 @@
       "Information architecture and flow design",
       "High-fidelity UI across web and app",
       "Usability testing and iteration"
+    ],
+    "exclusions": [
+      "Engineering and development",
+      "Business strategy and market consulting",
+      "Brand identity creation",
+      "Post-launch analytics reporting"
     ],
     "relatedIndustries": [
       "technology-saas",
@@ -535,6 +662,12 @@
       "Settings, permissions, and admin UX",
       "Design system foundations for ongoing feature work"
     ],
+    "exclusions": [
+      "Frontend and backend development",
+      "Product management and roadmap decisions",
+      "Marketing site and sales material",
+      "Help-centre and documentation writing"
+    ],
     "relatedIndustries": [
       "technology-saas",
       "finance-fintech",
@@ -609,6 +742,12 @@
       "On-page SEO: metadata, schema, and content structure",
       "Content strategy and editorial calendar",
       "Technical SEO audit (site speed, crawlability, indexing)"
+    ],
+    "exclusions": [
+      "Guaranteed rankings or traffic",
+      "Writing every article in the calendar",
+      "Link buying or paid placements",
+      "Website development beyond SEO fixes"
     ],
     "relatedIndustries": [
       "technology-saas",
@@ -686,6 +825,12 @@
       "Content calendar and posting cadence strategy",
       "Brand-consistent copy and caption guidelines"
     ],
+    "exclusions": [
+      "Paid advertising and ad spend",
+      "Photo and video shoots",
+      "Community management and replying to messages",
+      "Influencer partnerships"
+    ],
     "relatedIndustries": [
       "fashion-brand-design",
       "restaurant-branding",
@@ -743,7 +888,8 @@
       "seo-content-strategy",
       "motion-interaction-design",
       "web-design",
-      "paid-advertising"
+      "paid-advertising",
+      "graphic-design"
     ],
     "category": "growth-content"
   },
@@ -757,6 +903,12 @@
       "Wireframing and information architecture",
       "High-fidelity visual design",
       "Interactive prototypes for testing and buy-in"
+    ],
+    "exclusions": [
+      "Front-end development",
+      "Brand identity creation",
+      "Full copywriting",
+      "Photography and illustration commissions"
     ],
     "relatedIndustries": [
       "technology-saas",
@@ -833,6 +985,12 @@
       "Funnel and flow-specific friction analysis",
       "Accessibility and performance spot-checks",
       "Prioritized findings report with recommended fixes"
+    ],
+    "exclusions": [
+      "Fixing the issues found",
+      "Redesigning screens",
+      "Usability testing with live participants",
+      "Ongoing monitoring after the report"
     ],
     "relatedIndustries": [
       "finance-fintech",
@@ -914,6 +1072,12 @@
       "SEO foundations: clean structure, metadata, redirects, and page speed",
       "Launch support and handover documentation"
     ],
+    "exclusions": [
+      "Hosting, domains and third-party licences",
+      "Full copywriting (a light edit is included)",
+      "Photography and video production",
+      "Custom web apps and backend systems"
+    ],
     "process": [
       {
         "title": "Discovery",
@@ -993,6 +1157,13 @@
       "Conversion tracking and reporting you can read",
       "Ongoing management and optimization"
     ],
+    "exclusions": [
+      "Ad spend, which you pay to Google and Meta directly",
+      "Guaranteed sales, leads or return on ad spend",
+      "Video production for ads",
+      "Website or landing page build",
+      "Platforms beyond Google, YouTube and Meta, unless agreed"
+    ],
     "process": [
       {
         "title": "Strategy",
@@ -1051,7 +1222,8 @@
       "social-media-content-marketing",
       "seo-content-strategy",
       "web-design",
-      "branding"
+      "branding",
+      "graphic-design"
     ],
     "category": "growth-content"
   }

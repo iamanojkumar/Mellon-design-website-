@@ -390,6 +390,7 @@
         {
           "id": "starter",
           "name": "Starter",
+          "hideLow": true,
           "blurb": "A basic design: up to eight pages, one language.",
           "timeline": "3–4 weeks",
           "features": [
@@ -4215,7 +4216,8 @@
                 6750
               ]
             }
-          }
+          },
+          "badge": "popular"
         },
         {
           "id": "authority",
@@ -4562,7 +4564,8 @@
                 3250
               ]
             }
-          }
+          },
+          "badge": "preferred"
         },
         {
           "id": "premium",
@@ -4909,7 +4912,8 @@
                 5750
               ]
             }
-          }
+          },
+          "badge": "bestFit"
         },
         {
           "id": "scale",
@@ -5129,7 +5133,8 @@
         "Weekly check-in call",
         "Priority turnaround on requests",
         "Unused hours roll over for one month"
-      ]
+      ],
+      "badge": "bestValue"
     }
   ]
 }

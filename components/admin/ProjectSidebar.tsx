@@ -60,6 +60,19 @@ export function ProjectSidebar({
     ];
   }, [projects, folders]);
 
+  const [copiedId, setCopiedId] = useState<string | null>(null);
+
+  const copyUrl = async (project: Project) => {
+    const url = `${window.location.origin}/${locale}/projects/${project.slug}`;
+    try {
+      await navigator.clipboard.writeText(url);
+      setCopiedId(project.id);
+      setTimeout(() => setCopiedId((current) => (current === project.id ? null : current)), 1500);
+    } catch {
+      window.prompt("Copy this URL", url);
+    }
+  };
+
   const toggle = (id: string) =>
     setCollapsed((current) => {
       const next = new Set(current);
@@ -256,9 +269,9 @@ export function ProjectSidebar({
                 ) : (
                   <div className={styles.list}>
                     {group.items.map((project) => (
+                      <div key={project.id} className={styles.row}>
                       <button
                         type="button"
-                        key={project.id}
                         className={`${styles.item} ${project.id === currentId ? styles.active : ""}`}
                         onClick={() => onSelect(project.id)}
                       >
@@ -289,6 +302,26 @@ export function ProjectSidebar({
                           </span>
                         </span>
                       </button>
+                      <button
+                        type="button"
+                        className={styles.copyButton}
+                        onClick={() => copyUrl(project)}
+                        disabled={!project.slug}
+                        title={copiedId === project.id ? "Copied" : "Copy page URL"}
+                        aria-label={`Copy URL of ${project.title || "project"}`}
+                      >
+                        {copiedId === project.id ? (
+                          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <path d="M3 8.5l3.2 3.2L13 4.8" />
+                          </svg>
+                        ) : (
+                          <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinejoin="round" aria-hidden="true">
+                            <rect x="5.5" y="5.5" width="8" height="8" rx="1.5" />
+                            <path d="M10.5 5.5V3.5a1 1 0 0 0-1-1h-6a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h2" />
+                          </svg>
+                        )}
+                      </button>
+                      </div>
                     ))}
                   </div>
                 ))}

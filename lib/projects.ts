@@ -44,6 +44,8 @@ export type HeroImageInput = {
   heroImageAlt: string | null;
   heroImageWidth: number | null;
   heroImageHeight: number | null;
+  /** #rrggbb behind the hero, or null for transparent (the default). */
+  heroBg: string | null;
 };
 
 export type Project = SeoInput &
@@ -95,6 +97,7 @@ type ProjectRow = {
   hero_image_alt: string | null;
   hero_image_width: number | null;
   hero_image_height: number | null;
+  hero_bg: string | null;
   content: string;
   blocks: unknown;
   featured: boolean;
@@ -131,6 +134,7 @@ function fromRow(row: ProjectRow): Project {
     heroImageAlt: row.hero_image_alt,
     heroImageWidth: row.hero_image_width,
     heroImageHeight: row.hero_image_height,
+    heroBg: row.hero_bg,
     content: row.content,
     blocks: parseBlocks(row.blocks),
     featured: row.featured,
@@ -167,6 +171,7 @@ function toRow(input: ProjectInput) {
     hero_image_alt: input.heroImageAlt || null,
     hero_image_width: input.heroImageWidth ?? null,
     hero_image_height: input.heroImageHeight ?? null,
+    hero_bg: input.heroBg || null,
     content: input.content,
     blocks: input.blocks,
     featured: input.featured,

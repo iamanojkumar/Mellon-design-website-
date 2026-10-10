@@ -1,7 +1,10 @@
 import type { MetadataRoute } from "next";
 import { getIndustries, getServices } from "@/lib/content";
+import { getPublishedCompanyPages } from "@/lib/company-pages";
 import { getLandingPageLocales, landingPages } from "@/lib/landing-pages";
 import { getPublishedProjects } from "@/lib/projects";
+import { getPublishedPosts } from "@/lib/posts";
+import { getPublishedLandingPages } from "@/lib/landing-db";
 import { defaultLocale, enabledLocales } from "@/lib/locale";
 import { getSiteUrl } from "@/lib/env";
 
@@ -13,21 +16,37 @@ import { getSiteUrl } from "@/lib/env";
  */
 export const revalidate = 300;
 
+/** Enabled locales whose own list (services or industries) contains `slug`. */
+function localesWith(list: (locale: string) => { slug: string }[], slug: string): string[] {
+  return enabledLocales.filter((l) => list(l.code).some((item) => item.slug === slug)).map((l) => l.code);
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = getSiteUrl();
   const entries: MetadataRoute.Sitemap = [];
+  const adminLandingPages = await getPublishedLandingPages().catch((error) => {
+    // Losing these entries for one build beats failing the whole sitemap.
+    console.error("[sitemap] could not read admin landing pages", error);
+    return [];
+  });
 
   for (const locale of enabledLocales) {
     const localePrefix = `/${locale.code}`;
     const staticPaths = ["", "/services", "/industries", "/projects", "/about", "/contact", "/privacy"];
-    const alternatesFor = (path: string) => ({
-      languages: {
-        ...Object.fromEntries(
-          enabledLocales.map((alt) => [alt.code, `${siteUrl}/${alt.code}${path}`]),
-        ),
-        "x-default": `${siteUrl}/${defaultLocale}${path}`,
-      },
-    });
+    // `codes` limits the alternates to locales that actually have the page: services
+    // and industries are separate lists in de/es/fr/nl, so a service added to the
+    // English list must not advertise a URL that 404s there.
+    const alternatesFor = (path: string, codes?: string[]) => {
+      const alts = codes ? enabledLocales.filter((alt) => codes.includes(alt.code)) : enabledLocales;
+      return {
+        languages: {
+          ...Object.fromEntries(alts.map((alt) => [alt.code, `${siteUrl}/${alt.code}${path}`])),
+          ...(alts.some((alt) => alt.code === defaultLocale)
+            ? { "x-default": `${siteUrl}/${defaultLocale}${path}` }
+            : {}),
+        },
+      };
+    };
     for (const path of staticPaths) {
       entries.push({
         url: `${siteUrl}${localePrefix}${path}`,
@@ -40,7 +59,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       entries.push({
         url: `${siteUrl}${localePrefix}/services/${service.slug}`,
         lastModified: new Date(),
-        alternates: alternatesFor(`/services/${service.slug}`),
+        alternates: alternatesFor(
+          `/services/${service.slug}`,
+          localesWith(getServices, service.slug),
+        ),
       });
     }
 
@@ -48,7 +70,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       entries.push({
         url: `${siteUrl}${localePrefix}/industries/${industry.slug}`,
         lastModified: new Date(),
-        alternates: alternatesFor(`/industries/${industry.slug}`),
+        alternates: alternatesFor(
+          `/industries/${industry.slug}`,
+          localesWith(getIndustries, industry.slug),
+        ),
+      });
+    }
+
+    // Published company pages (/about/...) list only the locales they exist in.
+    for (const page of getPublishedCompanyPages(locale.code)) {
+      const path = `/about/${page.slug}`;
+      entries.push({
+        url: `${siteUrl}${localePrefix}${path}`,
+        lastModified: new Date(),
+        alternates: {
+          languages: {
+            ...Object.fromEntries(page.locales.map((code) => [code, `${siteUrl}/${code}${path}`])),
+            ...(page.locales.includes(defaultLocale)
+              ? { "x-default": `${siteUrl}/${defaultLocale}${path}` }
+              : {}),
+          },
+        },
       });
     }
 
@@ -74,6 +116,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     }
 
+    // Landing pages created in the admin: same rules as the code-defined ones
+    // above (only their own locales in hreflang, noindex ones left out).
+    for (const page of adminLandingPages) {
+      if (!page.indexable || !page.locales.includes(locale.code)) continue;
+      const path = `/${page.slug}`;
+      entries.push({
+        url: `${siteUrl}${localePrefix}${path}`,
+        lastModified: new Date(page.updatedAt),
+        alternates: {
+          languages: {
+            ...Object.fromEntries(page.locales.map((code) => [code, `${siteUrl}/${code}${path}`])),
+            ...(page.locales.includes(defaultLocale)
+              ? { "x-default": `${siteUrl}/${defaultLocale}${path}` }
+              : {}),
+          },
+        },
+      });
+    }
+
     // Case studies are per-locale rows with no cross-locale counterpart, so
     // unlike the pages above they carry no hreflang alternates: the same slug
     // in another locale is usually different work, or nothing at all.
@@ -83,6 +144,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       entries.push({
         url: `${siteUrl}${localePrefix}/projects/${project.slug}`,
         lastModified: new Date(project.updatedAt),
+      });
+    }
+
+    // Blog posts are per-locale writing, so like projects they carry no
+    // hreflang alternates. The index is listed only once the locale has a post.
+    const posts = await getPublishedPosts(locale.code);
+    if (posts.length > 0) {
+      entries.push({ url: `${siteUrl}${localePrefix}/blog`, lastModified: new Date(posts[0].updatedAt) });
+    }
+    for (const post of posts) {
+      if (post.noindex) continue;
+      entries.push({
+        url: `${siteUrl}${localePrefix}/blog/${post.slug}`,
+        lastModified: new Date(post.updatedAt),
       });
     }
   }

@@ -5,10 +5,12 @@ import { RevealGroup } from "@/components/motion/RevealGroup";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import Link from "next/link";
 import type { SiteContent } from "@/lib/content";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import styles from "./Footer.module.css";
 
 type FooterProps = {
   locale: string;
+  languageSwitcher: SiteContent["common"]["languageSwitcher"];
   footer: SiteContent["footer"];
   org: SiteContent["org"];
 };
@@ -25,7 +27,7 @@ const SOCIAL_LINKS: {
   { key: "youtube", label: "YouTube", icon: "/brand/social/youtube.svg" },
 ];
 
-export function Footer({ locale, footer, org }: FooterProps) {
+export function Footer({ locale, footer, org, languageSwitcher }: FooterProps) {
   const localePrefix = `/${locale}`;
   const year = new Date().getFullYear();
 
@@ -39,6 +41,11 @@ export function Footer({ locale, footer, org }: FooterProps) {
           <p className={styles.tagline}>
             <SwiftUpText text={footer.tagline} whenVisible delay={0.2} />
           </p>
+          <FadeIn whenVisible delay={0.3}>
+            <a href={`mailto:${org.email}`} className={styles.emailLink}>
+              {org.email}
+            </a>
+          </FadeIn>
           <RevealGroup className={styles.social}>
             {SOCIAL_LINKS.map((item) => (
               <a
@@ -72,13 +79,23 @@ export function Footer({ locale, footer, org }: FooterProps) {
 
         <div className={styles.col}>
           <h3 className={styles.colHeading}>
-            <SwiftUpText text={footer.contactHeading} whenVisible />
+            <SwiftUpText text={footer.policiesHeading} whenVisible />
           </h3>
-          <FadeIn whenVisible delay={0.2}>
-            <a href={`mailto:${org.email}`} className={styles.emailLink}>
-              {org.email}
-            </a>
-          </FadeIn>
+          <RevealGroup as="ul">
+            {footer.legalLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={`${localePrefix}${link.href}`}>{link.label}</Link>
+              </li>
+            ))}
+            {/* The consent banner (GTM tag, source in temp/consent-banner.html) binds
+                any data-open-consent element to reopen its preferences panel. Without
+                this, withdrawing consent would mean clearing site data by hand. */}
+            <li>
+              <button type="button" data-open-consent className={styles.consentButton}>
+                {footer.cookiePreferences}
+              </button>
+            </li>
+          </RevealGroup>
         </div>
       </div>
 
@@ -88,18 +105,8 @@ export function Footer({ locale, footer, org }: FooterProps) {
             &copy; {year} {org.legalName}. {footer.legal}
           </span>
         </FadeIn>
-        {footer.legalLinks.map((link, index) => (
-          <FadeIn key={link.href} as="span" whenVisible delay={0.1 + index * 0.08}>
-            <Link href={`${localePrefix}${link.href}`}>{link.label}</Link>
-          </FadeIn>
-        ))}
-        {/* The consent banner (GTM tag, source in temp/consent-banner.html) binds
-            any data-open-consent element to reopen its preferences panel. Without
-            this, withdrawing consent would mean clearing site data by hand. */}
-        <FadeIn as="span" whenVisible delay={0.1 + footer.legalLinks.length * 0.08}>
-          <button type="button" data-open-consent className={styles.consentButton}>
-            {footer.cookiePreferences}
-          </button>
+        <FadeIn as="span" whenVisible delay={0.1} className={styles.lang}>
+          <LanguageSwitcher locale={locale} placement="up" copy={languageSwitcher} />
         </FadeIn>
       </div>
     </footer>

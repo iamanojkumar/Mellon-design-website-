@@ -10,6 +10,7 @@ import {
 import { enabledLocaleCodes } from "@/lib/locale";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/env";
+import { RelatedProjects } from "@/components/projects/RelatedProjects";
 import { Container } from "@/components/ui/Container";
 import { Cta } from "@/components/cta/Cta";
 import { ContactForm } from "@/components/contact-form/ContactForm";
@@ -41,6 +42,8 @@ export async function generateMetadata({
     path: `/industries/${slug}`,
     title: `${industry.name} — ${site.org.name}`,
     description: industry.summary,
+    // Other languages keep their own industry lists, so only link the locales that have this one.
+    locales: enabledLocaleCodes.filter((code) => getIndustries(code).some((item) => item.slug === slug)),
   });
 }
 
@@ -115,6 +118,8 @@ export default async function IndustryDetailPage({
           )}
         </Container>
       </section>
+
+      <RelatedProjects locale={locale} category={industry.slug} />
 
       <section id="quote" className={styles.closing}>
         <Container className={styles.closingInner}>

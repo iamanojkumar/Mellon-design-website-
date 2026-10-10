@@ -119,7 +119,28 @@
   padding-left: 12px;
 }
 
+.row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.copyButton {
+  flex: none;
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border-radius: 3px;
+  color: var(--color-fg-muted);
+}
+
+.copyButton:hover:not(:disabled) {
+  background: var(--color-paper-tint);
+  color: var(--color-fg);
+}
+
 .item {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 1px;

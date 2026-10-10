@@ -20,6 +20,18 @@
   border-color: var(--color-ink);
 }
 
+/* Just the language code: no outline, flag or chevron. */
+.triggerCompact {
+  padding: 0.5rem 0.25rem;
+  border: 0;
+  border-radius: 0;
+  min-height: 2.75rem;
+}
+
+.triggerCompact:hover {
+  color: var(--color-accent);
+}
+
 .chevron {
   transition: transform var(--duration-fast) var(--ease-out);
 }
@@ -39,6 +51,31 @@
   box-shadow: 0 12px 32px rgba(26, 43, 60, 0.12);
   padding: 0.375rem;
   z-index: 60;
+}
+
+/* The footer sits at the bottom of the page, so its menu opens upward. The
+   button is at the right end of the legal row, so the menu aligns to that edge
+   (anchoring left would run off the screen on a phone). */
+.menu[data-placement="up"] {
+  top: auto;
+  bottom: calc(100% + 0.5rem);
+}
+
+/* In the mobile menu the panel flows in the page; a floating one would be
+   clipped by the scrolling nav and could run past the screen edge. */
+.menu[data-placement="inline"] {
+  position: static;
+  margin-top: 0.5rem;
+  min-width: 0;
+  width: min(100%, 22rem);
+  box-shadow: none;
+}
+
+@media (max-width: 480px) {
+  .menu[data-placement="down"],
+  .menu[data-placement="up"] {
+    max-width: calc(100vw - 2 * var(--content-pad));
+  }
 }
 
 .triggerLabel {

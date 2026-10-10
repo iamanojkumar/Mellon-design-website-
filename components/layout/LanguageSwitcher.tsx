@@ -12,6 +12,15 @@ const SEARCH_THRESHOLD = 6;
 type LanguageSwitcherProps = {
   locale: string;
   className?: string;
+  /** "compact" is just the language code ("en"), no outline, flag or chevron. */
+  variant?: "full" | "compact";
+  /**
+   * Where the menu opens. "down" hangs from the right edge (header), "up" opens
+   * above and from the left (footer, where there is no room below), "inline"
+   * flows in the page instead of floating (mobile menu, where a floating panel
+   * is clipped by the scrolling nav).
+   */
+  placement?: "down" | "up" | "inline";
   copy: {
     searchPlaceholder: string;
     noResults: string;
@@ -19,12 +28,19 @@ type LanguageSwitcherProps = {
   };
 };
 
-export function LanguageSwitcher({ locale, className, copy }: LanguageSwitcherProps) {
+export function LanguageSwitcher({
+  locale,
+  className,
+  variant = "full",
+  placement = "down",
+  copy,
+}: LanguageSwitcherProps) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const rootRef = useRef<HTMLDivElement>(null);
   const searchRef = useRef<HTMLInputElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const current = allLocales.find((item) => item.code === locale) ?? enabledLocales[0];
   const suffix = pathname.startsWith(`/${locale}`)
@@ -49,7 +65,10 @@ export function LanguageSwitcher({ locale, className, copy }: LanguageSwitcherPr
       setQuery("");
       return;
     }
-    searchRef.current?.focus();
+    // An inline menu opens inside a scrolling panel, possibly below the fold.
+    menuRef.current?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+    // Focusing the search on a touch screen raises the keyboard over the list.
+    if (window.matchMedia("(pointer: fine)").matches) searchRef.current?.focus({ preventScroll: true });
     function handleClick(event: MouseEvent) {
       if (rootRef.current && !rootRef.current.contains(event.target as Node)) {
         setOpen(false);
@@ -70,26 +89,33 @@ export function LanguageSwitcher({ locale, className, copy }: LanguageSwitcherPr
     <div ref={rootRef} className={className ? `${styles.root} ${className}` : styles.root}>
       <button
         type="button"
-        className={styles.trigger}
+        className={variant === "compact" ? `${styles.trigger} ${styles.triggerCompact}` : styles.trigger}
+        aria-label={current.label}
         aria-haspopup="listbox"
         aria-expanded={open}
         onClick={() => setOpen((v) => !v)}
       >
-        <span className={`fi fi-${current.market.toLowerCase()} ${styles.flag}`} aria-hidden="true" />
-        <span className={styles.triggerLabel}>{current.label.split(" (")[0]}</span>
-        <svg width="10" height="10" viewBox="0 0 16 16" fill="none" aria-hidden="true" className={styles.chevron} data-open={open}>
-          <path
-            d="M4 6L8 10L12 6"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        {variant === "compact" ? (
+          <span className={styles.triggerLabel}>{current.language}</span>
+        ) : (
+          <>
+            <span className={`fi fi-${current.market.toLowerCase()} ${styles.flag}`} aria-hidden="true" />
+            <span className={styles.triggerLabel}>{current.label.split(" (")[0]}</span>
+            <svg width="10" height="10" viewBox="0 0 16 16" fill="none" aria-hidden="true" className={styles.chevron} data-open={open}>
+              <path
+                d="M4 6L8 10L12 6"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </>
+        )}
       </button>
 
       {open && (
-        <div className={styles.menu}>
+        <div ref={menuRef} className={styles.menu} data-placement={placement}>
           {enabledLocales.length > SEARCH_THRESHOLD && (
             <input
               ref={searchRef}

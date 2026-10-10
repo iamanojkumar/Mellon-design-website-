@@ -13,7 +13,19 @@ Landing pages have their own header and footer (`layout.tsx` here, components in
 from search results and campaigns only, and discovered through the sitemap. Don't
 add one to nav, the footer or any listing.
 
-## Add a page
+## Pages created in the admin
+
+`/admin/landing-editor` creates landing pages without code. They are rows in the
+`landing_pages` table and render through `[slug]/page.tsx` with the same
+`ServiceLanding` layout; only the copy differs. A folder with a real slug (every
+page below) wins over `[slug]`, so code-defined pages are never affected. The
+editor lists the rule checks beside the form (the thin-content rule below), the
+AI chat reads `docs/landing-rules.md` and `docs/brand-voice.md`, and publishing is
+refused while a check fails unless the editor overrides it. Chats are kept per page.
+`lib/landing-code-pages.ts` mirrors the code-defined pages for those checks: add a
+new code page there too.
+
+## Add a page in code
 
 1. Copy `_template/` to `<slug>/` (`_`-prefixed folders are private, never routed).
 2. Set `SLUG` in the new `page.tsx` and edit `copy.ts`.

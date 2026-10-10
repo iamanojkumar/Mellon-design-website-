@@ -29,10 +29,6 @@
         "href": "/projects"
       },
       {
-        "label": "About",
-        "href": "/about"
-      },
-      {
         "label": "Contact",
         "href": "/contact"
       }
@@ -61,6 +57,10 @@
             "href": "/industries"
           },
           {
+            "label": "Blog",
+            "href": "/blog"
+          },
+          {
             "label": "Contact",
             "href": "/contact"
           }
@@ -74,7 +74,7 @@
         "href": "/privacy"
       }
     ],
-    "contactHeading": "Contact",
+    "policiesHeading": "Policies",
     "homeAria": "Mellon home",
     "cookiePreferences": "Cookie preferences"
   },
@@ -83,6 +83,9 @@
     "skipToContent": "Skip to content",
     "loading": "Loading",
     "menu": "Menu",
+    "menuClose": "Close menu",
+    "menuBack": "Back",
+    "menuViewAll": "View all",
     "homeAria": "Mellon home",
     "primaryNavAria": "Primary",
     "breadcrumbAria": "Breadcrumb",
@@ -99,6 +102,8 @@
     "detail": {
       "included": "What's included",
       "usedIn": "Where we've used this",
+      "aiLink": "How we use AI in this work →",
+      "notIncluded": "What we don't do",
       "readyHeadline": "Ready to talk about {nameLower}?",
       "processHeading": "How we work",
       "faqHeading": "Frequently asked questions",
@@ -122,7 +127,13 @@
       "perMonth": "per month",
       "from": "From",
       "onRequest": "Quoted after a short call",
-      "request": "Request this"
+      "request": "Request this",
+      "badges": {
+        "popular": "Most popular",
+        "preferred": "Preferred plan",
+        "bestFit": "Best for scaling",
+        "bestValue": "Best value"
+      }
     }
   },
   "industriesPage": {
@@ -135,6 +146,25 @@
   },
   "projectsPage": {
     "label": "Projects"
+  },
+  "relatedProjects": {
+    "eyebrow": "Selected work",
+    "headline": "Related work.",
+    "body": "Recent projects, most relevant first.",
+    "viewLink": "View project →",
+    "viewAll": "View all projects →"
+  },
+  "blogPage": {
+    "label": "Blog",
+    "headline": "Notes from the studio.",
+    "intro": "Plain-spoken guides on design, pricing and choosing an agency.",
+    "empty": "No posts yet.",
+    "readMore": "Read the post",
+    "cta": {
+      "headline": "Start with a conversation.",
+      "body": "Tell us what you're building. We'll tell you plainly whether we're the right studio.",
+      "cta": { "label": "Start a project", "href": "/contact" }
+    }
   },
   "notFound": {
     "eyebrow": "404",
