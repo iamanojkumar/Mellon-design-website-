@@ -26,6 +26,9 @@ const cascadiaMono = Cascadia_Mono({
   variable: "--font-mono",
   weight: "variable",
   display: "swap",
+  // Next has no size-adjust metrics for Cascadia Mono; without this it logs
+  // "Failed to find font override values" on every build.
+  adjustFontFallback: false,
 });
 
 export function generateStaticParams() {
