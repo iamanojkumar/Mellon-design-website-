@@ -11,7 +11,7 @@
       "subhead": "Dit beleid legt uit welke persoonsgegevens Mellon Design via deze website verzamelt, hoe we ze gebruiken en welke keuzes je hebt. We houden het kort, omdat we heel weinig verzamelen.",
       "updated": {
         "label": "Laatst bijgewerkt",
-        "date": "2026-09-27"
+        "date": "2026-10-11"
       }
     },
     {
@@ -30,12 +30,16 @@
           "body": "Om je aanvraag te lezen en te beantwoorden en het gesprek vast te leggen. Aanvragen worden in een database opgeslagen en we krijgen een e-mailmelding. We verkopen je gegevens niet."
         },
         {
+          "heading": "Snelle chat",
+          "body": "De chatknop op deze website is een AI-assistent die je helpt te beschrijven wat je nodig hebt. Wat je erin typt, gaat naar onze AI-aanbieder DeepSeek, zodat die antwoorden kan schrijven. We bewaren het gesprek niet. Als de assistent genoeg weet, vult hij het contactformulier voor je in zodat je het kunt controleren. Er komt niets bij ons binnen voordat je op verzenden drukt, en dan behandelen we het zoals elke andere aanvraag. Typ geen gevoelige gegevens in de chat, zoals wachtwoorden of betaalgegevens."
+        },
+        {
           "heading": "Cookies",
           "body": "Eén klein functioneel cookie, mellon_locale, onthoudt de taal die je hebt gekozen; het blijft maximaal een jaar bewaard en bevat geen persoonsgegevens. Daarbuiten vragen we eerst je toestemming. De banner biedt drie categorieën — analytisch, marketing en functioneel — en we activeren alleen wat je accepteert. Je keuze wordt in je browser opgeslagen als mellon_consent_v3; sluit je de banner zonder te kiezen, dan onthouden we alleen dát, en uitsluitend voor de huidige sessie (mellon_consent_dismissed). Je kunt je keuze altijd wijzigen via de link „Cookievoorkeuren\" onderaan elke pagina."
         },
         {
           "heading": "Met wie we ze delen",
-          "body": "Alleen met dienstverleners die ons helpen de site te laten draaien: hosting (Vercel), opslag van aanvragen en hosting van afbeeldingen (Supabase) en e-mail (Zoho), en alleen voor zover ze dat voor hun werk nodig hebben. Analyse- en marketingtools ontvangen, als je dat toestaat, de gebruikelijke surfgegevens die zij verzamelen. We gebruiken ook een AI-aanbieder (DeepSeek) om de teksten van onze eigen pagina's en casestudy's te vertalen en op te stellen; die ontvangt nooit je aanvraag of andere persoonsgegevens. We kunnen gegevens ook openbaar maken als de wet dat vereist."
+          "body": "Alleen met dienstverleners die ons helpen de site te laten draaien: hosting (Vercel), opslag van aanvragen en hosting van afbeeldingen (Supabase) en e-mail (Zoho), en alleen voor zover ze dat voor hun werk nodig hebben. Analyse- en marketingtools ontvangen, als je dat toestaat, de gebruikelijke surfgegevens die zij verzamelen. We gebruiken ook een AI-aanbieder (DeepSeek) om de teksten van onze eigen pagina's en casestudy's te vertalen en op te stellen, en voor de hierboven beschreven snelle chat. Die ontvangt nooit de aanvraag die je via het contactformulier verstuurt. We kunnen gegevens ook openbaar maken als de wet dat vereist."
         },
         {
           "heading": "Hoe lang we ze bewaren",

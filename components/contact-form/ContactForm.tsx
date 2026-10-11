@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { createContext, useActionState, useContext } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { useFormStatus } from "react-dom";
@@ -29,7 +29,36 @@ type ContactFormProps = {
   labels: ContactFormLabels;
   privacyHref: string;
   locale: string;
+  /** Pre-fills the fields (the quick-chat hand-off); the visitor can edit them. */
+  defaults?: Partial<Record<"name" | "email" | "company" | "budget" | "message", string>>;
+  /** Skips the scroll-in animations. For forms inside a scrolling panel (the quick chat). */
+  plain?: boolean;
 };
+
+const PlainContext = createContext(false);
+
+/** FadeIn, unless the form is `plain`. */
+function Reveal({
+  delay,
+  as,
+  className,
+  children,
+}: {
+  delay: number;
+  as?: "div" | "span";
+  className?: string;
+  children: ReactNode;
+}) {
+  if (useContext(PlainContext)) {
+    const Tag = as ?? "div";
+    return <Tag className={className}>{children}</Tag>;
+  }
+  return (
+    <FadeIn whenVisible as={as} delay={delay} className={className}>
+      {children}
+    </FadeIn>
+  );
+}
 
 /**
  * One labelled control. The label text slides up and the control fades in when
@@ -46,14 +75,11 @@ function Field({
   error?: string;
   children: ReactNode;
 }) {
+  const plain = useContext(PlainContext);
   return (
     <label className={styles.field}>
-      <span>
-        <SwiftUpText text={label} whenVisible delay={delay} />
-      </span>
-      <FadeIn whenVisible delay={delay + 0.15}>
-        {children}
-      </FadeIn>
+      <span>{plain ? label : <SwiftUpText text={label} whenVisible delay={delay} />}</span>
+      <Reveal delay={delay + 0.15}>{children}</Reveal>
       {error && <em className={styles.error}>{error}</em>}
     </label>
   );
@@ -68,7 +94,7 @@ function SubmitButton({ label, sending }: { label: string; sending: string }) {
   );
 }
 
-export function ContactForm({ successMessage, submitLabel, labels, privacyHref, locale }: ContactFormProps) {
+export function ContactForm({ successMessage, submitLabel, labels, privacyHref, locale, defaults, plain = false }: ContactFormProps) {
   const [state, formAction] = useActionState(
     submitContactForm,
     initialContactFormState,
@@ -85,51 +111,53 @@ export function ContactForm({ successMessage, submitLabel, labels, privacyHref, 
   const errors = state.fieldErrors ?? {};
 
   return (
-    <form action={formAction} className={styles.form} noValidate>
-      <input type="hidden" name="locale" value={locale} />
-      <input
-        type="text"
-        name="website"
-        tabIndex={-1}
-        autoComplete="off"
-        aria-hidden="true"
-        style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
-      />
-      <div className={styles.row}>
-        <Field label={labels.name} delay={0} error={errors.name}>
-          <input type="text" name="name" autoComplete="name" required />
+    <PlainContext.Provider value={plain}>
+      <form action={formAction} className={plain ? `${styles.form} ${styles.plain}` : styles.form} noValidate>
+        <input type="hidden" name="locale" value={locale} />
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+        />
+        <div className={styles.row}>
+          <Field label={labels.name} delay={0} error={errors.name}>
+            <input type="text" name="name" autoComplete="name" defaultValue={defaults?.name} required />
+          </Field>
+          <Field label={labels.email} delay={0.08} error={errors.email}>
+            <input type="email" name="email" autoComplete="email" defaultValue={defaults?.email} required />
+          </Field>
+        </div>
+
+        <div className={styles.row}>
+          <Field label={labels.company} delay={0.2}>
+            <input type="text" name="company" autoComplete="organization" defaultValue={defaults?.company} />
+          </Field>
+          <Field label={labels.budget} delay={0.28}>
+            <input type="text" name="budget" placeholder={labels.budgetPlaceholder} defaultValue={defaults?.budget} />
+          </Field>
+        </div>
+
+        <Field label={labels.message} delay={0.4} error={errors.message}>
+          <textarea name="message" rows={6} defaultValue={defaults?.message} required />
         </Field>
-        <Field label={labels.email} delay={0.08} error={errors.email}>
-          <input type="email" name="email" autoComplete="email" required />
-        </Field>
-      </div>
 
-      <div className={styles.row}>
-        <Field label={labels.company} delay={0.2}>
-          <input type="text" name="company" autoComplete="organization" />
-        </Field>
-        <Field label={labels.budget} delay={0.28}>
-          <input type="text" name="budget" placeholder={labels.budgetPlaceholder} />
-        </Field>
-      </div>
+        {state.status === "error" && !Object.keys(errors).length && (
+          <p className={styles.error}>{labels.genericError}</p>
+        )}
 
-      <Field label={labels.message} delay={0.4} error={errors.message}>
-        <textarea name="message" rows={6} required />
-      </Field>
+        <Reveal delay={0.55}>
+          <p className={styles.privacy}>
+            {labels.privacyNote} <Link href={privacyHref}>{labels.privacyLink}</Link>.
+          </p>
+        </Reveal>
 
-      {state.status === "error" && !Object.keys(errors).length && (
-        <p className={styles.error}>{labels.genericError}</p>
-      )}
-
-      <FadeIn whenVisible delay={0.55}>
-        <p className={styles.privacy}>
-          {labels.privacyNote} <Link href={privacyHref}>{labels.privacyLink}</Link>.
-        </p>
-      </FadeIn>
-
-      <FadeIn as="span" whenVisible delay={0.65} className={styles.submitWrap}>
-        <SubmitButton label={submitLabel} sending={labels.sending} />
-      </FadeIn>
-    </form>
+        <Reveal as="span" delay={0.65} className={styles.submitWrap}>
+          <SubmitButton label={submitLabel} sending={labels.sending} />
+        </Reveal>
+      </form>
+    </PlainContext.Provider>
   );
 }

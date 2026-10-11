@@ -51,7 +51,25 @@ const VIDEO_EXTENSIONS: Record<string, string> = {
   mov: "video/quicktime",
 };
 
-const ALLOWED_EXTENSIONS = { ...IMAGE_EXTENSIONS, ...VIDEO_EXTENSIONS };
+const AUDIO_EXTENSIONS: Record<string, string> = {
+  mp3: "audio/mpeg",
+  m4a: "audio/mp4",
+  aac: "audio/aac",
+  wav: "audio/wav",
+  oga: "audio/ogg",
+  weba: "audio/webm",
+};
+
+/** WebVTT captions for a video's <track>. Tiny text files, capped well below media. */
+const CAPTION_EXTENSIONS: Record<string, string> = { vtt: "text/vtt" };
+export const MAX_CAPTION_SIZE = 1024 * 1024;
+
+const ALLOWED_EXTENSIONS = {
+  ...IMAGE_EXTENSIONS,
+  ...VIDEO_EXTENSIONS,
+  ...AUDIO_EXTENSIONS,
+  ...CAPTION_EXTENSIONS,
+};
 
 /**
  * Raster formats worth re-encoding. `svg` is vector (rasterising it would be a
@@ -82,6 +100,16 @@ const EXTENSION_BY_MIME: Record<string, string> = {
   "video/webm": "webm",
   "video/ogg": "ogg",
   "video/quicktime": "mov",
+  "audio/mpeg": "mp3",
+  "audio/mp3": "mp3",
+  "audio/mp4": "m4a",
+  "audio/x-m4a": "m4a",
+  "audio/aac": "aac",
+  "audio/wav": "wav",
+  "audio/x-wav": "wav",
+  "audio/ogg": "oga",
+  "audio/webm": "weba",
+  "text/vtt": "vtt",
 };
 
 function extensionOf(filename: string): string {
@@ -137,12 +165,10 @@ export async function createProjectMediaUpload({
     );
   }
 
-  const isImage = extension in IMAGE_EXTENSIONS;
-  const limit = isImage ? MAX_IMAGE_SIZE : MAX_VIDEO_SIZE;
+  const kind = extension in IMAGE_EXTENSIONS ? "images" : extension in CAPTION_EXTENSIONS ? "caption files" : extension in AUDIO_EXTENSIONS ? "audio" : "video";
+  const limit = kind === "images" ? MAX_IMAGE_SIZE : kind === "caption files" ? MAX_CAPTION_SIZE : MAX_VIDEO_SIZE;
   if (size > limit) {
-    throw new Error(
-      `File is too large. Max size is ${limit / 1024 / 1024}MB for ${isImage ? "images" : "video"}.`,
-    );
+    throw new Error(`File is too large. Max size is ${limit / 1024 / 1024}MB for ${kind}.`);
   }
 
   const { url, key } = requireEnv();

@@ -17,6 +17,9 @@ import { FadeIn } from "@/components/motion/HeroSequence";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import { revealOnLoadClass } from "@/components/motion/attachReveal";
 import { ParallaxRichText } from "@/components/projects/ParallaxRichText";
+import { ArticleNarration } from "@/components/blog/ArticleNarration";
+import { protectAudioInHtml, protectedAudioSrc } from "@/lib/protected-media";
+import { RelatedPosts } from "@/components/blog/RelatedPosts";
 import styles from "./page.module.css";
 
 /**
@@ -107,7 +110,7 @@ export default async function BlogPostPage({ params }: { params: Promise<PagePar
       />
 
       <HeroTint color={post.heroBg} />
-      <article className={styles.article}>
+      <article className={styles.article} aria-labelledby="article-title">
         {/* The tinted band: overline, heading, subtext and image. The header
             reads the same --page-tint, so the colour is continuous. */}
         <div className={styles.heroBand} data-hero-band="" data-tinted={normalizeHeroBg(post.heroBg) ? "" : undefined}>
@@ -124,7 +127,7 @@ export default async function BlogPostPage({ params }: { params: Promise<PagePar
               </time>
             </FadeIn>
           </p>
-          <h1 className={styles.title}>
+          <h1 id="article-title" className={styles.title}>
             <SwiftUpText text={post.title} whenVisible />
           </h1>
           {post.summary && (
@@ -149,17 +152,39 @@ export default async function BlogPostPage({ params }: { params: Promise<PagePar
         </div>
 
         <Container>
+          {post.narrationUrl && (
+            <ArticleNarration
+              src={protectedAudioSrc(post.narrationUrl)}
+              title={site.blogPage.listenTitle}
+              note={site.blogPage.listenNote}
+              rights={site.blogPage.listenRights}
+            />
+          )}
+
           {post.content && (
             // Authored in the password-protected admin editor, the same trust
             // boundary as project bodies.
-            <ParallaxRichText className={styles.body} html={post.content} />
+            <ParallaxRichText
+              className={styles.body}
+              html={protectAudioInHtml(post.content)}
+              labels={{
+                pauseAnimation: site.blogPage.pauseAnimation,
+                playAnimation: site.blogPage.playAnimation,
+                embedTitle: site.blogPage.embedTitle,
+              }}
+            />
           )}
 
           <p className={styles.back}>
-            <Link href={`${localePrefix}/blog`}>← {label}</Link>
+            <Link href={`${localePrefix}/blog`}>
+              <span aria-hidden="true">← </span>
+              {label}
+            </Link>
           </p>
         </Container>
       </article>
+
+      <RelatedPosts locale={locale} post={post} />
 
       <ClosingCta block={{ type: "closingCta", ...site.blogPage.cta }} locale={locale} />
     </>

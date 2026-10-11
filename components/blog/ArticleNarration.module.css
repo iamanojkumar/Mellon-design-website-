@@ -1,0 +1,26 @@
+.narration {
+  margin-top: var(--space-xl);
+  max-width: 70ch;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+/* Small label, not a section heading: Georgia stays at display weight. */
+.title {
+  font-size: var(--fs-300);
+  font-weight: var(--fw-display);
+  line-height: var(--lh-tight);
+}
+
+.player {
+  display: block;
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.note {
+  margin-top: var(--space-xs);
+  font-size: var(--fs-200);
+  color: var(--color-fg-muted);
+}

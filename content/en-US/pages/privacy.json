@@ -11,7 +11,7 @@
       "subhead": "This policy explains what personal information Mellon Design collects through this website, how we use it, and the choices you have. We keep it short because we collect very little.",
       "updated": {
         "label": "Last updated",
-        "date": "2026-09-27"
+        "date": "2026-10-11"
       }
     },
     {
@@ -30,12 +30,16 @@
           "body": "To read and reply to your inquiry, and to keep a record of the conversation. Enquiries are stored in a database and we are notified by email. We do not sell your details."
         },
         {
+          "heading": "Quick chat",
+          "body": "The chat button on this site is an AI assistant that helps you describe what you need. What you type in it is sent to our AI provider, DeepSeek, so it can write replies. We don't save the conversation. When the assistant has what it needs, it fills in the contact form for you to check. Nothing reaches us until you press send, and then it is handled like any other enquiry. Please keep anything sensitive, such as passwords or payment details, out of the chat."
+        },
+        {
           "heading": "Cookies",
           "body": "A small functional cookie, mellon_locale, remembers the language you chose; it lasts up to one year and holds no personal information. Beyond that, we ask for your consent first. The banner offers three categories — analytics, marketing and functional — and we only enable the ones you accept. Your choice is stored in your browser as mellon_consent_v3; if you close the banner without deciding, we remember only that, for the current session (mellon_consent_dismissed). You can change your mind at any time with the Cookie preferences link at the bottom of any page."
         },
         {
           "heading": "Who we share it with",
-          "body": "Only with service providers that help us run the site: hosting (Vercel), enquiry storage and image hosting (Supabase) and email (Zoho), and only as needed for them to do that work. Analytics and marketing tools, if you allow them, receive the usual browsing data those tools collect. We also use an AI provider (DeepSeek) to help translate and draft the text of our own pages and case studies; it never receives your enquiry or any other personal information. We may also disclose information if the law requires it."
+          "body": "Only with service providers that help us run the site: hosting (Vercel), enquiry storage and image hosting (Supabase) and email (Zoho), and only as needed for them to do that work. Analytics and marketing tools, if you allow them, receive the usual browsing data those tools collect. We also use an AI provider (DeepSeek) to help translate and draft the text of our own pages and case studies, and to power the quick chat described above. It never receives your contact form enquiry. We may also disclose information if the law requires it."
         },
         {
           "heading": "How long we keep it",

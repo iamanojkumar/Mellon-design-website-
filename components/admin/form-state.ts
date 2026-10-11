@@ -16,6 +16,8 @@ export type ProjectFormState = {
   summary: string;
   category: string;
   service: string;
+  /** Extra services this project also appears under in "Related work". */
+  alsoServices: string[];
   heroImage: string;
   heroImageAlt: string;
   /** Detected from the image itself; "" until one loads. */
@@ -48,6 +50,7 @@ export const blankForm: ProjectFormState = {
   summary: "",
   category: "",
   service: "",
+  alsoServices: [],
   heroImage: "",
   heroImageAlt: "",
   heroImageWidth: null,
@@ -80,6 +83,7 @@ export function toForm(project: Project | null): ProjectFormState {
     summary: project.summary ?? "",
     category: project.category,
     service: project.service,
+    alsoServices: project.alsoServices,
     heroImage: project.heroImage ?? "",
     heroImageAlt: project.heroImageAlt ?? "",
     heroImageWidth: project.heroImageWidth,

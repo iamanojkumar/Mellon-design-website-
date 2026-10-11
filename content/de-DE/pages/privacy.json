@@ -11,7 +11,7 @@
       "subhead": "Diese Erklärung beschreibt, welche personenbezogenen Daten Mellon Design über diese Website erhebt, wie wir sie verwenden und welche Wahlmöglichkeiten Sie haben. Wir halten sie kurz, weil wir sehr wenig erheben.",
       "updated": {
         "label": "Zuletzt aktualisiert",
-        "date": "2026-09-27"
+        "date": "2026-10-11"
       }
     },
     {
@@ -30,12 +30,16 @@
           "body": "Um Ihre Anfrage zu lesen und zu beantworten und den Austausch zu dokumentieren. Anfragen werden in einer Datenbank gespeichert, und wir werden per E-Mail benachrichtigt. Wir verkaufen Ihre Daten nicht."
         },
         {
+          "heading": "Chat-Assistent",
+          "body": "Der Chat-Button auf dieser Website ist ein KI-Assistent, der Ihnen hilft zu beschreiben, was Sie brauchen. Was Sie dort eingeben, wird an unseren KI-Anbieter DeepSeek gesendet, damit er Antworten verfassen kann. Wir speichern das Gespräch nicht. Wenn der Assistent alles hat, was er braucht, füllt er das Kontaktformular für Sie vor, damit Sie es prüfen können. Bei uns kommt erst etwas an, wenn Sie auf Senden klicken, und dann behandeln wir es wie jede andere Anfrage. Bitte geben Sie im Chat nichts Sensibles ein, etwa Passwörter oder Zahlungsdaten."
+        },
+        {
           "heading": "Cookies",
           "body": "Ein kleines funktionales Cookie, mellon_locale, merkt sich die von Ihnen gewählte Sprache; es hält bis zu einem Jahr und enthält keine personenbezogenen Daten. Darüber hinaus holen wir zuerst Ihre Einwilligung ein. Der Banner bietet drei Kategorien – Analyse, Marketing und Funktional – und wir aktivieren nur die, denen Sie zustimmen. Ihre Auswahl wird in Ihrem Browser als mellon_consent_v3 gespeichert; schließen Sie den Banner ohne Entscheidung, merken wir uns nur das, und zwar nur für die laufende Sitzung (mellon_consent_dismissed). Sie können Ihre Entscheidung jederzeit über den Link „Cookie-Einstellungen“ am Seitenende ändern."
         },
         {
           "heading": "An wen wir Daten weitergeben",
-          "body": "Nur an Dienstleister, die uns beim Betrieb der Website unterstützen: Hosting (Vercel), Speicherung von Anfragen und Bild-Hosting (Supabase) und E-Mail (Zoho) – und nur, soweit sie dies für ihre Arbeit benötigen. Analyse- und Marketing-Tools erhalten, falls Sie zustimmen, die üblichen Nutzungsdaten, die diese Tools erfassen. Außerdem nutzen wir einen KI-Anbieter (DeepSeek), um Texte unserer eigenen Seiten und Fallstudien zu übersetzen und zu entwerfen; er erhält niemals Ihre Anfrage oder andere personenbezogene Daten. Wir können Daten außerdem offenlegen, wenn das Gesetz es verlangt."
+          "body": "Nur an Dienstleister, die uns beim Betrieb der Website unterstützen: Hosting (Vercel), Speicherung von Anfragen und Bild-Hosting (Supabase) und E-Mail (Zoho) – und nur, soweit sie dies für ihre Arbeit benötigen. Analyse- und Marketing-Tools erhalten, falls Sie zustimmen, die üblichen Nutzungsdaten, die diese Tools erfassen. Außerdem nutzen wir einen KI-Anbieter (DeepSeek), um Texte unserer eigenen Seiten und Fallstudien zu übersetzen und zu entwerfen und um den oben beschriebenen Chat-Assistenten zu betreiben. Er erhält niemals Ihre Anfrage aus dem Kontaktformular. Wir können Daten außerdem offenlegen, wenn das Gesetz es verlangt."
         },
         {
           "heading": "Wie lange wir sie speichern",

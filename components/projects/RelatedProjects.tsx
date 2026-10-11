@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { getSiteContent } from "@/lib/content";
 import { getPublishedProjects } from "@/lib/projects";
+import { getRelatedPicks } from "@/lib/related-work";
+import { pickRelated, projectMatchesPage } from "@/lib/related-pick";
 import { Container } from "@/components/ui/Container";
 import { RevealGroup } from "@/components/motion/RevealGroup";
 import { FadeIn } from "@/components/motion/HeroSequence";
@@ -9,17 +11,16 @@ import { ProjectCard } from "@/components/blocks/ProjectCards";
 import home from "@/components/blocks/HomeBlocks.module.css";
 import styles from "@/components/blocks/ProjectCards.module.css";
 
-const LIMIT = 3;
-
 /**
  * "Related work" for service, industry and landing pages.
  *
- * Renders nothing when the locale has no published projects, and appears on its
- * own the moment one is published (the fetch is tagged `projects:<locale>`, so
- * the admin's publish revalidates these pages). Projects matching the page's
- * service or industry come first; the rest of the locale's latest work fills
- * the remaining slots, so the section is visible whenever there is anything to
- * show rather than only on an exact match.
+ * Match-only: shows projects picked for the page in the admin (Related work),
+ * then projects whose service (or "also relevant to" list) is this page's
+ * service, or whose industry is this industry page. Unrelated work is never
+ * used as filler; with nothing to show the section is not rendered. It appears
+ * on its own the moment a match is published (the fetches are tagged
+ * `projects:<locale>`, so the admin's publish or save revalidates these pages).
+ * Landing pages read the picks of the service they belong to.
  */
 export async function RelatedProjects({
   locale,
@@ -35,15 +36,19 @@ export async function RelatedProjects({
   /** Landing pages leave the full listing out so they stay self-contained. */
   showViewAll?: boolean;
 }) {
-  const published = await getPublishedProjects(locale);
-  if (published.length === 0) return null;
+  const kind = service ? "service" : "industry";
+  const slug = service ?? category;
+  if (!slug) return null;
 
-  const matches = (project: { service: string; category: string }) =>
-    (!!service && project.service === service) || (!!category && project.category === category);
-  const projects = [
-    ...published.filter(matches),
-    ...published.filter((project) => !matches(project)),
-  ].slice(0, LIMIT);
+  const [published, picks] = await Promise.all([
+    getPublishedProjects(locale),
+    getRelatedPicks(locale, kind, slug),
+  ]);
+  const projects = pickRelated(
+    published.map((project) => ({ ...project, auto: projectMatchesPage(project, kind, slug) })),
+    picks,
+  );
+  if (projects.length === 0) return null;
 
   const copy = getSiteContent(locale).relatedProjects;
 

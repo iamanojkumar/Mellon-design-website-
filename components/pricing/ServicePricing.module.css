@@ -280,16 +280,14 @@
 }
 
 .badge {
+  font-family: var(--font-mono);
+  font-weight: 400;
   justify-self: start;
   align-self: flex-start;
   width: fit-content;
   padding: 0.25em 0.75em;
   border-radius: 999px;
-  font-family: var(--font-body);
   font-size: var(--fs-100, 0.75rem);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   background: var(--color-fg);
   color: var(--color-bg);
 }

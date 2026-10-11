@@ -39,6 +39,12 @@ export type Post = {
   ogDescription: string | null;
   ogImage: string | null;
   noindex: boolean;
+  /** Blog post ids pinned first in "Related articles", in order. */
+  relatedPinned: string[];
+  /** Blog post ids removed from the automatic (same-category) matches. */
+  relatedHidden: string[];
+  /** Optional audio version of the article (a recording of the author). */
+  narrationUrl: string | null;
   createdAt: string;
   updatedAt: string;
 };
@@ -73,6 +79,9 @@ type PostRow = {
   og_description: string | null;
   og_image: string | null;
   noindex: boolean;
+  related_pinned: string[] | null;
+  related_hidden: string[] | null;
+  narration_url: string | null;
   created_at: string;
   updated_at: string;
 };
@@ -103,6 +112,9 @@ function fromRow(row: PostRow): Post {
     ogDescription: row.og_description,
     ogImage: row.og_image,
     noindex: row.noindex,
+    relatedPinned: row.related_pinned ?? [],
+    relatedHidden: row.related_hidden ?? [],
+    narrationUrl: row.narration_url,
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -131,6 +143,9 @@ function toRow(input: PostInput) {
     og_description: input.ogDescription || null,
     og_image: input.ogImage || null,
     noindex: input.noindex,
+    related_pinned: input.relatedPinned,
+    related_hidden: input.relatedHidden,
+    narration_url: input.narrationUrl || null,
   };
 }
 

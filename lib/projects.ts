@@ -57,6 +57,8 @@ export type Project = SeoInput &
     summary: string | null;
     category: string;
     service: string;
+    /** Other services this project is also relevant to (it qualifies for their "Related work"). */
+    alsoServices: string[];
     content: string;
     /** Designed sections that sit alongside the rich-text body. */
     blocks: ProjectBlock[];
@@ -78,6 +80,7 @@ export type ProjectInput = SeoInput &
     summary: string | null;
     category: string;
     service: string;
+    alsoServices: string[];
     content: string;
     blocks: ProjectBlock[];
     featured: boolean;
@@ -93,6 +96,7 @@ type ProjectRow = {
   summary: string | null;
   category: string;
   service: string;
+  also_services: string[] | null;
   hero_image: string | null;
   hero_image_alt: string | null;
   hero_image_width: number | null;
@@ -130,6 +134,7 @@ function fromRow(row: ProjectRow): Project {
     summary: row.summary,
     category: row.category,
     service: row.service,
+    alsoServices: row.also_services ?? [],
     heroImage: row.hero_image,
     heroImageAlt: row.hero_image_alt,
     heroImageWidth: row.hero_image_width,
@@ -167,6 +172,7 @@ function toRow(input: ProjectInput) {
     summary: input.summary || null,
     category: input.category,
     service: input.service,
+    also_services: input.alsoServices.filter((slug) => slug && slug !== input.service),
     hero_image: input.heroImage || null,
     hero_image_alt: input.heroImageAlt || null,
     hero_image_width: input.heroImageWidth ?? null,

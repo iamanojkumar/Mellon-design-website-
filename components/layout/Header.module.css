@@ -522,11 +522,10 @@
 }
 
 .sheetGroupLabel {
+  font-family: var(--font-mono);
+  font-weight: 400;
   margin-bottom: var(--space-2xs);
   font-size: var(--fs-100);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--color-fg-muted);
 }
 

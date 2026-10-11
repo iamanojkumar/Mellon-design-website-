@@ -30,6 +30,10 @@
           "body": "[Confirm: whether client files are ever entered into AI tools, which tools, and what happens to that data. Say plainly if the answer is no.]"
         },
         {
+          "heading": "The quick chat on this site.",
+          "body": "The chat button is an AI assistant that helps you say what you need and fills in the contact form for you to check. It answers from the services and prices published on this site, and nothing else. What you type goes to our AI provider, DeepSeek, so it can write replies, and we don't save the conversation. Nothing reaches us until you press send on the form. Details are in our privacy policy."
+        },
+        {
           "heading": "Review and accountability.",
           "body": "[Confirm: who reviews AI-assisted work before it reaches you, and who answers for it if something is wrong.]"
         },

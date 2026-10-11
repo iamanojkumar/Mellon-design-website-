@@ -9,6 +9,8 @@ import { createMediaUploadAction, convertMediaToAvifAction } from "@/app/admin/a
 import { deleteChatsForPageAction } from "@/app/admin/chat-actions";
 import { RichContentEditor } from "./RichContentEditor";
 import { HeroBgPicker } from "./HeroBgPicker";
+import { RelatedPicker, type PickerCandidate } from "./RelatedPicker";
+import { postMatchesPost } from "@/lib/related-pick";
 import { EntityChatPanel, type ChatTool } from "./EntityChatPanel";
 import appStyles from "./AdminApp.module.css";
 import sideStyles from "./ProjectSidebar.module.css";
@@ -35,6 +37,9 @@ type FormState = {
   ogDescription: string;
   ogImage: string;
   noindex: boolean;
+  relatedPinned: string[];
+  relatedHidden: string[];
+  narrationUrl: string;
 };
 
 const blankForm: FormState = {
@@ -58,6 +63,9 @@ const blankForm: FormState = {
   ogDescription: "",
   ogImage: "",
   noindex: false,
+  relatedPinned: [],
+  relatedHidden: [],
+  narrationUrl: "",
 };
 
 function toForm(post: Post | null): FormState {
@@ -83,6 +91,9 @@ function toForm(post: Post | null): FormState {
     ogDescription: post.ogDescription ?? "",
     ogImage: post.ogImage ?? "",
     noindex: post.noindex,
+    relatedPinned: post.relatedPinned,
+    relatedHidden: post.relatedHidden,
+    narrationUrl: post.narrationUrl ?? "",
   };
 }
 
@@ -136,11 +147,25 @@ export function BlogApp({
   const [chatKey, setChatKey] = useState(() => crypto.randomUUID());
   const [isPending, startTransition] = useTransition();
   const heroFileInputRef = useRef<HTMLInputElement>(null);
+  const narrationFileInputRef = useRef<HTMLInputElement>(null);
+  const [uploadingNarration, setUploadingNarration] = useState(false);
 
   // Categories already in use in this locale, offered as suggestions.
   const categories = [...new Set(posts.map((post) => post.category).filter(Boolean))] as string[];
 
   const selected = posts.find((post) => post.id === selectedId) ?? null;
+
+  const imagesWithoutAlt = (form.content.match(/<img\b[^>]*>/gi) ?? []).filter(
+    (tag) => !/\balt="[^"]+"/i.test(tag),
+  ).length;
+
+  // Other published articles; "auto" follows the category as currently typed.
+  const relatedCandidates: PickerCandidate[] = posts
+    .filter((post) => post.status === "published" && post.id !== selectedId)
+    .map((post) => {
+      const auto = postMatchesPost({ category: form.category }, post);
+      return { id: post.id, title: post.title, auto, reason: auto ? "same category" : undefined };
+    });
   const patch = (next: Partial<FormState>) => setForm((current) => ({ ...current, ...next }));
 
   // The assistant reads these at send/apply time, not when the panel mounted.
@@ -236,6 +261,18 @@ export function BlogApp({
     await deleteChatsForPageAction("blog", selected.id);
     setPosts((current) => current.filter((post) => post.id !== selected.id));
     select(null);
+  };
+
+  const handleNarrationFile = async (file: File) => {
+    setUploadingNarration(true);
+    setError(null);
+    try {
+      patch({ narrationUrl: await uploadFile(file) });
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Upload failed.");
+    } finally {
+      setUploadingNarration(false);
+    }
   };
 
   const handleHeroFile = async (file: File) => {
@@ -515,7 +552,7 @@ export function BlogApp({
               <input
                 id="bp-hero-alt"
                 type="text"
-                placeholder="Describe the image for screen readers and image search"
+                placeholder="Describe the image for screen readers and image search (leave empty only if purely decorative)"
                 value={form.heroImageAlt}
                 onChange={(event) => patch({ heroImageAlt: event.target.value })}
               />
@@ -525,6 +562,51 @@ export function BlogApp({
           <HeroBgPicker value={form.heroBg} onChange={(heroBg) => patch({ heroBg })} />
 
           <div className="a-field">
+            <span className="a-label">Audio version (optional)</span>
+            <div className={editorStyles.heroRow}>
+              <input
+                className="a-input"
+                type="text"
+                placeholder="Paste an audio URL, or upload a recording (mp3, m4a, wav…)"
+                value={form.narrationUrl}
+                onChange={(event) => patch({ narrationUrl: event.target.value })}
+                aria-label="Audio version URL"
+              />
+              <button
+                type="button"
+                className="a-btn"
+                onClick={() => narrationFileInputRef.current?.click()}
+                disabled={uploadingNarration}
+              >
+                {uploadingNarration ? "Uploading…" : "Upload"}
+              </button>
+              {form.narrationUrl && (
+                <button type="button" className="a-btn" onClick={() => patch({ narrationUrl: "" })}>
+                  Remove
+                </button>
+              )}
+              <input
+                ref={narrationFileInputRef}
+                type="file"
+                accept="audio/*"
+                hidden
+                onChange={(event) => {
+                  const file = event.target.files?.[0];
+                  event.target.value = "";
+                  if (file) handleNarrationFile(file);
+                }}
+              />
+            </div>
+            {form.narrationUrl && (
+              <audio controls preload="metadata" src={form.narrationUrl} style={{ width: "100%" }} />
+            )}
+            <p className="a-hint">
+              Shows a player above the article. The written article stays on the page as the
+              transcript, so it works for people who can&apos;t listen too.
+            </p>
+          </div>
+
+          <div className="a-field">
             <span className="a-label">Content</span>
             <RichContentEditor
               // Remount per post: the editor seeds from `value` once.
@@ -532,7 +614,35 @@ export function BlogApp({
               value={form.content}
               onChange={(content) => patch({ content })}
               onUploadFile={uploadFile}
+              language={locale.split("-")[0]}
             />
+            {imagesWithoutAlt > 0 && (
+              <p className="a-hint">
+                {imagesWithoutAlt} image{imagesWithoutAlt === 1 ? "" : "s"} in the text{" "}
+                {imagesWithoutAlt === 1 ? "has" : "have"} no description, so screen readers skip{" "}
+                {imagesWithoutAlt === 1 ? "it" : "them"}. That is right for decoration only; otherwise
+                delete and re-insert with Image, which asks for a description.
+              </p>
+            )}
+          </div>
+
+          <div className="a-field">
+            <span className="a-label">Related articles</span>
+            <RelatedPicker
+              candidates={relatedCandidates}
+              pinned={form.relatedPinned}
+              hidden={form.relatedHidden}
+              onChange={({ pinned, hidden }) => patch({ relatedPinned: pinned, relatedHidden: hidden })}
+              emptyHint={
+                form.category
+                  ? "No other published article shares this category, so no Related articles section shows. Pick some by hand below."
+                  : "Set a category to match articles automatically, or pick some by hand below."
+              }
+            />
+            <p className="a-hint">
+              Shows below the article. Same-category articles appear automatically; pins come first,
+              hidden ones are left out. Only published articles can appear. Click Save to apply.
+            </p>
           </div>
 
           <details className="a-field">

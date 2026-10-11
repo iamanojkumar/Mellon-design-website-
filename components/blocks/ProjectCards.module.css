@@ -53,9 +53,8 @@
 
 .meta {
   font-family: var(--font-mono);
+  font-weight: 400;
   font-size: var(--fs-100);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--color-fg-muted);
 }
 

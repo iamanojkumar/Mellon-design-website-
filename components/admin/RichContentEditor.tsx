@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./RichContentEditor.module.css";
-import { MediaPopover } from "./MediaPopover";
+import { MediaPopover, type MediaMeta } from "./MediaPopover";
 import { EmbedPopover } from "./EmbedPopover";
 
 const getExtension = (filename: string) => {
@@ -28,6 +28,11 @@ const VIDEO_TYPES: Record<string, string> = {
   mov: "video/quicktime",
 };
 
+const AUDIO_TYPES = new Set(["mp3", "m4a", "aac", "wav", "oga", "weba"]);
+
+const escapeAttr = (value: string) =>
+  value.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
 const ALLOWED_IMAGE_MIME = new Set(Object.values(IMAGE_TYPES));
 
 /**
@@ -39,14 +44,17 @@ export function RichContentEditor({
   value,
   onChange,
   onUploadFile,
+  language = "en",
 }: {
   value: string;
   onChange: (next: string) => void;
   onUploadFile: (file: File) => Promise<string>;
+  /** BCP 47 language of the article, written on caption tracks. */
+  language?: string;
 }) {
   const editorRef = useRef<HTMLDivElement | null>(null);
   const toolbarRef = useRef<HTMLDivElement | null>(null);
-  const [activePopover, setActivePopover] = useState<"image" | "video" | "embed" | null>(null);
+  const [activePopover, setActivePopover] = useState<"image" | "video" | "audio" | "embed" | null>(null);
 
   useEffect(() => {
     if (!activePopover) return;
@@ -90,36 +98,63 @@ export function RichContentEditor({
     updateValue();
   };
 
-  const insertImageSrc = (src: string) => {
+  const insertImageSrc = (src: string, meta?: MediaMeta) => {
+    // alt="" marks a decorative image; any other image carries the author's description.
     insertHtmlAtSelection(
-      `<img src="${src}" alt="" loading="lazy" style="max-width:100%;border-radius:4px;margin:12px 0;display:block" />`,
+      `<img src="${escapeAttr(src)}" alt="${escapeAttr(meta?.description ?? "")}" loading="lazy" style="max-width:100%;border-radius:4px;margin:12px 0;display:block" />`,
     );
   };
 
-  const insertVideoSrc = (src: string, type?: string) => {
+  const insertVideoSrc = (src: string, type?: string, meta?: MediaMeta) => {
+    const title = meta?.description ? ` aria-label="${escapeAttr(meta.description)}"` : "";
+    const captions = meta?.captionsUrl
+      ? `<track kind="captions" src="${escapeAttr(meta.captionsUrl)}" srclang="${escapeAttr(language)}" label="${escapeAttr(language)}" default />`
+      : "";
     insertHtmlAtSelection(
-      `<video controls style="max-width:100%;border-radius:4px;margin:12px 0;display:block"><source src="${src}"${
+      `<video controls preload="metadata" playsinline${title} style="max-width:100%;border-radius:4px;margin:12px 0;display:block"><source src="${escapeAttr(src)}"${
         type ? ` type="${type}"` : ""
-      } />Your browser does not support the video tag.</video>`,
+      } />${captions}Your browser does not support the video tag.</video>`,
     );
   };
 
-  const handleImageUpload = async (file: File) => {
+  const insertAudioSrc = (src: string, meta?: MediaMeta) => {
+    const title = meta?.description ? ` aria-label="${escapeAttr(meta.description)}"` : "";
+    insertHtmlAtSelection(
+      `<audio controls preload="metadata" src="${escapeAttr(src)}"${title} style="width:100%;margin:12px 0;display:block"></audio>`,
+    );
+  };
+
+  const handleImageUpload = async (file: File, meta: MediaMeta) => {
     const extension = getExtension(file.name);
     if (!IMAGE_TYPES[extension]) {
       throw new Error(`Unsupported image format ".${extension || "?"}". Use one of: ${Object.keys(IMAGE_TYPES).join(", ")}.`);
     }
     const url = await onUploadFile(file);
-    insertImageSrc(url);
+    insertImageSrc(url, meta);
   };
 
-  const handleVideoUpload = async (file: File) => {
+  const handleVideoUpload = async (file: File, meta: MediaMeta) => {
     const extension = getExtension(file.name);
     if (!VIDEO_TYPES[extension]) {
       throw new Error(`Unsupported video format ".${extension || "?"}". Use one of: ${Object.keys(VIDEO_TYPES).join(", ")}.`);
     }
     const url = await onUploadFile(file);
-    insertVideoSrc(url, VIDEO_TYPES[extension]);
+    insertVideoSrc(url, VIDEO_TYPES[extension], meta);
+  };
+
+  const handleAudioUpload = async (file: File, meta: MediaMeta) => {
+    const extension = getExtension(file.name);
+    if (!AUDIO_TYPES.has(extension)) {
+      throw new Error(`Unsupported audio format ".${extension || "?"}". Use one of: ${[...AUDIO_TYPES].join(", ")}.`);
+    }
+    insertAudioSrc(await onUploadFile(file), meta);
+  };
+
+  const uploadCaption = async (file: File) => {
+    if (getExtension(file.name) !== "vtt") {
+      throw new Error("Captions must be a WebVTT (.vtt) file.");
+    }
+    return onUploadFile(file);
   };
 
   /** Wrapped so a public page can scope or sandbox third-party embeds in CSS. */
@@ -127,12 +162,14 @@ export function RichContentEditor({
     insertHtmlAtSelection(`<div class="embed">${html}</div><p><br /></p>`);
   };
 
-  const handleImageLink = (url: string) => insertImageSrc(url);
+  const handleImageLink = (url: string, meta: MediaMeta) => insertImageSrc(url, meta);
 
-  const handleVideoLink = (url: string) => {
-    const extension = getExtension(url);
-    insertVideoSrc(url, VIDEO_TYPES[extension]);
+  const handleVideoLink = (url: string, meta: MediaMeta) => {
+    const extension = getExtension(url.split(/[?#]/)[0]);
+    insertVideoSrc(url, VIDEO_TYPES[extension], meta);
   };
+
+  const handleAudioLink = (url: string, meta: MediaMeta) => insertAudioSrc(url, meta);
 
   const handlePaste = async (event: React.ClipboardEvent<HTMLDivElement>) => {
     const items = event.clipboardData?.items;
@@ -231,8 +268,9 @@ export function RichContentEditor({
           </button>
           {activePopover === "image" && (
             <MediaPopover
+              kind="image"
               accept="image/*"
-              label="Insert image"
+              label="Insert image or GIF"
               onUpload={handleImageUpload}
               onLink={handleImageLink}
               onClose={() => setActivePopover(null)}
@@ -250,10 +288,32 @@ export function RichContentEditor({
           </button>
           {activePopover === "video" && (
             <MediaPopover
+              kind="video"
               accept="video/*"
               label="Insert video"
               onUpload={handleVideoUpload}
               onLink={handleVideoLink}
+              onUploadCaption={uploadCaption}
+              onClose={() => setActivePopover(null)}
+            />
+          )}
+        </div>
+        <div className={styles.toolbarItem}>
+          <button
+            type="button"
+            className={styles.button}
+            onClick={() => setActivePopover((current) => (current === "audio" ? null : "audio"))}
+            title="Insert audio"
+          >
+            Audio
+          </button>
+          {activePopover === "audio" && (
+            <MediaPopover
+              kind="audio"
+              accept="audio/*"
+              label="Insert audio"
+              onUpload={handleAudioUpload}
+              onLink={handleAudioLink}
               onClose={() => setActivePopover(null)}
             />
           )}

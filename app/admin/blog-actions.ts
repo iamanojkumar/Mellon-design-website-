@@ -42,6 +42,9 @@ export type PostFormInput = {
   ogDescription: string;
   ogImage: string;
   noindex: boolean;
+  relatedPinned: string[];
+  relatedHidden: string[];
+  narrationUrl: string;
 };
 
 async function requireAuthed() {
@@ -71,6 +74,9 @@ function toPostInput(input: PostFormInput): PostInput {
     ogDescription: input.ogDescription.trim() || null,
     ogImage: input.ogImage.trim() || null,
     noindex: input.noindex,
+    relatedPinned: [...new Set(input.relatedPinned)],
+    relatedHidden: [...new Set(input.relatedHidden)].filter((id) => !input.relatedPinned.includes(id)),
+    narrationUrl: input.narrationUrl.trim() || null,
   };
 }
 

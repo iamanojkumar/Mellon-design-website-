@@ -19,11 +19,10 @@
 }
 
 .eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 400;
   display: inline-block;
   font-size: var(--fs-100);
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--color-teal);
   margin-bottom: var(--space-sm);
 }

@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { DM_Mono, Roboto_Flex } from "next/font/google";
+import { Cascadia_Mono, Roboto_Flex } from "next/font/google";
 import { notFound } from "next/navigation";
 import {
   enabledLocaleCodes,
@@ -21,10 +21,10 @@ const robotoFlex = Roboto_Flex({
   display: "swap",
 });
 
-const dmMono = DM_Mono({
+const cascadiaMono = Cascadia_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "500"],
+  weight: "variable",
   display: "swap",
 });
 
@@ -68,7 +68,7 @@ export default async function LocaleLayout({
       <head>
         <SiteHeadTags />
       </head>
-      <body className={`${robotoFlex.variable} ${dmMono.variable}`}>
+      <body className={`${robotoFlex.variable} ${cascadiaMono.variable}`}>
         <SiteBodyStartTags />
         <SmoothScroll />
         {/* CursorFx (WebGL cursor trail) is switched off site-wide; re-add <CursorFx /> to restore. */}

@@ -22,6 +22,7 @@ import { FadeIn } from "@/components/motion/HeroSequence";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import { revealOnLoadClass } from "@/components/motion/attachReveal";
 import { ParallaxRichText } from "@/components/projects/ParallaxRichText";
+import { protectAudioInHtml } from "@/lib/protected-media";
 import styles from "./page.module.css";
 
 /**
@@ -172,7 +173,15 @@ export default async function ProjectDetailPage({
             // Authored in the admin's rich-text editor, which is behind a
             // password and writes its own markup — the same trust boundary as
             // the customHead/customBody fields below.
-            <ParallaxRichText className={styles.body} html={project.content} />
+            <ParallaxRichText
+              className={styles.body}
+              html={protectAudioInHtml(project.content)}
+              labels={{
+                pauseAnimation: site.blogPage.pauseAnimation,
+                playAnimation: site.blogPage.playAnimation,
+                embedTitle: site.blogPage.embedTitle,
+              }}
+            />
           )}
 
           <ProjectBlocks blocks={project.blocks} />

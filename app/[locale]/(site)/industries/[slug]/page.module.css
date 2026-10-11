@@ -17,9 +17,10 @@
 }
 
 .eyebrow {
+  font-family: var(--font-mono);
+  font-weight: 400;
   display: block;
   font-size: var(--fs-200);
-  font-weight: 600;
   color: var(--color-fg-muted);
   margin-bottom: var(--space-2xs);
 }

@@ -191,6 +191,31 @@
     "retry": "Try again",
     "home": "Back to home"
   },
+  "assistant": {
+    "open": "Quick chat",
+    "close": "Close chat",
+    "title": "Quick chat",
+    "subtitle": "Tell us what you need. We'll point you to the right place.",
+    "placeholder": "Type your answer…",
+    "detailsPlaceholder": "Your name and email",
+    "send": "Send",
+    "thinking": "Thinking…",
+    "error": "That didn't go through.",
+    "retry": "Try again",
+    "useForm": "Prefer a form?",
+    "fallbackWelcome": "What are you looking to get done?",
+    "fallbackSuggestions": [
+      "I'd like to start a project",
+      "I'm comparing design studios",
+      "I have a question about your services"
+    ],
+    "editNote": "We've filled this in from our chat. Check it, change anything that's off, then send.",
+    "backToChat": "Back to chat",
+    "note": "At Mellon we handle sensitive information with care. Read our {privacy} and {ai}.",
+    "noteNoAi": "At Mellon we handle sensitive information with care. Read our {privacy}.",
+    "privacyLink": "privacy policy",
+    "aiLink": "AI policy"
+  },
   "forms": {
     "contact": {
       "successMessage": "Thanks — your message is in. We'll reply within one business day.",

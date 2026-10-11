@@ -86,6 +86,16 @@
   }
 }
 
+/* Inside the quick-chat panel: always one column, and tighter. */
+.plain {
+  gap: var(--space-sm);
+}
+
+.plain .row {
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
 .privacy {
   font-size: var(--fs-100);
   color: var(--color-fg-muted);

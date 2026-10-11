@@ -1,0 +1,5 @@
+[
+  { "location": "/api/media/*", "tdm-reservation": 1, "tdm-policy": "/ai.txt" },
+  { "location": "/images/*", "tdm-reservation": 1, "tdm-policy": "/ai.txt" },
+  { "location": "/brand/*", "tdm-reservation": 1, "tdm-policy": "/ai.txt" }
+]

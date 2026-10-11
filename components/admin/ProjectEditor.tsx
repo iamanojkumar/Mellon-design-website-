@@ -296,6 +296,36 @@ export function ProjectEditor({
         </div>
       </div>
 
+      {services.filter((service) => service.slug !== form.service).length > 0 && (
+        <div className="a-field">
+          <span className="a-label">Also relevant to</span>
+          <div className={styles.duplicateRow} style={{ flexWrap: "wrap" }}>
+            {services
+              .filter((service) => service.slug !== form.service)
+              .map((service) => (
+                <label key={service.slug} className={styles.checkbox}>
+                  <input
+                    type="checkbox"
+                    checked={form.alsoServices.includes(service.slug)}
+                    onChange={(event) =>
+                      onChange({
+                        alsoServices: event.target.checked
+                          ? [...form.alsoServices, service.slug]
+                          : form.alsoServices.filter((slug) => slug !== service.slug),
+                      })
+                    }
+                  />
+                  <span>{service.name}</span>
+                </label>
+              ))}
+          </div>
+          <p className="a-hint">
+            Ticked services can show this project under their &ldquo;Related work&rdquo;, in
+            addition to the main service. Fine-tune each page under Related work in the sidebar.
+          </p>
+        </div>
+      )}
+
       <div className="a-field">
         <span className="a-label">Hero image</span>
         <div className={styles.heroRow}>

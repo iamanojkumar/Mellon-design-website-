@@ -8,6 +8,7 @@ import styles from "./AdminNav.module.css";
 
 const ITEMS = [
   { href: "/admin", label: "Projects" },
+  { href: "/admin/related", label: "Related work" },
   { href: "/admin/blog", label: "Blog" },
   { href: "/admin/indexing", label: "Indexing" },
   { href: "/admin/landing-pages", label: "Landing pages (code)" },

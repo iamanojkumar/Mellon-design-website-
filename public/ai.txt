@@ -1,0 +1,31 @@
+# AI use policy for this website. Copyright (c) Mellon. All rights reserved.
+# Also see /robots.txt and /.well-known/tdmrep.json
+
+# TEXT
+# The written text of public pages may be read, quoted briefly with a link and
+# attribution, and used to answer a person's question or to power search.
+# Text may not be reproduced in full, republished, or used to train or
+# fine-tune a model without a written licence from Mellon.
+
+# MEDIA
+# Audio, voice recordings, video, GIFs, images, illustrations, logos, brand
+# assets and page designs are NOT licensed for any AI use. This is an express
+# reservation of rights under Article 4(3) of EU Directive 2019/790 and
+# equivalent laws in other countries.
+
+
+# Forbidden for media, without exception:
+#  1. Collecting, scraping or downloading, including by automated agents
+#     acting for a person.
+#  2. Training, fine-tuning, distilling, evaluating or benchmarking any model.
+#  3. Cloning, imitating or synthesising a voice from any recording, or
+#     producing a model of a voice.
+#  4. Generating images, audio or video "in the style of" this work from
+#     copies of it.
+#  5. Transcribing audio into a dataset, or including any media in one.
+#  6. Removing or ignoring watermarks, metadata, notices or access controls.
+
+# Narration recordings are the personal voice of their speaker. Voice cloning
+# and synthetic reproduction are prohibited without written consent.
+
+# To ask for a licence, use the contact page on this site.

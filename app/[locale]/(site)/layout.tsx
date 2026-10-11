@@ -3,6 +3,8 @@ import { getSiteContent } from "@/lib/content";
 import { Header } from "@/components/layout/Header";
 import { getMegaMenus } from "@/lib/mega-menu";
 import { Footer } from "@/components/layout/Footer";
+import { ChatWidget } from "@/components/assistant/ChatWidget";
+import { isCompanyPagePublished } from "@/lib/company-pages";
 
 /**
  * Chrome for the marketing site. The route group adds nothing to the URL; it
@@ -26,6 +28,12 @@ export default async function SiteLayout({
       </a>
       <Header locale={locale} nav={site.nav.primary} cta={site.nav.cta} common={site.common} mega={getMegaMenus(locale)} />
       <main id="main">{children}</main>
+      <ChatWidget
+        locale={locale}
+        copy={site.assistant}
+        form={site.forms.contact}
+        aiPolicyHref={isCompanyPagePublished(locale, "ai") ? `/${locale}/about/ai` : null}
+      />
       <Footer locale={locale} footer={site.footer} org={site.org} languageSwitcher={site.common.languageSwitcher} />
     </>
   );

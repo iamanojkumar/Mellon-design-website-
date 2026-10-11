@@ -158,6 +158,7 @@ export type ProjectFormInput = {
   summary: string;
   category: string;
   service: string;
+  alsoServices: string[];
   heroImage: string;
   heroImageAlt: string;
   heroImageWidth: number | null;
@@ -191,6 +192,7 @@ function toProjectInput(input: ProjectFormInput): ProjectInput {
     summary: input.summary.trim() || null,
     category: input.category,
     service: input.service,
+    alsoServices: input.alsoServices.filter((slug) => slug && slug !== input.service),
     heroImage: input.heroImage.trim() || null,
     heroImageAlt: input.heroImageAlt.trim() || null,
     heroImageWidth: input.heroImageWidth,
@@ -353,6 +355,7 @@ export async function duplicateProjectAction(
       // so these carry over as-is.
       category: source.category,
       service: source.service,
+      alsoServices: source.alsoServices,
       heroImage: source.heroImage,
       // Dimensions travel with the image; the alt text is prose, so it is
       // re-written per locale rather than carried over in the source language.

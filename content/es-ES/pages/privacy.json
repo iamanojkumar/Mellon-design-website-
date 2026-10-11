@@ -11,7 +11,7 @@
       "subhead": "Esta política explica qué datos personales recoge Mellon Design a través de este sitio web, cómo los usamos y qué opciones tienes. La mantenemos breve porque recogemos muy pocos datos.",
       "updated": {
         "label": "Última actualización",
-        "date": "2026-09-27"
+        "date": "2026-10-11"
       }
     },
     {
@@ -30,12 +30,16 @@
           "body": "Para leer y responder a tu consulta y mantener un registro de la conversación. Las consultas se guardan en una base de datos y recibimos un aviso por correo. No vendemos tus datos."
         },
         {
+          "heading": "Chat rápido",
+          "body": "El botón de chat de este sitio es un asistente de IA que te ayuda a describir lo que necesitas. Lo que escribes en él se envía a nuestro proveedor de IA, DeepSeek, para que pueda redactar las respuestas. No guardamos la conversación. Cuando el asistente tiene lo que necesita, rellena el formulario de contacto para que lo revises. No nos llega nada hasta que pulsas enviar, y entonces se trata como cualquier otra consulta. Evita escribir en el chat información sensible, como contraseñas o datos de pago."
+        },
+        {
           "heading": "Cookies",
           "body": "Una pequeña cookie funcional, mellon_locale, recuerda el idioma que elegiste; dura hasta un año y no contiene datos personales. Más allá de eso, primero te pedimos consentimiento. El banner ofrece tres categorías —analíticas, marketing y funcionales— y solo activamos las que aceptes. Tu elección se guarda en tu navegador como mellon_consent_v3; si cierras el banner sin decidir, solo recordamos eso, y únicamente durante la sesión actual (mellon_consent_dismissed). Puedes cambiar de opinión cuando quieras con el enlace «Preferencias de cookies» al final de cualquier página."
         },
         {
           "heading": "Con quién los compartimos",
-          "body": "Solo con proveedores que nos ayudan a operar el sitio: alojamiento (Vercel), almacenamiento de consultas y alojamiento de imágenes (Supabase) y correo (Zoho), y solo en la medida necesaria para su trabajo. Las herramientas de análisis y marketing, si las permites, reciben los datos de navegación habituales que recogen. También usamos un proveedor de IA (DeepSeek) para traducir y redactar el texto de nuestras propias páginas y casos de estudio; nunca recibe tu consulta ni ningún otro dato personal. También podemos divulgar información si la ley lo exige."
+          "body": "Solo con proveedores que nos ayudan a operar el sitio: alojamiento (Vercel), almacenamiento de consultas y alojamiento de imágenes (Supabase) y correo (Zoho), y solo en la medida necesaria para su trabajo. Las herramientas de análisis y marketing, si las permites, reciben los datos de navegación habituales que recogen. También usamos un proveedor de IA (DeepSeek) para traducir y redactar el texto de nuestras propias páginas y casos de estudio, y para el chat rápido descrito arriba. Nunca recibe la consulta que envías por el formulario de contacto. También podemos divulgar información si la ley lo exige."
         },
         {
           "heading": "Cuánto tiempo los conservamos",
