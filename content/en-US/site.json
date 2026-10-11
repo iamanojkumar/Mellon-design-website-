@@ -61,6 +61,10 @@
             "href": "/blog"
           },
           {
+            "label": "Shop",
+            "href": "https://shop.mellon.design/"
+          },
+          {
             "label": "Contact",
             "href": "/contact"
           }
@@ -160,6 +164,14 @@
     "intro": "Plain-spoken guides on design, pricing and choosing an agency.",
     "empty": "No posts yet.",
     "readMore": "Read the post",
+    "listenTitle": "Listen to this article",
+    "listenNote": "Audio version. The full text is below.",
+    "listenRights": "© Mellon. All rights reserved. This recording may not be copied, redistributed, or used to train, clone or imitate a voice with AI.",
+    "pauseAnimation": "Pause animation",
+    "playAnimation": "Play animation",
+    "embedTitle": "Embedded content",
+    "relatedEyebrow": "Keep reading",
+    "relatedHeadline": "Related articles.",
     "cta": {
       "headline": "Start with a conversation.",
       "body": "Tell us what you're building. We'll tell you plainly whether we're the right studio.",

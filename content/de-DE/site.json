@@ -51,6 +51,10 @@
             "href": "/blog"
           },
           {
+            "label": "Shop",
+            "href": "https://shop.mellon.design/"
+          },
+          {
             "label": "Kontakt",
             "href": "/contact"
           }

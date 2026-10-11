@@ -70,7 +70,13 @@ export function Footer({ locale, footer, org, languageSwitcher }: FooterProps) {
             <RevealGroup as="ul">
               {column.links.map((link) => (
                 <li key={link.href}>
-                  <Link href={`${localePrefix}${link.href}`}>{link.label}</Link>
+                  {/^https?:\/\//.test(link.href) ? (
+                    <a href={link.href} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link href={`${localePrefix}${link.href}`}>{link.label}</Link>
+                  )}
                 </li>
               ))}
             </RevealGroup>
