@@ -303,7 +303,6 @@
 
 .closingInner {
   padding-block: var(--space-2xl);
-  max-width: 720px;
 }
 
 /* Closing section with the enquiry form: copy on the left, form on the right. */
@@ -311,7 +310,6 @@
   display: grid;
   gap: var(--space-xl);
   grid-template-columns: 1fr;
-  max-width: none;
 }
 
 @media (min-width: 900px) {
@@ -323,11 +321,13 @@
 }
 
 .closingHeadline {
+  max-width: 24ch;
   font-size: clamp(var(--fs-600), 3.6vw, var(--fs-700));
   margin-bottom: var(--space-sm);
 }
 
 .closingBody {
+  max-width: 58ch;
   color: var(--color-fg-muted);
   font-size: var(--fs-300);
   margin-bottom: var(--space-lg);
