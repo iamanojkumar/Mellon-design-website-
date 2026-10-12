@@ -11,6 +11,8 @@ export type MediaMeta = {
   decorative: boolean;
   /** Video only: URL of a WebVTT captions file, or "". */
   captionsUrl: string;
+  /** Visible caption shown under the media (a <figcaption>), or "". */
+  caption: string;
 };
 
 export type MediaKind = "image" | "video" | "audio";
@@ -34,16 +36,22 @@ export function MediaPopover({
   kind,
   accept,
   label,
+  initial,
   onUpload,
   onLink,
+  onSave,
   onUploadCaption,
   onClose,
 }: {
   kind: MediaKind;
-  accept: string;
+  accept?: string;
   label: string;
-  onUpload: (file: File, meta: MediaMeta) => Promise<void>;
-  onLink: (url: string, meta: MediaMeta) => void;
+  /** Prefills the fields when editing media already in the text. */
+  initial?: Partial<MediaMeta>;
+  onUpload?: (file: File, meta: MediaMeta) => Promise<void>;
+  onLink?: (url: string, meta: MediaMeta) => void;
+  /** Edit mode: no upload or link, just a Save for the fields. */
+  onSave?: (meta: MediaMeta) => void;
   /** Video only: stores a .vtt file and returns its public URL. */
   onUploadCaption?: (file: File) => Promise<string>;
   onClose: () => void;
@@ -51,9 +59,10 @@ export function MediaPopover({
   const fileInputRef = useRef<HTMLInputElement>(null);
   const captionInputRef = useRef<HTMLInputElement>(null);
   const [url, setUrl] = useState("");
-  const [description, setDescription] = useState("");
-  const [decorative, setDecorative] = useState(false);
-  const [captionsUrl, setCaptionsUrl] = useState("");
+  const [description, setDescription] = useState(initial?.description ?? "");
+  const [decorative, setDecorative] = useState(initial?.decorative ?? false);
+  const [captionsUrl, setCaptionsUrl] = useState(initial?.captionsUrl ?? "");
+  const [caption, setCaption] = useState(initial?.caption ?? "");
   const [uploading, setUploading] = useState(false);
   const [uploadingCaption, setUploadingCaption] = useState(false);
   const [error, setError] = useState("");
@@ -62,6 +71,7 @@ export function MediaPopover({
     description: decorative ? "" : description.trim(),
     decorative,
     captionsUrl: captionsUrl.trim(),
+    caption: caption.trim(),
   });
 
   // An image must either say what it shows or be marked decorative; the other
@@ -72,13 +82,13 @@ export function MediaPopover({
       setError("Describe the image, or tick “Decorative” if it adds nothing to the text.");
       return false;
     }
+    setError("");
     return true;
   };
 
   const handleFile = async (file: File) => {
-    if (!guard()) return;
+    if (!onUpload || !guard()) return;
     setUploading(true);
-    setError("");
     try {
       await onUpload(file, meta());
       onClose();
@@ -91,8 +101,14 @@ export function MediaPopover({
 
   const handleLinkSubmit = () => {
     const trimmed = url.trim();
-    if (!trimmed || !guard()) return;
+    if (!onLink || !trimmed || !guard()) return;
     onLink(trimmed, meta());
+    onClose();
+  };
+
+  const handleSave = () => {
+    if (!onSave || !guard()) return;
+    onSave(meta());
     onClose();
   };
 
@@ -109,6 +125,8 @@ export function MediaPopover({
     }
   };
 
+  const id = (name: string) => `media-${name}-${kind}${onSave ? "-edit" : ""}`;
+
   return (
     <div className={styles.popover}>
       <div className={styles.header}>
@@ -118,19 +136,22 @@ export function MediaPopover({
         </button>
       </div>
 
-      <label className={styles.fieldLabel} htmlFor={`media-desc-${kind}`}>
+      <label className={styles.fieldLabel} htmlFor={id("desc")}>
         {COPY[kind].label}
       </label>
       <input
-        id={`media-desc-${kind}`}
+        id={id("desc")}
         type="text"
         className={styles.linkInput}
         value={description}
-        onChange={(event) => setDescription(event.target.value)}
+        onChange={(event) => {
+          setDescription(event.target.value);
+          if (error) setError("");
+        }}
         disabled={decorative}
-        aria-describedby={`media-desc-hint-${kind}`}
+        aria-describedby={id("desc-hint")}
       />
-      <p id={`media-desc-hint-${kind}`} className={styles.hint}>
+      <p id={id("desc-hint")} className={styles.hint}>
         {COPY[kind].hint}
       </p>
       {kind === "image" && (
@@ -138,15 +159,33 @@ export function MediaPopover({
           <input
             type="checkbox"
             checked={decorative}
-            onChange={(event) => setDecorative(event.target.checked)}
+            onChange={(event) => {
+              setDecorative(event.target.checked);
+              if (error) setError("");
+            }}
           />
           <span>Decorative — screen readers skip it</span>
         </label>
       )}
 
+      <label className={styles.fieldLabel} htmlFor={id("caption")}>
+        Caption, optional
+      </label>
+      <input
+        id={id("caption")}
+        type="text"
+        className={styles.linkInput}
+        value={caption}
+        onChange={(event) => setCaption(event.target.value)}
+        aria-describedby={id("caption-hint")}
+      />
+      <p id={id("caption-hint")} className={styles.hint}>
+        Shown under the {kind} for every reader.
+      </p>
+
       {kind === "video" && onUploadCaption && (
         <>
-          <span className={styles.fieldLabel}>Captions (.vtt), optional</span>
+          <span className={styles.fieldLabel}>Subtitles (.vtt), optional</span>
           <div className={styles.linkRow}>
             <input
               type="text"
@@ -154,7 +193,7 @@ export function MediaPopover({
               placeholder="Upload a .vtt file or paste its URL"
               value={captionsUrl}
               onChange={(event) => setCaptionsUrl(event.target.value)}
-              aria-label="Captions file URL"
+              aria-label="Subtitles file URL"
             />
             <button
               type="button"
@@ -183,40 +222,50 @@ export function MediaPopover({
         </>
       )}
 
-      <button
-        type="button"
-        className={styles.uploadButton}
-        onClick={() => fileInputRef.current?.click()}
-        disabled={uploading}
-      >
-        {uploading ? "Uploading…" : "Upload from device"}
-      </button>
-      <input
-        ref={fileInputRef}
-        type="file"
-        accept={accept}
-        hidden
-        onChange={(event) => {
-          const file = event.target.files?.[0];
-          event.target.value = "";
-          if (file) handleFile(file);
-        }}
-      />
-      <div className={styles.divider}>or paste a link</div>
-      <div className={styles.linkRow}>
-        <input
-          type="text"
-          className={styles.linkInput}
-          placeholder="https://…"
-          value={url}
-          onChange={(event) => setUrl(event.target.value)}
-          onKeyDown={(event) => event.key === "Enter" && handleLinkSubmit()}
-          aria-label="Media URL"
-        />
-        <button type="button" className={styles.insertButton} onClick={handleLinkSubmit} disabled={!url.trim()}>
-          Insert
+      {onSave ? (
+        <button type="button" className={styles.uploadButton} onClick={handleSave}>
+          Save
         </button>
-      </div>
+      ) : (
+        <>
+          <button
+            type="button"
+            className={styles.uploadButton}
+            // Check the alt text first, so the author isn't sent to pick a file
+            // only to have it rejected afterwards.
+            onClick={() => guard() && fileInputRef.current?.click()}
+            disabled={uploading}
+          >
+            {uploading ? "Uploading…" : "Upload from device"}
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept={accept}
+            hidden
+            onChange={(event) => {
+              const file = event.target.files?.[0];
+              event.target.value = "";
+              if (file) handleFile(file);
+            }}
+          />
+          <div className={styles.divider}>or paste a link</div>
+          <div className={styles.linkRow}>
+            <input
+              type="text"
+              className={styles.linkInput}
+              placeholder="https://…"
+              value={url}
+              onChange={(event) => setUrl(event.target.value)}
+              onKeyDown={(event) => event.key === "Enter" && handleLinkSubmit()}
+              aria-label="Media URL"
+            />
+            <button type="button" className={styles.insertButton} onClick={handleLinkSubmit} disabled={!url.trim()}>
+              Insert
+            </button>
+          </div>
+        </>
+      )}
       {error && (
         <div className={styles.error} role="alert">
           {error}

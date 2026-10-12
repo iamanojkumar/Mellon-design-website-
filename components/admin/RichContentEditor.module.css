@@ -1,10 +1,13 @@
+/* No overflow: hidden here: it clipped the insert popovers, hiding the
+   upload button and its error message when the text was short. */
 .wrapper {
+  position: relative;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  overflow: hidden;
 }
 
 .toolbar {
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -62,4 +65,64 @@
 .editor :global(a) {
   color: var(--color-accent);
   text-decoration: underline;
+}
+
+/* Media blocks: click to select, then edit, move or delete from .mediaBar. */
+.editor :global(figure) {
+  position: relative;
+  cursor: pointer;
+}
+
+.editor :global(figcaption) {
+  margin-top: var(--space-2xs);
+  font-size: var(--fs-200);
+  color: var(--color-fg-muted);
+}
+
+.editor :global(img),
+.editor :global(.embed) {
+  cursor: pointer;
+}
+
+.editor :global([data-selected]) {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.uploading {
+  display: inline-block;
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  background: var(--color-paper-tint);
+  color: var(--color-fg-muted);
+  font-size: var(--fs-200);
+}
+
+.mediaBar {
+  position: absolute;
+  z-index: 15;
+  display: flex;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs);
+  background: var(--color-fg-inverted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--admin-shadow-popover);
+  font-family: var(--font-mono);
+}
+
+.mediaButton {
+  padding: var(--space-2xs) var(--space-xs);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-100);
+  white-space: nowrap;
+}
+
+.mediaButton:hover {
+  background: var(--color-paper-tint);
+}
+
+.deleteButton {
+  color: var(--color-brand-red);
 }

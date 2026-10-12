@@ -156,7 +156,7 @@ export function BlogApp({
   const selected = posts.find((post) => post.id === selectedId) ?? null;
 
   const imagesWithoutAlt = (form.content.match(/<img\b[^>]*>/gi) ?? []).filter(
-    (tag) => !/\balt="[^"]+"/i.test(tag),
+    (tag) => !/\balt="[^"]+"/i.test(tag) && !/\brole="presentation"/i.test(tag),
   ).length;
 
   // Other published articles; "auto" follows the category as currently typed.
@@ -620,8 +620,8 @@ export function BlogApp({
               <p className="a-hint">
                 {imagesWithoutAlt} image{imagesWithoutAlt === 1 ? "" : "s"} in the text{" "}
                 {imagesWithoutAlt === 1 ? "has" : "have"} no description, so screen readers skip{" "}
-                {imagesWithoutAlt === 1 ? "it" : "them"}. That is right for decoration only; otherwise
-                delete and re-insert with Image, which asks for a description.
+                {imagesWithoutAlt === 1 ? "it" : "them"}. Click the image in the editor and choose
+                &ldquo;Alt text &amp; caption&rdquo; to describe it, or mark it decorative.
               </p>
             )}
           </div>
