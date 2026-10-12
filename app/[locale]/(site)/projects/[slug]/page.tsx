@@ -162,6 +162,8 @@ export default async function ProjectDetailPage({
                 height={project.heroImageHeight ?? undefined}
                 // The hero is the LCP element, so it must not be lazy.
                 priority
+                // Case-study heroes are screenshots: drift without cropping.
+                fit="contain"
               />
             </div>
           )}

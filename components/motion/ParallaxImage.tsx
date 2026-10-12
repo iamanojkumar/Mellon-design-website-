@@ -19,12 +19,30 @@ import { attachReveal } from "./attachReveal";
  * a dozen layout reads per frame; off-screen images are unregistered from the
  * loop entirely rather than computed and thrown away.
  *
+ * That is the "cover" fit, and the scale crops the picture's edges, which is
+ * fine for card thumbnails but not for screenshots. The "contain" fit never
+ * scales: the frame reserves a small band above and below the image (padding,
+ * so it is only added while the effect runs) and the whole image drifts inside
+ * it, so every pixel stays visible.
+ *
  * Skipped for reduced-motion, where it simply renders a static image.
  */
+
+export type ParallaxFit = "cover" | "contain";
+
+/**
+ * Contain-fit drift in px per unit of parallaxStrength: the default 0.08 gives
+ * ±24px. Tied to a fixed scale rather than the image's height, because a
+ * full-page screenshot is thousands of px tall and would get a huge gap.
+ */
+const CONTAIN_TRAVEL_PER_STRENGTH = 300;
 
 type Entry = {
   frame: HTMLElement;
   img: HTMLImageElement;
+  fit: ParallaxFit;
+  /** Contain fit: the padding last written on the frame, to skip no-op writes. */
+  reserved: number;
   /** Eased value chasing the raw scroll progress, so the drift lags slightly. */
   current: number;
   target: number;
@@ -50,12 +68,26 @@ function tick() {
     entry.target = progress;
     entry.current += (entry.target - entry.current) * parallaxEase;
 
+    if (entry.fit === "contain") {
+      const travel = Math.round(parallaxStrength * CONTAIN_TRAVEL_PER_STRENGTH);
+      reserve(entry, travel);
+      entry.img.style.transform = `translate3d(0, ${(entry.current * travel).toFixed(2)}px, 0)`;
+      continue;
+    }
+
     const shift = entry.current * parallaxStrength * rect.height;
     const scale = 1 + 2 * parallaxStrength;
     entry.img.style.transform = `translate3d(0, ${shift.toFixed(2)}px, 0) scale(${scale.toFixed(4)})`;
   }
 
   raf = active.size > 0 ? requestAnimationFrame(tick) : 0;
+}
+
+/** Contain fit: room above and below the image for it to drift into. */
+function reserve(entry: Entry, travel: number) {
+  if (entry.reserved === travel) return;
+  entry.reserved = travel;
+  entry.frame.style.paddingBlock = travel ? `${travel}px` : "";
 }
 
 function start() {
@@ -86,14 +118,27 @@ function getObserver(): IntersectionObserver {
  * Exported so images this component didn't render — e.g. ones inside
  * editor-authored HTML — can join the same shared loop.
  */
-export function attachParallax(frame: HTMLElement, img: HTMLImageElement): () => void {
+export function attachParallax(
+  frame: HTMLElement,
+  img: HTMLImageElement,
+  fit: ParallaxFit = "cover",
+): () => void {
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   let entry: Entry | null = null;
+  const imgRadius = img.style.borderRadius;
 
   const attach = () => {
     if (entry || !getSettings().parallaxEnabled || reduced.matches) return;
-    entry = { frame, img, current: 0, target: 0 };
+    entry = { frame, img, fit, reserved: 0, current: 0, target: 0 };
     registry.set(frame, entry);
+    if (fit === "contain") {
+      // The image no longer fills the frame, so the frame's rounded corners
+      // would round the empty band instead; give them to the image.
+      img.style.borderRadius = getComputedStyle(frame).borderRadius;
+      // Reserve the band now, not on the first frame, so the layout doesn't
+      // jump when the image scrolls into range.
+      reserve(entry, Math.round(getSettings().parallaxStrength * CONTAIN_TRAVEL_PER_STRENGTH));
+    }
     getObserver().observe(frame);
   };
 
@@ -102,10 +147,12 @@ export function attachParallax(frame: HTMLElement, img: HTMLImageElement): () =>
     getObserver().unobserve(frame);
     active.delete(entry);
     registry.delete(frame);
-    entry = null;
     // Hand the image back exactly as it was, so a disabled effect leaves no
     // residual transform behind.
+    reserve(entry, 0);
     img.style.transform = "";
+    img.style.borderRadius = imgRadius;
+    entry = null;
   };
 
   const sync = () => {
@@ -131,6 +178,7 @@ export function ParallaxImage({
   height,
   priority = false,
   revealOnView = false,
+  fit = "cover",
 }: {
   src: string;
   alt: string;
@@ -142,6 +190,8 @@ export function ParallaxImage({
   priority?: boolean;
   /** Also reveal the frame bottom-to-top when it scrolls into view. */
   revealOnView?: boolean;
+  /** "contain" keeps the whole image visible; use it for screenshots. */
+  fit?: ParallaxFit;
 }) {
   const ref = useRef<HTMLImageElement>(null);
 
@@ -149,13 +199,13 @@ export function ParallaxImage({
     const img = ref.current;
     const frame = img?.parentElement;
     if (!img || !frame) return;
-    const detachParallax = attachParallax(frame, img);
+    const detachParallax = attachParallax(frame, img, fit);
     const detachReveal = revealOnView ? attachReveal(frame, img) : undefined;
     return () => {
       detachParallax();
       detachReveal?.();
     };
-  }, [revealOnView]);
+  }, [revealOnView, fit]);
 
   return (
     // eslint-disable-next-line @next/next/no-img-element

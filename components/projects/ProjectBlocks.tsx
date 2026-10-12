@@ -66,12 +66,13 @@ export function ProjectBlocks({ blocks }: { blocks: ProjectBlock[] }) {
                 {block.heading && <h2 className={styles.heading}>{block.heading}</h2>}
                 <div className={styles.gallery}>
                   {block.images.map((image, i) => (
-                    // The frame clips the drifting image; ParallaxImage moves it.
+                    // The frame holds the drifting image; ParallaxImage moves it uncropped.
                     <div key={i} className={styles.galleryFrame}>
                       <ParallaxImage
                         src={image.src}
                         alt={image.alt}
                         revealOnView
+                        fit="contain"
                         className={styles.galleryImage}
                       />
                     </div>

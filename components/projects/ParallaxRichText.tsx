@@ -16,7 +16,8 @@ const isGif = (src: string) => /\.gif($|[?#])/i.test(src);
 
 /**
  * Renders editor-authored HTML and gives the images in it the same scroll
- * parallax as the rest of the page. The markup is a raw string, so React can't
+ * parallax as the rest of the page, in the "contain" fit so screenshots are
+ * never cropped. The markup is a raw string, so React can't
  * wrap those <img> tags itself: after mount each one is wrapped in a clipping
  * frame and joined to the shared parallax loop. React never re-touches the
  * injected HTML (the string is unchanged), and the cleanup unwraps everything,
@@ -82,7 +83,7 @@ export function ParallaxRichText({
       img.style.willChange = "transform";
       img.style.transformOrigin = "center";
 
-      const detach = attachParallax(frame, img);
+      const detach = attachParallax(frame, img, "contain");
       const detachReveal = attachReveal(frame, img);
       cleanups.push(() => {
         detach();

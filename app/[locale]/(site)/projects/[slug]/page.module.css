@@ -45,6 +45,16 @@
   border-radius: var(--radius-md);
 }
 
+/* The hero parallaxes in the "contain" fit, which pads the frame so the image
+   can drift without being cropped. Reserved here from the first paint (same
+   24px the script writes at the default strength) so the LCP image doesn't
+   shift down when the script starts. */
+@media (prefers-reduced-motion: no-preference) {
+  .heroFrame {
+    padding-block: 24px;
+  }
+}
+
 .hero {
   width: 100%;
   height: auto;
@@ -81,6 +91,16 @@
   max-width: 100%;
   height: auto;
   border-radius: var(--radius-sm);
+}
+
+.body figure {
+  margin: 0;
+}
+
+.body figcaption {
+  margin-top: var(--space-xs);
+  font-size: var(--fs-200);
+  color: var(--color-fg-muted);
 }
 
 .body ul,
