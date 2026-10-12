@@ -111,7 +111,29 @@
     }
   },
   "projectsPage": {
-    "label": "Projekte"
+    "label": "Projekte",
+    "lightbox": {
+      "open": "Vollbild anzeigen",
+      "close": "Schließen",
+      "previous": "Vorheriges Bild",
+      "next": "Nächstes Bild",
+      "counter": "{current} von {total}",
+      "dialog": "Bildbetrachter",
+      "thumbnails": "Alle Bilder"
+    },
+    "sidebar": {
+      "label": "Zu diesem Projekt",
+      "servicesEyebrow": "Leistungen",
+      "servicesHeading": "Passende Leistungen",
+      "projectsEyebrow": "Projekte",
+      "projectsHeading": "Ähnliche Projekte"
+    },
+    "cta": {
+      "eyebrow": "Projekt starten",
+      "headline": "Planen Sie etwas Ähnliches?",
+      "body": "Erzählen Sie uns, was Sie vorhaben und wo Sie heute stehen. Wir sagen Ihnen offen, ob wir das richtige Studio dafür sind.",
+      "directEmailLabel": "Oder schreiben Sie uns direkt an"
+    }
   },
   "relatedProjects": {
     "eyebrow": "Ausgewählte Arbeiten",
@@ -155,5 +177,9 @@
         "message": "Erzählen Sie uns bitte etwas mehr – mindestens 20 Zeichen."
       }
     }
+  },
+  "blogPage": {
+    "pauseAnimation": "Animation anhalten",
+    "playAnimation": "Animation abspielen"
   }
 }

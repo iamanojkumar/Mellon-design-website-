@@ -1,0 +1,53 @@
+/* Same band and two-column layout as the landing pages' quote section. */
+.section {
+  padding-block: var(--space-2xl);
+  background: #dff3e6;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--fs-100);
+  color: var(--color-teal);
+  margin-bottom: var(--space-sm);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  font-size: var(--fs-700);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-sm);
+}
+
+.text {
+  color: var(--color-fg-muted);
+  max-width: 52ch;
+  margin-bottom: var(--space-md);
+}
+
+.direct {
+  font-size: var(--fs-200);
+  color: var(--color-fg-muted);
+}
+
+.direct a {
+  font-weight: 600;
+  color: var(--color-fg);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

@@ -149,7 +149,29 @@
     }
   },
   "projectsPage": {
-    "label": "Projects"
+    "label": "Projects",
+    "lightbox": {
+      "open": "View full screen",
+      "close": "Close",
+      "previous": "Previous image",
+      "next": "Next image",
+      "counter": "{current} of {total}",
+      "dialog": "Image viewer",
+      "thumbnails": "All images"
+    },
+    "sidebar": {
+      "label": "Related to this project",
+      "servicesEyebrow": "Services",
+      "servicesHeading": "Related services",
+      "projectsEyebrow": "Projects",
+      "projectsHeading": "Related projects"
+    },
+    "cta": {
+      "eyebrow": "Start a project",
+      "headline": "Planning something like this?",
+      "body": "Tell us what you're building and where things stand today. We'll tell you plainly whether we're the right studio.",
+      "directEmailLabel": "Or write to us directly at"
+    }
   },
   "relatedProjects": {
     "eyebrow": "Selected work",

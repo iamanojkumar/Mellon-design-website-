@@ -27,6 +27,9 @@ const isGif = (src: string) => /\.gif($|[?#])/i.test(src);
  *  - Animated GIFs get a pause/play button (WCAG 2.2.2) and start frozen for
  *    visitors who prefer reduced motion. Freezing paints the current frame on a
  *    canvas over the image; the image itself is never changed.
+ *  - GIF-style loop videos (`<video data-loop>`, muted, no controls) behave
+ *    like GIFs at a fraction of the weight: they play only while on screen,
+ *    get the same pause/play button, and stay on their poster for reduced motion.
  *  - Iframes without a title get one, so screen readers can name the embed.
  */
 export function ParallaxRichText({
@@ -67,6 +70,12 @@ export function ParallaxRichText({
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+    if (labels) {
+      for (const video of Array.from(root.querySelectorAll<HTMLVideoElement>("video[data-loop]"))) {
+        cleanups.push(addLoopControl(video, labels, reduceMotion));
+      }
+    }
+
     for (const img of Array.from(root.querySelectorAll("img"))) {
       const parent = img.parentElement;
       if (!parent) continue;
@@ -106,6 +115,82 @@ export function ParallaxRichText({
   }, [html, labels]);
 
   return <div ref={ref} className={className} dangerouslySetInnerHTML={{ __html: html }} />;
+}
+
+/**
+ * Play/pause for one GIF-style loop video. Plays only while it is on screen
+ * (saving data and battery), unless the visitor paused it or prefers reduced
+ * motion, in which case it waits on its poster until they press play.
+ */
+function addLoopControl(video: HTMLVideoElement, labels: RichTextLabels, startPaused: boolean): () => void {
+  video.muted = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  const frame = video.parentElement ?? video;
+  const restorePosition = getComputedStyle(frame).position === "static";
+  if (restorePosition) frame.style.position = "relative";
+
+  const button = document.createElement("button");
+  button.type = "button";
+  Object.assign(button.style, {
+    position: "absolute",
+    right: "8px",
+    bottom: "8px",
+    padding: "6px 10px",
+    border: "0",
+    borderRadius: "999px",
+    background: "rgba(0,0,0,0.7)",
+    color: "#fff",
+    font: "inherit",
+    fontSize: "13px",
+    lineHeight: "1",
+    cursor: "pointer",
+    zIndex: "2",
+  });
+
+  let paused = startPaused;
+  let inView = false;
+  const sync = () => {
+    if (!paused && inView) {
+      video.play().catch(() => {
+        // Autoplay refused (rare for muted video): show it as paused instead.
+        paused = true;
+        render();
+      });
+    } else {
+      video.pause();
+    }
+  };
+  const render = () => {
+    button.textContent = paused ? labels.playAnimation : labels.pauseAnimation;
+    button.setAttribute("aria-pressed", String(paused));
+  };
+
+  button.addEventListener("click", (event) => {
+    event.stopPropagation();
+    paused = !paused;
+    render();
+    sync();
+  });
+  frame.appendChild(button);
+  render();
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      inView = entry.isIntersecting;
+      sync();
+    },
+    { rootMargin: "200px 0px" },
+  );
+  observer.observe(video);
+
+  return () => {
+    observer.disconnect();
+    video.pause();
+    button.remove();
+    if (restorePosition) frame.style.position = "";
+  };
 }
 
 /**

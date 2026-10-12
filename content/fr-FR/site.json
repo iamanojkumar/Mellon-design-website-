@@ -111,7 +111,29 @@
     }
   },
   "projectsPage": {
-    "label": "Projets"
+    "label": "Projets",
+    "lightbox": {
+      "open": "Afficher en plein écran",
+      "close": "Fermer",
+      "previous": "Image précédente",
+      "next": "Image suivante",
+      "counter": "{current} sur {total}",
+      "dialog": "Visionneuse d’images",
+      "thumbnails": "Toutes les images"
+    },
+    "sidebar": {
+      "label": "Liés à ce projet",
+      "servicesEyebrow": "Services",
+      "servicesHeading": "Services associés",
+      "projectsEyebrow": "Projets",
+      "projectsHeading": "Projets similaires"
+    },
+    "cta": {
+      "eyebrow": "Démarrer un projet",
+      "headline": "Vous préparez un projet similaire ?",
+      "body": "Dites-nous ce que vous construisez et où vous en êtes aujourd'hui. Nous vous dirons franchement si nous sommes le bon studio.",
+      "directEmailLabel": "Ou écrivez-nous directement à"
+    }
   },
   "relatedProjects": {
     "eyebrow": "Réalisations",
@@ -155,5 +177,9 @@
         "message": "Dites-nous-en un peu plus : au moins 20 caractères."
       }
     }
+  },
+  "blogPage": {
+    "pauseAnimation": "Mettre l’animation en pause",
+    "playAnimation": "Lire l’animation"
   }
 }

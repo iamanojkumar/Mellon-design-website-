@@ -22,6 +22,9 @@ import { FadeIn } from "@/components/motion/HeroSequence";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
 import { revealOnLoadClass } from "@/components/motion/attachReveal";
 import { ParallaxRichText } from "@/components/projects/ParallaxRichText";
+import { MediaLightbox } from "@/components/projects/MediaLightbox";
+import { ProjectSidebar, getProjectSidebarData } from "@/components/projects/ProjectSidebar";
+import { ProjectCta } from "@/components/projects/ProjectCta";
 import { protectAudioInHtml } from "@/lib/protected-media";
 import styles from "./page.module.css";
 
@@ -112,6 +115,10 @@ export default async function ProjectDetailPage({
   const siteUrl = getSiteUrl();
   const localePrefix = `/${locale}`;
   const canonical = project.canonicalUrl || `${siteUrl}${localePrefix}/projects/${project.slug}`;
+  const sidebar = await getProjectSidebarData(locale, project);
+  // Each widget hides itself when empty; with both empty there is no sidebar
+  // column at all and the article keeps the full width.
+  const hasSidebar = sidebar.showServices || sidebar.showProjects;
 
   return (
     <>
@@ -125,7 +132,9 @@ export default async function ProjectDetailPage({
       />
 
       <HeroTint color={project.heroBg} />
-      <article className={styles.article}>
+      {/* data-lightbox: every image in the hero, body and gallery opens full screen. */}
+      <article className={styles.article} data-lightbox="">
+        <MediaLightbox labels={site.projectsPage.lightbox} />
         {/* The tinted band: overline, heading, subtext and image. The header
             above reads the same --page-tint, so the colour is continuous. */}
         <div className={styles.heroBand} data-hero-band="" data-tinted={normalizeHeroBg(project.heroBg) ? "" : undefined}>
@@ -171,28 +180,35 @@ export default async function ProjectDetailPage({
         </div>
 
         <Container>
-          {project.content && (
-            // Authored in the admin's rich-text editor, which is behind a
-            // password and writes its own markup — the same trust boundary as
-            // the customHead/customBody fields below.
-            <ParallaxRichText
-              className={styles.body}
-              html={protectAudioInHtml(project.content)}
-              labels={{
-                pauseAnimation: site.blogPage.pauseAnimation,
-                playAnimation: site.blogPage.playAnimation,
-                embedTitle: site.blogPage.embedTitle,
-              }}
-            />
-          )}
+          <div className={hasSidebar ? styles.layout : undefined}>
+            <div className={styles.main}>
+              {project.content && (
+                // Authored in the admin's rich-text editor, which is behind a
+                // password and writes its own markup — the same trust boundary as
+                // the customHead/customBody fields below.
+                <ParallaxRichText
+                  className={styles.body}
+                  html={protectAudioInHtml(project.content)}
+                  labels={{
+                    pauseAnimation: site.blogPage.pauseAnimation,
+                    playAnimation: site.blogPage.playAnimation,
+                    embedTitle: site.blogPage.embedTitle,
+                  }}
+                />
+              )}
 
-          <ProjectBlocks blocks={project.blocks} />
+              <ProjectBlocks blocks={project.blocks} />
 
-          <p className={styles.back}>
-            <Link href={`${localePrefix}/projects`}>← {label}</Link>
-          </p>
+              <p className={styles.back}>
+                <Link href={`${localePrefix}/projects`}>← {label}</Link>
+              </p>
+            </div>
+            <ProjectSidebar locale={locale} data={sidebar} />
+          </div>
         </Container>
       </article>
+
+      <ProjectCta locale={locale} />
 
       {project.customBody && (
         <div dangerouslySetInnerHTML={{ __html: project.customBody }} />

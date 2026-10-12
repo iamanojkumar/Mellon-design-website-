@@ -63,6 +63,30 @@
   transform-origin: center;
 }
 
+/* Article beside the related-services / related-projects sidebar. Only set
+   when the sidebar has something to show; below 1100px it stacks underneath. */
+.layout {
+  display: grid;
+  gap: var(--space-2xl);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+@media (min-width: 1100px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    align-items: start;
+  }
+
+  /* Lines up with the body's first line rather than the band above it. */
+  .layout > aside {
+    margin-top: var(--space-xl);
+  }
+}
+
+.main {
+  min-width: 0;
+}
+
 /* The body is editor-authored HTML, so it is styled by element rather than by
    class — there are no class hooks to rely on. */
 .body {

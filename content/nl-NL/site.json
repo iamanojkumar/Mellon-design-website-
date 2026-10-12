@@ -111,7 +111,29 @@
     }
   },
   "projectsPage": {
-    "label": "Projecten"
+    "label": "Projecten",
+    "lightbox": {
+      "open": "Volledig scherm bekijken",
+      "close": "Sluiten",
+      "previous": "Vorige afbeelding",
+      "next": "Volgende afbeelding",
+      "counter": "{current} van {total}",
+      "dialog": "Afbeeldingsviewer",
+      "thumbnails": "Alle afbeeldingen"
+    },
+    "sidebar": {
+      "label": "Gerelateerd aan dit project",
+      "servicesEyebrow": "Diensten",
+      "servicesHeading": "Gerelateerde diensten",
+      "projectsEyebrow": "Projecten",
+      "projectsHeading": "Gerelateerde projecten"
+    },
+    "cta": {
+      "eyebrow": "Start een project",
+      "headline": "Iets vergelijkbaars in gedachten?",
+      "body": "Vertel ons wat je bouwt en waar je nu staat. We zeggen je eerlijk of wij de juiste studio zijn.",
+      "directEmailLabel": "Of mail ons direct op"
+    }
   },
   "relatedProjects": {
     "eyebrow": "Geselecteerd werk",
@@ -155,5 +177,9 @@
         "message": "Vertel ons iets meer: minimaal 20 tekens."
       }
     }
+  },
+  "blogPage": {
+    "pauseAnimation": "Animatie pauzeren",
+    "playAnimation": "Animatie afspelen"
   }
 }

@@ -95,6 +95,8 @@ Landing pages are lead-magnet / search-traffic pages at `/{locale}/{slug}`. **No
 
 Audio is never exposed as a storage URL: pages render it through `/api/media/audio/…` (`lib/protected-media.ts`), which answers only audio/video elements on this site and refuses AI user agents. AI crawlers get text only (`lib/ai-policy.ts` feeds robots.txt and the media headers; rules in `public/ai.txt` and `docs/copyright-and-ai-policy.md`). New media paths must be added to `AI_MEDIA_DISALLOW`.
 
+Animated screen recordings go in as **GIF-style loop videos**, not GIFs (a GIF is 5–7× larger at worse quality): `<video data-loop muted loop playsinline preload="none" poster=…>` with no controls, encoded with `ffmpeg -c:v libx264 -crf 23 -tune animation -movflags +faststart -an` at display size. `ParallaxRichText` plays them only while on screen, adds the pause button and keeps them on the poster for reduced motion. Project pages open every image and loop video full screen (`components/projects/MediaLightbox.tsx`, active inside any `[data-lightbox]` element; labels in `site.projectsPage.lightbox`).
+
 Blog media: the editor inserts images (alt text or "decorative" required), GIFs, video (title + optional WebVTT captions), audio and embeds. A post can also carry a `narration_url` audio version, shown as a native player above the text. `ParallaxRichText` adds a pause/play button to GIFs (frozen at load under `prefers-reduced-motion`) and a title to untitled iframes; the labels live in `site.blogPage`. Allowed upload types are enforced in `lib/upload-project-media.ts` and on the storage bucket (migration `20261008…`); keep the two in sync.
 
 ### Company pages (`app/[locale]/(site)/about/[slug]/`, `lib/company-pages.ts`)

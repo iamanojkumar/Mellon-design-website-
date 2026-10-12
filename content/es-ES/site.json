@@ -111,7 +111,29 @@
     }
   },
   "projectsPage": {
-    "label": "Proyectos"
+    "label": "Proyectos",
+    "lightbox": {
+      "open": "Ver a pantalla completa",
+      "close": "Cerrar",
+      "previous": "Imagen anterior",
+      "next": "Imagen siguiente",
+      "counter": "{current} de {total}",
+      "dialog": "Visor de imágenes",
+      "thumbnails": "Todas las imágenes"
+    },
+    "sidebar": {
+      "label": "Relacionado con este proyecto",
+      "servicesEyebrow": "Servicios",
+      "servicesHeading": "Servicios relacionados",
+      "projectsEyebrow": "Proyectos",
+      "projectsHeading": "Proyectos relacionados"
+    },
+    "cta": {
+      "eyebrow": "Empezar un proyecto",
+      "headline": "¿Planeas algo parecido?",
+      "body": "Cuéntanos qué estás creando y en qué punto estás hoy. Te diremos con franqueza si somos el estudio adecuado.",
+      "directEmailLabel": "O escríbenos directamente a"
+    }
   },
   "relatedProjects": {
     "eyebrow": "Trabajo seleccionado",
@@ -155,5 +177,9 @@
         "message": "Cuéntanos un poco más: al menos 20 caracteres."
       }
     }
+  },
+  "blogPage": {
+    "pauseAnimation": "Pausar animación",
+    "playAnimation": "Reproducir animación"
   }
 }
