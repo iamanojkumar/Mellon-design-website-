@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Seguridad y confidencialidad en Mellon – Mellon",
+    "description": "Cómo gestiona Mellon los archivos de los clientes, los accesos y el material confidencial, y qué pasa con tus datos cuando termina un proyecto."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Nosotros",
+      "headline": "Seguridad y confidencialidad.",
+      "subhead": "Cómo gestionamos tus archivos, quién puede verlos, y qué pasa cuando termina el proyecto."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Datos personales.",
+          "body": "Lo que hacemos con los datos que nos envías a través de nuestro formulario de contacto está recogido en nuestra política de privacidad."
+        },
+        {
+          "heading": "Informar de un problema.",
+          "body": "Si crees que algo no va bien, escríbenos a {email}."
+        },
+        {
+          "heading": "Más detalle, pronto.",
+          "body": "Todavía estamos documentando los detalles de esta página: confidencialidad y NDAs, cómo se gestionan los archivos y los accesos, y qué pasa cuando termina un proyecto. Gracias por leer con suficiente atención para notarlo. Preferimos publicarlo bien hecho a rellenar el hueco con texto de relleno, así que llegará en cuanto esté listo.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "¿Preguntas sobre tus datos?",
+      "cta": {
+        "label": "Empezar un proyecto",
+        "href": "/contact"
+      }
+    }
+  ]
+}

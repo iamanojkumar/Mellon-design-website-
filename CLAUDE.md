@@ -112,4 +112,5 @@ Every route under `app/[locale]/` exports `generateStaticParams` (locale × slug
 - Path alias `@/*` maps to the repo root (`tsconfig.json`).
 - Styling is plain CSS Modules per component/route, plus the shared token files — no CSS-in-JS, no utility framework.
 - **Never bold Georgia** (`--font-display`) unless the user explicitly asks: use `font-weight: var(--fw-display)` on anything set in it. Headings (`h1`–`h6`) get Georgia from `styles/globals.css`, so a heading used as a small label (e.g. `<h3>` with a 600 weight) is bold Georgia — set its weight to `--fw-display`, or switch its `font-family` to `--font-body` if it should be bold.
+- **Never use a left border as a decorative accent** (e.g. `border-left` on a callout/note/card to add a colored stripe). Distinguish a block with background tint, radius, spacing, or an eyebrow label instead.
 - `temp/` is scratch/reference data (not part of the site) and is gitignored; it currently holds locale/country reference JSON and a draft consent-banner copy file, consulted when deciding which locales to launch next.

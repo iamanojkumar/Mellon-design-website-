@@ -21,6 +21,7 @@ import privacyEnUS from "@/content/en-US/pages/privacy.json";
 import aboutAiEnUS from "@/content/en-US/pages/about-ai.json";
 import aboutProcessEnUS from "@/content/en-US/pages/about-process.json";
 import aboutSecurityEnUS from "@/content/en-US/pages/about-security.json";
+import aboutSustainabilityEnUS from "@/content/en-US/pages/about-sustainability.json";
 
 import siteEnGB from "@/content/en-GB/site.json";
 import siteEnIN from "@/content/en-IN/site.json";
@@ -40,6 +41,10 @@ import industriesPageNlNL from "@/content/nl-NL/pages/industries.json";
 import projectsPageNlNL from "@/content/nl-NL/pages/projects.json";
 import contactNlNL from "@/content/nl-NL/pages/contact.json";
 import privacyNlNL from "@/content/nl-NL/pages/privacy.json";
+import aboutAiNlNL from "@/content/nl-NL/pages/about-ai.json";
+import aboutProcessNlNL from "@/content/nl-NL/pages/about-process.json";
+import aboutSecurityNlNL from "@/content/nl-NL/pages/about-security.json";
+import aboutSustainabilityNlNL from "@/content/nl-NL/pages/about-sustainability.json";
 
 import siteFrFR from "@/content/fr-FR/site.json";
 import servicesFrFR from "@/content/fr-FR/services.json";
@@ -51,6 +56,10 @@ import industriesPageFrFR from "@/content/fr-FR/pages/industries.json";
 import projectsPageFrFR from "@/content/fr-FR/pages/projects.json";
 import contactFrFR from "@/content/fr-FR/pages/contact.json";
 import privacyFrFR from "@/content/fr-FR/pages/privacy.json";
+import aboutAiFrFR from "@/content/fr-FR/pages/about-ai.json";
+import aboutProcessFrFR from "@/content/fr-FR/pages/about-process.json";
+import aboutSecurityFrFR from "@/content/fr-FR/pages/about-security.json";
+import aboutSustainabilityFrFR from "@/content/fr-FR/pages/about-sustainability.json";
 
 import siteEsES from "@/content/es-ES/site.json";
 import servicesEsES from "@/content/es-ES/services.json";
@@ -62,6 +71,10 @@ import industriesPageEsES from "@/content/es-ES/pages/industries.json";
 import projectsPageEsES from "@/content/es-ES/pages/projects.json";
 import contactEsES from "@/content/es-ES/pages/contact.json";
 import privacyEsES from "@/content/es-ES/pages/privacy.json";
+import aboutAiEsES from "@/content/es-ES/pages/about-ai.json";
+import aboutProcessEsES from "@/content/es-ES/pages/about-process.json";
+import aboutSecurityEsES from "@/content/es-ES/pages/about-security.json";
+import aboutSustainabilityEsES from "@/content/es-ES/pages/about-sustainability.json";
 
 import siteDeDE from "@/content/de-DE/site.json";
 import servicesDeDE from "@/content/de-DE/services.json";
@@ -73,6 +86,10 @@ import industriesPageDeDE from "@/content/de-DE/pages/industries.json";
 import projectsPageDeDE from "@/content/de-DE/pages/projects.json";
 import contactDeDE from "@/content/de-DE/pages/contact.json";
 import privacyDeDE from "@/content/de-DE/pages/privacy.json";
+import aboutAiDeDE from "@/content/de-DE/pages/about-ai.json";
+import aboutProcessDeDE from "@/content/de-DE/pages/about-process.json";
+import aboutSecurityDeDE from "@/content/de-DE/pages/about-security.json";
+import aboutSustainabilityDeDE from "@/content/de-DE/pages/about-sustainability.json";
 
 export type SiteContent = typeof siteEnUS;
 
@@ -107,6 +124,7 @@ export const contentRegistry: Record<string, LocaleContent> = {
       "about-ai": aboutAiEnUS as unknown as PageDoc,
       "about-process": aboutProcessEnUS as unknown as PageDoc,
       "about-security": aboutSecurityEnUS as unknown as PageDoc,
+      "about-sustainability": aboutSustainabilityEnUS as unknown as PageDoc,
     },
   },
   // en-GB inherits everything from en-US and overrides only what differs.
@@ -147,6 +165,10 @@ export const contentRegistry: Record<string, LocaleContent> = {
       projects: projectsPageDeDE as unknown as PageDoc,
       contact: contactDeDE as unknown as PageDoc,
       privacy: privacyDeDE as unknown as PageDoc,
+      "about-ai": aboutAiDeDE as unknown as PageDoc,
+      "about-process": aboutProcessDeDE as unknown as PageDoc,
+      "about-security": aboutSecurityDeDE as unknown as PageDoc,
+      "about-sustainability": aboutSustainabilityDeDE as unknown as PageDoc,
     },
   },
   "es-ES": {
@@ -161,6 +183,10 @@ export const contentRegistry: Record<string, LocaleContent> = {
       projects: projectsPageEsES as unknown as PageDoc,
       contact: contactEsES as unknown as PageDoc,
       privacy: privacyEsES as unknown as PageDoc,
+      "about-ai": aboutAiEsES as unknown as PageDoc,
+      "about-process": aboutProcessEsES as unknown as PageDoc,
+      "about-security": aboutSecurityEsES as unknown as PageDoc,
+      "about-sustainability": aboutSustainabilityEsES as unknown as PageDoc,
     },
   },
   "fr-FR": {
@@ -175,6 +201,10 @@ export const contentRegistry: Record<string, LocaleContent> = {
       projects: projectsPageFrFR as unknown as PageDoc,
       contact: contactFrFR as unknown as PageDoc,
       privacy: privacyFrFR as unknown as PageDoc,
+      "about-ai": aboutAiFrFR as unknown as PageDoc,
+      "about-process": aboutProcessFrFR as unknown as PageDoc,
+      "about-security": aboutSecurityFrFR as unknown as PageDoc,
+      "about-sustainability": aboutSustainabilityFrFR as unknown as PageDoc,
     },
   },
   "nl-NL": {
@@ -189,6 +219,10 @@ export const contentRegistry: Record<string, LocaleContent> = {
       projects: projectsPageNlNL as unknown as PageDoc,
       contact: contactNlNL as unknown as PageDoc,
       privacy: privacyNlNL as unknown as PageDoc,
+      "about-ai": aboutAiNlNL as unknown as PageDoc,
+      "about-process": aboutProcessNlNL as unknown as PageDoc,
+      "about-security": aboutSecurityNlNL as unknown as PageDoc,
+      "about-sustainability": aboutSustainabilityNlNL as unknown as PageDoc,
     },
   },
 };

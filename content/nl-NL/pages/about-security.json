@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Beveiliging en vertrouwelijkheid bij Mellon – Mellon",
+    "description": "Hoe Mellon omgaat met klantbestanden, toegang en vertrouwelijk materiaal, en wat er met je gegevens gebeurt als een project stopt."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Over ons",
+      "headline": "Beveiliging en vertrouwelijkheid.",
+      "subhead": "Hoe we omgaan met je bestanden, wie ze kan zien, en wat er gebeurt als het project stopt."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Persoonsgegevens.",
+          "body": "Wat we doen met de gegevens die je ons stuurt via ons contactformulier, staat in ons privacybeleid."
+        },
+        {
+          "heading": "Iets melden.",
+          "body": "Als je denkt dat er iets niet klopt, schrijf ons dan op {email}."
+        },
+        {
+          "heading": "Meer details, binnenkort.",
+          "body": "We documenteren nog de details achter deze pagina: vertrouwelijkheid en NDA's, hoe bestanden en toegang worden behandeld, en wat er gebeurt als een project stopt. Dank je dat je goed genoeg hebt gelezen om dit op te merken. We publiceren het liever goed dan dat we het gat vullen met placeholder-tekst, dus het komt zodra het klaar is.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Vragen over je gegevens?",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

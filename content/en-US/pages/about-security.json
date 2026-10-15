@@ -14,32 +14,17 @@
       "type": "textSections",
       "sections": [
         {
-          "heading": "Confidentiality.",
-          "body": "[Confirm: whether you sign NDAs before work starts, and whether you will sign the client's own NDA.]"
-        },
-        {
-          "heading": "How we handle your files.",
-          "body": "[Confirm: where project files are stored and shared, for example which tools, and how they are protected.]"
-        },
-        {
-          "heading": "Who has access.",
-          "body": "[Confirm: who at Mellon can see client material, and whether any contractors or third parties ever can.]"
-        },
-        {
-          "heading": "Accounts and credentials.",
-          "body": "[Confirm: how you ask for and store access to client platforms such as hosting, ad accounts or a CMS, and how access is removed at the end.]"
-        },
-        {
           "heading": "Personal data.",
           "body": "What we do with the details you send us through our contact form is covered in our privacy policy."
         },
         {
-          "heading": "When a project ends.",
-          "body": "[Confirm: what you hand back, how long you keep project files, and how you delete them on request.]"
+          "heading": "Reporting a concern.",
+          "body": "If you think something is wrong, write to us at {email}."
         },
         {
-          "heading": "Reporting a concern.",
-          "body": "If you think something is wrong, write to us at {email}. [Confirm: how quickly you respond to a security concern.]"
+          "heading": "More detail, soon.",
+          "body": "We're still documenting the specifics behind this page — confidentiality and NDAs, how files and access are handled, and what happens when a project ends. Thank you for reading closely enough to notice. We'd rather publish that properly than fill the gap with placeholder copy, so it's coming as soon as it's ready.",
+          "note": true
         }
       ]
     },

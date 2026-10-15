@@ -36,6 +36,32 @@
       ]
     },
     {
+      "type": "pageLinks",
+      "heading": "Mehr darüber, wie wir arbeiten.",
+      "links": [
+        {
+          "slug": "ai",
+          "title": "Wie wir KI nutzen",
+          "body": "Wo wir KI-Tools einsetzen, wo nicht, und wer für das Ergebnis verantwortlich ist."
+        },
+        {
+          "slug": "process",
+          "title": "Wie ein Projekt abläuft",
+          "body": "Vom ersten Gespräch bis zur Übergabe, und was Sie in jeder Phase erwarten können."
+        },
+        {
+          "slug": "security",
+          "title": "Sicherheit und Vertraulichkeit",
+          "body": "Wie wir mit Ihren Dateien, Zugriffen und vertraulichen Unterlagen umgehen."
+        },
+        {
+          "slug": "sustainability",
+          "title": "Nachhaltigkeit und Erschwinglichkeit",
+          "body": "Warum wir skalierbare Lösungen bauen und wie unser Förderprogramm lokale Unternehmen mit guter Absicht unterstützt."
+        }
+      ]
+    },
+    {
       "type": "closingCta",
       "headline": "Beginnen wir mit einem Gespräch.",
       "cta": {

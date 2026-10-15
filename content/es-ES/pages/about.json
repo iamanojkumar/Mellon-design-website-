@@ -36,6 +36,32 @@
       ]
     },
     {
+      "type": "pageLinks",
+      "heading": "Más sobre cómo trabajamos.",
+      "links": [
+        {
+          "slug": "ai",
+          "title": "Cómo usamos la IA",
+          "body": "Dónde usamos herramientas de IA, dónde no, y quién responde por el resultado."
+        },
+        {
+          "slug": "process",
+          "title": "Cómo se desarrolla un proyecto",
+          "body": "Desde la primera conversación hasta la entrega, y qué puedes esperar en cada etapa."
+        },
+        {
+          "slug": "security",
+          "title": "Seguridad y confidencialidad",
+          "body": "Cómo gestionamos tus archivos, accesos y material confidencial."
+        },
+        {
+          "slug": "sustainability",
+          "title": "Sostenibilidad y asequibilidad",
+          "body": "Por qué construimos soluciones escalables y cómo nuestro programa de precios asequibles apoya a negocios locales con buena intención."
+        }
+      ]
+    },
+    {
       "type": "closingCta",
       "headline": "Empecemos con una conversación.",
       "cta": {

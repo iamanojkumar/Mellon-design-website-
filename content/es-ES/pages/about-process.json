@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Cómo se desarrolla un proyecto en Mellon, de la primera llamada a la entrega – Mellon",
+    "description": "Cómo se desarrolla un proyecto en Mellon: descubrimiento, estructura, diseño, construcción y lanzamiento, con el mismo equipo en diseño y desarrollo y un precio fijo acordado antes de empezar."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Nosotros",
+      "headline": "Cómo se desarrolla un proyecto, de la primera llamada a la entrega.",
+      "subhead": "Nuestro proceso explicado con claridad: qué pasa en cada etapa, qué haces tú y qué obtienes."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Empieza con una conversación.",
+          "body": "Cuéntanos qué estás creando y te diremos con claridad si somos el estudio adecuado. Si lo somos, definimos el alcance contigo y acordamos un precio fijo antes de empezar."
+        },
+        {
+          "heading": "Descubrimiento.",
+          "body": "Aprendemos quiénes son tus usuarios, qué necesitan hacer y qué debe lograr el trabajo para tu negocio."
+        },
+        {
+          "heading": "Estructura.",
+          "body": "Mapeamos la estructura alrededor de esas tareas: el mapa del sitio y las páginas de una web, los flujos y pantallas de un producto. Planificamos el contenido que necesita cada parte."
+        },
+        {
+          "heading": "Diseño.",
+          "body": "Diseñamos las páginas, pantallas y plantillas clave en Figma, y las refinamos con tu feedback."
+        },
+        {
+          "heading": "Construcción.",
+          "body": "El mismo equipo que lo diseñó lo construye, en Webflow, Framer, WordPress o código a medida, elegido según cómo tu equipo lo editará después. Nada se pierde entre el diseño y la construcción."
+        },
+        {
+          "heading": "Lanzamiento y entrega.",
+          "body": "Probamos en todos los dispositivos, configuramos redirecciones y metadatos, lanzamos y entregamos documentación para que tu equipo pueda gestionarlo."
+        },
+        {
+          "heading": "Cambios durante el proyecto.",
+          "body": "Las cosas cambian a mitad de proyecto."
+        },
+        {
+          "heading": "Más detalle, pronto.",
+          "body": "Todavía estamos documentando los detalles de este proceso: rondas de feedback, periodos de soporte, cómo se plantea una solicitud de cambio y quién es tu contacto principal. Gracias por leer con suficiente atención para notarlo. Preferimos publicarlo bien hecho a rellenar el hueco con texto de relleno, así que llegará en cuanto esté listo.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Empecemos con una conversación.",
+      "cta": {
+        "label": "Empezar un proyecto",
+        "href": "/contact"
+      }
+    }
+  ]
+}

@@ -36,6 +36,32 @@
       ]
     },
     {
+      "type": "pageLinks",
+      "heading": "En savoir plus sur notre façon de travailler.",
+      "links": [
+        {
+          "slug": "ai",
+          "title": "Comment nous utilisons l'IA",
+          "body": "Où nous utilisons des outils d'IA, où nous ne le faisons pas, et qui répond du résultat."
+        },
+        {
+          "slug": "process",
+          "title": "Comment se déroule un projet",
+          "body": "De la première conversation à la livraison, et ce que vous pouvez attendre à chaque étape."
+        },
+        {
+          "slug": "security",
+          "title": "Sécurité et confidentialité",
+          "body": "Comment nous traitons vos fichiers, vos accès et vos documents confidentiels."
+        },
+        {
+          "slug": "sustainability",
+          "title": "Durabilité et accessibilité financière",
+          "body": "Pourquoi nous construisons des solutions évolutives, et comment notre programme de tarifs accessibles soutient des entreprises locales animées de bonnes intentions."
+        }
+      ]
+    },
+    {
       "type": "closingCta",
       "headline": "Commençons par une conversation.",
       "cta": {

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Wie Mellon KI einsetzt – Mellon",
+    "description": "Wo Mellon bei der Designarbeit KI-Tools einsetzt, wo nicht, wie Kundendateien gehandhabt werden und wer für das Ergebnis verantwortlich ist."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Über uns",
+      "headline": "Wie Mellon KI in seiner Arbeit einsetzt.",
+      "subhead": "Wo wir KI-Tools einsetzen, wo nicht, und wer dafür verantwortlich ist, was Sie erhalten."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Unsere Haltung.",
+          "body": "Wir nutzen KI-Tools, um Teile der Arbeit zu beschleunigen. Designentscheidungen, Gespräche mit Ihnen und die letzte Entscheidung über jedes Ergebnis bleiben bei den Menschen in Ihrem Projekt."
+        },
+        {
+          "heading": "Der Schnell-Chat auf dieser Website.",
+          "body": "Der Chat-Button ist ein KI-Assistent, der Ihnen hilft zu beschreiben, was Sie brauchen, und das Kontaktformular für Sie zur Prüfung vorausfüllt. Er antwortet ausschließlich anhand der auf dieser Website veröffentlichten Leistungen und Preise. Was Sie eingeben, geht an unseren KI-Anbieter DeepSeek, damit er Antworten verfassen kann, und wir speichern das Gespräch nicht. Bei uns kommt erst etwas an, wenn Sie im Formular auf Senden klicken. Details finden Sie in unserer Datenschutzerklärung."
+        },
+        {
+          "heading": "Wenn Ihr Unternehmen eine KI-Richtlinie hat.",
+          "body": "Sagen Sie uns das zu Beginn des Projekts. Sie können uns unter {email} schreiben."
+        },
+        {
+          "heading": "Mehr Details, bald.",
+          "body": "Wir dokumentieren noch die Einzelheiten hinter dieser Seite – wo genau KI eingesetzt wird und wo nicht, wie Kundendateien gehandhabt werden und wer das Ergebnis prüft und verantwortet. Danke, dass Sie genau genug gelesen haben, um das zu bemerken. Wir veröffentlichen das lieber ordentlich, als die Lücke mit Platzhaltertext zu füllen, also kommt es, sobald es fertig ist.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Fragen dazu, wie wir arbeiten?",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Wie ein Mellon-Projekt abläuft, vom ersten Gespräch bis zur Übergabe – Mellon",
+    "description": "Wie ein Mellon-Projekt abläuft: Discovery, Struktur, Design, Umsetzung und Launch, mit demselben Team für Design und Entwicklung und einem Festpreis, der vor Projektstart vereinbart wird."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Über uns",
+      "headline": "Wie ein Projekt abläuft, vom ersten Gespräch bis zur Übergabe.",
+      "subhead": "Unser Prozess in klaren Worten: was in jeder Phase passiert, was Sie tun und was Sie erhalten."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Es beginnt mit einem Gespräch.",
+          "body": "Erzählen Sie uns, was Sie vorhaben, und wir sagen Ihnen offen, ob wir das richtige Studio dafür sind. Wenn ja, planen wir die Arbeit gemeinsam mit Ihnen und vereinbaren einen Festpreis, bevor wir beginnen."
+        },
+        {
+          "heading": "Discovery.",
+          "body": "Wir lernen, wer Ihre Nutzer sind, was sie erreichen müssen und was die Arbeit für Ihr Unternehmen leisten muss."
+        },
+        {
+          "heading": "Struktur.",
+          "body": "Wir legen die Struktur rund um diese Aufgaben fest: die Sitemap und Seiten für eine Website, die Abläufe und Screens für ein Produkt. Wir planen die Inhalte, die jeder Teil braucht."
+        },
+        {
+          "heading": "Design.",
+          "body": "Wir gestalten die wichtigsten Seiten, Screens und Templates in Figma und verfeinern sie anhand Ihres Feedbacks."
+        },
+        {
+          "heading": "Umsetzung.",
+          "body": "Dasselbe Team, das entworfen hat, setzt es auch um – in Webflow, Framer, WordPress oder individuellem Code, passend dazu, wie Ihr Team es später pflegen wird. Zwischen Design und Umsetzung geht nichts verloren."
+        },
+        {
+          "heading": "Launch und Übergabe.",
+          "body": "Wir testen auf allen Geräten, richten Weiterleitungen und Metadaten ein, launchen und übergeben Dokumentation, damit Ihr Team die Seite betreiben kann."
+        },
+        {
+          "heading": "Änderungen im Projektverlauf.",
+          "body": "Dinge ändern sich mitten im Projekt."
+        },
+        {
+          "heading": "Mehr Details, bald.",
+          "body": "Wir dokumentieren noch die Einzelheiten hinter diesem Prozess – Feedback-Runden, Support-Zeiträume, wie eine Änderungsanfrage gestellt wird und wer Ihr Hauptkontakt ist. Danke, dass Sie genau genug gelesen haben, um das zu bemerken. Wir veröffentlichen das lieber ordentlich, als die Lücke mit Platzhaltertext zu füllen, also kommt es, sobald es fertig ist.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Beginnen wir mit einem Gespräch.",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

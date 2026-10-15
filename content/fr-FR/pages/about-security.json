@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Sécurité et confidentialité chez Mellon – Mellon",
+    "description": "Comment Mellon traite les fichiers des clients, les accès et les documents confidentiels, et ce qu'il advient de vos données à la fin d'un projet."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "À propos",
+      "headline": "Sécurité et confidentialité.",
+      "subhead": "Comment nous traitons vos fichiers, qui peut les voir, et ce qu'il se passe à la fin du projet."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Données personnelles.",
+          "body": "Ce que nous faisons des informations que vous nous envoyez via notre formulaire de contact est détaillé dans notre politique de confidentialité."
+        },
+        {
+          "heading": "Signaler un problème.",
+          "body": "Si vous pensez que quelque chose ne va pas, écrivez-nous à {email}."
+        },
+        {
+          "heading": "Plus de détails, bientôt.",
+          "body": "Nous documentons encore les détails derrière cette page : confidentialité et accords de non-divulgation, comment les fichiers et les accès sont traités, et ce qu'il advient à la fin d'un projet. Merci d'avoir lu avec assez d'attention pour le remarquer. Nous préférons le publier correctement plutôt que de combler ce vide avec du texte provisoire, donc cela arrive dès que ce sera prêt.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Des questions sur vos données ?",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

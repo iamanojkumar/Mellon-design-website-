@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Comment se déroule un projet Mellon, du premier appel à la livraison – Mellon",
+    "description": "Comment se déroule un projet Mellon : découverte, structure, design, développement et lancement, avec la même équipe pour le design et le développement, et un prix fixe convenu avant de commencer."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "À propos",
+      "headline": "Comment se déroule un projet, du premier appel à la livraison.",
+      "subhead": "Notre processus en termes simples : ce qui se passe à chaque étape, ce que vous faites, et ce que vous obtenez."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Tout commence par une conversation.",
+          "body": "Dites-nous ce que vous construisez et nous vous dirons simplement si nous sommes le bon studio pour cela. Si c'est le cas, nous définissons le périmètre avec vous et convenons d'un prix fixe avant de commencer."
+        },
+        {
+          "heading": "Découverte.",
+          "body": "Nous apprenons qui sont vos utilisateurs, ce qu'ils doivent pouvoir faire, et ce que le travail doit apporter à votre entreprise."
+        },
+        {
+          "heading": "Structure.",
+          "body": "Nous construisons la structure autour de ces tâches : le plan du site et les pages pour un site web, les parcours et les écrans pour un produit. Nous planifions le contenu dont chaque partie a besoin."
+        },
+        {
+          "heading": "Design.",
+          "body": "Nous concevons les pages, écrans et modèles clés dans Figma, puis nous les affinons avec vos retours."
+        },
+        {
+          "heading": "Développement.",
+          "body": "La même équipe qui a conçu le projet le développe, dans Webflow, Framer, WordPress ou en code sur mesure, choisi selon la façon dont votre équipe l'éditera ensuite. Rien ne se perd entre le design et le développement."
+        },
+        {
+          "heading": "Lancement et transmission.",
+          "body": "Nous testons sur tous les appareils, mettons en place les redirections et les métadonnées, lançons le projet, puis transmettons la documentation pour que votre équipe puisse le faire fonctionner."
+        },
+        {
+          "heading": "Les changements en cours de route.",
+          "body": "Les choses changent en cours de projet."
+        },
+        {
+          "heading": "Plus de détails, bientôt.",
+          "body": "Nous documentons encore les détails derrière ce processus : le nombre de tours de retours, les périodes de support, la façon de formuler une demande de changement, et qui est votre interlocuteur principal. Merci d'avoir lu avec assez d'attention pour le remarquer. Nous préférons le publier correctement plutôt que de combler ce vide avec du texte provisoire, donc cela arrive dès que ce sera prêt.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Commençons par une conversation.",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

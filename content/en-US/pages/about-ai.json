@@ -15,35 +15,20 @@
       "sections": [
         {
           "heading": "Our position.",
-          "body": "We use AI tools to speed up parts of the work. Design decisions, conversations with you, and the final call on every deliverable stay with the people on your project. [Confirm: your overall stance on AI in one or two sentences.]"
-        },
-        {
-          "heading": "Where we use it.",
-          "body": "[Confirm: list the tasks where AI is used, for example research summaries, first-pass copy options, or code assistance during builds. Name the tools if you are happy to.]"
-        },
-        {
-          "heading": "Where we don't.",
-          "body": "[Confirm: list what stays fully human, for example final brand marks, strategy, and anything covered by an NDA.]"
-        },
-        {
-          "heading": "Your files and confidential material.",
-          "body": "[Confirm: whether client files are ever entered into AI tools, which tools, and what happens to that data. Say plainly if the answer is no.]"
+          "body": "We use AI tools to speed up parts of the work. Design decisions, conversations with you, and the final call on every deliverable stay with the people on your project."
         },
         {
           "heading": "The quick chat on this site.",
           "body": "The chat button is an AI assistant that helps you say what you need and fills in the contact form for you to check. It answers from the services and prices published on this site, and nothing else. What you type goes to our AI provider, DeepSeek, so it can write replies, and we don't save the conversation. Nothing reaches us until you press send on the form. Details are in our privacy policy."
         },
         {
-          "heading": "Review and accountability.",
-          "body": "[Confirm: who reviews AI-assisted work before it reaches you, and who answers for it if something is wrong.]"
-        },
-        {
-          "heading": "Ownership and originality.",
-          "body": "[Confirm: who owns work that was made with AI assistance, and how you check that it is original and properly licensed.]"
-        },
-        {
           "heading": "If your company has an AI policy.",
-          "body": "Tell us at the start of the project. [Confirm: what you commit to, for example working to the client's policy or switching AI assistance off.] You can write to us at {email}."
+          "body": "Tell us at the start of the project. You can write to us at {email}."
+        },
+        {
+          "heading": "More detail, soon.",
+          "body": "We're still documenting the specifics behind this page — exactly where AI is and isn't used, how client files are handled, and who reviews and owns the result. Thank you for reading closely enough to notice. We'd rather publish that properly than fill the gap with placeholder copy, so it's coming as soon as it's ready.",
+          "note": true
         }
       ]
     },

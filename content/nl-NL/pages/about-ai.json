@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Hoe Mellon AI inzet in zijn werk – Mellon",
+    "description": "Waar Mellon AI-tools gebruikt in designwerk, waar niet, hoe klantbestanden worden behandeld, en wie verantwoordelijk is voor het resultaat."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Over ons",
+      "headline": "Hoe Mellon AI inzet in zijn werk.",
+      "subhead": "Waar we AI-tools gebruiken, waar niet, en wie verantwoordelijk is voor wat je ontvangt."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Ons standpunt.",
+          "body": "We gebruiken AI-tools om delen van het werk te versnellen. Designbeslissingen, gesprekken met jou en de uiteindelijke beslissing over elk opleverstuk blijven bij de mensen op jouw project."
+        },
+        {
+          "heading": "De snelle chat op deze site.",
+          "body": "De chatknop is een AI-assistent die je helpt te beschrijven wat je nodig hebt en het contactformulier voor je invult zodat je het kunt controleren. Hij antwoordt alleen op basis van de diensten en prijzen die op deze site staan, niets anders. Wat je typt gaat naar onze AI-aanbieder DeepSeek, zodat die antwoorden kan schrijven, en we bewaren het gesprek niet. Er komt niets bij ons binnen voordat je op verzenden drukt in het formulier. Details staan in ons privacybeleid."
+        },
+        {
+          "heading": "Als jouw bedrijf een AI-beleid heeft.",
+          "body": "Vertel het ons aan het begin van het project. Je kunt ons schrijven op {email}."
+        },
+        {
+          "heading": "Meer details, binnenkort.",
+          "body": "We documenteren nog de details achter deze pagina: precies waar AI wel en niet wordt gebruikt, hoe klantbestanden worden behandeld, en wie het resultaat controleert en ervoor verantwoordelijk is. Dank je dat je goed genoeg hebt gelezen om dit op te merken. We publiceren het liever goed dan dat we het gat vullen met placeholder-tekst, dus het komt zodra het klaar is.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Vragen over hoe we werken?",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

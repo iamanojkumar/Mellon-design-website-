@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Nachhaltigkeit und Erschwinglichkeit bei Mellon – Mellon",
+    "description": "Warum Mellon skalierbare Lösungen statt Einzelprojekten baut, wie unser Förderprogramm lokale Unternehmen mit guter Absicht unterstützt, und wie wir weniger Strom und Ressourcen verbrauchen."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Über uns",
+      "headline": "Wir bauen für die Zukunft, nicht für die nächste Rechnung.",
+      "subhead": "Eine nachhaltige Zukunft braucht Lösungen, die mitwachsen, Unternehmen, die sich gutes Design tatsächlich leisten können, und Arbeit, die nicht mehr kostet, als nötig ist."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Skalierbar statt Einzelprojekt.",
+          "body": "Wir entwerfen nicht ein einzelnes Element und sind dann fertig. Jedes Projekt wird so gebaut, dass es mit dem Unternehmen mitwächst, das es beauftragt hat – ein Markensystem, das auch beim Zehnfachen noch funktioniert, eine Website-Struktur, die neue Produkte und Märkte tragen kann, ohne neu gebaut zu werden."
+        },
+        {
+          "heading": "Die richtige Entscheidung, einmal getroffen.",
+          "body": "Nacharbeit ist Verschwendung: unserer Zeit, Ihrer Zeit und der Ressourcen dahinter. Wir verwenden den Anfang jedes Projekts darauf, die Entscheidungen zu treffen, die halten – zu Struktur, zu Tools, zu dem, was das Unternehmen wirklich braucht –, damit wir nicht drei Monate später denselben Button neu diskutieren."
+        },
+        {
+          "heading": "Erschwingliche Arbeit für Unternehmen mit guter Absicht.",
+          "body": "Nicht jedes Unternehmen, das gutes Design verdient, kann den vollen Satz dafür zahlen. Für lokale Unternehmen mit einem klaren, ehrlichen Zweck und begrenztem Umsatz bieten wir dasselbe erfahrene Team zu einem Preis, der sich an dem orientiert, was sie sich leisten können – Geld entscheidet nicht darüber, ob wir die Arbeit annehmen. Ein Beispiel: ein lokaler Landwirt, der versucht, seine Ernte online zu verkaufen, und einen echten Online-Shop und eine Marke braucht, um lokale und internationale Käufer zu erreichen, aber noch nie Design- oder Marketingunterstützung hatte."
+        },
+        {
+          "heading": "Langfristig, kein einmaliger Rabatt.",
+          "body": "Erschwingliche Projekte laufen zu denselben Bedingungen wie jedes andere: Wir bleiben nach dem Launch beim Unternehmen, nicht nur während der Umsetzung. Das Ziel ist ein Unternehmen, das auf lokalen und internationalen Märkten tatsächlich konkurrieren und verkaufen kann, keine Einzelwebsite, die fertig aussieht und dann veraltet."
+        },
+        {
+          "heading": "Effizientes Arbeiten, von Anfang an.",
+          "body": "Wir halten unseren eigenen Fußabdruck klein: schlanke Teams, wiederverwendete Systeme und Komponenten statt Neuaufbau, und Infrastruktur, die auf Effizienz ausgelegt ist, nicht nur auf Geschwindigkeit. Weniger verschwendete Arbeit bedeutet weniger verschwendete Energie."
+        },
+        {
+          "heading": "Unsere Verantwortung über den Auftrag hinaus.",
+          "body": "Wir behandeln Klima- und Gemeinschaftswirkung als Teil der Arbeit, nicht als Zusatz: Wir weisen auf ein verschwenderisches Muster im Plan eines Kunden hin, statt es einfach umzusetzen, und wir wählen Partner und Tools nach demselben Maßstab."
+        },
+        {
+          "heading": "Mehr Details, bald.",
+          "body": "Wir dokumentieren noch die Einzelheiten hinter dieser Seite – weitere Beispiele neben dem oben genannten, unsere Kriterien für erschwingliche Arbeit und die Systeme und Berichte hinter unseren Effizienz- und Klimaverpflichtungen. Danke, dass Sie genau genug gelesen haben, um das zu bemerken. Wir veröffentlichen das lieber ordentlich, als die Lücke mit Platzhaltertext zu füllen, also kommt es, sobald es fertig ist.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Erzählen Sie uns, was Sie vorhaben.",
+      "body": "Wenn das Budget das ist, was zwischen Ihrem Unternehmen und der Website oder Marke steht, die es braucht, sagen Sie es uns, wenn Sie sich melden.",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

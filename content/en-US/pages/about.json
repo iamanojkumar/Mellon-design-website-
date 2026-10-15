@@ -53,6 +53,11 @@
           "slug": "security",
           "title": "Security and confidentiality",
           "body": "How we handle your files, access and confidential material."
+        },
+        {
+          "slug": "sustainability",
+          "title": "Sustainability and affordability",
+          "body": "Why we build scalable solutions, and how our affordability program supports good-intent local businesses."
         }
       ]
     },

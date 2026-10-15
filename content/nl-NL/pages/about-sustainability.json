@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Duurzaamheid en betaalbaarheid bij Mellon – Mellon",
+    "description": "Waarom Mellon schaalbare oplossingen bouwt in plaats van eenmalig werk, hoe ons betaalbaarheidsprogramma lokale ondernemers met goede intenties steunt, en hoe we werken met minder stroom en minder grondstoffen."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Over ons",
+      "headline": "We bouwen voor de lange termijn, niet voor de volgende factuur.",
+      "subhead": "Een duurzame toekomst heeft oplossingen nodig die meegroeien, bedrijven die goed design daadwerkelijk kunnen betalen, en werk dat niet meer kost dan nodig."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Schaalbaar, niet eenmalig.",
+          "body": "We ontwerpen niet één asset en gaan dan verder. Elk traject is gebouwd om mee te groeien met het bedrijf dat het heeft aangevraagd: een merksysteem dat ook op tien keer de schaal nog werkt, een websitestructuur die nieuwe producten en markten kan dragen zonder opnieuw gebouwd te worden."
+        },
+        {
+          "heading": "De juiste keuze, één keer gemaakt.",
+          "body": "Herwerk is verspilling: van onze tijd, jouw tijd, en de middelen daarachter. We besteden het begin van elk project aan het nemen van de beslissingen die blijven staan, over structuur, over tools, over wat het bedrijf echt nodig heeft, zodat we niet drie maanden later dezelfde knop opnieuw bespreken."
+        },
+        {
+          "heading": "Betaalbaar werk voor ondernemers met goede intenties.",
+          "body": "Niet elk bedrijf dat goed design verdient, kan het volle tarief betalen. Voor lokale bedrijven met een duidelijk, eerlijk doel en beperkte omzet bieden we hetzelfde ervaren team tegen een prijs die past bij wat ze kunnen betalen: geld bepaalt niet of we het werk aannemen. Een voorbeeld: een lokale boer die zijn oogst online wil verkopen en een echte webshop en merk nodig heeft om lokale en internationale kopers te bereiken, maar nog nooit design- of marketingondersteuning heeft gehad."
+        },
+        {
+          "heading": "Langdurig, geen eenmalige korting.",
+          "body": "Betaalbare trajecten lopen onder dezelfde voorwaarden als elk ander: we blijven bij het bedrijf na de lancering, niet alleen tijdens. Het doel is een bedrijf dat daadwerkelijk kan concurreren en verkopen op lokale en internationale markten, geen eenmalige site die afgerond lijkt en daarna verouderd raakt."
+        },
+        {
+          "heading": "Efficiënt werken, bewust ontworpen.",
+          "body": "We houden onze eigen voetafdruk klein: kleine teams, hergebruikte systemen en componenten in plaats van opnieuw bouwen, en infrastructuur gekozen op efficiëntie, niet alleen op snelheid. Minder verspild werk betekent minder verspilde energie."
+        },
+        {
+          "heading": "Onze verantwoordelijkheid voorbij de briefing.",
+          "body": "We behandelen klimaat- en gemeenschapsimpact als onderdeel van het werk, niet als extra: we wijzen op een verspillend patroon in het plan van een klant in plaats van het gewoon te bouwen, en we kiezen partners en tools met diezelfde maatstaf."
+        },
+        {
+          "heading": "Meer details, binnenkort.",
+          "body": "We documenteren nog de details achter deze pagina: andere voorbeelden naast het bovenstaande, onze criteria voor betaalbaar werk, en de systemen en rapporten achter onze toezeggingen op het gebied van efficiëntie en klimaat. Dank je dat je goed genoeg hebt gelezen om dit op te merken. We publiceren het liever goed dan dat we het gat vullen met placeholder-tekst, dus het komt zodra het klaar is.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Vertel ons wat je bouwt.",
+      "body": "Als budget het enige is dat tussen jouw bedrijf en de site of het merk staat dat het nodig heeft, zeg dat dan wanneer je contact opneemt.",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

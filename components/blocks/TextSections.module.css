@@ -17,6 +17,11 @@
   grid-template-columns: 1fr;
 }
 
+.block:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
 .blockHeading {
   font-size: var(--fs-500);
 }
@@ -31,4 +36,28 @@
     grid-template-columns: 220px 1fr;
     align-items: baseline;
   }
+}
+
+.note {
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  background: var(--color-paper-tint);
+  display: grid;
+  gap: var(--space-2xs);
+}
+
+.noteEyebrow {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: var(--fs-100);
+  color: var(--color-teal);
+}
+
+.noteHeading {
+  font-size: var(--fs-400);
+}
+
+.noteBody {
+  color: var(--color-fg-muted);
+  font-size: var(--fs-300);
 }

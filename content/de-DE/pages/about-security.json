@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "title": "Sicherheit und Vertraulichkeit bei Mellon – Mellon",
+    "description": "Wie Mellon mit Kundendateien, Zugriffen und vertraulichem Material umgeht, und was mit Ihren Daten passiert, wenn ein Projekt endet."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Über uns",
+      "headline": "Sicherheit und Vertraulichkeit.",
+      "subhead": "Wie wir mit Ihren Dateien umgehen, wer sie sehen kann, und was passiert, wenn das Projekt endet."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Personenbezogene Daten.",
+          "body": "Was wir mit den Angaben tun, die Sie uns über unser Kontaktformular senden, ist in unserer Datenschutzerklärung geregelt."
+        },
+        {
+          "heading": "Ein Anliegen melden.",
+          "body": "Wenn Sie glauben, dass etwas nicht stimmt, schreiben Sie uns an {email}."
+        },
+        {
+          "heading": "Mehr Details, bald.",
+          "body": "Wir dokumentieren noch die Einzelheiten hinter dieser Seite – Vertraulichkeit und NDAs, wie Dateien und Zugriffe gehandhabt werden, und was passiert, wenn ein Projekt endet. Danke, dass Sie genau genug gelesen haben, um das zu bemerken. Wir veröffentlichen das lieber ordentlich, als die Lücke mit Platzhaltertext zu füllen, also kommt es, sobald es fertig ist.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Fragen zu Ihren Daten?",
+      "cta": {
+        "label": "Projekt starten",
+        "href": "/contact"
+      }
+    }
+  ]
+}

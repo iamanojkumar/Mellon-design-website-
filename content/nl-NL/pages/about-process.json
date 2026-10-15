@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "title": "Hoe een Mellon-project verloopt, van eerste gesprek tot overdracht – Mellon",
+    "description": "Hoe een Mellon-project verloopt: discovery, structuur, design, bouw en lancering, met hetzelfde team voor design en development en een vaste prijs die wordt afgesproken voordat het werk begint."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Over ons",
+      "headline": "Hoe een project verloopt, van eerste gesprek tot overdracht.",
+      "subhead": "Ons proces in gewone taal: wat er in elke fase gebeurt, wat jij doet, en wat je krijgt."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Het begint met een gesprek.",
+          "body": "Vertel ons wat je bouwt en we zeggen je eerlijk of wij de juiste studio zijn. Zo ja, dan bepalen we samen met jou de scope en spreken we een vaste prijs af voordat we beginnen."
+        },
+        {
+          "heading": "Discovery.",
+          "body": "We brengen in kaart wie je gebruikers zijn, wat ze moeten kunnen doen, en wat het werk voor jouw bedrijf moet opleveren."
+        },
+        {
+          "heading": "Structuur.",
+          "body": "We brengen de structuur rond die taken in kaart: de sitemap en pagina's voor een website, de flows en schermen voor een product. We plannen de content die elk onderdeel nodig heeft."
+        },
+        {
+          "heading": "Design.",
+          "body": "We ontwerpen de belangrijkste pagina's, schermen en templates in Figma en verfijnen ze met jouw feedback."
+        },
+        {
+          "heading": "Bouw.",
+          "body": "Hetzelfde team dat het ontworpen heeft, bouwt het ook, in Webflow, Framer, WordPress of maatwerkcode, gekozen op basis van hoe jouw team het straks zal beheren. Er gaat niets verloren tussen design en bouw."
+        },
+        {
+          "heading": "Lancering en overdracht.",
+          "body": "We testen op alle apparaten, zetten redirects en metadata op, lanceren, en geven documentatie mee zodat jouw team het kan beheren."
+        },
+        {
+          "heading": "Veranderingen tijdens het project.",
+          "body": "Dingen veranderen halverwege een project."
+        },
+        {
+          "heading": "Meer details, binnenkort.",
+          "body": "We documenteren nog de details achter dit proces: feedbackrondes, supportperiodes, hoe je een wijzigingsverzoek indient en wie je vaste contactpersoon is. Dank je dat je goed genoeg hebt gelezen om dit op te merken. We publiceren het liever goed dan dat we het gat vullen met placeholder-tekst, dus het komt zodra het klaar is.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Laten we beginnen met een gesprek.",
+      "cta": {
+        "label": "Start een project",
+        "href": "/contact"
+      }
+    }
+  ]
+}

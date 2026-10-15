@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Sostenibilidad y asequibilidad en Mellon – Mellon",
+    "description": "Por qué Mellon construye soluciones escalables en lugar de proyectos puntuales, cómo nuestro programa de precios asequibles apoya a negocios locales con buena intención, y cómo trabajamos para usar menos energía y recursos."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Nosotros",
+      "headline": "Construimos para el largo plazo, no para la próxima factura.",
+      "subhead": "Un futuro sostenible necesita soluciones que escalen, negocios que realmente puedan permitirse buen diseño, y un trabajo que no cueste más de lo necesario."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Escalable, no puntual.",
+          "body": "No diseñamos una sola pieza y seguimos adelante. Cada proyecto se construye para escalar junto con el negocio que lo encargó: un sistema de marca que sigue funcionando diez veces más grande, una estructura de web que puede incorporar nuevos productos y mercados sin tener que reconstruirse."
+        },
+        {
+          "heading": "La decisión correcta, tomada una vez.",
+          "body": "Rehacer trabajo es desperdicio: de nuestro tiempo, de tu tiempo y de los recursos detrás de ambos. Dedicamos la primera parte de cada proyecto a tomar las decisiones que aguantan, sobre estructura, herramientas, y lo que el negocio realmente necesita, para no estar discutiendo el mismo botón tres meses después."
+        },
+        {
+          "heading": "Trabajo asequible para negocios con buena intención.",
+          "body": "No todo negocio que merece buen diseño puede pagar la tarifa completa. Para negocios locales con un propósito claro y honesto y pocos ingresos, ofrecemos el mismo equipo sénior a un precio ajustado a lo que pueden pagar: el dinero no decide si aceptamos el trabajo. Un ejemplo: un agricultor local que intenta vender sus cosechas online, que necesita una tienda y una marca reales para llegar a compradores locales e internacionales, pero que nunca ha tenido apoyo de diseño o marketing."
+        },
+        {
+          "heading": "A largo plazo, no un descuento puntual.",
+          "body": "Los proyectos asequibles funcionan con las mismas condiciones que cualquier otro: seguimos junto al negocio después del lanzamiento, no solo durante él. El objetivo es un negocio que pueda competir y vender de verdad en mercados locales e internacionales, no una web puntual que parece terminada y luego se queda obsoleta."
+        },
+        {
+          "heading": "Trabajar de forma eficiente, por diseño.",
+          "body": "Mantenemos nuestra huella pequeña: equipos reducidos, sistemas y componentes reutilizados en vez de empezar de cero, e infraestructura elegida por eficiencia, no solo por velocidad. Menos trabajo desperdiciado significa menos energía desperdiciada."
+        },
+        {
+          "heading": "Nuestra responsabilidad más allá del encargo.",
+          "body": "Tratamos el impacto climático y comunitario como parte del trabajo, no como un añadido: señalamos un patrón derrochador en el plan de un cliente en vez de simplemente construirlo, y elegimos socios y herramientas con ese mismo criterio."
+        },
+        {
+          "heading": "Más detalle, pronto.",
+          "body": "Todavía estamos documentando los detalles de esta página: otros ejemplos además del anterior, nuestros criterios de elegibilidad para el trabajo asequible, y los sistemas e informes detrás de nuestros compromisos de eficiencia y clima. Gracias por leer con suficiente atención para notarlo. Preferimos publicarlo bien hecho a rellenar el hueco con texto de relleno, así que llegará en cuanto esté listo.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Cuéntanos qué estás creando.",
+      "body": "Si el presupuesto es lo único que separa a tu negocio de la web o la marca que necesita, dínoslo cuando nos escribas.",
+      "cta": {
+        "label": "Empezar un proyecto",
+        "href": "/contact"
+      }
+    }
+  ]
+}

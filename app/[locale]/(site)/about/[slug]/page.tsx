@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getPage, getSiteContent } from "@/lib/content";
-import { companyPages, getCompanyPage, isVisible } from "@/lib/company-pages";
+import { companyPages, getCompanyPage, getCompanyPageLabel, isVisible } from "@/lib/company-pages";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/env";
 import { BlockRenderer } from "@/components/blocks/BlockRenderer";
@@ -54,8 +54,8 @@ export default async function CompanyPageRoute({
       <JsonLd
         data={breadcrumbJsonLd(getSiteUrl(), [
           { name: site.common.home, path: localePrefix },
-          { name: "About", path: `${localePrefix}/about` },
-          { name: company.label, path: `${localePrefix}/about/${slug}` },
+          { name: site.common.about, path: `${localePrefix}/about` },
+          { name: getCompanyPageLabel(company, locale), path: `${localePrefix}/about/${slug}` },
         ])}
       />
       <BlockRenderer blocks={page.blocks} locale={locale} />

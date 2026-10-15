@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Cómo usa Mellon la IA en su trabajo – Mellon",
+    "description": "Dónde usa Mellon herramientas de IA en el trabajo de diseño, dónde no, cómo se gestionan los archivos de los clientes y quién responde por el resultado."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "Nosotros",
+      "headline": "Cómo usa Mellon la IA en su trabajo.",
+      "subhead": "Dónde usamos herramientas de IA, dónde no, y quién responde por lo que recibes."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Nuestra postura.",
+          "body": "Usamos herramientas de IA para acelerar partes del trabajo. Las decisiones de diseño, las conversaciones contigo y la decisión final sobre cada entregable siguen en manos de las personas de tu proyecto."
+        },
+        {
+          "heading": "El chat rápido de este sitio.",
+          "body": "El botón de chat es un asistente de IA que te ayuda a describir lo que necesitas y rellena el formulario de contacto para que lo revises. Responde solo con los servicios y precios publicados en este sitio, nada más. Lo que escribes va a nuestro proveedor de IA, DeepSeek, para que pueda redactar las respuestas, y no guardamos la conversación. No nos llega nada hasta que pulsas enviar en el formulario. Los detalles están en nuestra política de privacidad."
+        },
+        {
+          "heading": "Si tu empresa tiene una política de IA.",
+          "body": "Dínoslo al empezar el proyecto. Puedes escribirnos a {email}."
+        },
+        {
+          "heading": "Más detalle, pronto.",
+          "body": "Todavía estamos documentando los detalles de esta página: dónde se usa la IA y dónde no, cómo se gestionan los archivos de los clientes, y quién revisa y responde por el resultado. Gracias por leer con suficiente atención para notarlo. Preferimos publicarlo bien hecho a rellenar el hueco con texto de relleno, así que llegará en cuanto esté listo.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "¿Preguntas sobre cómo trabajamos?",
+      "cta": {
+        "label": "Empezar un proyecto",
+        "href": "/contact"
+      }
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "meta": {
+    "title": "Comment Mellon utilise l'IA dans son travail – Mellon",
+    "description": "Où Mellon utilise des outils d'IA dans le travail de design, où non, comment les fichiers des clients sont traités, et qui répond du résultat."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "À propos",
+      "headline": "Comment Mellon utilise l'IA dans son travail.",
+      "subhead": "Où nous utilisons des outils d'IA, où nous ne le faisons pas, et qui répond de ce que vous recevez."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Notre position.",
+          "body": "Nous utilisons des outils d'IA pour accélérer certaines parties du travail. Les décisions de design, les échanges avec vous et la décision finale sur chaque livrable restent entre les mains des personnes de votre projet."
+        },
+        {
+          "heading": "Le chat rapide de ce site.",
+          "body": "Le bouton de chat est un assistant IA qui vous aide à décrire ce dont vous avez besoin et remplit le formulaire de contact pour que vous le vérifiiez. Il répond uniquement à partir des services et des tarifs publiés sur ce site, rien d'autre. Ce que vous saisissez est envoyé à notre fournisseur d'IA, DeepSeek, pour qu'il puisse rédiger les réponses, et nous ne conservons pas la conversation. Rien ne nous parvient avant que vous cliquiez sur Envoyer dans le formulaire. Les détails figurent dans notre politique de confidentialité."
+        },
+        {
+          "heading": "Si votre entreprise a une politique d'IA.",
+          "body": "Dites-le-nous dès le début du projet. Vous pouvez nous écrire à {email}."
+        },
+        {
+          "heading": "Plus de détails, bientôt.",
+          "body": "Nous documentons encore les détails derrière cette page : où l'IA est utilisée et où elle ne l'est pas, comment les fichiers des clients sont traités, et qui vérifie et répond du résultat. Merci d'avoir lu avec assez d'attention pour le remarquer. Nous préférons le publier correctement plutôt que de combler ce vide avec du texte provisoire, donc cela arrive dès que ce sera prêt.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Des questions sur notre façon de travailler ?",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

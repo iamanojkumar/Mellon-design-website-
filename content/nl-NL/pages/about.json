@@ -36,6 +36,32 @@
       ]
     },
     {
+      "type": "pageLinks",
+      "heading": "Meer over hoe we werken.",
+      "links": [
+        {
+          "slug": "ai",
+          "title": "Hoe we AI gebruiken",
+          "body": "Waar we AI-tools gebruiken, waar niet, en wie verantwoordelijk is voor het resultaat."
+        },
+        {
+          "slug": "process",
+          "title": "Hoe een project verloopt",
+          "body": "Van het eerste gesprek tot de overdracht, en wat je in elke fase kunt verwachten."
+        },
+        {
+          "slug": "security",
+          "title": "Beveiliging en vertrouwelijkheid",
+          "body": "Hoe we omgaan met je bestanden, toegang en vertrouwelijk materiaal."
+        },
+        {
+          "slug": "sustainability",
+          "title": "Duurzaamheid en betaalbaarheid",
+          "body": "Waarom we schaalbare oplossingen bouwen en hoe ons betaalbaarheidsprogramma lokale ondernemers met goede intenties steunt."
+        }
+      ]
+    },
+    {
       "type": "closingCta",
       "headline": "Begin met een gesprek.",
       "cta": {

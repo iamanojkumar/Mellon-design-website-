@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "Durabilité et accessibilité financière chez Mellon – Mellon",
+    "description": "Pourquoi Mellon construit des solutions évolutives plutôt que des projets ponctuels, comment notre programme de tarifs accessibles soutient des entreprises locales animées de bonnes intentions, et comment nous travaillons pour consommer moins d'énergie et de ressources."
+  },
+  "blocks": [
+    {
+      "type": "pageHero",
+      "eyebrow": "À propos",
+      "headline": "Nous construisons pour le long terme, pas pour la prochaine facture.",
+      "subhead": "Un avenir durable a besoin de solutions qui évoluent, d'entreprises qui peuvent réellement se permettre un bon design, et d'un travail qui ne coûte pas plus que nécessaire."
+    },
+    {
+      "type": "textSections",
+      "sections": [
+        {
+          "heading": "Évolutif, pas ponctuel.",
+          "body": "Nous ne concevons pas un seul élément avant de passer à autre chose. Chaque mission est conçue pour évoluer avec l'entreprise qui l'a commandée : un système de marque qui fonctionne encore dix fois plus grand, une structure de site capable d'accueillir de nouveaux produits et marchés sans être reconstruite."
+        },
+        {
+          "heading": "La bonne décision, prise une seule fois.",
+          "body": "Refaire le travail, c'est du gaspillage : de notre temps, du vôtre, et des ressources derrière les deux. Nous consacrons le début de chaque projet à prendre les décisions qui tiennent, sur la structure, les outils, ce dont l'entreprise a vraiment besoin, pour ne pas rediscuter du même bouton trois mois plus tard."
+        },
+        {
+          "heading": "Un travail accessible pour des entreprises animées de bonnes intentions.",
+          "body": "Toute entreprise qui mérite un bon design ne peut pas payer le tarif plein. Pour les entreprises locales ayant un objectif clair et honnête et des revenus limités, nous proposons la même équipe senior à un tarif adapté à ce qu'elles peuvent payer : l'argent ne décide pas si nous acceptons le travail. Un exemple : un agriculteur local qui essaie de vendre ses récoltes en ligne, qui a besoin d'une véritable boutique en ligne et d'une marque pour atteindre des acheteurs locaux et internationaux, mais qui n'a jamais eu de soutien en design ou en marketing."
+        },
+        {
+          "heading": "Sur le long terme, pas une remise ponctuelle.",
+          "body": "Les missions à tarif accessible se déroulent dans les mêmes conditions que toute autre : nous restons aux côtés de l'entreprise après le lancement, pas seulement pendant. L'objectif est une entreprise capable de réellement concurrencer et vendre sur les marchés locaux et internationaux, pas un site ponctuel qui a l'air fini puis qui vieillit mal."
+        },
+        {
+          "heading": "Travailler efficacement, par conception.",
+          "body": "Nous gardons notre propre empreinte réduite : des équipes légères, des systèmes et des composants réutilisés plutôt que reconstruits à chaque fois, et une infrastructure choisie pour son efficacité, pas seulement pour sa rapidité. Moins de travail gaspillé, c'est moins d'énergie gaspillée."
+        },
+        {
+          "heading": "Notre responsabilité au-delà du brief.",
+          "body": "Nous considérons l'impact climatique et communautaire comme faisant partie du travail, pas comme un supplément : nous signalons une approche gaspilleuse dans le plan d'un client plutôt que de simplement la construire, et nous choisissons nos partenaires et nos outils selon cette même exigence."
+        },
+        {
+          "heading": "Plus de détails, bientôt.",
+          "body": "Nous documentons encore les détails derrière cette page : d'autres exemples au-delà de celui ci-dessus, nos critères d'éligibilité pour le travail accessible, et les systèmes et rapports derrière nos engagements en matière d'efficacité et de climat. Merci d'avoir lu avec assez d'attention pour le remarquer. Nous préférons le publier correctement plutôt que de combler ce vide avec du texte provisoire, donc cela arrive dès que ce sera prêt.",
+          "note": true
+        }
+      ]
+    },
+    {
+      "type": "closingCta",
+      "headline": "Dites-nous ce que vous construisez.",
+      "body": "Si le budget est ce qui sépare votre entreprise du site ou de la marque dont elle a besoin, dites-le-nous quand vous nous contactez.",
+      "cta": {
+        "label": "Démarrer un projet",
+        "href": "/contact"
+      }
+    }
+  ]
+}

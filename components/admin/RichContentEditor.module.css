@@ -6,7 +6,13 @@
   border-radius: var(--radius-md);
 }
 
+/* Sticky so the formatting controls stay reachable while editing long-form
+   content. top: 44px clears ProjectEditor/BlogApp's own sticky .statusBar
+   (editorStyles.statusBar) above it so the two don't overlap. */
 .toolbar {
+  position: sticky;
+  top: 44px;
+  z-index: 4;
   border-radius: var(--radius-md) var(--radius-md) 0 0;
   display: flex;
   flex-wrap: wrap;

@@ -19,7 +19,7 @@
         },
         {
           "heading": "Discovery.",
-          "body": "We learn who your users are, what they need to do, and what the work has to achieve for your business. [Confirm: what you ask the client to provide at this stage, and how long it usually takes.]"
+          "body": "We learn who your users are, what they need to do, and what the work has to achieve for your business."
         },
         {
           "heading": "Structure.",
@@ -27,7 +27,7 @@
         },
         {
           "heading": "Design.",
-          "body": "We design the key pages, screens and templates in Figma, then refine them with your feedback. [Confirm: how many feedback rounds are included and how feedback is collected.]"
+          "body": "We design the key pages, screens and templates in Figma, then refine them with your feedback."
         },
         {
           "heading": "Build.",
@@ -35,15 +35,16 @@
         },
         {
           "heading": "Launch and handover.",
-          "body": "We test across devices, set up redirects and metadata, launch, and hand over documentation so your team can run it. [Confirm: the support period after launch for each service.]"
+          "body": "We test across devices, set up redirects and metadata, launch, and hand over documentation so your team can run it."
         },
         {
           "heading": "Changes along the way.",
-          "body": "Things change mid-project. [Confirm: how a change request is raised, how it is quoted, and how it affects the timeline and milestones.]"
+          "body": "Things change mid-project."
         },
         {
-          "heading": "Who you work with.",
-          "body": "[Confirm: who your main contact is, how often you meet, and how you share progress, for example weekly calls or a shared board.]"
+          "heading": "More detail, soon.",
+          "body": "We're still documenting the specifics behind this process — feedback rounds, support periods, how a change request is raised and who your main contact is. Thank you for reading closely enough to notice. We'd rather publish that properly than fill the gap with placeholder copy, so it's coming as soon as it's ready.",
+          "note": true
         }
       ]
     },

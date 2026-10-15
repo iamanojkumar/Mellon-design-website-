@@ -41,7 +41,11 @@ export type Block =
       subhead: string;
       updated?: { label: string; date: string };
     }
-  | { type: "textSections"; sections: { heading: string; body: string }[] }
+  | {
+      type: "textSections";
+      /** `note: true` renders the section as a callout (e.g. a "more detail coming" aside) instead of a plain block. */
+      sections: { heading: string; body: string; note?: boolean }[];
+    }
   /** Cards linking to company pages (lib/company-pages.ts); only published ones render. */
   | { type: "pageLinks"; heading: string; links: { slug: string; title: string; body: string }[] }
   | { type: "serviceCards"; viewLink: string; categories?: { id: string; label: string }[] }
@@ -85,4 +89,5 @@ export type PageKey =
   | "privacy"
   | "about-ai"
   | "about-process"
-  | "about-security";
+  | "about-security"
+  | "about-sustainability";
