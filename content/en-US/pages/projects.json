@@ -13,7 +13,19 @@
     {
       "type": "projectCards",
       "viewLink": "View project →",
-      "empty": "No case studies published in this market yet."
+      "empty": "No case studies published in this market yet.",
+      "grouping": {
+        "toggleLabel": "Group projects by",
+        "filterLabel": "Quick select",
+        "allLabel": "All",
+        "byService": "By service",
+        "byIndustry": "By industry",
+        "countOne": "{count} project",
+        "countOther": "{count} projects",
+        "showMore": "Show more",
+        "viewAll": "View all",
+        "status": "Showing {shown} of {total}"
+      }
     },
     {
       "type": "closingCta",

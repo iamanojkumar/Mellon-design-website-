@@ -1,9 +1,7 @@
 import type { Block } from "@/lib/blocks";
 import { getSiteContent } from "@/lib/content";
-import { Container } from "@/components/ui/Container";
-import { ContactForm } from "@/components/contact-form/ContactForm";
-import { FadeIn } from "@/components/motion/HeroSequence";
-import { SwiftUpText } from "@/components/motion/SwiftUpText";
+import { ContactAssistant } from "@/components/assistant/ContactAssistant";
+import { isCompanyPagePublished } from "@/lib/company-pages";
 import styles from "./ContactSection.module.css";
 
 export function ContactSection({
@@ -17,32 +15,18 @@ export function ContactSection({
   const form = site.forms.contact;
   return (
     <section className={styles.section}>
-      <Container className={styles.grid}>
-        <div className={styles.intro}>
-          <FadeIn as="span" whenVisible className={styles.eyebrow}>
-            {block.eyebrow}
-          </FadeIn>
-          <h1 className={styles.headline}>
-            <SwiftUpText text={block.headline} whenVisible />
-          </h1>
-          <p className={styles.subhead}>
-            <SwiftUpText text={block.subhead} whenVisible lineDelay={0.12} delay={0.2} />
-          </p>
-          <p className={styles.direct}>
-            {block.directEmailLabel}{" "}
-            <a href={`mailto:${site.org.email}`}>{site.org.email}</a>
-          </p>
-        </div>
-        <div className={styles.formWrap}>
-          <ContactForm
-            successMessage={form.successMessage}
-            submitLabel={form.submitLabel}
-            labels={form.labels}
-            privacyHref={`/${locale}/privacy`}
-            locale={locale}
-          />
-        </div>
-      </Container>
+      {/* Full-bleed: no Container, so the chat runs edge to edge. */}
+      {/* The assistant is the default way in; it hands over a filled-in form,
+          and the visitor can switch to the plain form at any point. */}
+      <ContactAssistant
+        locale={locale}
+        copy={site.assistant}
+        form={form}
+        aiPolicyHref={isCompanyPagePublished(locale, "ai") ? `/${locale}/about/ai` : null}
+        directEmail={{ label: block.directEmailLabel, address: site.org.email }}
+        heading={block.headline}
+        subheading={block.subhead}
+      />
     </section>
   );
 }

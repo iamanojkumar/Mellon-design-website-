@@ -13,7 +13,19 @@
     {
       "type": "projectCards",
       "viewLink": "Projekt ansehen →",
-      "empty": "In diesem Markt sind noch keine Fallstudien veröffentlicht."
+      "empty": "In diesem Markt sind noch keine Fallstudien veröffentlicht.",
+      "grouping": {
+        "toggleLabel": "Projekte gruppieren nach",
+        "filterLabel": "Schnellauswahl",
+        "allLabel": "Alle",
+        "byService": "Nach Leistung",
+        "byIndustry": "Nach Branche",
+        "countOne": "{count} Projekt",
+        "countOther": "{count} Projekte",
+        "showMore": "Mehr anzeigen",
+        "viewAll": "Alle ansehen",
+        "status": "{shown} von {total} angezeigt"
+      }
     },
     {
       "type": "closingCta",

@@ -33,6 +33,12 @@ type ContactFormProps = {
   defaults?: Partial<Record<"name" | "email" | "company" | "budget" | "message", string>>;
   /** Skips the scroll-in animations. For forms inside a scrolling panel (the quick chat). */
   plain?: boolean;
+  /**
+   * For a form given the full page width (the contact page): the four short
+   * fields wrap into as many columns as fit instead of each stretching across,
+   * and the message keeps a readable line length.
+   */
+  wide?: boolean;
 };
 
 const PlainContext = createContext(false);
@@ -68,16 +74,21 @@ function Field({
   label,
   delay,
   error,
+  className,
+  required,
   children,
 }: {
   label: string;
   delay: number;
   error?: string;
+  className?: string;
+  /** Adds the required marker (an asterisk) after the label. Optional fields say "(optional)" in their label instead. */
+  required?: boolean;
   children: ReactNode;
 }) {
   const plain = useContext(PlainContext);
   return (
-    <label className={styles.field}>
+    <label className={[styles.field, required && styles.required, className].filter(Boolean).join(" ")}>
       <span>{plain ? label : <SwiftUpText text={label} whenVisible delay={delay} />}</span>
       <Reveal delay={delay + 0.15}>{children}</Reveal>
       {error && <em className={styles.error}>{error}</em>}
@@ -94,7 +105,7 @@ function SubmitButton({ label, sending }: { label: string; sending: string }) {
   );
 }
 
-export function ContactForm({ successMessage, submitLabel, labels, privacyHref, locale, defaults, plain = false }: ContactFormProps) {
+export function ContactForm({ successMessage, submitLabel, labels, privacyHref, locale, defaults, plain = false, wide = false }: ContactFormProps) {
   const [state, formAction] = useActionState(
     submitContactForm,
     initialContactFormState,
@@ -112,7 +123,11 @@ export function ContactForm({ successMessage, submitLabel, labels, privacyHref, 
 
   return (
     <PlainContext.Provider value={plain}>
-      <form action={formAction} className={plain ? `${styles.form} ${styles.plain}` : styles.form} noValidate>
+      <form
+        action={formAction}
+        className={[styles.form, plain && styles.plain, wide && styles.wide].filter(Boolean).join(" ")}
+        noValidate
+      >
         <input type="hidden" name="locale" value={locale} />
         <input
           type="text"
@@ -123,10 +138,10 @@ export function ContactForm({ successMessage, submitLabel, labels, privacyHref, 
           style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
         />
         <div className={styles.row}>
-          <Field label={labels.name} delay={0} error={errors.name}>
+          <Field label={labels.name} delay={0} error={errors.name} required>
             <input type="text" name="name" autoComplete="name" defaultValue={defaults?.name} required />
           </Field>
-          <Field label={labels.email} delay={0.08} error={errors.email}>
+          <Field label={labels.email} delay={0.08} error={errors.email} required>
             <input type="email" name="email" autoComplete="email" defaultValue={defaults?.email} required />
           </Field>
         </div>
@@ -140,7 +155,7 @@ export function ContactForm({ successMessage, submitLabel, labels, privacyHref, 
           </Field>
         </div>
 
-        <Field label={labels.message} delay={0.4} error={errors.message}>
+        <Field label={labels.message} delay={0.4} error={errors.message} className={styles.message} required>
           <textarea name="message" rows={6} defaultValue={defaults?.message} required />
         </Field>
 

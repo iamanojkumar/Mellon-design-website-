@@ -10,6 +10,9 @@ type CtaProps = {
   variant?: CtaVariant;
   context?: CtaContext;
   className?: string;
+  id?: string;
+  /** Accessible name when the visible label alone is ambiguous (several identical links on a page). */
+  ariaLabel?: string;
 };
 
 export function Cta({
@@ -18,10 +21,12 @@ export function Cta({
   variant = "primary",
   context = "home",
   className,
+  id,
+  ariaLabel,
 }: CtaProps) {
   const classes = [styles.cta, styles[variant], className].filter(Boolean).join(" ");
   return (
-    <Link href={href} className={classes} data-cta-context={context}>
+    <Link href={href} id={id} aria-label={ariaLabel} className={classes} data-cta-context={context}>
       <span>{label}</span>
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
         <path

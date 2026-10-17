@@ -242,7 +242,7 @@ export function ServiceLanding({
         </Container>
       </section>
 
-      <RelatedProjects locale={locale} service={service ?? getLandingPage(slug)?.service} showViewAll={false} />
+      <RelatedProjects locale={locale} service={service ?? getLandingPage(slug)?.service} expandable={false} />
 
       <section id="quote" className={`${styles.section} ${styles.greenBand}`}>
         <Container className={styles.quoteGrid}>

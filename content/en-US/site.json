@@ -175,11 +175,12 @@
     }
   },
   "relatedProjects": {
-    "eyebrow": "Selected work",
+    "eyebrow": "Projects",
     "headline": "Related work.",
     "body": "Recent projects, most relevant first.",
     "viewLink": "View project →",
-    "viewAll": "View all projects →"
+    "showMore": "Show more",
+    "viewAll": "View all {count} projects"
   },
   "blogPage": {
     "label": "Blog",
@@ -237,7 +238,8 @@
     "note": "At Mellon we handle sensitive information with care. Read our {privacy} and {ai}.",
     "noteNoAi": "At Mellon we handle sensitive information with care. Read our {privacy}.",
     "privacyLink": "privacy policy",
-    "aiLink": "AI policy"
+    "aiLink": "AI policy",
+    "contactUseForm": "Prefer to fill in the form yourself?"
   },
   "forms": {
     "contact": {

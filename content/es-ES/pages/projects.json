@@ -13,7 +13,19 @@
     {
       "type": "projectCards",
       "viewLink": "Ver proyecto →",
-      "empty": "Aún no hay casos publicados en este mercado."
+      "empty": "Aún no hay casos publicados en este mercado.",
+      "grouping": {
+        "toggleLabel": "Agrupar proyectos por",
+        "filterLabel": "Selección rápida",
+        "allLabel": "Todos",
+        "byService": "Por servicio",
+        "byIndustry": "Por sector",
+        "countOne": "{count} proyecto",
+        "countOther": "{count} proyectos",
+        "showMore": "Mostrar más",
+        "viewAll": "Ver todos",
+        "status": "Mostrando {shown} de {total}"
+      }
     },
     {
       "type": "closingCta",

@@ -8,6 +8,30 @@
 
 export type BlockCta = { label: string; href: string };
 
+/**
+ * Copy for the grouped projects listing (by service / by industry). Every field
+ * is optional in a locale's page file; components/blocks/project-grouping.ts
+ * supplies the English default for anything missing.
+ *
+ * `countOne` / `countOther` use `{count}`; `status` uses `{shown}` and `{total}`.
+ * Two count strings rather than one because plural rules differ per language,
+ * and "1 projects" is the bug this avoids.
+ */
+export type ProjectGroupingCopy = {
+  toggleLabel: string;
+  /** Accessible name for the row of quick-select chips. */
+  filterLabel: string;
+  /** The chip that clears the selection and shows every group. */
+  allLabel: string;
+  byService: string;
+  byIndustry: string;
+  countOne: string;
+  countOther: string;
+  showMore: string;
+  viewAll: string;
+  status: string;
+};
+
 export type Block =
   | {
       type: "hero";
@@ -56,7 +80,7 @@ export type Block =
    * a written empty state instead of a blank gap. `projectCards` is the full
    * listing; `projectsPreview` is the home-page teaser and takes a `limit`.
    */
-  | { type: "projectCards"; viewLink: string; empty: string }
+  | { type: "projectCards"; viewLink: string; empty: string; grouping?: Partial<ProjectGroupingCopy> }
   | {
       type: "projectsPreview";
       eyebrow: string;

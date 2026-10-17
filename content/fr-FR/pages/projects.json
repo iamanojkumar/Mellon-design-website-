@@ -13,7 +13,19 @@
     {
       "type": "projectCards",
       "viewLink": "Voir le projet →",
-      "empty": "Aucune étude de cas publiée sur ce marché pour le moment."
+      "empty": "Aucune étude de cas publiée sur ce marché pour le moment.",
+      "grouping": {
+        "toggleLabel": "Regrouper les projets par",
+        "filterLabel": "Sélection rapide",
+        "allLabel": "Tous",
+        "byService": "Par service",
+        "byIndustry": "Par secteur",
+        "countOne": "{count} projet",
+        "countOther": "{count} projets",
+        "showMore": "Afficher plus",
+        "viewAll": "Tout voir",
+        "status": "{shown} sur {total} affichés"
+      }
     },
     {
       "type": "closingCta",

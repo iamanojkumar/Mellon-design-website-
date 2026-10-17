@@ -1,0 +1,230 @@
+/* The contact page's embedded chat. It is the page's main content, so it runs
+   at the site's content width with a larger type scale than the floating widget: no
+   border, no radius, no shadow. Styled here rather than borrowed from ChatWidget.module.css
+   so the two can differ.
+
+   Height: in the chat view the card is exactly the space under the sticky header
+   (--header-h, measured in the component; 4.75rem until then), never shorter than 34rem. The
+   page therefore does not scroll while chatting and the log is the only thing that
+   does; that is what ends the page-scroll / chat-scroll tug of war. The form view
+   is just its natural height, so a tall form makes the page scroll as normal.
+   --gutter is the site's page gutter, so text keeps a margin from the screen edge. */
+.card {
+  --gutter: var(--content-pad);
+  --card-min: 34rem;
+  display: flex;
+  flex-direction: column;
+  /* The site's content width, centered: same cap and gutter as Container, so the
+     chat's text lines up with the header and the rest of the page. */
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  background: var(--color-paper);
+  color: var(--color-fg);
+}
+
+.card[data-view="chat"] {
+  height: max(var(--card-min), calc(100vh - var(--header-h, 4.75rem)));
+  height: max(var(--card-min), calc(100dvh - var(--header-h, 4.75rem)));
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-sm) var(--space-md);
+  padding: var(--space-lg) var(--gutter) var(--space-md);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  font-size: clamp(var(--fs-500), 3vw, var(--fs-700));
+  line-height: var(--lh-snug);
+}
+
+.subtitle {
+  margin-top: var(--space-2xs);
+  max-width: 68ch;
+  font-size: var(--fs-300);
+  color: var(--color-fg-muted);
+}
+
+/* Takes whatever height the card has left and scrolls inside it. Scroll is left
+   to chain to the page at the ends (no overscroll-behavior: contain), so the
+   page can still be scrolled with the pointer over the chat. */
+.log {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  flex: 1;
+  min-height: 0;
+  padding: var(--space-md) var(--gutter);
+  overflow-y: auto;
+}
+
+.bubble {
+  max-width: min(46rem, 88%);
+  padding: 0.85rem 1.15rem;
+  border-radius: var(--radius-md);
+  font-size: var(--fs-300);
+  line-height: var(--lh-normal);
+  overflow-wrap: anywhere;
+}
+
+.bot {
+  align-self: flex-start;
+  background: var(--color-paper-tint);
+}
+
+.me {
+  align-self: flex-end;
+  background: var(--color-teal);
+  color: #fff;
+}
+
+.thinking {
+  color: var(--color-fg-muted);
+}
+
+.errorBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-xs);
+}
+
+.error {
+  font-size: var(--fs-200);
+  color: var(--color-fg-muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  list-style: none;
+  margin: var(--space-2xs) 0 0;
+  padding: 0;
+}
+
+.chip {
+  padding: 0.65rem 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  color: var(--color-fg);
+  font: inherit;
+  font-size: var(--fs-200);
+  text-align: left;
+  cursor: pointer;
+}
+
+.composer {
+  display: flex;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--gutter);
+}
+
+.composer input {
+  flex: 1;
+  min-width: 0;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  font: inherit;
+  font-size: var(--fs-300);
+  color: var(--color-fg);
+}
+
+.composer input:focus-visible {
+  border-color: var(--color-ink);
+  outline: none;
+}
+
+.composer button {
+  padding: 0 1.6rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-teal);
+  color: #fff;
+  font: inherit;
+  font-size: var(--fs-300);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.composer button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* The filled-in (or manual) form. The form itself lays its fields out in a
+   wrapping grid (ContactForm `wide`). */
+.formArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--gutter) var(--space-lg);
+}
+
+.editNote {
+  font-size: var(--fs-200);
+  color: var(--color-fg-muted);
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-xs) var(--space-md);
+  padding: var(--space-xs) var(--gutter) var(--space-md);
+}
+
+.footerText {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.note {
+  font-size: var(--fs-100);
+  color: var(--color-fg-muted);
+}
+
+.note a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex: none;
+  padding: 0.8rem 1.35rem;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--radius-pill);
+  background: transparent;
+  color: var(--color-ink);
+  font: inherit;
+  font-size: var(--fs-200);
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.chip:focus-visible,
+.switch:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+@media (max-width: 640px) {
+  .head {
+    padding-top: var(--space-md);
+  }
+}

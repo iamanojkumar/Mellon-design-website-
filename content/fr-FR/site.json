@@ -137,11 +137,12 @@
     }
   },
   "relatedProjects": {
-    "eyebrow": "Réalisations",
+    "eyebrow": "Projets",
     "headline": "Projets similaires.",
     "body": "Nos projets récents, les plus proches en premier.",
     "viewLink": "Voir le projet →",
-    "viewAll": "Voir tous les projets →"
+    "showMore": "Afficher plus",
+    "viewAll": "Voir les {count} projets"
   },
   "notFound": {
     "eyebrow": "404",

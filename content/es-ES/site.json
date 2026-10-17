@@ -137,11 +137,12 @@
     }
   },
   "relatedProjects": {
-    "eyebrow": "Trabajo seleccionado",
+    "eyebrow": "Proyectos",
     "headline": "Proyectos relacionados.",
     "body": "Proyectos recientes, los más afines primero.",
     "viewLink": "Ver proyecto →",
-    "viewAll": "Ver todos los proyectos →"
+    "showMore": "Mostrar más",
+    "viewAll": "Ver los {count} proyectos"
   },
   "notFound": {
     "eyebrow": "404",

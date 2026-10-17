@@ -13,7 +13,19 @@
     {
       "type": "projectCards",
       "viewLink": "Bekijk project →",
-      "empty": "Nog geen casestudy’s gepubliceerd in deze markt."
+      "empty": "Nog geen casestudy’s gepubliceerd in deze markt.",
+      "grouping": {
+        "toggleLabel": "Projecten groeperen op",
+        "filterLabel": "Snelle selectie",
+        "allLabel": "Alle",
+        "byService": "Op dienst",
+        "byIndustry": "Op sector",
+        "countOne": "{count} project",
+        "countOther": "{count} projecten",
+        "showMore": "Toon meer",
+        "viewAll": "Bekijk alles",
+        "status": "{shown} van {total} getoond"
+      }
     },
     {
       "type": "closingCta",

@@ -137,11 +137,12 @@
     }
   },
   "relatedProjects": {
-    "eyebrow": "Geselecteerd werk",
+    "eyebrow": "Projecten",
     "headline": "Verwant werk.",
     "body": "Recente projecten, de meest relevante eerst.",
     "viewLink": "Bekijk project →",
-    "viewAll": "Bekijk alle projecten →"
+    "showMore": "Toon meer",
+    "viewAll": "Bekijk alle {count} projecten"
   },
   "notFound": {
     "eyebrow": "404",

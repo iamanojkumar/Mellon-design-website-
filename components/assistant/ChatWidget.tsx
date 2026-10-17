@@ -1,17 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
-import type { FormEvent } from "react";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { ContactForm, type ContactFormLabels } from "@/components/contact-form/ContactForm";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { usePageReady } from "@/lib/page-transition";
+import { AssistantNote } from "./AssistantNote";
+import { useAssistantChat } from "./useAssistantChat";
 import styles from "./ChatWidget.module.css";
-
-type Message = { role: "user" | "assistant"; content: string };
-type Stage = "discover" | "details" | "done";
-type Fields = { name: string; email: string; company: string; budget: string };
 
 export type ChatCopy = {
   open: string;
@@ -35,6 +31,8 @@ export type ChatCopy = {
   noteNoAi: string;
   privacyLink: string;
   aiLink: string;
+  /** The same chat embedded on the contact page (ContactAssistant). */
+  contactUseForm: string;
 };
 
 type FormCopy = {
@@ -42,17 +40,6 @@ type FormCopy = {
   submitLabel: string;
   labels: ContactFormLabels;
 };
-
-/** `stage` and `fields` are null when the model answered in plain prose. */
-type Reply = {
-  reply: string;
-  stage: Stage | null;
-  suggestions: string[];
-  summary: string;
-  fields: Fields | null;
-};
-
-const EMPTY_FIELDS: Fields = { name: "", email: "", company: "", budget: "" };
 
 /**
  * Floating quick-chat. Opens with conversation starters written for the page
@@ -76,84 +63,41 @@ export function ChatWidget({
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
-  const [welcome, setWelcome] = useState("");
-  const [suggestions, setSuggestions] = useState<string[]>([]);
-  const [draft, setDraft] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [failed, setFailed] = useState(false);
-  const [stage, setStage] = useState<Stage>("discover");
-  const [summary, setSummary] = useState("");
-  const [fields, setFields] = useState<Fields>(EMPTY_FIELDS);
-  const [manual, setManual] = useState(false);
+  const {
+    messages,
+    welcome,
+    suggestions,
+    draft,
+    setDraft,
+    loading,
+    failed,
+    stage,
+    summary,
+    fields,
+    manual,
+    setManual,
+    formVisible,
+    formKey,
+    send,
+    submitDraft,
+    retry,
+    reset,
+  } = useAssistantChat({
+    locale,
+    fallbackWelcome: copy.fallbackWelcome,
+    fallbackSuggestions: copy.fallbackSuggestions,
+    active: open,
+  });
   // The intro (sparkle spin, then one sparkle -> message -> sparkle morph) must
   // wait for the preloader / page transition, or it plays behind the curtain.
   // `armed` flips once, the first time the page is ready, so it never replays.
   const pageReady = usePageReady();
   const [armed, setArmed] = useState(false);
   const [hint, setHint] = useState(true);
-  const started = useRef(false);
-  // Bumped on every page change, so a reply that was still in flight for the
-  // previous page is dropped instead of landing in the new conversation.
-  const epoch = useRef(0);
   const logRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const formRef = useRef<HTMLDivElement>(null);
-
-  const ask = useCallback(
-    async (history: Message[]) => {
-      const run = epoch.current;
-      setLoading(true);
-      setFailed(false);
-      try {
-        const res = await fetch("/api/assistant", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            locale,
-            path: window.location.pathname,
-            pageTitle: document.title,
-            messages: history,
-          }),
-        });
-        if (!res.ok) throw new Error(String(res.status));
-        const data = (await res.json()) as Reply;
-        if (run !== epoch.current) return;
-        if (history.length === 0) {
-          setWelcome(data.reply);
-        } else {
-          setMessages([...history, { role: "assistant", content: data.reply }]);
-        }
-        if (data.stage) {
-          setStage(data.stage);
-          setSuggestions(data.stage === "discover" ? data.suggestions : []);
-          if (data.summary) setSummary(data.summary);
-        }
-        // Keep what we already knew when a reply leaves a field blank.
-        if (data.fields) {
-          const next = data.fields;
-          setFields((prev) => ({
-            name: next.name || prev.name,
-            email: next.email || prev.email,
-            company: next.company || prev.company,
-            budget: next.budget || prev.budget,
-          }));
-        }
-      } catch {
-        if (run !== epoch.current) return;
-        if (history.length === 0) {
-          setWelcome(copy.fallbackWelcome);
-          setSuggestions(copy.fallbackSuggestions);
-        } else {
-          setFailed(true);
-        }
-      } finally {
-        if (run === epoch.current) setLoading(false);
-      }
-    },
-    [locale, copy.fallbackWelcome, copy.fallbackSuggestions],
-  );
 
   // Moving to another page ends the conversation: collapse the panel and start
   // fresh, so the next open gets starters written for the new page.
@@ -161,20 +105,9 @@ export function ChatWidget({
   useEffect(() => {
     if (lastPath.current === pathname) return;
     lastPath.current = pathname;
-    epoch.current += 1;
-    started.current = false;
+    reset();
     setOpen(false);
-    setMessages([]);
-    setWelcome("");
-    setSuggestions([]);
-    setDraft("");
-    setLoading(false);
-    setFailed(false);
-    setStage("discover");
-    setSummary("");
-    setFields(EMPTY_FIELDS);
-    setManual(false);
-  }, [pathname]);
+  }, [pathname, reset]);
 
   useEffect(() => {
     if (pageReady) setArmed(true);
@@ -185,15 +118,6 @@ export function ChatWidget({
     const timer = window.setTimeout(() => setHint(false), 7600);
     return () => window.clearTimeout(timer);
   }, [armed]);
-
-  // Starters are fetched the first time the panel opens, not on page load.
-  useEffect(() => {
-    if (!open || started.current) return;
-    started.current = true;
-    void ask([]);
-  }, [open, ask]);
-
-  const formVisible = stage === "done" || manual;
 
   useEffect(() => {
     if (open && !loading && !formVisible) inputRef.current?.focus();
@@ -219,27 +143,8 @@ export function ChatWidget({
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  function send(text: string) {
-    const content = text.trim();
-    if (!content || loading) return;
-    const next: Message[] = [...messages, { role: "user", content }];
-    setMessages(next);
-    setDraft("");
-    setSuggestions([]);
-    void ask(next);
-  }
-
-  function onSubmit(event: FormEvent) {
-    event.preventDefault();
-    send(draft);
-  }
-
   // The contact page is already the form.
   if (/\/contact\/?$/.test(pathname)) return null;
-
-  // Remount the form when the chat fills in different values, so the fields
-  // pick up the new defaults.
-  const formKey = [fields.name, fields.email, fields.company, fields.budget, summary].join("\u0001");
 
   return (
     <>
@@ -284,7 +189,7 @@ export function ChatWidget({
           {failed && !loading && (
             <div className={styles.errorBox}>
               <p className={styles.error}>{copy.error}</p>
-              <button type="button" className={styles.chip} onClick={() => void ask(messages)}>
+              <button type="button" className={styles.chip} onClick={retry}>
                 {copy.retry}
               </button>
             </div>
@@ -320,7 +225,7 @@ export function ChatWidget({
         </div>
 
         {!formVisible && (
-          <form className={styles.composer} onSubmit={onSubmit}>
+          <form className={styles.composer} onSubmit={submitDraft}>
             <input
               ref={inputRef}
               type="text"
@@ -337,25 +242,7 @@ export function ChatWidget({
         )}
 
         <div className={styles.footer}>
-          <p className={styles.note}>
-            {(aiPolicyHref ? copy.note : copy.noteNoAi).split(/(\{privacy\}|\{ai\})/).map((part, i) => {
-              if (part === "{privacy}") {
-                return (
-                  <Link key={i} href={`/${locale}/privacy`} target="_blank">
-                    {copy.privacyLink}
-                  </Link>
-                );
-              }
-              if (part === "{ai}" && aiPolicyHref) {
-                return (
-                  <Link key={i} href={aiPolicyHref} target="_blank">
-                    {copy.aiLink}
-                  </Link>
-                );
-              }
-              return part;
-            })}
-          </p>
+          <AssistantNote locale={locale} copy={copy} aiPolicyHref={aiPolicyHref} />
           {stage !== "done" && (
             <button type="button" className={styles.linkButton} onClick={() => setManual((v) => !v)}>
               {manual ? copy.backToChat : copy.useForm}

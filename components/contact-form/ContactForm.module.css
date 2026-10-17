@@ -20,6 +20,23 @@
   color: var(--color-fg-muted);
 }
 
+/* Required marker. Generated content, with an empty alt so screen readers do
+   not announce "asterisk" (the input itself is already marked required). The
+   second declaration is the fallback for browsers without the alt syntax. */
+/* The label text is an animated block (SwiftUpText), so the label row is a flex
+   line to keep the marker beside it rather than under it. */
+.required > span {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25em;
+}
+
+.required > span::after {
+  content: "*";
+  content: "*" / "";
+  color: var(--color-brand-red);
+}
+
 .field input,
 .field textarea {
   display: block;
@@ -84,6 +101,63 @@
   .row {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+/* Full-page-width form (the contact page). The two .row wrappers dissolve so the
+   four short fields are direct grid items that wrap by screen size: four across
+   on a wide screen, two on a tablet, one on a phone. The whole form is capped,
+   so on a very wide screen the inputs do not stretch edge to edge. The message
+   sits on its own row at the full form width and is tall; everything below it spans the grid. */
+.wide {
+  display: grid;
+  max-width: 64rem;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .wide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1000px) {
+  .wide {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.wide .row {
+  display: contents;
+}
+
+.wide > :not(.row):not(.field) {
+  grid-column: 1 / -1;
+}
+
+.wide .message {
+  grid-column: 1 / -1;
+}
+
+/* The main field, so it gets the room: the full width of the form and a tall box
+   (still resizable). */
+.wide .message textarea {
+  min-height: 16rem;
+}
+
+/* Larger type, since the card has the room. */
+.wide .field {
+  font-size: var(--fs-200);
+}
+
+.wide .field input,
+.wide .field textarea {
+  font-size: var(--fs-300);
+  padding: 0.85rem 1rem;
+}
+
+.wide .privacy {
+  font-size: var(--fs-200);
 }
 
 /* Inside the quick-chat panel: always one column, and tighter. */
