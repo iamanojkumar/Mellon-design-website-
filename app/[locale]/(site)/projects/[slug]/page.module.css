@@ -161,6 +161,19 @@
   border-radius: var(--radius-sm);
 }
 
+/* Image-only project: title block under the marquee. Smaller than a case
+   study's title, since the images are the headline here. */
+.galleryIntro {
+  padding-top: var(--space-lg);
+}
+
+.galleryTitle {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-display);
+  line-height: var(--lh-tight);
+  margin-top: var(--space-2xs);
+}
+
 .back {
   margin-top: var(--space-2xl);
   font-size: var(--fs-200);

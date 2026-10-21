@@ -17,6 +17,8 @@ import {
 import { RichContentEditor } from "./RichContentEditor";
 import { BlocksEditor } from "./BlocksEditor";
 import { HeroBgPicker } from "./HeroBgPicker";
+import { GalleryEditor } from "./GalleryEditor";
+import { isGalleryService } from "@/lib/project-gallery";
 import type { ProjectFormState } from "./form-state";
 import styles from "./ProjectEditor.module.css";
 
@@ -327,7 +329,23 @@ export function ProjectEditor({
       )}
 
       <div className="a-field">
-        <span className="a-label">Hero image</span>
+        <label className={styles.checkbox}>
+          <input
+            type="checkbox"
+            checked={form.richText}
+            onChange={(event) => onChange({ richText: event.target.checked })}
+          />
+          <span>Rich text case study</span>
+        </label>
+        <p className="a-hint">
+          {form.richText
+            ? "On: the page is a written case study (content and blocks below). Branding uses this."
+            : "Off: an image-only project (graphic design, motion & interaction). The page shows the images in a scrolling row with the title; content and blocks are kept but not shown."}
+        </p>
+      </div>
+
+      <div className="a-field">
+        <span className="a-label">{form.richText ? "Hero image" : "Cover image (image 1)"}</span>
         <div className={styles.heroRow}>
           {form.heroImage ? (
             // Doubles as the dimension probe: naturalWidth/Height on load gives
@@ -395,25 +413,47 @@ export function ProjectEditor({
         </div>
       )}
 
+      {/* Image-only projects always get the list; branding (and the other
+          masonry services) get it too, for the slider on the listing tile. */}
+      {(!form.richText || isGalleryService(form.service)) && (
+        <div className="a-field">
+          <span className="a-label">More images</span>
+          <p className="a-hint">
+            {form.richText
+              ? "Optional. With more than one image, the project's tile on the projects listing becomes a slider."
+              : "Shown after the cover, in this order, in the scrolling row. More than one image also makes the listing tile a slider."}
+          </p>
+          <GalleryEditor
+            images={form.gallery}
+            onChange={(gallery) => onChange({ gallery })}
+            onUploadFile={uploadFile}
+          />
+        </div>
+      )}
+
       <HeroBgPicker value={form.heroBg} onChange={(heroBg) => onChange({ heroBg })} />
 
-      <div className="a-field">
-        <span className="a-label">Content</span>
-        <RichContentEditor
-          value={form.content}
-          onChange={(content) => onChange({ content })}
-          onUploadFile={uploadFile}
-        />
-      </div>
+      {form.richText && (
+        <>
+          <div className="a-field">
+            <span className="a-label">Content</span>
+            <RichContentEditor
+              value={form.content}
+              onChange={(content) => onChange({ content })}
+              onUploadFile={uploadFile}
+            />
+          </div>
 
-      <div className="a-field">
-        <span className="a-label">Blocks</span>
-        <BlocksEditor
-          blocks={form.blocks}
-          onChange={(blocks) => onChange({ blocks })}
-          onUploadFile={uploadFile}
-        />
-      </div>
+          <div className="a-field">
+            <span className="a-label">Blocks</span>
+            <BlocksEditor
+              blocks={form.blocks}
+              onChange={(blocks) => onChange({ blocks })}
+              onUploadFile={uploadFile}
+            />
+          </div>
+        </>
+      )}
 
       {project && otherLocales.length > 0 && (
         <>

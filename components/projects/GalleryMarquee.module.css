@@ -1,0 +1,90 @@
+.root {
+  position: relative;
+  --marquee-h: clamp(300px, 64vh, 680px);
+  /* Where Container's content starts, so the first image lines up with the
+     title below it until the row starts moving. */
+  --marquee-inset: max(
+    var(--content-pad),
+    calc((100% - var(--content-max)) / 2 + var(--content-pad))
+  );
+}
+
+/* Full-bleed row. */
+.scroller {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding-inline: var(--marquee-inset);
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.scroller:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: -2px;
+}
+
+.root[data-overflows] .scroller {
+  cursor: grab;
+}
+
+.scroller[data-dragging] {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.row {
+  display: flex;
+  gap: var(--space-sm);
+  width: max-content;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  flex: none;
+}
+
+.image {
+  display: block;
+  height: var(--marquee-h);
+  width: auto;
+  max-width: none;
+  border-radius: var(--radius-md);
+  background: var(--color-paper-tint);
+}
+
+/* On a phone a portrait image at full height would fill the screen several
+   times over sideways; keep each one a little narrower than the viewport. */
+@media (max-width: 640px) {
+  .root {
+    --marquee-h: 56vh;
+  }
+
+  .image {
+    max-width: 86vw;
+    object-fit: cover;
+  }
+}
+
+.pause {
+  position: absolute;
+  right: calc(var(--marquee-inset) + var(--space-sm));
+  bottom: var(--space-sm);
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.18);
+}
+
+.pause:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}

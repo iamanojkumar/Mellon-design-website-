@@ -1,5 +1,6 @@
 import { getIndustries, getServices, getSiteContent } from "@/lib/content";
 import { getPublishedProjects } from "@/lib/projects";
+import { isGalleryService, projectImages } from "@/lib/project-gallery";
 import { getRelatedPicks } from "@/lib/related-work";
 import { orderRelated, projectMatchesPage } from "@/lib/related-pick";
 import { Container } from "@/components/ui/Container";
@@ -52,7 +53,8 @@ export async function RelatedProjects({
   );
   if (projects.length === 0) return null;
 
-  const copy = getSiteContent(locale).relatedProjects;
+  const site = getSiteContent(locale);
+  const copy = site.relatedProjects;
   const serviceName = new Map(getServices(locale).map((s) => [s.slug, s.name]));
   const industryName = new Map(getIndustries(locale).map((i) => [i.slug, i.name]));
   const cards = projects.map((project) => ({
@@ -67,6 +69,7 @@ export async function RelatedProjects({
     meta: `${industryName.get(project.category) ?? project.category} · ${
       serviceName.get(project.service) ?? project.service
     }`,
+    images: projectImages(project),
   }));
 
   return (
@@ -91,6 +94,8 @@ export async function RelatedProjects({
           showMoreLabel={copy.showMore}
           viewAllTemplate={copy.viewAll}
           expandable={expandable}
+          masonry={isGalleryService(service)}
+          galleryLabels={site.projectsPage.gallery}
         />
       </Container>
     </section>

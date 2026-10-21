@@ -26,6 +26,7 @@ import {
 } from "@/lib/folders";
 import { buildProjectJsonLd, type SeoSource } from "@/lib/project-seo";
 import { pruneBlocks, type ProjectBlock } from "@/lib/project-blocks";
+import { parseGallery, type GalleryImage } from "@/lib/project-gallery";
 import {
   createProjectMediaUpload,
   convertProjectMediaToAvif,
@@ -166,6 +167,8 @@ export type ProjectFormInput = {
   heroBg: string;
   content: string;
   blocks: ProjectBlock[];
+  richText: boolean;
+  gallery: GalleryImage[];
   featured: boolean;
   folderId: string | null;
   status: ProjectStatus;
@@ -201,6 +204,9 @@ function toProjectInput(input: ProjectFormInput): ProjectInput {
     content: input.content,
     // Half-filled rows never reach the page or the markup.
     blocks: pruneBlocks(input.blocks),
+    richText: input.richText,
+    // Re-parsed so a stray empty row or bad size never reaches the database.
+    gallery: parseGallery(input.gallery),
     featured: input.featured,
     folderId: input.folderId,
     status: input.status,
@@ -367,6 +373,9 @@ export async function duplicateProjectAction(
       // Blocks carry untranslated prose; kept so structure survives the copy,
       // flagged in the UI as needing a pass.
       blocks: source.blocks,
+      richText: source.richText,
+      // Same rule as the hero: the images travel, their alt text is rewritten.
+      gallery: source.gallery.map((image) => ({ ...image, alt: "" })),
       schemaType: source.schemaType,
       noindex: source.noindex,
       customHead: source.customHead,

@@ -21,7 +21,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "Brand identity design",
     serviceType: "Branding agency",
     areaServed: "Australia",
-    metaTitle: "Branding agency in Australia — Mellon",
+    metaTitle: "Branding agency in Australia - Mellon",
     metaDescription: "Mellon is a branding agency for Australian businesses: brand strategy, logo and visual identity, a brand manual, and a corporate presentation. Get a quote.",
     headline: "A branding agency for Australian businesses.",
     summary: "Mellon builds brand identities for businesses in Sydney, Melbourne, Brisbane, Perth, and across Australia: strategy, logo and visual identity, a brand manual, and a corporate presentation.",

@@ -4,8 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { RevealGroup } from "@/components/motion/RevealGroup";
 import { ProjectCard } from "@/components/blocks/ProjectCard";
+import { MASONRY_STEP } from "@/components/blocks/ProjectsExplorer";
+import type { GalleryImage } from "@/lib/project-gallery";
+import { MasonryCard, type MasonryLabels } from "./MasonryCard";
 import cardStyles from "@/components/blocks/ProjectCards.module.css";
 import explorer from "@/components/blocks/ProjectsExplorer.module.css";
+import masonryStyles from "./Masonry.module.css";
 
 export type RelatedGridProject = {
   id: string;
@@ -18,10 +22,12 @@ export type RelatedGridProject = {
   heroImageAlt: string | null;
   /** The line above the title, already resolved to display names. */
   meta: string;
+  /** Hero first, then the gallery — what a masonry tile shows. */
+  images: GalleryImage[];
 };
 
-/** Cards shown at first, and added by each "Show more" — same step as the projects index. */
-const STEP = 3;
+/** Cards shown at first, and added by each "Show more" — same steps as the projects index. */
+const CARD_STEP = 3;
 
 /**
  * The cards of a "Related work" section: three to begin with, three more per
@@ -38,6 +44,8 @@ export function RelatedProjectsGrid({
   showMoreLabel,
   viewAllTemplate,
   expandable = true,
+  masonry = false,
+  galleryLabels,
 }: {
   locale: string;
   projects: RelatedGridProject[];
@@ -46,7 +54,11 @@ export function RelatedProjectsGrid({
   /** "View all {count} projects": {count} is this page's total, and the button reveals them in place. */
   viewAllTemplate: string;
   expandable?: boolean;
+  /** Image-led service page: image + title tiles in a masonry wall. */
+  masonry?: boolean;
+  galleryLabels: MasonryLabels;
 }) {
+  const STEP = masonry ? MASONRY_STEP : CARD_STEP;
   const [visible, setVisible] = useState(STEP);
   const wrapRef = useRef<HTMLDivElement>(null);
   const shown = expandable ? Math.min(visible, projects.length) : Math.min(STEP, projects.length);
@@ -67,22 +79,30 @@ export function RelatedProjectsGrid({
   // focus to the page; the first new card is the natural place to continue.
   useEffect(() => {
     if (focusIndex.current === null) return;
-    wrapRef.current?.querySelectorAll<HTMLAnchorElement>("a")[focusIndex.current]?.focus();
+    // Masonry tiles hold two links (the image strip is mouse-only); the title
+    // link is the focusable one.
+    wrapRef.current
+      ?.querySelectorAll<HTMLAnchorElement>(masonry ? "h3 a" : "a")
+      [focusIndex.current]?.focus();
     focusIndex.current = null;
-  }, [shown]);
+  }, [shown, masonry]);
 
   return (
     <div ref={wrapRef}>
-      <RevealGroup className={cardStyles.grid}>
-        {projects.slice(0, shown).map((project) => (
-          <ProjectCard
-            key={project.id}
-            locale={locale}
-            project={project}
-            viewLink={viewLink}
-            meta={project.meta}
-          />
-        ))}
+      <RevealGroup className={masonry ? masonryStyles.wall : cardStyles.grid}>
+        {projects.slice(0, shown).map((project) =>
+          masonry ? (
+            <MasonryCard key={project.id} locale={locale} project={project} labels={galleryLabels} />
+          ) : (
+            <ProjectCard
+              key={project.id}
+              locale={locale}
+              project={project}
+              viewLink={viewLink}
+              meta={project.meta}
+            />
+          ),
+        )}
       </RevealGroup>
 
       {expandable && remaining > 0 && (

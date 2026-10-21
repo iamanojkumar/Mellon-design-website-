@@ -1,6 +1,7 @@
 import type { Block } from "@/lib/blocks";
-import { getIndustries, getServices } from "@/lib/content";
+import { getIndustries, getServices, getSiteContent } from "@/lib/content";
 import { getPublishedProjects } from "@/lib/projects";
+import { isGalleryService, projectImages } from "@/lib/project-gallery";
 import { Container } from "@/components/ui/Container";
 import {
   ProjectsExplorer,
@@ -62,13 +63,16 @@ export async function ProjectCards({
     meta: `${industryName.get(project.category) ?? project.category} · ${
       serviceName.get(project.service) ?? project.service
     }`,
+    images: projectImages(project),
   }));
 
+  // Image-led services list as a masonry wall. Only in the service grouping:
+  // an industry group mixes services, so it keeps the uniform cards.
   const byService = buildGroups(
     projects.map((p) => ({ id: p.id, key: p.service })),
     services.map((s) => ({ slug: s.slug, name: s.name })),
     (slug) => `/${locale}/services/${slug}`,
-  );
+  ).map((group) => (isGalleryService(group.slug) ? { ...group, masonry: true } : group));
   const byIndustry = buildGroups(
     projects.map((p) => ({ id: p.id, key: p.category })),
     industries.map((i) => ({ slug: i.slug, name: i.name })),
@@ -84,6 +88,7 @@ export async function ProjectCards({
           groups={{ service: byService, industry: byIndustry }}
           viewLink={block.viewLink}
           copy={{ ...DEFAULT_GROUPING, ...block.grouping }}
+          galleryLabels={getSiteContent(locale).projectsPage.gallery}
         />
       </Container>
     </section>

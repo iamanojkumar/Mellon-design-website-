@@ -122,6 +122,15 @@
       "dialog": "Afbeeldingsviewer",
       "thumbnails": "Alle afbeeldingen"
     },
+    "gallery": {
+      "slide": "Afbeelding {current} van {total}",
+      "previous": "Vorige afbeelding",
+      "next": "Volgende afbeelding",
+      "images": "Projectafbeeldingen",
+      "pause": "Scrollen pauzeren",
+      "play": "Scrollen hervatten",
+      "more": "Meer werk: {service}"
+    },
     "sidebar": {
       "label": "Gerelateerd aan dit project",
       "servicesEyebrow": "Diensten",

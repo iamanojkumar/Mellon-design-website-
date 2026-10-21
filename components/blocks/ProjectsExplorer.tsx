@@ -6,9 +6,12 @@ import type { ProjectGroupingCopy } from "@/lib/blocks";
 import { Cta } from "@/components/cta/Cta";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { RevealGroup } from "@/components/motion/RevealGroup";
+import { MasonryCard, type MasonryLabels } from "@/components/projects/MasonryCard";
+import type { GalleryImage } from "@/lib/project-gallery";
 import { ProjectCard } from "./ProjectCard";
 import styles from "./ProjectsExplorer.module.css";
 import cardStyles from "./ProjectCards.module.css";
+import masonryStyles from "@/components/projects/Masonry.module.css";
 
 export type ExplorerProject = {
   id: string;
@@ -21,6 +24,8 @@ export type ExplorerProject = {
   heroImageAlt: string | null;
   /** The line above the title, already resolved to display names. */
   meta: string;
+  /** Hero first, then the gallery — what a masonry tile shows. */
+  images: GalleryImage[];
 };
 
 export type ExplorerGroup = {
@@ -30,12 +35,16 @@ export type ExplorerGroup = {
   href: string | null;
   /** Project ids in this group, newest first. */
   ids: string[];
+  /** Image-led service (lib/project-gallery.ts): image + title tiles in masonry. */
+  masonry?: boolean;
 };
 
 type Mode = "service" | "industry";
 
 /** How many projects a group shows at first, and how many each "Show more" adds. */
 const STEP = 3;
+/** Same for a masonry group: a wall of three tiles across four columns looks broken. */
+export const MASONRY_STEP = 8;
 
 /**
  * Grouped case-study listing. The server decides the groups (see ProjectCards);
@@ -52,12 +61,14 @@ export function ProjectsExplorer({
   groups,
   viewLink,
   copy,
+  galleryLabels,
 }: {
   locale: string;
   projects: ExplorerProject[];
   groups: Record<Mode, ExplorerGroup[]>;
   viewLink: string;
   copy: ProjectGroupingCopy;
+  galleryLabels: MasonryLabels;
 }) {
   const [mode, setMode] = useState<Mode>("service");
   // Keyed by mode + slug so a service and an industry that share a slug do not
@@ -86,8 +97,8 @@ export function ProjectsExplorer({
 
   const byId = new Map(projects.map((project) => [project.id, project]));
 
-  function showMore(key: string, total: number, current: number) {
-    const next = Math.min(current + STEP, total);
+  function showMore(key: string, total: number, current: number, step: number) {
+    const next = Math.min(current + step, total);
     setShown((prev) => ({ ...prev, [key]: next }));
     // The button disappears once everything is shown, which would drop keyboard
     // focus to the page. Hand it to the "View all" link next to it instead.
@@ -148,7 +159,8 @@ export function ProjectsExplorer({
         {visibleGroups.map((group) => {
           const key = `${mode}:${group.slug}`;
           const total = group.ids.length;
-          const visible = Math.min(shown[key] ?? STEP, total);
+          const step = group.masonry ? MASONRY_STEP : STEP;
+          const visible = Math.min(shown[key] ?? step, total);
           const countLabel = (total === 1 ? copy.countOne : copy.countOther).replace(
             "{count}",
             String(total),
@@ -190,9 +202,14 @@ export function ProjectsExplorer({
                 </FadeIn>
               )}
 
-              <RevealGroup className={cardStyles.grid}>
+              <RevealGroup className={group.masonry ? masonryStyles.wall : cardStyles.grid}>
                 {group.ids.slice(0, visible).map((id) => {
                   const project = byId.get(id);
+                  if (project && group.masonry) {
+                    return (
+                      <MasonryCard key={id} locale={locale} project={project} labels={galleryLabels} />
+                    );
+                  }
                   return project ? (
                     <ProjectCard
                       key={id}
@@ -211,7 +228,7 @@ export function ProjectsExplorer({
                     <button
                       type="button"
                       className={styles.more}
-                      onClick={() => showMore(key, total, visible)}
+                      onClick={() => showMore(key, total, visible, step)}
                     >
                       {copy.showMore}
                     </button>

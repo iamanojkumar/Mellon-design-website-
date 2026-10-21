@@ -45,7 +45,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: `/services/${slug}`,
-    title: service.metaTitle ?? `${service.name} — ${site.org.name}`,
+    title: service.metaTitle ?? `${service.name} - ${site.org.name}`,
     description: service.metaDescription ?? service.summary,
     // Other languages keep their own service lists, so only link the locales that have this one.
     locales: enabledLocaleCodes.filter((code) => getServices(code).some((item) => item.slug === slug)),

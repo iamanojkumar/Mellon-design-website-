@@ -1,0 +1,9 @@
+.section {
+  padding-top: var(--space-2xl);
+}
+
+.heading {
+  font-size: var(--fs-500);
+  font-weight: var(--fw-display);
+  margin-bottom: var(--space-lg);
+}

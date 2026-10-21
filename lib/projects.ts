@@ -16,8 +16,9 @@ import "server-only";
 
 import type { ProjectStatus, SchemaType } from "@/lib/project-fields";
 import { parseBlocks, type ProjectBlock } from "@/lib/project-blocks";
+import { parseGallery, type GalleryImage } from "@/lib/project-gallery";
 
-export type { ProjectStatus, SchemaType };
+export type { ProjectStatus, SchemaType, GalleryImage };
 
 /** Search/social fields, kept as their own shape so a future content type can
  *  reuse them and lib/project-seo.ts without depending on Project itself. */
@@ -62,6 +63,10 @@ export type Project = SeoInput &
     content: string;
     /** Designed sections that sit alongside the rich-text body. */
     blocks: ProjectBlock[];
+    /** Off: an image-only project (graphic, motion) — no body, no blocks. */
+    richText: boolean;
+    /** Images after the hero, in order. See lib/project-gallery.ts. */
+    gallery: GalleryImage[];
     featured: boolean;
     folderId: string | null;
     status: ProjectStatus;
@@ -83,6 +88,8 @@ export type ProjectInput = SeoInput &
     alsoServices: string[];
     content: string;
     blocks: ProjectBlock[];
+    richText: boolean;
+    gallery: GalleryImage[];
     featured: boolean;
     folderId: string | null;
     status: ProjectStatus;
@@ -104,6 +111,9 @@ type ProjectRow = {
   hero_bg: string | null;
   content: string;
   blocks: unknown;
+  /** Absent until the 20261021 migration has run; read as the defaults. */
+  rich_text?: boolean | null;
+  gallery?: unknown;
   featured: boolean;
   folder_id: string | null;
   status: ProjectStatus;
@@ -142,6 +152,8 @@ function fromRow(row: ProjectRow): Project {
     heroBg: row.hero_bg,
     content: row.content,
     blocks: parseBlocks(row.blocks),
+    richText: row.rich_text ?? true,
+    gallery: parseGallery(row.gallery),
     featured: row.featured,
     folderId: row.folder_id,
     status: row.status,
@@ -180,6 +192,8 @@ function toRow(input: ProjectInput) {
     hero_bg: input.heroBg || null,
     content: input.content,
     blocks: input.blocks,
+    rich_text: input.richText,
+    gallery: input.gallery,
     featured: input.featured,
     folder_id: input.folderId || null,
     status: input.status,

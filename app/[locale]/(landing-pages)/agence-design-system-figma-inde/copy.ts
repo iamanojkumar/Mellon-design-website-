@@ -12,7 +12,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "Conception et développement de design system Figma",
     serviceType: "Agence de design system",
     areaServed: "France",
-    metaTitle: "Agence design system Figma en Inde — Mellon",
+    metaTitle: "Agence design system Figma en Inde - Mellon",
     metaDescription:
       "Agence de design en Inde : Mellon crée des design systems Figma pour équipes produit françaises. Audit, jetons, composants liés au code, transfert.",
     headline: "Une agence de design system Figma en Inde pour les équipes produit françaises.",

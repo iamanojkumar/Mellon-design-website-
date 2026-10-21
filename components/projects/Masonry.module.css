@@ -1,0 +1,167 @@
+/* Masonry wall for image-led services. CSS columns rather than a grid: each
+   tile keeps its image's own height, and it renders correctly on the server
+   with no script measuring anything. Tiles flow down each column, so DOM
+   (and reading) order stays the project order. */
+.wall {
+  columns: 2;
+  column-gap: var(--space-md);
+}
+
+.wall > * {
+  break-inside: avoid;
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 720px) {
+  .wall {
+    columns: 3;
+  }
+}
+
+@media (min-width: 1080px) {
+  .wall {
+    columns: 4;
+    column-gap: var(--space-lg);
+  }
+}
+
+.card {
+  display: block;
+  width: 100%;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-paper-tint);
+}
+
+/* The slide strip: one image per view, snapping. The scrollbar is hidden; the
+   arrows, dots, swipe and trackpad all move it. */
+.track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.track::-webkit-scrollbar {
+  display: none;
+}
+
+.slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  scroll-snap-align: start;
+  transition: transform 0.6s var(--ease-out, ease-out);
+}
+
+.media:hover .slide {
+  transform: scale(1.02);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.arrowPrev {
+  left: var(--space-xs);
+}
+
+.arrowNext {
+  right: var(--space-xs);
+}
+
+.media:hover .arrow,
+.arrow:focus-visible {
+  opacity: 1;
+}
+
+/* Touch screens have no hover: swipe and the dots are enough there. */
+@media (hover: none) {
+  .arrow {
+    display: none;
+  }
+}
+
+.dots {
+  position: absolute;
+  left: 50%;
+  bottom: var(--space-xs);
+  translate: -50% 0;
+  display: flex;
+  gap: 2px;
+  padding: 2px 4px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* 24px hit area around a 6px dot. */
+.dot {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transition: background-color 0.3s ease;
+}
+
+.dot[aria-current="true"]::after {
+  background: #fff;
+}
+
+.dot::before {
+  content: "";
+  position: absolute;
+  inset: -5px;
+}
+
+.title {
+  margin-top: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-200);
+  font-weight: 600;
+  line-height: var(--lh-tight, 1.3);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.title a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide,
+  .arrow {
+    transition: none;
+  }
+  .media:hover .slide {
+    transform: none;
+  }
+}

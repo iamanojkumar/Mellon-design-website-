@@ -17,7 +17,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "Brand identity design",
     serviceType: "Branding agency",
     areaServed: "India",
-    metaTitle: "Branding agency in Bangalore — Mellon",
+    metaTitle: "Branding agency in Bangalore - Mellon",
     metaDescription: "Mellon is a branding agency for Bangalore businesses: brand strategy, logo and visual identity, a brand manual, and a corporate presentation. Get a quote.",
     headline: "A branding agency for Bangalore businesses.",
     summary: "Mellon builds brand identities for Bangalore businesses, from strategy to logo, colour, and a brand manual, so every touchpoint looks and sounds like one company.",

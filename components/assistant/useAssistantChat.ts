@@ -57,6 +57,20 @@ export function useAssistantChat({
   const [fields, setFields] = useState<Fields>(EMPTY_FIELDS);
   const [manual, setManual] = useState(false);
   const started = useRef(false);
+  // Turnstile: the conversation is verified once (the server then sets a cookie).
+  // `verified` flips after the first accepted request; until then each request
+  // carries the widget's token. `tokenFailed` = the check could not run at all.
+  const tokenRef = useRef<string | null>(null);
+  const verified = useRef(false);
+  const [tokenReady, setTokenReady] = useState(false);
+  const [tokenFailed, setTokenFailed] = useState(false);
+  const [verifyResetKey, setVerifyResetKey] = useState(0);
+  const onToken = useCallback((value: string | null) => {
+    tokenRef.current = value;
+    setTokenReady(Boolean(value));
+    if (value) setTokenFailed(false);
+  }, []);
+  const onTokenError = useCallback(() => setTokenFailed(true), []);
   // Bumped on every reset, so a reply still in flight for the previous
   // conversation is dropped instead of landing in the new one.
   const epoch = useRef(0);
@@ -75,9 +89,22 @@ export function useAssistantChat({
             path: window.location.pathname,
             pageTitle: document.title,
             messages: history,
+            turnstileToken: verified.current ? undefined : (tokenRef.current ?? undefined),
           }),
         });
+        if (res.status === 403) {
+          // The verification expired: ask the widget for a fresh token.
+          verified.current = false;
+          tokenRef.current = null;
+          setTokenReady(false);
+          setVerifyResetKey((key) => key + 1);
+        }
         if (!res.ok) throw new Error(String(res.status));
+        if (!verified.current) {
+          verified.current = true;
+          tokenRef.current = null;
+          setTokenReady(false);
+        }
         const data = (await res.json()) as Reply;
         if (run !== epoch.current) return;
         if (history.length === 0) {
@@ -138,9 +165,12 @@ export function useAssistantChat({
   // Starters are fetched the first time the conversation becomes active.
   useEffect(() => {
     if (!active || started.current) return;
+    // Wait for the Turnstile check (usually under a second) unless it already
+    // passed or cannot run; without it the server would refuse the first call.
+    if (!verified.current && !tokenReady && !tokenFailed) return;
     started.current = true;
     void ask([]);
-  }, [active, ask]);
+  }, [active, ask, tokenReady, tokenFailed]);
 
   const send = useCallback(
     (text: string) => {
@@ -189,5 +219,7 @@ export function useAssistantChat({
     submitDraft,
     retry,
     reset,
+    /** Spread onto <Turnstile /> wherever the chat is shown. */
+    turnstile: { action: "assistant", onToken, onError: onTokenError, resetKey: verifyResetKey },
   };
 }

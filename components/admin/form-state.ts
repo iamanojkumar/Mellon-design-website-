@@ -1,6 +1,7 @@
 import type { Project } from "@/lib/projects";
 import type { ProjectStatus, SchemaType } from "@/lib/project-fields";
 import type { ProjectBlock } from "@/lib/project-blocks";
+import type { GalleryImage } from "@/lib/project-gallery";
 
 /**
  * The editor's in-memory shape. Lives in AdminApp so every panel (core editor,
@@ -27,6 +28,10 @@ export type ProjectFormState = {
   heroBg: string;
   content: string;
   blocks: ProjectBlock[];
+  /** Off: image-only project (graphic, motion). Body and blocks are not shown. */
+  richText: boolean;
+  /** Images after the hero, in order. */
+  gallery: GalleryImage[];
   featured: boolean;
   folderId: string | null;
   status: ProjectStatus;
@@ -58,6 +63,8 @@ export const blankForm: ProjectFormState = {
   heroBg: "",
   content: "",
   blocks: [],
+  richText: true,
+  gallery: [],
   featured: false,
   folderId: null,
   status: "draft",
@@ -91,6 +98,8 @@ export function toForm(project: Project | null): ProjectFormState {
     heroBg: project.heroBg ?? "",
     content: project.content,
     blocks: project.blocks,
+    richText: project.richText,
+    gallery: project.gallery,
     featured: project.featured,
     folderId: project.folderId,
     status: project.status,

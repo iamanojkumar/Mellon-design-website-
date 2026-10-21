@@ -17,7 +17,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "Website design and build",
     serviceType: "Web design company",
     areaServed: "India",
-    metaTitle: "Web design company in Bangalore — Mellon",
+    metaTitle: "Web design company in Bangalore - Mellon",
     metaDescription: "Mellon designs and builds websites for Bangalore businesses in Webflow, Framer, WordPress, or custom code: UX, UI, SEO basics, launch. Get a quote.",
     headline: "A web design company for Bangalore businesses.",
     summary: "Mellon designs and builds websites for Bangalore businesses, from the first sitemap to launch, so the people who design your site are the people who build it.",

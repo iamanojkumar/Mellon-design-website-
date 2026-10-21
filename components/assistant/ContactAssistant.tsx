@@ -5,6 +5,7 @@ import { ContactForm, type ContactFormLabels } from "@/components/contact-form/C
 import { FadeIn } from "@/components/motion/HeroSequence";
 import type { ChatCopy } from "./ChatWidget";
 import { AssistantNote } from "./AssistantNote";
+import { Turnstile } from "@/components/turnstile/Turnstile";
 import { useAssistantChat } from "./useAssistantChat";
 import styles from "./ContactAssistant.module.css";
 
@@ -63,6 +64,7 @@ export function ContactAssistant({
     send,
     submitDraft,
     retry,
+    turnstile,
   } = useAssistantChat({
     locale,
     fallbackWelcome: copy.fallbackWelcome,
@@ -219,6 +221,7 @@ export function ContactAssistant({
               )}
             </div>
 
+            <Turnstile {...turnstile} />
             <form className={styles.composer} onSubmit={submitDraft}>
               <input
                 ref={inputRef}

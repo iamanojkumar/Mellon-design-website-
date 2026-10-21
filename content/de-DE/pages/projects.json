@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Projekte — Mellon",
-    "description": "Fallstudien von Mellon — Branding, Designsysteme und Produktarbeit, samt der Überlegungen dahinter."
+    "title": "Projekte - Mellon",
+    "description": "Fallstudien von Mellon - Branding, Designsysteme und Produktarbeit, samt der Überlegungen dahinter."
   },
   "blocks": [
     {
@@ -30,7 +30,7 @@
     {
       "type": "closingCta",
       "headline": "Sie haben ein ähnliches Projekt?",
-      "body": "Erzählen Sie uns davon — wir stellen die passende Kombination zusammen.",
+      "body": "Erzählen Sie uns davon - wir stellen die passende Kombination zusammen.",
       "cta": {
         "label": "Projekt starten",
         "href": "/contact"

@@ -4,6 +4,7 @@ import { deepseekChat, isAssistantConfigured } from "@/lib/ai-provider";
 import { pricingContext } from "@/lib/assistant-context";
 import { getServices } from "@/lib/content";
 import { defaultLocale, getLocaleConfig, isEnabledLocale } from "@/lib/locale";
+import { chatSessionCookie, clientIp, hasChatSession, verifyTurnstile } from "@/lib/turnstile";
 
 export const maxDuration = 30;
 
@@ -24,6 +25,7 @@ const MAX_CHARS = 600;
 const EMAIL = /[^\s@<>()[\],;:"']+@[^\s@<>()[\],;:"']+\.[^\s@<>()[\],;:"']{2,}/;
 
 const bodySchema = z.object({
+  turnstileToken: z.string().max(2048).optional(),
   locale: z.string().max(12).optional(),
   path: z.string().max(200).optional(),
   pageTitle: z.string().max(160).optional(),
@@ -173,6 +175,20 @@ export async function POST(request: Request) {
   }
   if (!parsed.success) return Response.json({ error: "bad_request" }, { status: 400 });
 
+  // Turnstile: a conversation is verified once. A passed check sets a signed
+  // cookie, and the rest of the chat just presents it.
+  let setCookie: string | null = null;
+  if (!hasChatSession(request)) {
+    const ok = await verifyTurnstile(parsed.data.turnstileToken, { action: "assistant", ip: clientIp(request.headers) });
+    if (!ok) return Response.json({ error: "verification_required" }, { status: 403 });
+    setCookie = chatSessionCookie();
+  }
+  const respond = (body: unknown, status = 200) => {
+    const headers = new Headers({ "Cache-Control": "no-store" });
+    if (setCookie) headers.append("Set-Cookie", setCookie);
+    return Response.json(body, { status, headers });
+  };
+
   const { messages, path = "/", pageTitle = "Mellon" } = parsed.data;
   const locale = parsed.data.locale && isEnabledLocale(parsed.data.locale) ? parsed.data.locale : defaultLocale;
   const language = getLocaleConfig(locale)?.label ?? "English";
@@ -203,7 +219,7 @@ export async function POST(request: Request) {
         abortSignal: AbortSignal.timeout(12000),
       }));
       const result = toReply(extractJson(text), userText);
-      if (result) return Response.json(result, { headers: { "Cache-Control": "no-store" } });
+      if (result) return respond(result);
     }
 
     // The model sometimes answers in plain prose instead of JSON. Rather than
@@ -211,14 +227,11 @@ export async function POST(request: Request) {
     // carry on; the widget keeps what it already knew.
     const prose = text.trim();
     if (prose && !prose.includes("{") && prose.length <= 700) {
-      return Response.json(
-        { reply: prose, stage: null, suggestions: [], summary: "", fields: null },
-        { headers: { "Cache-Control": "no-store" } },
-      );
+      return respond({ reply: prose, stage: null, suggestions: [], summary: "", fields: null });
     }
     console.error("assistant: unparseable reply", text.slice(0, 300));
-    return Response.json({ error: "bad_reply" }, { status: 502 });
+    return respond({ error: "bad_reply" }, 502);
   } catch {
-    return Response.json({ error: "failed" }, { status: 502 });
+    return respond({ error: "failed" }, 502);
   }
 }

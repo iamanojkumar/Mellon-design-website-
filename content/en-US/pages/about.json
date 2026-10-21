@@ -1,14 +1,14 @@
 {
   "meta": {
-    "title": "About — Mellon",
-    "description": "Mellon exists because brand, product, and engineering usually get designed in separate rooms — and it shows. We keep them in one room."
+    "title": "About - Mellon",
+    "description": "Mellon exists because brand, product, and engineering usually get designed in separate rooms - and it shows. We keep them in one room."
   },
   "blocks": [
     {
       "type": "pageHero",
       "eyebrow": "About",
       "headline": "A design studio built to run design and development as one practice.",
-      "subhead": "Mellon exists because brand, product, and engineering usually get designed in separate rooms — and it shows. We keep them in one room."
+      "subhead": "Mellon exists because brand, product, and engineering usually get designed in separate rooms - and it shows. We keep them in one room."
     },
     {
       "type": "textSections",
@@ -19,11 +19,11 @@
         },
         {
           "heading": "What we do",
-          "body": "Fifteen core disciplines — branding, design systems, e-commerce design, end-to-end design, graphic design, mobile app design, motion and interaction design, paid advertising, product design, SaaS design, SEO and content strategy, social media and content marketing, UI/UX design, UX audits, and web design — delivered individually or combined into a single end-to-end engagement."
+          "body": "Fifteen core disciplines - branding, design systems, e-commerce design, end-to-end design, graphic design, mobile app design, motion and interaction design, paid advertising, product design, SaaS design, SEO and content strategy, social media and content marketing, UI/UX design, UX audits, and web design - delivered individually or combined into a single end-to-end engagement."
         },
         {
           "heading": "How we work",
-          "body": "Every project runs through the same two practices: design and development. Design covers strategy, brand, UX, and UI. Development covers implementation, in Webflow, Framer, WordPress, or custom code — by people who were in the room for the design decisions, so nothing gets lost in a handoff."
+          "body": "Every project runs through the same two practices: design and development. Design covers strategy, brand, UX, and UI. Development covers implementation, in Webflow, Framer, WordPress, or custom code - by people who were in the room for the design decisions, so nothing gets lost in a handoff."
         },
         {
           "heading": "Who we work with",

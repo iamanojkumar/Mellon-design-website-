@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Mellon — Design agency for brand, product, and digital experience",
+    "title": "Mellon - Design agency for brand, product, and digital experience",
     "description": "Mellon is a design agency that builds brand identities, digital products, and design systems for teams across architecture, automotive, technology, finance, and more."
   },
   "blocks": [
@@ -8,7 +8,7 @@
       "type": "hero",
       "eyebrow": "Mellon Design",
       "headline": "Design that carries a brand from first impression to daily use.",
-      "subhead": "We build identity systems, digital products, and design systems for teams who need brand and product to move as one — across architecture, automotive, technology, finance, and a dozen industries besides.",
+      "subhead": "We build identity systems, digital products, and design systems for teams who need brand and product to move as one - across architecture, automotive, technology, finance, and a dozen industries besides.",
       "primaryCta": {
         "label": "Start a project",
         "href": "/contact"
@@ -32,7 +32,7 @@
       "type": "servicesGrid",
       "eyebrow": "What we do",
       "headline": "Fifteen disciplines. One studio.",
-      "body": "From a first brand mark to a fully governed design system, Mellon covers the full range of design work a growing company needs — without the hand-offs between agencies.",
+      "body": "From a first brand mark to a fully governed design system, Mellon covers the full range of design work a growing company needs - without the hand-offs between agencies.",
       "categories": [
         {
           "id": "brand",
@@ -58,11 +58,11 @@
       "type": "process",
       "eyebrow": "How we work",
       "headline": "Design and development, under one roof.",
-      "body": "Mellon runs as two connected consulting practices — design and development — so the systems we design are the systems that ship, not a set of files thrown over a wall.",
+      "body": "Mellon runs as two connected consulting practices - design and development - so the systems we design are the systems that ship, not a set of files thrown over a wall.",
       "steps": [
         {
           "title": "Design",
-          "body": "Strategy, brand, UX, and UI — built in Figma and tested before a single line of code."
+          "body": "Strategy, brand, UX, and UI - built in Figma and tested before a single line of code."
         },
         {
           "title": "Development",
@@ -74,7 +74,7 @@
       "type": "closingCta",
       "withForm": true,
       "headline": "Tell us what you're building.",
-      "body": "Every engagement starts with a conversation, not a proposal template. Tell us where things stand and we'll tell you honestly whether — and how — we can help.",
+      "body": "Every engagement starts with a conversation, not a proposal template. Tell us where things stand and we'll tell you honestly whether - and how - we can help.",
       "cta": {
         "label": "Start a project",
         "href": "/contact"

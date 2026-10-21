@@ -40,7 +40,7 @@ export async function generateMetadata({
   return buildMetadata({
     locale,
     path: `/industries/${slug}`,
-    title: `${industry.name} — ${site.org.name}`,
+    title: `${industry.name} - ${site.org.name}`,
     description: industry.summary,
     // Other languages keep their own industry lists, so only link the locales that have this one.
     locales: enabledLocaleCodes.filter((code) => getIndustries(code).some((item) => item.slug === slug)),

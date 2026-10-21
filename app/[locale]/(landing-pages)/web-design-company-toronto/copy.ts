@@ -20,7 +20,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "Website design and build",
     serviceType: "Web design company",
     areaServed: "Canada",
-    metaTitle: "Web design company in Toronto — Mellon",
+    metaTitle: "Web design company in Toronto - Mellon",
     metaDescription: "Mellon designs and builds websites for Toronto businesses in Webflow, Framer, WordPress, or custom code: UX, UI, SEO foundations, launch. Get a quote.",
     headline: "A web design company for Toronto businesses.",
     summary: "Mellon designs and builds websites for Toronto businesses in Webflow, Framer, WordPress, or custom code, from the sitemap to launch. One team does the design and the build, so what you approve is what goes live.",

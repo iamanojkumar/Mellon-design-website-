@@ -3,7 +3,7 @@
     "slug": "branding",
     "name": "Branding",
     "tagline": "Identity systems built to hold up across every surface.",
-    "summary": "We're a branding agency. We build brand identities from the ground up — mark, color, type, voice — then codify them in a brand manual so every team that touches the brand after us stays on-model without asking.",
+    "summary": "We're a branding agency. We build brand identities from the ground up - mark, color, type, voice - then codify them in a brand manual so every team that touches the brand after us stays on-model without asking.",
     "deliverables": [
       "Brand strategy and positioning",
       "Logo, mark, and visual identity system",
@@ -24,7 +24,7 @@
       "nonprofit-branding"
     ],
     "headline": "A branding agency that builds identity systems, not just logos.",
-    "metaTitle": "Branding agency: strategy and identity — Mellon",
+    "metaTitle": "Branding agency: strategy and identity - Mellon",
     "metaDescription": "Mellon is a branding agency: brand strategy, logo and visual identity, a brand manual, and a corporate presentation your team can use without us. Get a quote.",
     "process": [
       {
@@ -90,7 +90,7 @@
     "headline": "A graphic design agency for work that has to look like one brand.",
     "tagline": "Marketing, ad, and presentation graphics built on your brand.",
     "summary": "We design the graphics a growing company needs week after week: campaign and ad creative, social graphics, sales collateral, presentations, and brand manual layouts. Everything is built on your brand and handed over as editable files your team can reuse.",
-    "metaTitle": "Graphic design agency: brand and marketing graphics — Mellon",
+    "metaTitle": "Graphic design agency: brand and marketing graphics - Mellon",
     "metaDescription": "Mellon designs marketing graphics, ad creative, presentations, and brand manual layouts as editable files your team can reuse. Get a quote.",
     "deliverables": [
       "Campaign and ad creative sized for Google, YouTube, and Meta",
@@ -174,7 +174,7 @@
     "slug": "design-systems",
     "name": "Design Systems",
     "tagline": "One source of truth for every component, token, and pattern.",
-    "summary": "We're a design system agency. We turn scattered UI decisions into a governed system — components, tokens, and documentation that let design and engineering ship consistently, fast, without re-litigating the same button.",
+    "summary": "We're a design system agency. We turn scattered UI decisions into a governed system - components, tokens, and documentation that let design and engineering ship consistently, fast, without re-litigating the same button.",
     "deliverables": [
       "Token architecture (color, type, spacing, motion)",
       "Component libraries in Figma, mirrored in code",
@@ -193,7 +193,7 @@
       "education-edtech"
     ],
     "headline": "A design system agency that gets design and engineering using the same parts.",
-    "metaTitle": "Design system agency: tokens and components — Mellon",
+    "metaTitle": "Design system agency: tokens and components - Mellon",
     "metaDescription": "Mellon is a design system agency: token architecture, Figma component libraries mirrored in code, documentation, and rollout support. Get a quote.",
     "process": [
       {
@@ -255,7 +255,7 @@
     "slug": "ecommerce-design",
     "name": "E-Commerce Design",
     "tagline": "Storefronts and product pages that convert without feeling like a funnel.",
-    "summary": "We're an e-commerce design agency. From catalog browsing to checkout, we design commerce experiences that reduce friction at every step — and we build them on the platforms you already run, Webflow and WooCommerce included.",
+    "summary": "We're an e-commerce design agency. From catalog browsing to checkout, we design commerce experiences that reduce friction at every step - and we build them on the platforms you already run, Webflow and WooCommerce included.",
     "deliverables": [
       "Storefront UX audits and conversion redesign",
       "Product listing, PDP, and checkout flow design",
@@ -274,7 +274,7 @@
       "restaurant-branding"
     ],
     "headline": "An e-commerce design agency for storefronts and checkout flows.",
-    "metaTitle": "E-commerce design agency: storefronts and checkout — Mellon",
+    "metaTitle": "E-commerce design agency: storefronts and checkout - Mellon",
     "metaDescription": "Mellon is an e-commerce design agency: storefront UX, product pages, checkout design, and builds in Webflow and WooCommerce. Get a quote.",
     "process": [
       {
@@ -336,7 +336,7 @@
     "slug": "end-to-end-design",
     "name": "End-to-End Design",
     "tagline": "From first sketch to shipped product, one team the whole way.",
-    "summary": "For teams that don't want to hand off between agencies, we run the full arc — strategy, brand, UX, UI, prototyping, and build — so nothing gets lost in translation between phases.",
+    "summary": "For teams that don't want to hand off between agencies, we run the full arc - strategy, brand, UX, UI, prototyping, and build - so nothing gets lost in translation between phases.",
     "deliverables": [
       "Discovery, strategy, and product definition",
       "UX architecture through to final UI",
@@ -354,7 +354,7 @@
       "health-wellness-tech",
       "civic-tech-design"
     ],
-    "metaTitle": "End-to-end design: strategy to launch — Mellon",
+    "metaTitle": "End-to-end design: strategy to launch - Mellon",
     "metaDescription": "Mellon runs design end to end: strategy, brand, UX, UI, prototyping, and build in Webflow, Framer, or code, with one team. Get a quote.",
     "process": [
       {
@@ -430,7 +430,7 @@
       "media-entertainment-gaming"
     ],
     "headline": "A mobile app design agency for iOS and Android.",
-    "metaTitle": "Mobile app design agency: iOS and Android — Mellon",
+    "metaTitle": "Mobile app design agency: iOS and Android - Mellon",
     "metaDescription": "Mellon is a mobile app design agency: user flows, iOS and Android UI, interaction specs, and design QA through engineering handoff. Get a quote.",
     "process": [
       {
@@ -511,7 +511,7 @@
       "technology-saas"
     ],
     "headline": "A motion and interaction design studio for product interfaces.",
-    "metaTitle": "Motion and interaction design studio — Mellon",
+    "metaTitle": "Motion and interaction design studio - Mellon",
     "metaDescription": "Mellon is a motion and interaction design studio: timing and easing systems, micro-interactions, Framer prototypes, and engineering-ready specs. Get a quote.",
     "process": [
       {
@@ -573,7 +573,7 @@
     "slug": "product-design",
     "name": "Product Design",
     "tagline": "Digital products designed around how people actually work.",
-    "summary": "We're a product design studio. We embed with product and engineering teams to design software that's simple where it should be simple and powerful where it needs to be — grounded in real user research, not guesswork.",
+    "summary": "We're a product design studio. We embed with product and engineering teams to design software that's simple where it should be simple and powerful where it needs to be - grounded in real user research, not guesswork.",
     "deliverables": [
       "User research and journey mapping",
       "Information architecture and flow design",
@@ -593,7 +593,7 @@
       "health-wellness-tech"
     ],
     "headline": "A product design studio that works inside your team.",
-    "metaTitle": "Product design studio: research to shipped UI — Mellon",
+    "metaTitle": "Product design studio: research to shipped UI - Mellon",
     "metaDescription": "Mellon is a product design studio: user research, flows, UI for web and app, and usability testing, embedded in your team. Get a quote.",
     "process": [
       {
@@ -674,7 +674,7 @@
       "education-edtech"
     ],
     "headline": "A SaaS design agency for products that keep getting more complex.",
-    "metaTitle": "SaaS design agency: product UI and systems — Mellon",
+    "metaTitle": "SaaS design agency: product UI and systems - Mellon",
     "metaDescription": "Mellon is a SaaS design agency: dashboards, onboarding, settings and permissions, and the component systems behind them. Get a quote.",
     "process": [
       {
@@ -735,8 +735,8 @@
   {
     "slug": "seo-content-strategy",
     "name": "SEO & Content Strategy",
-    "tagline": "Built to be found — structure, content, and technical foundations that rank.",
-    "summary": "We design and structure sites so search engines and readers both make sense of them — information architecture, on-page optimization, and a content plan built around the terms your buyers actually search, integrated into the same system as the rest of your product.",
+    "tagline": "Built to be found - structure, content, and technical foundations that rank.",
+    "summary": "We design and structure sites so search engines and readers both make sense of them - information architecture, on-page optimization, and a content plan built around the terms your buyers actually search, integrated into the same system as the rest of your product.",
     "deliverables": [
       "Keyword and competitive landscape research",
       "On-page SEO: metadata, schema, and content structure",
@@ -755,7 +755,7 @@
       "real-estate-design",
       "hospitality-design"
     ],
-    "metaTitle": "SEO and content strategy — Mellon",
+    "metaTitle": "SEO and content strategy - Mellon",
     "metaDescription": "Mellon plans SEO and content strategy: keyword research, on-page structure, content planning, and technical audits, built into your site. Get a quote.",
     "process": [
       {
@@ -818,7 +818,7 @@
     "slug": "social-media-content-marketing",
     "name": "Social Media & Content Marketing",
     "tagline": "Scroll-stopping content, on-brand in every format and every feed.",
-    "summary": "We design the visual system behind your social presence — templates, campaign creative, and a content cadence that stays recognizably yours across platforms, so marketing content never feels bolted onto the brand after the fact.",
+    "summary": "We design the visual system behind your social presence - templates, campaign creative, and a content cadence that stays recognizably yours across platforms, so marketing content never feels bolted onto the brand after the fact.",
     "deliverables": [
       "Platform-specific content templates and design systems",
       "Campaign and launch creative",
@@ -837,7 +837,7 @@
       "media-entertainment-gaming",
       "consumer-electronics"
     ],
-    "metaTitle": "Social media and content marketing design — Mellon",
+    "metaTitle": "Social media and content marketing design - Mellon",
     "metaDescription": "Mellon designs the system behind your social presence: platform templates, campaign creative, a content calendar, and brand-consistent guidelines. Get a quote.",
     "process": [
       {
@@ -896,7 +896,7 @@
   {
     "slug": "ui-ux-design",
     "name": "UI/UX Design",
-    "tagline": "The core craft — research, structure, and pixel-level execution.",
+    "tagline": "The core craft - research, structure, and pixel-level execution.",
     "summary": "We're a UI/UX design agency: we understand your users, structure the flows, and design interfaces with the typographic and visual care that separates a product from a prototype.",
     "deliverables": [
       "User research, personas, and journey mapping",
@@ -917,7 +917,7 @@
       "legal-branding"
     ],
     "headline": "A UI/UX design agency for teams building digital products.",
-    "metaTitle": "UI/UX design agency — Mellon",
+    "metaTitle": "UI/UX design agency - Mellon",
     "metaDescription": "Mellon is a UI/UX design agency: user research, wireframes, high-fidelity interface design, and interactive prototypes for web and mobile products. Get a quote.",
     "process": [
       {
@@ -979,7 +979,7 @@
     "slug": "ux-audit",
     "name": "UX Audit",
     "tagline": "A clear-eyed read on what's costing you conversions and trust.",
-    "summary": "We run UX audit services for products that need answers before a redesign. We tell you what's actually broken — a structured, heuristic-based review of your existing product with prioritized, actionable fixes, not just a list of opinions.",
+    "summary": "We run UX audit services for products that need answers before a redesign. We tell you what's actually broken - a structured, heuristic-based review of your existing product with prioritized, actionable fixes, not just a list of opinions.",
     "deliverables": [
       "Heuristic evaluation against usability principles",
       "Funnel and flow-specific friction analysis",
@@ -998,7 +998,7 @@
       "technology-saas"
     ],
     "headline": "UX audit services that tell you what's costing you conversions and trust.",
-    "metaTitle": "UX audit services: findings you can act on — Mellon",
+    "metaTitle": "UX audit services: findings you can act on - Mellon",
     "metaDescription": "Mellon's UX audit services: heuristic evaluation, funnel friction analysis, accessibility checks, and a prioritized report of fixes. Get a quote.",
     "process": [
       {
@@ -1061,8 +1061,8 @@
     "name": "Web Design",
     "headline": "A web design agency that also builds the site.",
     "tagline": "Websites designed and built by the same team.",
-    "summary": "We design websites around what your visitors came to do, then build them in Webflow, Framer, WordPress, or custom code — by the people who made the design decisions, so nothing is lost between mockup and launch.",
-    "metaTitle": "Web design agency: design and build — Mellon",
+    "summary": "We design websites around what your visitors came to do, then build them in Webflow, Framer, WordPress, or custom code - by the people who made the design decisions, so nothing is lost between mockup and launch.",
+    "metaTitle": "Web design agency: design and build - Mellon",
     "metaDescription": "Mellon designs and builds websites in Webflow, Framer, WordPress, or custom code: UX, UI, page structure, SEO foundations, and launch support. Get a quote.",
     "deliverables": [
       "Site structure, sitemap, and content planning",
@@ -1147,7 +1147,7 @@
     "headline": "Paid advertising on Google and Meta, run by the team that makes the ads.",
     "tagline": "Strategy, management, and creative for Google and Meta ads.",
     "summary": "We plan your paid advertising, run it on Google Ads and Meta, and make the creative and copy ourselves, so the ads, the landing page, and your brand all say the same thing.",
-    "metaTitle": "Paid advertising agency: Google and Meta ads — Mellon",
+    "metaTitle": "Paid advertising agency: Google and Meta ads - Mellon",
     "metaDescription": "Mellon plans, runs, and creates Google Ads (including YouTube and website banners) and Meta ads: strategy, campaign management, creative, and copy. Get a quote.",
     "deliverables": [
       "Advertising strategy: goals, audiences, channels, and budget split",

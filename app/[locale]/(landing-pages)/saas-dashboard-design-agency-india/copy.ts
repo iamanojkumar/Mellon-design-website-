@@ -27,7 +27,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "SaaS dashboard design",
     serviceType: "SaaS dashboard design agency",
     areaServed: "United States",
-    metaTitle: "SaaS dashboard design agency in India for US teams — Mellon",
+    metaTitle: "SaaS dashboard design agency in India for US teams - Mellon",
     metaDescription:
       "Mellon designs SaaS dashboards for US product teams: data hierarchy, charts and tables, role-based views, and developer handoff. Get a quote.",
     headline: "A SaaS dashboard design agency in India for US product teams.",

@@ -1,6 +1,8 @@
 "use server";
 
+import { headers } from "next/headers";
 import { getSiteContent } from "@/lib/content";
+import { clientIp, verifyTurnstile } from "@/lib/turnstile";
 import { notifyNewSubmission } from "@/lib/notify";
 import { saveContactSubmission } from "@/lib/submissions";
 import { defaultLocale, isEnabledLocale } from "@/lib/locale";
@@ -22,6 +24,13 @@ export async function submitContactForm(
   // Honeypot: real visitors never see or fill this field; bots usually do.
   // Pretend success so they get no signal, and store nothing.
   if (formData.get("website")?.toString()) return { status: "success" };
+
+  // Turnstile: the widget in ContactForm adds this token. No valid token, no save.
+  const verified = await verifyTurnstile(formData.get("cf-turnstile-response"), {
+    action: "contact",
+    ip: clientIp(await headers()),
+  });
+  if (!verified) return { status: "error", formError: "verification_failed" };
 
   const raw = {
     name: formData.get("name")?.toString() ?? "",

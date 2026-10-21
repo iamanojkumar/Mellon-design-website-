@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, permanentRedirect } from "next/navigation";
-import { getSiteContent } from "@/lib/content";
+import { getIndustries, getServices, getSiteContent } from "@/lib/content";
 import { enabledLocaleCodes } from "@/lib/locale";
 import {
   getProject,
@@ -25,7 +25,10 @@ import { ParallaxRichText } from "@/components/projects/ParallaxRichText";
 import { MediaLightbox } from "@/components/projects/MediaLightbox";
 import { ProjectSidebar, getProjectSidebarData } from "@/components/projects/ProjectSidebar";
 import { ProjectCta } from "@/components/projects/ProjectCta";
+import { GalleryMarquee } from "@/components/projects/GalleryMarquee";
+import { MoreGalleryWork } from "@/components/projects/MoreGalleryWork";
 import { protectAudioInHtml } from "@/lib/protected-media";
+import { projectImages } from "@/lib/project-gallery";
 import styles from "./page.module.css";
 
 /**
@@ -115,12 +118,8 @@ export default async function ProjectDetailPage({
   const siteUrl = getSiteUrl();
   const localePrefix = `/${locale}`;
   const canonical = project.canonicalUrl || `${siteUrl}${localePrefix}/projects/${project.slug}`;
-  const sidebar = await getProjectSidebarData(locale, project);
-  // Each widget hides itself when empty; with both empty there is no sidebar
-  // column at all and the article keeps the full width.
-  const hasSidebar = sidebar.showServices || sidebar.showProjects;
 
-  return (
+  const structuredData = (
     <>
       <JsonLd data={buildProjectJsonLd(siteUrl, locale, canonical, project)} />
       <JsonLd
@@ -130,6 +129,79 @@ export default async function ProjectDetailPage({
           { name: project.title, path: `${localePrefix}/projects/${project.slug}` },
         ])}
       />
+    </>
+  );
+
+  // Image-only project (rich text off in the admin: graphic design, motion):
+  // the images are the page. A marquee row of them leads, then the title, then
+  // more of the same service. No body, blocks or sidebar.
+  if (!project.richText) {
+    const images = projectImages(project);
+    const serviceName =
+      getServices(locale).find((service) => service.slug === project.service)?.name ?? project.service;
+    const industryName =
+      getIndustries(locale).find((industry) => industry.slug === project.category)?.name ?? project.category;
+
+    return (
+      <>
+        {structuredData}
+        <HeroTint color={project.heroBg} />
+        <article className={styles.article} data-lightbox="">
+          <MediaLightbox labels={site.projectsPage.lightbox} />
+          <div className={styles.heroBand} data-hero-band="" data-tinted={normalizeHeroBg(project.heroBg) ? "" : undefined}>
+            {project.customHead && (
+              <div hidden dangerouslySetInnerHTML={{ __html: project.customHead }} />
+            )}
+            {images.length > 0 && (
+              <div className={revealOnLoadClass}>
+                <GalleryMarquee images={images} labels={site.projectsPage.gallery} />
+              </div>
+            )}
+            <Container>
+              <div className={styles.galleryIntro}>
+                <p className={styles.meta}>
+                  <FadeIn as="span" whenVisible>
+                    {industryName} · {serviceName}
+                  </FadeIn>
+                </p>
+                <h1 className={styles.galleryTitle}>
+                  <SwiftUpText text={project.title} whenVisible />
+                </h1>
+                {project.summary && (
+                  <p className={styles.summary}>
+                    <SwiftUpText text={project.summary} whenVisible lineDelay={0.12} delay={0.2} />
+                  </p>
+                )}
+              </div>
+            </Container>
+          </div>
+
+          <MoreGalleryWork locale={locale} project={project} />
+
+          <Container>
+            <p className={styles.back}>
+              <Link href={`${localePrefix}/projects`}>← {label}</Link>
+            </p>
+          </Container>
+        </article>
+
+        <ProjectCta locale={locale} />
+
+        {project.customBody && (
+          <div dangerouslySetInnerHTML={{ __html: project.customBody }} />
+        )}
+      </>
+    );
+  }
+
+  const sidebar = await getProjectSidebarData(locale, project);
+  // Each widget hides itself when empty; with both empty there is no sidebar
+  // column at all and the article keeps the full width.
+  const hasSidebar = sidebar.showServices || sidebar.showProjects;
+
+  return (
+    <>
+      {structuredData}
 
       <HeroTint color={project.heroBg} />
       {/* data-lightbox: every image in the hero, body and gallery opens full screen. */}

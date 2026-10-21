@@ -18,7 +18,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "UI/UX design",
     serviceType: "UI/UX design company",
     areaServed: "India",
-    metaTitle: "UI/UX design company in Bangalore — Mellon",
+    metaTitle: "UI/UX design company in Bangalore - Mellon",
     metaDescription: "Mellon is a UI/UX design company for Bangalore product teams: user research, flows, high-fidelity UI, and prototypes engineers can build from. Get a quote.",
     headline: "A UI/UX design company for Bangalore product teams.",
     summary: "Mellon designs the interfaces for Bangalore product teams: user research, flows, high-fidelity UI, and prototypes your engineers can build from.",

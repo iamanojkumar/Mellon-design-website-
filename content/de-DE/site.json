@@ -122,6 +122,15 @@
       "dialog": "Bildbetrachter",
       "thumbnails": "Alle Bilder"
     },
+    "gallery": {
+      "slide": "Bild {current} von {total}",
+      "previous": "Vorheriges Bild",
+      "next": "Nächstes Bild",
+      "images": "Projektbilder",
+      "pause": "Laufband anhalten",
+      "play": "Laufband fortsetzen",
+      "more": "Weitere Arbeiten: {service}"
+    },
     "sidebar": {
       "label": "Zu diesem Projekt",
       "servicesEyebrow": "Leistungen",

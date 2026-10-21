@@ -21,7 +21,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "Brand identity design",
     serviceType: "Branding agency",
     areaServed: "United Arab Emirates",
-    metaTitle: "Branding agency in Dubai — Mellon",
+    metaTitle: "Branding agency in Dubai - Mellon",
     metaDescription: "Mellon is a branding agency for Dubai businesses: brand strategy, logo and visual identity, a brand manual, and a corporate presentation. Get a quote.",
     headline: "A branding agency for Dubai businesses.",
     summary: "Mellon builds brand identities for Dubai businesses: strategy, logo and visual identity, a brand manual, and a corporate presentation, so the brand holds up from your website to your next pitch.",

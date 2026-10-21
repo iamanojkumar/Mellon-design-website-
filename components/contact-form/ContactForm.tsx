@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useActionState, useContext } from "react";
+import { createContext, useActionState, useContext, useEffect, useState } from "react";
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { useFormStatus } from "react-dom";
@@ -8,6 +8,7 @@ import { submitContactForm } from "@/components/contact-form/actions";
 import { initialContactFormState } from "@/components/contact-form/schema";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
+import { Turnstile } from "@/components/turnstile/Turnstile";
 import styles from "./ContactForm.module.css";
 
 export type ContactFormLabels = {
@@ -96,10 +97,10 @@ function Field({
   );
 }
 
-function SubmitButton({ label, sending }: { label: string; sending: string }) {
+function SubmitButton({ label, sending, waiting }: { label: string; sending: string; waiting: boolean }) {
   const { pending } = useFormStatus();
   return (
-    <button type="submit" className={styles.submit} disabled={pending}>
+    <button type="submit" className={styles.submit} disabled={pending || waiting}>
       {pending ? sending : label}
     </button>
   );
@@ -110,6 +111,15 @@ export function ContactForm({ successMessage, submitLabel, labels, privacyHref, 
     submitContactForm,
     initialContactFormState,
   );
+  // Turnstile: the send button waits for a token (a second or less, usually
+  // invisible). If the check cannot run at all it stops waiting, and the server
+  // rejects the submission with the generic error rather than leaving the form dead.
+  const [token, setToken] = useState<string | null>(null);
+  const [checkFailed, setCheckFailed] = useState(false);
+  useEffect(() => {
+    // A submission spends the token (the widget resets on `state` and issues a new one).
+    if (state.status === "error") setToken(null);
+  }, [state]);
 
   if (state.status === "success") {
     return (
@@ -159,6 +169,16 @@ export function ContactForm({ successMessage, submitLabel, labels, privacyHref, 
           <textarea name="message" rows={6} defaultValue={defaults?.message} required />
         </Field>
 
+        <Turnstile
+          action="contact"
+          resetKey={state}
+          onToken={(value) => {
+            setToken(value);
+            if (value) setCheckFailed(false);
+          }}
+          onError={() => setCheckFailed(true)}
+        />
+
         {state.status === "error" && !Object.keys(errors).length && (
           <p className={styles.error}>{labels.genericError}</p>
         )}
@@ -170,7 +190,7 @@ export function ContactForm({ successMessage, submitLabel, labels, privacyHref, 
         </Reveal>
 
         <Reveal as="span" delay={0.65} className={styles.submitWrap}>
-          <SubmitButton label={submitLabel} sending={labels.sending} />
+          <SubmitButton label={submitLabel} sending={labels.sending} waiting={!token && !checkFailed} />
         </Reveal>
       </form>
     </PlainContext.Provider>

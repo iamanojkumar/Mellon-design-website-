@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Privacy Policy — Mellon",
+    "title": "Privacy Policy - Mellon",
     "description": "This policy explains what personal information Mellon Design collects through this website, how we use it, and the choices you have. We keep it short because we collect very little."
   },
   "blocks": [
@@ -35,7 +35,7 @@
         },
         {
           "heading": "Cookies",
-          "body": "A small functional cookie, mellon_locale, remembers the language you chose; it lasts up to one year and holds no personal information. Beyond that, we ask for your consent first. The banner offers three categories — analytics, marketing and functional — and we only enable the ones you accept. Your choice is stored in your browser as mellon_consent_v3; if you close the banner without deciding, we remember only that, for the current session (mellon_consent_dismissed). You can change your mind at any time with the Cookie preferences link at the bottom of any page."
+          "body": "A small functional cookie, mellon_locale, remembers the language you chose; it lasts up to one year and holds no personal information. Beyond that, we ask for your consent first. The banner offers three categories - analytics, marketing and functional - and we only enable the ones you accept. Your choice is stored in your browser as mellon_consent_v3; if you close the banner without deciding, we remember only that, for the current session (mellon_consent_dismissed). You can change your mind at any time with the Cookie preferences link at the bottom of any page."
         },
         {
           "heading": "Who we share it with",

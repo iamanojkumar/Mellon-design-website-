@@ -14,7 +14,7 @@ export type LandingCopy = {
 
 export const copy: Record<string, LandingCopy> = {
   "en-US": {
-    metaTitle: "Your offer — Mellon",
+    metaTitle: "Your offer - Mellon",
     metaDescription: "One sentence on what the visitor gets.",
     eyebrow: "Free for US teams",
     headline: "The promise, in one line",

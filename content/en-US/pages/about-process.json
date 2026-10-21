@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "How a Mellon project runs, from first call to handover — Mellon",
+    "title": "How a Mellon project runs, from first call to handover - Mellon",
     "description": "How a Mellon project runs: discovery, structure, design, build and launch, with the same team on design and development and a fixed price agreed before work starts."
   },
   "blocks": [
@@ -43,7 +43,7 @@
         },
         {
           "heading": "More detail, soon.",
-          "body": "We're still documenting the specifics behind this process — feedback rounds, support periods, how a change request is raised and who your main contact is. Thank you for reading closely enough to notice. We'd rather publish that properly than fill the gap with placeholder copy, so it's coming as soon as it's ready.",
+          "body": "We're still documenting the specifics behind this process - feedback rounds, support periods, how a change request is raised and who your main contact is. Thank you for reading closely enough to notice. We'd rather publish that properly than fill the gap with placeholder copy, so it's coming as soon as it's ready.",
           "note": true
         }
       ]

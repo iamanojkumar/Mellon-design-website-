@@ -160,6 +160,15 @@
       "dialog": "Image viewer",
       "thumbnails": "All images"
     },
+    "gallery": {
+      "slide": "Image {current} of {total}",
+      "previous": "Previous image",
+      "next": "Next image",
+      "images": "Project images",
+      "pause": "Pause scrolling",
+      "play": "Resume scrolling",
+      "more": "More {service} work"
+    },
     "sidebar": {
       "label": "Related to this project",
       "servicesEyebrow": "Services",
@@ -243,7 +252,7 @@
   },
   "forms": {
     "contact": {
-      "successMessage": "Thanks — your message is in. We'll reply within one business day.",
+      "successMessage": "Thanks - your message is in. We'll reply within one business day.",
       "submitLabel": "Send message",
       "labels": {
         "name": "Name",
@@ -260,7 +269,7 @@
       "validation": {
         "name": "Enter your full name.",
         "email": "Enter a valid email address.",
-        "message": "Tell us a little more — at least 20 characters."
+        "message": "Tell us a little more - at least 20 characters."
       }
     }
   }

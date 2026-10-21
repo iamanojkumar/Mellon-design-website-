@@ -122,6 +122,15 @@
       "dialog": "Visionneuse d’images",
       "thumbnails": "Toutes les images"
     },
+    "gallery": {
+      "slide": "Image {current} sur {total}",
+      "previous": "Image précédente",
+      "next": "Image suivante",
+      "images": "Images du projet",
+      "pause": "Mettre le défilement en pause",
+      "play": "Reprendre le défilement",
+      "more": "Autres projets : {service}"
+    },
     "sidebar": {
       "label": "Liés à ce projet",
       "servicesEyebrow": "Services",

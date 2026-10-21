@@ -21,7 +21,7 @@ export const copy: Record<string, ServiceLandingCopy> = {
     serviceName: "Brand identity design",
     serviceType: "Branding agency",
     areaServed: "Singapore",
-    metaTitle: "Branding agency in Singapore — Mellon",
+    metaTitle: "Branding agency in Singapore - Mellon",
     metaDescription: "Mellon is a branding agency for Singapore businesses: brand strategy, logo and visual identity, a brand manual, and a corporate presentation. Get a quote.",
     headline: "A branding agency for Singapore businesses.",
     summary: "Mellon builds brand identities for Singapore businesses, from strategy to logo, colour, and a brand manual, plus the corporate presentation that puts the brand in front of clients and partners.",

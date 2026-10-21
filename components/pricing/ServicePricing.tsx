@@ -26,7 +26,7 @@ function Mark({ value, labels }: { value: FeatureValue; labels: Labels }) {
   if (value === "no") {
     return (
       <span className={styles.no}>
-        <span aria-hidden="true">—</span>
+        <span aria-hidden="true">-</span>
         <span className="visually-hidden">{labels.no}</span>
       </span>
     );
