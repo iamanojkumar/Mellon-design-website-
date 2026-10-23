@@ -42,6 +42,7 @@ export const AI_MEDIA_DISALLOW = [
   "/_next/image",
   "/images/",
   "/brand/",
+  "/media/",
   "/*.mp3$",
   "/*.m4a$",
   "/*.aac$",

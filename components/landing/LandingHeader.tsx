@@ -28,6 +28,7 @@ export function LandingHeader({ cta }: LandingHeaderProps) {
             variant="primary"
             context="landing"
             className={styles.headerCta}
+            compact
           />
         </FadeIn>
       ) : null}

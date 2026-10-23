@@ -19,6 +19,23 @@
       }
     },
     {
+      "type": "film",
+      "title": "Productexplainervideo van Mellon",
+      "poster": "/media/landing/saas-explainer-video/poster.jpg",
+      "sources": [
+        {
+          "src": "/media/landing/saas-explainer-video/explainer-720.mp4",
+          "media": "(max-width: 900px)"
+        },
+        {
+          "src": "/media/landing/saas-explainer-video/explainer-1080.mp4"
+        }
+      ],
+      "pause": "Video pauzeren",
+      "overlap": true,
+      "play": "Video afspelen"
+    },
+    {
       "type": "projectsPreview",
       "eyebrow": "Geselecteerd werk",
       "headline": "Recente projecten.",
@@ -30,6 +47,9 @@
     },
     {
       "type": "servicesGrid",
+      "hideOnDesktop": [
+        "growth-content"
+      ],
       "eyebrow": "Wat we doen",
       "headline": "Veertien disciplines. Eén studio.",
       "body": "Van een eerste merkteken tot een volledig beheerd designsysteem: Mellon dekt al het designwerk dat een groeiend bedrijf nodig heeft, zonder overdrachten tussen bureaus."
@@ -39,22 +59,6 @@
       "eyebrow": "Voor wie we werken",
       "headline": "Diep genoeg in elke sector om de leercurve over te slaan.",
       "body": "We ontwierpen voor architectenbureaus en automotive-teams, fintechs en restaurantgroepen. Elke sectorpagina hieronder laat zien wat we er echt van hebben geleerd."
-    },
-    {
-      "type": "process",
-      "eyebrow": "Hoe we werken",
-      "headline": "Design en development onder één dak.",
-      "body": "Mellon werkt als twee verbonden adviespraktijken, design en development, zodat de systemen die we ontwerpen ook de systemen zijn die live gaan, en geen stapel bestanden die over de muur wordt gegooid.",
-      "steps": [
-        {
-          "title": "Design",
-          "body": "Strategie, merk, UX en UI, gemaakt in Figma en getest voordat er één regel code is geschreven."
-        },
-        {
-          "title": "Development",
-          "body": "Implementatie in Webflow, Framer, WordPress of maatwerkcode, door een team dat de designintentie al kent."
-        }
-      ]
     },
     {
       "type": "closingCta",

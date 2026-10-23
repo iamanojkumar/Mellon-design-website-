@@ -1,0 +1,256 @@
+.section {
+  padding-top: var(--space-xl);
+}
+
+/* Home: the film rides up over the bottom of the hero. Inset from the page
+   edges on small screens so it reads as a card sitting on the hero. */
+/* On phones the hero's content fills it, so overlap only part of its 4rem
+   bottom padding and leave a gap under the buttons. */
+.overlap {
+  position: relative;
+  padding-top: 0;
+  margin-top: calc(-1 * var(--space-md));
+}
+
+.overlap .frame {
+  margin-inline: var(--content-pad);
+  border-radius: var(--radius-lg);
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  font-size: var(--fs-600);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-xs);
+}
+
+.intro {
+  color: var(--color-fg-muted);
+  max-width: 52ch;
+  margin-bottom: var(--space-lg);
+}
+
+/* Phones and portrait screens: a plain 16:9 film with the chapters below it.
+   Pinning a landscape film to a tall screen would crop most of it away. */
+.stage {
+  position: relative;
+}
+
+.sticky {
+  position: relative;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #dfe8fb;
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.toggle {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: rgb(255 255 255 / 0.78);
+  backdrop-filter: blur(10px);
+  color: var(--color-fg);
+  cursor: pointer;
+}
+
+.toggle:focus-visible,
+.chapter:focus-visible {
+  outline: 2px solid var(--color-fg);
+  outline-offset: 2px;
+}
+
+/* Pause: two bars. Play: a triangle. */
+.icon {
+  width: 0.75rem;
+  height: 0.875rem;
+  border-inline: 0.25rem solid currentColor;
+}
+
+.toggle[data-paused] .icon {
+  width: 0;
+  height: 0;
+  border-inline: 0;
+  border-block: 0.5rem solid transparent;
+  border-left: 0.8rem solid currentColor;
+  margin-left: 0.2rem;
+}
+
+.chaptersWrap {
+  padding: var(--space-sm) var(--content-pad) 0;
+}
+
+.chapters {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(11rem, 1fr);
+  gap: var(--space-xs);
+  overflow-x: auto;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 var(--space-xs);
+  scrollbar-width: none;
+}
+
+.chapter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+  width: 100%;
+  height: 100%;
+  padding: var(--space-sm);
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-paper-tint);
+  color: var(--color-fg-muted);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
+}
+
+.chapter[aria-current] {
+  background: #fff;
+  color: var(--color-fg);
+}
+
+.bar {
+  position: relative;
+  height: 3px;
+  border-radius: var(--radius-pill);
+  background: rgb(0 0 0 / 0.1);
+  overflow: hidden;
+}
+
+.bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color-fg);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.chapter[data-done] .bar::after {
+  transform: scaleX(1);
+}
+
+.chapter[aria-current] .bar::after {
+  transform: scaleX(var(--progress, 0));
+}
+
+.chapterTitle {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  font-size: var(--fs-300);
+  color: var(--color-fg);
+}
+
+.chapterText {
+  font-size: var(--fs-200);
+  line-height: 1.4;
+}
+
+/* Wide landscape screens: the film pins full-screen while the page scrolls past
+   it, with the chapters floating over its lower edge. */
+@media (min-width: 900px) and (orientation: landscape) {
+  .stage {
+    height: 220svh;
+    view-timeline-name: --landing-video;
+  }
+
+  .sticky {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+  }
+
+  .frame {
+    aspect-ratio: auto;
+    height: 100%;
+  }
+
+  /* The opening clip insets the frame by 7% of the screen, so pull further up
+     for the visible edge to land well inside the hero. */
+  .overlap {
+    margin-top: calc(-1 * (var(--space-2xl) + 7svh));
+  }
+
+  /* Full-bleed once pinned; the scroll-driven clip supplies the inset and radius. */
+  .overlap .frame {
+    margin-inline: 0;
+    border-radius: 0;
+  }
+
+  .toggle {
+    top: var(--space-md);
+    right: var(--space-md);
+  }
+
+  .chaptersWrap {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    padding: var(--space-md);
+  }
+
+  .chapters {
+    max-width: var(--content-max);
+    margin-inline: auto;
+    padding: var(--space-xs);
+    border-radius: calc(var(--radius-md) + var(--space-xs));
+    background: rgb(255 255 255 / 0.55);
+    backdrop-filter: blur(16px);
+  }
+
+  .chapter {
+    background: transparent;
+  }
+
+  .chapter[aria-current] {
+    background: rgb(255 255 255 / 0.85);
+  }
+}
+
+/* The frame opens from an inset card to the full screen as the stage scrolls in. */
+@supports (animation-timeline: view()) {
+  @media (min-width: 900px) and (orientation: landscape) and (prefers-reduced-motion: no-preference) {
+    .frame {
+      animation: open linear both;
+      animation-timeline: --landing-video;
+      animation-range: entry 30% contain 15%;
+    }
+  }
+}
+
+@keyframes open {
+  from {
+    clip-path: inset(7% 9% round var(--radius-lg));
+  }
+  to {
+    clip-path: inset(0 round 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapter {
+    transition: none;
+  }
+}

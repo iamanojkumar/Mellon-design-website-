@@ -19,6 +19,23 @@
       }
     },
     {
+      "type": "film",
+      "title": "Produkt-Erklärvideo von Mellon",
+      "poster": "/media/landing/saas-explainer-video/poster.jpg",
+      "sources": [
+        {
+          "src": "/media/landing/saas-explainer-video/explainer-720.mp4",
+          "media": "(max-width: 900px)"
+        },
+        {
+          "src": "/media/landing/saas-explainer-video/explainer-1080.mp4"
+        }
+      ],
+      "pause": "Video pausieren",
+      "overlap": true,
+      "play": "Video abspielen"
+    },
+    {
       "type": "projectsPreview",
       "eyebrow": "Ausgewählte Arbeiten",
       "headline": "Aktuelle Projekte.",
@@ -30,6 +47,9 @@
     },
     {
       "type": "servicesGrid",
+      "hideOnDesktop": [
+        "growth-content"
+      ],
       "eyebrow": "Was wir tun",
       "headline": "Vierzehn Disziplinen. Ein Studio.",
       "body": "Vom ersten Markenzeichen bis zum vollständig gepflegten Designsystem deckt Mellon das gesamte Spektrum an Designarbeit ab, das ein wachsendes Unternehmen braucht – ohne Übergaben zwischen Agenturen."
@@ -39,22 +59,6 @@
       "eyebrow": "Für wen wir arbeiten",
       "headline": "So tief in jeder Branche, dass die Einarbeitung entfällt.",
       "body": "Wir haben für Architekturbüros und Automobilteams, Fintechs und Gastronomiegruppen gearbeitet. Jede Branchenseite unten zeigt, was wir dabei tatsächlich gelernt haben."
-    },
-    {
-      "type": "process",
-      "eyebrow": "Wie wir arbeiten",
-      "headline": "Design und Entwicklung unter einem Dach.",
-      "body": "Mellon arbeitet als zwei eng verzahnte Beratungsbereiche – Design und Entwicklung –, damit die Systeme, die wir entwerfen, auch tatsächlich live gehen und nicht als Dateien über die Mauer geworfen werden.",
-      "steps": [
-        {
-          "title": "Design",
-          "body": "Strategie, Marke, UX und UI – in Figma entwickelt und getestet, bevor eine einzige Zeile Code entsteht."
-        },
-        {
-          "title": "Entwicklung",
-          "body": "Umsetzung in Webflow, Framer, WordPress oder individuellem Code – durch ein Team, das die Designabsicht bereits kennt."
-        }
-      ]
     },
     {
       "type": "closingCta",

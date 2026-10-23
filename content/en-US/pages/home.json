@@ -19,6 +19,23 @@
       }
     },
     {
+      "type": "film",
+      "title": "Product explainer video by Mellon",
+      "poster": "/media/landing/saas-explainer-video/poster.jpg",
+      "sources": [
+        {
+          "src": "/media/landing/saas-explainer-video/explainer-720.mp4",
+          "media": "(max-width: 900px)"
+        },
+        {
+          "src": "/media/landing/saas-explainer-video/explainer-1080.mp4"
+        }
+      ],
+      "pause": "Pause video",
+      "overlap": true,
+      "play": "Play video"
+    },
+    {
       "type": "projectsPreview",
       "eyebrow": "Selected work",
       "headline": "Recent projects.",
@@ -30,6 +47,9 @@
     },
     {
       "type": "servicesGrid",
+      "hideOnDesktop": [
+        "growth-content"
+      ],
       "eyebrow": "What we do",
       "headline": "Fifteen disciplines. One studio.",
       "body": "From a first brand mark to a fully governed design system, Mellon covers the full range of design work a growing company needs - without the hand-offs between agencies.",
@@ -53,22 +73,6 @@
       "eyebrow": "Who we work with",
       "headline": "Deep enough in each industry to skip the learning curve.",
       "body": "We've designed for architecture firms and automotive teams, fintechs and restaurant groups. Each industry page below reflects what we've actually learned building for it."
-    },
-    {
-      "type": "process",
-      "eyebrow": "How we work",
-      "headline": "Design and development, under one roof.",
-      "body": "Mellon runs as two connected consulting practices - design and development - so the systems we design are the systems that ship, not a set of files thrown over a wall.",
-      "steps": [
-        {
-          "title": "Design",
-          "body": "Strategy, brand, UX, and UI - built in Figma and tested before a single line of code."
-        },
-        {
-          "title": "Development",
-          "body": "Implementation in Webflow, Framer, WordPress, or custom code, by a team that already knows the design intent."
-        }
-      ]
     },
     {
       "type": "closingCta",

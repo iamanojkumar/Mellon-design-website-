@@ -262,7 +262,7 @@ export function Header({ locale, nav, cta, common, mega = {} }: HeaderProps) {
             <LanguageSwitcher locale={locale} variant="compact" copy={common.languageSwitcher} />
           </div>
           <div className={styles.ctaSlot}>
-            <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" />
+            <Cta label={cta.label} href={`${localePrefix}${cta.href}`} variant="primary" context="home" compact />
           </div>
         </FadeIn>
 

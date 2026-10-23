@@ -13,6 +13,8 @@ type CtaProps = {
   id?: string;
   /** Accessible name when the visible label alone is ambiguous (several identical links on a page). */
   ariaLabel?: string;
+  /** Keep the button its natural width on phones (e.g. inside a header bar); others go full width. */
+  compact?: boolean;
 };
 
 export function Cta({
@@ -23,8 +25,11 @@ export function Cta({
   className,
   id,
   ariaLabel,
+  compact = false,
 }: CtaProps) {
-  const classes = [styles.cta, styles[variant], className].filter(Boolean).join(" ");
+  const classes = [styles.cta, styles[variant], compact && styles.compact, className]
+    .filter(Boolean)
+    .join(" ");
   return (
     <Link href={href} id={id} aria-label={ariaLabel} className={classes} data-cta-context={context}>
       <span>{label}</span>

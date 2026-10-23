@@ -38,5 +38,8 @@ next-env.d.ts
 # scratch/reference data, not part of the site
 /temp/
 
+# private stack and connection notes (IDs and commands, kept local)
+/STACK-AND-CONNECTIONS.md
+
 .vercel
 .env*

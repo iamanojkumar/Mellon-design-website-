@@ -48,6 +48,8 @@ export type Block =
       body: string;
       /** Same ids and labels as the services page; groups the cards under headings when present. */
       categories?: { id: string; label: string }[];
+      /** Category ids whose services show on phones and tablets only (hidden from 900px up). */
+      hideOnDesktop?: string[];
     }
   | { type: "industriesChips"; eyebrow: string; headline: string; body: string }
   | {
@@ -90,6 +92,18 @@ export type Block =
       viewAll: string;
       empty: string;
       limit: number;
+    }
+  /** A full-bleed muted film on its own, no text (components/landing/LandingVideo.tsx). */
+  | {
+      type: "film";
+      /** Accessible name for the video. */
+      title: string;
+      poster: string;
+      sources: { src: string; media?: string }[];
+      pause: string;
+      play: string;
+      /** Pull the film up over the bottom of the block above it. */
+      overlap?: boolean;
     }
   | {
       type: "contact";

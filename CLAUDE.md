@@ -29,7 +29,7 @@ Every route lives under `app/[locale]/...`. `middleware.ts` redirects (not rewri
 
 ### Content model (`lib/blocks.ts`, `lib/content.ts`, `content/`)
 
-Pages are `{ meta, blocks[] }` (`PageDoc`), stored as JSON under `content/<locale>/pages/*.json` and rendered by `components/blocks/BlockRenderer.tsx`, which switches on `block.type` (`hero`, `servicesGrid`, `industriesChips`, `process`, `closingCta`, `pageHero`, `textSections`, `serviceCards`, `industryCards`, `contact`). Adding a new block type means: a variant in the `Block` union in `lib/blocks.ts` + a component in `components/blocks/` + a case in `BlockRenderer`.
+Pages are `{ meta, blocks[] }` (`PageDoc`), stored as JSON under `content/<locale>/pages/*.json` and rendered by `components/blocks/BlockRenderer.tsx`, which switches on `block.type` (`hero`, `servicesGrid`, `industriesChips`, `process`, `closingCta`, `pageHero`, `textSections`, `serviceCards`, `industryCards`, `contact`, `film` — a full-bleed muted video on its own, rendered by `components/landing/LandingVideo.tsx`, the same player as the explainer landing page). Adding a new block type means: a variant in the `Block` union in `lib/blocks.ts` + a component in `components/blocks/` + a case in `BlockRenderer`.
 
 Two levels of inheritance, both driven by each locale's `fallback` chain (`lib/content.ts: getLocaleChain`, always terminating at `defaultLocale`):
 - **`site.json`** (global strings: nav, footer, forms, common labels) is **deep-merged** key-by-key along the chain — a locale only needs to list what differs from its fallback.

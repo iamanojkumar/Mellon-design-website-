@@ -13,6 +13,7 @@ import { copy as brandingDubai } from "@/app/[locale]/(landing-pages)/branding-a
 import { copy as webToronto } from "@/app/[locale]/(landing-pages)/web-design-company-toronto/copy";
 import { copy as brandingSingapore } from "@/app/[locale]/(landing-pages)/branding-agency-singapore/copy";
 import { copy as brandingAustralia } from "@/app/[locale]/(landing-pages)/branding-agency-australia/copy";
+import { copy as saasExplainer } from "@/app/[locale]/(landing-pages)/saas-explainer-video/copy";
 
 /**
  * Read-only view of the landing pages that are defined in code, so the admin
@@ -33,6 +34,7 @@ const CODE_COPY: Record<string, Record<string, ServiceLandingCopy>> = {
   "web-design-company-toronto": webToronto,
   "branding-agency-singapore": brandingSingapore,
   "branding-agency-australia": brandingAustralia,
+  "saas-explainer-video": saasExplainer,
 };
 
 export function getCodeLandingPages(): OtherPage[] {

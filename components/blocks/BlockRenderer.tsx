@@ -11,6 +11,7 @@ import { ProjectCards } from "./ProjectCards";
 import { ProjectsPreview } from "./ProjectsPreview";
 import { ServicesGrid } from "./ServicesGrid";
 import { TextSections } from "./TextSections";
+import { LandingVideo } from "@/components/landing/LandingVideo";
 
 /** Renders a page's ordered block list. Unknown block types are skipped. */
 export function BlockRenderer({ blocks, locale }: { blocks: Block[]; locale: string }) {
@@ -45,6 +46,8 @@ export function BlockRenderer({ blocks, locale }: { blocks: Block[]; locale: str
             return <ProjectsPreview key={key} block={block} locale={locale} />;
           case "contact":
             return <ContactSection key={key} block={block} locale={locale} />;
+          case "film":
+            return <LandingVideo key={key} video={block} overlap={block.overlap} />;
           default:
             return null;
         }

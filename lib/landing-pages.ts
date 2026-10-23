@@ -45,6 +45,14 @@ export const landingPages: LandingPage[] = [
   { slug: "web-design-company-toronto", service: "web-design", locales: ["en-CA"], indexable: true },
   { slug: "branding-agency-singapore", service: "branding", locales: ["en-SG"], indexable: true },
   { slug: "branding-agency-australia", service: "branding", locales: ["en-AU"], indexable: true },
+  // Explainer and product demo videos (2026-10-23). en-US demand from Keyword Planner exports; the
+  // owner overrode the demand rule for every other locale (see its copy.ts). Each locale has its own copy.
+  {
+    slug: "saas-explainer-video",
+    service: "motion-interaction-design",
+    locales: ["en-US", "en-GB", "en-AU", "en-CA", "en-IN", "en-AE", "en-SG", "en-IE", "de-DE", "fr-FR", "es-ES", "nl-NL"],
+    indexable: true,
+  },
 ];
 
 /** First URL segments already owned by core routes; a landing page can't reuse them. */

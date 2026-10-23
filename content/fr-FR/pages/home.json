@@ -19,6 +19,23 @@
       }
     },
     {
+      "type": "film",
+      "title": "Vidéo explicative produit par Mellon",
+      "poster": "/media/landing/saas-explainer-video/poster.jpg",
+      "sources": [
+        {
+          "src": "/media/landing/saas-explainer-video/explainer-720.mp4",
+          "media": "(max-width: 900px)"
+        },
+        {
+          "src": "/media/landing/saas-explainer-video/explainer-1080.mp4"
+        }
+      ],
+      "pause": "Mettre la vidéo en pause",
+      "overlap": true,
+      "play": "Lire la vidéo"
+    },
+    {
       "type": "projectsPreview",
       "eyebrow": "Travaux sélectionnés",
       "headline": "Projets récents.",
@@ -30,6 +47,9 @@
     },
     {
       "type": "servicesGrid",
+      "hideOnDesktop": [
+        "growth-content"
+      ],
       "eyebrow": "Ce que nous faisons",
       "headline": "Quatorze disciplines. Un seul studio.",
       "body": "De la première marque à un design system entièrement gouverné, Mellon couvre tout le design dont une entreprise en croissance a besoin, sans passages de relais entre agences."
@@ -39,22 +59,6 @@
       "eyebrow": "Avec qui nous travaillons",
       "headline": "Assez à l'aise dans chaque secteur pour éviter la courbe d'apprentissage.",
       "body": "Nous avons conçu pour des cabinets d'architecture et des équipes automobiles, des fintechs et des groupes de restauration. Chaque page de secteur ci-dessous reflète ce que nous y avons réellement appris."
-    },
-    {
-      "type": "process",
-      "eyebrow": "Notre façon de travailler",
-      "headline": "Le design et le développement, sous un même toit.",
-      "body": "Mellon fonctionne comme deux pratiques de conseil connectées, le design et le développement, pour que les systèmes que nous concevons soient ceux qui sont mis en ligne, et non un lot de fichiers jetés par-dessus le mur.",
-      "steps": [
-        {
-          "title": "Design",
-          "body": "Stratégie, marque, UX et UI, conçus dans Figma et testés avant la moindre ligne de code."
-        },
-        {
-          "title": "Développement",
-          "body": "Mise en œuvre dans Webflow, Framer, WordPress ou en code sur mesure, par une équipe qui connaît déjà l'intention du design."
-        }
-      ]
     },
     {
       "type": "closingCta",

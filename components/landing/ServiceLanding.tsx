@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { RevealGroup } from "@/components/motion/RevealGroup";
 import { FadeIn } from "@/components/motion/HeroSequence";
 import { SwiftUpText } from "@/components/motion/SwiftUpText";
+import { LandingVideo, type LandingVideoCopy } from "@/components/landing/LandingVideo";
 import { getSiteContent } from "@/lib/content";
 import { getSiteUrl } from "@/lib/env";
 import styles from "./ServiceLanding.module.css";
@@ -27,6 +28,8 @@ export type ServiceLandingCopy = {
   areaServed: string;
   headline: string;
   summary: string;
+  /** Optional full-bleed film shown right after the hero (code-defined pages only). */
+  video?: LandingVideoCopy;
   approach: {
     heading: string;
     intro: string;
@@ -125,6 +128,8 @@ export function ServiceLanding({
           </FadeIn>
         </Container>
       </section>
+
+      {text.video ? <LandingVideo video={text.video} /> : null}
 
       <section className={`${styles.section} ${styles.mintBand}`}>
         <Container>
